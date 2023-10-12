@@ -48,7 +48,7 @@ describe('upload', () => {
     sinon.assert.calledOnce(this.fakeGet);
     sinon.assert.calledWith(this.fakeGet, 'https://debuglogs.org/', {
       responseType: 'json',
-      headers: { 'User-Agent': 'Signal-Desktop/1.2.3' },
+      headers: { 'User-Agent': 'Cradle-Desktop/1.2.3' },
       timeout: { request: durations.MINUTE },
     });
 
@@ -56,7 +56,7 @@ describe('upload', () => {
 
     sinon.assert.calledOnce(this.fakePost);
     sinon.assert.calledWith(this.fakePost, 'https://example.com/fake-upload', {
-      headers: { 'User-Agent': 'Signal-Desktop/1.2.3' },
+      headers: { 'User-Agent': 'Cradle-Desktop/1.2.3' },
       timeout: { request: durations.MINUTE },
       body: sinon.match((value: unknown) => {
         if (!(value instanceof FormData)) {

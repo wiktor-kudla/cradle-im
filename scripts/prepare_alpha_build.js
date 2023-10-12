@@ -25,27 +25,27 @@ console.log('prepare_alpha_build: updating package.json');
 // -------
 
 const NAME_PATH = 'name';
-const PRODUCTION_NAME = 'signal-desktop';
-const ALPHA_NAME = 'signal-desktop-alpha';
+const PRODUCTION_NAME = 'cradle-desktop';
+const ALPHA_NAME = 'cradle-desktop-alpha';
 
 const PRODUCT_NAME_PATH = 'productName';
-const PRODUCTION_PRODUCT_NAME = 'Signal';
-const ALPHA_PRODUCT_NAME = 'Signal Alpha';
+const PRODUCTION_PRODUCT_NAME = 'Cradle';
+const ALPHA_PRODUCT_NAME = 'Cradle Alpha';
 
 const APP_ID_PATH = 'build.appId';
-const PRODUCTION_APP_ID = 'org.whispersystems.signal-desktop';
-const ALPHA_APP_ID = 'org.whispersystems.signal-desktop-alpha';
+const PRODUCTION_APP_ID = 'org.whispersystems.cradle-desktop';
+const ALPHA_APP_ID = 'org.whispersystems.cradle-desktop-alpha';
 
 const STARTUP_WM_CLASS_PATH = 'build.linux.desktop.StartupWMClass';
-const PRODUCTION_STARTUP_WM_CLASS = 'Signal';
-const ALPHA_STARTUP_WM_CLASS = 'Signal Alpha';
+const PRODUCTION_STARTUP_WM_CLASS = 'Cradle';
+const ALPHA_STARTUP_WM_CLASS = 'Cradle Alpha';
 
 const DESKTOP_NAME_PATH = 'desktopName';
 
 // Note: we're avoiding dashes in our .desktop name due to xdg-settings behavior
 //   https://github.com/signalapp/Signal-Desktop/issues/3602
-const PRODUCTION_DESKTOP_NAME = 'signal.desktop';
-const ALPHA_DESKTOP_NAME = 'signalalpha.desktop';
+const PRODUCTION_DESKTOP_NAME = 'cradle.desktop';
+const ALPHA_DESKTOP_NAME = 'cradlealpha.desktop';
 
 // -------
 

@@ -80,8 +80,10 @@
 
   &--secondary {
     @include light-theme {
-      $color: $color-gray-90;
-      $background-color: $color-gray-05;
+      // $color: $color-gray-90;
+      // $background-color: $color-gray-05;
+      $color: $color-white;
+      $background-color: $color-purple-01;
 
       color: $color;
       background: $background-color;
@@ -220,8 +222,10 @@
     padding: 8px;
 
     @include light-theme {
-      background-color: $color-gray-05;
-      color: $color-black;
+      // background-color: $color-gray-05;
+      // color: $color-black;
+      background-color: $color-purple-01;
+      color: $color-white;
     }
 
     @include dark-theme {
@@ -248,7 +252,8 @@
       width: 18px;
 
       @include light-theme {
-        @include color-svg($icon, $color-black);
+        // @include color-svg($icon, $color-black);
+        @include color-svg($icon, $color-white);
       }
       @include dark-theme {
         @include color-svg($icon, $color-gray-05);

@@ -395,7 +395,7 @@ export class Bootstrap {
         '0': url,
         '2': url,
       },
-      updatesEnabled: false,
+      updatesEnabled: true,
 
       directoreType: 'cdsi',
       directoryCDSIUrl: url,

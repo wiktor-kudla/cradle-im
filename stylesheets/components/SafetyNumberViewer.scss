@@ -59,7 +59,8 @@
     width: 245px;
 
     @include light-theme {
-      background-color: $color-gray-02;
+      // background-color: $color-gray-02;
+      background-color: $color-purple-01;
     }
     @include dark-theme {
       background-color: $color-gray-90;

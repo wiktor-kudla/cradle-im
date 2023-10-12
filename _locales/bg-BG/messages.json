@@ -8,7 +8,6 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
-
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -90,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Условия и политика за поверителност",
-    "description": "Shown in the about box for the link to https://signal.org/legal"
+    "description": "Shown in the about box for the link to https://cradle.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -161,7 +160,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Затвори Signal",
+    "messageformat": "Затвори Cradle",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -273,7 +272,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Обновяване на Signal",
+    "messageformat": "Обновяване на Cradle",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -393,7 +392,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Току-що сте преминали процеса на експортиране и вашите контакти и съобщения чакат търпеливо на вашия компютър. Изберете папката, която съдържа запаметените ви данни на Signal.",
+    "messageformat": "Току-що сте преминали процеса на експортиране и вашите контакти и съобщения чакат търпеливо на вашия компютър. Изберете папката, която съдържа запаметените ви данни на Cradle.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -409,7 +408,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Уверете се, че сте избрали правилната папка, съдържаща запазените данни на Signal. Името й започва със 'Signal Export'. Можете и да запазите ново копие на данните от Chrome приложението.",
+    "messageformat": "Уверете се, че сте избрали правилната папка, съдържаща запазените данни на Cradle. Името й започва със 'Cradle Export'. Можете и да запазите ново копие на данните от Chrome приложението.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -425,7 +424,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Започнете да използвате Signal Desktop",
+    "messageformat": "Започнете да използвате Cradle Desktop",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -509,11 +508,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "Номерът за безопасност, който се опитвате да потвърдите, се е променил. Моля, прегледайте вашия номер за безопасност с {name1}. Запомнете, това може да означава, че някой се опитва да прихване комуникацията ви или {name2} просто е преинсталирал Signal.",
+    "messageformat": "Номерът за безопасност, който се опитвате да потвърдите, се е променил. Моля, прегледайте вашия номер за безопасност с {name1}. Запомнете, това може да означава, че някой се опитва да прихване комуникацията ви или {name2} просто е преинсталирал Signal/Cradle.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Следните хора е възможно да са преинсталирали Signal или да са сменили устройството си. Докоснете някой получател, за да потвърдите новия им номер за безопасност. Това не е задължително.",
+    "messageformat": "Следните хора е възможно да са преинсталирали Signal/Cradle или да са сменили устройството си. Докоснете някой получател, за да потвърдите новия им номер за безопасност. Това не е задължително.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -525,7 +524,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {Имате {count,number} връзка, която е възможно да е преинсталирала Signal или да е сменила устройството си. Преди изпращането можете да прегледате нейния номер за безопасност, ако желаете.} other {Имате {count,number} връзки, които е възможно да са преинсталирали Signal или да са сменили устройството си. Преди изпращането можете да прегледате техните номера за безопасност, ако желаете.}}",
+    "messageformat": "{count, plural, one {Имате {count,number} връзка, която е възможно да е преинсталирала Signal/Cradle или да е сменила устройството си. Преди изпращането можете да прегледате нейния номер за безопасност, ако желаете.} other {Имате {count,number} връзки, които е възможно да са преинсталирали Signal/Cradle или да са сменили устройството си. Преди изпращането можете да прегледате техните номера за безопасност, ако желаете.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -557,7 +556,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Номерът ви за безопасност с {name1} се е променил. Това може да означава, че някой се опитва да прихване комуникацията ви или че {name2} просто повторно е инсталирал Signal. Желателно е да потвърдите вашия номер за безопасност с този контакт.",
+    "messageformat": "Номерът ви за безопасност с {name1} се е променил. Това може да означава, че някой се опитва да прихване комуникацията ви или че {name2} просто повторно е инсталирал Signal/Cradle. Желателно е да потвърдите вашия номер за безопасност с този контакт.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -593,7 +592,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Нещо се обърка при качването! Моля, изпратете имейл на support@signal.org и прикачете регистъра си като текстов файл.",
+    "messageformat": "Нещо се обърка при качването! Моля, изпратете имейл на support@cradle.org и прикачете регистъра си като текстов файл.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -722,15 +721,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Зарежда преглед…",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "Чернова за преглед на линк към {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "Преглед на линк към {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Чернова за прикачено изображение: {path}",
@@ -825,15 +824,15 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Включете се в бета тестовете",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Настройки на Signal Desktop",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "messageformat": "Настройки на Cradle Desktop",
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Създател на пакета със стикери",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
     "messageformat": "Относно Сигнал Десктоп",
@@ -1043,15 +1042,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "За да изпращате аудио съобщения, разрешете достъпа на Signal Desktop до микрофона.",
+    "messageformat": "За да изпращате аудио съобщения, разрешете достъпа на Cradle Desktop до микрофона.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "За провеждане на разговори, разрешете достъпа на Signal Desktop до микрофона.",
+    "messageformat": "За провеждане на разговори, разрешете достъпа на Cradle Desktop до микрофона.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "За провеждане на видео разговори, разрешете достъпа на Signal Desktop до камерата.",
+    "messageformat": "За провеждане на видео разговори, разрешете достъпа на Cradle Desktop до камерата.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1091,15 +1090,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Signal не можа да се актуализира. {retry} или посетете {url}, за да го инсталирате ръчно. След това {support} за този проблем",
+    "messageformat": "Cradle не можа да се актуализира. {retry} или посетете {url}, за да го инсталирате ръчно. След това {support} за този проблем",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Signal не можа да се актуализира. Посетете {url}, за да го инсталирате ръчно. След това {support} за този проблем",
+    "messageformat": "Cradle не можа да се актуализира. Посетете {url}, за да го инсталирате ръчно. След това {support} за този проблем",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Вероятно Signal Desktop е в macOS устройство с права за четене и няма да може да се самообновява. Опитайте се да преместите {app} към {folder} с помощта на Finder.",
+    "messageformat": "Вероятно Cradle Desktop е в macOS устройство с права за четене и няма да може да се самообновява. Опитайте се да преместите {app} към {folder} с помощта на Finder.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1155,7 +1154,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Това съобщение ще бъде изтрито за всички в чата, ако ползват скорошна версия на Signal. Те ще виждат, че сте изтрили съобщение.",
+    "messageformat": "Това съобщение ще бъде изтрито за всички в чата, ако ползват скорошна версия на Signal/Cradle. Те ще виждат, че сте изтрили съобщение.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1283,35 +1282,7 @@
   },
   "icu:deleteConversationConfirmation": {
     "messageformat": "Перманентно изтриване на този чат?",
-    "description": "(deleted 06/27/2023) Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Изтриване на чата?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "Чатът ще бъде изтрит от това устройство.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
-    "messageformat": "Напускане на групата",
-    "description": "This is a button to leave a group"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__title": {
-    "messageformat": "Наистина ли искате да напуснете?",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__description": {
-    "messageformat": "Вече няма да може да изпращате или получавате съобщения в тази група.",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__confirmButton": {
-    "messageformat": "Напусни",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Confirm Button"
-  },
-  "icu:ConversationHeader__CannotLeaveGroupBecauseYouAreLastAdminAlert__description": {
-    "messageformat": "Преди да напуснеш, трябва да избереш поне един нов администртор за тази група.",
-    "description": "Conversation Header > Leave Group Action > Cannot Leave Group Because You Are Last Admin Alert > Description"
+    "description": "Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
   },
   "icu:sessionEnded": {
     "messageformat": "Рестартиране на поверителна сесия",
@@ -1326,7 +1297,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Signal използва криптиране от край до край и от време на време може да има нужда да презарежда вашата чат сесия. Това не оказва влияние на сигурността на чата, но може да пропуснете съобщение от този контакт и да се наложи да го помолите да го изпрати отново.",
+    "messageformat": "Cradle използва криптиране от край до край и от време на време може да има нужда да презарежда вашата чат сесия. Това не оказва влияние на сигурността на чата, но може да пропуснете съобщение от този контакт и да се наложи да го помолите да го изпрати отново.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1427,11 +1398,11 @@
   },
   "icu:linkedDevices": {
     "messageformat": "Свързани устройства",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Свържи ново устройство",
-    "description": "The menu option shown in Signal iOS to add a new linked device"
+    "description": "The menu option shown in Cradle iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Научете повече",
@@ -1505,7 +1476,7 @@
     "messageformat": "Съжаляваме, вече имате прекалено много регистрирани устройства. Пробвайте да премахнете някое."
   },
   "icu:installTooOld": {
-    "messageformat": "Обновете Signal на това устройство, за да го свържете с телефона си."
+    "messageformat": "Обновете Cradle на това устройство, за да го свържете с телефона си."
   },
   "icu:installErrorHeader": {
     "messageformat": "Нещо се обърка!"
@@ -1645,19 +1616,19 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Signal ще позвъни на {person}",
+    "messageformat": "Cradle ще позвъни на {person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Signal ще позвъни на {first} и {second}",
+    "messageformat": "Cradle ще позвъни на {first} и {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Signal ще позвъни на {first}, {second} и {third}",
+    "messageformat": "Cradle ще позвъни на {first}, {second} и {third}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Signal ще позвъни на {first}, {second} и {others} други",
+    "messageformat": "Cradle ще позвъни на {first}, {second} и {others} други",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1713,7 +1684,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Signal споделя {window}.",
+    "messageformat": "Cradle споделя {window}.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1737,7 +1708,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Signal се нуждае от разрешение за достъп до записване на екрана на компютъра ви.",
+    "messageformat": "Cradle се нуждае от разрешение за достъп до записване на екрана на компютъра ви.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1749,7 +1720,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "Поставете отметка вдясно, в квадратчето до Signal. Ако не виждате Signal в списъка, кликнете върху +, за да го добавите.",
+    "messageformat": "Поставете отметка вдясно, в квадратчето до Cradle. Ако не виждате Cradle в списъка, кликнете върху +, за да го добавите.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1793,12 +1764,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "Граматическата проверка ще бъде активирана при следващото стартиране на Signal.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
+    "messageformat": "Граматическата проверка ще бъде активирана при следващото стартиране на Cradle.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "Граматическата проверка ще бъде деактивирана при следващото стартиране на Signal.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
+    "messageformat": "Граматическата проверка ще бъде деактивирана при следващото стартиране на Cradle.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Минимизиране в системния трей",
@@ -1841,8 +1812,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Имате стари данни от предишна инсталация на Signal Desktop. Ако продължите, тези данни ще бъдат изтрити и ще започнете на чисто.",
-    "description": "Shown if user last ran Signal Desktop before October 2018"
+    "messageformat": "Имате стари данни от предишна инсталация на Cradle Desktop. Ако продължите, тези данни ще бъдат изтрити и ще започнете на чисто.",
+    "description": "Shown if user last ran Cradle Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Изтриване на стари данни",
@@ -1927,7 +1898,7 @@
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Кликнете, за да отидете на signal.org/download",
+    "messageformat": "Кликнете, за да отидете на cradle.org/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2176,22 +2147,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Неуспешно извличане на потребителско име. Проверете връзката си и опитайте отново.",
-    "description": "Shown if request to Signal servers to find username fails"
+    "description": "Shown if request to Cradle servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "Неуспешно извличане на телефонен номер. Проверете връзката си и опитайте отново.",
-    "description": "Shown if request to Signal servers to find phone number fails"
+    "description": "Shown if request to Cradle servers to find phone number fails"
   },
   "icu:ToastManager__CannotEditMessage": {
     "messageformat": "Редакциите могат да се прилагат само в рамките на 3 часа от момента на изпращане на това съобщение.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "Потребителят не е намерен. {atUsername} не е потребител на Signal; уверете се, че сте въвели пълното потребителско име.",
+    "messageformat": "Потребителят не е намерен. {atUsername} не е потребител на Signal/Cradle; уверете се, че сте въвели пълното потребителско име.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "Потребителят не е намерен. „{phoneNumber}“ не е потребител на Signal.",
+    "messageformat": "Потребителят не е намерен. „{phoneNumber}“ не е потребител на Signal/Cradle.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2219,7 +2190,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Групите в Signal могат да имат максимум {max,number} членове.",
+    "messageformat": "Групите в Cradle могат да имат максимум {max,number} членове.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2227,7 +2198,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Групите в Signal работят най-добре с максимум {max,number} членове или по-малко. Добавянето на повече членове ще доведе до забавяне на изпращането и получаването на съобщения.",
+    "messageformat": "Групите в Cradle работят най-добре с максимум {max,number} членове или по-малко. Добавянето на повече членове ще доведе до забавяне на изпращането и получаването на съобщения.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2279,7 +2250,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Кликнете, за да свържете отново Signal Desktop с мобилното си устройство и да продължите да изпращате съобщения."
+    "messageformat": "Кликнете, за да свържете отново Cradle Desktop с мобилното си устройство и да продължите да изпращате съобщения."
   },
   "icu:unlinked": {
     "messageformat": "Разкачи"
@@ -2297,17 +2268,17 @@
     "messageformat": "свържете се с поддръжката"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Кликнете, за да рестартирате Signal"
+    "messageformat": "Кликнете, за да рестартирате Cradle"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Кликнете, за да изтеглите актуализация"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Signal не можа да се актуализира. Кликнете, за да опитате отново.",
+    "messageformat": "Cradle не можа да се актуализира. Кликнете, за да опитате отново.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Рестарт на Signal"
+    "messageformat": "Рестарт на Cradle"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "По-късно"
@@ -2565,15 +2536,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Представяне на стикери: Котаракът Бандит",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Представяне на стикери",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "Защо да използвате думи след като можете да използвате стикери?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Избери стикери",
@@ -2716,20 +2687,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} Ви изпрати съобщение, което не може да бъде обработено или показано, тъй като използва нова функция на Signal."
+    "messageformat": "{contact} Ви изпрати съобщение, което не може да бъде обработено или показано, тъй като използва нова функция на Signal/Cradle."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Можете да помолите {contact} да изпрати съобщението отново, след като вече използвате актуална версия на Signal."
+    "messageformat": "Можете да помолите {contact} да изпрати съобщението отново, след като вече използвате актуална версия на Cradle."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Едно от устройствата ви изпрати съобщение, което не може да бъде обработено или показано тук, тъй като използва нова функция на Signal."
+    "messageformat": "Едно от устройствата ви изпрати съобщение, което не може да бъде обработено или показано тук, тъй като използва нова функция на Signal/Cradle."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "Бъдещи съобщения като това ще бъдат синхронизирани след като вече използвате актуална версия на Signal."
+    "messageformat": "Бъдещи съобщения като това ще бъдат синхронизирани след като вече използвате актуална версия на Cradle."
   },
   "icu:Message--update-signal": {
-    "messageformat": "Обновяване на Signal",
-    "description": "Text for a button which will take user to Signal download page"
+    "messageformat": "Обновяване на Cradle",
+    "description": "Text for a button which will take user to Cradle download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Видяно",
@@ -3068,11 +3039,11 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Само за Signal beta",
+    "messageformat": "Само за Cradle beta",
     "description": "Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "Редактирането на съобщения е достъпно само за бета потребители на Signal. Ако редактирате съобщение, то ще се вижда само от хора, които използват най-новата версия на Signal beta.",
+    "messageformat": "Редактирането на съобщения е достъпно само за бета потребители на Cradle. Ако редактирате съобщение, то ще се вижда само от хора, които използват най-новата версия на Cradle beta.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3080,20 +3051,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "Възможно е някои хора да използват версия на Signal, която не поддържа форматиран текст. Те няма да виждат промените във форматирането на вашето съобщение.",
+    "messageformat": "Възможно е някои хора да използват версия на Cradle, която не поддържа форматиран текст. Те няма да виждат промените във форматирането на вашето съобщение.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "Искате ли да отворите Signal Sticker Pack Creator?",
-    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
+    "messageformat": "Искате ли да отворите Cradle Sticker Pack Creator?",
+    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Потвърждение",
-    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Отказ",
-    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "Настройте Signal на телефона и на компютъра, за да използвате Sticker Pack Creator",
@@ -3312,12 +3283,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Signal още работи",
-    "description": "Shown in a notification title when Signal is minimized to tray"
+    "messageformat": "Cradle още работи",
+    "description": "Shown in a notification title when Cradle is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Signal ще продължи да работи в областта за известия. Можете да промените това от настройките на Signal.",
-    "description": "Shown in a notification body when Signal is minimized to tray"
+    "messageformat": "Cradle ще продължи да работи в областта за известия. Можете да промените това от настройките на Cradle.",
+    "description": "Shown in a notification body when Cradle is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Входящо гласово повикване…",
@@ -3372,7 +3343,7 @@
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
   "icu:callDuration": {
-    "messageformat": "Signal {duration}",
+    "messageformat": "Cradle {duration}",
     "description": "Shown in the call screen to indicate how long the call has been connected"
   },
   "icu:callingDeviceSelection__settings": {
@@ -3560,7 +3531,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "Този линк не се поддържа от тази версия на Signal Desktop.",
+    "messageformat": "Този линк не се поддържа от тази версия на Cradle Desktop.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4316,11 +4287,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Този човек не използва Signal",
+    "messageformat": "Този човек не използва Signal/Cradle",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal Desktop не поддържа изпращане на съобщения до контакти извън Signal. Помолете този човек да инсталира Signal за по-сигурно изпращане на съобщения.",
+    "messageformat": "Signal/Cradle Desktop не поддържа изпращане на съобщения до контакти извън Signal/Cradle. Помолете този човек да инсталира Signal/Cradle за по-сигурно изпращане на съобщения.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4857,10 +4828,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "Относно заявките за съобщения",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Прегледайте внимателно заявките. Signal откри друг контакт със същото име. <reviewRequestLink>Преглед на заявката</reviewRequestLink>",
+    "messageformat": "Прегледайте внимателно заявките. Cradle откри друг контакт със същото име. <reviewRequestLink>Преглед на заявката</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -5440,7 +5411,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Изберете кой може да вижда телефонния ви номер и кой може да се свързва с вас в Signal чрез него.",
+    "messageformat": "Изберете кой може да вижда телефонния ви номер и кой може да се свързва с вас в Cradle чрез него.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5448,11 +5419,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Вашият телефонен номер ще се вижда от хората и групите, на които пращате съобщения. Хората, които имат вашия номер в контактите на телефона си, ще го виждат и в Signal.",
+    "messageformat": "Вашият телефонен номер ще се вижда от хората и групите, на които пращате съобщения. Хората, които имат вашия номер в контактите на телефона си, ще го виждат и в Cradle.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Никой няма да вижда телефонния ви номер в Signal.",
+    "messageformat": "Никой няма да вижда телефонния ви номер в Signal/Cradle.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5472,11 +5443,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Всеки, който има номера ви в контактите си, ще ви вижда като контакт в Signal. Останалите ще могат да ви намират чрез телефонния ви номер, когато започват нов чат или група.",
+    "messageformat": "Всеки, който има номера ви в контактите си, ще ви вижда като контакт в Signal/Cradle. Останалите ще могат да ви намират чрез телефонния ви номер, когато започват нов чат или група.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Никой в Signal няма да може да ви намери по номера ви.",
+    "messageformat": "Никой в Signal/Cradle няма да може да ви намери по номера ви.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5556,7 +5527,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "За да продължите да използвате Signal, трябва да актуализирате до най-новата версия.",
+    "messageformat": "За да продължите да използвате Cradle, трябва да актуализирате до най-новата версия.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5564,15 +5535,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "Рестартирайте Signal, за да инсталирате актуализацията.",
+    "messageformat": "Рестартирайте Cradle, за да инсталирате актуализацията.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Signal Desktop не успя да се актуализира, но има налична нова версия. Отидете на {downloadUrl} и инсталирайте новата версия на ръка, след което или се свържете с отдела за поддръжка, или докладвайте този проблем.",
+    "messageformat": "Cradle Desktop не успя да се актуализира, но има налична нова версия. Отидете на {downloadUrl} и инсталирайте новата версия на ръка, след което или се свържете с отдела за поддръжка, или докладвайте този проблем.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Signal не може да се затвори.",
+    "messageformat": "Cradle не може да се затвори.",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5592,15 +5563,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Вече е инсталирана по-нова версия на Signal. Наистина ли искате да продължите?",
-    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
+    "messageformat": "Вече е инсталирана по-нова версия на Cradle. Наистина ли искате да продължите?",
+    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Приложението се срина",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Signal се рестартира след срив. Можете да изпратите доклад за срива, за да помогнете на Signal да разследва проблема.",
+    "messageformat": "Cradle се рестартира след срив. Можете да изпратите доклад за срива, за да помогнете на Cradle да разследва проблема.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5796,8 +5767,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Signal Връзки",
-    "description": "The phrase/term: 'Signal Connections'"
+    "messageformat": "Cradle Връзки",
+    "description": "The phrase/term: 'Cradle Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} са хора, които сте отбелязали като доверени чрез:",
@@ -5976,7 +5947,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Всички връзки в Signal",
+    "messageformat": "Всички връзки в Cradle",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6096,7 +6067,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Изберете кои връзки в Signal могат да виждат историята ви. Винаги можете да промените това в настройките за поверителност. <learnMoreLink>Научете повече.</learnMoreLink>",
+    "messageformat": "Изберете кои връзки в Cradle могат да виждат историята ви. Винаги можете да промените това в настройките за поверителност. <learnMoreLink>Научете повече.</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6112,11 +6083,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {All Signal Connections · 1 Viewer} other {All Signal Connections · {viewersCount,number} Viewers}}",
+    "messageformat": "{viewersCount, plural, one {All Cradle Connections · 1 Viewer} other {All Cradle Connections · {viewersCount,number} Viewers}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {All Signal Connections · 1 Excluded} other {All Signal Connections · {excludedCount,number} Excluded}}",
+    "messageformat": "{excludedCount, plural, one {All Cradle Connections · 1 Excluded} other {All Cradle Connections · {excludedCount,number} Excluded}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6432,7 +6403,7 @@
     "description": "Body of the popup with information about discriminator in username"
   },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Задайте потребителското си име за Signal",
+    "messageformat": "Задайте потребителското си име за Cradle",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6456,15 +6427,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Сайтът на Signal скоро няма да поддържа версията на {OS} на компютъра ви. За да продължите да използвате Signal, актуализирайте операционната система на компютъра ви до {expirationDate}. <learnMoreLink>Научете повече</learnMoreLink>",
+    "messageformat": "Сайтът на Cradle скоро няма да поддържа версията на {OS} на компютъра ви. За да продължите да използвате Cradle, актуализирайте операционната система на компютъра ви до {expirationDate}. <learnMoreLink>Научете повече</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Сайтът на Signal вече не работи на този компютър. За да използвате сайта на Signal отново, актуализирайте версията на {OS} на вашия компютър. <learnMoreLink>Научете повече</learnMoreLink>",
+    "messageformat": "Сайтът на Cradle вече не работи на този компютър. За да използвате сайта на Cradle отново, актуализирайте версията на {OS} на вашия компютър. <learnMoreLink>Научете повече</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Сайтът на Signal вече не работи на този компютър. За да използвате сайта на Signal отново, актуализирайте версията на {OS} на вашия компютър.",
+    "messageformat": "Сайтът на Cradle вече не работи на този компютър. За да използвате сайта на Cradle отново, актуализирайте версията на {OS} на вашия компютър.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6488,11 +6459,11 @@
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Тази версия съдържа редица дребни модификации и корекции на бъгове, за да поддържа гладката работа на Signal.",
+    "messageformat": "Тази версия съдържа редица дребни модификации и корекции на бъгове, за да поддържа гладката работа на Cradle.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Допълнителни дребни корекции, поправки на бъгове и подобрения на работата. Благодарим ви, че използвате Signal!",
+    "messageformat": "Допълнителни дребни корекции, поправки на бъгове и подобрения на работата. Благодарим ви, че използвате Cradle!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6512,13 +6483,27 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Дребни корекции, поправки на бъгове и подобрения на работата. Благодарим ви, че използвате Signal!",
+    "messageformat": "Дребни корекции, поправки на бъгове и подобрения на работата. Благодарим ви, че използвате Cradle!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.24--0": {
-    "messageformat": "Сега вече можете да търсите и вашите споменавания с @."
+  "icu:WhatsNew__v6.21--0": {
+    "messageformat": "Виждайте се по-добре, когато звъни повикване 1 на 1. Индивидуалните видео разговори вече използват същия изглед на цял екран, който преди се показваше само в началото на нов групов разговор. Когато става дума за развитие, ние искаме то винаги да бъде в положителната насока, затова тези две неща вече са уеднаквени.",
+    "description": "Release notes for v6.21"
   },
-  "icu:WhatsNew__v6.25--0": {
-    "messageformat": "Сега можете да кликнете и плъзнете заглавките на разговорите, за да разместите прозореца на Signal."
+  "icu:WhatsNew__v6.21--1": {
+    "messageformat": "Също така бихме искали да изразим благодарност към {complexspaces} за помощта и обратната връзка, докато работихме по тази версия.",
+    "description": "Release notes for v6.21"
+  },
+  "icu:WhatsNew__v6.22--0": {
+    "messageformat": "Форматирайте текста във вашите съобщения, като го изберете в полето за съставяне на съобщение.\n\nОсвободете шрифта от диетата, като го направите удебелен; изпратете неочакван сюжетен обрат с ефект за спойлер, поставете ударение върху нечие име, като напишете например „Алекс“ в курсив, зачертайте отхвърлена идея за вечеря чрез зачеркване, или споделяйте код с шрифт с фиксирана широчина.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.22--1": {
+    "messageformat": "Добавихме поддръжка за най-новите символи с емоджита, така че сега можете да изразите вълнението си с „Shaking Face“ (<emojify>🫨</emojify>) или да реагирате с „грахова шушулка“ (<emojify>🫛</emojify>), когато някой ви попита колко сте близки с приятелите си.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.23--1": {
+    "messageformat": "В допълнение към няколко корекции на бъгове, тази версия също така включва актуализации на документацията за разработчици (благодарим, {d108}!) и някои подобрения в дизайна на интерфейса за препращане на съобщения (благодарим, {hackerbirds}!).",
+    "description": "Release notes for v6.23"
   }
 }

@@ -8,7 +8,6 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
-
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -90,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "條款同私隱政策",
-    "description": "Shown in the about box for the link to https://signal.org/legal"
+    "description": "Shown in the about box for the link to https://cradle.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -161,7 +160,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "關閉 Signal",
+    "messageformat": "關閉 Cradle",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -273,7 +272,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "更新 Signal",
+    "messageformat": "更新 Cradle",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -393,7 +392,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "你啱啱完成咗滙出程序，你嘅聯絡人資料同訊息喺電腦入面，等緊你揀儲存 Signal 資料嘅文件夾。",
+    "messageformat": "你啱啱完成咗滙出程序，你嘅聯絡人資料同訊息喺電腦入面，等緊你揀儲存 Cradle 資料嘅文件夾。",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -409,7 +408,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "請確定你已經揀啱咗之前儲存 Signal 資料嘅目錄。個目錄名係用「Singal Export」開頭嘅。您亦可以喺 Chrome 應用程式另外儲存一份新嘅資料副本。",
+    "messageformat": "請確定你已經揀啱咗之前儲存 Cradle 資料嘅目錄。個目錄名係用「Singal Export」開頭嘅。您亦可以喺 Chrome 應用程式另外儲存一份新嘅資料副本。",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -425,7 +424,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "開始用 Signal 嘅桌面版",
+    "messageformat": "開始用 Cradle 嘅桌面版",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -509,11 +508,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "你嘗試驗證嘅安全碼已經改咗。請檢查你同 {name1} 嘅新安全碼。要記住，安全碼唔同咗可能代表有人嘗試截取你哋嘅通訊，又或者只係 {name2} 重新安裝咗 Signal。",
+    "messageformat": "你嘗試驗證嘅安全碼已經改咗。請檢查你同 {name1} 嘅新安全碼。要記住，安全碼唔同咗可能代表有人嘗試截取你哋嘅通訊，又或者只係 {name2} 重新安裝咗 Signal/Cradle。",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "以下嘅聯絡人可能重新安裝咗 Signal 或者更換咗裝置。你可以㩒一吓接收者嚟確認佢嘅新安全碼。呢個操作係選擇性嘅。",
+    "messageformat": "以下嘅聯絡人可能重新安裝咗 Signal/Cradle 或者更換咗裝置。你可以㩒一吓接收者嚟確認佢嘅新安全碼。呢個操作係選擇性嘅。",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -525,7 +524,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, other {你有 {count,number} 個人脈可能重新安裝咗 Signal 或者更換咗裝置。同佢哋通訊之前，你可以選擇先檢查佢哋嘅安全碼。}}",
+    "messageformat": "{count, plural, other {你有 {count,number} 個人脈可能重新安裝咗 Signal/Cradle 或者更換咗裝置。同佢哋通訊之前，你可以選擇先檢查佢哋嘅安全碼。}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -557,7 +556,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "你同 {name1} 嘅安全碼已經改咗，原因可能係有人嘗試截取你哋嘅通訊，又或者只係 {name2} 重新安裝咗 Signal。你可以去驗證吓你同呢位聯絡人嘅安全碼。",
+    "messageformat": "你同 {name1} 嘅安全碼已經改咗，原因可能係有人嘗試截取你哋嘅通訊，又或者只係 {name2} 重新安裝咗 Signal/Cradle。你可以去驗證吓你同呢位聯絡人嘅安全碼。",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -593,7 +592,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "上載嘅時候出現咗問題！請你電郵去 support@signal.org，同埋用文字檔案交埋你嘅記錄檔俾我哋。",
+    "messageformat": "上載嘅時候出現咗問題！請你電郵去 support@cradle.org，同埋用文字檔案交埋你嘅記錄檔俾我哋。",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -659,7 +658,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "你同呢個聯絡人嘅安全碼已經改咗，原因可能係有人嘗試截取你哋嘅通訊，又或者只係呢個聯絡人重新安裝咗 Signal。你可以驗證吓下面嘅新安全碼。"
+    "messageformat": "你同呢個聯絡人嘅安全碼已經改咗，原因可能係有人嘗試截取你哋嘅通訊，又或者只係呢個聯絡人重新安裝咗 Signal/Cradle。你可以驗證吓下面嘅新安全碼。"
   },
   "icu:incomingError": {
     "messageformat": "處理傳入訊息嘅時候發生錯誤"
@@ -722,15 +721,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "載入緊預覽畫面...",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "{domain} 嘅草稿縮圖連結預覽",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "{domain} 嘅縮圖連結預覽",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "草稿圖像附件：{path}",
@@ -825,18 +824,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "加入 Beta 測試版",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Signal 桌面版嘅偏好設定",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "messageformat": "Cradle 桌面版嘅偏好設定",
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "貼圖包製作工具",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "關於 Signal 桌面版",
+    "messageformat": "關於 Cradle 桌面版",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -860,7 +859,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Signal 桌面版",
+    "messageformat": "Cradle 桌面版",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -912,7 +911,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "歡迎使用 Signal"
+    "messageformat": "歡迎使用 Cradle"
   },
   "icu:whatsNew": {
     "messageformat": "睇吓今次更新有咩{whatsNew}",
@@ -1043,15 +1042,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "你要允許 Signal 桌面版存取你個咪，先可以傳送語音訊息㗎。",
+    "messageformat": "你要允許 Cradle 桌面版存取你個咪，先可以傳送語音訊息㗎。",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "你一定要允許咗 Signal 桌面版存取你個咪，先用到通話功能㗎。",
+    "messageformat": "你一定要允許咗 Cradle 桌面版存取你個咪，先用到通話功能㗎。",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "你一定要允許咗 Signal 桌面版存取你個咪，先用到視像通話㗎。",
+    "messageformat": "你一定要允許咗 Cradle 桌面版存取你個咪，先用到視像通話㗎。",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1091,15 +1090,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "更新唔到 Signal。你可以{retry}，或者前往 {url} 手動安裝，然後{support}呢個問題",
+    "messageformat": "更新唔到 Cradle。你可以{retry}，或者前往 {url} 手動安裝，然後{support}呢個問題",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "更新唔到 Signal。你可以前往 {url} 手動安裝，然後{support}呢個問題",
+    "messageformat": "更新唔到 Cradle。你可以前往 {url} 手動安裝，然後{support}呢個問題",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Signal 桌面版似乎喺 macOS 隔離區，而且冇辦法自動更新。請你嘗試用 Finder 將 {app} 移去 {folder}。",
+    "messageformat": "Cradle 桌面版似乎喺 macOS 隔離區，而且冇辦法自動更新。請你嘗試用 Finder 將 {app} 移去 {folder}。",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1155,7 +1154,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "呢個訊息會喺聊天入面所有用緊 Signal 最新版本嘅人部機度刪除。佢哋會見到你刪除咗一個訊息。",
+    "messageformat": "呢個訊息會喺聊天入面所有用緊 Signal/Cradle 最新版本嘅人部機度刪除。佢哋會見到你刪除咗一個訊息。",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1283,35 +1282,7 @@
   },
   "icu:deleteConversationConfirmation": {
     "messageformat": "係咪要永久刪除呢個聊天呀？",
-    "description": "(deleted 06/27/2023) Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "係咪要刪除聊天呀？",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "呢個聊天會喺呢部機度刪除。",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
-    "messageformat": "離開群組",
-    "description": "This is a button to leave a group"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__title": {
-    "messageformat": "你真係要離開？",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__description": {
-    "messageformat": "走咗就冇得再喺呢個群組度收發訊息㗎喇。",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__confirmButton": {
-    "messageformat": "離開",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Confirm Button"
-  },
-  "icu:ConversationHeader__CannotLeaveGroupBecauseYouAreLastAdminAlert__description": {
-    "messageformat": "你一定要幫呢個群組至少揀咗一個管理員嚟接手，先至可以離開。",
-    "description": "Conversation Header > Leave Group Action > Cannot Leave Group Because You Are Last Admin Alert > Description"
+    "description": "Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
   },
   "icu:sessionEnded": {
     "messageformat": "安全對話已經重設",
@@ -1326,7 +1297,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Signal 採用端對端加密，間中可能要重新整理吓你嘅聊天對話。呢個過程唔會影響聊天嘅安全性，但可能會令你錯失咗呢位聯絡人俾你嘅訊息。你可以請佢再傳送多次。",
+    "messageformat": "Cradle 採用端對端加密，間中可能要重新整理吓你嘅聊天對話。呢個過程唔會影響聊天嘅安全性，但可能會令你錯失咗呢位聯絡人俾你嘅訊息。你可以請佢再傳送多次。",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1418,20 +1389,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "歡迎使用 Signal 桌面版",
+    "messageformat": "歡迎使用 Cradle 桌面版",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "Signal 令私隱保障觸手可及。",
+    "messageformat": "Cradle 令私隱保障觸手可及。",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "連結咗嘅裝置",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "連結新裝置",
-    "description": "The menu option shown in Signal iOS to add a new linked device"
+    "description": "The menu option shown in Cradle iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "了解多啲",
@@ -1505,7 +1476,7 @@
     "messageformat": "唔好意思，你連結咗太多部機。請你試吓移除返一啲裝置。"
   },
   "icu:installTooOld": {
-    "messageformat": "喺呢部機度更新 Signal 嚟連結你部手機。"
+    "messageformat": "喺呢部機度更新 Cradle 嚟連結你部手機。"
   },
   "icu:installErrorHeader": {
     "messageformat": "系統出現咗啲問題！"
@@ -1645,19 +1616,19 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Signal 會打俾 {person}",
+    "messageformat": "Cradle 會打俾 {person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Signal 會打俾 {first} 同 {second}",
+    "messageformat": "Cradle 會打俾 {first} 同 {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Signal 會打俾 {first}、{second} 同 {third}",
+    "messageformat": "Cradle 會打俾 {first}、{second} 同 {third}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Signal 會打俾 {first}、{second} 同埋另外 {others} 個人",
+    "messageformat": "Cradle 會打俾 {first}、{second} 同埋另外 {others} 個人",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1713,7 +1684,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Signal 分享緊 {window}。",
+    "messageformat": "Cradle 分享緊 {window}。",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1737,7 +1708,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Signal 要有存取權先可以錄到電腦螢幕。",
+    "messageformat": "Cradle 要有存取權先可以錄到電腦螢幕。",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1749,7 +1720,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "喺右邊剔 Signal 隔離嗰個格仔。如果你喺清單度搵唔到 Signal 嘅話，可以㩒個加號嚟新增 Signal。",
+    "messageformat": "喺右邊剔 Cradle 隔離嗰個格仔。如果你喺清單度搵唔到 Cradle 嘅話，可以㩒個加號嚟新增 Cradle。",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1793,12 +1764,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "下次啟動 Signal 嗰陣就會啟用拼寫檢查。",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
+    "messageformat": "下次啟動 Cradle 嗰陣就會啟用拼寫檢查。",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "下次啟動 Signal 嗰陣就會停用拼寫檢查。",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
+    "messageformat": "下次啟動 Cradle 嗰陣就會停用拼寫檢查。",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "縮細放入系統匣",
@@ -1841,8 +1812,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "你之前安裝嘅 Signal 桌面版入面有過時嘅資料。如果你選擇繼續，呢啲資料就會被刪除，你就會從頭開始過喇。",
-    "description": "Shown if user last ran Signal Desktop before October 2018"
+    "messageformat": "你之前安裝嘅 Cradle 桌面版入面有過時嘅資料。如果你選擇繼續，呢啲資料就會被刪除，你就會從頭開始過喇。",
+    "description": "Shown if user last ran Cradle Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "刪除舊資料",
@@ -1923,11 +1894,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "呢個 Signal 桌面版本已經過咗期。請你升級到最新版本嚟繼續收發訊息啦。",
+    "messageformat": "呢個 Cradle 桌面版本已經過咗期。請你升級到最新版本嚟繼續收發訊息啦。",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "㩒呢度去 signal.org/download",
+    "messageformat": "㩒呢度去 cradle.org/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2176,22 +2147,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "搵唔到用戶名稱。請檢查吓網絡連線然後再試過啦。",
-    "description": "Shown if request to Signal servers to find username fails"
+    "description": "Shown if request to Cradle servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "搵唔到電話號碼。請檢查吓網絡連線然後再試過啦。",
-    "description": "Shown if request to Signal servers to find phone number fails"
+    "description": "Shown if request to Cradle servers to find phone number fails"
   },
   "icu:ToastManager__CannotEditMessage": {
     "messageformat": "你只可以喺傳送訊息後 3 小時內套用編輯。",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "搵唔到呢個用戶。{atUsername} 唔係 Signal 嘅用戶；請檢查吓你輸入嘅用戶名稱係咪完整。",
+    "messageformat": "搵唔到呢個用戶。{atUsername} 唔係 Signal/Cradle 嘅用戶；請檢查吓你輸入嘅用戶名稱係咪完整。",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "搵唔到呢個用戶。「{phoneNumber}」唔係 Signal 嘅用戶。",
+    "messageformat": "搵唔到呢個用戶。「{phoneNumber}」唔係 Signal/Cradle 嘅用戶。",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2219,7 +2190,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Signal 群組最多可以有 {max,number} 個成員。",
+    "messageformat": "Cradle 群組最多可以有 {max,number} 個成員。",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2227,7 +2198,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Signal 群組喺人數唔超過 {max,number} 個成員嘅時候表現最好。加多啲人就會令收發訊息慢咗。",
+    "messageformat": "Cradle 群組喺人數唔超過 {max,number} 個成員嘅時候表現最好。加多啲人就會令收發訊息慢咗。",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2279,7 +2250,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "㩒一吓再重新將 Signal 桌面版連去你嘅流動裝置，方便你繼續收發訊息。"
+    "messageformat": "㩒一吓再重新將 Cradle 桌面版連去你嘅流動裝置，方便你繼續收發訊息。"
   },
   "icu:unlinked": {
     "messageformat": "解除咗連結"
@@ -2297,17 +2268,17 @@
     "messageformat": "聯絡支援團隊"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "㩒一吓嚟重新啟動 Signal"
+    "messageformat": "㩒一吓嚟重新啟動 Cradle"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "㩒一吓嚟下載更新"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "更新唔到 Signal。㩒一吓再試過啦。",
+    "messageformat": "更新唔到 Cradle。㩒一吓再試過啦。",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "重新啟動 Signal"
+    "messageformat": "重新啟動 Cradle"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "遲啲先啦"
@@ -2565,15 +2536,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "新推出嘅貼圖：Bandit the Cat",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "隆重介紹：貼圖功能",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "既然可以用貼圖，點解仲要打字呢？",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "打開貼圖選擇器",
@@ -2716,20 +2687,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} 傳送咗一個訊息俾你。呢個訊息用咗 Signal 嘅全新功能，所以冇辦法處理或者顯示出嚟。"
+    "messageformat": "{contact} 傳送咗一個訊息俾你。呢個訊息用咗 Signal/Cradle 嘅全新功能，所以冇辦法處理或者顯示出嚟。"
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "你而家用緊最新版本嘅 Signal 喇，你可以叫 {contact} 傳送多次呢個訊息俾你。"
+    "messageformat": "你而家用緊最新版本嘅 Cradle 喇，你可以叫 {contact} 傳送多次呢個訊息俾你。"
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "你有一部裝置用咗 Signal 嘅全新功能傳送訊息，我哋冇辦法處理或者顯示出嚟。"
+    "messageformat": "你有一部裝置用咗 Signal/Cradle 嘅全新功能傳送訊息，我哋冇辦法處理或者顯示出嚟。"
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "你而家用緊最新版本嘅 Signal，以後呢類訊息會自動同步㗎喇。"
+    "messageformat": "你而家用緊最新版本嘅 Cradle，以後呢類訊息會自動同步㗎喇。"
   },
   "icu:Message--update-signal": {
-    "messageformat": "更新 Signal",
-    "description": "Text for a button which will take user to Signal download page"
+    "messageformat": "更新 Cradle",
+    "description": "Text for a button which will take user to Cradle download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "睇咗",
@@ -3068,11 +3039,11 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "只限 Signal 測試版",
+    "messageformat": "只限 Cradle 測試版",
     "description": "Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "編輯訊息功能只限 Signal 測試版嘅用戶使用。只有用 Signal 最新測試版嘅用戶先可以睇到你嘅編輯訊息。",
+    "messageformat": "編輯訊息功能只限 Cradle 測試版嘅用戶使用。只有用 Cradle 最新測試版嘅用戶先可以睇到你嘅編輯訊息。",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3080,20 +3051,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "有啲人用緊嘅 Signal 版本可能唔支援格式化文字。佢地會睇唔到你喺訊息度改咗邊啲格式。",
+    "messageformat": "有啲人用緊嘅 Cradle 版本可能唔支援格式化文字。佢地會睇唔到你喺訊息度改咗邊啲格式。",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "你係咪想打開 Signal 貼圖包製作器？",
-    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
+    "messageformat": "你係咪想打開 Cradle 貼圖包製作器？",
+    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "確認",
-    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "關閉",
-    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "如果要用貼圖包製作器嘅話，請你喺手機同桌面電腦設定 Signal。",
@@ -3312,12 +3283,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Signal 仍然運作緊",
-    "description": "Shown in a notification title when Signal is minimized to tray"
+    "messageformat": "Cradle 仍然運作緊",
+    "description": "Shown in a notification title when Cradle is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Signal 會繼續喺通知區域運作。你可以喺 Signal 設定入面更改呢個設定。",
-    "description": "Shown in a notification body when Signal is minimized to tray"
+    "messageformat": "Cradle 會繼續喺通知區域運作。你可以喺 Cradle 設定入面更改呢個設定。",
+    "description": "Shown in a notification body when Cradle is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "語音通話來電…",
@@ -3372,7 +3343,7 @@
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
   "icu:callDuration": {
-    "messageformat": "Signal {duration}",
+    "messageformat": "Cradle {duration}",
     "description": "Shown in the call screen to indicate how long the call has been connected"
   },
   "icu:callingDeviceSelection__settings": {
@@ -3560,7 +3531,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "呢個 Signal 桌面版嘅版本唔支援呢條連結。",
+    "messageformat": "呢個 Cradle 桌面版嘅版本唔支援呢條連結。",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4316,11 +4287,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "呢個人冇用緊 Signal 喎",
+    "messageformat": "呢個人冇用緊 Signal/Cradle 喎",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal 桌面版係唔可以用嚟同冇用緊 Signal 嘅聯絡人通訊㗎。你可以請佢安裝 Signal，享受吓更加安全嘅通訊體驗。",
+    "messageformat": "Signal/Cradle 桌面版係唔可以用嚟同冇用緊 Signal/Cradle 嘅聯絡人通訊㗎。你可以請佢安裝 Signal/Cradle，享受吓更加安全嘅通訊體驗。",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4857,10 +4828,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "關於訊息請求",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "請仔細審查請求。Signal 搵到另一位同名嘅聯絡人。<reviewRequestLink>審查請求</reviewRequestLink>",
+    "messageformat": "請仔細審查請求。Cradle 搵到另一位同名嘅聯絡人。<reviewRequestLink>審查請求</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -4924,7 +4895,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "為咗防止喺 Signal 收到垃圾訊息，請你完成驗證。",
+    "messageformat": "為咗防止喺 Cradle 收到垃圾訊息，請你完成驗證。",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5440,7 +5411,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "選擇邊個可以睇到你嘅手機號碼，同埋喺 Signal 度用手機號碼聯絡你。",
+    "messageformat": "選擇邊個可以睇到你嘅手機號碼，同埋喺 Cradle 度用手機號碼聯絡你。",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5448,11 +5419,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "同你通訊嘅用戶同埋群組都可以睇到你嘅手機號碼。如果對方喺手機通訊錄入面儲存咗你嘅手機號碼，都會喺 Signal 度睇到。",
+    "messageformat": "同你通訊嘅用戶同埋群組都可以睇到你嘅手機號碼。如果對方喺手機通訊錄入面儲存咗你嘅手機號碼，都會喺 Cradle 度睇到。",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "冇人會喺 Signal 度睇到你嘅手機號碼。",
+    "messageformat": "冇人會喺 Signal/Cradle 度睇到你嘅手機號碼。",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5472,11 +5443,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "只要對方喺手機通訊錄入面有你嘅手機號碼，佢都會喺 Signal 聯絡人度見到你。其他人亦都可以喺開始新聊天或者新群組嘅時候，用你嘅手機號碼搵到你。",
+    "messageformat": "只要對方喺手機通訊錄入面有你嘅手機號碼，佢都會喺 Signal/Cradle 聯絡人度見到你。其他人亦都可以喺開始新聊天或者新群組嘅時候，用你嘅手機號碼搵到你。",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "冇人可以喺 Signal 度用手機號碼搵到你。",
+    "messageformat": "冇人可以喺 Signal/Cradle 度用手機號碼搵到你。",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5556,7 +5527,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "想繼續用 Signal 嘅話，請先更新至最新版本。",
+    "messageformat": "想繼續用 Cradle 嘅話，請先更新至最新版本。",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5564,15 +5535,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "重新啟動 Signal 嚟安裝更新版本。",
+    "messageformat": "重新啟動 Cradle 嚟安裝更新版本。",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Signal 桌面版更新唔到，但係有新版本可以用。你可以去 {downloadUrl} 手動安裝新版本，然後聯絡支援團隊或者就呢個問題回報錯誤。",
+    "messageformat": "Cradle 桌面版更新唔到，但係有新版本可以用。你可以去 {downloadUrl} 手動安裝新版本，然後聯絡支援團隊或者就呢個問題回報錯誤。",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "閂唔到 Signal。",
+    "messageformat": "閂唔到 Cradle。",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5592,15 +5563,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "已經安裝咗較新嘅 Signal 版本。你係咪確定要繼續？",
-    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
+    "messageformat": "已經安裝咗較新嘅 Cradle 版本。你係咪確定要繼續？",
+    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "應用程式故障",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Signal 故障之後重新啟動過。你可以提交故障報告，幫 Signal 調查問題。",
+    "messageformat": "Cradle 故障之後重新啟動過。你可以提交故障報告，幫 Cradle 調查問題。",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5796,8 +5767,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Signal 人脈",
-    "description": "The phrase/term: 'Signal Connections'"
+    "messageformat": "Cradle 人脈",
+    "description": "The phrase/term: 'Cradle Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections}係你透過以下方式揀過而值得信任嘅人：",
@@ -5976,7 +5947,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "所有 Signal 嘅人脈",
+    "messageformat": "所有 Cradle 嘅人脈",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6096,7 +6067,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "選擇邊啲 Signal 人脈可以睇到你嘅限時動態。你可以隨時喺私隱設定度更改呢個設定。<learnMoreLink>了解詳情。</learnMoreLink>",
+    "messageformat": "選擇邊啲 Cradle 人脈可以睇到你嘅限時動態。你可以隨時喺私隱設定度更改呢個設定。<learnMoreLink>了解詳情。</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6112,11 +6083,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, other {所有 Signal 人脈 · {viewersCount,number} 個瀏覽者}}",
+    "messageformat": "{viewersCount, plural, other {所有 Cradle 人脈 · {viewersCount,number} 個瀏覽者}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, other {所有 Signal 人脈 · 排除咗 {excludedCount,number} 人}}",
+    "messageformat": "{excludedCount, plural, other {所有 Cradle 人脈 · 排除咗 {excludedCount,number} 人}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6432,7 +6403,7 @@
     "description": "Body of the popup with information about discriminator in username"
   },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "設定你嘅 Signal 用戶名稱",
+    "messageformat": "設定你嘅 Cradle 用戶名稱",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6456,15 +6427,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Signal 桌面版即將停止支援 {OS} 電腦版本。要繼續用 Signal 嘅話，請你喺 {expirationDate} 之前更新電腦嘅作業系統。<learnMoreLink>了解詳情</learnMoreLink>",
+    "messageformat": "Cradle 桌面版即將停止支援 {OS} 電腦版本。要繼續用 Cradle 嘅話，請你喺 {expirationDate} 之前更新電腦嘅作業系統。<learnMoreLink>了解詳情</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Signal 桌面版唔可以再喺呢部電腦運作。要再次使用 Signal 桌面版嘅話，請更新你嘅 {OS} 電腦版本。<learnMoreLink>了解詳情</learnMoreLink>",
+    "messageformat": "Cradle 桌面版唔可以再喺呢部電腦運作。要再次使用 Cradle 桌面版嘅話，請更新你嘅 {OS} 電腦版本。<learnMoreLink>了解詳情</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Signal 桌面版唔可以再喺呢部電腦運作。要再次使用 Signal 桌面版嘅話，請更新你嘅 {OS} 電腦版本。",
+    "messageformat": "Cradle 桌面版唔可以再喺呢部電腦運作。要再次使用 Cradle 桌面版嘅話，請更新你嘅 {OS} 電腦版本。",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6488,11 +6459,11 @@
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "呢個版本包含咗少少調整同埋錯誤修復，等 Signal 可以順暢運作。",
+    "messageformat": "呢個版本包含咗少少調整同埋錯誤修復，等 Cradle 可以順暢運作。",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "我哋額外做咗啲調整、修復咗一啲錯誤，同埋加強咗程式功能。多謝你使用 Signal！",
+    "messageformat": "我哋額外做咗啲調整、修復咗一啲錯誤，同埋加強咗程式功能。多謝你使用 Cradle！",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6512,13 +6483,27 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "我哋做咗啲調整、修復咗一啲錯誤，同埋加強咗程式功能。多謝你使用 Signal！",
+    "messageformat": "我哋做咗啲調整、修復咗一啲錯誤，同埋加強咗程式功能。多謝你使用 Cradle！",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.24--0": {
-    "messageformat": "宜家連 @提及訊息都可以搜尋到喇。"
+  "icu:WhatsNew__v6.21--0": {
+    "messageformat": "喺一對一通話鈴聲響緊嘅時候，睇真啲自己個靚樣。個人視像通話宜家會同群組通話一樣，喺鈴聲響起嗰刻開始，就會用全螢幕檢視。我哋持續努力追求一致性，宜家就成功消除呢個差異喇。",
+    "description": "Release notes for v6.21"
   },
-  "icu:WhatsNew__v6.25--0": {
-    "messageformat": "宜家你可以點擊拖動對話標題，嚟重新調整 Signal 視窗嘅位置。"
+  "icu:WhatsNew__v6.21--1": {
+    "messageformat": "另外，我哋都想就呢個版本嘅製作多謝 {complexspaces} 幫手同提供意見。",
+    "description": "Release notes for v6.21"
+  },
+  "icu:WhatsNew__v6.22--0": {
+    "messageformat": "喺訊息撰寫欄入面揀選任何文字，就可以設定文字格式，包括粗體、斜體、刪除線或者其他文字效果。",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.22--1": {
+    "messageformat": "我哋加強咗最新表情符號角色功能，宜家你可以用「震震面」(<emojify>🫨</emojify>) 嚟表示興奮，或者當有人問你同朋友有幾 close 嘅時候，用「豌豆莢」(<emojify>🫛</emojify>) 嚟回應。",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.23--1": {
+    "messageformat": "除咗小部分錯誤修復之外，呢個版本仲包括開發人員文件更新 (唔該晒，{d108}！) 同埋一啲轉寄訊息界面嘅改良設計 (唔該晒，{hackerbirds}！)。",
+    "description": "Release notes for v6.23"
   }
 }

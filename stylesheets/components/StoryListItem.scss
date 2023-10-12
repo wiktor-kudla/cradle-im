@@ -23,7 +23,8 @@
     // that has not been closed yet (active)
     &:hover,
     &--active {
-      background: $color-gray-65;
+      // background: $color-gray-65;
+      background: $color-purple-01;
     }
   }
 

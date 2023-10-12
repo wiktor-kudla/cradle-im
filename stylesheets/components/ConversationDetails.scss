@@ -169,7 +169,8 @@
 
       @mixin details-icon(
         $url,
-        $light-color: $color-gray-75,
+        // $light-color: $color-gray-75,
+        $light-color: $color-white,
         $dark-color: $color-gray-15
       ) {
         @include light-theme {
@@ -377,7 +378,8 @@
 
         &:hover:not(:disabled) {
           @include light-theme {
-            background-color: $color-gray-02;
+            // background-color: $color-gray-02;
+            background-color: $color-purple-01;
           }
 
           @include dark-theme {
@@ -458,7 +460,8 @@
         border-top: 1px solid transparent;
 
         @include light-theme {
-          border-top-color: $color-gray-15;
+          // border-top-color: $color-gray-15;
+          border-top-color: $color-purple-01;
         }
 
         @include dark-theme {

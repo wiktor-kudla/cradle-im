@@ -24,7 +24,7 @@
 }
 
 .module-splash-screen__logo {
-  @include color-svg('../images/signal-logo.svg', $color-white);
+  @include color-svg('../images/cradle-logo.svg', $color-white);
   margin-block: 24px;
   margin-inline: 0;
 
@@ -2518,13 +2518,15 @@ button.ConversationDetails__action-button {
     }
 
     &::before {
-      $icon: '../images/icons/v3/compose/compose.svg';
+      // $icon: '../images/icons/v3/compose/compose.svg';
+      $icon: '../images/icons/v3/compose/compose-2.svg';
       width: 20px;
       height: 20px;
       content: '';
 
       @include light-theme {
-        @include color-svg($icon, $color-gray-75);
+        // @include color-svg($icon, $color-gray-75);
+        @include color-svg($icon, $color-white);
       }
       @include dark-theme {
         @include color-svg($icon, $color-gray-15);
@@ -2580,13 +2582,15 @@ button.ConversationDetails__action-button {
     }
 
     &::before {
-      $icon: '../images/icons/v3/stories/stories.svg';
+      // $icon: '../images/icons/v3/stories/stories.svg';
+      $icon: '../images/icons/v3/stories/stories-2.svg';
       width: 20px;
       height: 20px;
       content: '';
 
       @include light-theme {
-        @include color-svg($icon, $color-gray-75);
+        // @include color-svg($icon, $color-gray-75);
+        @include color-svg($icon, $color-white);
       }
       @include dark-theme {
         @include color-svg($icon, $color-gray-15);
@@ -3089,6 +3093,7 @@ button.module-image__border-overlay:focus {
   white-space: nowrap;
   overflow-y: hidden;
   margin-bottom: 6px;
+  color: $color-text-01;
 }
 
 .module-staged-attachment {
@@ -4388,7 +4393,9 @@ button.module-image__border-overlay:focus {
 
         &:hover,
         &:focus {
-          background-color: $color-gray-05;
+          // background-color: $color-gray-05;
+          background-color: $color-purple-01;
+          color: $color-white;
         }
       }
       @include dark-theme {
@@ -4437,7 +4444,8 @@ button.module-image__border-overlay:focus {
 
         @include light-theme {
           color: $color-gray-60;
-          background-color: $color-gray-05;
+          // background-color: $color-gray-05;
+          background-color: $color-purple-01;
         }
         @include dark-theme {
           color: $color-gray-25;
@@ -4529,7 +4537,8 @@ button.module-image__border-overlay:focus {
         &:hover:not(:disabled),
         &:focus:not(:disabled) {
           @include light-theme {
-            background-color: $color-gray-05;
+            // background-color: $color-gray-05;
+            background-color: $color-purple-01;
             #{$unread-indicator} {
               border-color: $color-gray-05;
             }
@@ -4564,7 +4573,8 @@ button.module-image__border-overlay:focus {
 
       &--is-selected {
         @include light-theme {
-          background-color: $color-gray-15;
+          // background-color: $color-gray-15;
+          background-color: $color-purple-01;
         }
         @include dark-theme {
           background-color: $color-gray-65;
@@ -4667,7 +4677,8 @@ button.module-image__border-overlay:focus {
             text-overflow: ellipsis;
 
             @include light-theme {
-              color: $color-gray-90;
+              // color: $color-gray-90;
+              color: $color-white;
             }
             @include dark-theme {
               color: $color-gray-05;
@@ -5036,17 +5047,20 @@ button.module-image__border-overlay:focus {
 
 .module-left-pane {
   border-inline-end-style: solid;
-  border-inline-end-width: 1px;
+  // border-inline-end-width: 1px;
+  border-inline-end-width: 0px;
   display: inline-flex;
   flex-direction: column;
   height: 100%;
   position: relative;
 
   @include light-theme {
-    $background-color: $color-gray-02;
+    // $background-color: $color-gray-02;
+    background-color: $color-purple-02;
+    color: $color-text-01;
 
-    border-color: $color-gray-15;
-    background-color: $background-color;
+    // border-color: $color-gray-15;
+    // background-color: $background-color;
 
     ::-webkit-scrollbar-thumb {
       border: 2px solid $color-gray-02;
@@ -5086,7 +5100,7 @@ button.module-image__border-overlay:focus {
 
   &--composer_icon {
     align-items: center;
-    background-color: $color-gray-05;
+    background-color: $color-gray-60;
     border-radius: 100%;
     display: inline-flex;
     height: 28px;
@@ -5097,7 +5111,8 @@ button.module-image__border-overlay:focus {
     width: 28px;
 
     &--icon {
-      $icon: '../images/icons/v3/compose/compose.svg';
+      // $icon: '../images/icons/v3/compose/compose.svg';
+      $icon: '../images/icons/v3/compose/compose-2.svg';
       @include color-svg($icon, $color-gray-90);
       display: inline-block;
       height: 16px;
@@ -5206,7 +5221,7 @@ button.module-image__border-overlay:focus {
       text-align: center;
 
       @include light-theme {
-        color: $color-gray-90;
+        color: $color-text-01;
       }
       @include dark-theme {
         color: $color-gray-05;
@@ -5868,7 +5883,8 @@ button.module-image__border-overlay:focus {
     @include light-theme {
       @include color-svg(
         '../images/icons/v3/sticker/sticker.svg',
-        $color-gray-75
+        // $color-gray-75
+        $color-white
       );
     }
     @include dark-theme {
@@ -5881,7 +5897,8 @@ button.module-image__border-overlay:focus {
 
   &--active {
     @include light-theme() {
-      background: $color-gray-05;
+      // background: $color-gray-05;
+      background: $color-purple-01;
     }
 
     @include dark-theme() {
@@ -6383,7 +6400,8 @@ button.module-image__border-overlay:focus {
     flex-shrink: 0;
 
     @include light-theme {
-      @include color-svg('../images/icons/v3/emoji/emoji.svg', $color-gray-75);
+      // @include color-svg('../images/icons/v3/emoji/emoji.svg', $color-gray-75);
+      @include color-svg('../images/icons/v3/emoji/emoji.svg', $color-white);
     }
     @include dark-theme {
       @include color-svg('../images/icons/v3/emoji/emoji.svg', $color-gray-15);
@@ -6415,7 +6433,8 @@ button.module-image__border-overlay:focus {
 
   &--active {
     @include light-theme() {
-      background: $color-gray-05;
+      // background: $color-gray-05;
+      background: $color-purple-01;
     }
 
     @include dark-theme() {
@@ -6513,8 +6532,9 @@ button.module-image__border-overlay:focus {
   @include popper-shadow;
 
   @include light-theme {
-    color: $color-gray-90;
-    background-color: $color-white;
+    color: $color-white;
+    background-color: $color-purple-03;
+    border: 1px solid $color-purple-03;
   }
   @include dark-theme {
     color: $color-gray-05;
@@ -6524,6 +6544,12 @@ button.module-image__border-overlay:focus {
 
 .module-avatar-popup__profile {
   @include button-reset();
+  @include light-theme {
+    background-color: $color-purple-02;
+  }
+  @include dark-theme {
+    background-color: $color-gray-95;
+  }
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -6531,7 +6557,7 @@ button.module-image__border-overlay:focus {
 
   @include light-theme {
     &:hover {
-      background-color: $color-gray-05;
+      background-color: $color-purple-01;
     }
   }
   @include dark-theme {
@@ -6613,12 +6639,14 @@ button.module-image__border-overlay:focus {
   align-items: center;
 
   width: 100%;
-  height: 32px;
+  // height: 32px;
+  height: 50px;
   padding: 6px;
 
   @include light-theme {
     &:hover {
-      background-color: $color-gray-05;
+      // background-color: $color-gray-05;
+      background-color: $color-purple-01;
     }
   }
   @include keyboard-mode {
@@ -6626,7 +6654,8 @@ button.module-image__border-overlay:focus {
       background-color: inherit;
     }
     &:focus {
-      background-color: $color-gray-05;
+      // background-color: $color-gray-05;
+      background-color: $color-purple-01;
     }
   }
   @include dark-theme {
@@ -6669,7 +6698,7 @@ button.module-image__border-overlay:focus {
   @include light-theme {
     @include color-svg(
       '../images/icons/v3/settings/settings-compact.svg',
-      $color-gray-75
+      $color-white
     );
   }
   @include dark-theme {
@@ -6683,7 +6712,7 @@ button.module-image__border-overlay:focus {
   @include light-theme {
     @include color-svg(
       '../images/icons/v3/archive/archive-compact.svg',
-      $color-gray-75
+      $color-white
     );
   }
   @include dark-theme {
@@ -7225,7 +7254,8 @@ button.module-image__border-overlay:focus {
   visibility: hidden;
 
   @include light-theme {
-    background-color: $color-white;
+    // background-color: $color-white;
+    background-color: $color-purple-02;
   }
   @include dark-theme {
     background-color: $color-gray-75;
@@ -7254,7 +7284,7 @@ button.module-image__border-overlay:focus {
   padding-inline: 12px;
 
   @include light-theme {
-    color: $color-gray-90;
+    // color: $color-gray-90;
   }
   @include dark-theme {
     color: $color-gray-02;
@@ -7267,7 +7297,8 @@ button.module-image__border-overlay:focus {
     padding: 0;
 
     @include light-theme {
-      background-color: $color-gray-15;
+      // background-color: $color-gray-15;
+      background-color: $color-purple-03;
     }
     @include dark-theme {
       background-color: $color-gray-60;

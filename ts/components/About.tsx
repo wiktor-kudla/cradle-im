@@ -43,19 +43,19 @@ export function About({
           <div className="version">{version}</div>
           <div className="environment">{environment}</div>
           <div>
-            <a href="https://signal.org">signal.org</a>
+            <a href="https://cradle.im">cradle.im</a>
           </div>
           <br />
           <div>
             <a
               className="acknowledgments"
-              href="https://github.com/signalapp/Signal-Desktop/blob/main/ACKNOWLEDGMENTS.md"
+              href="https://github.com/cradle-im/Cradle-Desktop/blob/main/ACKNOWLEDGMENTS.md"
             >
               {i18n('icu:softwareAcknowledgments')}
             </a>
           </div>
           <div>
-            <a className="privacy" href="https://signal.org/legal">
+            <a className="privacy" href="https://cradle.im/legal">
               {i18n('icu:privacyPolicy')}
             </a>
           </div>

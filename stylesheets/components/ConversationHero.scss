@@ -19,7 +19,7 @@
     margin-bottom: 2px;
 
     @include light-theme {
-      color: $color-gray-90;
+      // color: $color-gray-90;
     }
 
     @include dark-theme {

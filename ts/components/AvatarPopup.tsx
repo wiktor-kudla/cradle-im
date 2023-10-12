@@ -70,7 +70,6 @@ export function AvatarPopup(props: Props): JSX.Element {
           ) : null}
         </div>
       </button>
-      <hr className="module-avatar-popup__divider" />
       <button
         type="button"
         className="module-avatar-popup__item"

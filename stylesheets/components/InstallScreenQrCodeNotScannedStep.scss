@@ -3,6 +3,8 @@
 
 .module-InstallScreenQrCodeNotScannedStep {
   @include install-screen;
+  background-color: $color-purple-02;
+  color: $color-white;
 
   &__contents {
     $base-max-width: 760px;

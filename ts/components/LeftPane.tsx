@@ -44,7 +44,6 @@ import type { PropsType as UnsupportedOSDialogPropsType } from '../state/smart/U
 
 import { ConversationList } from './ConversationList';
 import { ContactCheckboxDisabledReason } from './conversationList/ContactCheckbox';
-import type { PropsType as DialogExpiredBuildPropsType } from './DialogExpiredBuild';
 
 import type {
   DeleteAvatarFromDiskActionType,
@@ -152,7 +151,6 @@ export type PropsType = {
   ) => JSX.Element;
   renderCaptchaDialog: (props: { onSkip(): void }) => JSX.Element;
   renderCrashReportDialog: () => JSX.Element;
-  renderExpiredBuildDialog: (_: DialogExpiredBuildPropsType) => JSX.Element;
 } & LookupConversationWithoutUuidActionsType;
 
 export function LeftPane({
@@ -169,7 +167,6 @@ export function LeftPane({
   crashReportCount,
   createGroup,
   getPreferredBadge,
-  hasExpiredDialog,
   hasNetworkDialog,
   hasRelinkDialog,
   hasUpdateDialog,
@@ -185,7 +182,6 @@ export function LeftPane({
   removeConversation,
   renderCaptchaDialog,
   renderCrashReportDialog,
-  renderExpiredBuildDialog,
   renderMainHeader,
   renderMessageSearchResult,
   renderNetworkStatus,
@@ -592,8 +588,6 @@ export function LeftPane({
       type: 'error',
       ...commonDialogProps,
     });
-  } else if (hasExpiredDialog) {
-    maybeRedDialog = renderExpiredBuildDialog(commonDialogProps);
   }
 
   const dialogs = new Array<{ key: string; dialog: JSX.Element }>();

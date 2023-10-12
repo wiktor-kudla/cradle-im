@@ -135,7 +135,8 @@
     }
 
     @include light-theme() {
-      background-color: $color-white;
+      // background-color: $color-white;
+      background-color: $color-purple-01;
     }
 
     @include dark-theme() {
@@ -260,7 +261,8 @@
       @include light-theme {
         @include color-svg(
           '../images/icons/v3/attach/attach.svg',
-          $color-gray-75
+          // $color-gray-75
+          $color-white
         );
       }
       @include dark-theme {

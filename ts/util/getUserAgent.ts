@@ -20,7 +20,7 @@ export function getUserAgent(
   //   crash.
   const platformString = getOwn(PLATFORM_STRINGS, process.platform);
 
-  let result = `Signal-Desktop/${appVersion}`;
+  let result = `Cradle-Desktop/${appVersion}`;
   if (platformString) {
     result += ` ${platformString} ${release}`;
   }

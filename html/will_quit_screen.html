@@ -1,0 +1,63 @@
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    .wqs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      color: white;
+    }
+  
+    .progress-container {
+      width: 70%;
+      margin: 0px auto;
+    }
+  
+    .progress-bg {
+      background-color: grey;
+      width: 100%;
+      height: 25px;
+    }
+  
+    .progress-success-color {
+      background-color: green;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0px 10px;
+    }
+  </style>
+  <div class="wqs">
+    <p>
+      Cleaning memory . . .
+    </p>
+  
+    <div class="progress-container">
+      <div class="progress-bg">
+        <div id="wqs_bar" class="progress-success-color" style="width:0%">0%</div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <script>
+    function move() {
+      var elem = document.getElementById("wqs_bar");
+      var width = 0;
+      var id = setInterval(frame, 50);
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+        } else {
+          width++;
+          elem.style.width = width + '%';
+          elem.innerHTML = width * 1 + '%';
+        }
+      }
+    }
+    move();
+  </script>

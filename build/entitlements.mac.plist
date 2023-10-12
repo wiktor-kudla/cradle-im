@@ -21,5 +21,13 @@
     <true/>
     <key>com.apple.security.network.client</key>
     <true/>
+    <key>com.apple.security.files.home-directory.read-write</key>
+    <true/>
+    <key>com.apple.security.input-methods</key>
+    <true/>
+    <key>com.apple.security.screen-recording</key>
+    <true/>
+    <key>com.apple.security.device.usb</key>
+    <true/>
   </dict>
 </plist>

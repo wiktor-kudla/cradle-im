@@ -7,8 +7,6 @@ import { get } from 'lodash';
 import { mapDispatchToProps } from '../actions';
 import type { PropsType as LeftPanePropsType } from '../../components/LeftPane';
 import { LeftPane, LeftPaneMode } from '../../components/LeftPane';
-import { DialogExpiredBuild } from '../../components/DialogExpiredBuild';
-import type { PropsType as DialogExpiredBuildPropsType } from '../../components/DialogExpiredBuild';
 import type { StateType } from '../reducer';
 import { missingCaseError } from '../../util/missingCaseError';
 import { lookupConversationWithoutUuid } from '../../util/lookupConversationWithoutUuid';
@@ -106,11 +104,6 @@ function renderCaptchaDialog({ onSkip }: { onSkip(): void }): JSX.Element {
 }
 function renderCrashReportDialog(): JSX.Element {
   return <SmartCrashReportDialog />;
-}
-function renderExpiredBuildDialog(
-  props: DialogExpiredBuildPropsType
-): JSX.Element {
-  return <DialogExpiredBuild {...props} />;
 }
 function renderUnsupportedOSDialog(
   props: Readonly<SmartUnsupportedOSDialogPropsType>
@@ -247,7 +240,6 @@ const mapStateToProps = (state: StateType) => {
     renderUpdateDialog,
     renderCaptchaDialog,
     renderCrashReportDialog,
-    renderExpiredBuildDialog,
     renderUnsupportedOSDialog,
     lookupConversationWithoutUuid,
     theme: getTheme(state),

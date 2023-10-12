@@ -40,8 +40,8 @@
   height: calc(#{$header-height} + var(--title-bar-drag-area-height));
 
   @include light-theme {
-    color: $color-gray-90;
-    background-color: $color-white;
+    // color: $color-gray-90;
+    // background-color: $color-white;
   }
   @include dark-theme {
     color: $color-gray-02;
@@ -76,7 +76,8 @@
     @include light-theme {
       @include color-svg(
         '../images/icons/v3/chevron/chevron-left.svg',
-        $color-gray-90
+        // $color-gray-90
+        $color-gray-75
       );
     }
     @include dark-theme {
@@ -218,10 +219,12 @@
     @include light-theme {
       &:hover,
       &:focus {
-        background: $color-gray-02;
+        // background: $color-gray-02;
+        background: $color-purple-01;
       }
       &:active {
-        background: $color-gray-05;
+        // background: $color-gray-05;
+        background: $color-purple-01;
       }
     }
     @include dark-theme {

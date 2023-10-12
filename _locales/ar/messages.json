@@ -8,7 +8,6 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
-
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -90,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "الشروط وسياسة الخصوصية",
-    "description": "Shown in the about box for the link to https://signal.org/legal"
+    "description": "Shown in the about box for the link to https://cradle.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "شريحة Apple silicon",
@@ -593,7 +592,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "حدث خطأ ما في الرفع! يرجى إرسال بريد إلكتروني إلى support@signal.org وإرفاق السجل الخاص بك كملف نصي.",
+    "messageformat": "حدث خطأ ما في الرفع! يرجى إرسال بريد إلكتروني إلى support@cradle.org وإرفاق السجل الخاص بك كملف نصي.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -722,15 +721,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "جارٍ المعاينة…",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "مسودة تحوي صورة مصغرة لمعاينة الوصلة لـ {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "يتم جلب صورة مصغرة لمعاينة الوصلة {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "مسودة محفوظة تحوي الصورة المرفقة : {path}",
@@ -825,15 +824,15 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "انضم إلى النسخ التجريبية",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
   },
   "icu:signalDesktopPreferences": {
     "messageformat": "تفضيلات سيجنال Desktop",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "مُنشيء حزمة الملصقات",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
     "messageformat": "عن سيجنال Desktop",
@@ -1283,35 +1282,7 @@
   },
   "icu:deleteConversationConfirmation": {
     "messageformat": "حذف هذه الدردشة بصفة نهائية؟",
-    "description": "(deleted 06/27/2023) Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "حذف الدردشة؟",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "ستُحذَف هذه الدردشة من هذا الجهاز.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
-    "messageformat": "مغادرة المجموعة",
-    "description": "This is a button to leave a group"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__title": {
-    "messageformat": "أأنت على يقين من رغبتك في المغادرة؟",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__description": {
-    "messageformat": "سَيتعذر عليك بعد الآن إرسال أو استلام رسائل لهذه المجموعة.",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__confirmButton": {
-    "messageformat": "مغادرة",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Confirm Button"
-  },
-  "icu:ConversationHeader__CannotLeaveGroupBecauseYouAreLastAdminAlert__description": {
-    "messageformat": "قبل المغادرة، يجب عليك أن تختار مشرفًا واحدًا على الأقل لهذه المجموعة.",
-    "description": "Conversation Header > Leave Group Action > Cannot Leave Group Because You Are Last Admin Alert > Description"
+    "description": "Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
   },
   "icu:sessionEnded": {
     "messageformat": "إعادة تعيين جلسة آمنة",
@@ -1427,11 +1398,11 @@
   },
   "icu:linkedDevices": {
     "messageformat": "الأجهزة المرتبطة",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "ربط جهاز جديد",
-    "description": "The menu option shown in Signal iOS to add a new linked device"
+    "description": "The menu option shown in Cradle iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "لمعرفة المزيد",
@@ -1794,11 +1765,11 @@
   },
   "icu:spellCheckWillBeEnabled": {
     "messageformat": "سيتم تفعيل التدقيق الإملائي عندما تقوم بتشغيل سيجنال في المرة القادمة.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
   },
   "icu:spellCheckWillBeDisabled": {
     "messageformat": "سيتم تعطيل التدقيق الإملائي عندما تقوم بتشغيل سيجنال المرة القادمة.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "تصغير في علبة النظام",
@@ -1842,7 +1813,7 @@
   },
   "icu:deleteOldIndexedDBData": {
     "messageformat": "لديك بيانات قديمة لم تعد تنفع من تثبيت سابق لسيجنال Desktop. إذا اخترت الاستمرار، فستُحذَف ويجب البداية بعدها من الصفر.",
-    "description": "Shown if user last ran Signal Desktop before October 2018"
+    "description": "Shown if user last ran Cradle Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "حذف البيانات القديمة",
@@ -1927,7 +1898,7 @@
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "‫يُرجى الضغط على زر الفأرة لزيارة signal.org/download",
+    "messageformat": "‫يُرجى الضغط على زر الفأرة لزيارة cradle.org/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2176,11 +2147,11 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "فشل إحضار اسم المستخدم هذا. تفقّد اتصال شبكتك وحاول مرة أخرى.",
-    "description": "Shown if request to Signal servers to find username fails"
+    "description": "Shown if request to Cradle servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "‫لقد فشل جلب رقم الهاتف. يُرجى التأكد من اتصالك ثم المحاولة مرة أخرى.",
-    "description": "Shown if request to Signal servers to find phone number fails"
+    "description": "Shown if request to Cradle servers to find phone number fails"
   },
   "icu:ToastManager__CannotEditMessage": {
     "messageformat": "لا يُمكن إحداث التعديلات إلا في غضون 3 ساعات من وقت إرسال هذه الرسالة.",
@@ -2565,15 +2536,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "‫نقدم لكم الملصقات : القطة Bandit‬",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "نقدم لكم الملصقات",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "ما الداعي لاستخدام للكلمات بينما يمكنك استخدام الملصقات ؟",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "فتح منتقي الملصقات",
@@ -2729,7 +2700,7 @@
   },
   "icu:Message--update-signal": {
     "messageformat": "‫تحديث سيجنال‬",
-    "description": "Text for a button which will take user to Signal download page"
+    "description": "Text for a button which will take user to Cradle download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "تمت المشاهدة",
@@ -3085,15 +3056,15 @@
   },
   "icu:AuthArtCreator--dialog--message": {
     "messageformat": "هل تود فتح مُنشيء حزمة الملصقات لسيجنال؟",
-    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
+    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "تأكيد",
-    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "تجاهُل",
-    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "يُرجى إعداد سيجنال في هاتفك وفي الحاسوب لاستخدام مُنشئ حزم الملصقات",
@@ -3313,11 +3284,11 @@
   },
   "icu:minimizeToTrayNotification--title": {
     "messageformat": "لا يزال سيجنال قيد التشغيل",
-    "description": "Shown in a notification title when Signal is minimized to tray"
+    "description": "Shown in a notification title when Cradle is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
     "messageformat": "سيَستمر سيجنال في الاشتغال في الإشعارات. يُمكنك تغيير هذا في إعدادات سيجنال.",
-    "description": "Shown in a notification body when Signal is minimized to tray"
+    "description": "Shown in a notification body when Cradle is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "مكالمة صوتية واردة…",
@@ -4857,7 +4828,7 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "حَول طلبات المُراسلة",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
     "messageformat": "مراجعة الطلبات بعناية. وجد سيجنال جهة اتصال أخرى بنفس الاسم. <reviewRequestLink>مُراجعة الطلب</reviewRequestLink>",
@@ -5593,7 +5564,7 @@
   },
   "icu:NSIS__semver-downgrade": {
     "messageformat": "هناك إصدار أحدث من سيجنال مُثبت بالفعل. هل أنت متأكد من أنك تريد المواصلة؟",
-    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
+    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "لقد انهار التطبيق",
@@ -5797,7 +5768,7 @@
   },
   "icu:SignalConnectionsModal__title": {
     "messageformat": "جهات الاتصال في سيجنال",
-    "description": "The phrase/term: 'Signal Connections'"
+    "description": "The phrase/term: 'Cradle Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} هم أشخاص اخترت أن تثق بهم سواءً عبر:",
@@ -6515,10 +6486,24 @@
     "messageformat": "تعديلات صغيرة، تصليح الأعطال، وتحسينات للأداء. شكرًا على استخدامكم سيجنال!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.24--0": {
-    "messageformat": "يُمكنك الآن بحث @ الإشارات الخاصة بك أيضًا. قد تقول \"شكرًا على إضافة هذه الخاصية\". وسنُجيبك \"لا داعي للشكر\"."
+  "icu:WhatsNew__v6.21--0": {
+    "messageformat": "شاهد نفسك بوضوح أثناء رنين الهاتف خلال مكالمة فردية. تستخدم مكالمات الفيديو الفردية الآن نمط عرض ملء الشاشة الذي كان يظهر سابقًا فقط في بداية مكالمة جماعية جديدة. عندما يتعلق الأمر بالاستمرارية فإننا نُحاول أن نكون مثابرين (غير مقاومين) والآن لم يعد هذا الاختلاف قائمًا لأننا نريد توحيد الرُؤى.",
+    "description": "Release notes for v6.21"
   },
-  "icu:WhatsNew__v6.25--0": {
-    "messageformat": "يمكنك الآن النقر على عنوان المُحادثة وسحبها لتغيير تموضُع نافذة سيجنال-Signal."
+  "icu:WhatsNew__v6.21--1": {
+    "messageformat": "نودّ أيضًا أن نُعرب عن تقديرنا لـ {complexspaces} لمُساعدتهم وملاحظاتهم أثناء العمل على هذا الإصدار.",
+    "description": "Release notes for v6.21"
+  },
+  "icu:WhatsNew__v6.22--0": {
+    "messageformat": "قم بتنسيق النص في رسائلك عبر تحديد أي نص في حقل تكوين الرسالة.\n\nقدّم بيانًا جريئًا يعتمد النسق الجريء \"الغامق\"، أو أرسل رسالة إلى M. Night Shyamalan تنتهي بتأثير سبويلر، أو قم بالتشديد على اسم بكتابة \"Alex\" بخط مائل، أو ضع سطرًا على فكرة عشاء مرفوضة بنسق نص يتوسطُه خط، أو شارك التعليمات البرمجية في نسق أحادي المسافة.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.22--1": {
+    "messageformat": "لقد أضفنا دعمًا لأحدث الرموز التعبيرية، لذا يُمكنك الآن إظهار حماسك باستخدام &quot;الوجه المُهتز&quot; (<emojify>🫨</emojify>) أو الرد بـقرنة بازلاء (<emojify>🫛</emojify>) عندما يسألك أحد عن مدى متانة صداقاتك.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.23--1": {
+    "messageformat": "بالإضافة إلى تعديلات صغيرة لإصلاح الأخطاء، يتضمّن هذا الإصدار أيضًا تحديثات وثائق المُطورين (شكرًا، {d108}!) وبعض التحسينات على تصميم واجهة إعادة توجيه الرسائل (شكرًا، {hackerbirds}!).",
+    "description": "Release notes for v6.23"
   }
 }

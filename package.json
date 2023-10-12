@@ -1,14 +1,14 @@
 {
-  "name": "signal-desktop",
-  "productName": "Signal",
+  "name": "cradle-desktop",
+  "productName": "Cradle",
   "description": "Private messaging from your desktop",
-  "desktopName": "signal.desktop",
-  "repository": "https://github.com/signalapp/Signal-Desktop.git",
+  "desktopName": "cradle.desktop",
+  "repository": "https://github.com/wiktor-kudla/cradle-im.git",
   "version": "6.25.0",
   "license": "AGPL-3.0-only",
   "author": {
-    "name": "Signal Messenger, LLC",
-    "email": "support@signal.org"
+    "name": "Cradle Messenger, LLC",
+    "email": "support@cradle.im"
   },
   "browserslist": "last 1 chrome versions",
   "browser": {
@@ -21,7 +21,6 @@
     "start": "electron .",
     "generate": "npm-run-all build-protobuf build:esbuild sass get-expire-time copy-components",
     "build-release": "yarn run build",
-    "sign-release": "node ts/updater/generateSignature.js",
     "notarize": "echo 'No longer necessary'",
     "get-strings": "node ts/scripts/get-strings.js && node ts/scripts/gen-nsis-script.js && node ts/scripts/gen-locales-config.js",
     "push-strings": "node ts/scripts/remove-strings.js && node ts/scripts/push-strings.js",
@@ -92,6 +91,7 @@
     "@signalapp/libsignal-client": "0.22.0",
     "@signalapp/ringrtc": "2.28.1",
     "@types/fabric": "4.5.3",
+    "axios": "^1.4.0",
     "backbone": "1.4.0",
     "blob-util": "2.0.2",
     "blueimp-load-image": "5.14.0",
@@ -101,6 +101,7 @@
     "classnames": "2.2.5",
     "config": "1.28.1",
     "copy-text-to-clipboard": "2.1.0",
+    "crc32": "^0.2.2",
     "dashdash": "1.14.1",
     "dicer": "0.3.1",
     "direction": "1.0.4",
@@ -321,7 +322,7 @@
     "node": "18.15.0"
   },
   "build": {
-    "appId": "org.whispersystems.signal-desktop",
+    "appId": "org.whispersystems.cradle-desktop",
     "mac": {
       "artifactName": "${name}-mac-${arch}-${version}.${ext}",
       "category": "public.app-category.social-networking",
@@ -364,12 +365,7 @@
     },
     "win": {
       "artifactName": "${name}-win-${version}.${ext}",
-      "certificateSubjectName": "Signal Messenger, LLC",
-      "certificateSha1": "8C9A0B5C852EC703D83EF7BFBCEB54B796073759",
-      "signingHashAlgorithms": [
-        "sha256"
-      ],
-      "publisherName": "Signal Messenger, LLC",
+      "publisherName": "Cradle Messenger, LLC",
       "icon": "build/icons/win/icon.ico",
       "publish": [
         {
@@ -382,19 +378,20 @@
           "minOSVersion": "10.0.10240"
         }
       },
-      "signDlls": true,
       "target": [
         "nsis"
       ]
     },
     "nsis": {
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
       "deleteAppDataOnUninstall": true,
       "differentialPackage": true
     },
     "linux": {
       "category": "Network;InstantMessaging;Chat",
       "desktop": {
-        "StartupWMClass": "Signal"
+        "StartupWMClass": "Cradle"
       },
       "target": [
         "deb"

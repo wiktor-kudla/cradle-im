@@ -8,7 +8,6 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
-
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -90,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "ਸ਼ਰਤਾਂ ਅਤੇ ਪਰਦੇਦਾਰੀ ਨੀਤੀ",
-    "description": "Shown in the about box for the link to https://signal.org/legal"
+    "description": "Shown in the about box for the link to https://cradle.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -161,7 +160,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Signal ਤੋਂ ਬਾਹਰ ਨਿਕਲੋ",
+    "messageformat": "Cradle ਤੋਂ ਬਾਹਰ ਨਿਕਲੋ",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -273,7 +272,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Signal ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ",
+    "messageformat": "Cradle ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -393,7 +392,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "ਤੁਸੀਂ ਹੁਣੇ ਨਿਰਯਾਤ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਪਾਰ ਕੀਤਾ ਹੈ, ਅਤੇ ਤੁਹਾਡੇ ਸੰਪਰਕ ਅਤੇ ਸੁਨੇਹੇ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ 'ਤੇ ਬੇਸਬਰੀ ਨਾਲ ਉਡੀਕ ਕਰ ਰਹੇ ਹਨ। ਉਸ ਫੋਲਡਰ ਦੀ ਚੋਣ ਕਰੋ ਜਿਸ ਵਿੱਚ ਤੁਹਾਡਾ ਸੰਭਾਲਿਆ ਹੋਇਆ Signal ਡੇਟਾ ਦਿੱਤਾ ਹੈ।",
+    "messageformat": "ਤੁਸੀਂ ਹੁਣੇ ਨਿਰਯਾਤ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਪਾਰ ਕੀਤਾ ਹੈ, ਅਤੇ ਤੁਹਾਡੇ ਸੰਪਰਕ ਅਤੇ ਸੁਨੇਹੇ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ 'ਤੇ ਬੇਸਬਰੀ ਨਾਲ ਉਡੀਕ ਕਰ ਰਹੇ ਹਨ। ਉਸ ਫੋਲਡਰ ਦੀ ਚੋਣ ਕਰੋ ਜਿਸ ਵਿੱਚ ਤੁਹਾਡਾ ਸੰਭਾਲਿਆ ਹੋਇਆ Cradle ਡੇਟਾ ਦਿੱਤਾ ਹੈ।",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -409,7 +408,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਸਹੀ ਡਾਇਰੈਕਟਰੀ ਚੁਣੀ ਹੈ ਜਿਸ ਵਿੱਚ ਤੁਹਾਡਾ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਹੋਇਆ Signal ਡੇਟਾ ਮੌਜੂਦ ਹੈ। ਇਸਦਾ ਨਾਂ 'Signal ਨਿਰਯਾਤ' ਤੋਂ ਸ਼ੁਰੂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਤੁਸੀਂ ਆਪਣੇ ਡੇਟਾ ਦੀ ਇੱਕ ਨਵੀਂ ਕਾਪੀ Chrome ਐਪ ਤੋਂ ਵੀ ਸੰਭਾਲ ਸਕਦੇ ਹੋ।",
+    "messageformat": "ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਸਹੀ ਡਾਇਰੈਕਟਰੀ ਚੁਣੀ ਹੈ ਜਿਸ ਵਿੱਚ ਤੁਹਾਡਾ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਹੋਇਆ Cradle ਡੇਟਾ ਮੌਜੂਦ ਹੈ। ਇਸਦਾ ਨਾਂ 'Cradle ਨਿਰਯਾਤ' ਤੋਂ ਸ਼ੁਰੂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਤੁਸੀਂ ਆਪਣੇ ਡੇਟਾ ਦੀ ਇੱਕ ਨਵੀਂ ਕਾਪੀ Chrome ਐਪ ਤੋਂ ਵੀ ਸੰਭਾਲ ਸਕਦੇ ਹੋ।",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -425,7 +424,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Signal Desktop ਵਰਤਣਾ ਸ਼ੁਰੂ ਕਰੋ",
+    "messageformat": "Cradle Desktop ਵਰਤਣਾ ਸ਼ੁਰੂ ਕਰੋ",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -509,11 +508,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "ਤੁਸੀਂ ਜਿਸ ਸੁਰੱਖਿਆ ਨੰਬਰ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੇ ਹੋ ਉਹ ਬਦਲ ਗਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ {name1} ਨਾਲ ਆਪਣੇ ਨਵੇਂ ਸੁਰੱਖਿਆ ਨੰਬਰ ਦੀ ਸਮੀਖਿਆ ਕਰੋ। ਯਾਦ ਰੱਖੋ, ਇਸ ਤਬਦੀਲੀ ਦਾ ਮਤਲਬ ਇਹ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਕੋਈ ਵਿਅਕਤੀ ਤੁਹਾਡੀ ਗੱਲਬਾਤ ਵਿੱਚ ਰੁਕਾਵਟ ਪਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਿਹਾ ਹੈ ਜਾਂ ਇਹ ਕਿ {name2} ਨੇ Signal ਨੂੰ ਮਹਿਜ਼ ਦੁਬਾਰਾ ਸਥਾਪਤ ਕੀਤਾ ਹੈ।",
+    "messageformat": "ਤੁਸੀਂ ਜਿਸ ਸੁਰੱਖਿਆ ਨੰਬਰ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੇ ਹੋ ਉਹ ਬਦਲ ਗਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ {name1} ਨਾਲ ਆਪਣੇ ਨਵੇਂ ਸੁਰੱਖਿਆ ਨੰਬਰ ਦੀ ਸਮੀਖਿਆ ਕਰੋ। ਯਾਦ ਰੱਖੋ, ਇਸ ਤਬਦੀਲੀ ਦਾ ਮਤਲਬ ਇਹ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਕੋਈ ਵਿਅਕਤੀ ਤੁਹਾਡੀ ਗੱਲਬਾਤ ਵਿੱਚ ਰੁਕਾਵਟ ਪਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਿਹਾ ਹੈ ਜਾਂ ਇਹ ਕਿ {name2} ਨੇ Signal/Cradle ਨੂੰ ਮਹਿਜ਼ ਦੁਬਾਰਾ ਸਥਾਪਤ ਕੀਤਾ ਹੈ।",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "ਨਿਮਨਲਿਖਤ ਲੋਕਾਂ ਨੇ ਸ਼ਾਇਦ Signal ਨੂੰ ਦੁਆਰਾ ਇੰਸਟਾਲ ਕੀਤਾ ਹੈ ਜਾਂ ਆਪਣੇ ਡਿਵਾਈਸਾਂ ਨੂੰ ਬਦਲਿਆ ਹੈ। ਪ੍ਰਾਪਤਕਰਤਾ ਦੇ ਨਵੇਂ ਸੁਰੱਖਿਆ ਨੰਬਰ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਪ੍ਰਾਪਤਕਰਤਾ ਉੱਤੇ ਟੈਪ ਕਰੋ। ਇਹ ਵਿਕਲਪਿਕ ਹੈ।",
+    "messageformat": "ਨਿਮਨਲਿਖਤ ਲੋਕਾਂ ਨੇ ਸ਼ਾਇਦ Signal/Cradle ਨੂੰ ਦੁਆਰਾ ਇੰਸਟਾਲ ਕੀਤਾ ਹੈ ਜਾਂ ਆਪਣੇ ਡਿਵਾਈਸਾਂ ਨੂੰ ਬਦਲਿਆ ਹੈ। ਪ੍ਰਾਪਤਕਰਤਾ ਦੇ ਨਵੇਂ ਸੁਰੱਖਿਆ ਨੰਬਰ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਪ੍ਰਾਪਤਕਰਤਾ ਉੱਤੇ ਟੈਪ ਕਰੋ। ਇਹ ਵਿਕਲਪਿਕ ਹੈ।",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -525,7 +524,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {ਤੁਹਾਡੇ {count,number} ਕਨੈਕਸ਼ਨ ਨੇ ਸ਼ਾਇਦ Signal ਨੂੰ ਦੁਆਰਾ ਇੰਸਟਾਲ ਕੀਤਾ ਹੈ ਜਾਂ ਆਪਣੇ ਡਿਵਾਈਸਾਂ ਨੂੰ ਬਦਲਿਆ ਹੈ। ਜੇ ਤੁਸੀਂ ਚਾਹੋ ਤਾਂ ਉਹਨਾਂ ਨੂੰ ਸੁਨੇਹਾ ਭੇਜਣ ਤੋਂ ਪਹਿਲਾਂ ਉਹਨਾਂ ਦੇ ਸੁਰੱਖਿਆ ਨੰਬਰ ਦੀ ਸਮੀਖਿਆ ਕਰ ਸਕਦੇ ਹੋ।} other {ਤੁਹਾਡੇ {count,number} ਕਨੈਕਸ਼ਨਾਂ ਨੇ ਸ਼ਾਇਦ Signal ਨੂੰ ਦੁਆਰਾ ਇੰਸਟਾਲ ਕੀਤਾ ਹੈ ਜਾਂ ਆਪਣੇ ਡਿਵਾਈਸਾਂ ਨੂੰ ਬਦਲਿਆ ਹੈ। ਜੇ ਤੁਸੀਂ ਚਾਹੋ ਤਾਂ ਉਹਨਾਂ ਨੂੰ ਸੁਨੇਹਾ ਭੇਜਣ ਤੋਂ ਪਹਿਲਾਂ ਉਹਨਾਂ ਦੇ ਸੁਰੱਖਿਆ ਨੰਬਰ ਦੀ ਸਮੀਖਿਆ ਕਰ ਸਕਦੇ ਹੋ।}}",
+    "messageformat": "{count, plural, one {ਤੁਹਾਡੇ {count,number} ਕਨੈਕਸ਼ਨ ਨੇ ਸ਼ਾਇਦ Signal/Cradle ਨੂੰ ਦੁਆਰਾ ਇੰਸਟਾਲ ਕੀਤਾ ਹੈ ਜਾਂ ਆਪਣੇ ਡਿਵਾਈਸਾਂ ਨੂੰ ਬਦਲਿਆ ਹੈ। ਜੇ ਤੁਸੀਂ ਚਾਹੋ ਤਾਂ ਉਹਨਾਂ ਨੂੰ ਸੁਨੇਹਾ ਭੇਜਣ ਤੋਂ ਪਹਿਲਾਂ ਉਹਨਾਂ ਦੇ ਸੁਰੱਖਿਆ ਨੰਬਰ ਦੀ ਸਮੀਖਿਆ ਕਰ ਸਕਦੇ ਹੋ।} other {ਤੁਹਾਡੇ {count,number} ਕਨੈਕਸ਼ਨਾਂ ਨੇ ਸ਼ਾਇਦ Signal/Cradle ਨੂੰ ਦੁਆਰਾ ਇੰਸਟਾਲ ਕੀਤਾ ਹੈ ਜਾਂ ਆਪਣੇ ਡਿਵਾਈਸਾਂ ਨੂੰ ਬਦਲਿਆ ਹੈ। ਜੇ ਤੁਸੀਂ ਚਾਹੋ ਤਾਂ ਉਹਨਾਂ ਨੂੰ ਸੁਨੇਹਾ ਭੇਜਣ ਤੋਂ ਪਹਿਲਾਂ ਉਹਨਾਂ ਦੇ ਸੁਰੱਖਿਆ ਨੰਬਰ ਦੀ ਸਮੀਖਿਆ ਕਰ ਸਕਦੇ ਹੋ।}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -557,7 +556,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "{name1} ਨਾਲ ਤੁਹਾਡਾ ਸੁਰੱਖਿਆ ਨੰਬਰ ਬਦਲ ਚੁੱਕਾ ਹੈ। ਇਸਦਾ ਮਤਲਬ ਜਾਂ ਤਾਂ ਇਹ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਕੋਈ ਵਿਅਕਤੀ ਤੁਹਾਡੀ ਗੱਲਬਾਤ ਵਿੱਚ ਰੁਕਾਵਟ ਪਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਿਹਾ ਹੈ ਜਾਂ ਇਹ ਕਿ {name2} ਨੇ Signal ਨੂੰ ਮਹਿਜ਼ ਦੁਬਾਰਾ ਸਥਾਪਤ ਕੀਤਾ ਹੈ। ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਇਸ ਸੰਪਰਕ ਦੇ ਨਾਲ ਆਪਣੇ ਸੁਰੱਖਿਆ ਨੰਬਰ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨਾ ਚਾਹੋ।",
+    "messageformat": "{name1} ਨਾਲ ਤੁਹਾਡਾ ਸੁਰੱਖਿਆ ਨੰਬਰ ਬਦਲ ਚੁੱਕਾ ਹੈ। ਇਸਦਾ ਮਤਲਬ ਜਾਂ ਤਾਂ ਇਹ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਕੋਈ ਵਿਅਕਤੀ ਤੁਹਾਡੀ ਗੱਲਬਾਤ ਵਿੱਚ ਰੁਕਾਵਟ ਪਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਿਹਾ ਹੈ ਜਾਂ ਇਹ ਕਿ {name2} ਨੇ Signal/Cradle ਨੂੰ ਮਹਿਜ਼ ਦੁਬਾਰਾ ਸਥਾਪਤ ਕੀਤਾ ਹੈ। ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਇਸ ਸੰਪਰਕ ਦੇ ਨਾਲ ਆਪਣੇ ਸੁਰੱਖਿਆ ਨੰਬਰ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨਾ ਚਾਹੋ।",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -593,7 +592,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "ਅੱਪਲੋਡ ਵਿੱਚ ਕੋਈ ਗੜਬੜੀ ਆ ਗਈ ਸੀ! ਕਿਰਪਾ ਕਰਕੇ support@signal.org 'ਤੇ ਈਮੇਲ ਕਰੋ ਅਤੇ ਟੈਕਸਟ ਫਾਈਲ ਦੇ ਰੂਪ ਵਿੱਚ ਆਪਣੇ ਲੌਗ ਨੂੰ ਅਟੈਚ ਕਰੋ।",
+    "messageformat": "ਅੱਪਲੋਡ ਵਿੱਚ ਕੋਈ ਗੜਬੜੀ ਆ ਗਈ ਸੀ! ਕਿਰਪਾ ਕਰਕੇ support@cradle.org 'ਤੇ ਈਮੇਲ ਕਰੋ ਅਤੇ ਟੈਕਸਟ ਫਾਈਲ ਦੇ ਰੂਪ ਵਿੱਚ ਆਪਣੇ ਲੌਗ ਨੂੰ ਅਟੈਚ ਕਰੋ।",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -659,7 +658,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "ਇਸ ਸੰਪਰਕ ਦੇ ਨਾਲ ਤੁਹਾਡਾ ਸੁਰੱਖਿਆ ਨੰਬਰ ਬਦਲ ਚੁੱਕਾ ਹੈ। ਇਸ ਦਾ ਮਤਲਬ ਜਾਂ ਤਾਂ ਇਹ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਕੋਈ ਵਿਅਕਤੀ ਤੁਹਾਡੀ ਗੱਲਬਾਤ ਵਿੱਚ ਰੁਕਾਵਟ ਪਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਿਹਾ ਹੈ, ਜਾਂ ਇਸ ਸੰਪਰਕ ਨੇ Signal ਨੂੰ ਮਹਿਜ਼ ਦੁਬਾਰਾ ਸਥਾਪਤ ਕੀਤਾ ਹੈ। ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਹੇਠਾਂ ਨਵੇਂ ਸੁਰੱਖਿਆ ਨੰਬਰ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨਾ ਚਾਹੋ।"
+    "messageformat": "ਇਸ ਸੰਪਰਕ ਦੇ ਨਾਲ ਤੁਹਾਡਾ ਸੁਰੱਖਿਆ ਨੰਬਰ ਬਦਲ ਚੁੱਕਾ ਹੈ। ਇਸ ਦਾ ਮਤਲਬ ਜਾਂ ਤਾਂ ਇਹ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਕੋਈ ਵਿਅਕਤੀ ਤੁਹਾਡੀ ਗੱਲਬਾਤ ਵਿੱਚ ਰੁਕਾਵਟ ਪਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਿਹਾ ਹੈ, ਜਾਂ ਇਸ ਸੰਪਰਕ ਨੇ Signal/Cradle ਨੂੰ ਮਹਿਜ਼ ਦੁਬਾਰਾ ਸਥਾਪਤ ਕੀਤਾ ਹੈ। ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਹੇਠਾਂ ਨਵੇਂ ਸੁਰੱਖਿਆ ਨੰਬਰ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨਾ ਚਾਹੋ।"
   },
   "icu:incomingError": {
     "messageformat": "ਆਉਣ ਵਾਲੇ ਸੁਨੇਹੇ ਨੂੰ ਸੰਭਾਲਣ ਵਿੱਚ ਗਲਤੀ"
@@ -722,15 +721,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "ਝਲਕ ਲੋਡ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ…",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "{domain} ਦੇ ਲਈ ਡ੍ਰਾਫ਼ਟ ਥੰਬਨੇਲ ਲਿੰਕ ਦੀ ਝਲਕ",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "{domain}  ਦੇ ਲਈ ਥੰਬਨੇਲ ਲਿੰਕ ਦੀ ਝਲਕ",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "ਡ੍ਰਾਫ਼ਟ ਨੱਥੀ ਚਿੱਤਰ: {path}",
@@ -825,18 +824,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "ਬੀਟਾ ਦਾ ਹਿੱਸਾ ਬਣੋ",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Signal Desktop ਪਸੰਦਾਂ",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "messageformat": "Cradle Desktop ਪਸੰਦਾਂ",
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "ਸਟਿਕੱਰ ਪੈਕ ਨਿਰਮਾਤਾ",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "Signal Desktop ਬਾਰੇ",
+    "messageformat": "Cradle Desktop ਬਾਰੇ",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -860,7 +859,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Signal Desktop",
+    "messageformat": "Cradle Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -912,7 +911,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Signal ਵਿੱਚ ਜੀ ਆਇਆਂ ਨੂੰ"
+    "messageformat": "Cradle ਵਿੱਚ ਜੀ ਆਇਆਂ ਨੂੰ"
   },
   "icu:whatsNew": {
     "messageformat": "ਇਸ ਅੱਪਡੇਟ ਲਈ {whatsNew}ਨੂੰ ਵੇਖੋ",
@@ -1043,15 +1042,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "ਵੌਇਸ ਸੁਨੇਹੇ ਭੇਜਣ ਲਈ, Signal Desktop ਨੂੰ ਆਪਣੇ ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ।",
+    "messageformat": "ਵੌਇਸ ਸੁਨੇਹੇ ਭੇਜਣ ਲਈ, Cradle Desktop ਨੂੰ ਆਪਣੇ ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ।",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "ਕਾਲ ਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ Signal Desktop ਨੂੰ ਆਪਣੇ ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਤਕ ਪਹੁੰਚ ਦੀ ਆਗਿਆ ਦੇਣੀ ਪਵੇਗੀ।",
+    "messageformat": "ਕਾਲ ਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ Cradle Desktop ਨੂੰ ਆਪਣੇ ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਤਕ ਪਹੁੰਚ ਦੀ ਆਗਿਆ ਦੇਣੀ ਪਵੇਗੀ।",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "ਵੀਡੀਓ ਕਾਲ ਕਰਨ ਵਾਸਤੇ, ਤੁਹਾਨੂੰ Signal Desktop ਨੂੰ ਆਪਣੇ ਕੈਮਰੇ ਤਕ ਪਹੁੰਚ ਦੀ ਆਗਿਆ ਦੇਣੀ ਪਵੇਗੀ।",
+    "messageformat": "ਵੀਡੀਓ ਕਾਲ ਕਰਨ ਵਾਸਤੇ, ਤੁਹਾਨੂੰ Cradle Desktop ਨੂੰ ਆਪਣੇ ਕੈਮਰੇ ਤਕ ਪਹੁੰਚ ਦੀ ਆਗਿਆ ਦੇਣੀ ਪਵੇਗੀ।",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1091,15 +1090,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Signal ਨੂੰ ਅੱਪਡੇਟ ਨਹੀਂ ਕਰ ਸਕੇ। {retry} ਜਾਂ ਇਸ ਨੂੰ ਖੁਦ ਇੰਸਟਾਲ ਕਰਨ ਲਈ {url} 'ਤੇ ਜਾਓ। ਫਿਰ, ਇਸ ਸਮੱਸਿਆ ਦੇ ਲਈ {support}",
+    "messageformat": "Cradle ਨੂੰ ਅੱਪਡੇਟ ਨਹੀਂ ਕਰ ਸਕੇ। {retry} ਜਾਂ ਇਸ ਨੂੰ ਖੁਦ ਇੰਸਟਾਲ ਕਰਨ ਲਈ {url} 'ਤੇ ਜਾਓ। ਫਿਰ, ਇਸ ਸਮੱਸਿਆ ਦੇ ਲਈ {support}",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Signal ਨੂੰ ਅੱਪਡੇਟ ਨਹੀਂ ਕਰ ਸਕੇ। ਇਸ ਨੂੰ ਖੁਦ ਇੰਸਟਾਲ ਕਰਨ ਲਈ {url} 'ਤੇ ਜਾਓ। ਫਿਰ, ਇਸ ਸਮੱਸਿਆ ਦੇ ਲਈ {support}",
+    "messageformat": "Cradle ਨੂੰ ਅੱਪਡੇਟ ਨਹੀਂ ਕਰ ਸਕੇ। ਇਸ ਨੂੰ ਖੁਦ ਇੰਸਟਾਲ ਕਰਨ ਲਈ {url} 'ਤੇ ਜਾਓ। ਫਿਰ, ਇਸ ਸਮੱਸਿਆ ਦੇ ਲਈ {support}",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Signal Desktop ਸੰਭਾਵਤ ਰੂਪ ਵਿੱਚ ਇੱਕ macOS ਕੁਆਰੰਟੀਨ ਹੈ, ਅਤੇ ਆਪਣੇ ਆਪ ਅੱਪਡੇਟ ਨਹੀਂ ਹੋ ਸਕੇਗਾ। ਕਿਰਪਾ ਕਰਕੇ ਫ਼ਾਈਂਡਰ ਦੇ ਨਾਲ {app} ਨੂੰ {folder} ਵਿੱਚ ਲਿਜਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "messageformat": "Cradle Desktop ਸੰਭਾਵਤ ਰੂਪ ਵਿੱਚ ਇੱਕ macOS ਕੁਆਰੰਟੀਨ ਹੈ, ਅਤੇ ਆਪਣੇ ਆਪ ਅੱਪਡੇਟ ਨਹੀਂ ਹੋ ਸਕੇਗਾ। ਕਿਰਪਾ ਕਰਕੇ ਫ਼ਾਈਂਡਰ ਦੇ ਨਾਲ {app} ਨੂੰ {folder} ਵਿੱਚ ਲਿਜਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1155,7 +1154,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "ਇਹ ਸੁਨੇਹਾ ਚੈਟ ਵਿੱਚ ਸ਼ਾਮਲ ਸਾਰੇ ਵਿਅਕਤੀਆਂ ਲਈ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ ਜੇ ਉਹ Signal ਦੇ ਨਵੇਂ ਵਰਜ਼ਨ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹਨ। ਉਹ ਇਹ ਦੇਖ ਸਕਣਗੇ ਕਿ ਤੁਸੀਂ ਸੁਨੇਹਾ ਮਿਟਾ ਦਿੱਤਾ ਹੈ।",
+    "messageformat": "ਇਹ ਸੁਨੇਹਾ ਚੈਟ ਵਿੱਚ ਸ਼ਾਮਲ ਸਾਰੇ ਵਿਅਕਤੀਆਂ ਲਈ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ ਜੇ ਉਹ Signal/Cradle ਦੇ ਨਵੇਂ ਵਰਜ਼ਨ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹਨ। ਉਹ ਇਹ ਦੇਖ ਸਕਣਗੇ ਕਿ ਤੁਸੀਂ ਸੁਨੇਹਾ ਮਿਟਾ ਦਿੱਤਾ ਹੈ।",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1283,35 +1282,7 @@
   },
   "icu:deleteConversationConfirmation": {
     "messageformat": "ਕੀ ਇਸ ਚੈਟ ਨੂੰ ਸਥਾਈ ਤੌਰ ’ਤੇ ਮਿਟਾਉਣਾ ਹੈ?",
-    "description": "(deleted 06/27/2023) Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "ਕੀ ਚੈਟ ਨੂੰ ਮਿਟਾਉਣਾ ਹੈ?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "ਇਸ ਚੈਟ ਨੂੰ ਇਸ ਡਿਵਾਈਸ ਵਿੱਚੋਂ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
-    "messageformat": "ਗਰੁੱਪ ਛੱਡੋ",
-    "description": "This is a button to leave a group"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__title": {
-    "messageformat": "ਕੀ ਤੁਸੀਂ ਵਾਕਈ ਗਰੁੱਪ ਛੱਡਣਾ ਚਾਹੁੰਦੇ ਹੋ?",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__description": {
-    "messageformat": "ਹੁਣ ਤੁਸੀਂ ਇਸ ਗਰੁੱਪ ਵਿੱਚ ਨਾ ਹੀ ਸੁਨੇਹੇ ਭੇਜ ਸਕੋਗੇ ਅਤੇ ਨਾ ਹੀ ਪ੍ਰਾਪਤ ਕਰ ਸਕੋਗੇ।",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__confirmButton": {
-    "messageformat": "ਛੱਡੋ",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Confirm Button"
-  },
-  "icu:ConversationHeader__CannotLeaveGroupBecauseYouAreLastAdminAlert__description": {
-    "messageformat": "ਗਰੁੱਪ ਨੂੰ ਛੱਡਣ ਤੋਂ ਪਹਿਲਾਂ, ਤੁਹਾਨੂੰ ਇਸ ਗਰੁੱਪ ਲਈ ਘੱਟੋ-ਘੱਟ ਕੋਈ ਇੱਕ ਨਵਾਂ ਐਡਮਿਨ ਚੁਣਨਾ ਪਵੇਗਾ।",
-    "description": "Conversation Header > Leave Group Action > Cannot Leave Group Because You Are Last Admin Alert > Description"
+    "description": "Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
   },
   "icu:sessionEnded": {
     "messageformat": "ਸੁਰੱਖਿਅਤ ਸੈਸ਼ਨ ਰੀਸੈੱਟ ਕੀਤਾ ਗਿਆ",
@@ -1326,7 +1297,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Signal ਸਿਰੇ-ਤੋਂ-ਸਿਰੇ ਤੱਕ ਇਨਕ੍ਰਿਪਸ਼ਨ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ ਅਤੇ ਇਸ ਨੂੰ ਕਈ ਵਾਰ ਤੁਹਾਡੇ ਚੈਟ ਸ਼ੈਸ਼ਨ ਨੂੰ ਤਾਜ਼ਾ ਕਰਨ ਦੀ ਲੋੜ ਪੈਂਦੀ ਹੈ। ਇਸ ਨਾਲ ਤੁਹਾਡੀ ਚੈਟ ਦੀ ਸੁਰੱਖਿਆ ਪ੍ਰਭਾਵਿਤ ਨਹੀਂ ਹੁੰਦੀ ਹੈ, ਪਰ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਇਸ ਦੌਰਾਨ ਤੁਹਾਨੂੰ ਇਸ ਸੰਪਰਕ ਵੱਲੋਂ ਭੇਜਿਆ ਗਿਆ ਸੁਨੇਹਾ ਪ੍ਰਾਪਤ ਨਾ ਹੋਇਆ ਹੋਵੇ ਅਤੇ ਤੁਸੀਂ ਉਹਨਾਂ ਨੂੰ ਉਹ ਸੁਨੇਹਾ ਦੁਬਾਰਾ ਭੇਜਣ ਲਈ ਕਹਿ ਸਕਦੇ ਹੋ।",
+    "messageformat": "Cradle ਸਿਰੇ-ਤੋਂ-ਸਿਰੇ ਤੱਕ ਇਨਕ੍ਰਿਪਸ਼ਨ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ ਅਤੇ ਇਸ ਨੂੰ ਕਈ ਵਾਰ ਤੁਹਾਡੇ ਚੈਟ ਸ਼ੈਸ਼ਨ ਨੂੰ ਤਾਜ਼ਾ ਕਰਨ ਦੀ ਲੋੜ ਪੈਂਦੀ ਹੈ। ਇਸ ਨਾਲ ਤੁਹਾਡੀ ਚੈਟ ਦੀ ਸੁਰੱਖਿਆ ਪ੍ਰਭਾਵਿਤ ਨਹੀਂ ਹੁੰਦੀ ਹੈ, ਪਰ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਇਸ ਦੌਰਾਨ ਤੁਹਾਨੂੰ ਇਸ ਸੰਪਰਕ ਵੱਲੋਂ ਭੇਜਿਆ ਗਿਆ ਸੁਨੇਹਾ ਪ੍ਰਾਪਤ ਨਾ ਹੋਇਆ ਹੋਵੇ ਅਤੇ ਤੁਸੀਂ ਉਹਨਾਂ ਨੂੰ ਉਹ ਸੁਨੇਹਾ ਦੁਬਾਰਾ ਭੇਜਣ ਲਈ ਕਹਿ ਸਕਦੇ ਹੋ।",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1418,20 +1389,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Signal Desktop ਵਿੱਚ ਜੀ ਆਇਆਂ ਨੂੰ",
+    "messageformat": "Cradle Desktop ਵਿੱਚ ਜੀ ਆਇਆਂ ਨੂੰ",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "ਪਰਦੇਦਾਰੀ ਸੰਭਵ ਹੈ। Signal ਨੇ ਇਹ ਸੌਖੀ ਕਰ ਦਿੱਤੀ ਹੈ।",
+    "messageformat": "ਪਰਦੇਦਾਰੀ ਸੰਭਵ ਹੈ। Cradle ਨੇ ਇਹ ਸੌਖੀ ਕਰ ਦਿੱਤੀ ਹੈ।",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "ਲਿੰਕ ਕੀਤੀਆਂ ਡਿਵਾਈਸਾਂ",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "ਨਵੀਂ ਡਿਵਾਈਸ ਨੂੰ ਲਿੰਕ ਕਰੋ",
-    "description": "The menu option shown in Signal iOS to add a new linked device"
+    "description": "The menu option shown in Cradle iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "ਹੋਰ ਜਾਣੋ",
@@ -1505,7 +1476,7 @@
     "messageformat": "ਅਫ਼ਸੋਸ, ਤੁਹਾਡੇ ਕੋਲ ਬਹੁਤ ਸਾਰੀਆਂ ਡਿਵਾਈਸਾਂ ਪਹਿਲਾਂ ਹੀ ਜੁੜੀਆਂ ਹੋਈਆਂ ਹਨ। ਕੁਝ ਨੂੰ ਹਟਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
   },
   "icu:installTooOld": {
-    "messageformat": "ਇਸ ਡਿਵਾਈਸ ’ਤੇ ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਲਿੰਕ ਕਰਨ ਲਈ Signal ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ।"
+    "messageformat": "ਇਸ ਡਿਵਾਈਸ ’ਤੇ ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਲਿੰਕ ਕਰਨ ਲਈ Cradle ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ।"
   },
   "icu:installErrorHeader": {
     "messageformat": "ਕੁਝ ਗਲਤ ਵਾਪਰਿਆ!"
@@ -1645,19 +1616,19 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Signal {person} ਨੂੰ ਰਿੰਗ ਕਰੇਗਾ",
+    "messageformat": "Cradle {person} ਨੂੰ ਰਿੰਗ ਕਰੇਗਾ",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Signal {first} ਅਤੇ {second} ਨੂੰ ਰਿੰਗ ਕਰੇਗਾ",
+    "messageformat": "Cradle {first} ਅਤੇ {second} ਨੂੰ ਰਿੰਗ ਕਰੇਗਾ",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Signal {first}, {second}, ਅਤੇ {third} ਨੂੰ ਰਿੰਗ ਕਰੇਗਾ",
+    "messageformat": "Cradle {first}, {second}, ਅਤੇ {third} ਨੂੰ ਰਿੰਗ ਕਰੇਗਾ",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Signal {first}, {second}, ਅਤੇ {others} ਹੋਰ ਨੂੰ ਰਿੰਗ ਕਰੇਗਾ",
+    "messageformat": "Cradle {first}, {second}, ਅਤੇ {others} ਹੋਰ ਨੂੰ ਰਿੰਗ ਕਰੇਗਾ",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1713,7 +1684,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Signal {window} ਸਾਂਝੀ ਕਰ ਰਿਹਾ ਹੈ।",
+    "messageformat": "Cradle {window} ਸਾਂਝੀ ਕਰ ਰਿਹਾ ਹੈ।",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1737,7 +1708,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Signal ਨੂੰ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਦੀ ਸਕਰੀਨ ਰਿਕਾਰਡਿੰਗ ਤਕ ਪਹੁੰਚ ਵਾਸਤੇ ਇਜਾਜ਼ਤ ਚਾਹੀਦੀ ਹੈ।",
+    "messageformat": "Cradle ਨੂੰ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਦੀ ਸਕਰੀਨ ਰਿਕਾਰਡਿੰਗ ਤਕ ਪਹੁੰਚ ਵਾਸਤੇ ਇਜਾਜ਼ਤ ਚਾਹੀਦੀ ਹੈ।",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1749,7 +1720,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "ਸੱਜੇ ਪਾਸੇ, Signal ਦੇ ਨਾਲ ਵਾਲੇ ਖਾਨੇ ਨੂੰ ਚੁਣੋ। ਜੇ ਤੁਸੀਂ ਸੂਚੀ ਵਿੱਚ Signal ਨਹੀਂ ਵੇਖ ਰਹੇ ਤਾਂ ਇਸ ਨੂੰ ਜੋੜਨ ਲਈ + ਨੂੰ ਕਲਿਕ ਕਰੋ।",
+    "messageformat": "ਸੱਜੇ ਪਾਸੇ, Cradle ਦੇ ਨਾਲ ਵਾਲੇ ਖਾਨੇ ਨੂੰ ਚੁਣੋ। ਜੇ ਤੁਸੀਂ ਸੂਚੀ ਵਿੱਚ Cradle ਨਹੀਂ ਵੇਖ ਰਹੇ ਤਾਂ ਇਸ ਨੂੰ ਜੋੜਨ ਲਈ + ਨੂੰ ਕਲਿਕ ਕਰੋ।",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1793,12 +1764,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "ਅਗਲੀ ਵਾਰ Signal ਦੇ ਸ਼ੁਰੂ ਹੋਣ 'ਤੇ ਸ਼ਬਦ-ਜੋੜ ਦੀ ਜਾਂਚ ਨੂੰ ਸਮਰੱਥ ਬਣਾਇਆ ਜਾਏਗਾ",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
+    "messageformat": "ਅਗਲੀ ਵਾਰ Cradle ਦੇ ਸ਼ੁਰੂ ਹੋਣ 'ਤੇ ਸ਼ਬਦ-ਜੋੜ ਦੀ ਜਾਂਚ ਨੂੰ ਸਮਰੱਥ ਬਣਾਇਆ ਜਾਏਗਾ",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "ਅਗਲੀ ਵਾਰ Signal ਦੇ ਸ਼ੁਰੂ ਹੋਣ 'ਤੇ ਸ਼ਬਦ-ਜੋੜ ਦੀ ਜਾਂਚ ਨੂੰ ਅਸਮਰੱਥ ਬਣਾਇਆ ਜਾਏਗਾ",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
+    "messageformat": "ਅਗਲੀ ਵਾਰ Cradle ਦੇ ਸ਼ੁਰੂ ਹੋਣ 'ਤੇ ਸ਼ਬਦ-ਜੋੜ ਦੀ ਜਾਂਚ ਨੂੰ ਅਸਮਰੱਥ ਬਣਾਇਆ ਜਾਏਗਾ",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "ਸਿਸਟਮ ਟ੍ਰੇਅ ਨੂੰ ਛੋਟਾ ਕਰੋ",
@@ -1841,8 +1812,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "ਤੁਹਾਡੇ ਕੋਲ Signal Desktop ਦੀ ਪਿਛਲੀ ਇੰਸਟਾਲੇਸ਼ਨ ਦਾ ਪੁਰਾਣਾ ਡਾਟਾ ਮੌਜੂਦ ਹੈ। ਜੇ ਤੁਸੀਂ ਅੱਗੇ ਜਾਰੀ ਰੱਖਦੇ ਹੋ, ਤਾਂ ਇਸਨੂੰ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ ਅਤੇ ਤੁਹਾਨੂੰ ਮੁੱਢ ਤੋਂ ਸ਼ੁਰੂ ਕਰਨਾ ਪਵੇਗਾ।",
-    "description": "Shown if user last ran Signal Desktop before October 2018"
+    "messageformat": "ਤੁਹਾਡੇ ਕੋਲ Cradle Desktop ਦੀ ਪਿਛਲੀ ਇੰਸਟਾਲੇਸ਼ਨ ਦਾ ਪੁਰਾਣਾ ਡਾਟਾ ਮੌਜੂਦ ਹੈ। ਜੇ ਤੁਸੀਂ ਅੱਗੇ ਜਾਰੀ ਰੱਖਦੇ ਹੋ, ਤਾਂ ਇਸਨੂੰ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ ਅਤੇ ਤੁਹਾਨੂੰ ਮੁੱਢ ਤੋਂ ਸ਼ੁਰੂ ਕਰਨਾ ਪਵੇਗਾ।",
+    "description": "Shown if user last ran Cradle Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "ਪੁਰਾਣਾ ਡਾਟਾ ਮਿਟਾਓ",
@@ -1923,11 +1894,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "Signal Desktop ਦੇ ਇਸ ਸੰਸਕਰਣ ਦੀ ਮਿਆਦ ਪੁੱਗ ਚੁੱਕੀ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਮੈੇਸੇਜਿੰਗ ਨੂੰ ਜਾਰੀ ਰੱਖਣ ਲਈ ਤਾਜ਼ਾ ਸੰਸਕਰਣ ਲਈ ਅਪਗ੍ਰੇਡ ਕਰੋ।",
+    "messageformat": "Cradle Desktop ਦੇ ਇਸ ਸੰਸਕਰਣ ਦੀ ਮਿਆਦ ਪੁੱਗ ਚੁੱਕੀ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਮੈੇਸੇਜਿੰਗ ਨੂੰ ਜਾਰੀ ਰੱਖਣ ਲਈ ਤਾਜ਼ਾ ਸੰਸਕਰਣ ਲਈ ਅਪਗ੍ਰੇਡ ਕਰੋ।",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "signal.org/download ‘ਤੇ ਜਾਣ ਲਈ ਕਲਿੱਕ ਕਰੋ",
+    "messageformat": "cradle.org/download ‘ਤੇ ਜਾਣ ਲਈ ਕਲਿੱਕ ਕਰੋ",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2176,22 +2147,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "ਵਰਤੋਂਕਾਰ ਦਾ ਨਾਮ ਹਾਸਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਹੇ। ਆਪਣੇ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
-    "description": "Shown if request to Signal servers to find username fails"
+    "description": "Shown if request to Cradle servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "ਫ਼ੋਨ ਨੰਬਰ ਹਾਸਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਹੇ। ਆਪਣੇ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
-    "description": "Shown if request to Signal servers to find phone number fails"
+    "description": "Shown if request to Cradle servers to find phone number fails"
   },
   "icu:ToastManager__CannotEditMessage": {
     "messageformat": "ਇਸ ਸੁਨੇਹੇ ਨੂੰ ਭੇਜੇ ਜਾਣ ਤੋਂ 3 ਘੰਟੇ ਦੇ ਅੰਦਰ-ਅੰਦਰ ਹੀ ਸੋਧਿਆ ਜਾ ਸਕਦਾ ਹੈ।",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "ਵਰਤੋਂਕਾਰ ਨਹੀਂ ਲੱਭਿਆ। {atUsername} Signal ਦੇ ਵਰਤੋਂਕਾਰ ਨਹੀਂ ਹਨ। ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਵਰਤੋਂਕਾਰ ਦਾ ਪੂਰਾ ਨਾਮ ਦਰਜ ਕੀਤਾ ਹੈ।",
+    "messageformat": "ਵਰਤੋਂਕਾਰ ਨਹੀਂ ਲੱਭਿਆ। {atUsername} Signal/Cradle ਦੇ ਵਰਤੋਂਕਾਰ ਨਹੀਂ ਹਨ। ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਵਰਤੋਂਕਾਰ ਦਾ ਪੂਰਾ ਨਾਮ ਦਰਜ ਕੀਤਾ ਹੈ।",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "ਵਰਤੋਂਕਾਰ ਨਹੀਂ ਲੱਭਿਆ। \"{phoneNumber}\" Signal ਦੇ ਵਰਤੋਂਕਾਰ ਨਹੀਂ ਹਨ।",
+    "messageformat": "ਵਰਤੋਂਕਾਰ ਨਹੀਂ ਲੱਭਿਆ। \"{phoneNumber}\" Signal/Cradle ਦੇ ਵਰਤੋਂਕਾਰ ਨਹੀਂ ਹਨ।",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2219,7 +2190,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Signal ਗਰੁੱਪਾਂ ਵਿੱਚ ਵੱਧ ਤੋਂ ਵੱਧ {max,number} ਮੈਂਬਰ ਹੋ ਸਕਦੇ ਹਨ।",
+    "messageformat": "Cradle ਗਰੁੱਪਾਂ ਵਿੱਚ ਵੱਧ ਤੋਂ ਵੱਧ {max,number} ਮੈਂਬਰ ਹੋ ਸਕਦੇ ਹਨ।",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2227,7 +2198,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Signal ਗਰੁੱਪ {max,number} ਜਾਂ ਇਸਤੋਂ ਘੱਟ ਮੈਂਬਰਾਂ ਨਾਲ ਬਿਹਤਰੀਨ ਕਾਰਗੁਜ਼ਾਰੀ ਕਰਦੇ ਹਨ। ਹੋਰ ਮੈਂਬਰ ਸ਼ਾਮਲ ਕਰਨ ਨਾਲ ਸੁਨੇਹੇ ਭੇਜਣ ਅਤੇ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਦੇਰੀ ਹੋਵੇਗੀ।",
+    "messageformat": "Cradle ਗਰੁੱਪ {max,number} ਜਾਂ ਇਸਤੋਂ ਘੱਟ ਮੈਂਬਰਾਂ ਨਾਲ ਬਿਹਤਰੀਨ ਕਾਰਗੁਜ਼ਾਰੀ ਕਰਦੇ ਹਨ। ਹੋਰ ਮੈਂਬਰ ਸ਼ਾਮਲ ਕਰਨ ਨਾਲ ਸੁਨੇਹੇ ਭੇਜਣ ਅਤੇ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਦੇਰੀ ਹੋਵੇਗੀ।",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2279,7 +2250,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "ਮੈਸੇਜਿੰਗ ਜਾਰੀ ਰੱਖਣ ਲਈ Signal Desktop ਨੂੰ ਆਪਣੇ ਮੋਬਾਈਲ ਡਿਵਾਈਸ ਨਾਲ ਦੁਬਾਰਾ ਲਿੰਕ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ।"
+    "messageformat": "ਮੈਸੇਜਿੰਗ ਜਾਰੀ ਰੱਖਣ ਲਈ Cradle Desktop ਨੂੰ ਆਪਣੇ ਮੋਬਾਈਲ ਡਿਵਾਈਸ ਨਾਲ ਦੁਬਾਰਾ ਲਿੰਕ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ।"
   },
   "icu:unlinked": {
     "messageformat": "ਲਿੰਕ ਨਹੀਂ ਕੀਤਾ ਹੋਇਆ"
@@ -2297,17 +2268,17 @@
     "messageformat": "ਸਹਾਇਤਾ ਟੀਮ ਨਾਲ ਸੰਪਰਕ ਕਰੋ"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Signal ਮੁੜ-ਚਾਲੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ"
+    "messageformat": "Cradle ਮੁੜ-ਚਾਲੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "ਅੱਪਡੇਟ ਡਾਊਨਲੋਡ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Signal ਨੂੰ ਅੱਪਡੇਟ ਨਹੀਂ ਕਰ ਸਕੇ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ।",
+    "messageformat": "Cradle ਨੂੰ ਅੱਪਡੇਟ ਨਹੀਂ ਕਰ ਸਕੇ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ।",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Signal ਮੁੜ ਚਾਲੂ ਕਰੋ"
+    "messageformat": "Cradle ਮੁੜ ਚਾਲੂ ਕਰੋ"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "ਬਾਅਦ ਵਿੱਚ"
@@ -2565,15 +2536,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "ਪੇਸ਼ ਕਰਦੇ ਹਾਂ ਸਟਿੱਕਰ: ਬੈਂਡਿਟ ਦ ਕੈਟ",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "ਪੇਸ਼ ਕਰਦੇ ਹਾਂ ਸਟਿੱਕਰ",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "ਜਦੋਂ ਤੁਸੀਂ ਸਟਿੱਕਰਾਂ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ ਤਾਂ ਸ਼ਬਦਾਂ ਨੂੰ ਕਿਉਂ ਵਰਤਣਾ?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "ਸਟਿੱਕਰ ਚੋਣਕਾਰ ਨੂੰ ਖੋਲ੍ਹੋ",
@@ -2716,20 +2687,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} ਨੇ ਤੁਹਾਨੂੰ ਇੱਕ ਸੁਨੇਹਾ ਭੇਜਿਆ ਜਿਸ ਨੂੰ ਪ੍ਰੋਸੈਸ ਜਾਂ ਡਿਸਪਲੇ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਕਿਉਂਕਿ ਇਹ Signal ਦੀ ਇੱਕ ਨਵੀਂ ਵਿਸ਼ੇਸ਼ਤਾ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ।"
+    "messageformat": "{contact} ਨੇ ਤੁਹਾਨੂੰ ਇੱਕ ਸੁਨੇਹਾ ਭੇਜਿਆ ਜਿਸ ਨੂੰ ਪ੍ਰੋਸੈਸ ਜਾਂ ਡਿਸਪਲੇ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਕਿਉਂਕਿ ਇਹ Signal/Cradle ਦੀ ਇੱਕ ਨਵੀਂ ਵਿਸ਼ੇਸ਼ਤਾ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ।"
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "ਹੁਣ ਜੋ ਤੁਸੀਂ Signal ਦੇ ਬਿਲਕੁਲ ਨਵੇਂ ਸੰਸਕਰਣ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ {contact} ਨੂੰ ਇਹ ਸੁਨੇਹਾ ਦੁਬਾਰਾ ਭੇਜਣ ਲਈ ਕਹਿ ਸਕਦੇ ਹੋ।"
+    "messageformat": "ਹੁਣ ਜੋ ਤੁਸੀਂ Cradle ਦੇ ਬਿਲਕੁਲ ਨਵੇਂ ਸੰਸਕਰਣ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ {contact} ਨੂੰ ਇਹ ਸੁਨੇਹਾ ਦੁਬਾਰਾ ਭੇਜਣ ਲਈ ਕਹਿ ਸਕਦੇ ਹੋ।"
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "ਤੁਹਾਡੀ ਕਿਸੇ ਇੱਕ ਡਿਵਾਈਸ ਤੋਂ ਸੁਨੇਹਾ ਭੇਜਿਆ ਗਿਆ ਜਿਸ ਨੂੰ ਪ੍ਰੋਸੈਸ ਜਾਂ ਡਿਸਪਲੇ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਕਿਉਂਕਿ ਇਹ Signal ਦੀ ਕਿਸੇ ਨਵੀਂ ਵਿਸ਼ੇਸ਼ਤਾ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ।"
+    "messageformat": "ਤੁਹਾਡੀ ਕਿਸੇ ਇੱਕ ਡਿਵਾਈਸ ਤੋਂ ਸੁਨੇਹਾ ਭੇਜਿਆ ਗਿਆ ਜਿਸ ਨੂੰ ਪ੍ਰੋਸੈਸ ਜਾਂ ਡਿਸਪਲੇ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਕਿਉਂਕਿ ਇਹ Signal/Cradle ਦੀ ਕਿਸੇ ਨਵੀਂ ਵਿਸ਼ੇਸ਼ਤਾ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ।"
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "ਹੁਣ ਜੋ ਤੁਸੀਂ Signal ਦੇ ਬਿਲਕੁਲ ਨਵੇਂ ਸੰਸਕਰਣ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ ਤਾਂ ਭਵਿੱਖ ਦੇ ਅਜਿਹੇ ਸੁਨੇਹਿਆਂ ਨੂੰ ਸਮਕਾਲੀ ਬਣਾਇਆ ਜਾਵੇਗਾ।"
+    "messageformat": "ਹੁਣ ਜੋ ਤੁਸੀਂ Cradle ਦੇ ਬਿਲਕੁਲ ਨਵੇਂ ਸੰਸਕਰਣ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ ਤਾਂ ਭਵਿੱਖ ਦੇ ਅਜਿਹੇ ਸੁਨੇਹਿਆਂ ਨੂੰ ਸਮਕਾਲੀ ਬਣਾਇਆ ਜਾਵੇਗਾ।"
   },
   "icu:Message--update-signal": {
-    "messageformat": "Signal ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ",
-    "description": "Text for a button which will take user to Signal download page"
+    "messageformat": "Cradle ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ",
+    "description": "Text for a button which will take user to Cradle download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "ਵੇਖਿਆ",
@@ -3068,11 +3039,11 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "ਸਿਰਫ਼ Signal ਬੀਟਾ",
+    "messageformat": "ਸਿਰਫ਼ Cradle ਬੀਟਾ",
     "description": "Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "ਸੁਨੇਹਿਆਂ ਨੂੰ ਸੋਧਣ ਦੀ ਸਹੂਲਤ ਸਿਰਫ਼ Signal ਬੀਟਾ ਦੇ ਵਰਤੋਂਕਾਰਾਂ ਲਈ ਉਪਲਬਧ ਹੈ। ਜੇਕਰ ਤੁਸੀਂ ਕਿਸੇ ਸੁਨੇਹੇ ਨੂੰ ਸੋਧਦੇ ਹੋ, ਤਾਂ ਇਹ ਸਿਰਫ਼ ਉਹਨਾਂ ਲੋਕਾਂ ਨੂੰ ਦਿਖਾਈ ਦੇਵੇਗਾ ਜਿਹਨਾਂ ਕੋਲ Signal ਬੀਟਾ ਦਾ ਨਵਾਂ ਵਰਜ਼ਨ ਹੈ।",
+    "messageformat": "ਸੁਨੇਹਿਆਂ ਨੂੰ ਸੋਧਣ ਦੀ ਸਹੂਲਤ ਸਿਰਫ਼ Cradle ਬੀਟਾ ਦੇ ਵਰਤੋਂਕਾਰਾਂ ਲਈ ਉਪਲਬਧ ਹੈ। ਜੇਕਰ ਤੁਸੀਂ ਕਿਸੇ ਸੁਨੇਹੇ ਨੂੰ ਸੋਧਦੇ ਹੋ, ਤਾਂ ਇਹ ਸਿਰਫ਼ ਉਹਨਾਂ ਲੋਕਾਂ ਨੂੰ ਦਿਖਾਈ ਦੇਵੇਗਾ ਜਿਹਨਾਂ ਕੋਲ Cradle ਬੀਟਾ ਦਾ ਨਵਾਂ ਵਰਜ਼ਨ ਹੈ।",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3080,20 +3051,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "ਕੁਝ ਲੋਕ ਸ਼ਾਇਦ Signal ਦਾ ਅਜਿਹਾ ਵਰਜ਼ਨ ਵਰਤ ਰਹੇ ਹਨ ਜੋ ਫਾਰਮੈਟਿਡ ਟੈਕਸਟ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾ ਹੈ। ਉਹ ਤੁਹਾਡੇ ਸੁਨੇਹੇ ਵਿੱਚ ਤੁਹਾਡੇ ਵੱਲੋਂ ਕੀਤੀਆਂ ਗਈਆਂ ਫਾਰਮੈਟਿੰਗ ਤਬਦੀਲੀਆਂ ਨੂੰ ਦੇਖ ਨਹੀਂ ਸਕਣਗੇ।",
+    "messageformat": "ਕੁਝ ਲੋਕ ਸ਼ਾਇਦ Cradle ਦਾ ਅਜਿਹਾ ਵਰਜ਼ਨ ਵਰਤ ਰਹੇ ਹਨ ਜੋ ਫਾਰਮੈਟਿਡ ਟੈਕਸਟ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾ ਹੈ। ਉਹ ਤੁਹਾਡੇ ਸੁਨੇਹੇ ਵਿੱਚ ਤੁਹਾਡੇ ਵੱਲੋਂ ਕੀਤੀਆਂ ਗਈਆਂ ਫਾਰਮੈਟਿੰਗ ਤਬਦੀਲੀਆਂ ਨੂੰ ਦੇਖ ਨਹੀਂ ਸਕਣਗੇ।",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "ਕੀ ਤੁਸੀਂ Signal ਸਟਿੱਕਰ ਪੈਕ ਕ੍ਰੀਏਟਰ ਨੂੰ ਖੋਲ੍ਹਣਾ ਚਾਹੁੰਦੇ ਹੋ?",
-    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
+    "messageformat": "ਕੀ ਤੁਸੀਂ Cradle ਸਟਿੱਕਰ ਪੈਕ ਕ੍ਰੀਏਟਰ ਨੂੰ ਖੋਲ੍ਹਣਾ ਚਾਹੁੰਦੇ ਹੋ?",
+    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "ਪੁਸ਼ਟੀ ਕਰੋ",
-    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "ਖਾਰਜ ਕਰੋ",
-    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "ਸਟਿੱਕਰ ਪੈਕ ਕ੍ਰੀਏਟਰ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਫ਼ੋਨ ਅਤੇ ਡੈਸਕਟਾਪ ਉੱਤੇ Signal ਨੂੰ ਸੈੱਟ ਅੱਪ ਕਰੋ",
@@ -3312,12 +3283,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Signal ਅਜੇ ਵੀ ਚੱਲ ਰਿਹਾ ਹੈ",
-    "description": "Shown in a notification title when Signal is minimized to tray"
+    "messageformat": "Cradle ਅਜੇ ਵੀ ਚੱਲ ਰਿਹਾ ਹੈ",
+    "description": "Shown in a notification title when Cradle is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Signal ਸੂਚਨਾ ਖੇਤਰ ਵਿੱਚ ਚੱਲਦਾ ਰਹੇਗਾ। ਤੁਸੀਂ ਇਸ ਨੂੰ Signal ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਬਦਲ ਸਕਦੇ ਹੋ।",
-    "description": "Shown in a notification body when Signal is minimized to tray"
+    "messageformat": "Cradle ਸੂਚਨਾ ਖੇਤਰ ਵਿੱਚ ਚੱਲਦਾ ਰਹੇਗਾ। ਤੁਸੀਂ ਇਸ ਨੂੰ Cradle ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਬਦਲ ਸਕਦੇ ਹੋ।",
+    "description": "Shown in a notification body when Cradle is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "ਵੌਇਸ ਕਾਲ ਆ ਰਹੀ ਹੈ…",
@@ -3372,7 +3343,7 @@
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
   "icu:callDuration": {
-    "messageformat": "Signal {duration}",
+    "messageformat": "Cradle {duration}",
     "description": "Shown in the call screen to indicate how long the call has been connected"
   },
   "icu:callingDeviceSelection__settings": {
@@ -3560,7 +3531,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "ਇਹ ਲਿੰਕ Signal Desktop ਦੇ ਇਸ ਸੰਸਕਰਣ ਦੁਆਰਾ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ।",
+    "messageformat": "ਇਹ ਲਿੰਕ Cradle Desktop ਦੇ ਇਸ ਸੰਸਕਰਣ ਦੁਆਰਾ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ।",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4316,11 +4287,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "ਇਹ ਵਿਅਕਤੀ Signal ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰ ਰਿਹਾ ਹੈ",
+    "messageformat": "ਇਹ ਵਿਅਕਤੀ Signal/Cradle ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰ ਰਿਹਾ ਹੈ",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal Desktop ਗੈਰ-Signal ਸੰਪਰਕਾਂ ਦੇ ਨਾਲ ਸੁਨੇਹਿਆਂ ਦੇ ਲੈਣ-ਦੇਣ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾ। ਵਧੇਰੇ ਸੁਰੱਖਿਅਤ ਮੈਸੇਜਿੰਗ ਅਨੁਭਵ ਲਈ ਇਸ ਵਿਅਕਤੀ ਨੂੰ Signal ਸਥਾਪਤ ਕਰਨ ਲਈ ਕਹੋ।",
+    "messageformat": "Signal/Cradle Desktop ਗੈਰ-Signal/Cradle ਸੰਪਰਕਾਂ ਦੇ ਨਾਲ ਸੁਨੇਹਿਆਂ ਦੇ ਲੈਣ-ਦੇਣ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾ। ਵਧੇਰੇ ਸੁਰੱਖਿਅਤ ਮੈਸੇਜਿੰਗ ਅਨੁਭਵ ਲਈ ਇਸ ਵਿਅਕਤੀ ਨੂੰ Signal/Cradle ਸਥਾਪਤ ਕਰਨ ਲਈ ਕਹੋ।",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4857,10 +4828,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "ਸੁਨੇਹਾ ਬੇਨਤੀਆਂ ਬਾਰੇ",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "ਬੇਨਤੀਆਂ ਦੀ ਧਿਆਨ ਨਾਲ ਸਮੀਖਿਆ ਕਰੋ। Signal ਨੂੰ ਇਸੇ ਨਾਮ ਵਾਲਾ ਇੱਕ ਹੋਰ ਸੰਪਰਕ ਲੱਭਿਆ ਹੈ। <reviewRequestLink>ਬੇਨਤੀ ਦੀ ਸਮੀਖਿਆ ਕਰੋ</reviewRequestLink>",
+    "messageformat": "ਬੇਨਤੀਆਂ ਦੀ ਧਿਆਨ ਨਾਲ ਸਮੀਖਿਆ ਕਰੋ। Cradle ਨੂੰ ਇਸੇ ਨਾਮ ਵਾਲਾ ਇੱਕ ਹੋਰ ਸੰਪਰਕ ਲੱਭਿਆ ਹੈ। <reviewRequestLink>ਬੇਨਤੀ ਦੀ ਸਮੀਖਿਆ ਕਰੋ</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -4924,7 +4895,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Signal ’ਤੇ ਸਪੈਮ ਨੂੰ ਰੋਕਣ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਪ੍ਰਮਾਣੀਕਰਣ ਪੂਰਾ ਕਰੋ।",
+    "messageformat": "Cradle ’ਤੇ ਸਪੈਮ ਨੂੰ ਰੋਕਣ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਪ੍ਰਮਾਣੀਕਰਣ ਪੂਰਾ ਕਰੋ।",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5440,7 +5411,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "ਚੁਣੋ ਕਿ ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ ਕੌਣ ਦੇਖ ਸਕਦਾ ਹੈ ਅਤੇ ਕੌਣ ਤੁਹਾਡੇ ਨਾਲ Signal 'ਤੇ ਸੰਪਰਕ ਕਰ ਸਕਦਾ ਹੈ।",
+    "messageformat": "ਚੁਣੋ ਕਿ ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ ਕੌਣ ਦੇਖ ਸਕਦਾ ਹੈ ਅਤੇ ਕੌਣ ਤੁਹਾਡੇ ਨਾਲ Cradle 'ਤੇ ਸੰਪਰਕ ਕਰ ਸਕਦਾ ਹੈ।",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5448,11 +5419,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ ਉਹਨਾਂ ਲੋਕਾਂ ਅਤੇ ਗਰੁੱਪਾਂ ਨੂੰ ਦਿਖਾਈ ਦੇਵੇਗਾ ਜਿਹਨਾਂ ਨੂੰ ਤੁਸੀਂ ਸੁਨੇਹਾ ਭੇਜਦੇ ਹੋ। ਜਿਹਨਾਂ ਲੋਕਾਂ ਦੇ ਫ਼ੋਨ ਵਿੱਚ ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ ਸੇਵ ਕੀਤਾ ਹੋਇਆ ਹੈ, ਉਹ ਵੀ ਤੁਹਾਨੂੰ Signal ਉੱਤੇ ਦੇਖ ਸਕਣਗੇ।",
+    "messageformat": "ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ ਉਹਨਾਂ ਲੋਕਾਂ ਅਤੇ ਗਰੁੱਪਾਂ ਨੂੰ ਦਿਖਾਈ ਦੇਵੇਗਾ ਜਿਹਨਾਂ ਨੂੰ ਤੁਸੀਂ ਸੁਨੇਹਾ ਭੇਜਦੇ ਹੋ। ਜਿਹਨਾਂ ਲੋਕਾਂ ਦੇ ਫ਼ੋਨ ਵਿੱਚ ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ ਸੇਵ ਕੀਤਾ ਹੋਇਆ ਹੈ, ਉਹ ਵੀ ਤੁਹਾਨੂੰ Cradle ਉੱਤੇ ਦੇਖ ਸਕਣਗੇ।",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "ਕੋਈ ਵੀ Signal ਉੱਤੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੰਬਰ ਨਹੀਂ ਦੇਖ ਸਕੇਗਾ।",
+    "messageformat": "ਕੋਈ ਵੀ Signal/Cradle ਉੱਤੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੰਬਰ ਨਹੀਂ ਦੇਖ ਸਕੇਗਾ।",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5472,11 +5443,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "ਜਿਸ ਵਿਅਕਤੀ ਦੇ ਸੰਪਰਕਾਂ ਵਿੱਚ ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ ਮੌਜੂਦ ਹੈ, ਉਹ ਤੁਹਾਨੂੰ Signal ਉੱਤੇ ਆਪਣੇ ਸੰਪਰਕਾਂ ਵਿੱਚ ਦੇਖ ਸਕਦਾ ਹੈ। ਹੋਰ ਲੋਕ ਨਵੀਂ ਚੈਟ ਜਾਂ ਗਰੁੱਪ ਸ਼ੁਰੂ ਕਰਨ 'ਤੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੰਬਰ ਰਾਹੀਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਣਗੇ।",
+    "messageformat": "ਜਿਸ ਵਿਅਕਤੀ ਦੇ ਸੰਪਰਕਾਂ ਵਿੱਚ ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ ਮੌਜੂਦ ਹੈ, ਉਹ ਤੁਹਾਨੂੰ Signal/Cradle ਉੱਤੇ ਆਪਣੇ ਸੰਪਰਕਾਂ ਵਿੱਚ ਦੇਖ ਸਕਦਾ ਹੈ। ਹੋਰ ਲੋਕ ਨਵੀਂ ਚੈਟ ਜਾਂ ਗਰੁੱਪ ਸ਼ੁਰੂ ਕਰਨ 'ਤੇ ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੰਬਰ ਰਾਹੀਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕਣਗੇ।",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Signal ਉੱਤੇ ਕੋਈ ਵੀ ਤੁਹਾਡੇ ਨੰਬਰ ਰਾਹੀਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਨਹੀਂ ਕਰ ਸਕੇਗਾ।",
+    "messageformat": "Signal/Cradle ਉੱਤੇ ਕੋਈ ਵੀ ਤੁਹਾਡੇ ਨੰਬਰ ਰਾਹੀਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਨਹੀਂ ਕਰ ਸਕੇਗਾ।",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5556,7 +5527,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Signal ਦੀ ਵਰਤੋਂ ਜਾਰੀ ਰੱਖਣ ਲਈ, ਤੁਹਾਨੂੰ ਨਵੇਂ ਵਰਜ਼ਨ ਉੱਤੇ ਅੱਪਡੇਟ ਕਰਨਾ ਪਵੇਗਾ।",
+    "messageformat": "Cradle ਦੀ ਵਰਤੋਂ ਜਾਰੀ ਰੱਖਣ ਲਈ, ਤੁਹਾਨੂੰ ਨਵੇਂ ਵਰਜ਼ਨ ਉੱਤੇ ਅੱਪਡੇਟ ਕਰਨਾ ਪਵੇਗਾ।",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5564,15 +5535,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "ਅੱਪਡੇਟ ਨੂੰ ਇੰਸਟਾਲ ਕਰਨ ਲਈ Signal ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ।",
+    "messageformat": "ਅੱਪਡੇਟ ਨੂੰ ਇੰਸਟਾਲ ਕਰਨ ਲਈ Cradle ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ।",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Signal Desktop ਨੂੰ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਹੇ, ਪਰ ਇੱਕ ਨਵਾਂ ਵਰਜ਼ਨ ਉਪਲਬਧ ਹੈ। {downloadUrl} 'ਤੇ ਜਾਓ ਅਤੇ ਨਵਾਂ ਵਰਜ਼ਨ ਖੁਦ ਇੰਸਟਾਲ ਕਰੋ, ਫਿਰ ਇਸ ਸਮੱਸਿਆ ਬਾਰੇ ਸਹਾਇਤਾ ਟੀਮ ਨਾਲ ਸੰਪਰਕ ਕਰੋ ਜਾਂ ਖ਼ਰਾਬੀ ਦੀ ਰਿਪੋਰਟ ਕਰੋ।",
+    "messageformat": "Cradle Desktop ਨੂੰ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਹੇ, ਪਰ ਇੱਕ ਨਵਾਂ ਵਰਜ਼ਨ ਉਪਲਬਧ ਹੈ। {downloadUrl} 'ਤੇ ਜਾਓ ਅਤੇ ਨਵਾਂ ਵਰਜ਼ਨ ਖੁਦ ਇੰਸਟਾਲ ਕਰੋ, ਫਿਰ ਇਸ ਸਮੱਸਿਆ ਬਾਰੇ ਸਹਾਇਤਾ ਟੀਮ ਨਾਲ ਸੰਪਰਕ ਕਰੋ ਜਾਂ ਖ਼ਰਾਬੀ ਦੀ ਰਿਪੋਰਟ ਕਰੋ।",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Signal ਨੂੰ ਬੰਦ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
+    "messageformat": "Cradle ਨੂੰ ਬੰਦ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5592,15 +5563,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Signal ਦਾ ਇੱਕ ਨਵਾਂ ਵਰਜ਼ਨ ਪਹਿਲਾਂ ਹੀ ਇੰਸਟਾਲ ਕੀਤਾ ਹੋਇਆ ਹੈ। ਕੀ ਤੁਸੀਂ ਪੱਕਾ ਅੱਗੇ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?",
-    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
+    "messageformat": "Cradle ਦਾ ਇੱਕ ਨਵਾਂ ਵਰਜ਼ਨ ਪਹਿਲਾਂ ਹੀ ਇੰਸਟਾਲ ਕੀਤਾ ਹੋਇਆ ਹੈ। ਕੀ ਤੁਸੀਂ ਪੱਕਾ ਅੱਗੇ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?",
+    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "ਐਪਲੀਕੇਸ਼ਨ ਕਰੈਸ਼ ਹੋ ਗਈ ਹੈ",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "ਕਰੈਸ਼ ਤੋਂ ਬਾਅਦ Signal ਮੁੜ ਚਾਲੂ ਹੋ ਗਿਆ ਹੈ। Signal ਨੂੰ ਇਸ ਸਮੱਸਿਆ ਦੀ ਜਾਂਚ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ ਤੁਸੀਂ ਕਰੈਸ਼ ਰਿਪੋਰਟ ਦਰਜ ਕਰ ਸਕਦੇ ਹੋ।",
+    "messageformat": "ਕਰੈਸ਼ ਤੋਂ ਬਾਅਦ Cradle ਮੁੜ ਚਾਲੂ ਹੋ ਗਿਆ ਹੈ। Cradle ਨੂੰ ਇਸ ਸਮੱਸਿਆ ਦੀ ਜਾਂਚ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ ਤੁਸੀਂ ਕਰੈਸ਼ ਰਿਪੋਰਟ ਦਰਜ ਕਰ ਸਕਦੇ ਹੋ।",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5796,8 +5767,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Signal ਕਨੈਕਸ਼ਨ",
-    "description": "The phrase/term: 'Signal Connections'"
+    "messageformat": "Cradle ਕਨੈਕਸ਼ਨ",
+    "description": "The phrase/term: 'Cradle Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} ਉਹ ਲੋਕ ਹਨ ਜਿਹਨਾਂ ਉੱਤੇ ਤੁਸੀਂ ਨਿਮਨਲਿਖਤ ਵਿੱਚੋਂ ਕੋਈ ਕਾਰਵਾਈ ਕਰਕੇ ਭਰੋਸਾ ਕੀਤਾ ਹੈ:",
@@ -5976,7 +5947,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "ਸਾਰੇ Signal ਕਨੈਕਸ਼ਨ",
+    "messageformat": "ਸਾਰੇ Cradle ਕਨੈਕਸ਼ਨ",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6096,7 +6067,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "ਚੁਣੋ ਕਿ ਕਿਹੜੇ Signal ਕਨੈਕਸ਼ਨ ਤੁਹਾਡੀ ਸਟੋਰੀ ਦੇਖ ਸਕਦੇ ਹਨ। ਤੁਸੀਂ ਪਰਦੇਦਾਰੀ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜਾ ਕੇ ਕਦੇ ਵੀ ਇਸ ਸੈਟਿੰਗ ਨੂੰ ਬਦਲ ਸਕਦੇ ਹੋ। <learnMoreLink>ਹੋਰ ਜਾਣੋ।</learnMoreLink>",
+    "messageformat": "ਚੁਣੋ ਕਿ ਕਿਹੜੇ Cradle ਕਨੈਕਸ਼ਨ ਤੁਹਾਡੀ ਸਟੋਰੀ ਦੇਖ ਸਕਦੇ ਹਨ। ਤੁਸੀਂ ਪਰਦੇਦਾਰੀ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜਾ ਕੇ ਕਦੇ ਵੀ ਇਸ ਸੈਟਿੰਗ ਨੂੰ ਬਦਲ ਸਕਦੇ ਹੋ। <learnMoreLink>ਹੋਰ ਜਾਣੋ।</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6112,11 +6083,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {All Signal Connections · 1 Viewer} other {All Signal Connections · {viewersCount,number} Viewers}}",
+    "messageformat": "{viewersCount, plural, one {All Cradle Connections · 1 Viewer} other {All Cradle Connections · {viewersCount,number} Viewers}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {All Signal Connections · 1 Excluded} other {All Signal Connections · {excludedCount,number} Excluded}}",
+    "messageformat": "{excludedCount, plural, one {All Cradle Connections · 1 Excluded} other {All Cradle Connections · {excludedCount,number} Excluded}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6432,7 +6403,7 @@
     "description": "Body of the popup with information about discriminator in username"
   },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "ਆਪਣਾ Signal ਵਰਤੋਂਕਾਰ ਨਾਂ ਸੈੱਟ ਕਰੋ",
+    "messageformat": "ਆਪਣਾ Cradle ਵਰਤੋਂਕਾਰ ਨਾਂ ਸੈੱਟ ਕਰੋ",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6456,15 +6427,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Signal Desktop ਜਲਦੀ ਹੀ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਦੇ {OS} ਵਰਜਨ ਵਿੱਚ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ। Signal ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਰਹਿਣ ਲਈ, {expirationDate} ਤੱਕ ਆਪਣੇ ਕੰਪਿਊਟਰ ਦੇ ਓਪਰੇਟਿੰਗ ਸਿਸਟਮ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ। <learnMoreLink>ਹੋਰ ਜਾਣੋ</learnMoreLink>",
+    "messageformat": "Cradle Desktop ਜਲਦੀ ਹੀ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਦੇ {OS} ਵਰਜਨ ਵਿੱਚ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ। Cradle ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਰਹਿਣ ਲਈ, {expirationDate} ਤੱਕ ਆਪਣੇ ਕੰਪਿਊਟਰ ਦੇ ਓਪਰੇਟਿੰਗ ਸਿਸਟਮ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ। <learnMoreLink>ਹੋਰ ਜਾਣੋ</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Signal Desktop ਹੁਣ ਇਸ ਕੰਪਿਊਟਰ 'ਤੇ ਕੰਮ ਨਹੀਂ ਕਰਦਾ ਹੈ। Signal Desktop ਦੀ ਦੁਬਾਰਾ ਵਰਤੋਂ ਕਰਨ ਲਈ, ਆਪਣੇ ਕੰਪਿਊਟਰ ਦੇ {OS} ਦਾ ਵਰਜ਼ਨ ਅੱਪਡੇਟ ਕਰੋ। <learnMoreLink>ਹੋਰ ਜਾਣੋ</learnMoreLink>",
+    "messageformat": "Cradle Desktop ਹੁਣ ਇਸ ਕੰਪਿਊਟਰ 'ਤੇ ਕੰਮ ਨਹੀਂ ਕਰਦਾ ਹੈ। Cradle Desktop ਦੀ ਦੁਬਾਰਾ ਵਰਤੋਂ ਕਰਨ ਲਈ, ਆਪਣੇ ਕੰਪਿਊਟਰ ਦੇ {OS} ਦਾ ਵਰਜ਼ਨ ਅੱਪਡੇਟ ਕਰੋ। <learnMoreLink>ਹੋਰ ਜਾਣੋ</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Signal Desktop ਹੁਣ ਇਸ ਕੰਪਿਊਟਰ 'ਤੇ ਕੰਮ ਨਹੀਂ ਕਰਦਾ ਹੈ। Signal Desktop ਦੀ ਦੁਬਾਰਾ ਵਰਤੋਂ ਕਰਨ ਲਈ, ਆਪਣੇ ਕੰਪਿਊਟਰ ਦੇ {OS} ਦਾ ਵਰਜ਼ਨ ਅੱਪਡੇਟ ਕਰੋ।",
+    "messageformat": "Cradle Desktop ਹੁਣ ਇਸ ਕੰਪਿਊਟਰ 'ਤੇ ਕੰਮ ਨਹੀਂ ਕਰਦਾ ਹੈ। Cradle Desktop ਦੀ ਦੁਬਾਰਾ ਵਰਤੋਂ ਕਰਨ ਲਈ, ਆਪਣੇ ਕੰਪਿਊਟਰ ਦੇ {OS} ਦਾ ਵਰਜ਼ਨ ਅੱਪਡੇਟ ਕਰੋ।",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6488,11 +6459,11 @@
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Signal ਨੂੰ ਸੁਚਾਰੂ ਢੰਗ ਨਾਲ ਚੱਲਦਾ ਰੱਖਣ ਲਈ ਇਸ ਵਰਜ਼ਨ ਵਿੱਚ ਨਿੱਕੇ-ਮੋਟੇ ਸੁਧਾਰ ਅਤੇ ਬੱਗ ਠੀਕ ਕੀਤੇ ਗਏ ਹਨ।",
+    "messageformat": "Cradle ਨੂੰ ਸੁਚਾਰੂ ਢੰਗ ਨਾਲ ਚੱਲਦਾ ਰੱਖਣ ਲਈ ਇਸ ਵਰਜ਼ਨ ਵਿੱਚ ਨਿੱਕੇ-ਮੋਟੇ ਸੁਧਾਰ ਅਤੇ ਬੱਗ ਠੀਕ ਕੀਤੇ ਗਏ ਹਨ।",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "ਛੋਟੇ-ਮੋਟੇ ਸੁਧਾਰ ਅਤੇ ਬੱਗ ਫਿਕਸ ਕੀਤੇ ਗਏ ਹਨ ਅਤੇ ਪ੍ਰਦਰਸ਼ਨ ਨੂੰ ਬਿਹਤਰ ਬਣਾਇਆ ਗਿਆ ਹੈ। Signal ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ!",
+    "messageformat": "ਛੋਟੇ-ਮੋਟੇ ਸੁਧਾਰ ਅਤੇ ਬੱਗ ਫਿਕਸ ਕੀਤੇ ਗਏ ਹਨ ਅਤੇ ਪ੍ਰਦਰਸ਼ਨ ਨੂੰ ਬਿਹਤਰ ਬਣਾਇਆ ਗਿਆ ਹੈ। Cradle ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6512,13 +6483,27 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "ਛੋਟੇ-ਮੋਟੇ ਸੁਧਾਰ, ਖ਼ਰਾਬੀਆਂ ਨੂੰ ਦਰੁਸਤ ਅਤੇ ਪ੍ਰਦਰਸ਼ਨ ਨੂੰ ਬਿਹਤਰ ਬਣਾਇਆ ਗਿਆ ਹੈ। Signal ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ!",
+    "messageformat": "ਛੋਟੇ-ਮੋਟੇ ਸੁਧਾਰ, ਖ਼ਰਾਬੀਆਂ ਨੂੰ ਦਰੁਸਤ ਅਤੇ ਪ੍ਰਦਰਸ਼ਨ ਨੂੰ ਬਿਹਤਰ ਬਣਾਇਆ ਗਿਆ ਹੈ। Cradle ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.24--0": {
-    "messageformat": "ਹੁਣ ਤੁਸੀਂ ਇਹ ਵੀ ਖੋਜ ਸਕਦੇ ਹੋ ਕਿ ਤੁਹਾਡਾ @ ਜ਼ਿਕਰ ਕਿੱਥੇ ਹੋਇਆ ਹੈ।"
+  "icu:WhatsNew__v6.21--0": {
+    "messageformat": "ਕਿਸੇ ਇੱਕ ਵਿਅਕਤੀ ਨੂੰ ਵੀਡੀਓ ਕਾਲਾਂ ਕਰਨ ਵੇਲੇ, ਹੁਣ ਰਿੰਗ ਹੋਣ ਦੌਰਾਨ ਤੁਹਾਨੂੰ ਉਵੇਂ ਦੀ ਹੀ ਪੂਰੀ-ਸਕ੍ਰੀਨ ਦਿਖਾਈ ਦੇਵੇਗੀ ਜਿਵੇਂ ਦੀ ਗਰੁੱਪ ਕਾਲਾਂ ਵਿੱਚ ਦਿਖਦੀ ਹੈ। ਵਿਅਕਤੀਗਤ ਵੀਡੀਓ ਕਾਲਾਂ ਵੀ ਹੁਣ ਉਸੇ ਪੂਰੀ-ਸਕ੍ਰੀਨ ਵਾਲੇ ਵਿਊ ਦੀ ਵਰਤੋਂ ਕਰਦੀਆਂ ਹਨ ਜੋ ਪਹਿਲਾਂ ਸਿਰਫ਼ ਨਵੀਂ ਗਰੁੱਪ ਕਾਲ ਦੀ ਸ਼ੁਰੂਆਤ ਵਿੱਚ ਦਿਖਾਈ ਦਿੰਦਾ ਸੀ। ਸਾਨੂੰ ਪੂਰਾ ਯਕੀਨ ਹੈ ਕਿ ਤੁਹਾਨੂੰ ਇਹ ਇਕਸਾਰ ਵਿਊ ਪਸੰਦ ਆਵੇਗਾ।",
+    "description": "Release notes for v6.21"
   },
-  "icu:WhatsNew__v6.25--0": {
-    "messageformat": "ਹੁਣ ਤੁਸੀਂ Signal ਵਿੰਡੋ ਦੀ ਥਾਂ ਬਦਲਣ ਲਈ ਚੈਟ ਦੇ ਹੈੱਡਰ 'ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਉਸਨੂੰ ਡਰੈਗ ਕਰ ਸਕਦੇ ਹੋ।"
+  "icu:WhatsNew__v6.21--1": {
+    "messageformat": "ਇਸ ਰਿਲੀਜ਼ 'ਤੇ ਕੰਮ ਕਰਨ ਦੌਰਾਨ {complexspaces} ਵੱਲੋਂ ਕੀਤੀ ਗਈ ਮਦਦ ਅਤੇ ਉਹਨਾਂ ਦੇ ਫੀਡਬੈਕ ਦੇ ਲਈ ਅਸੀਂ ਉਹਨਾਂ ਦੀ ਸ਼ਲਾਘਾ ਕਰਦੇ ਹਾਂ।",
+    "description": "Release notes for v6.21"
+  },
+  "icu:WhatsNew__v6.22--0": {
+    "messageformat": "ਸੁਨੇਹਾ ਲਿਖਣ ਵਾਲੇ ਖੇਤਰ ਵਿੱਚ ਕਿਸੇ ਵੀ ਟੈਕਸਟ ਨੂੰ ਚੁਣ ਕੇ ਆਪਣੇ ਸੁਨੇਹਿਆਂ ਦਾ ਟੈਕਸਟ ਆਪਣੇ ਅਨੁਸਾਰ ਫਾਰਮੈਟ ਕਰੋ।\n\nਟੈਕਸਟ ਦੇ ਉੱਤੇ ਆਪਣੀ ਲੋੜ ਅਨੁਸਾਰ ਬੋਲਡ, ਇਟੈਲਿਕਸ, ਸਟ੍ਰਾਈਕਥਰੂ, ਅਤੇ ਹੋਰ ਟੈਕਸਟ ਪ੍ਰਭਾਵ ਲਾਗੂ ਕਰੋ।",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.22--1": {
+    "messageformat": "ਅਸੀਂ ਨਵੇਂ ਇਮੋਜੀ ਪਾਤਰ ਸ਼ਾਮਲ ਕੀਤੇ ਹਨ, ਇਸ ਲਈ ਹੁਣ ਜਦੋਂ ਵੀ ਕੋਈ ਤੁਹਾਨੂੰ ਪੁੱਛਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਦੋਸਤਾਂ ਦੇ ਕਿੰਨੇ ਕਰੀਬ ਹੋ ਤਾਂ ਤੁਸੀਂ &quot;ਸਿਰ ਹਿਲਾਉਣ&quot; (<emojify>🫨</emojify>) ਜਾਂ &quot;ਮਟਰ ਦੇ ਦਾਣਿਆਂ&quot; (<emojify>🫛</emojify>) ਵਾਲੇ ਇਮੋਜੀ ਨਾਲ ਆਪਣੀਆਂ ਭਾਵਨਾਵਾਂ ਨੂੰ ਜ਼ਾਹਿਰ ਕਰ ਸਕਦੇ ਹੋ।",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.23--1": {
+    "messageformat": "ਕੁਝ ਖ਼ਰਾਬੀਆਂ ਨੂੰ ਦਰੁਸਤ ਕਰਨ ਤੋਂ ਇਲਾਵਾ, ਇਸ ਰਿਲੀਜ਼ ਵਿੱਚ ਡਿਵੈਲਪਰ ਦਸਤਾਵੇਜ਼ੀ ਅੱਪਡੇਟ (ਧੰਨਵਾਦ, {d108}!) ਅਤੇ ਸੁਨੇਹੇ ਅੱਗੇ ਭੇਜਣ ਦੇ ਇੰਟਰਫੇਸ (ਧੰਨਵਾਦ, {hackerbirds}!) ਵਿੱਚ ਕੁਝ ਡਿਜ਼ਾਈਨ ਸੁਧਾਰ ਵੀ ਸ਼ਾਮਲ ਹਨ।",
+    "description": "Release notes for v6.23"
   }
 }

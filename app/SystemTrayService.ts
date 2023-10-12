@@ -262,7 +262,7 @@ function getIcon(unreadCount: number) {
 
   return join(__dirname, '..', 'images', `icon_${iconSize}.png`);
 }
-
+  
 let defaultIcon: undefined | NativeImage;
 function getDefaultIcon(): NativeImage {
   defaultIcon ??= nativeImage.createFromPath(getIcon(0));

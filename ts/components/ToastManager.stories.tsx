@@ -62,8 +62,6 @@ function getToast(toastType: ToastType): AnyToast {
       return { toastType: ToastType.DeleteForEveryoneFailed };
     case ToastType.Error:
       return { toastType: ToastType.Error };
-    case ToastType.Expired:
-      return { toastType: ToastType.Expired };
     case ToastType.FailedToDeleteUsername:
       return { toastType: ToastType.FailedToDeleteUsername };
     case ToastType.FileSaved:

@@ -8,7 +8,6 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
-
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -90,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Điều khoản và Chính sách bảo mật",
-    "description": "Shown in the about box for the link to https://signal.org/legal"
+    "description": "Shown in the about box for the link to https://cradle.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -161,7 +160,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Thoát Signal",
+    "messageformat": "Thoát Cradle",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -273,7 +272,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Cập nhật Signal",
+    "messageformat": "Cập nhật Cradle",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -369,11 +368,11 @@
     "description": "Undoes Archive Conversation action, and moves archived conversation back to the main conversation list"
   },
   "icu:pinConversation": {
-    "messageformat": "Ghim trò chuyện",
+    "messageformat": "Ghim Trò chuyện",
     "description": "Shown in menu for conversation, and pins the conversation to the top of the conversation list"
   },
   "icu:unpinConversation": {
-    "messageformat": "Bỏ ghim trò chuyện",
+    "messageformat": "Bỏ ghim Trò chuyện",
     "description": "Undoes Archive Conversation action, and unpins the conversation from the top of the conversation list"
   },
   "icu:pinnedConversationsFull": {
@@ -393,7 +392,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Bạn vừa hoàn thành quá trình xuất dữ liệu, các liên hệ và tin nhắn của bạn vẫn còn trên máy tính của bạn. Hãy chọn thư mục chứa dữ liệu Signal đã lưu của bạn.",
+    "messageformat": "Bạn vừa hoàn thành quá trình xuất dữ liệu, các liên hệ và tin nhắn của bạn vẫn còn trên máy tính của bạn. Hãy chọn thư mục chứa dữ liệu Cradle đã lưu của bạn.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -409,7 +408,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Hãy đảm bảo bạn đã chọn đúng thư mục chứa dữ liệu Signal đã lưu. Tên của thư mục phải bắt đầu bằng 'Signal Export'. Bạn có thể lưu một bản sao mới của dữ liệu từ ứng dụng Chrome.",
+    "messageformat": "Hãy đảm bảo bạn đã chọn đúng thư mục chứa dữ liệu Cradle đã lưu. Tên của thư mục phải bắt đầu bằng 'Cradle Export'. Bạn có thể lưu một bản sao mới của dữ liệu từ ứng dụng Chrome.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -425,7 +424,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Bắt đầu sử dụng Signal Desktop",
+    "messageformat": "Bắt đầu sử dụng Cradle Desktop",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -509,11 +508,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "Số an toàn bạn đang cố để xác minh đã thay đổi. Xin hãy xem lại số an toàn mới của bạn với {name1}. Xin nhớ rằng, thay đổi này có thể có nghĩa là có người đang cố gắng chặn liên lạc của bạn hoặc đơn giản là {name2} đã cài đặt lại Signal.",
+    "messageformat": "Số an toàn bạn đang cố để xác minh đã thay đổi. Xin hãy xem lại số an toàn mới của bạn với {name1}. Xin nhớ rằng, thay đổi này có thể có nghĩa là có người đang cố gắng chặn liên lạc của bạn hoặc đơn giản là {name2} đã cài đặt lại Signal/Cradle.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Những người sau có thể đã cài đặt lại Signal hoặc đã đổi thiết bị. Bấm vào một người nhận để xác nhận mã số an toàn mới của người đó. Thao tác này không bắt buộc.",
+    "messageformat": "Những người sau có thể đã cài đặt lại Signal/Cradle hoặc đã đổi thiết bị. Bấm vào một người nhận để xác nhận mã số an toàn mới của người đó. Thao tác này không bắt buộc.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -525,7 +524,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, other {Bạn có {count,number} liên hệ có thể đã cài đặt lại Signal hoặc đã đổi thiết bị. Bạn có thể chọn duyệt lại mã số an toàn của họ trước khi gửi.}}",
+    "messageformat": "{count, plural, other {Bạn có {count,number} liên hệ có thể đã cài đặt lại Signal/Cradle hoặc đã đổi thiết bị. Bạn có thể chọn duyệt lại mã số an toàn của họ trước khi gửi.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -557,7 +556,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Số an toàn bạn đang cố để xác minh đã thay đổi. Xin hãy xem lại số an toàn mới của bạn với {name1}. Xin nhớ rằng, thay đổi này có thể có nghĩa là có người đang cố gắng chặn liên lạc của bạn hoặc đơn giản là {name2} đã cài đặt lại Signal. Bạn nên xác minh lại số an toàn của mình với liên hệ này.",
+    "messageformat": "Số an toàn bạn đang cố để xác minh đã thay đổi. Xin hãy xem lại số an toàn mới của bạn với {name1}. Xin nhớ rằng, thay đổi này có thể có nghĩa là có người đang cố gắng chặn liên lạc của bạn hoặc đơn giản là {name2} đã cài đặt lại Signal/Cradle. Bạn nên xác minh lại số an toàn của mình với liên hệ này.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -593,7 +592,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Đã xảy ra sự cố với quá trình tải lên! Vui lòng gửi email tới support@signal.org và đính kèm nhật ký của bạn dưới dạng tệp văn bản.",
+    "messageformat": "Đã xảy ra sự cố với quá trình tải lên! Vui lòng gửi email tới support@cradle.org và đính kèm nhật ký của bạn dưới dạng tệp văn bản.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -659,7 +658,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "Số an toàn của bạn với người (liên lạc) này đã thay đổi. Điều này có nghĩa là ai đó đang cố chặn liên lạc của bạn, hoặc đơn giản là người (liên lạc) này đã cài đặt lại Signal. Bạn có thể muốn xác minh số an toàn mới bên dưới."
+    "messageformat": "Số an toàn của bạn với người (liên lạc) này đã thay đổi. Điều này có nghĩa là ai đó đang cố chặn liên lạc của bạn, hoặc đơn giản là người (liên lạc) này đã cài đặt lại Signal/Cradle. Bạn có thể muốn xác minh số an toàn mới bên dưới."
   },
   "icu:incomingError": {
     "messageformat": "Lỗi xử lý tin nhắn đến"
@@ -722,22 +721,22 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Đang tải Xem trước…",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "Bản nháp hình thu nhỏ liên kết bản xem trước cho {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "Hình thu nhỏ liên kết bản xem trước cho {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Bản nháp tập tin ảnh đính kèm: {path}",
     "description": "Alt text for staged attachments"
   },
   "icu:cdsMirroringErrorToast": {
-    "messageformat": "Signal gặp lỗi không đồng bộ của Contact Discovery Service.",
+    "messageformat": "Cradle gặp lỗi không đồng bộ của Contact Discovery Service.",
     "description": "An error popup when we discovered an inconsistency between mirrored Contact Discovery Service requests."
   },
   "icu:decryptionErrorToast": {
@@ -825,18 +824,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Tham gia bản Beta",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Quyền ưu tiên Signal Desktop",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "messageformat": "Quyền ưu tiên Cradle Desktop",
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Tác giả gói nhãn dán",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "Giới thiệu Signal Desktop",
+    "messageformat": "Giới thiệu Cradle Desktop",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -860,7 +859,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Signal Desktop",
+    "messageformat": "Cradle Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -912,7 +911,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Chào mừng đến với Signal"
+    "messageformat": "Chào mừng đến với Cradle"
   },
   "icu:whatsNew": {
     "messageformat": "Nhìn xem {whatsNew} trong bản cập nhật này",
@@ -1043,15 +1042,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Để gửi tin nhắn thoại, cho phép Signal Desktop truy cập microphone.",
+    "messageformat": "Để gửi tin nhắn thoại, cho phép Cradle Desktop truy cập microphone.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Để thực hiện cuộc gọi, bạn cần phải cho phép Signal Desktop truy cập microphone của bạn.",
+    "messageformat": "Để thực hiện cuộc gọi, bạn cần phải cho phép Cradle Desktop truy cập microphone của bạn.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Để thực hiện cuộc gọi video, bạn cần phải cho phép Signal Desktop truy cập camera của bạn.",
+    "messageformat": "Để thực hiện cuộc gọi video, bạn cần phải cho phép Cradle Desktop truy cập camera của bạn.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1091,15 +1090,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Signal không thể cập nhật. {retry} hoặc truy cập {url} để cài thủ công. Sau đó, {support} về vấn đề này",
+    "messageformat": "Cradle không thể cập nhật. {retry} hoặc truy cập {url} để cài thủ công. Sau đó, {support} về vấn đề này",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Signal không thể cập nhật. Truy cập {url} để cài thủ công. Sau đó, {support} về vấn đề này",
+    "messageformat": "Cradle không thể cập nhật. Truy cập {url} để cài thủ công. Sau đó, {support} về vấn đề này",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Signal Desktop đang trong tình trạng cách ly trên macOS, và sẽ không thể tự-cập nhật được. Xin hãy dời {app} đến {folder} với ứng dụng Finder.",
+    "messageformat": "Cradle Desktop đang trong tình trạng cách ly trên macOS, và sẽ không thể tự-cập nhật được. Xin hãy dời {app} đến {folder} với ứng dụng Finder.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1155,7 +1154,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Tin nhắn này sẽ được xóa cho tất cả mọi người trong cuộc trò chuyện nếu họ sử dụng phiên bản mới của Signal. Họ sẽ có thể thấy rằng bạn đã xoá tin nhắn.",
+    "messageformat": "Tin nhắn này sẽ được xóa cho tất cả mọi người trong cuộc trò chuyện nếu họ sử dụng phiên bản mới của Signal/Cradle. Họ sẽ có thể thấy rằng bạn đã xoá tin nhắn.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1283,35 +1282,7 @@
   },
   "icu:deleteConversationConfirmation": {
     "messageformat": "Xóa cuộc trò chuyện này vĩnh viễn?",
-    "description": "(deleted 06/27/2023) Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Xóa cuộc trò chuyện?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "Trò chuyện này sẽ bị xóa khỏi thiết bị này.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
-    "messageformat": "Rời nhóm",
-    "description": "This is a button to leave a group"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__title": {
-    "messageformat": "Bạn có chắc chắn muốn rời khỏi nhóm?",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__description": {
-    "messageformat": "Bạn sẽ không thể gửi hoặc nhận tin nhắn trong nhóm này nữa.",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__confirmButton": {
-    "messageformat": "Rời",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Confirm Button"
-  },
-  "icu:ConversationHeader__CannotLeaveGroupBecauseYouAreLastAdminAlert__description": {
-    "messageformat": "Trước khi rời nhóm, bạn phải chọn ít nhất một quản trị viên mới cho nhóm này.",
-    "description": "Conversation Header > Leave Group Action > Cannot Leave Group Because You Are Last Admin Alert > Description"
+    "description": "Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
   },
   "icu:sessionEnded": {
     "messageformat": "Thiết lập lại phiên bảo mật",
@@ -1326,7 +1297,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Signal sử dụng công nghệ mã hóa đầu cuối và đôi lúc cần làm mới phiên trò chuyện của bạn. Việc này không ảnh hưởng sự bảo mật của cuộc trò chuyện của bạn nhưng bạn có thể bỏ lỡ tin nhắn từ liên hệ này và bạn có thể nhờ người này gửi lại.",
+    "messageformat": "Cradle sử dụng công nghệ mã hóa đầu cuối và đôi lúc cần làm mới phiên trò chuyện của bạn. Việc này không ảnh hưởng sự bảo mật của cuộc trò chuyện của bạn nhưng bạn có thể bỏ lỡ tin nhắn từ liên hệ này và bạn có thể nhờ người này gửi lại.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1418,20 +1389,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Chào mừng đến với Signal Desktop",
+    "messageformat": "Chào mừng đến với Cradle Desktop",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "Sự riêng tư là khả thi. Signal khiến điều đó trở nên dễ dàng.",
+    "messageformat": "Sự riêng tư là khả thi. Cradle khiến điều đó trở nên dễ dàng.",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "Các thiết bị Được liên kết",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Liên kết Thiết bị Mới",
-    "description": "The menu option shown in Signal iOS to add a new linked device"
+    "description": "The menu option shown in Cradle iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Tìm hiểu thêm",
@@ -1505,7 +1476,7 @@
     "messageformat": "Rất tiếc, bạn có quá nhiều thiết bị đã được liên kết. Hãy thử gỡ bỏ vài thiết bị."
   },
   "icu:installTooOld": {
-    "messageformat": "Cập nhật Signal trên thiết bị này để kết nối với điện thoại của bạn."
+    "messageformat": "Cập nhật Cradle trên thiết bị này để kết nối với điện thoại của bạn."
   },
   "icu:installErrorHeader": {
     "messageformat": "Đã xảy ra lỗi!"
@@ -1637,7 +1608,7 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--3-people-in-call": {
-    "messageformat": "{first}, {second}, và {third} \u001Dđang trong cuộc gọi này",
+    "messageformat": "{first}, {second}, và {third} \u001dđang trong cuộc gọi này",
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--many-people-in-call": {
@@ -1645,19 +1616,19 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Signal sẽ đổ chuông {person}",
+    "messageformat": "Cradle sẽ đổ chuông {person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Signal sẽ đổ chuông {first} và {second}",
+    "messageformat": "Cradle sẽ đổ chuông {first} và {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Signal sẽ đổ chuông {first}, {second}, và {third}",
+    "messageformat": "Cradle sẽ đổ chuông {first}, {second}, và {third}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Signal sẽ đổ chuông {first}, {second}, và {others} khác",
+    "messageformat": "Cradle sẽ đổ chuông {first}, {second}, và {others} khác",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1713,7 +1684,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Signal đang chia sẻ {window}.",
+    "messageformat": "Cradle đang chia sẻ {window}.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1737,7 +1708,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Signal cần sự cho phép để truy cập ghi màn hình của máy tính của bạn.",
+    "messageformat": "Cradle cần sự cho phép để truy cập ghi màn hình của máy tính của bạn.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1749,7 +1720,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "Phía bên tay phải, đánh dấu vào ô cạnh chữ Signal. Nếu bạn không thấy Signal trong danh sách, nhấn dấu + để thêm vào.",
+    "messageformat": "Phía bên tay phải, đánh dấu vào ô cạnh chữ Cradle. Nếu bạn không thấy Cradle trong danh sách, nhấn dấu + để thêm vào.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1793,12 +1764,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "Kiểm tra chính tả sẽ được bật lên lần tiếp theo Signal khởi động.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
+    "messageformat": "Kiểm tra chính tả sẽ được bật lên lần tiếp theo Cradle khởi động.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "Kiểm tra chính tả đã được tắt lần tiếp theo Signal khởi động.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
+    "messageformat": "Kiểm tra chính tả đã được tắt lần tiếp theo Cradle khởi động.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Thu nhỏ vào thanh hệ thống",
@@ -1841,8 +1812,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Bạn có dữ liệu cũ từ một lần cài đặt trước của Signal Desktop. Nếu bạn chọn để tiếp tục, dữ liệu sẽ bị xoá và bạn sẽ bắt đầu lại từ đầu.",
-    "description": "Shown if user last ran Signal Desktop before October 2018"
+    "messageformat": "Bạn có dữ liệu cũ từ một lần cài đặt trước của Cradle Desktop. Nếu bạn chọn để tiếp tục, dữ liệu sẽ bị xoá và bạn sẽ bắt đầu lại từ đầu.",
+    "description": "Shown if user last ran Cradle Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Xoá Dữ liệu Cũ",
@@ -1923,11 +1894,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "Phiên bản này của Signal Desktop đã hết hạn. Vui lòng nâng cấp lên phiên bản mới nhất để tiếp tục nhắn tin.",
+    "messageformat": "Phiên bản này của Cradle Desktop đã hết hạn. Vui lòng nâng cấp lên phiên bản mới nhất để tiếp tục nhắn tin.",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Nhấn để truy cập signal.org/download",
+    "messageformat": "Nhấn để truy cập cradle.org/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2176,22 +2147,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Không tìm nạp được tên người dùng. Kiểm tra kết nối của bạn và thử lại.",
-    "description": "Shown if request to Signal servers to find username fails"
+    "description": "Shown if request to Cradle servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "Tìm số điện thoại không thành công. Hãy kiểm tra đường truyền của bạn và thử lại.",
-    "description": "Shown if request to Signal servers to find phone number fails"
+    "description": "Shown if request to Cradle servers to find phone number fails"
   },
   "icu:ToastManager__CannotEditMessage": {
     "messageformat": "Các chỉnh sửa chỉ có thể được thực hiện trong vòng 3 giờ kể từ lúc bạn gửi tin nhắn này.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "Không tìm thấy người dùng. {atUsername} không phải là người dùng Signal; đảm bảo rằng bạn đã nhập tên người dùng hoàn chỉnh.",
+    "messageformat": "Không tìm thấy người dùng. {atUsername} không phải là người dùng Signal/Cradle; đảm bảo rằng bạn đã nhập tên người dùng hoàn chỉnh.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "Không tìm thấy người dùng. \"{phoneNumber}\" không phải là người dùng Signal.",
+    "messageformat": "Không tìm thấy người dùng. \"{phoneNumber}\" không phải là người dùng Signal/Cradle.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2219,7 +2190,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Nhóm Signal có thể có tối đa {max,number} thành viên.",
+    "messageformat": "Nhóm Cradle có thể có tối đa {max,number} thành viên.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2227,7 +2198,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Nhóm Signal hoạt động tốt nhất với {max,number} thành viên hoặc ít hơn. Thêm nhiều thành viên hơn sẽ gây trì hoãn trong việc nhận và gửi tin nhắn.",
+    "messageformat": "Nhóm Cradle hoạt động tốt nhất với {max,number} thành viên hoặc ít hơn. Thêm nhiều thành viên hơn sẽ gây trì hoãn trong việc nhận và gửi tin nhắn.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2279,7 +2250,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Nhấp để liên kết lại Signal Desktop với thiết bị di động của bạn để tiếp tục nhắn tin."
+    "messageformat": "Nhấp để liên kết lại Cradle Desktop với thiết bị di động của bạn để tiếp tục nhắn tin."
   },
   "icu:unlinked": {
     "messageformat": "Đã bỏ liên kết"
@@ -2297,17 +2268,17 @@
     "messageformat": "liên hệ bộ phận hỗ trợ"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Nhấp để khởi động lại Signal"
+    "messageformat": "Nhấp để khởi động lại Cradle"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Nhấp để tải bản cập nhật"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Signal không thể cập nhật. Bấm để thử lại.",
+    "messageformat": "Cradle không thể cập nhật. Bấm để thử lại.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Khởi động lại Signal"
+    "messageformat": "Khởi động lại Cradle"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "Lúc khác"
@@ -2565,15 +2536,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Xin giới thiệu nhãn dán: Bandit the Cat",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Xin giới thiệu Nhãn dán",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "Tại sao phải sử dụng từ ngữ khi mà bạn có thể sử dụng nhãn dán?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Mở bộ chọn nhãn dán",
@@ -2716,20 +2687,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} đã gửi cho bạn một tin nhắn nhưng không thể xử lý hoặc hiển thị vì sử dụng tính năng Signal mới."
+    "messageformat": "{contact} đã gửi cho bạn một tin nhắn nhưng không thể xử lý hoặc hiển thị vì sử dụng tính năng Signal/Cradle mới."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Bạn có thể yêu cầu {contact} gửi lại tin nhắn này khi bạn đang sử dụng phiên bản Signal mới cập nhật."
+    "messageformat": "Bạn có thể yêu cầu {contact} gửi lại tin nhắn này khi bạn đang sử dụng phiên bản Cradle mới cập nhật."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Một trong những thiết bị của bạn đã gửi một tin nhắn không thể xử lý hoặc hiển thị vì sử dụng tính năng Signal mới."
+    "messageformat": "Một trong những thiết bị của bạn đã gửi một tin nhắn không thể xử lý hoặc hiển thị vì sử dụng tính năng Signal/Cradle mới."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "Các tin nhắn như thế này trong tương lai sẽ được đồng bộ hóa khi bạn đang sử dụng phiên bản  Signal cập nhật."
+    "messageformat": "Các tin nhắn như thế này trong tương lai sẽ được đồng bộ hóa khi bạn đang sử dụng phiên bản  Cradle cập nhật."
   },
   "icu:Message--update-signal": {
-    "messageformat": "Cập nhật Signal",
-    "description": "Text for a button which will take user to Signal download page"
+    "messageformat": "Cập nhật Cradle",
+    "description": "Text for a button which will take user to Cradle download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Đã xem",
@@ -3068,11 +3039,11 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Chỉ có trên bản beta của Signal",
+    "messageformat": "Chỉ có trên bản beta của Cradle",
     "description": "Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "Tính năng sửa tin nhắn chỉ khả dụng cho người dùng bản beta của Signal. Nếu bạn sửa một tin nhắn, nội dung sau khi thay đổi sẽ chỉ hiển thị với người dùng bản beta mới nhất của Signal.",
+    "messageformat": "Tính năng sửa tin nhắn chỉ khả dụng cho người dùng bản beta của Cradle. Nếu bạn sửa một tin nhắn, nội dung sau khi thay đổi sẽ chỉ hiển thị với người dùng bản beta mới nhất của Cradle.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3080,20 +3051,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "Một số người có thể đang sử dụng phiên bản Signal không hỗ trợ văn bản đã được định dạng. Họ sẽ không thể thấy các thay đổi về định dạng bạn đã thực hiện trong tin nhắn.",
+    "messageformat": "Một số người có thể đang sử dụng phiên bản Cradle không hỗ trợ văn bản đã được định dạng. Họ sẽ không thể thấy các thay đổi về định dạng bạn đã thực hiện trong tin nhắn.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "Bạn có muốn mở Công Cụ Tạo Gói Nhãn Dán Signal?",
-    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
+    "messageformat": "Bạn có muốn mở Công Cụ Tạo Gói Nhãn Dán Cradle?",
+    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Xác nhận",
-    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Bỏ qua",
-    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "Vui lòng cài Signal trên điện thoại và máy tính để sử dụng Công Cụ Tạo Nhãn Dán Signal",
@@ -3312,12 +3283,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Signal vẫn đang chạy",
-    "description": "Shown in a notification title when Signal is minimized to tray"
+    "messageformat": "Cradle vẫn đang chạy",
+    "description": "Shown in a notification title when Cradle is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Signal sẽ tiếp tục chạy ở vùng thông báo. Bạn có thể thay đổi trong mục cài đặt của Signal.",
-    "description": "Shown in a notification body when Signal is minimized to tray"
+    "messageformat": "Cradle sẽ tiếp tục chạy ở vùng thông báo. Bạn có thể thay đổi trong mục cài đặt của Cradle.",
+    "description": "Shown in a notification body when Cradle is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Cuộc gọi thoại đến…",
@@ -3372,7 +3343,7 @@
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
   "icu:callDuration": {
-    "messageformat": "Signal {duration}",
+    "messageformat": "Cradle {duration}",
     "description": "Shown in the call screen to indicate how long the call has been connected"
   },
   "icu:callingDeviceSelection__settings": {
@@ -3536,7 +3507,7 @@
     "description": "Shown in toast when a non-admin starts a group call in an announcements only group"
   },
   "icu:GroupV2--join--invalid-link--title": {
-    "messageformat": "Đường dẫn \u001DVô hiệu lực",
+    "messageformat": "Đường dẫn \u001dVô hiệu lực",
     "description": "Shown if we are unable to parse a group link"
   },
   "icu:GroupV2--join--invalid-link": {
@@ -3560,7 +3531,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "Đường dẫn này không được hỗ trợ bởi phiên bản Signal Desktop này.",
+    "messageformat": "Đường dẫn này không được hỗ trợ bởi phiên bản Cradle Desktop này.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -3956,7 +3927,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--other": {
-    "messageformat": "1 người được mời bởi {memberName} đã từ chối \u001D\u001Dlời mời vào nhóm.",
+    "messageformat": "1 người được mời bởi {memberName} đã từ chối \u001d\u001dlời mời vào nhóm.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--you": {
@@ -4316,11 +4287,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Người này đang không dùng Signal",
+    "messageformat": "Người này đang không dùng Signal/Cradle",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal Desktop không hỗ trợ nhắn tin cho các liên hệ ngoài-Signal. Hãy hỏi người này cài đặt Signal để có trải nghiệm nhắn tin bảo mật hơn.",
+    "messageformat": "Signal/Cradle Desktop không hỗ trợ nhắn tin cho các liên hệ ngoài-Signal/Cradle. Hãy hỏi người này cài đặt Signal/Cradle để có trải nghiệm nhắn tin bảo mật hơn.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4857,10 +4828,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "Về Yêu cầu Nhắn tin",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Kiểm tra các yêu cầu một cách kĩ lưỡng. Signal tìm thấy một liên hệ cùng tên. <reviewRequestLink>Kiểm tra yêu cầu</reviewRequestLink>",
+    "messageformat": "Kiểm tra các yêu cầu một cách kĩ lưỡng. Cradle tìm thấy một liên hệ cùng tên. <reviewRequestLink>Kiểm tra yêu cầu</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -4924,7 +4895,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Để hạn chế spam trên Signal, vui lòng thực hiện xác minh.",
+    "messageformat": "Để hạn chế spam trên Cradle, vui lòng thực hiện xác minh.",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5440,7 +5411,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Chọn người có thể thấy số điện thoại của bạn và người có thể liên hệ với bạn trên Signal với số đó.",
+    "messageformat": "Chọn người có thể thấy số điện thoại của bạn và người có thể liên hệ với bạn trên Cradle với số đó.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5448,11 +5419,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Số điện thoại của bạn sẽ hiện lên cho những người và nhóm bạn nhắn tin. Những người có số điện thoại của bạn trong danh bạ điện thoại của họ cũng sẽ thấy nó trên Signal.",
+    "messageformat": "Số điện thoại của bạn sẽ hiện lên cho những người và nhóm bạn nhắn tin. Những người có số điện thoại của bạn trong danh bạ điện thoại của họ cũng sẽ thấy nó trên Cradle.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Không ai sẽ có thấy số điện thoại của bạn trên Signal.",
+    "messageformat": "Không ai sẽ có thấy số điện thoại của bạn trên Signal/Cradle.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5472,11 +5443,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Bất kỳ ai có số điện thoại của bạn trong danh bạ của họ sẽ thấy bạn là một liên hệ trên Signal. Những người khác sẽ có thể liên hệ bạn với số điện thoại của bạn khi họ bắt đầu một cuộc trò chuyện hay nhóm mới.",
+    "messageformat": "Bất kỳ ai có số điện thoại của bạn trong danh bạ của họ sẽ thấy bạn là một liên hệ trên Signal/Cradle. Những người khác sẽ có thể liên hệ bạn với số điện thoại của bạn khi họ bắt đầu một cuộc trò chuyện hay nhóm mới.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Không có ai trên Signal có thể liên hệ với bạn với số điện thoại của bạn.",
+    "messageformat": "Không có ai trên Signal/Cradle có thể liên hệ với bạn với số điện thoại của bạn.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5556,7 +5527,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Để tiếp tục sử dụng Signal, bạn phải cập nhật phiên bản mới nhất của Signal.",
+    "messageformat": "Để tiếp tục sử dụng Cradle, bạn phải cập nhật phiên bản mới nhất của Cradle.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5564,15 +5535,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "Khởi động lại Signal để cài đặt bản cập nhật.",
+    "messageformat": "Khởi động lại Cradle để cài đặt bản cập nhật.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Signal Desktop cập nhật không thành công, nhưng hiện có phiên bản mới. Truy cập {downloadUrl} và cài đặt thủ công phiên bản mới, sau đó liên hệ bộ phận hỗ trợ hoặc báo cáo về vấn đề này.",
+    "messageformat": "Cradle Desktop cập nhật không thành công, nhưng hiện có phiên bản mới. Truy cập {downloadUrl} và cài đặt thủ công phiên bản mới, sau đó liên hệ bộ phận hỗ trợ hoặc báo cáo về vấn đề này.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Signal không thể đóng",
+    "messageformat": "Cradle không thể đóng",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5592,15 +5563,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Đã có phiên bản mới hơn của Signal được cài đặt. Bạn có chắc muốn tiếp tục?",
-    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
+    "messageformat": "Đã có phiên bản mới hơn của Cradle được cài đặt. Bạn có chắc muốn tiếp tục?",
+    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Ứng dụng bị trở ngại",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Signal sẽ tự khởi động lại sau khi bị lỗi. Bạn có thể thông báo lỗi này để giúp Signal tìm hiểu và khắc phục.",
+    "messageformat": "Cradle sẽ tự khởi động lại sau khi bị lỗi. Bạn có thể thông báo lỗi này để giúp Cradle tìm hiểu và khắc phục.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5796,8 +5767,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Các Liên hệ Signal",
-    "description": "The phrase/term: 'Signal Connections'"
+    "messageformat": "Các Liên hệ Cradle",
+    "description": "The phrase/term: 'Cradle Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} là những người bạn chọn để tin tưởng, bằng việc:",
@@ -5976,7 +5947,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Tất cả liên hệ Signal",
+    "messageformat": "Tất cả liên hệ Cradle",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6096,7 +6067,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Chọn các liên hệ Signal có thể xem story của bạn. Bạn luôn có thể thay đổi trong phần cài đặt quyền riêng tư. <learnMoreLink>Tìm hiểu thêm.</learnMoreLink>",
+    "messageformat": "Chọn các liên hệ Cradle có thể xem story của bạn. Bạn luôn có thể thay đổi trong phần cài đặt quyền riêng tư. <learnMoreLink>Tìm hiểu thêm.</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6112,11 +6083,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, other {Tất cả Liên hệ Signal · {viewersCount,number} Người xem}}",
+    "messageformat": "{viewersCount, plural, other {Tất cả Liên hệ Cradle · {viewersCount,number} Người xem}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, other {Tất cả Liên hệ Signal · {excludedCount,number} Được loại trừ}}",
+    "messageformat": "{excludedCount, plural, other {Tất cả Liên hệ Cradle · {excludedCount,number} Được loại trừ}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6432,7 +6403,7 @@
     "description": "Body of the popup with information about discriminator in username"
   },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Đặt tên người dùng Signal của bạn",
+    "messageformat": "Đặt tên người dùng Cradle của bạn",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6456,15 +6427,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Signal desktop sẽ sớm không còn hỗ trợ phiên bản hiện tại của hệ điều hành {OS} trên máy tính bạn. Để có thể tiếp tục sử dụng Signal, cập nhật phiên bản hệ điều hành trên máy tính bạn trước {expirationDate}. <learnMoreLink>Tìm hiểu thêm</learnMoreLink>",
+    "messageformat": "Cradle desktop sẽ sớm không còn hỗ trợ phiên bản hiện tại của hệ điều hành {OS} trên máy tính bạn. Để có thể tiếp tục sử dụng Cradle, cập nhật phiên bản hệ điều hành trên máy tính bạn trước {expirationDate}. <learnMoreLink>Tìm hiểu thêm</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Signal desktop không còn hoạt động được trên máy tính này. Để có thể tiếp tục sử dụng Signal desktop, cập nhật phiên bản của hệ điều hành {OS} trên máy tính bạn. <learnMoreLink>Tìm hiểu thêm</learnMoreLink>",
+    "messageformat": "Cradle desktop không còn hoạt động được trên máy tính này. Để có thể tiếp tục sử dụng Cradle desktop, cập nhật phiên bản của hệ điều hành {OS} trên máy tính bạn. <learnMoreLink>Tìm hiểu thêm</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Signal desktop không còn hoạt động được trên máy tính này. Để có thể tiếp tục sử dụng Signal desktop, cập nhật phiên bản của hệ điều hành {OS} trên máy tính bạn.",
+    "messageformat": "Cradle desktop không còn hoạt động được trên máy tính này. Để có thể tiếp tục sử dụng Cradle desktop, cập nhật phiên bản của hệ điều hành {OS} trên máy tính bạn.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6488,11 +6459,11 @@
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Phiên bản này có một số tinh chỉnh và sửa lỗi để giữ cho Signal hoạt động mượt mà.",
+    "messageformat": "Phiên bản này có một số tinh chỉnh và sửa lỗi để giữ cho Cradle hoạt động mượt mà.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Các tinh chỉnh, sửa lỗi, và cải thiện hiệu năng khác. Cảm ơn bạn đã sử dụng Signal!",
+    "messageformat": "Các tinh chỉnh, sửa lỗi, và cải thiện hiệu năng khác. Cảm ơn bạn đã sử dụng Cradle!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6512,13 +6483,27 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Các tinh chỉnh, sửa lỗi, và cải thiện hiệu năng. Cảm ơn bạn đã sử dụng Signal!",
+    "messageformat": "Các tinh chỉnh, sửa lỗi, và cải thiện hiệu năng. Cảm ơn bạn đã sử dụng Cradle!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.24--0": {
-    "messageformat": "Giờ đây bạn cũng có thể tìm kiếm các lần @ nhắc tên của mình. ​ ​"
+  "icu:WhatsNew__v6.21--0": {
+    "messageformat": "Nhìn bản thân bạn rõ hơn khi cuộc gọi trực tiếp 1-1 đang đổ chuông. Cuộc gọi video cá nhân hiện nay cũng sử dụng chế độ xem toàn màn hình, vốn trước đây chỉ xuất hiện khi bắt đầu một cuộc gọi nhóm mới. Chúng tôi hướng tới sự nhất quán, và giờ có thể nhất chí rằng sự khác biệt đã không còn tồn tại vì những điểm bên trên đã được đồng nhất.",
+    "description": "Release notes for v6.21"
   },
-  "icu:WhatsNew__v6.25--0": {
-    "messageformat": "Giờ đây bạn có thể bấm và kéo tiêu đề cuộc trò chuyện để thay đổi vị trí của cửa sổ Signal."
+  "icu:WhatsNew__v6.21--1": {
+    "messageformat": "Chúng tôi cũng muốn thể hiện sự trân trọng tới {complexspaces} vì sự giúp đỡ và phản hồi khi chúng tôi thực hiện bản cập nhật này.",
+    "description": "Release notes for v6.21"
+  },
+  "icu:WhatsNew__v6.22--0": {
+    "messageformat": "Định dạng văn bản trong tin nhắn của bạn bằng cách lựa chọn bất kỳ đoạn chữ nào trong hộp soạn tin nhắn để in đậm, in nghiêng, gạch ngang, và các hiệu ứng văn bản khác.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.22--1": {
+    "messageformat": "Chúng tôi đã hỗ trợ thêm các emoji mới nhất và giờ đây bạn có thể bày tỏ sự hào hứng của mình với emoji &quot;Shaking Face&quot; (<emojify>🫨</emojify>) hoặc bày tỏ cảm xúc với emoji &quot;Pea Pod&quot; (<emojify>🫛</emojify>) mới ra mắt trong năm nay.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.23--1": {
+    "messageformat": "Ngoài một số lỗi nhỏ đã được sửa, bản cập nhật này cũng kết hợp danh sách các cập nhật từ nhà phát triển (cảm ơn {d108}!) và cải thiện thiết kế của giao diện chuyển tiếp tin nhắn (cảm ơn {hackerbirds}!).",
+    "description": "Release notes for v6.23"
   }
 }

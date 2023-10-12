@@ -15,7 +15,7 @@
   "sfuUrl": "https://sfu.voip.signal.org/",
   "challengeUrl": "https://signalcaptchas.org/staging/challenge/generate.html",
   "registrationChallengeUrl": "https://signalcaptchas.org/staging/registration/generate.html",
-  "updatesEnabled": false,
+  "updatesEnabled": true,
   "enableCI": false,
   "forcePreloadBundle": false,
   "openDevTools": false,

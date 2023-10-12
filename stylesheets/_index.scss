@@ -3,14 +3,23 @@
 
 #app-container {
   height: 100%;
+  padding-top: 50px;
+  box-sizing: border-box;
 }
 
 .conversation-stack,
 .inbox,
 .no-conversation-open {
+  color: $color-white;
   height: 100%;
   overflow: hidden;
   position: relative;
+  @include light-theme {
+    background-color: $color-purple-03;
+  }
+  @include dark-theme {
+    background-color: $color-gray-95;
+  }
 }
 
 .scrollable {

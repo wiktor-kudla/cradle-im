@@ -90,7 +90,7 @@ export const upload = async ({
   form.append('Content-Type', contentType);
   form.append('file', contentBuffer, {
     contentType,
-    filename: `signal-desktop-debug-log-${appVersion}.txt.gz`,
+    filename: `cradle-desktop-debug-log-${appVersion}.txt.gz`,
   });
 
   logger.info('Debug log upload starting...');

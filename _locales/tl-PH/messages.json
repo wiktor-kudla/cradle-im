@@ -8,7 +8,6 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
-
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -90,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Mga Tutunin at Patakaran sa Privacy",
-    "description": "Shown in the about box for the link to https://signal.org/legal"
+    "description": "Shown in the about box for the link to https://cradle.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -161,7 +160,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "I-close ang Signal App",
+    "messageformat": "I-close ang Cradle App",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -273,7 +272,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "I-update ang Signal",
+    "messageformat": "I-update ang Cradle",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -393,7 +392,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Kakatapos mo lang sa export process, at naghihintay ang contacts and messages mo sa iyong computer. I-select ang folder that contains your saved Signal data.",
+    "messageformat": "Kakatapos mo lang sa export process, at naghihintay ang contacts and messages mo sa iyong computer. I-select ang folder that contains your saved Cradle data.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -409,7 +408,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Siguraduhing napili mo ang tamang directory that contains your saved Signal data. Ang name nito ay dapat nagsisimula sa 'Signal Export'. Pwede ka ring mag-save ng bagong copy ng data mo mula sa Chrome App.",
+    "messageformat": "Siguraduhing napili mo ang tamang directory that contains your saved Cradle data. Ang name nito ay dapat nagsisimula sa 'Cradle Export'. Pwede ka ring mag-save ng bagong copy ng data mo mula sa Chrome App.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -425,7 +424,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Start using Signal Desktop",
+    "messageformat": "Start using Cradle Desktop",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -509,11 +508,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "Ang safety number na sinusubukan mong i-verify ay nagbago. I-review ang iyong safety number with {name1}. Tandaan, this change could mean na may nagtatangkang i-interrupt ang inyong communication, o maaaring nag-reinstall ng Signal app si {name2}.",
+    "messageformat": "Ang safety number na sinusubukan mong i-verify ay nagbago. I-review ang iyong safety number with {name1}. Tandaan, this change could mean na may nagtatangkang i-interrupt ang inyong communication, o maaaring nag-reinstall ng Signal/Cradle app si {name2}.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Maaaring nag-reinstall ng Signal o nagpalit ng devices ang mga sumusunod na user. I-click ang isang recipient para ma-confirm ang kanyang bagong safety number. Ito ay optional.",
+    "messageformat": "Maaaring nag-reinstall ng Signal/Cradle o nagpalit ng devices ang mga sumusunod na user. I-click ang isang recipient para ma-confirm ang kanyang bagong safety number. Ito ay optional.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -525,7 +524,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {Mayroon kang {count,number} connection na maaaring nag-reinstall ng Signal o nagpalit ng devices. Pwede mong i-review ang kanyang safety numbers bago mag-send ng message.} other {Mayroon kang {count,number} connections na maaaring nag-reinstall ng Signal o nagpalit ng devices. Pwede mong i-review ang kanilang safety numbers bago mag-send ng message.}}",
+    "messageformat": "{count, plural, one {Mayroon kang {count,number} connection na maaaring nag-reinstall ng Signal/Cradle o nagpalit ng devices. Pwede mong i-review ang kanyang safety numbers bago mag-send ng message.} other {Mayroon kang {count,number} connections na maaaring nag-reinstall ng Signal/Cradle o nagpalit ng devices. Pwede mong i-review ang kanilang safety numbers bago mag-send ng message.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -557,7 +556,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Your safety number with {name1} has changed. This could mean na may nagtatangkang i-interrupt ang inyong communication, o maaaring nag-reinstall ng Signal si {name2}. Maaari mong i-verify sa contact na ito ang iyong safety number.",
+    "messageformat": "Your safety number with {name1} has changed. This could mean na may nagtatangkang i-interrupt ang inyong communication, o maaaring nag-reinstall ng Signal/Cradle si {name2}. Maaari mong i-verify sa contact na ito ang iyong safety number.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -593,7 +592,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Something went wrong with the upload! Mag-email sa support@signal.org at i-attach ang iyong log as a text file.",
+    "messageformat": "Something went wrong with the upload! Mag-email sa support@cradle.org at i-attach ang iyong log as a text file.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -659,7 +658,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "Nagbago ang safety number mo sa contact na ito. Maaaring may sumusubok na harangin ang inyong komunikasyon o in-install lang ulit ng contact na ito ang Signal. Maaari mong i-verify sa baba ang bagong safety number."
+    "messageformat": "Nagbago ang safety number mo sa contact na ito. Maaaring may sumusubok na harangin ang inyong komunikasyon o in-install lang ulit ng contact na ito ang Signal/Cradle. Maaari mong i-verify sa baba ang bagong safety number."
   },
   "icu:incomingError": {
     "messageformat": "Nagka-error sa pangangasiwa ng paparating na mensahe"
@@ -722,15 +721,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Nilo-load ang Preview…",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "Draft thumbnail link preview for {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "Thumbnail link preview for {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Draft image attachment: {path}",
@@ -825,18 +824,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Mag-join sa Beta",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Signal Desktop Preferences",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "messageformat": "Cradle Desktop Preferences",
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Sticker pack creator",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "About Signal Desktop",
+    "messageformat": "About Cradle Desktop",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -860,7 +859,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Signal Desktop",
+    "messageformat": "Cradle Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -912,7 +911,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Welcome sa Signal"
+    "messageformat": "Welcome sa Cradle"
   },
   "icu:whatsNew": {
     "messageformat": "See {whatsNew} in this update",
@@ -1043,15 +1042,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Para mag-send ng audio message, bigyan ang Signal Desktop ng access sa iyong microphone.",
+    "messageformat": "Para mag-send ng audio message, bigyan ang Cradle Desktop ng access sa iyong microphone.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Para makapag-call, i-allow ang Signal Desktop na magkaroon ng access sa iyong microphone.",
+    "messageformat": "Para makapag-call, i-allow ang Cradle Desktop na magkaroon ng access sa iyong microphone.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Para makapag-video call, i-allow ang Signal Desktop na magkaroon ng access sa iyong camera.",
+    "messageformat": "Para makapag-video call, i-allow ang Cradle Desktop na magkaroon ng access sa iyong camera.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1091,15 +1090,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Hindi ma-update ang Signal. {retry} o i-visit ang {url} para ma-install ito manually. Pagkatapos, {support} tungkol sa problem na ito.",
+    "messageformat": "Hindi ma-update ang Cradle. {retry} o i-visit ang {url} para ma-install ito manually. Pagkatapos, {support} tungkol sa problem na ito.",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Hindi ma-update ang Signal. I-visit ang {url} para ma-install ito manually. Pagkatapos, {support} tungkol sa problem na ito.",
+    "messageformat": "Hindi ma-update ang Cradle. I-visit ang {url} para ma-install ito manually. Pagkatapos, {support} tungkol sa problem na ito.",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Ang Signal Desktop ay maaaring nasa macOS quarantine, at hindi pwedeng mag-auto update. Subukang i-move ang {app} sa {folder} with Finder.",
+    "messageformat": "Ang Cradle Desktop ay maaaring nasa macOS quarantine, at hindi pwedeng mag-auto update. Subukang i-move ang {app} sa {folder} with Finder.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1155,7 +1154,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Mabubura ang message na ito sa lahat ng nasa chat kung sila'y nasa recent version ng Signal. Makikita nilang nag-delete ka ng message.",
+    "messageformat": "Mabubura ang message na ito sa lahat ng nasa chat kung sila'y nasa recent version ng Signal/Cradle. Makikita nilang nag-delete ka ng message.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1283,35 +1282,7 @@
   },
   "icu:deleteConversationConfirmation": {
     "messageformat": "Gusto mo bang permanenteng burahin ang chat na ito?",
-    "description": "(deleted 06/27/2023) Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Gusto mo bang burahin ang chat?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "Mabubura ang chat mula sa device na ito.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
-    "messageformat": "Umalis sa group",
-    "description": "This is a button to leave a group"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__title": {
-    "messageformat": "Gusto mo ba talagang umalis?",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__description": {
-    "messageformat": "Hindi ka na makakapag-send o makakatanggap ng messages sa group na ito.",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__confirmButton": {
-    "messageformat": "Umalis",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Confirm Button"
-  },
-  "icu:ConversationHeader__CannotLeaveGroupBecauseYouAreLastAdminAlert__description": {
-    "messageformat": "Bago ka umalis, kailangan mong pumili ng kahit isang bagong admin para sa group na ito.",
-    "description": "Conversation Header > Leave Group Action > Cannot Leave Group Because You Are Last Admin Alert > Description"
+    "description": "Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
   },
   "icu:sessionEnded": {
     "messageformat": "Nai-reset na ang secure session",
@@ -1326,7 +1297,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Ang Signal ay gumagamit ng end-to-end encryption at kinakailangan mong i-refesh ang iyong chat session minsan. Hindi maaapektuhan ang security ng chats mo pero baka may ma-miss kang message mula sa contact na ito kaya pwede mo siyang sabihan na i-resend ito.",
+    "messageformat": "Ang Cradle ay gumagamit ng end-to-end encryption at kinakailangan mong i-refesh ang iyong chat session minsan. Hindi maaapektuhan ang security ng chats mo pero baka may ma-miss kang message mula sa contact na ito kaya pwede mo siyang sabihan na i-resend ito.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1418,20 +1389,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Welcome to Signal Desktop",
+    "messageformat": "Welcome to Cradle Desktop",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "Privacy is possible. Signal makes it easy.",
+    "messageformat": "Privacy is possible. Cradle makes it easy.",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "Mga naka-link na device",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Mag-link ng bagong device",
-    "description": "The menu option shown in Signal iOS to add a new linked device"
+    "description": "The menu option shown in Cradle iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Matuto pa",
@@ -1505,7 +1476,7 @@
     "messageformat": "Paumanhin, masyado ka nang maraming devices na naka-link. Subukang magtanggal ng ilan."
   },
   "icu:installTooOld": {
-    "messageformat": "I-update ang Signal sa device na ito para ma-link ang iyong phone."
+    "messageformat": "I-update ang Cradle sa device na ito para ma-link ang iyong phone."
   },
   "icu:installErrorHeader": {
     "messageformat": "Nagkaroon ng problema!"
@@ -1645,11 +1616,11 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Tatawagan ng Signal si {person}",
+    "messageformat": "Tatawagan ng Cradle si {person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Tatawagan ng Signal sila {first} at {second}",
+    "messageformat": "Tatawagan ng Cradle sila {first} at {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
@@ -1657,7 +1628,7 @@
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Signal will ring {first}, {second}, and {others} others",
+    "messageformat": "Cradle will ring {first}, {second}, and {others} others",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1713,7 +1684,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Signal is sharing {window}.",
+    "messageformat": "Cradle is sharing {window}.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1749,7 +1720,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "Sa kanan, i-check ang box sa tabi ng Signal. Kung hindi mo makita ang Signal sa list, i-click ang + para ma-add ito.",
+    "messageformat": "Sa kanan, i-check ang box sa tabi ng Cradle. Kung hindi mo makita ang Cradle sa list, i-click ang + para ma-add ito.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1761,7 +1732,7 @@
     "description": "The cancel button for the needs screen record permissions modal"
   },
   "icu:alwaysRelayCallsDescription": {
-    "messageformat": "Laging padaain ang tawag sa server ng Signal",
+    "messageformat": "Laging padaain ang tawag sa server ng Cradle",
     "description": "Description of the always relay calls setting"
   },
   "icu:alwaysRelayCallsDetail": {
@@ -1793,12 +1764,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "Spell check will be enabled pagkatapos i-restart ang Signal.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
+    "messageformat": "Spell check will be enabled pagkatapos i-restart ang Cradle.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "Spell check will be disabled pagkatapos i-restart ang Signal.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
+    "messageformat": "Spell check will be disabled pagkatapos i-restart ang Cradle.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Minimize to system tray",
@@ -1841,8 +1812,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Mayroon kang lumang data mula sa lumang installation ng Signal Desktop. Mabubura ito kapag nagpatuloy ka at magsisimula ka ulit sa simula.",
-    "description": "Shown if user last ran Signal Desktop before October 2018"
+    "messageformat": "Mayroon kang lumang data mula sa lumang installation ng Cradle Desktop. Mabubura ito kapag nagpatuloy ka at magsisimula ka ulit sa simula.",
+    "description": "Shown if user last ran Cradle Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Burahin ang Lumang Data",
@@ -1923,11 +1894,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "Expired na ang version na ito ng Signal Desktop. Mangyaring mag-upgrade sa pinakabagong version upang magpatuloy na makapagpadala ng mensahe.",
+    "messageformat": "Expired na ang version na ito ng Cradle Desktop. Mangyaring mag-upgrade sa pinakabagong version upang magpatuloy na makapagpadala ng mensahe.",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "I-click para pumunta sa signal.org/download",
+    "messageformat": "I-click para pumunta sa cradle.org/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2176,22 +2147,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Failed to fetch username. I-check ang iyong internet connection at subukan ulit.",
-    "description": "Shown if request to Signal servers to find username fails"
+    "description": "Shown if request to Cradle servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "Failed to fetch phone number. I-check ang iyong internet connection at subukan ulit.",
-    "description": "Shown if request to Signal servers to find phone number fails"
+    "description": "Shown if request to Cradle servers to find phone number fails"
   },
   "icu:ToastManager__CannotEditMessage": {
     "messageformat": "Mayroon ka lang 3 oras para i-edit ang message pagkatapos mo itong i-send.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "User not found. Si {atUsername} ay hindi isang Signal user; siguraduhing nilagay mo ang complete username.",
+    "messageformat": "User not found. Si {atUsername} ay hindi isang Signal/Cradle user; siguraduhing nilagay mo ang complete username.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "User not found. Ang number na \"{phoneNumber}\" ay hindi isang Signal user.",
+    "messageformat": "User not found. Ang number na \"{phoneNumber}\" ay hindi isang Signal/Cradle user.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2219,7 +2190,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Ang Signal groups ay may maximum na {max,number} members.",
+    "messageformat": "Ang Cradle groups ay may maximum na {max,number} members.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2227,7 +2198,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Signal groups perform best with {max,number} members or less. Ang pagdagdag ng mas maraming members ay maaaring magdulot ng delay sa pag-send at pag-receive ng messages.",
+    "messageformat": "Cradle groups perform best with {max,number} members or less. Ang pagdagdag ng mas maraming members ay maaaring magdulot ng delay sa pag-send at pag-receive ng messages.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2279,7 +2250,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "I-click para ma-relink ang Signal Desktop sa iyong mobile device to continue messaging."
+    "messageformat": "I-click para ma-relink ang Cradle Desktop sa iyong mobile device to continue messaging."
   },
   "icu:unlinked": {
     "messageformat": "Unlinked"
@@ -2297,17 +2268,17 @@
     "messageformat": "Makipag-ugnayan sa Suporta"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Click to restart Signal"
+    "messageformat": "Click to restart Cradle"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Click to download update"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Hindi ma-update ang Signal. Subukan ulit.",
+    "messageformat": "Hindi ma-update ang Cradle. Subukan ulit.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Restart Signal"
+    "messageformat": "Restart Cradle"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "Mamaya na"
@@ -2565,15 +2536,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Introducing Stickers: Bandit the Cat",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Introducing Stickers",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "May gusto ka bang sabihin? Maaari mo nang daanin sa stickers!",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "I-open ang sticker picker",
@@ -2716,20 +2687,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "Nag-send ng message si {contact} that can't be processed or displayed dahil gumagamit siya ng bagong Signal feature."
+    "messageformat": "Nag-send ng message si {contact} that can't be processed or displayed dahil gumagamit siya ng bagong Signal/Cradle feature."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Pwede mong sabihan si {contact} na i-resend ang message na ito now that you are using an updated version of Signal."
+    "messageformat": "Pwede mong sabihan si {contact} na i-resend ang message na ito now that you are using an updated version of Cradle."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Ang isa sa devices mo ay nag-send ng message na hindi ma-process o ma-display dahil gumagamit siya ng bagong Signal feature."
+    "messageformat": "Ang isa sa devices mo ay nag-send ng message na hindi ma-process o ma-display dahil gumagamit siya ng bagong Signal/Cradle feature."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "Future messages like this will be synchronized now dahil gumagamit ka na ng updated version of Signal."
+    "messageformat": "Future messages like this will be synchronized now dahil gumagamit ka na ng updated version of Cradle."
   },
   "icu:Message--update-signal": {
-    "messageformat": "I-update ang Signal",
-    "description": "Text for a button which will take user to Signal download page"
+    "messageformat": "I-update ang Cradle",
+    "description": "Text for a button which will take user to Cradle download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Nakita na",
@@ -3068,11 +3039,11 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Sa Signal beta lang",
+    "messageformat": "Sa Cradle beta lang",
     "description": "Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "Available lang sa Signal beta users ang pag-edit ng messages. Kung mag-edit ka ng message, ang mga taong may latest version lang ng Signal beta ang makakakita nito.",
+    "messageformat": "Available lang sa Cradle beta users ang pag-edit ng messages. Kung mag-edit ka ng message, ang mga taong may latest version lang ng Cradle beta ang makakakita nito.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3080,20 +3051,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "May ibang taong maaaring gumagamit ng version ng Signal na hindi sinusuportahan ang formatted text. Hindi nila makikita ang anumang formatting na ginawa mo sa iyong message.",
+    "messageformat": "May ibang taong maaaring gumagamit ng version ng Cradle na hindi sinusuportahan ang formatted text. Hindi nila makikita ang anumang formatting na ginawa mo sa iyong message.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "Gusto mo bang buksan ang Signal Sticker Pack Creator?",
-    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
+    "messageformat": "Gusto mo bang buksan ang Cradle Sticker Pack Creator?",
+    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Kumpirmahin",
-    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "I-dismiss",
-    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "I-set up ang Signal sa iyong phone at desktop para magamit ang Sticker Pack Creator",
@@ -3312,12 +3283,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Tumatakbo pa ang Signal",
-    "description": "Shown in a notification title when Signal is minimized to tray"
+    "messageformat": "Tumatakbo pa ang Cradle",
+    "description": "Shown in a notification title when Cradle is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Patuloy na tatakbo ang Signal sa notification area. Pwede mo itong baguhin sa Signal settings.",
-    "description": "Shown in a notification body when Signal is minimized to tray"
+    "messageformat": "Patuloy na tatakbo ang Cradle sa notification area. Pwede mo itong baguhin sa Cradle settings.",
+    "description": "Shown in a notification body when Cradle is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Incoming voice call...",
@@ -3372,7 +3343,7 @@
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
   "icu:callDuration": {
-    "messageformat": "Signal {duration}",
+    "messageformat": "Cradle {duration}",
     "description": "Shown in the call screen to indicate how long the call has been connected"
   },
   "icu:callingDeviceSelection__settings": {
@@ -3560,7 +3531,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "Ang link na ito ay hindi supported nitong Signal Desktop version .",
+    "messageformat": "Ang link na ito ay hindi supported nitong Cradle Desktop version .",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4316,11 +4287,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Ang taong ito'y hindi gumagamit ng Signal",
+    "messageformat": "Ang taong ito'y hindi gumagamit ng Signal/Cradle",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Hindi suportado ng Signal Desktop ang pag-message sa non-Signal contacts. Sabihan ang taong ito na mag-install ng Signal para sa mas secure na messaging experience.",
+    "messageformat": "Hindi suportado ng Signal/Cradle Desktop ang pag-message sa non-Signal/Cradle contacts. Sabihan ang taong ito na mag-install ng Signal/Cradle para sa mas secure na messaging experience.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4857,10 +4828,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "About message requests",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Tingnan nang maigi ang requests. Nakakita ang Signal ng isa pang contact na may kaparehong pangalan. <reviewRequestLink>Tingnan ang request</reviewRequestLink>",
+    "messageformat": "Tingnan nang maigi ang requests. Nakakita ang Cradle ng isa pang contact na may kaparehong pangalan. <reviewRequestLink>Tingnan ang request</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -4924,7 +4895,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Para makaiwas sa spam dito sa Signal, kumpletuhin ang verification.",
+    "messageformat": "Para makaiwas sa spam dito sa Cradle, kumpletuhin ang verification.",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5440,7 +5411,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Piliin kung sinong pwedeng makakita ng phone number mo at kung sinong pwedeng kumontak sa 'yo sa Signal gamit ito.",
+    "messageformat": "Piliin kung sinong pwedeng makakita ng phone number mo at kung sinong pwedeng kumontak sa 'yo sa Cradle gamit ito.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5448,11 +5419,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Makikita ng lahat ng tao at groups na mine-message mo ang iyong phone number. Makikita ka sa Signal bilang isang contact ng sinumang may phone number mo sa kanilang contacts.",
+    "messageformat": "Makikita ng lahat ng tao at groups na mine-message mo ang iyong phone number. Makikita ka sa Cradle bilang isang contact ng sinumang may phone number mo sa kanilang contacts.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Walang makakakita ng phone number mo sa Signal.",
+    "messageformat": "Walang makakakita ng phone number mo sa Signal/Cradle.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5472,11 +5443,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Makikita ka bilang isang contact sa Signal ng lahat ng taong may phone number mo sa kanilang contacts. Pwedeng kang ma-contact ng iba gamit ang phone number mo 'pag nagsimula sila ng bagong chat o group.",
+    "messageformat": "Makikita ka bilang isang contact sa Signal/Cradle ng lahat ng taong may phone number mo sa kanilang contacts. Pwedeng kang ma-contact ng iba gamit ang phone number mo 'pag nagsimula sila ng bagong chat o group.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Walang sinuman sa Signal ang makakahanap sa 'yo gamit ang phone number mo.",
+    "messageformat": "Walang sinuman sa Signal/Cradle ang makakahanap sa 'yo gamit ang phone number mo.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5556,7 +5527,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Para patuloy na magamit ang Signal, mag-update sa latest version nito.",
+    "messageformat": "Para patuloy na magamit ang Cradle, mag-update sa latest version nito.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5564,15 +5535,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "I-restart ang Signal para ma-install ang update.",
+    "messageformat": "I-restart ang Cradle para ma-install ang update.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Hindi na-update ng Signal Desktop, pero may bagong version na available. Pumunta sa {downloadUrl} at i-install ang bagong version manually, pagkatapos ay kontakin ang support o mag-file ng bug tungkol dito.",
+    "messageformat": "Hindi na-update ng Cradle Desktop, pero may bagong version na available. Pumunta sa {downloadUrl} at i-install ang bagong version manually, pagkatapos ay kontakin ang support o mag-file ng bug tungkol dito.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Hindi pwedeng i-close ang Signal.",
+    "messageformat": "Hindi pwedeng i-close ang Cradle.",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5592,15 +5563,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Installed na ang bagong version ng Signal. Sigurado ka bang gusto mong magpatuloy?",
-    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
+    "messageformat": "Installed na ang bagong version ng Cradle. Sigurado ka bang gusto mong magpatuloy?",
+    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Application crashed",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Nag-restart ang Signal after ng crash. Pwede kang mag-submit ng crash report para ma-investigate ng Signal ang issue.",
+    "messageformat": "Nag-restart ang Cradle after ng crash. Pwede kang mag-submit ng crash report para ma-investigate ng Cradle ang issue.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5796,8 +5767,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Signal Connections",
-    "description": "The phrase/term: 'Signal Connections'"
+    "messageformat": "Cradle Connections",
+    "description": "The phrase/term: 'Cradle Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} ay mga taong pinagkatiwalaan mo, sa pamamagitan ng alinman sa mga sumusunod:",
@@ -5976,7 +5947,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "All Signal connections",
+    "messageformat": "All Cradle connections",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6096,7 +6067,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Piliin kung sinong Signal connections ang pwedeng mag-view ng story mo. Pwede mo itong baguhin anumang oras sa privacy settings. <learnMoreLink>Matuto pa.</learnMoreLink>",
+    "messageformat": "Piliin kung sinong Cradle connections ang pwedeng mag-view ng story mo. Pwede mo itong baguhin anumang oras sa privacy settings. <learnMoreLink>Matuto pa.</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6112,11 +6083,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {Lahat ng Signal connections · 1 viewer} other {Lahat ng Signal connections · {viewersCount,number} viewers}}",
+    "messageformat": "{viewersCount, plural, one {Lahat ng Cradle connections · 1 viewer} other {Lahat ng Cradle connections · {viewersCount,number} viewers}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {Lahat ng Signal connections · 1 ang hindi kasali} other {Lahat ng Signal connections · {excludedCount,number} ang hindi kasali}}",
+    "messageformat": "{excludedCount, plural, one {Lahat ng Cradle connections · 1 ang hindi kasali} other {Lahat ng Cradle connections · {excludedCount,number} ang hindi kasali}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6432,7 +6403,7 @@
     "description": "Body of the popup with information about discriminator in username"
   },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "I-set up ang iyong Signal username",
+    "messageformat": "I-set up ang iyong Cradle username",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6456,15 +6427,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Malapit nang hindi masuportahan ng Signal ang {OS} version ng iyong computer. Para patuloy na magamit ang Signal, i-update ang operating system ng computer mo bago sumapit ang {expirationDate}. <learnMoreLink>Matuto pa</learnMoreLink>",
+    "messageformat": "Malapit nang hindi masuportahan ng Cradle ang {OS} version ng iyong computer. Para patuloy na magamit ang Cradle, i-update ang operating system ng computer mo bago sumapit ang {expirationDate}. <learnMoreLink>Matuto pa</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Hindi na gumagana ang Signal desktop sa computer na ito. Para magamit muli ang Signal desktop, i-update ang {OS} version ng iyong computer. <learnMoreLink>Matuto pa</learnMoreLink>",
+    "messageformat": "Hindi na gumagana ang Cradle desktop sa computer na ito. Para magamit muli ang Cradle desktop, i-update ang {OS} version ng iyong computer. <learnMoreLink>Matuto pa</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Hindi na gumagana ang Signal desktop sa computer na ito. Para magamit muli ang Signal desktop, i-update ang {OS} version ng iyong computer.",
+    "messageformat": "Hindi na gumagana ang Cradle desktop sa computer na ito. Para magamit muli ang Cradle desktop, i-update ang {OS} version ng iyong computer.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6488,11 +6459,11 @@
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Ang version na ito'y may small tweaks at bug fixes to keep Signal running smoothly.",
+    "messageformat": "Ang version na ito'y may small tweaks at bug fixes to keep Cradle running smoothly.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Dagdag na maliliit na pag-aayos, pag-alis ng bugs, at pagpapaganda ng takbo ng app. Maraming salamat sa paggamit ng Signal!",
+    "messageformat": "Dagdag na maliliit na pag-aayos, pag-alis ng bugs, at pagpapaganda ng takbo ng app. Maraming salamat sa paggamit ng Cradle!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6512,13 +6483,27 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Dagdag na maliliit na pag-aayos, pag-alis ng bugs, at pagpapaganda ng takbo ng app. Maraming salamat sa paggamit ng Signal!",
+    "messageformat": "Dagdag na maliliit na pag-aayos, pag-alis ng bugs, at pagpapaganda ng takbo ng app. Maraming salamat sa paggamit ng Cradle!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.24--0": {
-    "messageformat": "Pwede mo na ring i-search ang @ mentions mo. Maaari mong sabihin na \"Salamat sa pagdagdag ng feature na ito\". At syempre, masaya kaming sasagot ng \"Walang anuman\"."
+  "icu:WhatsNew__v6.21--0": {
+    "messageformat": "I-check ang itsura mo habang nagri-ring ang 1-on-1 call. Ang individual video calls ay gumagamit na ngayon ng full-screen view na dati'y lumalabas lamang sa umpisa ng bagong group call. Sa pagiging consistent, sinusubukan naming maging persistent (at hindi resistant) kaya ngayo'y wala na ang discrepancy dahil hindi na magkaiba ang mga bagay na ito.",
+    "description": "Release notes for v6.21"
   },
-  "icu:WhatsNew__v6.25--0": {
-    "messageformat": "Pwede mo na ngayong i-click and drag ang conversation header para ilipat ang pwesto ng Signal window."
+  "icu:WhatsNew__v6.21--1": {
+    "messageformat": "Gusto naming pasalamatan ang {complexspaces} sa kanilang tulong at pagbibigay ng feedback para sa release na ito.",
+    "description": "Release notes for v6.21"
+  },
+  "icu:WhatsNew__v6.22--0": {
+    "messageformat": "I-format ang text sa messages mo sa pamamagitan ng pagpili ng anumang text sa message composition field.\n\nGawing malinaw ang gusto mong sabihin gamit ang bold, mag-send ng plot twist ending gamit ang spoiler effect, i-emphasize ang isang pangalan sa paggawa nitong naka-italics, i-reject ang isang dinner idea gamit ang strikethrough, o mag-share ng code na naka monospace.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.22--1": {
+    "messageformat": "Nagdagdag kami ng suporta sa latest emoji characters, para maipakita mo ang iyong excitement gamit ang &quot;Shaking Face&quot; (<emojify>🫨</emojify>) o mag-react gamit ang &quot;Pea Pod&quot; (<emojify>🫛</emojify>) kapag may nagtanong sa 'yo kung gaano ka ka-close sa friends mo.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.23--1": {
+    "messageformat": "Bukod sa kaunting bug fixes, kasama sa release na ito ang developer documentation updates (maraming salamat, {d108}!) at ilang design improvements sa message forwarding interface (maraming salamat, {hackerbirds}!).",
+    "description": "Release notes for v6.23"
   }
 }

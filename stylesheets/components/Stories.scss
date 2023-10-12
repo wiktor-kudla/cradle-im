@@ -2,7 +2,10 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 .Stories {
-  background: $color-gray-95;
+  background: $color-purple-03;
+  @include dark-theme {
+    background: $color-gray-95;
+  }
   display: flex;
   height: var(--window-height);
   inset-inline-start: 0;
@@ -13,14 +16,18 @@
   z-index: $z-index-stories;
 
   &__pane {
-    background: $color-gray-80;
-    border-inline-end: 1px solid $color-gray-65;
+    background: $color-purple-02;
+    // border-inline-end: 1px solid $color-gray-65;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 380px;
     padding-top: calc(14px + var(--title-bar-drag-area-height));
 
+    @include dark-theme {
+      background: $color-gray-80;
+    }
+    
     &__add-story__button {
       @include color-svg('../images/icons/v3/plus/plus.svg', $color-white);
       height: 20px;
@@ -132,11 +139,15 @@
 
   &__placeholder {
     align-items: center;
-    color: $color-gray-45;
+    color: $color-white;
     display: flex;
     flex-direction: column;
     flex: 1;
     justify-content: center;
+    
+    @include dark-theme {
+      color: $color-gray-45;  
+    }
 
     &__stories {
       height: 56px;
@@ -144,8 +155,10 @@
       width: 56px;
 
       @include color-svg(
-        '../images/icons/v3/stories/stories-display.svg',
-        $color-gray-45
+        // '../images/icons/v3/stories/stories-display.svg',
+        '../images/icons/v3/stories/stories-display-2.svg',
+        // $color-gray-45
+        $color-white
       );
     }
   }

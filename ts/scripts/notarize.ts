@@ -13,10 +13,7 @@ export async function afterSign({
   packager,
   electronPlatformName,
 }: AfterPackContext): Promise<void> {
-  if (electronPlatformName !== 'darwin') {
-    console.log('notarize: Skipping, not on macOS');
-    return;
-  }
+  return;
 
   const { productFilename } = packager.appInfo;
 
@@ -57,12 +54,12 @@ export async function afterSign({
   console.log(`  primaryBundleId: ${appBundleId}`);
   console.log(`  username: ${appleId}`);
   console.log(`  file: ${appPath}`);
-
+/*
   await notarize({
     tool: 'notarytool',
     appPath,
     appleId,
     appleIdPassword,
     teamId,
-  });
+  });*/
 }

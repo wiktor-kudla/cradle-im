@@ -8,7 +8,6 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
-
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -90,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Adatvédelmi és Általános Szerződési Feltételek",
-    "description": "Shown in the about box for the link to https://signal.org/legal"
+    "description": "Shown in the about box for the link to https://cradle.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple Silicon",
@@ -161,7 +160,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Kilépés a Signalból",
+    "messageformat": "Kilépés a Cradleból",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -273,7 +272,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Signal frissítése",
+    "messageformat": "Cradle frissítése",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -393,7 +392,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Sikeresen befejezted az exportálást, és most kontaktjaid, valamint üzeneteid türelmesen várnak számítógépeden. Válaszd ki a lementett Signal adataidat tartalmazó könyvtárat!",
+    "messageformat": "Sikeresen befejezted az exportálást, és most kontaktjaid, valamint üzeneteid türelmesen várnak számítógépeden. Válaszd ki a lementett Cradle adataidat tartalmazó könyvtárat!",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -409,7 +408,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Győződj meg róla, hogy a megfelelő, Signal adataidat tartalmazó könyvtárat választottad ki! A nevének 'Signal Export'-tal kell kezdődnie. Emellett készíthetsz egy új másolatot a Chrome alkalmazás adataiból is.",
+    "messageformat": "Győződj meg róla, hogy a megfelelő, Cradle adataidat tartalmazó könyvtárat választottad ki! A nevének 'Cradle Export'-tal kell kezdődnie. Emellett készíthetsz egy új másolatot a Chrome alkalmazás adataiból is.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -425,7 +424,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "A Signal Desktop használatának megkezdése",
+    "messageformat": "A Cradle Desktop használatának megkezdése",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -509,11 +508,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "A hitelesítés alatt álló biztonsági szám megváltozott. Kérlek ellenőrizd új biztonsági számodat {name1} nevű partnereddel! Ez utalhat arra, hogy valaki megpróbálja lehallgatni a beszélgetéseteket, de azt is jelentheti, hogy {name2} egyszerűen csak újratelepítette a Signalt.",
+    "messageformat": "A hitelesítés alatt álló biztonsági szám megváltozott. Kérlek ellenőrizd új biztonsági számodat {name1} nevű partnereddel! Ez utalhat arra, hogy valaki megpróbálja lehallgatni a beszélgetéseteket, de azt is jelentheti, hogy {name2} egyszerűen csak újratelepítette a Signal/Cradlet.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Elképzelhető, hogy az alábbi személyek újratelepítették a Signalt, vagy eszközt cseréltek. Az új biztonsági szám megerősítéséhez koppints egy felhasználóra! Ez a lépés nem kötelező.",
+    "messageformat": "Elképzelhető, hogy az alábbi személyek újratelepítették a Signal/Cradlet, vagy eszközt cseréltek. Az új biztonsági szám megerősítéséhez koppints egy felhasználóra! Ez a lépés nem kötelező.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -525,7 +524,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {Van {count,number} olyan névjegyed, aki újratelepítette a Signalt, vagy eszközt cserélt. Küldés előtt opcionálisan felülvizsgálhatod a biztonsági számát.} other {Van {count,number} olyan névjegyed, aki újratelepítette a Signalt, vagy eszközt cserélt. Küldés előtt opcionálisan felülvizsgálhatod a biztonsági számát.}}",
+    "messageformat": "{count, plural, one {Van {count,number} olyan névjegyed, aki újratelepítette a Signal/Cradlet, vagy eszközt cserélt. Küldés előtt opcionálisan felülvizsgálhatod a biztonsági számát.} other {Van {count,number} olyan névjegyed, aki újratelepítette a Signal/Cradlet, vagy eszközt cserélt. Küldés előtt opcionálisan felülvizsgálhatod a biztonsági számát.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -557,7 +556,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Biztonsági számod {name1} nevű partnereddel megváltozott. Ez utalhat arra, hogy valaki megpróbálja lehallgatni a beszélgetéseteket, de azt is jelentheti, hogy {name2} egyszerűen csak újratelepítette a Signalt. Javasolt újraellenőrizni a partnereddel közös biztonsági számotokat.",
+    "messageformat": "Biztonsági számod {name1} nevű partnereddel megváltozott. Ez utalhat arra, hogy valaki megpróbálja lehallgatni a beszélgetéseteket, de azt is jelentheti, hogy {name2} egyszerűen csak újratelepítette a Signal/Cradlet. Javasolt újraellenőrizni a partnereddel közös biztonsági számotokat.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -593,7 +592,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Hiba történt a feltöltés során. Küldd el a naplófájlt szöveges csatolmányként a support@signal.org címre!",
+    "messageformat": "Hiba történt a feltöltés során. Küldd el a naplófájlt szöveges csatolmányként a support@cradle.org címre!",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -659,7 +658,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "A partnerhez kapcsolódó biztonsági számod megváltozott. Ez arra utalhat, hogy valaki megpróbálja lehallgatni a beszélgetést. De az is előfordulhat, hogy partnered egyszerűen újratelepítette a Signalt. Lentebb lehetőséged van az új biztonsági szám hitelesítésére."
+    "messageformat": "A partnerhez kapcsolódó biztonsági számod megváltozott. Ez arra utalhat, hogy valaki megpróbálja lehallgatni a beszélgetést. De az is előfordulhat, hogy partnered egyszerűen újratelepítette a Signal/Cradlet. Lentebb lehetőséged van az új biztonsági szám hitelesítésére."
   },
   "icu:incomingError": {
     "messageformat": "Nem sikerült kezelni a bejövő üzenetet."
@@ -722,15 +721,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Előnézet betöltése…",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "A {domain} hivatkozás előnézeti képének vázlata",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "A {domain} hivatkozás előnézeti képe",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Képcsatolmány-vázlat: {path}",
@@ -825,18 +824,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Csatolakozás a béta programhoz",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "A Signal Desktop beállításai",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "messageformat": "A Cradle Desktop beállításai",
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Matricacsomag-készítő",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "A Signal Desktopról",
+    "messageformat": "A Cradle Desktopról",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -860,7 +859,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Signal Desktop",
+    "messageformat": "Cradle Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -912,7 +911,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Üdvözöl a Signal!"
+    "messageformat": "Üdvözöl a Cradle!"
   },
   "icu:whatsNew": {
     "messageformat": "{whatsNew} ebben a frissítésben",
@@ -1043,15 +1042,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Hangüzenetek küldéséhez engedélyezd, hogy a Signal Desktop hozzáférjen a mikrofonodhoz!",
+    "messageformat": "Hangüzenetek küldéséhez engedélyezd, hogy a Cradle Desktop hozzáférjen a mikrofonodhoz!",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Hívás indításához engedélyezd, hogy a Signal Desktop hozzáférjen mikrofonodhoz!",
+    "messageformat": "Hívás indításához engedélyezd, hogy a Cradle Desktop hozzáférjen mikrofonodhoz!",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Videóhívás indításához engedélyezd, hogy a Signal Desktop hozzáférjen kamerádhoz!",
+    "messageformat": "Videóhívás indításához engedélyezd, hogy a Cradle Desktop hozzáférjen kamerádhoz!",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1091,15 +1090,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "A Signal Desktop frissítése nem sikerült. {retry} vagy látogass el a {url} címre és telepítsd az új verziót kézzel, majd lépj kapcsolatba velünk a tapasztalt problémával kapcsolatban: {support}.",
+    "messageformat": "A Cradle Desktop frissítése nem sikerült. {retry} vagy látogass el a {url} címre és telepítsd az új verziót kézzel, majd lépj kapcsolatba velünk a tapasztalt problémával kapcsolatban: {support}.",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "A Signal frissítése nem sikerült. Telepítsd az új verziót manuálisan a {url} weboldalról, majd lépj kapcsolatba velünk, és oszd meg tapasztalataidat: {support}",
+    "messageformat": "A Cradle frissítése nem sikerült. Telepítsd az új verziót manuálisan a {url} weboldalról, majd lépj kapcsolatba velünk, és oszd meg tapasztalataidat: {support}",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "A Signal Desktop valószínűleg macOS karanténban fut, és emiatt nem fog tudni automatikusan frissíteni. Próbáld meg áthelyezni a  {app} fájlt a {folder} mappába a Finder segítségével!",
+    "messageformat": "A Cradle Desktop valószínűleg macOS karanténban fut, és emiatt nem fog tudni automatikusan frissíteni. Próbáld meg áthelyezni a  {app} fájlt a {folder} mappába a Finder segítségével!",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1155,7 +1154,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Ez az üzenet a csevegés minden tagja számára törlésre kerül, ha a Signal legújabb verzióját használják. A többiek számára látható lesz, hogy töröltél egy üzenetet.",
+    "messageformat": "Ez az üzenet a csevegés minden tagja számára törlésre kerül, ha a Signal/Cradle legújabb verzióját használják. A többiek számára látható lesz, hogy töröltél egy üzenetet.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1283,35 +1282,7 @@
   },
   "icu:deleteConversationConfirmation": {
     "messageformat": "Véglegesen törlöd ezt a csevegést?",
-    "description": "(deleted 06/27/2023) Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Csevegés törlése?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "A csevegés ezen az eszközön törlésre kerül.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
-    "messageformat": "Kilépés a csoportból",
-    "description": "This is a button to leave a group"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__title": {
-    "messageformat": "Tényleg ki akarsz lépni?",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Title"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__description": {
-    "messageformat": "Többé nem fogsz tudni üzeneteket vagy hívásokat küldeni és fogadni ebben a csoportban.",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Description"
-  },
-  "icu:ConversationHeader__LeaveGroupConfirmation__confirmButton": {
-    "messageformat": "Kilépés",
-    "description": "Conversation Header > Leave Group Action > Leave Group Confirmation Modal > Confirm Button"
-  },
-  "icu:ConversationHeader__CannotLeaveGroupBecauseYouAreLastAdminAlert__description": {
-    "messageformat": "Kilépés előtt ki kell jelölnöd legalább egy új admint.",
-    "description": "Conversation Header > Leave Group Action > Cannot Leave Group Because You Are Last Admin Alert > Description"
+    "description": "Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone."
   },
   "icu:sessionEnded": {
     "messageformat": "A biztonságos munkamenet újra lett indítva",
@@ -1326,7 +1297,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "A Signal végpontok közti titkosítást használ, és időnként újra be kell állítania a két végpont közti adatkapcsolatot. Ennek nincs hatása a biztonságra, de előfordulhat, hogy pont ezalatt nem kaptál meg egy üzenetet ettől a személytől. Ilyen esetekben érdemes megkérni a partnert, hogy küldje újra az üzenetét.",
+    "messageformat": "A Cradle végpontok közti titkosítást használ, és időnként újra be kell állítania a két végpont közti adatkapcsolatot. Ennek nincs hatása a biztonságra, de előfordulhat, hogy pont ezalatt nem kaptál meg egy üzenetet ettől a személytől. Ilyen esetekben érdemes megkérni a partnert, hogy küldje újra az üzenetét.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1418,20 +1389,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Üdvözöl a Signal Desktop!",
+    "messageformat": "Üdvözöl a Cradle Desktop!",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "A magánélet védelme nem lehetetlen. A Signal ezt egyszerűvé teszi.",
+    "messageformat": "A magánélet védelme nem lehetetlen. A Cradle ezt egyszerűvé teszi.",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "Párosított eszközök",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Új eszköz párosítása",
-    "description": "The menu option shown in Signal iOS to add a new linked device"
+    "description": "The menu option shown in Cradle iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Tudj meg többet!",
@@ -1505,7 +1476,7 @@
     "messageformat": "Sajnáljuk, de már túl sok párosított eszközöd van. Próbálj kitörölni néhányat!"
   },
   "icu:installTooOld": {
-    "messageformat": "A telefonod párosításához frissítsd a Signalt ezen az eszközön!"
+    "messageformat": "A telefonod párosításához frissítsd a Cradlet ezen az eszközön!"
   },
   "icu:installErrorHeader": {
     "messageformat": "Probléma merült fel!"
@@ -1645,19 +1616,19 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "A Signal megcsörgeti őt: {person}",
+    "messageformat": "A Cradle megcsörgeti őt: {person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "A Signal megcsörgeti őket: {first} és {second}",
+    "messageformat": "A Cradle megcsörgeti őket: {first} és {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "A Signal megcsörgeti őket: {first}, {second} és {third}",
+    "messageformat": "A Cradle megcsörgeti őket: {first}, {second} és {third}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "A Signal megcsörgeti {first}, {second} felhasználókat és még {others} további személyt",
+    "messageformat": "A Cradle megcsörgeti {first}, {second} felhasználókat és még {others} további személyt",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1713,7 +1684,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "A Signal a következő ablakot osztja meg: {window}.",
+    "messageformat": "A Cradle a következő ablakot osztja meg: {window}.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1737,7 +1708,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "A Signalnak engedélyre van szüksége a képernyő rögzítéséhez.",
+    "messageformat": "A Cradlenak engedélyre van szüksége a képernyő rögzítéséhez.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1749,7 +1720,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "Jobboldalt pipáld ki a Signalt. Ha nem találod a listában, használd a + gombot a hozzáadáshoz!",
+    "messageformat": "Jobboldalt pipáld ki a Cradlet. Ha nem találod a listában, használd a + gombot a hozzáadáshoz!",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1793,12 +1764,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "A helyesírás-ellenőrzés a Signal újraindítását követően lesz engedélyezve.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
+    "messageformat": "A helyesírás-ellenőrzés a Cradle újraindítását követően lesz engedélyezve.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "A helyesírás-ellenőrzés a Signal újraindítását követően lesz kikapcsolva.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
+    "messageformat": "A helyesírás-ellenőrzés a Cradle újraindítását követően lesz kikapcsolva.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Lezárás tálcára",
@@ -1841,8 +1812,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Egy korábbi Signal Desktop telepítés elavult adatokat hagyott hátra. Ha úgy döntesz, hogy folytatod, akkor ezek az adatok törölve lesznek, és elölről kell kezdened.",
-    "description": "Shown if user last ran Signal Desktop before October 2018"
+    "messageformat": "Egy korábbi Cradle Desktop telepítés elavult adatokat hagyott hátra. Ha úgy döntesz, hogy folytatod, akkor ezek az adatok törölve lesznek, és elölről kell kezdened.",
+    "description": "Shown if user last ran Cradle Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Régi adatok törlése",
@@ -1923,11 +1894,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "A Signal Desktop ezen verziója elavult. Kérlek frissíts a legújabb verzióra, hogy folytatni tudd a beszélgetést!",
+    "messageformat": "A Cradle Desktop ezen verziója elavult. Kérlek frissíts a legújabb verzióra, hogy folytatni tudd a beszélgetést!",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Kattints a signal.org/download oldalra ugráshoz!",
+    "messageformat": "Kattints a cradle.org/download oldalra ugráshoz!",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2176,22 +2147,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Nem sikerült betölteni a felhasználónevet. Ellenőrizd a kapcsolatodat, majd próbáld újra!",
-    "description": "Shown if request to Signal servers to find username fails"
+    "description": "Shown if request to Cradle servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "A telefonszám lekérése sikertelen. Ellenőrizd a kapcsolatodat, majd próbáld újra!",
-    "description": "Shown if request to Signal servers to find phone number fails"
+    "description": "Shown if request to Cradle servers to find phone number fails"
   },
   "icu:ToastManager__CannotEditMessage": {
     "messageformat": "A módosításokat csak az üzenet elküldésétől számított 3 órán belül lehet alkalmazni.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "A felhasználó nem található. Nincs {atUsername} nevű Signal-felhasználó. Győződj meg róla, hogy a teljes felhasználónevet adtad meg!",
+    "messageformat": "A felhasználó nem található. Nincs {atUsername} nevű Signal/Cradle-felhasználó. Győződj meg róla, hogy a teljes felhasználónevet adtad meg!",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "Felhasználó nem található: \"{phoneNumber}\" nincs regisztrálva a Signalra.",
+    "messageformat": "Felhasználó nem található: \"{phoneNumber}\" nincs regisztrálva a Signal/Cradlera.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2219,7 +2190,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "A Signal csoportok legfeljebb {max,number} tagból állhatnak.",
+    "messageformat": "A Cradle csoportok legfeljebb {max,number} tagból állhatnak.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2227,7 +2198,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "A Signal csoportok {max,number} vagy kevesebb taggal működnek hatékonyan. Ennél több tag esetén lassulások tapasztalhatók az üzenetek küldése és fogadása során.",
+    "messageformat": "A Cradle csoportok {max,number} vagy kevesebb taggal működnek hatékonyan. Ennél több tag esetén lassulások tapasztalhatók az üzenetek küldése és fogadása során.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2279,7 +2250,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Párosítsd újra a Signal Desktopot mobilkészülékeiddel a beszélgetés folytatásához!"
+    "messageformat": "Párosítsd újra a Cradle Desktopot mobilkészülékeiddel a beszélgetés folytatásához!"
   },
   "icu:unlinked": {
     "messageformat": "Nincs párosítva"
@@ -2297,7 +2268,7 @@
     "messageformat": "kapcsolatfelvétel a támogatással"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Kattints a Signal újraindításához!"
+    "messageformat": "Kattints a Cradle újraindításához!"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Kattints a frissítés letöltéséhez!"
@@ -2307,7 +2278,7 @@
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Signal újraindítása"
+    "messageformat": "Cradle újraindítása"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "Később"
@@ -2565,15 +2536,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Bemutatkozik a Matricák: Bandit, a macska",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Bemutatkozik a Matricák",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "Miért használnál szavakat, ha használhatsz matricákat is?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Matricaválasztó megnyitása",
@@ -2716,20 +2687,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} olyan Signal újdonságot tartalmazó üzenetet küldött, melyet a Signal jelenlegi verziójával nem lehet feldolgozni vagy megjeleníteni."
+    "messageformat": "{contact} olyan Signal/Cradle újdonságot tartalmazó üzenetet küldött, melyet a Signal/Cradle jelenlegi verziójával nem lehet feldolgozni vagy megjeleníteni."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Most már megkérheted {contact} nevű partnered, hogy küldje újra ezt az üzenetet, mivel már a Signal legfrissebb verzióját használod."
+    "messageformat": "Most már megkérheted {contact} nevű partnered, hogy küldje újra ezt az üzenetet, mivel már a Cradle legfrissebb verzióját használod."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Az egyik eszközödről olyan üzenetet küldtél, melyet nem lehet feldolgozni vagy megjeleníteni ezen az eszközön, mivel olyan funkciót tartalmaz, mely csak a Signal egy újabb verziójában érhető el."
+    "messageformat": "Az egyik eszközödről olyan üzenetet küldtél, melyet nem lehet feldolgozni vagy megjeleníteni ezen az eszközön, mivel olyan funkciót tartalmaz, mely csak a Signal/Cradle egy újabb verziójában érhető el."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "A jövőben az ehhez hasonló üzenetek szinkronizálva lesznek, ugyanis a Signal legfrissebb verzióját használod."
+    "messageformat": "A jövőben az ehhez hasonló üzenetek szinkronizálva lesznek, ugyanis a Cradle legfrissebb verzióját használod."
   },
   "icu:Message--update-signal": {
-    "messageformat": "Signal frissítése",
-    "description": "Text for a button which will take user to Signal download page"
+    "messageformat": "Cradle frissítése",
+    "description": "Text for a button which will take user to Cradle download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Megtekintve",
@@ -3068,11 +3039,11 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Kizárólag Signal béta",
+    "messageformat": "Kizárólag Cradle béta",
     "description": "Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "Az üzenetek szerkesztése csak a Signal béta felhasználói számára érhető el. Ha szerkesztesz egy üzenetet, azt csak azok láthatják, akik a Signal béta legújabb verzióját használják.",
+    "messageformat": "Az üzenetek szerkesztése csak a Cradle béta felhasználói számára érhető el. Ha szerkesztesz egy üzenetet, azt csak azok láthatják, akik a Cradle béta legújabb verzióját használják.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3080,20 +3051,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "Előfordulhat, hogy egyesek a Signal olyan verzióját használják, amely nem támogatja a formázott szöveget. Nem fogják látni az üzeneten végzett formázási módosításokat.",
+    "messageformat": "Előfordulhat, hogy egyesek a Cradle olyan verzióját használják, amely nem támogatja a formázott szöveget. Nem fogják látni az üzeneten végzett formázási módosításokat.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "Szeretnéd megnyitni a Signal matricacsomag-készítő alkalmazást?",
-    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
+    "messageformat": "Szeretnéd megnyitni a Cradle matricacsomag-készítő alkalmazást?",
+    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Megerősítés",
-    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Elvetés",
-    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "A matricacsomag létrehozásához állítsd be a Signalt a telefonodon, valamint az asztali alkalmazáson is",
@@ -3312,12 +3283,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "A Signal továbbra is fut",
-    "description": "Shown in a notification title when Signal is minimized to tray"
+    "messageformat": "A Cradle továbbra is fut",
+    "description": "Shown in a notification title when Cradle is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "A Signal továbbra is futni fog az értesítési területen. Ezt a Signal beállításaiban módosíthatod.",
-    "description": "Shown in a notification body when Signal is minimized to tray"
+    "messageformat": "A Cradle továbbra is futni fog az értesítési területen. Ezt a Cradle beállításaiban módosíthatod.",
+    "description": "Shown in a notification body when Cradle is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Bejövő hanghívás...",
@@ -3372,7 +3343,7 @@
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
   "icu:callDuration": {
-    "messageformat": "Signal {duration}",
+    "messageformat": "Cradle {duration}",
     "description": "Shown in the call screen to indicate how long the call has been connected"
   },
   "icu:callingDeviceSelection__settings": {
@@ -3560,7 +3531,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "A Signal Desktop ezen verziója nem támogatja ezt a hivatkozást.",
+    "messageformat": "A Cradle Desktop ezen verziója nem támogatja ezt a hivatkozást.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4316,11 +4287,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Ez a személy nem használ Signalt",
+    "messageformat": "Ez a személy nem használ Signal/Cradlet",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "A Signal Desktop nem támogatja nem-Signal kontaktokkal való üzenetváltást. Biztonságosabb üzenetváltás érdekében kérd meg ezt a személyt, hogy telepítse a Signalt!",
+    "messageformat": "A Signal/Cradle Desktop nem támogatja nem-Signal/Cradle kontaktokkal való üzenetváltást. Biztonságosabb üzenetváltás érdekében kérd meg ezt a személyt, hogy telepítse a Signal/Cradlet!",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4857,10 +4828,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "A csevegési felkérésekről",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Gondosan nézd át a felkéréseket. A Signal talált egy másik, azonos nevű névjegyet. <reviewRequestLink>Felkérés áttekintése</reviewRequestLink>",
+    "messageformat": "Gondosan nézd át a felkéréseket. A Cradle talált egy másik, azonos nevű névjegyet. <reviewRequestLink>Felkérés áttekintése</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -4924,7 +4895,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "A Signal hálózatán küldött kéretlen üzenetek megelőzése érdekében kérlek végezd el az alábbi ellenőrzést!",
+    "messageformat": "A Cradle hálózatán küldött kéretlen üzenetek megelőzése érdekében kérlek végezd el az alábbi ellenőrzést!",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5440,7 +5411,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Válaszd ki, hogy ki láthatja a telefonszámod, és ki léphet kapcsolatba veled a Signalon keresztül.",
+    "messageformat": "Válaszd ki, hogy ki láthatja a telefonszámod, és ki léphet kapcsolatba veled a Cradleon keresztül.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5448,11 +5419,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Telefonszámod látható lesz az ismerősök és csoportok számára, akikkel üzenetet váltasz. Azoknál, akinél szerepelsz készülékük kontaktlistájában, megjelensz Signal kontakjaik között is.",
+    "messageformat": "Telefonszámod látható lesz az ismerősök és csoportok számára, akikkel üzenetet váltasz. Azoknál, akinél szerepelsz készülékük kontaktlistájában, megjelensz Cradle kontakjaik között is.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "A Signalon senki nem láthatja a telefonszámod.",
+    "messageformat": "A Signal/Cradleon senki nem láthatja a telefonszámod.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5472,11 +5443,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Bárki, akinek a névjegyei között szerepel a telefonszámod, névjegyként fog látni téged a Signalon. Mások pedig a telefonszámodon keresztül érhetnek el téged, amikor új csevegést vagy csoportot indítanak.",
+    "messageformat": "Bárki, akinek a névjegyei között szerepel a telefonszámod, névjegyként fog látni téged a Signal/Cradleon. Mások pedig a telefonszámodon keresztül érhetnek el téged, amikor új csevegést vagy csoportot indítanak.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "A Signalon senki nem fog megtalálni a telefonszámod alapján.",
+    "messageformat": "A Signal/Cradleon senki nem fog megtalálni a telefonszámod alapján.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5556,7 +5527,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "A Signal használatának folytatásához frissítsd a legújabb verzióra.",
+    "messageformat": "A Cradle használatának folytatásához frissítsd a legújabb verzióra.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5564,15 +5535,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "A frissítés telepítéséhez indítsd újra a Signalt.",
+    "messageformat": "A frissítés telepítéséhez indítsd újra a Cradlet.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "A Signal Desktop frissítése nem sikerült, de elérhető egy új verzió. Nyisd meg a {downloadUrl} weboldalt, és telepítsd manuálisan az új verziót, majd lépj kapcsolatba az ügyfélszolgálattal, vagy jelentsd a hibát a problémával kapcsolatban.",
+    "messageformat": "A Cradle Desktop frissítése nem sikerült, de elérhető egy új verzió. Nyisd meg a {downloadUrl} weboldalt, és telepítsd manuálisan az új verziót, majd lépj kapcsolatba az ügyfélszolgálattal, vagy jelentsd a hibát a problémával kapcsolatban.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Nem sikerült bezárni a Signalt.",
+    "messageformat": "Nem sikerült bezárni a Cradlet.",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5592,15 +5563,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "A Signal újabb verziója már telepítve van. Biztosan folytatni szeretnéd?",
-    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
+    "messageformat": "A Cradle újabb verziója már telepítve van. Biztosan folytatni szeretnéd?",
+    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Az alkalmazás összeomlott",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "A Signal egy összeomlás után indult újra. Továbbíthatod a hibanaplót, hogy segítsd a fejlesztők munkáját.",
+    "messageformat": "A Cradle egy összeomlás után indult újra. Továbbíthatod a hibanaplót, hogy segítsd a fejlesztők munkáját.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5796,8 +5767,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Signal-névjegyek",
-    "description": "The phrase/term: 'Signal Connections'"
+    "messageformat": "Cradle-névjegyek",
+    "description": "The phrase/term: 'Cradle Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "A {connections} olyan személyek, akikben megbízol, a következő módok valamelyikén keresztül:",
@@ -5976,7 +5947,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Minden Signal-névjegy",
+    "messageformat": "Minden Cradle-névjegy",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6096,7 +6067,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Döntsd el, hogy mely Signal Névjegyek tekinthetik meg a Történeted. Ezt bármikor módosíthatod az adatvédelmi beállításokban. <learnMoreLink>Tudj meg többet!</learnMoreLink>",
+    "messageformat": "Döntsd el, hogy mely Cradle Névjegyek tekinthetik meg a Történeted. Ezt bármikor módosíthatod az adatvédelmi beállításokban. <learnMoreLink>Tudj meg többet!</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6112,11 +6083,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {Minden Signal Névjegy · {viewersCount,number} néző} other {Minden Signal Névjegy · {viewersCount,number} néző}}",
+    "messageformat": "{viewersCount, plural, one {Minden Cradle Névjegy · {viewersCount,number} néző} other {Minden Cradle Névjegy · {viewersCount,number} néző}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {Minden Signal Névjegy · Kivéve {excludedCount,number}} other {Minden Signal Névjegy · Kivéve {excludedCount,number}}}",
+    "messageformat": "{excludedCount, plural, one {Minden Cradle Névjegy · Kivéve {excludedCount,number}} other {Minden Cradle Névjegy · Kivéve {excludedCount,number}}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6432,7 +6403,7 @@
     "description": "Body of the popup with information about discriminator in username"
   },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Állítsd be a Signal-felhasználóneved",
+    "messageformat": "Állítsd be a Cradle-felhasználóneved",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6456,15 +6427,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "A Signal asztali számítógépen elérhető változata hamarosan nem fogja támogatni a számítógépeden megtalálható {OS} verziót. A Signal asztali számítógépen elérhető változatának folytatásához frissítsd a számítógéped operációs rendszerét eddig: {expirationDate}. <learnMoreLink>Tudj meg többet</learnMoreLink>",
+    "messageformat": "A Cradle asztali számítógépen elérhető változata hamarosan nem fogja támogatni a számítógépeden megtalálható {OS} verziót. A Cradle asztali számítógépen elérhető változatának folytatásához frissítsd a számítógéped operációs rendszerét eddig: {expirationDate}. <learnMoreLink>Tudj meg többet</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "A Signal már nem működik ezen a készüléken. A Signal asztali számítógépről elérhető változatának ismételt használatához frissítsd a számítógépeden a(z) {OS} verzióját. <learnMoreLink>Tudj meg többet</learnMoreLink>",
+    "messageformat": "A Cradle már nem működik ezen a készüléken. A Cradle asztali számítógépről elérhető változatának ismételt használatához frissítsd a számítógépeden a(z) {OS} verzióját. <learnMoreLink>Tudj meg többet</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "A Signal asztali számítógépről elérhető változata már nem működik ezen a számítógépen. A Signal asztali számítógépről elérhető változatának ismételt használatához frissítsd a számítógépeden a(z) {OS} verzióját.",
+    "messageformat": "A Cradle asztali számítógépről elérhető változata már nem működik ezen a számítógépen. A Cradle asztali számítógépről elérhető változatának ismételt használatához frissítsd a számítógépeden a(z) {OS} verzióját.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6488,11 +6459,11 @@
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Ebbe a verzióba néhány kisebb újítás és hibajavítás került annak érdekében, hogy a Signal továbbra is gond nélkül fusson.",
+    "messageformat": "Ebbe a verzióba néhány kisebb újítás és hibajavítás került annak érdekében, hogy a Cradle továbbra is gond nélkül fusson.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "További apró módosítások, hibajavítások és teljesítménynövelések. Köszönjük, hogy a Signalt használod!",
+    "messageformat": "További apró módosítások, hibajavítások és teljesítménynövelések. Köszönjük, hogy a Cradlet használod!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6512,13 +6483,27 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Apró finomítások, hibajavítások és teljesítménynövelések. Köszönjük, hogy a Signalt használod!",
+    "messageformat": "Apró finomítások, hibajavítások és teljesítménynövelések. Köszönjük, hogy a Cradlet használod!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.24--0": {
-    "messageformat": "Mostantól kereshetsz az @említések között is. „Köszönöm, hogy hozzáadtátok ezt a funkciót” – mondhatnád. Mi pedig így válaszolhatnánk: „Említésre sem méltó”."
+  "icu:WhatsNew__v6.21--0": {
+    "messageformat": "Nézd meg magad jobban, amikor valaki hív téged. Az egyéni videohívásoknál mostantól ugyanaz a teljes képernyős nézet érhető el, amely korábban csak az új csoportos hívások elején jelent meg. Ami a következetességet illeti, megpróbálunk kitartóak (nem pedig ellenállók) lenni, és ez az eltérés már nem létezik, mivel már nincs különbség a kettő között.",
+    "description": "Release notes for v6.21"
   },
-  "icu:WhatsNew__v6.25--0": {
-    "messageformat": "A Signal-ablak áthelyezéséhez mostantól egyszerűen csak kattints rá és húzd a beszélgetés fejlécét."
+  "icu:WhatsNew__v6.21--1": {
+    "messageformat": "Ezúton is szeretnénk kifejezni köszönetünket {complexspaces} felé a kiadáson végzett munkája során nyújtott segítségért és visszajelzésért.",
+    "description": "Release notes for v6.21"
+  },
+  "icu:WhatsNew__v6.22--0": {
+    "messageformat": "Az üzenetek szövegének formázásához válaszd ki a szöveget az üzenetírás mezőben.\n\nMostantól formázhatod az üzenet szövegét, ha kijelölöd az üzenetírás mezőben. Félkövér, dőlt, áthúzott és egyéb szövegeffektusokat adhatsz hozzá.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.22--1": {
+    "messageformat": "Támogatást adtunk a legújabb hangulatjel-karakterekhez, így most már kifejezheted izgatottságod a „reszkető arc” (<emojify>🫨</emojify>) hangulatjellel, vagy reagálhatsz egy „borsóval meg a héjával” (<emojify>🫛</emojify>), amikor valaki megkérdezi, mennyire állsz közel a barátaidhoz.",
+    "description": "Release notes for v6.22"
+  },
+  "icu:WhatsNew__v6.23--1": {
+    "messageformat": "Néhány hibajavításon kívül ez a kiadás a fejlesztői dokumentáció frissítéseit (köszönjük, {d108}!) és az üzenettovábbítási felület néhány tervezési fejlesztését is tartalmazza (köszönjük, {hackerbirds}!).",
+    "description": "Release notes for v6.23"
   }
 }

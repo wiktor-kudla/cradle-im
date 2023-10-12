@@ -22,7 +22,7 @@ import type {
 } from '../state/ducks/stories';
 import { MyStories } from './MyStories';
 import { StoriesPane } from './StoriesPane';
-import { Theme, themeClassName } from '../util/theme';
+import { Theme } from '../util/theme';
 import { getWidthFromPreferredWidth } from '../util/leftPaneWidth';
 import { useEscapeHandling } from '../hooks/useEscapeHandling';
 
@@ -104,7 +104,8 @@ export function Stories({
   );
 
   return (
-    <div className={classNames('Stories', themeClassName(STORIES_COLOR_THEME))}>
+    // <div className={classNames('Stories', themeClassName(STORIES_COLOR_THEME))}>
+    <div className={classNames('Stories', ((window.initialTheme === "light") ? 'light-theme' : 'dark-theme'))}>
       {addStoryData && renderStoryCreator()}
       <div className="Stories__pane" style={{ width }}>
         {isMyStories && myStories.length ? (

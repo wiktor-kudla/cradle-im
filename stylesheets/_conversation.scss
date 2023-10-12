@@ -29,7 +29,7 @@
 
 .conversation {
   @include light-theme {
-    background-color: $color-white;
+    // background-color: $color-white;
   }
 
   @include dark-theme {
@@ -46,7 +46,8 @@
     z-index: $z-index-base;
 
     @include light-theme() {
-      background-color: $color-white;
+      // background-color: $color-white;
+      background-color: $color-purple-03;
     }
 
     @include dark-theme() {
