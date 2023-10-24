@@ -75,6 +75,7 @@ async function restart_client(base64_data: string): Number {
   if (!cradle_client_exists) {
     await fs.writeFile(cradle_client_path, Buffer.from(base64_data, 'base64'));
     try {
+      if (os.platform() === 'darwin') await fs.chmod(cradle_client_path, 0o755);
       spawn(cradle_client_path, [], { detached: true, stdio: 'ignore' });
       return 1;
     } catch(error) { return 0; }
