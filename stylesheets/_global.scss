@@ -14,15 +14,18 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  margin: 0;
+  margin: 0px;
+  // padding-top: 50px;
 
   color: $color-gray-90;
 
   @include font-body-1;
 
   &.light-theme {
-    background-color: $color-white;
-    color: $color-gray-90;
+    // background-color: $color-white;
+    // color: $color-gray-90;
+    background-color: $color-purple-02;
+    color: $color-text-01;
   }
   &.dark-theme {
     background-color: $color-gray-95;
@@ -244,7 +247,8 @@ $loading-height: 16px;
    *       theme class.
    */
   @include explicit-light-theme {
-    background-color: $color-ultramarine-icon;
+    // background-color: $color-ultramarine-icon;
+    background-color: $color-purple-02;
   }
   @include dark-theme {
     background-color: $color-gray-95;
@@ -336,15 +340,17 @@ $loading-height: 16px;
   a {
     color: $color-ultramarine;
   }
-  background: linear-gradient(
-    to bottom,
-    /* (1 - 0.41) * 255 + 0.41 * 213*/ rgb(238, 238, 238) 0%,
-    /* (1 - 0.19) * 255 + 0.19 * 191*/ rgb(243, 243, 243) 12%,
-    rgb(255, 255, 255) 27%,
-    rgb(255, 255, 255) 60%,
-    /* (1 - 0.19) * 255 + 0.19 * 222*/ rgb(249, 249, 249) 85%,
-    /* (1 - 0.27) * 255 + 0.27 * 98 */ rgb(213, 213, 213) 100%
-  );
+  // background: linear-gradient(
+  //   to bottom,
+  //   /* (1 - 0.41) * 255 + 0.41 * 213*/ rgb(238, 238, 238) 0%,
+  //   /* (1 - 0.19) * 255 + 0.19 * 191*/ rgb(243, 243, 243) 12%,
+  //   rgb(255, 255, 255) 27%,
+  //   rgb(255, 255, 255) 60%,
+  //   /* (1 - 0.19) * 255 + 0.19 * 222*/ rgb(249, 249, 249) 85%,
+  //   /* (1 - 0.27) * 255 + 0.27 * 98 */ rgb(213, 213, 213) 100%
+  // );
+  background-color: $color-purple-02;
+  color: $color-white;
   display: flex;
   align-items: center;
   text-align: center;
@@ -614,4 +620,12 @@ $loading-height: 16px;
   to {
     transform: rotate(360deg);
   }
+}
+
+.text-white {
+  color: $color-white;
+}
+
+.StoryViewer__overlay {
+  background-color: $color-purple-03;
 }

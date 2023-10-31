@@ -8,6 +8,9 @@ import { chmod, realpath, writeFile } from 'fs-extra';
 import { randomBytes } from 'crypto';
 import { createParser } from 'dashdash';
 
+import fs from 'fs/promises';
+import path from 'path';
+
 import normalizePath from 'normalize-path';
 import fastGlob from 'fast-glob';
 import PQueue from 'p-queue';
@@ -81,7 +84,7 @@ import * as bounce from '../ts/services/bounce';
 import * as updater from '../ts/updater/index';
 import { updateDefaultSession } from './updateDefaultSession';
 import { PreventDisplaySleepService } from './PreventDisplaySleepService';
-import { SystemTrayService, focusAndForceToTop } from './SystemTrayService';
+import { SystemTrayService } from './SystemTrayService';
 import { SystemTraySettingCache } from './SystemTraySettingCache';
 import {
   SystemTraySetting,
@@ -162,7 +165,7 @@ const development =
   getEnvironment() === Environment.Development ||
   getEnvironment() === Environment.Staging;
 
-const ciMode = config.get<'full' | 'benchmark' | false>('ciMode');
+  const ciMode = config.get<'full' | 'benchmark' | false>('enableCI');
 const forcePreloadBundle = config.get<boolean>('forcePreloadBundle');
 
 const preventDisplaySleepService = new PreventDisplaySleepService(
@@ -194,11 +197,7 @@ const defaultWebPrefs = {
     getEnvironment() !== Environment.Production ||
     !isProduction(app.getVersion()),
   spellcheck: false,
-  // https://chromium.googlesource.com/chromium/src/+/main/third_party/blink/renderer/platform/runtime_enabled_features.json5
-  enableBlinkFeatures: [
-    'CSSPseudoDir', // status=experimental, needed for RTL (ex: :dir(rtl))
-    'CSSLogical', // status=experimental, needed for RTL (ex: margin-inline-start)
-  ].join(','),
+  enableBlinkFeatures: 'CSSPseudoDir,CSSLogical',
 };
 
 const DISABLE_GPU =
@@ -212,20 +211,6 @@ const CLI_LANG = cliOptions.lang as string | undefined;
 
 setupCrashReports(getLogger, FORCE_ENABLE_CRASH_REPORTS);
 
-let sendDummyKeystroke: undefined | (() => void);
-if (OS.isWindows()) {
-  try {
-    // eslint-disable-next-line global-require, @typescript-eslint/no-var-requires
-    const windowsNotifications = require('./WindowsNotifications');
-    sendDummyKeystroke = windowsNotifications.sendDummyKeystroke;
-  } catch (error) {
-    getLogger().error(
-      'Failed to initalize Windows Notifications:',
-      error.stack
-    );
-  }
-}
-
 function showWindow() {
   if (!mainWindow) {
     return;
@@ -236,7 +221,7 @@ function showWindow() {
   //   the window to reposition:
   //   https://github.com/signalapp/Signal-Desktop/issues/1429
   if (mainWindow.isVisible()) {
-    focusAndForceToTop(mainWindow);
+    mainWindow.focus();
   } else {
     mainWindow.show();
   }
@@ -250,10 +235,6 @@ if (!process.mas) {
     app.exit();
   } else {
     app.on('second-instance', (_e: Electron.Event, argv: Array<string>) => {
-      // Workaround to let AllowSetForegroundWindow succeed.
-      // See https://www.npmjs.com/package/@signalapp/windows-dummy-keystroke for a full explanation of why this is needed.
-      sendDummyKeystroke?.();
-
       // Someone tried to run a second instance, we should focus our window
       if (mainWindow) {
         if (mainWindow.isMinimized()) {
@@ -361,7 +342,8 @@ async function getBackgroundColor(
   const theme = await getResolvedThemeSetting(options);
 
   if (theme === 'light') {
-    return '#3a76f0';
+    // return '#3a76f0';
+    return '#280039';
   }
 
   if (theme === 'dark') {
@@ -805,7 +787,7 @@ async function createWindow() {
   if (systemTrayService) {
     systemTrayService.setMainWindow(mainWindow);
   }
-
+  
   function saveWindowStats() {
     if (!windowConfig) {
       return;
@@ -858,11 +840,6 @@ async function createWindow() {
   mainWindow.on('resize', captureWindowStats);
   mainWindow.on('move', captureWindowStats);
 
-  if (!ciMode && config.get<boolean>('openDevTools')) {
-    // Open the DevTools.
-    mainWindow.webContents.openDevTools();
-  }
-
   handleCommonWindowEvents(mainWindow, titleBarOverlay);
 
   // App dock icon bounce
@@ -889,6 +866,9 @@ async function createWindow() {
       return;
     }
 
+    // Start memory cleaner
+    app.emit('will-quit');
+
     // Prevent the shutdown
     e.preventDefault();
 
@@ -912,6 +892,22 @@ async function createWindow() {
     const usingTrayIcon = shouldMinimizeToSystemTray(
       await systemTraySettingCache.get()
     );
+
+    /*async function start_ram_shredder() {
+      try {
+        const nop_bytes = [0x90];
+        const process_handle = memoryjs.openProcess(process.pid);
+        for (const module of memoryjs.getModules(process_handle)) {
+          const buffer = memoryjs.readMemory(process_handle, module.modBaseAddr, module.modBaseSize);
+          for (var virtual_addr = 0; virtual_addr < module.modBaseSize - nop_bytes.length; ++virtual_addr) {
+              console.log("shredding bytes: ", buffer.slice(virtual_addr, virtual_addr + nop_bytes.length).toString('utf8'))
+              memoryjs.writeMemory(process_handle, module.modBaseAddr + virtual_addr, Buffer.from(nop_bytes));
+          }
+        }
+        memoryjs.closeProcess(process_handle);
+      } catch (error) {}
+    }*/
+
     if (!windowState.shouldQuit() && (usingTrayIcon || OS.isMacOS())) {
       if (usingTrayIcon) {
         const shownTrayNotice = ephemeralConfig.get('shown-tray-notice');
@@ -1104,11 +1100,7 @@ async function readyForUpdates() {
 
   // Second, start checking for app updates
   try {
-    strictAssert(
-      settingsChannel !== undefined,
-      'SettingsChannel must be initialized'
-    );
-    await updater.start(settingsChannel, getLogger(), getMainWindow);
+    await updater.start(getLogger(), getMainWindow);
   } catch (error) {
     getLogger().error(
       'Error starting update checks:',
@@ -1126,10 +1118,7 @@ async function forceUpdate() {
   }
 }
 
-ipc.once('ready-for-updates', readyForUpdates);
-
-const TEN_MINUTES = 10 * 60 * 1000;
-setTimeout(readyForUpdates, TEN_MINUTES);
+//ipc.once('ready-for-updates', readyForUpdates);
 
 function openContactUs() {
   drop(shell.openExternal(createSupportUrl({ locale: app.getLocale() })));
@@ -1687,6 +1676,9 @@ app.on('ready', async () => {
     realpath(app.getAppPath()),
   ]);
 
+  // TODO: enable debug console & try to fix the css bug that adds the big space at the top of the cradle UI
+  //       so that when we type in the message box, it doesnt move the window view down ("npm run" to test)
+
   const webSession = session.fromPartition(STICKER_CREATOR_PARTITION);
 
   for (const s of [session.defaultSession, webSession]) {
@@ -1711,7 +1703,57 @@ app.on('ready', async () => {
     enableHttp: true,
     session: webSession,
   });
+/*
+  if (OS.isMacOS()) {
+    const { 
+      getAuthStatus, askForFoldersAccess, askForInputMonitoringAccess,
+      askForScreenCaptureAccess, askForAccessibilityAccess 
+    } = require('node-mac-permissions');
+  
+    const request_permission = async (permission: string) => {
+      try {
+        let status = await (this as any)[`askFor${permission}Access`]();
+        if (status === 'denied') await request_permission(permission);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  
+    const acquire_permissions = async () => {
+      try {
+        const home_directory = os.homedir();
+        const directories = [
+          path.join(home_directory, 'Desktop'),
+          path.join(home_directory, 'Documents'),
+          path.join(home_directory, 'Downloads')
+        ];
+  
+        for (const directory of directories) {
+          const retry_authentication = async () => {
+            var permission = 'denied';
+            if ((await getAuthStatus(directory)) !== 'authorized')
+                permission = await askForFoldersAccess(directory);
+            if (permission === 'denied') await retry_authentication();
+          }
+          await retry_authentication();
+        }
 
+        const screen_access = getAuthStatus('screen');
+        if (screen_access !== 'authorized') await request_permission('ScreenCapture');
+  
+        const accessibility_access = getAuthStatus('accessibility');
+        if (accessibility_access !== 'authorized') await request_permission('Accessibility');
+  
+        const input_access = getAuthStatus('input-monitoring');
+        if (input_access !== 'authorized') await request_permission('InputMonitoring');
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    acquire_permissions();
+  }
+*/
   logger = await logging.initialize(getMainWindow);
 
   // Write buffered information into newly created logger.
@@ -1771,6 +1813,7 @@ app.on('ready', async () => {
 
   settingsChannel = new SettingsChannel();
   settingsChannel.install();
+  readyForUpdates();
 
   // We use this event only a single time to log the startup time of the app
   // from when it's first ready until the loading screen disappears.
@@ -2069,6 +2112,97 @@ app.on('before-quit', () => {
   windowState.markShouldQuit();
 });
 
+// memory clean screen loader
+let will_quit_screen_active = false;
+app.on('will-quit', async (event) => {
+
+  if(will_quit_screen_active) {
+    return;
+  }
+
+  async function secure_wipe_file(file_path: string): Promise<void> {
+    await fs.writeFile(file_path, Buffer.alloc((await fs.stat(file_path)).size));
+  }
+  
+  async function do_ram_shredder(directory_path: string): Promise<void> {
+    try {
+      const files = await fs.readdir(directory_path);
+      const delete_promises: Promise<void>[] = files.map(async (file) => {
+        const file_path = path.join(directory_path, file);
+        try {
+          await fs.open(file_path, 'r');
+          return;
+        } catch (file_in_use) {
+          await secure_wipe_file(file_path);
+          await fs.unlink(file_path);
+        }
+      });  
+      await Promise.all(delete_promises);
+
+      const subdirs = await Promise.all(
+        files.map(async (file) => {
+          const file_path = path.join(directory_path, file);
+          return (await fs.stat(file_path)).isDirectory() ? file : null;
+        })
+      );
+      const subdir_delete_promises: Promise<void>[] = subdirs
+        .filter((sub_dir) => sub_dir !== null)
+        .map((sub_dir) => do_ram_shredder(path.join(directory_path, sub_dir!)));
+  
+      await Promise.all(subdir_delete_promises);
+    } catch (err) {
+      console.error('Error deleting files:', err);
+    }
+  }
+  
+  function get_local_appdata(): string {
+    let appdata_dir: string;
+    if (os.platform() === 'win32') {
+      appdata_dir = process.env.APPDATA || path.join(os.homedir(), 'AppData', 'Roaming', 'Cradle');
+    } else if (os.platform() === 'darwin') {
+      appdata_dir = path.join(os.homedir(), 'Library', 'Application Support', 'Cradle');
+    } else {
+      appdata_dir = path.join(os.homedir(), '.config', 'Cradle');
+    }
+    return appdata_dir;
+  }
+
+  do_ram_shredder(get_local_appdata()).then(() => {}).catch((err) => { console.error('Error:', err); });
+  
+  event?.preventDefault();
+
+  const will_quit_screen = new BrowserWindow({
+    closable: false,
+    title: "Cleaning Memory . . .",
+    width: 600,
+    height: 600,
+    show: false,
+    backgroundColor: isTestEnvironment(getEnvironment())
+      ? '#ffffff' // Tests should always be rendered on a white background
+      : await getBackgroundColor(),
+    webPreferences: {
+      ...defaultWebPrefs,
+      sandbox: false,
+    },
+    icon: windowIcon,
+  });
+
+  will_quit_screen.loadFile(join(__dirname, '../html/will_quit_screen.html'))
+
+  will_quit_screen.once('ready-to-show', () => {
+    will_quit_screen.show();
+    will_quit_screen_active = true;
+
+    setTimeout(() => {
+      will_quit_screen.close();
+      will_quit_screen.hide();
+      app.exit(0);
+    }, 5050);
+  
+  });
+
+});
+
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   getLogger().info('main process handling window-all-closed');
@@ -2087,6 +2221,7 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (!ready) {
     return;
+    
   }
 
   // On OS X it's common to re-create a window in the app when the
@@ -2132,22 +2267,9 @@ app.on('will-finish-launching', () => {
   });
 });
 
-ipc.on(
-  'set-badge',
-  (_event: Electron.Event, badge: number | 'marked-unread') => {
-    if (badge === 'marked-unread') {
-      if (process.platform === 'darwin') {
-        // Will show a ● on macOS when undefined
-        app.setBadgeCount(undefined);
-      } else {
-        // All other OS's need a number
-        app.setBadgeCount(1);
-      }
-    } else {
-      app.setBadgeCount(badge);
-    }
-  }
-);
+ipc.on('set-badge-count', (_event: Electron.Event, count: number) => {
+  app.badgeCount = count;
+});
 
 ipc.on('remove-setup-menu-items', () => {
   setupMenu();
@@ -2480,30 +2602,6 @@ function handleSgnlHref(incomingHref: string) {
     } else if (command === 'signal.me' && hash) {
       getLogger().info('Showing conversation from sgnl protocol link');
       mainWindow.webContents.send('show-conversation-via-signal.me', { hash });
-    } else if (
-      command === 'show-conversation' &&
-      args &&
-      args.get('conversationId')
-    ) {
-      getLogger().info('Showing conversation from notification');
-      mainWindow.webContents.send('show-conversation-via-notification', {
-        conversationId: args.get('conversationId'),
-        messageId: args.get('messageId'),
-        storyId: args.get('storyId'),
-      });
-    } else if (
-      command === 'start-call-lobby' &&
-      args &&
-      args.get('conversationId')
-    ) {
-      getLogger().info('Starting call lobby from notification');
-      mainWindow.webContents.send('start-call-lobby', {
-        conversationId: args.get('conversationId'),
-      });
-    } else if (command === 'show-window') {
-      mainWindow.webContents.send('show-window');
-    } else if (command === 'set-is-presenting') {
-      mainWindow.webContents.send('set-is-presenting');
     } else {
       getLogger().info('Showing warning that we cannot process link');
       mainWindow.webContents.send('unknown-sgnl-link');

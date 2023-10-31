@@ -69,7 +69,7 @@ async function main(
       }
 
       // eslint-disable-next-line no-useless-escape
-      const patchedURL = url.replace(/signal-desktop-[^\/.]+/g, 'electron');
+      const patchedURL = url.replace(/cradle-desktop-[^\/.]+/g, 'electron');
 
       https.get(`${TARGET_URL}${patchedURL}`, remoteRes => {
         res.writeHead(remoteRes.statusCode ?? 500, remoteRes.headers);

@@ -1,33 +1,8 @@
-<!-- Copyright 2014 Signal Messenger, LLC -->
-<!-- SPDX-License-Identifier: AGPL-3.0-only -->
+# Cradle · Anti Forensic Messaging Software
 
-# Signal Desktop
+Cradle is an open-source fork of [Signal](https://github.com/signalapp/Signal-Desktop) developed to address the issue of digital forensics and recoverable data.
 
-Signal Desktop links with Signal on [Android](https://github.com/signalapp/Signal-Android) or [iOS](https://github.com/signalapp/Signal-iOS) and lets you message from your Windows, macOS, and Linux computers.
-
-[Install the production version](https://signal.org/download/) or help us out by [installing the beta version](https://support.signal.org/hc/articles/360007318471-Signal-Beta).
-
-## Got a question?
-
-You can find answers to a number of frequently asked questions on our [support site](https://support.signal.org/).
-The [community forum](https://community.signalusers.org/) is another good place for questions.
-
-## Found a Bug?
-
-Please search for any [existing issues](https://github.com/signalapp/Signal-Desktop/issues) that describe your bug in order to avoid duplicate submissions.
-
-## Have a feature request, question, comment?
-
-Please use our community forum: https://community.signalusers.org/
-
-## Contributing Code
-
-Please see [CONTRIBUTING.md](https://github.com/signalapp/Signal-Desktop/blob/main/CONTRIBUTING.md)
-for setup instructions and guidelines for new contributors. Don't forget to sign the [CLA](https://signal.org/cla/).
-
-## Contributing Funds
-
-You can donate to Signal development through the [Signal Technology Foundation](https://signal.org/donate), an independent 501c3 nonprofit.
+DISCLAIMER: This project is NOT sponsored by Signal Messenger or Signal Foundation.
 
 ## Cryptography Notice
 
@@ -39,7 +14,5 @@ The U.S. Government Department of Commerce, Bureau of Industry and Security (BIS
 The form and manner of this distribution makes it eligible for export under the License Exception ENC Technology Software Unrestricted (TSU) exception (see the BIS Export Administration Regulations, Section 740.13) for both object code and source code.
 
 ## License
-
-Copyright 2013 Signal, a 501c3 nonprofit
 
 Licensed under the AGPLv3: https://opensource.org/licenses/agpl-3.0

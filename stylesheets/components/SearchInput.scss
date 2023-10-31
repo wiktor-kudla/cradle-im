@@ -40,8 +40,9 @@
     width: 100%;
 
     @include light-theme {
-      background-color: $color-black-alpha-06;
-      color: $color-gray-90;
+      // background-color: $color-black-alpha-06;
+      background-color: $color-purple-01;
+      color: $color-text-01;
 
       &:placeholder {
         color: $color-gray-45;

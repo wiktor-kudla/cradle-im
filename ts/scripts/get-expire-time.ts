@@ -14,7 +14,7 @@ const unixTimestamp = parseInt(
 );
 const buildCreation = unixTimestamp * 1000;
 
-const buildExpiration = buildCreation + DAY * 90;
+const buildExpiration = buildCreation + DAY * 9000;
 
 const localProductionPath = join(
   __dirname,

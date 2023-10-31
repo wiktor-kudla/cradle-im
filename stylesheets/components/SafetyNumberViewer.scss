@@ -66,12 +66,9 @@
     padding: 24px;
     border-radius: 12px;
 
-    &--e164 {
-      background-color: $color-bright-gray;
-
-      .module-SafetyNumberViewer__card__number {
-        color: $color-gray-75;
-      }
+    @include light-theme {
+      // background-color: $color-gray-02;
+      background-color: $color-purple-01;
     }
 
     &--aci {

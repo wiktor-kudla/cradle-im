@@ -34,7 +34,7 @@
 }
 
 .module-splash-screen__logo {
-  @include color-svg('../images/signal-logo.svg', $color-white);
+  @include color-svg('../images/cradle-logo.svg', $color-white);
   margin-block: 24px;
   margin-inline: 0;
 
@@ -2445,6 +2445,170 @@ button.ConversationDetails__action-button {
   }
 }
 
+// Module: Main Header
+
+.module-main-header {
+  -webkit-app-region: var(--draggable-app-region);
+
+  height: calc(#{$header-height} + var(--title-bar-drag-area-height));
+  width: 100%;
+
+  padding-inline: 16px;
+  padding-top: var(--title-bar-drag-area-height);
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+
+  .module-left-pane--width-narrow & {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+  }
+
+  & > * {
+    margin-inline-end: 12px;
+
+    &:last-child {
+      margin-inline-end: 0;
+    }
+  }
+
+  &__avatar {
+    -webkit-app-region: no-drag;
+
+    &--container {
+      position: relative;
+
+      .module-left-pane--width-narrow & {
+        margin-bottom: 20px;
+        margin-inline-end: 0;
+        margin-top: 12px;
+      }
+    }
+
+    &--badged {
+      background: $color-ultramarine;
+      border-radius: 100%;
+      border: 1px solid $color-white;
+      height: 8px;
+      width: 8px;
+      position: absolute;
+      top: 0;
+      inset-inline-end: 0;
+    }
+  }
+
+  &__icon-container {
+    display: flex;
+
+    .module-left-pane--width-narrow & {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__compose-icon {
+    -webkit-app-region: no-drag;
+    align-items: center;
+    background: none;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    display: inline-flex;
+    height: 28px;
+    justify-content: center;
+    width: 28px;
+    padding: 0px;
+
+    @include keyboard-mode {
+      &:focus {
+        border-color: $color-ultramarine;
+        outline: none;
+      }
+    }
+
+    &::before {
+      // $icon: '../images/icons/v3/compose/compose.svg';
+      $icon: '../images/icons/v3/compose/compose-2.svg';
+      width: 20px;
+      height: 20px;
+      content: '';
+
+      @include light-theme {
+        // @include color-svg($icon, $color-gray-75);
+        @include color-svg($icon, $color-white);
+      }
+      @include dark-theme {
+        @include color-svg($icon, $color-gray-15);
+      }
+    }
+  }
+
+  &__stories-badge {
+    @include rounded-corners;
+    align-items: center;
+    background-color: $color-accent-red;
+    color: $color-white;
+    display: flex;
+    font-size: 10px;
+    height: 16px;
+    justify-content: center;
+    min-width: 16px;
+    overflow: hidden;
+    padding-block: 0;
+    padding-inline: 2px;
+    position: absolute;
+    inset-inline-end: -6px;
+    top: -4px;
+    user-select: none;
+    z-index: $z-index-base;
+  }
+
+  &__stories-icon {
+    -webkit-app-region: no-drag;
+    align-items: center;
+    background: none;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    display: inline-flex;
+    height: 28px;
+    justify-content: center;
+    margin-inline-end: 12px;
+    position: relative;
+    width: 28px;
+    padding: 0px;
+
+    .module-left-pane--width-narrow & {
+      margin-inline-end: 0;
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+
+    @include keyboard-mode {
+      &:focus {
+        border-color: $color-ultramarine;
+        outline: none;
+      }
+    }
+
+    &::before {
+      // $icon: '../images/icons/v3/stories/stories.svg';
+      $icon: '../images/icons/v3/stories/stories-2.svg';
+      width: 20px;
+      height: 20px;
+      content: '';
+
+      @include light-theme {
+        // @include color-svg($icon, $color-gray-75);
+        @include color-svg($icon, $color-white);
+      }
+      @include dark-theme {
+        @include color-svg($icon, $color-gray-15);
+      }
+    }
+  }
+}
+
 // Module: Image
 
 .module-image {
@@ -2939,6 +3103,7 @@ button.module-image__border-overlay:focus {
   white-space: nowrap;
   overflow-y: hidden;
   margin-bottom: 6px;
+  color: $color-text-01;
 }
 
 .module-staged-attachment {
@@ -4243,7 +4408,9 @@ button.module-image__border-overlay:focus {
 
         &:hover,
         &:focus {
-          background-color: $color-gray-05;
+          // background-color: $color-gray-05;
+          background-color: $color-purple-01;
+          color: $color-white;
         }
       }
       @include dark-theme {
@@ -4292,7 +4459,8 @@ button.module-image__border-overlay:focus {
 
         @include light-theme {
           color: $color-gray-60;
-          background-color: $color-gray-05;
+          // background-color: $color-gray-05;
+          background-color: $color-purple-01;
         }
         @include dark-theme {
           color: $color-gray-25;
@@ -4384,7 +4552,8 @@ button.module-image__border-overlay:focus {
         &:hover:not(:disabled),
         &:focus:not(:disabled) {
           @include light-theme {
-            background-color: $color-gray-05;
+            // background-color: $color-gray-05;
+            background-color: $color-purple-01;
             #{$unread-indicator} {
               border-color: $color-gray-05;
             }
@@ -4419,7 +4588,8 @@ button.module-image__border-overlay:focus {
 
       &--is-selected {
         @include light-theme {
-          background-color: $color-gray-15;
+          // background-color: $color-gray-15;
+          background-color: $color-purple-01;
         }
         @include dark-theme {
           background-color: $color-gray-65;
@@ -4522,7 +4692,8 @@ button.module-image__border-overlay:focus {
             text-overflow: ellipsis;
 
             @include light-theme {
-              color: $color-gray-90;
+              // color: $color-gray-90;
+              color: $color-white;
             }
             @include dark-theme {
               color: $color-gray-05;
@@ -4890,14 +5061,26 @@ button.module-image__border-overlay:focus {
 // Module: Left Pane
 
 .module-left-pane {
-  display: flex;
+  border-inline-end-style: solid;
+  // border-inline-end-width: 1px;
+  border-inline-end-width: 0px;
+  display: inline-flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
   position: relative;
 
   @include light-theme {
-    $background-color: $color-gray-02;
+    // $background-color: $color-gray-02;
+    background-color: $color-purple-02;
+    color: $color-text-01;
+
+    // border-color: $color-gray-15;
+    // background-color: $background-color;
+
+    ::-webkit-scrollbar-thumb {
+      border: 2px solid $color-gray-02;
+    }
   }
 
   @include dark-theme {
@@ -4926,7 +5109,7 @@ button.module-image__border-overlay:focus {
 
   &--composer_icon {
     align-items: center;
-    background-color: $color-gray-05;
+    background-color: $color-gray-60;
     border-radius: 100%;
     display: inline-flex;
     height: 28px;
@@ -4937,7 +5120,8 @@ button.module-image__border-overlay:focus {
     width: 28px;
 
     &--icon {
-      $icon: '../images/icons/v3/compose/compose.svg';
+      // $icon: '../images/icons/v3/compose/compose.svg';
+      $icon: '../images/icons/v3/compose/compose-2.svg';
       @include color-svg($icon, $color-gray-90);
       display: inline-block;
       height: 16px;
@@ -5044,7 +5228,7 @@ button.module-image__border-overlay:focus {
       text-align: center;
 
       @include light-theme {
-        color: $color-gray-90;
+        color: $color-text-01;
       }
       @include dark-theme {
         color: $color-gray-05;
@@ -5736,7 +5920,8 @@ button.module-image__border-overlay:focus {
     @include light-theme {
       @include color-svg(
         '../images/icons/v3/sticker/sticker.svg',
-        $color-gray-75
+        // $color-gray-75
+        $color-white
       );
     }
     @include dark-theme {
@@ -5749,7 +5934,8 @@ button.module-image__border-overlay:focus {
 
   &--active {
     @include light-theme() {
-      background: $color-gray-05;
+      // background: $color-gray-05;
+      background: $color-purple-01;
     }
 
     @include dark-theme() {
@@ -6251,7 +6437,8 @@ button.module-image__border-overlay:focus {
     flex-shrink: 0;
 
     @include light-theme {
-      @include color-svg('../images/icons/v3/emoji/emoji.svg', $color-gray-75);
+      // @include color-svg('../images/icons/v3/emoji/emoji.svg', $color-gray-75);
+      @include color-svg('../images/icons/v3/emoji/emoji.svg', $color-white);
     }
     @include dark-theme {
       @include color-svg('../images/icons/v3/emoji/emoji.svg', $color-gray-15);
@@ -6283,7 +6470,8 @@ button.module-image__border-overlay:focus {
 
   &--active {
     @include light-theme() {
-      background: $color-gray-05;
+      // background: $color-gray-05;
+      background: $color-purple-01;
     }
 
     @include dark-theme() {
@@ -6367,6 +6555,222 @@ button.module-image__border-overlay:focus {
   @include dark-theme {
     color: $color-gray-05;
   }
+}
+
+// Module: Avatar Popup
+
+.module-avatar-popup {
+  min-width: 240px;
+  max-width: 320px;
+
+  border-radius: 4px;
+  padding-bottom: 4px;
+
+  @include popper-shadow;
+
+  @include light-theme {
+    color: $color-white;
+    background-color: $color-purple-03;
+    border: 1px solid $color-purple-03;
+  }
+  @include dark-theme {
+    color: $color-gray-05;
+    background-color: $color-gray-75;
+  }
+}
+
+.module-avatar-popup__profile {
+  @include button-reset();
+  @include light-theme {
+    background-color: $color-purple-02;
+  }
+  @include dark-theme {
+    background-color: $color-gray-95;
+  }
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  @include light-theme {
+    &:hover {
+      background-color: $color-purple-01;
+    }
+  }
+  @include dark-theme {
+    &:hover {
+      background-color: $color-gray-60;
+    }
+  }
+  @include keyboard-mode {
+    &:hover {
+      background-color: inherit;
+    }
+    &:focus {
+      background-color: $color-gray-05;
+    }
+  }
+  @include dark-keyboard-mode {
+    &:hover {
+      background-color: inherit;
+    }
+    &:focus {
+      background-color: $color-gray-60;
+    }
+  }
+}
+
+.module-avatar-popup__profile {
+  padding: 12px;
+}
+
+.module-avatar-popup__profile__text {
+  margin-inline-start: 10px;
+  overflow: hidden;
+}
+
+.module-avatar-popup__profile__name {
+  @include font-body-1-bold;
+}
+.module-avatar-popup__profile__number {
+  @include font-subtitle;
+
+  @include light-theme {
+    color: $color-gray-60;
+  }
+  @include dark-theme {
+    color: $color-gray-25;
+  }
+}
+
+.module-avatar-popup__profile__name,
+.module-avatar-popup__profile__number {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.module-avatar-popup__divider {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  height: 1px;
+  width: 100%;
+  margin-bottom: 6px;
+
+  @include light-theme {
+    background-color: $color-gray-15;
+  }
+  @include dark-theme {
+    background-color: $color-gray-60;
+  }
+}
+
+.module-avatar-popup__item {
+  @include font-body-2;
+  @include button-reset;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 100%;
+  // height: 32px;
+  height: 50px;
+  padding: 6px;
+
+  @include light-theme {
+    &:hover {
+      // background-color: $color-gray-05;
+      background-color: $color-purple-01;
+    }
+  }
+  @include keyboard-mode {
+    &:hover {
+      background-color: inherit;
+    }
+    &:focus {
+      // background-color: $color-gray-05;
+      background-color: $color-purple-01;
+    }
+  }
+  @include dark-theme {
+    &:hover {
+      background-color: $color-gray-60;
+    }
+  }
+  @include dark-keyboard-mode {
+    &:hover {
+      background-color: inherit;
+    }
+    &:focus {
+      background-color: $color-gray-60;
+    }
+  }
+}
+
+.module-avatar-popup__item__icon {
+  margin-inline-start: 6px;
+
+  height: 16px;
+  width: 16px;
+
+  &--update {
+    @include light-theme {
+      @include color-svg(
+        '../images/icons/v3/refresh/refresh.svg',
+        $color-gray-75
+      );
+    }
+    @include dark-theme {
+      @include color-svg(
+        '../images/icons/v3/refresh/refresh.svg',
+        $color-gray-15
+      );
+    }
+  }
+}
+.module-avatar-popup__item__icon-settings {
+  @include light-theme {
+    @include color-svg(
+      '../images/icons/v3/settings/settings-compact.svg',
+      $color-white
+    );
+  }
+  @include dark-theme {
+    @include color-svg(
+      '../images/icons/v3/settings/settings-compact.svg',
+      $color-gray-15
+    );
+  }
+}
+.module-avatar-popup__item__icon-archive {
+  @include light-theme {
+    @include color-svg(
+      '../images/icons/v3/archive/archive-compact.svg',
+      $color-white
+    );
+  }
+  @include dark-theme {
+    @include color-svg(
+      '../images/icons/v3/archive/archive-compact.svg',
+      $color-gray-15
+    );
+  }
+}
+
+.module-avatar-popup__item__text {
+  flex-grow: 1;
+  margin-inline-start: 8px;
+}
+
+.module-avatar-popup__item--badge {
+  background: $color-ultramarine;
+  border-radius: 100%;
+  height: 8px;
+  margin-inline-end: 10px;
+  width: 8px;
 }
 
 /* Calling: Device Selection */
@@ -6894,7 +7298,8 @@ button.module-image__border-overlay:focus {
   visibility: hidden;
 
   @include light-theme {
-    background-color: $color-white;
+    // background-color: $color-white;
+    background-color: $color-purple-02;
   }
   @include dark-theme {
     background-color: $color-gray-75;
@@ -6923,7 +7328,7 @@ button.module-image__border-overlay:focus {
   padding-inline: 12px;
 
   @include light-theme {
-    color: $color-gray-90;
+    // color: $color-gray-90;
   }
   @include dark-theme {
     color: $color-gray-02;
@@ -6936,7 +7341,8 @@ button.module-image__border-overlay:focus {
     padding: 0;
 
     @include light-theme {
-      background-color: $color-gray-15;
+      // background-color: $color-gray-15;
+      background-color: $color-purple-03;
     }
     @include dark-theme {
       background-color: $color-gray-60;

@@ -43,8 +43,10 @@
   border-radius: 8px;
 
   @include light-theme {
-    background: $color-gray-02;
-    color: $color-gray-60;
+    // background: $color-gray-02;
+    // color: $color-gray-60;
+    background: $color-purple-02;
+    color: $color-text-01;
   }
 
   @include dark-theme {

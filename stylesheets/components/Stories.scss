@@ -1,6 +1,10 @@
 // Copyright 2022 Signal Messenger, LLC
 // SPDX-License-Identifier: AGPL-3.0-only
 .Stories {
+  background: $color-purple-03;
+  @include dark-theme {
+    background: $color-gray-95;
+  }
   display: flex;
   height: var(--window-height);
   inset-inline-start: 0;
@@ -17,18 +21,33 @@
   }
 
   &__pane {
+
+    background: $color-purple-02;
+    // border-inline-end: 1px solid $color-gray-65;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 380px;
-    padding-top: calc(2px + var(--title-bar-drag-area-height));
-    @include light-theme {
-      background: $color-gray-04;
-      border-inline-end: 1px solid $color-black-alpha-16;
-    }
+
+    padding-top: calc(14px + var(--title-bar-drag-area-height));
+
     @include dark-theme {
       background: $color-gray-80;
-      border-inline-end: 1px solid $color-white-alpha-16;
+    }
+    
+    &__add-story__button {
+      @include color-svg('../images/icons/v3/plus/plus.svg', $color-white);
+      height: 20px;
+      position: absolute;
+      inset-inline-end: 64px;
+      top: 0px;
+      width: 20px;
+
+      &:focus {
+        @include keyboard-mode {
+          background-color: $color-ultramarine;
+        }
+      }
     }
 
     &__add-story__button {
@@ -99,34 +118,27 @@
 
   &__placeholder {
     align-items: center;
+    color: $color-white;
     display: flex;
     flex-direction: column;
     flex: 1;
     justify-content: center;
-    opacity: 0.7;
-    @include light-theme {
-      color: $color-gray-60;
-    }
+    
     @include dark-theme {
-      color: $color-gray-25;
+      color: $color-gray-45;  
     }
 
     &__stories {
       height: 56px;
       margin-bottom: 22px;
       width: 56px;
-      @include light-theme {
-        @include color-svg(
-          '../images/icons/v3/stories/stories-display.svg',
-          $color-gray-60
-        );
-      }
-      @include dark-theme {
-        @include color-svg(
-          '../images/icons/v3/stories/stories-display.svg',
-          $color-gray-25
-        );
-      }
+
+      @include color-svg(
+        // '../images/icons/v3/stories/stories-display.svg',
+        '../images/icons/v3/stories/stories-display-2.svg',
+        // $color-gray-45
+        $color-white
+      );
     }
   }
 

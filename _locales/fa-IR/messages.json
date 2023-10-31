@@ -8,7 +8,6 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
-
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -90,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "شرایط و خط مشی حریم خصوصی",
-    "description": "Shown in the about box for the link to https://signal.org/legal"
+    "description": "Shown in the about box for the link to https://cradle.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "اپل سیلیکون",
@@ -629,7 +628,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "مشکلی در بارگذاری رخ داد. لطفا گزارش خود را به صورت یک فایل متنی به support@signal.org ایمیل کنید.",
+    "messageformat": "مشکلی در بارگذاری رخ داد. لطفا گزارش خود را به صورت یک فایل متنی به support@cradle.org ایمیل کنید.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -814,15 +813,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "بارگیری پیش‌نمایش...",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "پیش نمایش پیوند thumbnail پیش نویس برای {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "پیش نمایش پیوند thumbnail برای {domain}",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "پیوست تصویر پیش نویس: {path}",
@@ -917,15 +916,15 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "به نسخه آزمایشی بپیوندید",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
   },
   "icu:signalDesktopPreferences": {
     "messageformat": "ترجیحات سیگنال Desktop",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "سازنده بسته استیکر",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
     "messageformat": "درباره سیگنال Desktop",
@@ -1512,11 +1511,11 @@
   },
   "icu:linkedDevices": {
     "messageformat": "دستگاه های متصل شده",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "لینک کردن دستگاه جدید",
-    "description": "The menu option shown in Signal iOS to add a new linked device"
+    "description": "The menu option shown in Cradle iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "بیشتر یاد بگیرید",
@@ -1879,11 +1878,11 @@
   },
   "icu:spellCheckWillBeEnabled": {
     "messageformat": "در اجرای بعدی سیگنال بررسی املائی فعال خواهد شد",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
   },
   "icu:spellCheckWillBeDisabled": {
     "messageformat": "در اجرای بعدی سیگنال بررسی املائی غیرفعال خواهد شد",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "کمینه کردن به نوار سیستم",
@@ -1927,7 +1926,7 @@
   },
   "icu:deleteOldIndexedDBData": {
     "messageformat": "از نصب گذشته سیگنال دسکتاپ اطلاعات منسوخی برجا مانده است. اگر ادامه دهید این اطلاعات پاک خواهد شد و از نو آغاز خواهید کرد.",
-    "description": "Shown if user last ran Signal Desktop before October 2018"
+    "description": "Shown if user last ran Cradle Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "پاک کردن اطلاعات قدیمی",
@@ -2012,7 +2011,7 @@
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "برای رفتن به signal.org/download کلیک کنید",
+    "messageformat": "برای رفتن به cradle.org/download کلیک کنید",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2265,11 +2264,11 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "خطا در دریافت نام کاربری. اینترنت خود را بررسی کنید و مجددا تلاش کنید.",
-    "description": "Shown if request to Signal servers to find username fails"
+    "description": "Shown if request to Cradle servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "شماره تلفن به دست نیامد. . اتصال خود را بررسی کنید و دوباره امتحان کنید.",
-    "description": "Shown if request to Signal servers to find phone number fails"
+    "description": "Shown if request to Cradle servers to find phone number fails"
   },
   "icu:ToastManager__CannotEditMessage": {
     "messageformat": "ویرایش‌ها فقط تا ۳ ساعت بعد از ارسال این پیام قابل اعمال هستند.",
@@ -2654,15 +2653,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "معرفی استیکرها: گربه راهزن",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "معرفی استیکرها",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "چرا از کلمات استفاده می کنید وقتی میتوانید از استیکر استفاده کنید؟",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "باز کردن گزینش‌گر استیکر",
@@ -2818,7 +2817,7 @@
   },
   "icu:Message--update-signal": {
     "messageformat": "به‌روزرسانی سیگنال",
-    "description": "Text for a button which will take user to Signal download page"
+    "description": "Text for a button which will take user to Cradle download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "مشاهده شده",
@@ -3174,15 +3173,15 @@
   },
   "icu:AuthArtCreator--dialog--message": {
     "messageformat": "می‌خواهید «سازنده بسته استیکر سیگنال» را باز کنید؟",
-    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
+    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "تأیید",
-    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "رد کردن",
-    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "لطفاً برای استفاده از سازنده بسته استیکر، سیگنال را روی تلفن و دسکتاپ خود نصب کنید",
@@ -3402,11 +3401,11 @@
   },
   "icu:minimizeToTrayNotification--title": {
     "messageformat": "سیگنال هنوز در حال اجراست",
-    "description": "Shown in a notification title when Signal is minimized to tray"
+    "description": "Shown in a notification title when Cradle is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
     "messageformat": "سیگنال در ناحیه اعلان به کار خود ادامه خواهد داد. می‌توانید این حالت را در تنظیمات سیگنال تغییر دهید.",
-    "description": "Shown in a notification body when Signal is minimized to tray"
+    "description": "Shown in a notification body when Cradle is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "تماس صوتی دریافتی...",
@@ -4958,7 +4957,7 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "درباره درخواست‌های تبادل پیام",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
     "messageformat": "درخواست‌ها را با دقت بررسی کنید. سیگنال مخاطب دیگری با همین نام پیدا کرد. <reviewRequestLink>درخواست بررسی</reviewRequestLink>",
@@ -5706,7 +5705,7 @@
   },
   "icu:NSIS__semver-downgrade": {
     "messageformat": "نسخه جدیدتری از سیگنال نصب شده است. مطمئن هستید که می‌خواهید ادامه دهید؟",
-    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
+    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "برنامه خراب شد",
@@ -5910,7 +5909,7 @@
   },
   "icu:SignalConnectionsModal__title": {
     "messageformat": "آشنایان در سیگنال",
-    "description": "The phrase/term: 'Signal Connections'"
+    "description": "The phrase/term: 'Cradle Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} افرادی هستند که به دلایل زیر تصمیم گرفته‌اید به آن‌ها اعتماد کنید:",

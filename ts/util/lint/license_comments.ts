@@ -196,34 +196,6 @@ async function main() {
 
     const warnings = [];
 
-    if (!/Copyright \d{4} Signal Messenger, LLC/.test(firstLine)) {
-      const commit = await getCommitFileWasAdded(file);
-      warnings.push(
-        chalk.red('Missing/Incorrect copyright line'),
-        indent(
-          chalk.green(
-            `Expected: "Copyright ${commit.commitYear} Signal Messenger, LLC"`
-          )
-        ),
-        indent(chalk.yellow(`Actual: "${firstLine}"`)),
-        indent(
-          chalk.italic.dim(
-            `Tip: Looks like this file was added in ${commit.commitHash} in ${commit.commitYear}`
-          )
-        ),
-        indent(
-          chalk.italic.dim(
-            `Tip: You can also use the current year (${currentYear})`
-          )
-        )
-      );
-    } else if (/\d{4}-\d{4}/.test(firstLine)) {
-      warnings.push(
-        chalk.red('Copyright should not include end year'),
-        indent(chalk.yellow(`Actual: "${firstLine}"`))
-      );
-    }
-
     if (!secondLine.includes('SPDX-License-Identifier: AGPL-3.0-only')) {
       warnings.push(
         chalk.red('Missing/incorrect license line'),

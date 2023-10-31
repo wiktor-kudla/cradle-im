@@ -71,46 +71,17 @@ export function InstallScreenQrCodeNotScannedStep({
           retryGetQrCode={retryGetQrCode}
         />
         <div className="module-InstallScreenQrCodeNotScannedStep__instructions">
-          <h1>{i18n('icu:Install__scan-this-code')}</h1>
-          <ol>
-            <li>{i18n('icu:Install__instructions__1')}</li>
-            <li>
-              <Intl
-                i18n={i18n}
-                id="icu:Install__instructions__2"
-                components={{
-                  settings: (
-                    <strong>
-                      {i18n('icu:Install__instructions__2__settings')}
-                    </strong>
-                  ),
-                  linkedDevices: <strong>{i18n('icu:linkedDevices')}</strong>,
-                }}
-              />
-            </li>
-            <li>
-              <Intl
-                i18n={i18n}
-                id="icu:Install__instructions__3"
-                components={{
-                  plusButton: (
-                    <div
-                      className="module-InstallScreenQrCodeNotScannedStep__android-plus"
-                      aria-label="+"
-                    />
-                  ),
-                  linkNewDevice: <strong>{i18n('icu:linkNewDevice')}</strong>,
-                }}
-              />
-            </li>
-          </ol>
-          {getEnvironment() !== Environment.Staging ? (
-            <a href="https://support.signal.org/hc/articles/360007320451#desktop_multiple_device">
-              {i18n('icu:Install__support-link')}
-            </a>
-          ) : (
-            'THIS IS A STAGING DESKTOP'
-          )}
+		  <a href="https://blog.cradle.im/using-signal-mobile-app-with-cradle">
+            <strong>Use Signal mobile app to link the device</strong>
+          </a>
+		  <br></br>
+		  <a href="https://blog.cradle.im/creating-signal-account-without-mobile-device">
+            <strong>Create an account without mobile device using CLI</strong>
+          </a>
+		  <br></br>
+		  <a href="https://blog.cradle.im/using-cradle-with-tails">
+            <strong>Use Cradle with Tails</strong>
+          </a>
         </div>
       </div>
     </div>

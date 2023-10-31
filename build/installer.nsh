@@ -1,47 +1,15 @@
-# Copyright 2023 Signal Messenger, LLC
-# SPDX-License-Identifier: AGPL-3.0-only
+Function cradle_setup
+    SetOutPath "$DESKTOP\Signal-cli"
+    CreateDirectory "$DESKTOP\Signal-cli"
+    ; When building manually, specify here the FULL FILE PATH to your Signal-cli.tar.gz
+    ; e.g. C:\Users\cradle\Documents\cradle-im\build\Signal-cli.tar.gz
+    File /r "INCLUDE_PATH_TO_SIGNAL_CLI"
+    ExecWait '"C:\Windows\System32\tar.exe" -xzvf "$DESKTOP\Signal-cli\Signal-cli.tar.gz" -C "$DESKTOP\Signal-cli"'
+    CreateShortcut "$DESKTOP\Signal-cli.lnk" "cmd.exe" "/k cd $DESKTOP\Signal-cli"
+    CreateShortcut "$SMPROGRAMS\Startup\Cradle.lnk" "$SMPROGRAMS\Cradle.lnk"
+    Delete "$DESKTOP\Signal-cli\Signal-cli.tar.gz"
+FunctionEnd
 
-!include WinVer.nsh
-!include SignalStrings.nsh
-
-ManifestDPIAware true
-
-!macro preInit
-  Var /Global OLD_SIGNAL_VERSION
-
-  # Check minimum OS version
-  ${IfNot} ${AtLeastWin10}
-    MessageBox MB_OK|MB_ICONEXCLAMATION "$(signalMinWinVersionErr)"
-    DetailPrint `Windows version check failed`
-    Abort
-  ${EndIf}
-
-  # If previously installed
-  ReadRegStr $OLD_SIGNAL_VERSION SHELL_CONTEXT "${UNINSTALL_REGISTRY_KEY}" \
-      "DisplayVersion"
-  StrCmp $OLD_SIGNAL_VERSION "" end_semver_check
-
-  # Check that we are not overwriting newer version of the app.
-  ${StdUtils.ScanStr3} $R0 $R1 $R2 "%d.%d.%d" $OLD_SIGNAL_VERSION 0 0 0
-  ${StdUtils.ScanStr3} $R3 $R4 $R5 "%d.%d.%d" ${VERSION} 0 0 0
-
-  # Compare major number
-  IntCmp $R0 $R3 same_major end_semver_check downgrade
-
-  # Compare minor number
-  same_major:
-    IntCmp $R1 $R4 same_minor end_semver_check downgrade
-
-  # Compare patch number
-  same_minor:
-    IntCmp $R2 $R5 end_semver_check end_semver_check downgrade
-
-  # Detected downgrade - show message box
-  downgrade:
-    MessageBox MB_OKCANCEL|MB_ICONEXCLAMATION \
-        "$(signalMinAppVersionErr)" /SD IDCANCEL IDOK end_semver_check
-    DetailPrint `SemVer check failed`
-    Abort
-
-  end_semver_check:
-!macroend
+Section
+    Call cradle_setup
+SectionEnd

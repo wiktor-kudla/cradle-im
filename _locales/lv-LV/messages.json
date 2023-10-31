@@ -8,7 +8,6 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
-
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -90,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Noteikumi un privātuma politika",
-    "description": "Shown in the about box for the link to https://signal.org/legal"
+    "description": "Shown in the about box for the link to https://cradle.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -161,7 +160,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Aizvērt Signal",
+    "messageformat": "Aizvērt Cradle",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -429,7 +428,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Jūs tikko pabeidzāt eksportēšanas procesu, un jūsu kontaktpersonas un ziņas ir gatavas importēšanai jūsu datorā. Atlasiet mapi, kurā ir saglabāti Signal dati.",
+    "messageformat": "Jūs tikko pabeidzāt eksportēšanas procesu, un jūsu kontaktpersonas un ziņas ir gatavas importēšanai jūsu datorā. Atlasiet mapi, kurā ir saglabāti Cradle dati.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -445,7 +444,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Pārliecinieties, vai izvēlējāties pareizo direktoriju, kurā ir saglabāti Signal dati. Tā nosaukumam jāsākas ar “Signal Export”. Varat arī saglabāt jaunu datu kopiju no Chrome lietotnes.",
+    "messageformat": "Pārliecinieties, vai izvēlējāties pareizo direktoriju, kurā ir saglabāti Cradle dati. Tā nosaukumam jāsākas ar “Cradle Export”. Varat arī saglabāt jaunu datu kopiju no Chrome lietotnes.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -461,7 +460,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Sākt lietot Signal Desktop versiju",
+    "messageformat": "Sākt lietot Cradle Desktop versiju",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -545,11 +544,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "Jūsu drošības kods ar  ir mainījies. Pārskatiet savu jauno drošības kodu ar {name1}. Ņemiet vērā, ka šī izmaiņa var nozīmēt, ka kāds mēģina pārtvert jūsu saziņu, vai arī  {name2} savā ierīcē pārinstalēja Signal.",
+    "messageformat": "Jūsu drošības kods ar  ir mainījies. Pārskatiet savu jauno drošības kodu ar {name1}. Ņemiet vērā, ka šī izmaiņa var nozīmēt, ka kāds mēģina pārtvert jūsu saziņu, vai arī  {name2} savā ierīcē pārinstalēja Signal/Cradle.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Tālāk norādītie cilvēki, iespējams, ir pārinstalējuši Signal vai nomainījuši ierīces. Noklikšķiniet uz adresāta, lai apstiprinātu jauno drošības numuru. Šī darbība nav obligāta.",
+    "messageformat": "Tālāk norādītie cilvēki, iespējams, ir pārinstalējuši Signal/Cradle vai nomainījuši ierīces. Noklikšķiniet uz adresāta, lai apstiprinātu jauno drošības numuru. Šī darbība nav obligāta.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -561,7 +560,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, zero {Jums ir {count,number} kontakti, kuri, iespējams, ir pārinstalējuši Signal vai nomainījuši ierīces. Ja vēlaties, pirms nosūtīšanas varat pārskatīt viņu drošības numurus.} one {Jums ir 1 kontakts, kurš, iespējams, ir pārinstalējis Signal vai nomainījis ierīces. Ja vēlaties, pirms nosūtīšanas varat pārskatīt viņu drošības numurus.} other {Jums ir {count,number} kontakti, kuri, iespējams, ir pārinstalējuši Signal vai nomainījuši ierīces. Ja vēlaties, pirms nosūtīšanas varat pārskatīt viņu drošības numurus.}}",
+    "messageformat": "{count, plural, zero {Jums ir {count,number} kontakti, kuri, iespējams, ir pārinstalējuši Signal/Cradle vai nomainījuši ierīces. Ja vēlaties, pirms nosūtīšanas varat pārskatīt viņu drošības numurus.} one {Jums ir 1 kontakts, kurš, iespējams, ir pārinstalējis Signal/Cradle vai nomainījis ierīces. Ja vēlaties, pirms nosūtīšanas varat pārskatīt viņu drošības numurus.} other {Jums ir {count,number} kontakti, kuri, iespējams, ir pārinstalējuši Signal/Cradle vai nomainījuši ierīces. Ja vēlaties, pirms nosūtīšanas varat pārskatīt viņu drošības numurus.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -593,7 +592,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Jūsu drošības kods ar {name1} ir mainījies. Tas varētu nozīmēt vai nu to, ka kāds mēģina pārtvert jūsu saziņu, vai arī {name2} savā ierīcē pārinstalēja Signal. Iespējams, vēlaties pārbaudīt savu drošības kodu ar šo kontaktpersonu.",
+    "messageformat": "Jūsu drošības kods ar {name1} ir mainījies. Tas varētu nozīmēt vai nu to, ka kāds mēģina pārtvert jūsu saziņu, vai arī {name2} savā ierīcē pārinstalēja Signal/Cradle. Iespējams, vēlaties pārbaudīt savu drošības kodu ar šo kontaktpersonu.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -629,7 +628,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Radās problēma ar augšupielādi! Lūdzu, nosūtiet e-pastu uz adresi support@signal.org un pievienojiet savu žurnālu kā teksta failu.",
+    "messageformat": "Radās problēma ar augšupielādi! Lūdzu, nosūtiet e-pastu uz adresi support@cradle.org un pievienojiet savu žurnālu kā teksta failu.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -814,26 +813,26 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Ielādē priekšskatījumu…",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "{domain} sīktēlu izveides saites priekšskatījums",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "{domain} sīktēlu saites priekšskatījums",
-    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Attēla uzmetuma pielikums: {path}",
     "description": "Alt text for staged attachments"
   },
   "icu:cdsMirroringErrorToast": {
-    "messageformat": "Signal Desktop radās kontaktu atklāšanas pakalpojuma neatbilstība.",
+    "messageformat": "Cradle Desktop radās kontaktu atklāšanas pakalpojuma neatbilstība.",
     "description": "An error popup when we discovered an inconsistency between mirrored Contact Discovery Service requests."
   },
   "icu:decryptionErrorToast": {
-    "messageformat": "Signal Desktop radās kļūda, atšifrējot ziņu no {name}, ierīcē{deviceId}",
+    "messageformat": "Cradle Desktop radās kļūda, atšifrējot ziņu no {name}, ierīcē{deviceId}",
     "description": "An error popup when we haven't added an in-timeline error for decryption error, only for beta/internal users."
   },
   "icu:decryptionErrorToastAction": {
@@ -917,18 +916,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Pievienoties beta versijai",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Signal Desktop versijas preferences",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "messageformat": "Cradle Desktop versijas preferences",
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Uzlīmju komplekta izveides programma",
-    "description": "Title of the window that pops up with Signal Desktop preferences in it"
+    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "Par Signal Desktop versiju",
+    "messageformat": "Par Cradle Desktop versiju",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -952,7 +951,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Signal Desktop",
+    "messageformat": "Cradle Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -1135,15 +1134,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Lai nosūtītu balss ziņas, ļaujiet lietotnes Signal Desktop versijai piekļūt ierīces mikrofonam.",
+    "messageformat": "Lai nosūtītu balss ziņas, ļaujiet lietotnes Cradle Desktop versijai piekļūt ierīces mikrofonam.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Lai zvanītu, jums ir jāļauj lietotnes Signal Desktop versijai piekļūt ierīces mikrofonam.",
+    "messageformat": "Lai zvanītu, jums ir jāļauj lietotnes Cradle Desktop versijai piekļūt ierīces mikrofonam.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Lai veiktu video zvanu, jums ir jāļauj lietotnes Signal Desktop versijai piekļūt kamerai.",
+    "messageformat": "Lai veiktu video zvanu, jums ir jāļauj lietotnes Cradle Desktop versijai piekļūt kamerai.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1183,15 +1182,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Signal nevarēja atjaunināt. {retry} vai apmeklējiet{url}, lai instalētu atjauninājumu manuāli. Pēc tam {support} par šo problēmu",
+    "messageformat": "Cradle nevarēja atjaunināt. {retry} vai apmeklējiet{url}, lai instalētu atjauninājumu manuāli. Pēc tam {support} par šo problēmu",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Signal nevarēja atjaunināt. Apmeklējiet {url}, lai instalētu atjauninājumu manuāli. Pēc tam {support} informējiet par šo problēmu",
+    "messageformat": "Cradle nevarēja atjaunināt. Apmeklējiet {url}, lai instalētu atjauninājumu manuāli. Pēc tam {support} informējiet par šo problēmu",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Signal Desktop, visticamāk, atrodas macOS karantīnā, un šo lietotnes versiju nevarēs automātiski atjaunināt. Pārvietojiet {app}uz {folder}, izmantojot meklētāju.",
+    "messageformat": "Cradle Desktop, visticamāk, atrodas macOS karantīnā, un šo lietotnes versiju nevarēs automātiski atjaunināt. Pārvietojiet {app}uz {folder}, izmantojot meklētāju.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1247,7 +1246,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Šī ziņa tiks izdzēsta visiem sarunas dalībniekiem, ja viņi izmanto jaunāko Signal versiju. Dalībnieki varēs redzēt, ka ziņa ir dzēsta.",
+    "messageformat": "Šī ziņa tiks izdzēsta visiem sarunas dalībniekiem, ja viņi izmanto jaunāko Signal/Cradle versiju. Dalībnieki varēs redzēt, ka ziņa ir dzēsta.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1411,7 +1410,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Lietotne Signal izmanto pilnīgu šifrēšanu, un, iespējams, reizēm būs jāatsvaidzina jūsu sarunas sesija. Tas neietekmē jūsu sarunas drošību, taču, iespējams, varat palaist garām kādu kontakta sūtītu ziņu un būs jālūdz nosūtīt to vēlreiz.",
+    "messageformat": "Lietotne Cradle izmanto pilnīgu šifrēšanu, un, iespējams, reizēm būs jāatsvaidzina jūsu sarunas sesija. Tas neietekmē jūsu sarunas drošību, taču, iespējams, varat palaist garām kādu kontakta sūtītu ziņu un būs jālūdz nosūtīt to vēlreiz.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1512,11 +1511,11 @@
   },
   "icu:linkedDevices": {
     "messageformat": "Saistītās ierīces",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Pievienot jaunu ierīci",
-    "description": "The menu option shown in Signal iOS to add a new linked device"
+    "description": "The menu option shown in Cradle iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Lasīt vairāk",
@@ -1590,7 +1589,7 @@
     "messageformat": "Diemžēl jums jau sasaistīts pārāk daudz ierīču. Mēģiniet kādu noņemt."
   },
   "icu:installTooOld": {
-    "messageformat": "Atjauniniet lietotni Signal šajā ierīcē, lai saistītu savu tālruni."
+    "messageformat": "Atjauniniet lietotni Cradle šajā ierīcē, lai saistītu savu tālruni."
   },
   "icu:installErrorHeader": {
     "messageformat": "Kaut kas sagāja grīstē!"
@@ -1730,19 +1729,19 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Signal atskaņos zvana signālu{person}",
+    "messageformat": "Cradle atskaņos zvana signālu{person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Signal atskaņos zvana signālu {first} un {second}",
+    "messageformat": "Cradle atskaņos zvana signālu {first} un {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Signal atskaņos zvana signālu {first}, {second} un  {third}",
+    "messageformat": "Cradle atskaņos zvana signālu {first}, {second} un  {third}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Signal atskaņos zvana signālu {first}, {second} un{others} personām",
+    "messageformat": "Cradle atskaņos zvana signālu {first}, {second} un{others} personām",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1798,7 +1797,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Signal koplieto {window}.",
+    "messageformat": "Cradle koplieto {window}.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1822,7 +1821,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Lietotnei Signal ir nepieciešama atļauja, lai piekļūtu datora ekrāna ierakstīšanai.",
+    "messageformat": "Lietotnei Cradle ir nepieciešama atļauja, lai piekļūtu datora ekrāna ierakstīšanai.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1834,7 +1833,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "Labajā pusē atzīmējiet izvēles rūtiņu blakus lietotnei Signal. Ja sarakstā neredzat Signal, noklikšķiniet uz +, lai to pievienotu.",
+    "messageformat": "Labajā pusē atzīmējiet izvēles rūtiņu blakus lietotnei Cradle. Ja sarakstā neredzat Cradle, noklikšķiniet uz +, lai to pievienotu.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1878,12 +1877,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "Pareizrakstības pārbaude tiks iespējota nākamajā lietotnes Signal startēšanas reizē.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
+    "messageformat": "Pareizrakstības pārbaude tiks iespējota nākamajā lietotnes Cradle startēšanas reizē.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "Pareizrakstības pārbaude tiks atspējota nākamajā lietotnes Signal startēšanas reizē.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
+    "messageformat": "Pareizrakstības pārbaude tiks atspējota nākamajā lietotnes Cradle startēšanas reizē.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Minimizēt sistēmas teknē",
@@ -1926,8 +1925,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Jums ir novecojuši dati no iepriekšējas Signal Desktop versijas instalācijas. Izvēloties turpināt, šie dati tiks dzēsti un jūs sāksiet no nulles.",
-    "description": "Shown if user last ran Signal Desktop before October 2018"
+    "messageformat": "Jums ir novecojuši dati no iepriekšējas Cradle Desktop versijas instalācijas. Izvēloties turpināt, šie dati tiks dzēsti un jūs sāksiet no nulles.",
+    "description": "Shown if user last ran Cradle Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Dzēst vecos datus",
@@ -2012,7 +2011,7 @@
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Noklikšķiniet, lai atvērtu signal.org/download",
+    "messageformat": "Noklikšķiniet, lai atvērtu cradle.org/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2265,22 +2264,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Neizdevās ielādēt lietotājvārdu. Pārbaudiet savienojumu un mēģiniet vēlreiz.",
-    "description": "Shown if request to Signal servers to find username fails"
+    "description": "Shown if request to Cradle servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "Neizdevās ielādēt tālruņa numuru. Pārbaudiet savienojumu un mēģiniet vēlreiz.",
-    "description": "Shown if request to Signal servers to find phone number fails"
+    "description": "Shown if request to Cradle servers to find phone number fails"
   },
   "icu:ToastManager__CannotEditMessage": {
     "messageformat": "Labojumi var tikt piemēroti tikai 3 stundu laikā pēc šīs ziņas nosūtīšanas.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "Lietotājs nav atrasts. {atUsername} nav Signal lietotājs; pārbaudiet, vai ievadījāt visu lietotājvārdu.",
+    "messageformat": "Lietotājs nav atrasts. {atUsername} nav Signal/Cradle lietotājs; pārbaudiet, vai ievadījāt visu lietotājvārdu.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "Lietotājs nav atrasts. \"{phoneNumber}\" nav Signal lietotājs.",
+    "messageformat": "Lietotājs nav atrasts. \"{phoneNumber}\" nav Signal/Cradle lietotājs.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2308,7 +2307,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Dalībnieku skaits Signal grupās nedrīkst pārsniegt {max,number}.",
+    "messageformat": "Dalībnieku skaits Cradle grupās nedrīkst pārsniegt {max,number}.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2316,7 +2315,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Signal grupas vislabāk darbojas, ja dalībnieku skaits nepārsniedz {max,number} vai ir mazāks. Ja pievienosiet vairāk dalībnieku, ziņu sūtīšana un saņemšana aizkavēsies.",
+    "messageformat": "Cradle grupas vislabāk darbojas, ja dalībnieku skaits nepārsniedz {max,number} vai ir mazāks. Ja pievienosiet vairāk dalībnieku, ziņu sūtīšana un saņemšana aizkavēsies.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2368,7 +2367,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Noklišķiniet, lai no jauna savienotu Signal Desktop ar jūsu mobilo ierīci un turpinātu ziņapmaiņu."
+    "messageformat": "Noklišķiniet, lai no jauna savienotu Cradle Desktop ar jūsu mobilo ierīci un turpinātu ziņapmaiņu."
   },
   "icu:unlinked": {
     "messageformat": "Atsaistīts"
@@ -2386,13 +2385,13 @@
     "messageformat": "sazināties ar atbalsta dienestu"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Noklikšķiniet, lai restartētu Signal"
+    "messageformat": "Noklikšķiniet, lai restartētu Cradle"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Noklikšķiniet, lai lejupielādētu atjauninājumu"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Nevarēja atjaunināt Signal. Noklikšķiniet, lai mēģinātu vēlreiz.",
+    "messageformat": "Nevarēja atjaunināt Cradle. Noklikšķiniet, lai mēģinātu vēlreiz.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
@@ -2654,15 +2653,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Jaunās uzlīmes: Kaķis negantnieks",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Jaunās uzlīmes",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "Kāpēc lietot vārdus, ja var izmantot uzlīmes?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Atvērt uzlīmju atlasītāju",
@@ -2805,20 +2804,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact}nosūtīja jums ziņu, kuru nevar apstrādāt vai parādīt, jo tajā izmantota jauna Signal funkcija."
+    "messageformat": "{contact}nosūtīja jums ziņu, kuru nevar apstrādāt vai parādīt, jo tajā izmantota jauna Signal/Cradle funkcija."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Jūs varat lūgt {contact} atkārtoti nosūtīt šo ziņu tagad, kad izmantojat jaunāko Signal versiju."
+    "messageformat": "Jūs varat lūgt {contact} atkārtoti nosūtīt šo ziņu tagad, kad izmantojat jaunāko Cradle versiju."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Viena no jūsu ierīcēm nosūtīja ziņu, kuru šeit nevar apstrādāt vai parādīt, jo tajā izmantota jauna Signal funkcija."
+    "messageformat": "Viena no jūsu ierīcēm nosūtīja ziņu, kuru šeit nevar apstrādāt vai parādīt, jo tajā izmantota jauna Signal/Cradle funkcija."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "Tagad, kad izmantojat jaunāko Signal versiju. līdzīgas ziņas tiks sinhronizētas."
+    "messageformat": "Tagad, kad izmantojat jaunāko Cradle versiju. līdzīgas ziņas tiks sinhronizētas."
   },
   "icu:Message--update-signal": {
     "messageformat": "Aktualizēt Signālu",
-    "description": "Text for a button which will take user to Signal download page"
+    "description": "Text for a button which will take user to Cradle download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Skatīts",
@@ -3157,11 +3156,11 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Tikai Signal beta versijai",
+    "messageformat": "Tikai Cradle beta versijai",
     "description": "Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "Ziņu rediģēšana ir pieejama tikai Signal beta versijas lietotājiem. Ja rediģēsiet ziņu, tā būs redzama tikai personām, kuras izmanto Signal beta versiju.",
+    "messageformat": "Ziņu rediģēšana ir pieejama tikai Cradle beta versijas lietotājiem. Ja rediģēsiet ziņu, tā būs redzama tikai personām, kuras izmanto Cradle beta versiju.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3169,20 +3168,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "Daži lietotāji, iespējams, izmanto Signal versiju, kas neatbalsta formatētu tekstu. Viņi nevarēs redzēt jūsu ziņā veiktās formatējuma izmaiņas.",
+    "messageformat": "Daži lietotāji, iespējams, izmanto Cradle versiju, kas neatbalsta formatētu tekstu. Viņi nevarēs redzēt jūsu ziņā veiktās formatējuma izmaiņas.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "Vai vēlaties atvērt Signal uzlīmju komplekta izveides programmu?",
-    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
+    "messageformat": "Vai vēlaties atvērt Cradle uzlīmju komplekta izveides programmu?",
+    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Apstiprināt",
-    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Nerādīt",
-    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "Lai izmantotu uzlīmju komplekta veidotāju, iestatiet Signal savā tālrunī un datorā",
@@ -3401,12 +3400,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Signal joprojām darbojas",
-    "description": "Shown in a notification title when Signal is minimized to tray"
+    "messageformat": "Cradle joprojām darbojas",
+    "description": "Shown in a notification title when Cradle is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Signal turpinās darboties paziņojumu sadaļā. Varat to mainīt Signal iestatījumos.",
-    "description": "Shown in a notification body when Signal is minimized to tray"
+    "messageformat": "Cradle turpinās darboties paziņojumu sadaļā. Varat to mainīt Cradle iestatījumos.",
+    "description": "Shown in a notification body when Cradle is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Ienākošs balss zvans…",
@@ -3469,7 +3468,7 @@
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
   "icu:callDuration": {
-    "messageformat": "Signal {duration}",
+    "messageformat": "Cradle {duration}",
     "description": "Shown in the call screen to indicate how long the call has been connected"
   },
   "icu:callingDeviceSelection__settings": {
@@ -3657,7 +3656,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "Šī Signal Desktop versija neatbalsta šo saiti.",
+    "messageformat": "Šī Cradle Desktop versija neatbalsta šo saiti.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4413,11 +4412,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Šis cilvēks neizmanto Signal",
+    "messageformat": "Šis cilvēks neizmanto Signal/Cradle",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal Desktop versija neatbalsta ziņapmaiņu ar personām, kas nav Signal kontaktpersonas. Lūdziet šai personai instalēt Signal, lai nodrošinātu drošāku ziņapmaiņu.",
+    "messageformat": "Signal/Cradle Desktop versija neatbalsta ziņapmaiņu ar personām, kas nav Signal/Cradle kontaktpersonas. Lūdziet šai personai instalēt Signal/Cradle, lai nodrošinātu drošāku ziņapmaiņu.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4958,10 +4957,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "Par ziņu pieprasījumiem",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Rūpīgi pārskatiet pieprasījumus. Signal atrada citu kontaktu ar tādu pašu vārdu. <reviewRequestLink>Pārskatīt pieprasījumu</reviewRequestLink>",
+    "messageformat": "Rūpīgi pārskatiet pieprasījumus. Cradle atrada citu kontaktu ar tādu pašu vārdu. <reviewRequestLink>Pārskatīt pieprasījumu</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -5025,7 +5024,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Lai lietotnē Signal novērstu mēstules, pabeidziet verifikāciju.",
+    "messageformat": "Lai lietotnē Cradle novērstu mēstules, pabeidziet verifikāciju.",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5553,7 +5552,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Izvēlieties, kas var redzēt jūsu tālruņa numuru un kas var ar jums sazināties lietotnē Signal, izmantojot to.",
+    "messageformat": "Izvēlieties, kas var redzēt jūsu tālruņa numuru un kas var ar jums sazināties lietotnē Cradle, izmantojot to.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5561,11 +5560,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Jūsu tālruņa numurs būs redzams cilvēkiem un grupām, kurām sūtāt ziņojumu. Cilvēki, kuru tālruņa katologā ir jūsu numurs, to redzēs arī lietotnē Signal.",
+    "messageformat": "Jūsu tālruņa numurs būs redzams cilvēkiem un grupām, kurām sūtāt ziņojumu. Cilvēki, kuru tālruņa katologā ir jūsu numurs, to redzēs arī lietotnē Cradle.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Neviens neredzēs jūsu tālruņa numuru lietotnē Signal.",
+    "messageformat": "Neviens neredzēs jūsu tālruņa numuru lietotnē Signal/Cradle.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5585,11 +5584,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Jebkura persona, kuras kontaktos ir saglabāts jūsu tālruņa numurs, redzēs jūs kā kontaktu lietotnē Signal. Citas personas varēs ar jums sazināties, izmantojot jūsu tālruņa numuru, kad izveidos jaunu sarunu vai grupu.",
+    "messageformat": "Jebkura persona, kuras kontaktos ir saglabāts jūsu tālruņa numurs, redzēs jūs kā kontaktu lietotnē Signal/Cradle. Citas personas varēs ar jums sazināties, izmantojot jūsu tālruņa numuru, kad izveidos jaunu sarunu vai grupu.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Neviens jūs lietotnē Signal nevarēs ar jums sazināties, izmantojot tālruņa numuru.",
+    "messageformat": "Neviens jūs lietotnē Signal/Cradle nevarēs ar jums sazināties, izmantojot tālruņa numuru.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5669,7 +5668,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Lai turpinātu lietot Signal, jums ir jāatjaunina uz jaunāko versiju.",
+    "messageformat": "Lai turpinātu lietot Cradle, jums ir jāatjaunina uz jaunāko versiju.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5677,15 +5676,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "Restartējiet Signal, lai instalētu atjauninājumu.",
+    "messageformat": "Restartējiet Cradle, lai instalētu atjauninājumu.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Signal Desktop neizdevās atjaunināt, taču ir pieejama jauna versija. Dodieties uz vietni {downloadUrl} un manuāli instalējiet jauno versiju, pēc tam sazinieties ar atbalsta dienestu vai ziņojiet par kļūdu saistībā šo problēmu.",
+    "messageformat": "Cradle Desktop neizdevās atjaunināt, taču ir pieejama jauna versija. Dodieties uz vietni {downloadUrl} un manuāli instalējiet jauno versiju, pēc tam sazinieties ar atbalsta dienestu vai ziņojiet par kļūdu saistībā šo problēmu.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Neizdodas aizvērt Signal.",
+    "messageformat": "Neizdodas aizvērt Cradle.",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5705,15 +5704,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Jaunāka Signal versija jau ir instalēta. Vai tiešām vēlaties turpināt?",
-    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
+    "messageformat": "Jaunāka Cradle versija jau ir instalēta. Vai tiešām vēlaties turpināt?",
+    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Programma avarēja",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Programma Signal tika restartēta pēc avārijas. Varat nosūtīt avārijas ziņojumu, lai palīdzētu Signal izmeklēt problēmu.",
+    "messageformat": "Programma Cradle tika restartēta pēc avārijas. Varat nosūtīt avārijas ziņojumu, lai palīdzētu Cradle izmeklēt problēmu.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5909,8 +5908,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Signal kontakti",
-    "description": "The phrase/term: 'Signal Connections'"
+    "messageformat": "Cradle kontakti",
+    "description": "The phrase/term: 'Cradle Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} ir personas, kurām izvēlējāties uzticēties kādā no šiem veidiem:",
@@ -6089,11 +6088,11 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Visi Signal kontakti",
+    "messageformat": "Visi Cradle kontakti",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
-    "messageformat": "Kopīgot ar visiem Signal draugiem",
+    "messageformat": "Kopīgot ar visiem Cradle draugiem",
     "description": "Description of button StoriesSettings__mine__all--label"
   },
   "icu:StoriesSettings__mine__exclude--label": {
@@ -6209,7 +6208,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Izvēlieties, kuri Signal kontakti var skatīt jūsu stāstu. To vienmēr varat mainīt privātuma iestatījumos. Uzziniet vairāk.",
+    "messageformat": "Izvēlieties, kuri Cradle kontakti var skatīt jūsu stāstu. To vienmēr varat mainīt privātuma iestatījumos. Uzziniet vairāk.",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6225,11 +6224,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, zero {Visi Signal kontakti {viewersCount,number} skatītāji} one {Visi Signal kontakti 1 skatītājs} other {Visi Signal kontakti {viewersCount,number} skatītāji}}",
+    "messageformat": "{viewersCount, plural, zero {Visi Cradle kontakti {viewersCount,number} skatītāji} one {Visi Cradle kontakti 1 skatītājs} other {Visi Cradle kontakti {viewersCount,number} skatītāji}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, zero {Visi Signal kontakti {excludedCount,number} nav iekļauti} one {Visi Signal kontakti 1 nav iekļauts} other {Visi Signal kontakti {excludedCount,number} nav iekļauti}}",
+    "messageformat": "{excludedCount, plural, zero {Visi Cradle kontakti {excludedCount,number} nav iekļauti} one {Visi Cradle kontakti 1 nav iekļauts} other {Visi Cradle kontakti {excludedCount,number} nav iekļauti}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6585,7 +6584,7 @@
     "description": "Text of confirmation modal when resetting the username link"
   },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Izveidojiet savu Signal lietotāja vārdu",
+    "messageformat": "Izveidojiet savu Cradle lietotāja vārdu",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6609,15 +6608,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Drīzumā Signal Desktop vairs neatbalstīs jūsu datora {OS} versiju. Lai turpinātu lietot Signal, atjauniniet datora operētājsistēmu līdz {expirationDate}. <learnMoreLink>Lasīt vairāk</learnMoreLink>",
+    "messageformat": "Drīzumā Cradle Desktop vairs neatbalstīs jūsu datora {OS} versiju. Lai turpinātu lietot Cradle, atjauniniet datora operētājsistēmu līdz {expirationDate}. <learnMoreLink>Lasīt vairāk</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Signal Desktop vairs nedarbojas šajā datorā. Lai atkal izmantotu Signal Desktop, atjauniniet sava datora {OS} versiju. <learnMoreLink>Lasīt vairāk</learnMoreLink>",
+    "messageformat": "Cradle Desktop vairs nedarbojas šajā datorā. Lai atkal izmantotu Cradle Desktop, atjauniniet sava datora {OS} versiju. <learnMoreLink>Lasīt vairāk</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Signal Desktop vairs nedarbojas šajā datorā. Lai atkal izmantotu Signal Desktop, atjauniniet sava datora {OS} versiju.",
+    "messageformat": "Cradle Desktop vairs nedarbojas šajā datorā. Lai atkal izmantotu Cradle Desktop, atjauniniet sava datora {OS} versiju.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6745,11 +6744,11 @@
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Šī versija ietver vairākus nelielus uzlabojumus un kļūdu labojumus, lai Signal darbotos bez problēmām.",
+    "messageformat": "Šī versija ietver vairākus nelielus uzlabojumus un kļūdu labojumus, lai Cradle darbotos bez problēmām.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Papildu nelielas izmaiņas, kļūdu labojumi un veiktspējas uzlabojumi. Paldies, ka lietojat Signal!",
+    "messageformat": "Papildu nelielas izmaiņas, kļūdu labojumi un veiktspējas uzlabojumi. Paldies, ka lietojat Cradle!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6769,7 +6768,7 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Nelielas izmaiņas, kļūdu labojumi un darbības uzlabojumi. Paldies, ka lietojat Signal!",
+    "messageformat": "Nelielas izmaiņas, kļūdu labojumi un darbības uzlabojumi. Paldies, ka lietojat Cradle!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__v6.29--0": {

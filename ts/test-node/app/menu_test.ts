@@ -91,7 +91,7 @@ const getExpectedHelpMenu = (
     ...(includeAbout
       ? ([
           { type: 'separator' },
-          { label: 'About Signal Desktop', click: showAbout },
+          { label: 'About Cradle Desktop', click: showAbout },
         ] as MenuListType)
       : []),
   ],
@@ -101,7 +101,7 @@ const EXPECTED_MACOS: MenuListType = [
   {
     label: 'Signal Desktop',
     submenu: [
-      { label: 'About Signal Desktop', click: showAbout },
+      { label: 'About Cradle Desktop', click: showAbout },
       { type: 'separator' },
       {
         label: 'Preferences…',
@@ -115,7 +115,7 @@ const EXPECTED_MACOS: MenuListType = [
       { label: 'Hide Others', role: 'hideOthers' },
       { label: 'Show All', role: 'unhide' },
       { type: 'separator' },
-      { label: 'Quit Signal', role: 'quit' },
+      { label: 'Quit Cradle', role: 'quit' },
     ],
   },
   {
@@ -153,7 +153,7 @@ const EXPECTED_WINDOWS: MenuListType = [
         click: showSettings,
       },
       { type: 'separator' },
-      { label: 'Quit Signal', role: 'quit' },
+      { label: 'Quit Cradle', role: 'quit' },
     ],
   },
   getExpectedEditMenu(false),

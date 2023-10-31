@@ -11,6 +11,7 @@ export async function afterAllArtifactBuild({
   platformToTargets,
   artifactPaths,
 }: BuildResult): Promise<void> {
+  return;
   const platforms = Array.from(platformToTargets.keys()).map(
     platform => platform.name
   );
@@ -57,10 +58,10 @@ export async function afterAllArtifactBuild({
 
   const [dmgPath] = artifactsToStaple;
   console.log(`Notarizing dmg: ${dmgPath}`);
-  await notarize({
+  /*await notarize({
     appBundleId,
     appPath: dmgPath,
     appleId,
     appleIdPassword,
-  });
+  });*/
 }

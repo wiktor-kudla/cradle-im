@@ -173,7 +173,8 @@
   }
 
   @include light-theme {
-    background: $color-gray-05;
+    // background: $color-gray-05;
+    background: $color-purple-light;
   }
   @include dark-theme {
     background: $color-gray-65;

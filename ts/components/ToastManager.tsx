@@ -205,10 +205,6 @@ export function ToastManager({
     );
   }
 
-  if (toastType === ToastType.Expired) {
-    return <Toast onClose={hideToast}>{i18n('icu:expiredWarning')}</Toast>;
-  }
-
   if (toastType === ToastType.FailedToDeleteUsername) {
     return (
       <Toast onClose={hideToast}>

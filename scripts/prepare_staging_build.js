@@ -28,27 +28,27 @@ const VERSION_PATH = 'version';
 const STAGING_VERSION = version.replace('alpha', 'staging');
 
 const NAME_PATH = 'name';
-const PRODUCTION_NAME = 'signal-desktop';
-const STAGING_NAME = 'signal-desktop-staging';
+const PRODUCTION_NAME = 'cradle-desktop';
+const STAGING_NAME = 'cradle-desktop-staging';
 
 const PRODUCT_NAME_PATH = 'productName';
-const PRODUCTION_PRODUCT_NAME = 'Signal';
-const STAGING_PRODUCT_NAME = 'Signal Staging';
+const PRODUCTION_PRODUCT_NAME = 'Cradle';
+const STAGING_PRODUCT_NAME = 'Cradle Staging';
 
 const APP_ID_PATH = 'build.appId';
-const PRODUCTION_APP_ID = 'org.whispersystems.signal-desktop';
-const STAGING_APP_ID = 'org.whispersystems.signal-desktop-staging';
+const PRODUCTION_APP_ID = 'org.cradle-desktop';
+const STAGING_APP_ID = 'org.cradle-desktop-staging';
 
 const STARTUP_WM_CLASS_PATH = 'build.linux.desktop.StartupWMClass';
-const PRODUCTION_STARTUP_WM_CLASS = 'Signal';
-const STAGING_STARTUP_WM_CLASS = 'Signal Staging';
+const PRODUCTION_STARTUP_WM_CLASS = 'Cradle';
+const STAGING_STARTUP_WM_CLASS = 'Cradle Staging';
 
 const DESKTOP_NAME_PATH = 'desktopName';
 
 // Note: we're avoiding dashes in our .desktop name due to xdg-settings behavior
 //   https://github.com/signalapp/Signal-Desktop/issues/3602
-const PRODUCTION_DESKTOP_NAME = 'signal.desktop';
-const STAGING_DESKTOP_NAME = 'signalstaging.desktop';
+const PRODUCTION_DESKTOP_NAME = 'cradle.desktop';
+const STAGING_DESKTOP_NAME = 'cradlestaging.desktop';
 
 // -------
 

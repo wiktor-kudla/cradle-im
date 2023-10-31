@@ -28,12 +28,8 @@
     // that has not been closed yet (active)
     &:hover,
     &--active {
-      @include light-theme {
-        background: $color-gray-15;
-      }
-      @include dark-theme {
-        background: $color-gray-65;
-      }
+      // background: $color-gray-65;
+      background: $color-purple-01;
     }
   }
 

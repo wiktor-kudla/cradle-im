@@ -503,7 +503,7 @@ export class Message extends React.PureComponent<Props, State> {
       this.setFocus();
     }
 
-    const { expirationLength } = this.props;
+    /*const { expirationLength } = this.props;
     if (expirationLength) {
       const increment = getIncrement(expirationLength);
       const checkFrequency = Math.max(EXPIRATION_CHECK_MINIMUM, increment);
@@ -513,7 +513,7 @@ export class Message extends React.PureComponent<Props, State> {
       this.expirationCheckInterval = setInterval(() => {
         this.checkExpired();
       }, checkFrequency);
-    }
+    }*/
 
     const { contact, checkForAccount } = this.props;
     if (contact && contact.firstNumber && !contact.serviceId) {
@@ -526,7 +526,7 @@ export class Message extends React.PureComponent<Props, State> {
   public override componentWillUnmount(): void {
     clearTimeoutIfNecessary(this.targetedTimeout);
     clearTimeoutIfNecessary(this.expirationCheckInterval);
-    clearTimeoutIfNecessary(this.expiredTimeout);
+    //clearTimeoutIfNecessary(this.expiredTimeout);
     clearTimeoutIfNecessary(this.deleteForEveryoneTimeout);
     clearTimeoutIfNecessary(this.giftBadgeInterval);
     this.toggleReactionViewer(true);
@@ -543,7 +543,7 @@ export class Message extends React.PureComponent<Props, State> {
       this.setFocus();
     }
 
-    this.checkExpired();
+    //this.checkExpired();
 
     if (
       prevProps.status === 'sending' &&

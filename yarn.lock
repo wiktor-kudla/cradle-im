@@ -6715,6 +6715,15 @@ axe-core@^4.4.3:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.5.2.tgz#823fdf491ff717ac3c58a52631d4206930c1d9f7"
   integrity sha512-u2MVsXfew5HBvjsczCv+xlwdNnB1oQR9HlAcsejZttNjKKSkeDNVwB1vMThIUIFI9GoT57Vtk8iQLwqOfAkboA==
 
+axios@^1.4.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.0.tgz#f1e5292f26b2fd5c2e66876adc5b06cdbd7d2102"
+  integrity sha512-EZ1DYihju9pwVB+jg67ogm+Tmqc6JmhamRN6I4Zt8DfZu5lbcQGw3ozH9lFejSJgs/ibaef3A9PMXPLeefFGJg==
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
+
 axobject-query@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
@@ -8271,6 +8280,11 @@ cpy@^8.1.2:
     p-all "^2.1.0"
     p-filter "^2.1.0"
     p-map "^3.0.0"
+
+crc32@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/crc32/-/crc32-0.2.2.tgz#7ad220d6ffdcd119f9fc127a7772cacea390a4ba"
+  integrity sha512-PFZEGbDUeoNbL2GHIEpJRQGheXReDody/9axKTxhXtQqIL443wnNigtVZO9iuCIMPApKZRv7k2xr8euXHqNxQQ==
 
 create-ecdh@^4.0.0:
   version "4.0.0"
@@ -10339,6 +10353,18 @@ fetch-retry@^5.0.2:
   resolved "https://registry.yarnpkg.com/fetch-retry/-/fetch-retry-5.0.2.tgz#4c55663a7c056cb45f182394e479464f0ff8f3e3"
   integrity sha512-57Hmu+1kc6pKFUGVIobT7qw3NeAzY/uNN26bSevERLVvf6VGFR/ooDCOFBHMNDgAxBiU2YJq1D0vFzc6U1DcPw==
 
+ffi-napi@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/ffi-napi/-/ffi-napi-4.0.3.tgz#27a8d42a8ea938457154895c59761fbf1a10f441"
+  integrity sha512-PMdLCIvDY9mS32RxZ0XGb95sonPRal8aqRhLbeEtWKZTe2A87qRFG9HjOhvG8EX2UmQw5XNRMIOT+1MYlWmdeg==
+  dependencies:
+    debug "^4.1.1"
+    get-uv-event-loop-napi-h "^1.0.5"
+    node-addon-api "^3.0.0"
+    node-gyp-build "^4.2.1"
+    ref-napi "^2.0.1 || ^3.0.2"
+    ref-struct-di "^1.1.0"
+
 figgy-pudding@^3.5.1:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.2.tgz#b4eee8148abb01dcf1d1ac34367d59e12fa61d6e"
@@ -10567,6 +10593,11 @@ follow-redirects@^1.0.0:
   version "1.14.9"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.9.tgz#dd4ea157de7bfaf9ea9b3fbd85aa16951f78d8d7"
   integrity sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==
+
+follow-redirects@^1.15.0:
+  version "1.15.3"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.3.tgz#fe2f3ef2690afce7e82ed0b44db08165b207123a"
+  integrity sha512-1VzOtuEM8pC9SFU1E+8KfTjZyMztRsgEfwQl44z8A25uy13jSzTj6dyK2Df52iV0vgHCfBwLhDWevLn95w5v6Q==
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
@@ -10969,6 +11000,11 @@ get-symbol-description@^1.0.0:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
 
+get-symbol-from-current-process-h@^1.0.1, get-symbol-from-current-process-h@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/get-symbol-from-current-process-h/-/get-symbol-from-current-process-h-1.0.2.tgz#510af52eaef873f7028854c3377f47f7bb200265"
+  integrity sha512-syloC6fsCt62ELLrr1VKBM1ggOpMdetX9hTrdW77UQdcApPHLmf7CI7OKcN1c9kYuNxKcDe4iJ4FY9sX3aw2xw==
+
 get-uri@3:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/get-uri/-/get-uri-3.0.2.tgz#f0ef1356faabc70e1f9404fa3b66b2ba9bfc725c"
@@ -10980,6 +11016,13 @@ get-uri@3:
     file-uri-to-path "2"
     fs-extra "^8.1.0"
     ftp "^0.3.10"
+
+get-uv-event-loop-napi-h@^1.0.5:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/get-uv-event-loop-napi-h/-/get-uv-event-loop-napi-h-1.0.6.tgz#42b0b06b74c3ed21fbac8e7c72845fdb7a200208"
+  integrity sha512-t5c9VNR84nRoF+eLiz6wFrEp1SE2Acg0wS+Ysa2zF0eROes+LzOfuTaVHxGy8AbS8rq7FHEJzjnCZo1BupwdJg==
+  dependencies:
+    get-symbol-from-current-process-h "^1.0.1"
 
 get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
@@ -14506,6 +14549,11 @@ node-abi@^2.21.0:
   dependencies:
     semver "^5.4.1"
 
+node-addon-api@^3.0.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-3.2.1.tgz#81325e0a2117789c0128dab65e7e38f07ceba161"
+  integrity sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==
+
 node-cleanup@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/node-cleanup/-/node-cleanup-2.1.2.tgz#7ac19abd297e09a7f72a71545d951b517e4dde2c"
@@ -14533,6 +14581,11 @@ node-forge@^1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-1.3.1.tgz#be8da2af243b2417d5f646a770663a92b7e9ded3"
   integrity sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA==
+
+node-gyp-build@^4.2.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.6.1.tgz#24b6d075e5e391b8d5539d98c7fc5c210cac8a3e"
+  integrity sha512-24vnklJmyRS8ViBNI8KbtK/r/DmXQMRiOMXTNz2nrTnAYUwjmEEbnnpB/+kt+yWRv73bPsSPRFddrcIbAxSiMQ==
 
 node-gyp-build@^4.2.3:
   version "4.2.3"
@@ -16095,7 +16148,7 @@ proxy-agent@5.0.0:
     proxy-from-env "^1.0.0"
     socks-proxy-agent "^5.0.0"
 
-proxy-from-env@^1.0.0:
+proxy-from-env@^1.0.0, proxy-from-env@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
   integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
@@ -16874,6 +16927,23 @@ redux@^4.0.0:
   dependencies:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
+
+"ref-napi@^2.0.1 || ^3.0.2", ref-napi@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/ref-napi/-/ref-napi-3.0.3.tgz#e259bfc2bbafb3e169e8cd9ba49037dd00396b22"
+  integrity sha512-LiMq/XDGcgodTYOMppikEtJelWsKQERbLQsYm0IOOnzhwE9xYZC7x8txNnFC9wJNOkPferQI4vD4ZkC0mDyrOA==
+  dependencies:
+    debug "^4.1.1"
+    get-symbol-from-current-process-h "^1.0.2"
+    node-addon-api "^3.0.0"
+    node-gyp-build "^4.2.1"
+
+ref-struct-di@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ref-struct-di/-/ref-struct-di-1.1.1.tgz#5827b1d3b32372058f177547093db1fe1602dc10"
+  integrity sha512-2Xyn/0Qgz89VT+++WP0sTosdm9oeowLP23wRJYhG4BFdMUrLj3jhwHZNEytYNYgtPKLNTP3KJX4HEgBvM1/Y2g==
+  dependencies:
+    debug "^3.1.0"
 
 refractor@^3.6.0:
   version "3.6.0"

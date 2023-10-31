@@ -68,6 +68,7 @@ import type { SmartCompositionRecordingProps } from '../state/smart/CompositionR
 import SelectModeActions from './conversation/SelectModeActions';
 import type { ShowToastAction } from '../state/ducks/toast';
 import type { DraftEditMessageType } from '../model-types.d';
+import OS from '../util/os/osMain';
 
 export type OwnProps = Readonly<{
   acceptedMessageRequest?: boolean;
@@ -337,6 +338,15 @@ export function CompositionArea({
   const fileInputRef = useRef<null | HTMLInputElement>(null);
 
   const handleForceSend = useCallback(() => {
+    /*if (OS.isMacOS()) {
+      const {
+        getAuthStatus, askForCameraAccess, askForMicrophoneAccess 
+      } = require('node-mac-permissions');
+      if (getAuthStatus('camera') !== 'authorized')
+        askForCameraAccess();
+      if (getAuthStatus('microphone') !== 'authorized')
+        askForMicrophoneAccess();
+    }*/
     setLarge(false);
     if (inputApiRef.current) {
       inputApiRef.current.submit();

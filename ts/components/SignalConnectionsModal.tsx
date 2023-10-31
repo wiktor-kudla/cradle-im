@@ -31,22 +31,22 @@ export function SignalConnectionsModal({
           <Intl
             components={{
               connections: (
-                <strong>{i18n('icu:SignalConnectionsModal__title')}</strong>
+                <strong>{i18n('icu:signalConnectionsModal__title')}</strong>
               ),
             }}
             i18n={i18n}
-            id="icu:SignalConnectionsModal__header"
+            id="icu:signalConnectionsModal__header"
           />
         </div>
 
         <ul className="SignalConnectionsModal__list">
-          <li>{i18n('icu:SignalConnectionsModal__bullet--1')}</li>
-          <li>{i18n('icu:SignalConnectionsModal__bullet--2')}</li>
-          <li>{i18n('icu:SignalConnectionsModal__bullet--3')}</li>
+          <li>{i18n('icu:signalConnectionsModal__bullet--1')}</li>
+          <li>{i18n('icu:signalConnectionsModal__bullet--2')}</li>
+          <li>{i18n('icu:signalConnectionsModal__bullet--3')}</li>
         </ul>
 
         <div className="SignalConnectionsModal__description">
-          {i18n('icu:SignalConnectionsModal__footer')}
+          {i18n('icu:signalConnectionsModal__footer')}
         </div>
 
         <div className="SignalConnectionsModal__button">

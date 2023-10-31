@@ -11,7 +11,6 @@ import { LeftPane, LeftPaneMode } from './LeftPane';
 import { CaptchaDialog } from './CaptchaDialog';
 import { CrashReportDialog } from './CrashReportDialog';
 import type { PropsType as DialogNetworkStatusPropsType } from './DialogNetworkStatus';
-import { DialogExpiredBuild } from './DialogExpiredBuild';
 import { DialogNetworkStatus } from './DialogNetworkStatus';
 import { DialogRelink } from './DialogRelink';
 import type { PropsType as DialogUpdatePropsType } from './DialogUpdate';
@@ -253,7 +252,6 @@ const useProps = (overrideProps: OverridePropsType = {}): PropsType => {
         eraseCrashReports={action('eraseCrashReports')}
       />
     ),
-    renderExpiredBuildDialog: props => <DialogExpiredBuild {...props} />,
     renderUnsupportedOSDialog: props => (
       <UnsupportedOSDialog
         i18n={i18n}

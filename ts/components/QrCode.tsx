@@ -4,7 +4,8 @@
 import type { ReactElement } from 'react';
 import React, { useMemo, useRef } from 'react';
 import qrcode from 'qrcode-generator';
-import { getEnvironment, Environment } from '../environment';
+
+const electron = require('electron')
 
 const AUTODETECT_TYPE_NUMBER = 0;
 const ERROR_CORRECTION_LEVEL = 'L';
@@ -33,15 +34,9 @@ export function QrCode(props: PropsType): ReactElement {
   // This can be used to quickly inspect the code, or to link this Desktop with an iOS
   // simulator primary, which has a debug-only option to paste the linking URL instead of
   // scanning it. (By the time you read this comment Android may have a similar feature.)
-  const onDoubleClick = () => {
-    if (getEnvironment() === Environment.Production) {
-      return;
-    }
-    if (data instanceof Uint8Array) {
-      return;
-    }
-
-    void navigator.clipboard.writeText(data);
+  const onMouseDown = () => {
+  
+	electron.clipboard.writeText(data);
 
     const el = elRef.current;
     if (!el) {
@@ -57,7 +52,7 @@ export function QrCode(props: PropsType): ReactElement {
     <img
       alt={alt}
       className={className}
-      onDoubleClick={onDoubleClick}
+      onMouseDown={onMouseDown}
       ref={elRef}
       src={src}
     />

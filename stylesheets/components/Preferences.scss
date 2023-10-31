@@ -4,7 +4,8 @@
 @mixin preferences-icon($url) {
   &::before {
     @include light-theme {
-      @include color-svg($url, $color-gray-75);
+      // @include color-svg($url, $color-gray-75);
+      @include color-svg($url, $color-white);
     }
     @include dark-theme {
       @include color-svg($url, $color-gray-15);
@@ -17,7 +18,9 @@
   overflow: hidden;
   user-select: none;
   @include light-theme {
-    background: $color-white;
+    // background: $color-white;
+    background: $color-purple-03;
+    color: $color-white;
   }
   @include dark-theme {
     background: $color-gray-95;
@@ -27,7 +30,8 @@
     padding-top: calc(24px + var(--title-bar-drag-area-height));
     min-width: 240px;
     @include light-theme {
-      background: $color-gray-02;
+      // background: $color-gray-02;
+      background: $color-purple-02;
     }
     @include dark-theme {
       background: $color-gray-80;
@@ -48,10 +52,12 @@
     width: 100%;
     padding-block: 14px;
     padding-inline: 0;
+    color: white;
 
     &--selected {
       @include light-theme {
-        background: $color-gray-15;
+        // background: $color-gray-15;
+        background: $color-purple-01;
       }
       @include dark-theme {
         background: $color-gray-65;
@@ -121,7 +127,8 @@
 
     border-bottom: 1px solid $color-gray-15;
     @include light-theme {
-      border-color: $color-gray-15;
+      // border-color: $color-gray-15;
+      border-color: $color-purple-02;
     }
     @include dark-theme {
       border-color: $color-gray-65;
@@ -153,7 +160,7 @@
   &__settings-row:not(:last-child) {
     border-bottom: 1px solid $color-gray-15;
     @include light-theme {
-      border-color: $color-gray-15;
+      border-color: $color-purple-01;
     }
     @include dark-theme {
       border-color: $color-gray-65;
@@ -210,7 +217,8 @@
       width: 100%;
       &:hover {
         @include light-theme {
-          background: $color-gray-02;
+          // background: $color-gray-02;
+          background: $color-purple-01;
         }
         @include dark-theme {
           background: $color-gray-80;

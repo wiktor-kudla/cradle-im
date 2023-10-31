@@ -67,8 +67,9 @@
 
     @include light-theme() {
       // Same as background color
-      background-color: $color-gray-05;
-      color: $color-gray-90;
+      // background-color: $color-gray-05;
+      background-color: $color-purple-02;
+      color: $color-white;
     }
 
     @include dark-theme() {
