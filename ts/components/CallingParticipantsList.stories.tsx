@@ -5,6 +5,7 @@ import * as React from 'react';
 import { sample } from 'lodash';
 import { action } from '@storybook/addon-actions';
 
+import type { Meta } from '@storybook/react';
 import type { PropsType } from './CallingParticipantsList';
 import { CallingParticipantsList } from './CallingParticipantsList';
 import { AvatarColors } from '../types/Colors';
@@ -20,9 +21,11 @@ function createParticipant(
   participantProps: Partial<GroupCallRemoteParticipantType>
 ): GroupCallRemoteParticipantType {
   return {
+    aci: generateAci(),
     demuxId: 2,
     hasRemoteAudio: Boolean(participantProps.hasRemoteAudio),
     hasRemoteVideo: Boolean(participantProps.hasRemoteVideo),
+    isHandRaised: Boolean(participantProps.isHandRaised),
     presenting: Boolean(participantProps.presenting),
     sharingScreen: Boolean(participantProps.sharingScreen),
     videoAspectRatio: 1.3,
@@ -46,16 +49,12 @@ const createProps = (overrideProps: Partial<PropsType> = {}): PropsType => ({
 
 export default {
   title: 'Components/CallingParticipantsList',
-};
+} satisfies Meta<PropsType>;
 
 export function NoOne(): JSX.Element {
   const props = createProps();
   return <CallingParticipantsList {...props} />;
 }
-
-NoOne.story = {
-  name: 'No one',
-};
 
 export function SoloCall(): JSX.Element {
   const props = createProps({

@@ -8,6 +8,7 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
+
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -89,7 +90,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Condicions de servei i política de privadesa",
-    "description": "Shown in the about box for the link to https://cradle.org/legal"
+    "description": "Shown in the about box for the link to https://signal.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -109,11 +110,27 @@
   },
   "icu:databaseError": {
     "messageformat": "Error de la base de dades",
-    "description": "Shown in a popup if the database cannot start up properly"
+    "description": "Title of a popup if the database cannot start up properly"
+  },
+  "icu:databaseError__detail": {
+    "messageformat": "S'ha produït un error de la base de dades. Pots copiar l'error i posar-te en contacte amb el servei d'assistència de Signal per ajudar-te a solucionar el problema. Si necessites fer servir Signal immediatament, pots eliminar les teves dades i reiniciar-lo.\n\nPosa't en contacte amb el servei d'assistència a través de: {link}",
+    "description": "Description shown in a popup if the database cannot start up properly"
   },
   "icu:deleteAndRestart": {
-    "messageformat": "Suprimeix-ne totes les dades i reinicia'l",
-    "description": "Shown in a popup if the database cannot start up properly; allows user to delete database and restart"
+    "messageformat": "Eliminar les dades i reiniciar",
+    "description": "Text of a button shown in a popup if the database cannot start up properly; allows user to delete all data in their database and restart"
+  },
+  "icu:databaseError__deleteDataConfirmation": {
+    "messageformat": "Vols eliminar totes les dades permanentment?",
+    "description": "Header of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__deleteDataConfirmation__detail": {
+    "messageformat": "Tot el teu historial de missatges i arxius multimèdia s'eliminaran permanentment d'aquest dispositiu. Podràs utilitzar Signal en aquest dispositiu després de tornar-lo a enllaçar. Això no eliminarà cap dada del teu telèfon.",
+    "description": "Description of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__startOldVersion": {
+    "messageformat": "La versió de la teva base de dades no coincideix amb aquesta versió de Signal. Assegura't d'estar obrint la versió més recent de Signal al teu ordinador.",
+    "description": "Text in a popup shown if the app cannot start because the user started an older version of Signal"
   },
   "icu:mainMenuFile": {
     "messageformat": "&Fitxer",
@@ -160,7 +177,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Surt del Cradle",
+    "messageformat": "Surt del Signal",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -272,7 +289,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Actualitza el Cradle",
+    "messageformat": "Actualitza el Signal",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -299,40 +316,68 @@
     "messageformat": "Xats",
     "description": "Shown as a header for non-pinned conversations in the left pane"
   },
+  "icu:LeftPane--corrupted-username--text": {
+    "messageformat": "S'ha produït un error amb el teu àlies, ja no està assignat al teu compte. Pots provar de configurar-lo de nou o triar-ne un de diferent.",
+    "description": "Text of corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username--action-text": {
+    "messageformat": "Reparar-ho ara",
+    "description": "Text of the button in the corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--text": {
+    "messageformat": "S'ha produït un error amb el codi QR i enllaç del teu nom d'usuari, ja no és vàlid. Crea un nou enllaç per compartir. Crea un nou enllaç per compartir.",
+    "description": "Text of corrupted username link banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--action-text": {
+    "messageformat": "Reparar-ho ara",
+    "description": "Text of the button in the corrupted username link banner in the left pane"
+  },
   "icu:NavTabsToggle__showTabs": {
-    "messageformat": "Show Tabs",
+    "messageformat": "Mostrar pestanyes",
     "description": "Show in the left pane when the nav tabs are hidden, shows the nav tabs"
   },
   "icu:NavTabsToggle__hideTabs": {
-    "messageformat": "Hide Tabs",
+    "messageformat": "Ocultar pestanyes",
     "description": "Show in the nav tabs when the nav tabs are visible, hides the nav tabs"
   },
   "icu:NavTabs__ItemIconLabel--HasError": {
-    "messageformat": "An error occurred",
+    "messageformat": "S'ha produït un error",
     "description": "Nav Tabs > Tab has error > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--UnreadCount": {
-    "messageformat": "{count,number} unread",
+    "messageformat": "{count,number} sense llegir",
     "description": "Nav Tabs > Unread badge > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--MarkedUnread": {
-    "messageformat": "Marked unread",
+    "messageformat": "Marcat com a no llegit",
     "description": "Nav Tabs > Unread badge > when conversation is marked unread > Accessibility Text"
   },
+  "icu:NavTabs__ItemLabel--Chats": {
+    "messageformat": "Xats",
+    "description": "Nav Tabs > Chats Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Calls": {
+    "messageformat": "Trucades",
+    "description": "Nav Tabs > Calls Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Stories": {
+    "messageformat": "Històries",
+    "description": "Nav Tabs > Stories Button > Label & Accessibility Text"
+  },
   "icu:NavTabs__ItemLabel--Settings": {
-    "messageformat": "Settings",
+    "messageformat": "Configuració",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Update": {
-    "messageformat": "Update Signal",
+    "messageformat": "Actualitza el Signal",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Profile": {
-    "messageformat": "Profile",
+    "messageformat": "Perfil",
     "description": "Nav Tabs > Profile Button > Accessibility Text"
   },
   "icu:NavSidebar__BackButtonLabel": {
-    "messageformat": "Back",
+    "messageformat": "Enrere",
     "description": "Shown in the sidebar header when on a nested panel within the current sidebar, takes the user back to the previous step or default sidebar state"
   },
   "icu:archiveHelperText": {
@@ -428,7 +473,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Acabeu de passar pel procés d'exportació i els vostres contactes i missatges esperen pacientment a l'ordinador. Seleccioneu la carpeta que conté les dades de Cradle desades.",
+    "messageformat": "Acabeu de passar pel procés d'exportació i els vostres contactes i missatges esperen pacientment a l'ordinador. Seleccioneu la carpeta que conté les dades de Signal desades.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -444,7 +489,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Assegureu-vos que heu triat el directori correcte que conté les dades de Cradle desades. El seu nom hauria de començar amb \"Cradle Export\". També podeu desar una còpia nova de les dades des de l'aplicació Chrome.",
+    "messageformat": "Assegureu-vos que heu triat el directori correcte que conté les dades de Signal desades. El seu nom hauria de començar amb \"Signal Export\". També podeu desar una còpia nova de les dades des de l'aplicació Chrome.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -460,7 +505,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Comenceu a usar el Cradle Desktop",
+    "messageformat": "Comenceu a usar el Signal Desktop",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -544,11 +589,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "El número de seguretat que intenteu verificar ha canviat. Reviseu el número de seguretat nou amb {name1}. Recordeu que aquest canvi pot significar que algú està intentant interceptar la vostra comunicació o que {name2} ha reinstal·lat el Signal/Cradle.",
+    "messageformat": "El número de seguretat que intenteu verificar ha canviat. Reviseu el número de seguretat nou amb {name1}. Recordeu que aquest canvi pot significar que algú està intentant interceptar la vostra comunicació o que {name2} ha reinstal·lat el Signal.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Les següents persones pot ser que hagin reinstal·lat Signal/Cradle o canviat de dispositiu. Clica sobre un contacte per a confirmar el seu nou número de seguretat. És opcional.",
+    "messageformat": "Les següents persones pot ser que hagin reinstal·lat Signal o canviat de dispositiu. Clica sobre un contacte per a confirmar el seu nou número de seguretat. És opcional.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -560,7 +605,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {Tens {count,number} contacte que pot ser que hagi reinstal·lat Signal/Cradle o canviat de dispositiu. Pots revisar el seu número de seguretat abans d'enviar.} other {Tens {count,number} contactes que pot ser que hagin reinstal·lat Signal/Cradle o canviat de dispositiu. Pots revisar els seus números de seguretat abans d'enviar.}}",
+    "messageformat": "{count, plural, one {Tens {count,number} contacte que pot ser que hagi reinstal·lat Signal o canviat de dispositiu. Pots revisar el seu número de seguretat abans d'enviar.} other {Tens {count,number} contactes que pot ser que hagin reinstal·lat Signal o canviat de dispositiu. Pots revisar els seus números de seguretat abans d'enviar.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -592,7 +637,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "El vostre número de seguretat amb {name1} ha canviat. Això podria significar que algú està intentant interceptar la vostra comunicació o que {name2} ha reinstal·lat el Signal/Cradle. És possible que vulgueu verificar el número de seguretat amb aquest contacte.",
+    "messageformat": "El vostre número de seguretat amb {name1} ha canviat. Això podria significar que algú està intentant interceptar la vostra comunicació o que {name2} ha reinstal·lat el Signal. És possible que vulgueu verificar el número de seguretat amb aquest contacte.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -611,6 +656,10 @@
     "messageformat": "Truca-li tanmateix",
     "description": "Used on a warning dialog to make it clear that it might be risky to call the conversation."
   },
+  "icu:joinAnyway": {
+    "messageformat": "Unir-me de totes maneres",
+    "description": "Used on a warning dialog to make it clear that it might be risky to join the call."
+  },
   "icu:continueCall": {
     "messageformat": "Continua la trucada",
     "description": "Used on a warning dialog to make it clear that it might be risky to continue the group call."
@@ -628,7 +677,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "S'ha produït un error amb la càrrega! Envieu un correu electrònic a support@cradle.org i adjunteu-hi el registre com a fitxer de text.",
+    "messageformat": "S'ha produït un error amb la càrrega! Envieu un correu electrònic a support@signal.org i adjunteu-hi el registre com a fitxer de text.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -672,23 +721,23 @@
   },
   "icu:SafetyNumberViewer__migration__text": {
     "messageformat": "Els números de seguretat s'estan actualitzant.",
-    "description": "An explanatory note in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) An explanatory note in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__migration__learn_more": {
     "messageformat": "Més informació",
-    "description": "A link text in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) A link text in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__card__prev": {
     "messageformat": "Número de seguretat anterior",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__card__next": {
     "messageformat": "Número de seguretat següent",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__carousel__dot": {
     "messageformat": "Versió de número de seguretat {index,number} de {total,number}",
-    "description": "An ARIA label for safety number carousel button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number carousel button."
   },
   "icu:SafetyNumberViewer__markAsVerified": {
     "messageformat": "Marca com a verificat",
@@ -698,33 +747,41 @@
     "messageformat": "Neteja la verificació",
     "description": "Safety number viewer, verification toggle button, when verified, clears verification state"
   },
+  "icu:SafetyNumberViewer__hint": {
+    "messageformat": "Per verificar el xifrat amb {name}, compara les xifres de dalt amb les del dispositiu d'aquella persona. També poden escanejar el teu codi amb el seu dispositiu.",
+    "description": "Safety number viewer, text of the hint"
+  },
+  "icu:SafetyNumberViewer__learn_more": {
+    "messageformat": "Més informació",
+    "description": "Text of 'Learn more' button of SafetyNumberViewerModal modal"
+  },
   "icu:SafetyNumberViewer__hint--migration": {
     "messageformat": "Per verificar el xifrat amb {name}, tria més a dalt la carta de color que coincideixi amb la del dispositiu d'aquella persona i compara les xifres. Si aquestes no coincideixen, prova un altre parell de números de seguretat. Només cal que coincideixin un parell.",
-    "description": "Safety number viewer, text of the hint during migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint during migration period"
   },
   "icu:SafetyNumberViewer__hint--normal": {
     "messageformat": "Per verificar el xifrat amb {name}, compara les xifres de dalt amb les del dispositiu d'aquella persona. També poden escanejar el teu codi amb el seu dispositiu.",
-    "description": "Safety number viewer, text of the hint after migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint after migration period"
   },
   "icu:SafetyNumberOnboarding__title": {
     "messageformat": "Canvis als números de seguretat",
-    "description": "Title of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Title of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p1": {
     "messageformat": "S'estan actualitzant els números de seguretat durant un període de transició per habilitar les pròximes funcions de privacitat de Signal.",
-    "description": "Paragraph 1 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 1 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p2": {
     "messageformat": "Per a verificar els números de seguretat, fes que la teva carta de color coincideixi amb la del dispositiu del teu contacte. Si aquestes no coincideixen, prova un altre parell de números de seguretat. Només cal que coincideixin un parell.",
-    "description": "Paragraph 2 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 2 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__help": {
     "messageformat": "Us cal ajuda?",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__close": {
     "messageformat": "Entesos",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberNotReady__body": {
     "messageformat": "Es crearà un número de seguretat amb aquesta persona després d'intercanviar missatges amb ella.",
@@ -750,7 +807,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "El número de seguretat amb aquest contacte ha canviat. Això podria voler dir que algú està provant d'interceptar les vostres comunicacions o que aquest contacte simplement ha reinstal·lat el Signal/Cradle. Potser hauríeu de verificar el número de seguretat nou."
+    "messageformat": "El número de seguretat amb aquest contacte ha canviat. Això podria voler dir que algú està provant d'interceptar les vostres comunicacions o que aquest contacte simplement ha reinstal·lat el Signal. Potser hauríeu de verificar el número de seguretat nou."
   },
   "icu:incomingError": {
     "messageformat": "S'ha produït un error en gestionar el missatge rebut"
@@ -813,15 +870,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Carregant la previsualització…",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "Previsualització de l'esborrany de la vista en miniatura de l'enllaç {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "Previsualització de la vista en miniatura de l'enllaç {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Esborrany de la imatge adjuntada: {path}",
@@ -916,18 +973,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Uniu-vos a la versió Beta",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Preferències del Cradle Desktop",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "messageformat": "Preferències del Signal Desktop",
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Creador de paquets d'adhesius",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "Quant al Cradle Desktop",
+    "messageformat": "Quant al Signal Desktop",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -951,7 +1008,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Cradle Desktop",
+    "messageformat": "Signal Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -1003,7 +1060,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Benvingut/da al Cradle"
+    "messageformat": "Benvingut/da al Signal"
   },
   "icu:whatsNew": {
     "messageformat": "Vegeu {whatsNew} d'aquesta actualització.",
@@ -1134,15 +1191,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Per a enviar missatges d'àudio, permet que el Cradle Desktop tingui accés al teu micròfon.",
+    "messageformat": "Per a enviar missatges d'àudio, permet que el Signal Desktop tingui accés al teu micròfon.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Per a trucar, heu de permetre que el Cradle Desktop accedeixi al micròfon.",
+    "messageformat": "Per a trucar, heu de permetre que el Signal Desktop accedeixi al micròfon.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Per a fer trucades de vídeo, heu de permetre que el Cradle Desktop accedeixi a la càmera.",
+    "messageformat": "Per a fer trucades de vídeo, heu de permetre que el Signal Desktop accedeixi a la càmera.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1182,15 +1239,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "El Cradle Desktop no es pot actualitzar. {retry} o visiteu {url} per a instal·lar la versió nova manualment. Després, {support} sobre aquest problema.",
+    "messageformat": "El Signal Desktop no es pot actualitzar. {retry} o visiteu {url} per a instal·lar la versió nova manualment. Després, {support} sobre aquest problema.",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "El Cradle no s'ha pogut actualitzar. Visiteu {url} per instal·lar-lo manualment. Aleshores, {support} sobre aquest problema.",
+    "messageformat": "El Signal no s'ha pogut actualitzar. Visiteu {url} per instal·lar-lo manualment. Aleshores, {support} sobre aquest problema.",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "El Cradle Desktop es troba probablement en una quarentena de macOS i no es podrà actualitzar automàticament. Proveu de moure  {app} a  {folder} amb el Finder.",
+    "messageformat": "El Signal Desktop es troba probablement en una quarentena de macOS i no es podrà actualitzar automàticament. Proveu de moure  {app} a  {folder} amb el Finder.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1246,7 +1303,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Aquest missatge s'eliminarà per a tots els membres del xat si utilitzen una versió recent de Signal/Cradle. Podran veure que has eliminat un missatge.",
+    "messageformat": "Aquest missatge s'eliminarà per a tots els membres del xat si utilitzen una versió recent de Signal. Podran veure que has eliminat un missatge.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1365,17 +1422,17 @@
     "messageformat": "Informació",
     "description": "Shown on the drop-down menu for an individual message, takes you to message detail screen"
   },
-  "icu:deleteMessages": {
-    "messageformat": "Suprimeix",
-    "description": "Menu item for deleting messages, title case."
+  "icu:deleteMessagesInConversation": {
+    "messageformat": "Eliminar missatges",
+    "description": "Menu item for deleting all messages in a conversation from your device"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Vols eliminar el xat?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__title": {
+    "messageformat": "Eliminar els missatges?",
+    "description": "Title for confirmation modal to delete all messages in a conversation"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "Aquest xat s'eliminarà del dispositiu.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__description": {
+    "messageformat": "Els missatges d'aquest xat s'eliminaran d'aquest dispositiu. Encara podràs cercar aquest xat després d'haver eliminat els missatges.",
+    "description": "Description for confirmation modal to delete all messages in a conversation"
   },
   "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
     "messageformat": "Sortir del grup",
@@ -1410,7 +1467,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Cradle utilitza xifrat d'extrem a extrem i a vegades necessita actualitzar la sessió del xat. Això no afecta a la seguretat, però és possible que perdis algun missatge d’aquest contacte. Si aquest fos el cas, sempre pots demanar-li que el torni a enviar.",
+    "messageformat": "Signal utilitza xifrat d'extrem a extrem i a vegades necessita actualitzar la sessió del xat. Això no afecta a la seguretat, però és possible que perdis algun missatge d’aquest contacte. Si aquest fos el cas, sempre pots demanar-li que el torni a enviar.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1469,6 +1526,14 @@
     "messageformat": "El teu historial de missatges per ambdós xats s'ha combinat aquí.",
     "description": "Contents of a dialog shown after clicking 'learn more' button on a conversation merge event."
   },
+  "icu:PhoneNumberDiscovery--notification--withSharedGroup": {
+    "messageformat": "{phoneNumber} pertany a {conversationTitle}. Tots dos sou membres de {sharedGroup}.",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with."
+  },
+  "icu:PhoneNumberDiscovery--notification--noSharedGroup": {
+    "messageformat": "{phoneNumber} pertany a {conversationTitle}",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with, but you have no shared groups."
+  },
   "icu:quoteThumbnailAlt": {
     "messageformat": "Miniatura d'una imatge d'un missatge citat",
     "description": "Used in alt tag of thumbnail images inside of an embedded message quote"
@@ -1502,7 +1567,7 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Benvingut/da al Cradle Desktop",
+    "messageformat": "Benvingut/da al Signal Desktop",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
@@ -1511,11 +1576,11 @@
   },
   "icu:linkedDevices": {
     "messageformat": "Dispositius enllaçats",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Enllaça un dispositiu nou",
-    "description": "The menu option shown in Cradle iOS to add a new linked device"
+    "description": "The menu option shown in Signal iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Més informació",
@@ -1589,7 +1654,7 @@
     "messageformat": "Teniu massa dipositius enllaçats. Proveu de suprimir-ne algun."
   },
   "icu:installTooOld": {
-    "messageformat": "Actualitzeu el Cradle d'aquest dispositiu per a enllaçar-lo amb el telèfon."
+    "messageformat": "Actualitzeu el Signal d'aquest dispositiu per a enllaçar-lo amb el telèfon."
   },
   "icu:installErrorHeader": {
     "messageformat": "Quelcom ha anat malament!"
@@ -1616,10 +1681,6 @@
     "messageformat": "Torna a trucar",
     "description": "Button to call someone again"
   },
-  "icu:calling__start": {
-    "messageformat": "Inicia una trucada",
-    "description": "Button label in the call lobby for starting a call"
-  },
   "icu:calling__join": {
     "messageformat": "Afegeix-me a la trucada",
     "description": "Button label in the call lobby for joining a call"
@@ -1632,13 +1693,25 @@
     "messageformat": "S'ha silenciat el micròfon a causa de la mida de la trucada.",
     "description": "Shown in a call lobby toast if there are a lot of people already on the call"
   },
+  "icu:calling__toasts--aria-label": {
+    "messageformat": "Notificacions de trucades",
+    "description": "Aria label for region of toasts shown during a call (for, e.g. reconnecting, person joined, audio device changed notifications)"
+  },
   "icu:calling__call-is-full": {
     "messageformat": "La trucada és plena",
     "description": "Text in the call lobby when you can't join because the call is full"
   },
-  "icu:calling__button--video__label": {
-    "messageformat": "Càmera",
-    "description": "Label under the video button"
+  "icu:CallingLobbyJoinButton--join": {
+    "messageformat": "Afegeix-m'hi",
+    "description": "Button label in the call lobby for joining a call"
+  },
+  "icu:CallingLobbyJoinButton--start": {
+    "messageformat": "Inicia",
+    "description": "Button label in the call lobby for starting a call"
+  },
+  "icu:CallingLobbyJoinButton--call-full": {
+    "messageformat": "Trucada plena",
+    "description": "Button in the call lobby when you can't join because the call is full"
   },
   "icu:calling__button--video-disabled": {
     "messageformat": "Càmera desactivada",
@@ -1652,10 +1725,6 @@
     "messageformat": "Activa la càmera",
     "description": "Button tooltip label for turning on the camera"
   },
-  "icu:calling__button--audio__label": {
-    "messageformat": "Silenciats",
-    "description": "Label under the audio button"
-  },
   "icu:calling__button--audio-disabled": {
     "messageformat": "Micròfon desactivat",
     "description": "Button tooltip label when the microphone is disabled"
@@ -1667,10 +1736,6 @@
   "icu:calling__button--audio-on": {
     "messageformat": "Activa el micròfon",
     "description": "Button tooltip label for turning on the microphone"
-  },
-  "icu:calling__button--presenting__label": {
-    "messageformat": "Comparteix-lo",
-    "description": "Label under the share screen button"
   },
   "icu:calling__button--presenting-disabled": {
     "messageformat": "Presentació desactivada",
@@ -1684,10 +1749,6 @@
     "messageformat": "Interromp la presentació",
     "description": "Button tooltip label for stopping screen sharing"
   },
-  "icu:calling__button--ring__label": {
-    "messageformat": "Truca",
-    "description": "Label under the ring button"
-  },
   "icu:calling__button--ring__disabled-because-group-is-too-large": {
     "messageformat": "El grup és massa gran per a trucar als participants.",
     "description": "Button tooltip label when you can't ring because the group is too large"
@@ -1699,6 +1760,26 @@
   "icu:calling__button--ring__on": {
     "messageformat": "Activa la trucada",
     "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton__ring-off": {
+    "messageformat": "Desactivar el so",
+    "description": "Button tooltip label for turning ringing off"
+  },
+  "icu:CallingButton--ring-on": {
+    "messageformat": "Activar el so",
+    "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton--more-options": {
+    "messageformat": "Més opcions",
+    "description": "Tooltip label for button in the calling screen that opens a menu with other call actions such as React or Raise Hand."
+  },
+  "icu:CallingRaisedHandsList__Title": {
+    "messageformat": "{count, plural, one {Mans aixecades · {count,number} persona} other {Mans aixecades · {count,number} persones}}",
+    "description": "Shown in the call raised hands list to describe how many people have active raised hands"
+  },
+  "icu:CallingReactions--me": {
+    "messageformat": "Tu",
+    "description": "Label next to in-call reactions to indicate that the current user sent that reaction."
   },
   "icu:calling__your-video-is-off": {
     "messageformat": "La càmera no està activa.",
@@ -1725,23 +1806,23 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--many-people-in-call": {
-    "messageformat": "{first}, {second} i {others} més són en aquesta trucada.",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others are in this call",
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "El Cradle trucarà a {person}",
+    "messageformat": "El Signal trucarà a {person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "El Cradle trucarà a {first} i {second}",
+    "messageformat": "El Signal trucarà a {first} i {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "El Cradle trucarà a {first},  {second} i {third}",
+    "messageformat": "El Signal trucarà a {first},  {second} i {third}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "El Cradle trucarà a {first},  {second} i {others} més",
+    "messageformat": "Signal will ring {first}, {second}, and {others, plural, other {#}} others",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1757,7 +1838,7 @@
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__pre-call-info--will-notify-many": {
-    "messageformat": "{first}, {second} i {others} més rebran una notificació.",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others will be notified",
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__in-this-call--zero": {
@@ -1797,7 +1878,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "El Cradle comparteix {window}.",
+    "messageformat": "El Signal comparteix {window}.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1821,7 +1902,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "El Cradle necessita permís per a accedir a la gravació de pantalla de l’ordinador.",
+    "messageformat": "El Signal necessita permís per a accedir a la gravació de pantalla de l’ordinador.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1833,7 +1914,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "A la dreta, marqueu la casella que hi ha al costat del Cradle. Si no veieu el Cradle a la llista, feu clic a + per a afegir-lo.",
+    "messageformat": "A la dreta, marqueu la casella que hi ha al costat del Signal. Si no veieu el Signal a la llista, feu clic a + per a afegir-lo.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1877,12 +1958,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "La comprovació d'ortografia s'activarà el proper cop que s'iniciï el Cradle.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "La comprovació d'ortografia s'activarà el proper cop que s'iniciï el Signal.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "La comprovació d'ortografia es desactivarà el proper cop que s'iniciï el Cradle.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "La comprovació d'ortografia es desactivarà el proper cop que s'iniciï el Signal.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Minimitza a la safata del sistema",
@@ -1897,15 +1978,15 @@
     "description": "Description for the automatic launch setting"
   },
   "icu:clearDataHeader": {
-    "messageformat": "Neteja les dades de l'aplicació",
+    "messageformat": "Delete application data",
     "description": "Header in the settings dialog for the section dealing with data deletion"
   },
   "icu:clearDataExplanation": {
-    "messageformat": "Això buidarà les dades en l'aplicació, suprimint-ne tots els missatges i informació del compte desat.",
+    "messageformat": "This will delete all data in the application, removing all messages and saved account information.",
     "description": "Text describing what the clear data button will do."
   },
   "icu:clearDataButton": {
-    "messageformat": "Buida les dades",
+    "messageformat": "Delete data",
     "description": "Button in the settings dialog starting process to delete all data"
   },
   "icu:deleteAllDataHeader": {
@@ -1913,7 +1994,7 @@
     "description": "Header of the full-screen delete data confirmation screen"
   },
   "icu:deleteAllDataBody": {
-    "messageformat": "Esteu apunt de suprimir tota la informació del compte desada en aquesta aplicació, incloent-hi tots els contactes i missatges. Sempre podeu enllaçar-ho amb el dispositiu mòbil una altra vegada, però això no recuperarà els missatges suprimits.",
+    "messageformat": "Delete all data and messages from this version of Signal Desktop? You can always relink this desktop, but your messages will not restore. Your Signal account and data on your phone or other linked devices will not be deleted.",
     "description": "Text describing what exactly will happen if the user clicks the button to delete all data"
   },
   "icu:deleteAllDataButton": {
@@ -1925,8 +2006,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Tens dades obsoletes d'una instal·lació anterior del Cradle Desktop. Si tries continuar, se suprimiran i començareu de zero.",
-    "description": "Shown if user last ran Cradle Desktop before October 2018"
+    "messageformat": "Tens dades obsoletes d'una instal·lació anterior del Signal Desktop. Si tries continuar, se suprimiran i començareu de zero.",
+    "description": "Shown if user last ran Signal Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Suprimeix les dades antigues",
@@ -2007,11 +2088,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "Aquesta versió del Cradle Desktop ha vençut. Actualitzeu-lo a l'última versió per a poder continuar enviant i rebent missatges.",
+    "messageformat": "Aquesta versió del Signal Desktop ha vençut. Actualitzeu-lo a l'última versió per a poder continuar enviant i rebent missatges.",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Cliqueu per a anar a cradle.org/download",
+    "messageformat": "Cliqueu per a anar a signal.org/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2179,7 +2260,7 @@
     "description": "In conversation details, label for button to view safety number, opens safety number modal"
   },
   "icu:ConversationDetails__HeaderButton--Message": {
-    "messageformat": "Message",
+    "messageformat": "Missatge",
     "description": "In conversation details, label for button to switch to the conversation view in order to draft a message in that converation"
   },
   "icu:SafetyNumberNotification__viewSafetyNumber": {
@@ -2264,22 +2345,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "No s'ha pogut obtenir el nom d'usuari. Comproveu la connexió i torneu-ho a provar.",
-    "description": "Shown if request to Cradle servers to find username fails"
+    "description": "Shown if request to Signal servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "No s'ha pogut obtenir el número de telèfon. Comproveu la connexió i torneu-ho a provar.",
-    "description": "Shown if request to Cradle servers to find phone number fails"
+    "description": "Shown if request to Signal servers to find phone number fails"
   },
-  "icu:ToastManager__CannotEditMessage": {
-    "messageformat": "Els canvis només es poden realitzar fins a 3 hores després d'enviar el missatge.",
+  "icu:ToastManager__CannotEditMessage_24": {
+    "messageformat": "Els canvis només es poden realitzar fins 24 hores després d'enviar el missatge.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "Usuari no trobat. {atUsername} no és un usuari del Signal/Cradle; assegureu-vos que heu introduït el nom d'usuari complet.",
+    "messageformat": "Usuari no trobat. {atUsername} no és un usuari del Signal; assegureu-vos que heu introduït el nom d'usuari complet.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "Usuari no trobat. \"{phoneNumber}\" no és un usuari del Signal/Cradle.",
+    "messageformat": "Usuari no trobat. \"{phoneNumber}\" no és un usuari del Signal.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2307,7 +2388,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Els grups del Cradle poden tenir un màxim de {max,number} membres.",
+    "messageformat": "Els grups del Signal poden tenir un màxim de {max,number} membres.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2315,7 +2396,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Els grups del Cradle funcionen millor amb {max,number} membres o menys. Afegir-n'hi més causarà retards d'enviament i recepció de missatges.",
+    "messageformat": "Els grups del Signal funcionen millor amb {max,number} membres o menys. Afegir-n'hi més causarà retards d'enviament i recepció de missatges.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2367,7 +2448,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Feu clic per a tornar a enllaçar el Cradle Desktop amb el dispositiu mòbil i continuar enviant missatges."
+    "messageformat": "Feu clic per a tornar a enllaçar el Signal Desktop amb el dispositiu mòbil i continuar enviant missatges."
   },
   "icu:unlinked": {
     "messageformat": "No enllaçat"
@@ -2385,17 +2466,17 @@
     "messageformat": "contacteu amb l'assistència"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Cliqueu per a reiniciar el Cradle"
+    "messageformat": "Cliqueu per a reiniciar el Signal"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Cliqueu per a baixar l'actualització"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "El Cradle no s'ha pogut actualitzar. Feu clic per tornar-ho a provar.",
+    "messageformat": "El Signal no s'ha pogut actualitzar. Feu clic per tornar-ho a provar.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Reinicia el Cradle"
+    "messageformat": "Reinicia el Signal"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "Més tard"
@@ -2514,6 +2595,14 @@
   "icu:message--deletedForEveryone": {
     "messageformat": "Aquest missatge s'ha suprimit.",
     "description": "Shown in a message's bubble when the message has been deleted for everyone."
+  },
+  "icu:message--attachmentTooBig--one": {
+    "messageformat": "El fitxer adjunt és massa gran per mostrar-lo.",
+    "description": "Shown in a message bubble if no attachments are left on message when too-large attachments are dropped"
+  },
+  "icu:message--attachmentTooBig--multiple": {
+    "messageformat": "Alguns fitxers adjunts son massa grans per mostrar-los.",
+    "description": "Shown in a message bubble if any attachments are left on message when too-large attachments are dropped"
   },
   "icu:donation--missing": {
     "messageformat": "No s'han pogut obtenir els detalls de la donació",
@@ -2653,15 +2742,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "S'introdueixen els adhesius: el gat Bandit",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "S'introdueixen els adhesius.",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "Per què usar paraules quan podeu fer servir adhesius?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Obre el selector d'adhesius",
@@ -2804,20 +2893,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} us ha enviat un missatge que no es pot processar o mostrar perquè usa una funció nova del Signal/Cradle."
+    "messageformat": "{contact} us ha enviat un missatge que no es pot processar o mostrar perquè usa una funció nova del Signal."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Podeu demanar a {contact} que torni a enviar aquest missatge ara que useu una versió actualitzada del Cradle."
+    "messageformat": "Podeu demanar a {contact} que torni a enviar aquest missatge ara que useu una versió actualitzada del Signal."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Un dels vostres dispositius ha enviat un missatge que no es pot processar o mostrar perquè usa una funció nova del Signal/Cradle."
+    "messageformat": "Un dels vostres dispositius ha enviat un missatge que no es pot processar o mostrar perquè usa una funció nova del Signal."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "Missatges futurs com aquest se sincronitzaran ara que useu una versió actualitzada del Cradle."
+    "messageformat": "Missatges futurs com aquest se sincronitzaran ara que useu una versió actualitzada del Signal."
   },
   "icu:Message--update-signal": {
-    "messageformat": "Actualitza el Cradle",
-    "description": "Text for a button which will take user to Cradle download page"
+    "messageformat": "Actualitza el Signal",
+    "description": "Text for a button which will take user to Signal download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Vista",
@@ -3156,11 +3245,19 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Només per a la versió beta de Cradle",
-    "description": "Title of the modal shown before sending your first edit message"
+    "messageformat": "Només per a la versió beta de Signal",
+    "description": "(deleted 8/30) Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "La funció d'edició de missatges només està disponible per a les persones que tinguin la versió beta de Cradle. Si edites un missatge, només serà visible per a aquelles persones que tinguin la darrera versió de Cradle beta.",
+    "messageformat": "La funció d'edició de missatges només està disponible per a les persones que tinguin la versió beta de Signal. Si edites un missatge, només serà visible per a aquelles persones que tinguin la darrera versió de Signal beta.",
+    "description": "(deleted 8/30) Body text of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--title2": {
+    "messageformat": "Editar missatge",
+    "description": "Title of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--body2": {
+    "messageformat": "Si edites un missatge, només serà visible per a aquelles persones que tinguin les darreres versions de Signal. Podran veure que has editat un missatge.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3168,20 +3265,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "És possible que algunes persones estiguin utilitzant una versió de Cradle que no admet text amb format. No podran veure els canvis de format que has fet al teu missatge.",
+    "messageformat": "És possible que algunes persones estiguin utilitzant una versió de Signal que no admet text amb format. No podran veure els canvis de format que has fet al teu missatge.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
     "messageformat": "Vols obrir el Creador de paquets de stickers?",
-    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
+    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Confirmar",
-    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Descarta",
-    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "Configura Signal al telèfon i a la versió d'escriptori per poder utilitzar el Creador de paquets de stickers.",
@@ -3332,7 +3429,7 @@
     "description": "Shown in the conversation hero to indicate this user is a member of four mutual groups"
   },
   "icu:member-of-more-than-3-groups--multiple-more": {
-    "messageformat": "Membre de {group1}, {group2}, {group3} i {remainingCount,number} més",
+    "messageformat": "Member of {group1}, {group2}, {group3} and {remainingCount, plural, other {#}} more",
     "description": "Shown in the conversation hero to indicate this user is a member of 5+ mutual groups."
   },
   "icu:ConversationHero--membership-added": {
@@ -3400,12 +3497,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Cradle encara està en funcionament",
-    "description": "Shown in a notification title when Cradle is minimized to tray"
+    "messageformat": "Signal encara està en funcionament",
+    "description": "Shown in a notification title when Signal is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Cradle continuarà enviant notificacions. Podeu canviar-ho als Ajustos de Cradle.",
-    "description": "Shown in a notification body when Cradle is minimized to tray"
+    "messageformat": "Signal continuarà enviant notificacions. Podeu canviar-ho als Ajustos de Signal.",
+    "description": "Shown in a notification body when Signal is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Trucada entrant…",
@@ -3416,11 +3513,11 @@
     "description": "Shown in both the incoming call bar and notification for an incoming video call"
   },
   "icu:outgoingAudioCall": {
-    "messageformat": "Outgoing voice call",
+    "messageformat": "Trucada sortint",
     "description": "Shown in the timeline for an outgoing voice call"
   },
   "icu:outgoingVideoCall": {
-    "messageformat": "Outgoing video call",
+    "messageformat": "Trucada de vídeo sortint",
     "description": "Shown in the timeline for an outgoing video call"
   },
   "icu:incomingGroupCall__ringing-you": {
@@ -3467,9 +3564,69 @@
     "messageformat": "Tornant a connectar…",
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
-  "icu:callDuration": {
-    "messageformat": "Cradle: {duration}",
-    "description": "Shown in the call screen to indicate how long the call has been connected"
+  "icu:CallControls__InfoDisplay--participants": {
+    "messageformat": "{count, plural, one {{count,number} persona} other {{count,number} persones}}",
+    "description": "Shown in the call screen and lobby for group calls to specify the number of members in the call or in the group. Count is at always at least 1."
+  },
+  "icu:CallControls__InfoDisplay--audio-call": {
+    "messageformat": "Trucada",
+    "description": "Shown in the call lobby for a direct 1:1 call when the caller's video is disabled, to specify that an audio call will be placed when clicking the Start button."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-1-1": {
+    "messageformat": "Finalitza",
+    "description": "Title for the hangup button for a direct 1:1 call with only 2 participants."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-group": {
+    "messageformat": "Surt",
+    "description": "Title for the hangup button for a group call."
+  },
+  "icu:CallControls__MutedToast--muted": {
+    "messageformat": "Micròfon apagat",
+    "description": "Shown in a call when the user mutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__MutedToast--unmuted": {
+    "messageformat": "Micròfon encès",
+    "description": "Shown in a call when the user is muted and then unmutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-on": {
+    "messageformat": "So activat",
+    "description": "Shown in a group call lobby when call ringing is disabled, then the user enables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-off": {
+    "messageformat": "So desactivat",
+    "description": "Shown in a group call lobby when call ringing is enabled, then the user disables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RaiseHandsToast--you": {
+    "messageformat": "Tens la mà aixecada.",
+    "description": "Shown in a call when the user raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--one": {
+    "messageformat": "{name} ha aixecat la mà.",
+    "description": "Shown in a call when someone else raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--two": {
+    "messageformat": "{name} i {otherName} han aixecat la mà.",
+    "description": "Shown in a call when 2 persons raise their hands."
+  },
+  "icu:CallControls__RaiseHandsToast--more": {
+    "messageformat": "{name}, {otherName}, and {overflowCount, plural, other {#}} more raised a hand.",
+    "description": "Shown in a call when 3 or more persons raise their hands."
+  },
+  "icu:CallControls__RaiseHands--open-queue": {
+    "messageformat": "Obrir cua",
+    "description": "Link in call raised hands list and in toast shown when someone else raises their hand. Link opens the list of all raised hands."
+  },
+  "icu:CallControls__RaiseHands--lower": {
+    "messageformat": "Baixar",
+    "description": "Link in call raised hands list and in toast shown when user raises their hand. Link allows user to lower their hand."
+  },
+  "icu:CallControls__MenuItemRaiseHand": {
+    "messageformat": "Aixecar la mà",
+    "description": "Menu item to raise your hand during a call."
+  },
+  "icu:CallControls__MenuItemRaiseHand--lower": {
+    "messageformat": "Baixar la mà",
+    "description": "Menu item to lower your previously raised hand during a call."
   },
   "icu:callingDeviceSelection__settings": {
     "messageformat": "Configuració",
@@ -3511,13 +3668,25 @@
     "messageformat": "Trucada a pantalla completa",
     "description": "Title for picture-in-picture toggle"
   },
-  "icu:calling__switch-view--to-grid": {
-    "messageformat": "Canvia a la vista de graella",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__change-view": {
+    "messageformat": "Canviar la vista",
+    "description": "Tooltip for changing the in-call layout of remote participants in a group call"
   },
-  "icu:calling__switch-view--to-speaker": {
-    "messageformat": "Canvia a la vista de qui parla",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__view_mode--paginated": {
+    "messageformat": "Vista de graella",
+    "description": "Label for option to view participants in a group call in a paginated grid view"
+  },
+  "icu:calling__view_mode--overflow": {
+    "messageformat": "Vista de la barra lateral",
+    "description": "Label for option to view participants in a group call where videos that don't fit onto the page are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--speaker": {
+    "messageformat": "Vista de l'orador",
+    "description": "Label for option to view participants where only the current speaker's video is fully visible and all others are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--updated": {
+    "messageformat": "Vista actualitzada",
+    "description": "Toast shown whenver the calling view mode is changed (e.g. paginated view -> speaker view)"
   },
   "icu:calling__hangup": {
     "messageformat": "Surt de la trucada",
@@ -3619,6 +3788,14 @@
     "messageformat": "D'acord",
     "description": "Button to dismiss popup dialog when user-initiated task has gone wrong"
   },
+  "icu:MessageMaxEditsModal__Title": {
+    "messageformat": "No es pot editar el missatge",
+    "description": "Title in popup dialog when attempting to edit a message too many times."
+  },
+  "icu:MessageMaxEditsModal__Description": {
+    "messageformat": "Only {max, plural, other {#}} edits can be applied to this message.",
+    "description": "Description text in popup dialog when attempting to edit a message too many times."
+  },
   "icu:unknown-sgnl-link": {
     "messageformat": "Perdoneu, l'enllaç sgnl:// no tenia sentit!",
     "description": "Shown if you click on a sgnl:// link not currently supported by Desktop"
@@ -3656,7 +3833,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "Aquest enllaç no l'admet aquesta versió del Cradle Desktop.",
+    "messageformat": "Aquest enllaç no l'admet aquesta versió del Signal Desktop.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4040,7 +4217,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--other": {
-    "messageformat": "{memberName} ha convidat {count,number} persones al grup.",
+    "messageformat": "{memberName} invited {count, plural, other {#}} people to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--you": {
@@ -4048,7 +4225,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--unknown": {
-    "messageformat": "S'han convidat {count,number} persones al grup.",
+    "messageformat": "{count, plural, other {#}} people were invited to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--other": {
@@ -4124,7 +4301,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--other": {
-    "messageformat": "{adminName} ha rebutjat invitacions al grup per a {count,number} persones convidades per {memberName}.",
+    "messageformat": "{adminName} revoked invitations to the group for {count, plural, other {#}} people invited by {memberName}.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--you": {
@@ -4364,7 +4541,7 @@
     "description": "Shown in timeline when a group is upgraded and one person was removed entirely during the upgrade"
   },
   "icu:GroupV1--Migration--removed--many": {
-    "messageformat": "S'han esborrat {count,number} membres del grup.",
+    "messageformat": "{count, plural, other {#}} members were removed from the group.",
     "description": "Shown in timeline when a group is upgraded and some people were removed entirely during the upgrade"
   },
   "icu:close": {
@@ -4412,11 +4589,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Aquesta persona no usa el Signal/Cradle.",
+    "messageformat": "Aquesta persona no usa el Signal.",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "El Signal/Cradle Desktop no admet missatges de contactes que no són del Signal/Cradle. Demaneu a aquesta persona que l'instal·li per a tenir una experiència de missatgeria més segura.",
+    "messageformat": "El Signal Desktop no admet missatges de contactes que no són del Signal. Demaneu a aquesta persona que l'instal·li per a tenir una experiència de missatgeria més segura.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4752,7 +4929,7 @@
     "description": "conversation > in select mode > composition area actions > exit select mode > accessibility label"
   },
   "icu:SelectModeActions--selectedMessages": {
-    "messageformat": "{count,number} seleccionats",
+    "messageformat": "{count, plural, other {#}} selected",
     "description": "conversation > in select mode > composition area actions > count of selected messsages"
   },
   "icu:SelectModeActions--deleteSelectedMessages": {
@@ -4957,10 +5134,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "Quant a les sol·licituds de missatges",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Revisa les sol·licituds amb atenció. Cradle ha trobat un altre contacte amb el mateix nom. <reviewRequestLink>Revisar sol·licitud</reviewRequestLink>",
+    "messageformat": "Revisa les sol·licituds amb atenció. Signal ha trobat un altre contacte amb el mateix nom. <reviewRequestLink>Revisar sol·licitud</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -5024,7 +5201,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Per a ajudar a prevenir el correu brossa al Cradle, completeu la verificació.",
+    "messageformat": "Per a ajudar a prevenir el correu brossa al Signal, completeu la verificació.",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5295,9 +5472,29 @@
     "messageformat": "Nom d'usuari",
     "description": "Default text for username field"
   },
+  "icu:ProfileEditor--username--corrupted--body": {
+    "messageformat": "S'ha produït un error amb el teu àlies, ja no està assignat al teu compte.",
+    "description": "Text of confirmation modal when the username gets corrupted"
+  },
+  "icu:ProfileEditor--username--corrupted--delete-button": {
+    "messageformat": "Suprimeix el nom d'usuari",
+    "description": "Button text for deletion of the username in case of corruption"
+  },
+  "icu:ProfileEditor--username--corrupted--create-button": {
+    "messageformat": "Crea un nom d'usuari",
+    "description": "Button text for creation of a new username in case of corruption"
+  },
   "icu:ProfileEditor__username-link": {
     "messageformat": "Codi QR o enllaç",
     "description": "Label of a profile editor row that navigates to username link and qr code modal"
+  },
+  "icu:ProfileEditor__username__error-icon": {
+    "messageformat": "Cal restablir el nom d'usuari",
+    "description": "Accessibility title of an icon in profile editor"
+  },
+  "icu:ProfileEditor__username-link__error-icon": {
+    "messageformat": "Cal restablir l'enllaç del nom d'usuari",
+    "description": "Accessibility title of an icon in profile editor"
   },
   "icu:ProfileEditor__username-link__tooltip__title": {
     "messageformat": "Comparteix el teu àlies",
@@ -5552,7 +5749,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Tria qui pot veure el teu número de telèfon i qui pot contactar-te a Cradle a través d'ell.",
+    "messageformat": "Tria qui pot veure el teu número de telèfon i qui pot contactar-te a Signal a través d'ell.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5560,11 +5757,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "El teu número de telèfon serà visible per a totes les persones i grups als quals enviïs un missatge. Les persones que tinguin el teu número als contactes del telèfon també et veuran a Cradle.",
+    "messageformat": "El teu número de telèfon serà visible per a totes les persones i grups als quals enviïs un missatge. Les persones que tinguin el teu número als contactes del telèfon també et veuran a Signal.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Ningú no veurà el teu número de telèfon a Signal/Cradle.",
+    "messageformat": "Ningú no veurà el teu número de telèfon a Signal.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5584,11 +5781,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Les persones que tinguin el teu número de telèfon guardat als seus contactes et veuran com a contacte a Signal/Cradle. Els altres podran posar-se en contacte amb tu a través del teu número de telèfon quan comencin un nou xat o grup.",
+    "messageformat": "Les persones que tinguin el teu número de telèfon guardat als seus contactes et veuran com a contacte a Signal. Els altres podran posar-se en contacte amb tu a través del teu número de telèfon quan comencin un nou xat o grup.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Ningú a Signal/Cradle podrà posar-se en contacte amb tu a través del teu número de telèfon.",
+    "messageformat": "Ningú a Signal podrà posar-se en contacte amb tu a través del teu número de telèfon.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5651,6 +5848,42 @@
     "messageformat": "Ja no podràs compartir o veure històries. Les històries que hagis compartit recentment també seran esborrades.",
     "description": "Confirmation modal body for disabling stories"
   },
+  "icu:Preferences__Language__Label": {
+    "messageformat": "Idioma",
+    "description": "Language setting label"
+  },
+  "icu:Preferences__Language__ModalTitle": {
+    "messageformat": "Idioma",
+    "description": "Language setting modal title"
+  },
+  "icu:Preferences__Language__SystemLanguage": {
+    "messageformat": "Idioma del sistema",
+    "description": "Option for system language"
+  },
+  "icu:Preferences__Language__SearchLanguages": {
+    "messageformat": "Cercar idiomes",
+    "description": "Placholder for language preference search box"
+  },
+  "icu:Preferences__Language__NoResults": {
+    "messageformat": "No s'ha trobat cap resultat per a «{searchTerm}»",
+    "description": "When no results are found for language preference search"
+  },
+  "icu:Preferences__LanguageModal__Set": {
+    "messageformat": "Establir",
+    "description": "Button to set language preference"
+  },
+  "icu:Preferences__LanguageModal__Restart__Title": {
+    "messageformat": "Reinicia Signal per aplicar",
+    "description": "Title for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Description": {
+    "messageformat": "Per canviar l'idioma, l'app s'ha de reiniciar.",
+    "description": "Description for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Button": {
+    "messageformat": "Reiniciar",
+    "description": "Button to restart Signal to apply language changes"
+  },
   "icu:DialogUpdate--version-available": {
     "messageformat": "Actualització a la versió {version} disponible",
     "description": "Tooltip for new update available"
@@ -5668,7 +5901,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Per continuar utilitzant Cradle, has d'actualitzar a la darrera versió.",
+    "messageformat": "Per continuar utilitzant Signal, has d'actualitzar a la darrera versió.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5676,15 +5909,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "Reinicia Cradle per instal·lar l'actualització.",
+    "messageformat": "Reinicia Signal per instal·lar l'actualització.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Cradle per a Escriptori no s'ha pogut actualitzar, però hi ha una versió nova disponible. Ves a {downloadUrl}, instal·la la versió nova manualment i després posat en contacte amb el servei d'assistència o envia un informe sobre aquest problema.",
+    "messageformat": "Signal per a Escriptori no s'ha pogut actualitzar, però hi ha una versió nova disponible. Ves a {downloadUrl}, instal·la la versió nova manualment i després posat en contacte amb el servei d'assistència o envia un informe sobre aquest problema.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "No es pot tancar el Cradle.",
+    "messageformat": "No es pot tancar el Signal.",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5704,15 +5937,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Ja està instal·lada una versió més recent de Cradle. Segur que vols continuar?",
-    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
+    "messageformat": "Ja està instal·lada una versió més recent de Signal. Segur que vols continuar?",
+    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Ha fallat l'aplicació.",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "El Cradle s'ha reiniciat després d'una fallada. Podeu enviar un informe d'error per a ajudar el Cradle a investigar el problema.",
+    "messageformat": "El Signal s'ha reiniciat després d'una fallada. Podeu enviar un informe d'error per a ajudar el Signal a investigar el problema.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5734,6 +5967,10 @@
   "icu:CustomizingPreferredReactions__had-save-error": {
     "messageformat": "Hi ha hagut un error en desar la configuració. Torneu-ho a provar.",
     "description": "Shown if there is an error when saving your preferred reaction settings. Should be very rare to see this message."
+  },
+  "icu:MediaEditor__input-placeholder": {
+    "messageformat": "Missatge",
+    "description": "Placeholder for the input in the media editor"
   },
   "icu:MediaEditor__clock-more-styles": {
     "messageformat": "Més estils",
@@ -5908,8 +6145,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Contactes de Cradle",
-    "description": "The phrase/term: 'Cradle Connections'"
+    "messageformat": "Contactes de Signal",
+    "description": "The phrase/term: 'Signal Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} són persones en les quals has indicat que confies, ja sigui:",
@@ -6088,7 +6325,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Tots els contactes de Cradle",
+    "messageformat": "Tots els contactes de Signal",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6100,7 +6337,7 @@
     "description": "Input label to create a block list"
   },
   "icu:StoriesSettings__mine__exclude--description": {
-    "messageformat": "{num,number} persones excloses",
+    "messageformat": "{num, plural, other {#}} people excluded",
     "description": "Description of how many people are excluded in a list"
   },
   "icu:StoriesSettings__mine__only--label": {
@@ -6208,7 +6445,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Tria quines connexions de Cradle poden veure la teva història. Sempre podràs fer-hi canvis als Ajustos de privacitat. <learnMoreLink>Més informació.</learnMoreLink>",
+    "messageformat": "Tria quines connexions de Signal poden veure la teva història. Sempre podràs fer-hi canvis als Ajustos de privacitat. <learnMoreLink>Més informació.</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6224,11 +6461,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {Totes les connexions de Cradle · 1 espectador} other {Totes les connexions de Cradle · {viewersCount,number} espectadors}}",
+    "messageformat": "{viewersCount, plural, one {Totes les connexions de Signal · 1 espectador} other {Totes les connexions de Signal · {viewersCount,number} espectadors}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {Totes les connexions de Cradle · 1 persona exclosa} other {Totes les connexions de Cradle · {excludedCount,number} persones excloses}}",
+    "messageformat": "{excludedCount, plural, one {Totes les connexions de Signal · 1 persona exclosa} other {Totes les connexions de Signal · {excludedCount,number} persones excloses}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6572,7 +6809,7 @@
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__done": {
-    "messageformat": "Done",
+    "messageformat": "Fet",
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__color__radio": {
@@ -6583,8 +6820,16 @@
     "messageformat": "Si restableixes el teu codi QR, el teu codi QR i enllaç actuals deixaran de funcionar.",
     "description": "Text of confirmation modal when resetting the username link"
   },
+  "icu:UsernameLinkModalBody__resetting-link": {
+    "messageformat": "Restablint l'enllaç…",
+    "description": "Text shown when resetting the username link"
+  },
+  "icu:UsernameLinkModalBody__error__text": {
+    "messageformat": "Codi QR i enllaç no establerts. Comprova la teva connexió i torna-ho a intentar.",
+    "description": "Text of the confirmation dialog shown on username link error"
+  },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Configura el teu àlies de Cradle",
+    "messageformat": "Configura el teu àlies de Signal",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6608,15 +6853,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Cradle per a Escriptori aviat deixarà de ser compatible amb la versió de {OS} del teu ordinador. Per continuar utilitzant Cradle, actualitza el sistema operatiu de l'ordinador abans de {expirationDate}. <learnMoreLink>Més informació</learnMoreLink>",
+    "messageformat": "Signal per a Escriptori aviat deixarà de ser compatible amb la versió de {OS} del teu ordinador. Per continuar utilitzant Signal, actualitza el sistema operatiu de l'ordinador abans de {expirationDate}. <learnMoreLink>Més informació</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Cradle per a Escriptori ja no funciona en aquest ordinador. Per tornar a utilitzar Cradle per a Escriptori, actualitza la versió de l'ordinador de {OS}. <learnMoreLink>Més informació</learnMoreLink>",
+    "messageformat": "Signal per a Escriptori ja no funciona en aquest ordinador. Per tornar a utilitzar Signal per a Escriptori, actualitza la versió de l'ordinador de {OS}. <learnMoreLink>Més informació</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Cradle per a Escriptori ja no funciona en aquest ordinador. Per tornar a utilitzar Cradle per a Escriptori, actualitza la versió de l'ordinador de {OS}.",
+    "messageformat": "Signal per a Escriptori ja no funciona en aquest ordinador. Per tornar a utilitzar Signal per a Escriptori, actualitza la versió de l'ordinador de {OS}.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6636,119 +6881,123 @@
     "description": "Button text for the confirmation dialog shown to user when attempting to resend message edit"
   },
   "icu:StoriesTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Més accions",
     "description": "Stories Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__HeaderTitle--CallsList": {
-    "messageformat": "Calls",
+    "messageformat": "Trucades",
     "description": "Calls Tab > Header > Title > On Calls List screen"
   },
   "icu:CallsTab__HeaderTitle--NewCall": {
-    "messageformat": "New Call",
+    "messageformat": "Nova trucada",
     "description": "Calls Tab > Header > Title > On New Call screen"
   },
   "icu:CallsTab__NewCallActionLabel": {
-    "messageformat": "New Call",
+    "messageformat": "Nova trucada",
     "description": "Calls Tab > New Call Action Button > Accessibility Label"
   },
   "icu:CallsTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Més accions",
     "description": "Calls Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__ClearCallHistoryLabel": {
-    "messageformat": "Clear call history",
+    "messageformat": "Neteja l'historial de trucades",
     "description": "Calls Tab > More Actions Context Menu > Clear Call History Button Label"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Title": {
-    "messageformat": "Clear call history?",
+    "messageformat": "Netejar l'historial de trucades?",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Title"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Body": {
-    "messageformat": "This will permanently delete all call history",
+    "messageformat": "S'eliminarà de manera permanent tot l'historial de trucades",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Body Text"
   },
   "icu:CallsTab__ConfirmClearCallHistory__ConfirmButton": {
-    "messageformat": "Clear",
+    "messageformat": "Neteja",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Confirm Button"
   },
   "icu:CallsTab__ToastCallHistoryCleared": {
-    "messageformat": "Call history cleared",
+    "messageformat": "S'ha buidat l'històric de trucades",
     "description": "Calls Tab > Clear Call History > Toast"
   },
   "icu:CallsTab__EmptyStateText": {
-    "messageformat": "Click to view or start a call",
+    "messageformat": "Fes clic per veure o iniciar una trucada",
     "description": "Calls Tab > When no call is selected > Empty state > Call to action text"
   },
   "icu:CallsList__SearchInputPlaceholder": {
-    "messageformat": "Search",
+    "messageformat": "Cerca",
     "description": "Calls Tab > Calls List > Search Input > Placeholder"
   },
   "icu:CallsList__ToggleFilterByMissedLabel": {
-    "messageformat": "Filter by missed",
+    "messageformat": "Filtrar per perdudes",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility label"
   },
   "icu:CallsList__ToggleFilterByMissed__RoleDescription": {
-    "messageformat": "Toggle",
+    "messageformat": "Commuta",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility role description ('A toggle button')"
   },
   "icu:CallsList__EmptyState--noQuery": {
-    "messageformat": "No recent calls. Get started by calling a friend.",
+    "messageformat": "No hi ha cap trucada recent. Comença trucant a algú.",
     "description": "Calls Tab > Calls List > When no results found > With no search query"
   },
   "icu:CallsList__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "No s'ha trobat cap resultat per a «{query}»",
     "description": "Calls Tab > Calls List > When no results found > With a search query"
   },
   "icu:CallsList__ItemCallInfo--Incoming": {
-    "messageformat": "Incoming",
+    "messageformat": "Entrant",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was incoming"
   },
   "icu:CallsList__ItemCallInfo--Outgoing": {
-    "messageformat": "Outgoing",
+    "messageformat": "Sortint",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was outgoing"
   },
   "icu:CallsList__ItemCallInfo--Missed": {
-    "messageformat": "Missed",
+    "messageformat": "Perduda",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was missed"
   },
   "icu:CallsList__ItemCallInfo--GroupCall": {
-    "messageformat": "Group call",
+    "messageformat": "Trucada de grup",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When group call is in its default state"
   },
   "icu:CallsNewCall__EmptyState--noQuery": {
-    "messageformat": "No recent conversations.",
+    "messageformat": "No hi ha converses recents.",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With no search query"
   },
   "icu:CallsNewCall__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "No s'ha trobat cap resultat per a «{query}»",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With a search query"
   },
   "icu:CallHistory__Description--Default": {
-    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Outgoing voice call} other {Incoming voice call}}} Video {{direction, select, Outgoing {Outgoing video call} other {Incoming video call}}} Group {{direction, select, Outgoing {Outgoing group call} other {Incoming group call}}} other {{direction, select, Outgoing {Outgoing  call} other {Incoming  call}}}}",
+    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Trucada sortint} other {Trucada entrant}}} Video {{direction, select, Outgoing {Trucada de vídeo sortint} other {Trucada de vídeo entrant}}} Group {{direction, select, Outgoing {Trucada grupal sortint} other {Trucada grupal entrant}}} other {{direction, select, Outgoing {Telefonada feta} other {Telefonada rebuda}}}}",
     "description": "Call History > Short description of call > When call was not missed or declined (generally accepted)"
   },
   "icu:CallHistory__Description--Missed": {
-    "messageformat": "{type, select, Audio {Missed voice call} Video {Missed video call} Group {Missed group call} other {Missed  call}}",
+    "messageformat": "{type, select, Audio {Trucada perduda} Video {Trucada de vídeo perduda} Group {Trucada grupal perduda} other {Telefonada perduda}}",
     "description": "Call History > Short description of call > When incoming call was missed"
   },
   "icu:CallHistory__Description--Unanswered": {
-    "messageformat": "{type, select, Audio {Unanswered voice call} Video {Unanswered video call} Group {Unanswered group call} other {Unanswered  call}}",
+    "messageformat": "{type, select, Audio {Trucada sense contestar} Video {Trucada de vídeo sense contestar} Group {Trucada de grup sense contestar} other {Trucada sense contestar}}",
     "description": "Call History > Short description of call > When outgoing call was unanswered"
   },
   "icu:CallHistory__Description--Declined": {
-    "messageformat": "{type, select, Audio {Declined voice call} Video {Declined video call} Group {Declined group call} other {Declined  call}}",
+    "messageformat": "{type, select, Audio {Trucada de veu rebutjada} Video {Videotrucada rebutjada} Group {Trucada de grup rebutjada} other {Trucada rebutjada}}",
     "description": "Call History > Short description of call > When call was declined"
+  },
+  "icu:TypingBubble__avatar--overflow-count": {
+    "messageformat": "{count, plural, one {{count,number} persona més està escrivint.} other {{count,number} persones més estan escrivint.}}",
+    "description": "Group chat multiple person typing indicator when space isn't available to show every avatar, this is the count of avatars hidden."
   },
   "icu:WhatsNew__modal-title": {
     "messageformat": "Què hi ha de nou",
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Aquesta versió conté una sèrie de petites modificacions i correccions d'errors per tal que el Cradle funcioni sense problemes.",
+    "messageformat": "Aquesta versió conté una sèrie de petites modificacions i correccions d'errors per tal que el Signal funcioni sense problemes.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Hem fet alguns petits retocs, arreglat errors i millorat el rendiment. Gràcies per utilitzar Cradle!",
+    "messageformat": "Hem fet alguns petits retocs, arreglat errors i millorat el rendiment. Gràcies per utilitzar Signal!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6768,26 +7017,25 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Petits ajustos, correccions d'errors i tasques de millora de rendiment. Gràcies per utilitzar Cradle!",
+    "messageformat": "Petits ajustos, correccions d'errors i tasques de millora de rendiment. Gràcies per utilitzar Signal!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.29--0": {
-    "messageformat": "Ara, la pantalla de personalització del color del xat es mostra correctament en diferents idiomes i configuracions regionals seleccionades."
+  "icu:WhatsNew__v6.42--0": {
+    "messageformat": "Hem arreglat un error que es produïa al mostrar les respostes citades als vídeos."
   },
-  "icu:WhatsNew__v6.29--1": {
-    "messageformat": "Hem millorat el suport de notificacions a Windows. Si no cliques sobre una notificació tan bon punt arribi, la darrera notificació perduda apareixerà al Centre de notificacions de Windows. Ara, quan facis clic sobre aquesta notificació, aniràs directament al xat. Ens agradaria donar les gràcies a Julien Richard pels seus comentaris."
+  "icu:WhatsNew__v6.42--1": {
+    "messageformat": "Gràcies a {linkToGithub1} i {linkToGithub2} per la seva ajuda amb aquestes novetats."
   },
-
-  "icu:WhatsNew__v6.22--0": {
-    "messageformat": "Dona forma al text dels teus missatges seleccionant qualsevol part de text al camp de composició de missatges.\n\nDestaca la teva opinió remarcant-la en negreta, envia-li al Night Shyamalan un plot-twist amb un efecte de spoiler, emfatitza un nom escrivint \"Alex\" en cursiva, ratlla amb una línia una idea per un sopar amb la que no estiguis d'acord o comparteix codi amb monoespaiat.",
-    "description": "Release notes for v6.22"
+  "icu:WhatsNew__v6.43--0": {
+    "messageformat": "Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat."
   },
-  "icu:WhatsNew__v6.22--1": {
-    "messageformat": "Els últims emojis del moment ja són compatibles amb Cradle, així que ara ja pots expressar el teu entusiasme amb una &quot;cara de velocitat&quot; (<emojify>🫨</emojify>), o reaccionar amb una &quot;beina de pèsols&quot; (<emojify>🫨</emojify>) quan algú et pregunti què tens pensat per sopar.",
-    "description": "Release notes for v6.22"
+  "icu:WhatsNew__v6.43--1": {
+    "messageformat": "The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Signal Settings > Appearance > Language). Thanks, {linkToGithub1}!"
   },
-  "icu:WhatsNew__v6.23--1": {
-    "messageformat": "A més d'haver corregit diversos errors, aquesta versió també incorpora actualitzacions de la documentació per a desenvolupadors (gràcies, {d108}!) i algunes millores de disseny a la interfície de reenviament de missatges (gràcies, {hackerbirds}!).",
-    "description": "Release notes for v6.23"
+  "icu:WhatsNew__v6.43--2": {
+    "messageformat": "The playback speed indicators in voice messages have a slightly new look. X marks the spot. Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--3": {
+    "messageformat": "We would also like to thank {linkToGithub1}, {linkToGithub2}, and {linkToGithub3} for their contributions to this release."
   }
 }

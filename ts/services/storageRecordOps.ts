@@ -24,6 +24,7 @@ import {
   PhoneNumberDiscoverability,
   parsePhoneNumberDiscoverability,
 } from '../util/phoneNumberDiscoverability';
+import { isPnpCapable } from '../util/isPnpCapable';
 import { arePinnedConversationsEqual } from '../util/arePinnedConversationsEqual';
 import type { ConversationModel } from '../models/conversations';
 import {
@@ -46,10 +47,14 @@ import type { StoryDistributionIdString } from '../types/StoryDistributionId';
 import type { ServiceIdString } from '../types/ServiceId';
 import {
   normalizeServiceId,
-  normalizeAci,
   normalizePni,
   ServiceIdKind,
+  isUntaggedPniString,
+  toUntaggedPni,
+  toTaggedPni,
 } from '../types/ServiceId';
+import { normalizeAci } from '../util/normalizeAci';
+import { isAciString } from '../util/isAciString';
 import * as Stickers from '../types/Stickers';
 import type {
   StoryDistributionWithMembersType,
@@ -59,6 +64,8 @@ import dataInterface from '../sql/Client';
 import { MY_STORY_ID, StorySendMode } from '../types/Stories';
 import * as RemoteConfig from '../RemoteConfig';
 import { findAndDeleteOnboardingStoryIfExists } from '../util/findAndDeleteOnboardingStoryIfExists';
+import { downloadOnboardingStory } from '../util/downloadOnboardingStory';
+import { drop } from '../util/drop';
 
 const MY_STORY_BYTES = uuidToBytes(MY_STORY_ID);
 
@@ -168,7 +175,7 @@ export async function toContactRecord(
   }
   const pni = conversation.getPni();
   if (pni && RemoteConfig.isEnabled('desktop.pnp')) {
-    contactRecord.pni = pni;
+    contactRecord.pni = toUntaggedPni(pni);
   }
   const profileKey = conversation.get('profileKey');
   if (profileKey) {
@@ -274,7 +281,10 @@ export function toAccountRecord(
   }
 
   const accountE164 = window.storage.get('accountE164');
-  if (accountE164 !== undefined) {
+  // Once account becomes PNP capable - we want to stop populating this field
+  // because it is deprecated in PNP world and we don't want to cause storage
+  // service thrashing.
+  if (accountE164 !== undefined && !isPnpCapable()) {
     accountRecord.e164 = accountE164;
   }
 
@@ -969,9 +979,14 @@ export async function mergeContactRecord(
     aci: originalContactRecord.aci
       ? normalizeAci(originalContactRecord.aci, 'ContactRecord.aci')
       : undefined,
-    pni: originalContactRecord.pni
-      ? normalizePni(originalContactRecord.pni, 'ContactRecord.pni')
-      : undefined,
+    pni:
+      originalContactRecord.pni &&
+      isUntaggedPniString(originalContactRecord.pni)
+        ? normalizePni(
+            toTaggedPni(originalContactRecord.pni),
+            'ContactRecord.pni'
+          )
+        : undefined,
   };
 
   const isPniSupported = RemoteConfig.isEnabled('desktop.pnp');
@@ -984,6 +999,11 @@ export async function mergeContactRecord(
   // All contacts must have UUID
   if (!serviceId) {
     return { hasConflict: false, shouldDrop: true, details: ['no uuid'] };
+  }
+
+  // Contacts should not have PNI as ACI
+  if (aci && !isAciString(aci)) {
+    return { hasConflict: false, shouldDrop: true, details: ['invalid aci'] };
   }
 
   if (
@@ -1217,11 +1237,13 @@ export async function mergeAccountRecord(
     await window.storage.put('primarySendsSms', primarySendsSms);
   }
 
-  if (typeof accountE164 === 'string' && accountE164) {
+  // Store AccountRecord.e164 in an auxiliary field that isn't used for any
+  // other purpose in the app. This is required only while we are deprecating
+  // the AccountRecord.e164.
+  if (typeof accountE164 === 'string') {
     await window.storage.put('accountE164', accountE164);
-    if (!RemoteConfig.isEnabled('desktop.pnp')) {
-      await window.storage.user.setNumber(accountE164);
-    }
+  } else {
+    await window.storage.remove('accountE164');
   }
 
   if (preferredReactionEmoji.canBeSynced(rawPreferredReactionEmoji)) {
@@ -1414,7 +1436,9 @@ export async function mergeAccountRecord(
       hasViewedOnboardingStoryBool
     );
     if (hasViewedOnboardingStoryBool) {
-      void findAndDeleteOnboardingStoryIfExists();
+      drop(findAndDeleteOnboardingStoryIfExists());
+    } else {
+      drop(downloadOnboardingStory());
     }
   }
   {
@@ -1446,6 +1470,17 @@ export async function mergeAccountRecord(
   }
 
   if (usernameLink?.entropy?.length && usernameLink?.serverId?.length) {
+    const oldLink = window.storage.get('usernameLink');
+    if (
+      window.storage.get('usernameLinkCorrupted') &&
+      (!oldLink ||
+        !Bytes.areEqual(usernameLink.entropy, oldLink.entropy) ||
+        !Bytes.areEqual(usernameLink.serverId, oldLink.serverId))
+    ) {
+      details.push('clearing username link corruption');
+      await window.storage.remove('usernameLinkCorrupted');
+    }
+
     await Promise.all([
       usernameLink.color &&
         window.storage.put('usernameLinkColor', usernameLink.color),
@@ -1476,6 +1511,14 @@ export async function mergeAccountRecord(
 
   const oldStorageID = conversation.get('storageID');
   const oldStorageVersion = conversation.get('storageVersion');
+
+  if (
+    window.storage.get('usernameCorrupted') &&
+    username !== conversation.get('username')
+  ) {
+    details.push('clearing username corruption');
+    await window.storage.remove('usernameCorrupted');
+  }
 
   conversation.set({
     isArchived: Boolean(noteToSelfArchived),

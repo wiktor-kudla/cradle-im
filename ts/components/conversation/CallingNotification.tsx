@@ -4,6 +4,7 @@
 import type { ReactNode } from 'react';
 import React from 'react';
 import { noop } from 'lodash';
+import { ContextMenuTrigger } from 'react-contextmenu';
 
 import { SystemMessage, SystemMessageKind } from './SystemMessage';
 import { Button, ButtonSize, ButtonVariant } from '../Button';
@@ -24,17 +25,27 @@ import {
   DirectCallStatus,
   GroupCallStatus,
 } from '../../types/CallDisposition';
+import {
+  type ContextMenuTriggerType,
+  MessageContextMenu,
+  useHandleMessageContextMenu,
+} from './MessageContextMenu';
+import type { DeleteMessagesPropsType } from '../../state/ducks/globalModals';
+import {
+  useKeyboardShortcutsConditionally,
+  useOpenContextMenu,
+} from '../../hooks/useKeyboardShortcuts';
 
 export type PropsActionsType = {
+  onOutgoingAudioCallInConversation: (conversationId: string) => void;
+  onOutgoingVideoCallInConversation: (conversationId: string) => void;
   returnToActiveCall: () => void;
-  startCallingLobby: (_: {
-    conversationId: string;
-    isVideoCall: boolean;
-  }) => void;
+  toggleDeleteMessagesModal: (props: DeleteMessagesPropsType) => void;
 };
 
 type PropsHousekeeping = {
   i18n: LocalizerType;
+  id: string;
   conversationId: string;
   isNextItemCallingNotification: boolean;
 };
@@ -45,36 +56,81 @@ export type PropsType = CallingNotificationType &
 
 export const CallingNotification: React.FC<PropsType> = React.memo(
   function CallingNotificationInner(props) {
+    const menuTriggerRef = React.useRef<ContextMenuTriggerType | null>(null);
+    const handleContextMenu = useHandleMessageContextMenu(menuTriggerRef);
+    const openContextMenuKeyboard = useOpenContextMenu(handleContextMenu);
+    useKeyboardShortcutsConditionally(
+      !props.isSelectMode && props.isTargeted,
+      openContextMenuKeyboard
+    );
     const { i18n } = props;
     if (props.callHistory == null) {
       return null;
     }
+
     const { type, direction, status, timestamp } = props.callHistory;
     const icon = getCallingIcon(type, direction, status);
     return (
-      <SystemMessage
-        button={renderCallingNotificationButton(props)}
-        contents={
-          <>
-            {getCallingNotificationText(props, i18n)} &middot;{' '}
-            <MessageTimestamp
-              direction="outgoing"
-              i18n={i18n}
-              timestamp={timestamp}
-              withImageNoCaption={false}
-              withSticker={false}
-              withTapToViewExpired={false}
-            />
-          </>
-        }
-        icon={icon}
-        kind={
-          status === DirectCallStatus.Missed ||
-          status === GroupCallStatus.Missed
-            ? SystemMessageKind.Danger
-            : SystemMessageKind.Normal
-        }
-      />
+      <>
+        <div
+          onContextMenu={handleContextMenu}
+          // @ts-expect-error -- React/TS doesn't know about inert
+          // eslint-disable-next-line react/no-unknown-property
+          inert={props.isSelectMode ? '' : undefined}
+        >
+          <SystemMessage
+            button={renderCallingNotificationButton(props)}
+            contents={
+              <>
+                {getCallingNotificationText(props, i18n)} &middot;{' '}
+                <MessageTimestamp
+                  direction="outgoing"
+                  i18n={i18n}
+                  timestamp={timestamp}
+                  withImageNoCaption={false}
+                  withSticker={false}
+                  withTapToViewExpired={false}
+                />
+              </>
+            }
+            icon={icon}
+            kind={
+              status === DirectCallStatus.Missed ||
+              status === GroupCallStatus.Missed
+                ? SystemMessageKind.Danger
+                : SystemMessageKind.Normal
+            }
+          />
+        </div>
+        <ContextMenuTrigger
+          id={props.id}
+          ref={ref => {
+            // react-contextmenu's typings are incorrect here
+            menuTriggerRef.current = ref as unknown as ContextMenuTriggerType;
+          }}
+        />
+        <MessageContextMenu
+          i18n={i18n}
+          triggerId={props.id}
+          onDeleteMessage={() => {
+            props.toggleDeleteMessagesModal({
+              conversationId: props.conversationId,
+              messageIds: [props.id],
+            });
+          }}
+          shouldShowAdditional={false}
+          onDownload={undefined}
+          onEdit={undefined}
+          onReplyToMessage={undefined}
+          onReact={undefined}
+          onRetryMessageSend={undefined}
+          onRetryDeleteForEveryone={undefined}
+          onCopy={undefined}
+          onSelect={undefined}
+          onForward={undefined}
+          onMoreInfo={undefined}
+        />
+      </>
     );
   }
 );
@@ -86,8 +142,9 @@ function renderCallingNotificationButton(
     conversationId,
     i18n,
     isNextItemCallingNotification,
+    onOutgoingAudioCallInConversation,
+    onOutgoingVideoCallInConversation,
     returnToActiveCall,
-    startCallingLobby,
   } = props;
 
   if (isNextItemCallingNotification) {
@@ -105,6 +162,9 @@ function renderCallingNotificationButton(
   switch (props.callHistory.mode) {
     case CallMode.Direct: {
       const { direction, type } = props.callHistory;
+      if (props.callHistory.status === DirectCallStatus.Pending) {
+        return null;
+      }
       buttonText =
         direction === CallDirection.Incoming
           ? i18n('icu:calling__call-back')
@@ -114,10 +174,11 @@ function renderCallingNotificationButton(
         onClick = noop;
       } else {
         onClick = () => {
-          startCallingLobby({
-            conversationId,
-            isVideoCall: type === CallType.Video,
-          });
+          if (type === CallType.Video) {
+            onOutgoingVideoCallInConversation(conversationId);
+          } else {
+            onOutgoingAudioCallInConversation(conversationId);
+          }
         };
       }
       break;
@@ -147,7 +208,7 @@ function renderCallingNotificationButton(
       } else {
         buttonText = i18n('icu:calling__join');
         onClick = () => {
-          startCallingLobby({ conversationId, isVideoCall: true });
+          onOutgoingVideoCallInConversation(conversationId);
         };
       }
       break;

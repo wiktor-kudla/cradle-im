@@ -9,11 +9,11 @@ import createDebug from 'debug';
 
 import * as durations from '../../util/durations';
 import { uuidToBytes } from '../../util/uuidToBytes';
-import { generateUsernameLink } from '../../util/sgnlHref';
 import { MY_STORY_ID } from '../../types/Stories';
 import { Bootstrap } from '../bootstrap';
 import type { App } from '../bootstrap';
 import { bufferToUuid } from '../helpers';
+import { contactByEncryptedUsernameRoute } from '../../util/signalRoutes';
 
 export const debug = createDebug('mock:test:username');
 
@@ -23,7 +23,7 @@ const USERNAME = 'signalapp.55';
 const NICKNAME = 'signalapp';
 const CARL_USERNAME = 'carl.84';
 
-describe('pnp/username', function needsName() {
+describe('pnp/username', function (this: Mocha.Suite) {
   this.timeout(durations.MINUTE);
 
   let bootstrap: Bootstrap;
@@ -74,7 +74,7 @@ describe('pnp/username', function needsName() {
     app = await bootstrap.link();
   });
 
-  afterEach(async function after() {
+  afterEach(async function (this: Mocha.Context) {
     await bootstrap.maybeSaveLogs(this.currentTest, app);
     await app.close();
     await bootstrap.teardown();
@@ -310,9 +310,14 @@ describe('pnp/username', function needsName() {
       CARL_USERNAME
     );
 
-    const linkUrl = generateUsernameLink(
-      Buffer.concat([entropy, uuidToBytes(serverId)]).toString('base64')
-    );
+    const linkUrl = contactByEncryptedUsernameRoute
+      .toWebUrl({
+        encryptedUsername: Buffer.concat([
+          entropy,
+          uuidToBytes(serverId),
+        ]).toString('base64'),
+      })
+      .toString();
 
     debug('sending link to Note to Self');
     await phone.sendText(desktop, linkUrl, {

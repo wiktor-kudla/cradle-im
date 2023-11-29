@@ -20,7 +20,6 @@
     top: 4px;
 
     @include light-theme {
-      // background-color: $color-gray-25;
       background-color: $color-purple-02;
     }
     @include dark-theme {

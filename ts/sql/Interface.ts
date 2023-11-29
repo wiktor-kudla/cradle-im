@@ -16,7 +16,6 @@ import type { QualifiedAddressStringType } from '../types/QualifiedAddress';
 import type { StoryDistributionIdString } from '../types/StoryDistributionId';
 import type { AciString, PniString, ServiceIdString } from '../types/ServiceId';
 import type { BadgeType } from '../badges/types';
-import type { RemoveAllConfiguration } from '../types/RemoveAllConfiguration';
 import type { LoggerType } from '../types/Logging';
 import type { ReadStatus } from '../messages/MessageReadStatus';
 import type { RawBodyRange } from '../types/BodyRange';
@@ -428,27 +427,27 @@ export type DataInterface = {
   removeDB: () => Promise<void>;
   removeIndexedDBFiles: () => Promise<void>;
 
-  removeIdentityKeyById: (id: IdentityKeyIdType) => Promise<void>;
-  removeAllIdentityKeys: () => Promise<void>;
+  removeIdentityKeyById: (id: IdentityKeyIdType) => Promise<number>;
+  removeAllIdentityKeys: () => Promise<number>;
 
   removeKyberPreKeyById: (
     id: PreKeyIdType | Array<PreKeyIdType>
-  ) => Promise<void>;
+  ) => Promise<number>;
   removeKyberPreKeysByServiceId: (serviceId: ServiceIdString) => Promise<void>;
-  removeAllKyberPreKeys: () => Promise<void>;
+  removeAllKyberPreKeys: () => Promise<number>;
 
-  removePreKeyById: (id: PreKeyIdType | Array<PreKeyIdType>) => Promise<void>;
+  removePreKeyById: (id: PreKeyIdType | Array<PreKeyIdType>) => Promise<number>;
   removePreKeysByServiceId: (serviceId: ServiceIdString) => Promise<void>;
-  removeAllPreKeys: () => Promise<void>;
+  removeAllPreKeys: () => Promise<number>;
 
   removeSignedPreKeyById: (
     id: SignedPreKeyIdType | Array<SignedPreKeyIdType>
-  ) => Promise<void>;
+  ) => Promise<number>;
   removeSignedPreKeysByServiceId: (serviceId: ServiceIdString) => Promise<void>;
-  removeAllSignedPreKeys: () => Promise<void>;
+  removeAllSignedPreKeys: () => Promise<number>;
 
-  removeAllItems: () => Promise<void>;
-  removeItemById: (id: ItemKeyType | Array<ItemKeyType>) => Promise<void>;
+  removeAllItems: () => Promise<number>;
+  removeItemById: (id: ItemKeyType | Array<ItemKeyType>) => Promise<number>;
 
   createOrUpdateSenderKey: (key: SenderKeyType) => Promise<void>;
   getSenderKeyById: (id: SenderKeyIdType) => Promise<SenderKeyType | undefined>;
@@ -494,10 +493,10 @@ export type DataInterface = {
     unprocessed: Array<UnprocessedType>;
   }): Promise<void>;
   bulkAddSessions: (array: Array<SessionType>) => Promise<void>;
-  removeSessionById: (id: SessionIdType) => Promise<void>;
+  removeSessionById: (id: SessionIdType) => Promise<number>;
   removeSessionsByConversation: (conversationId: string) => Promise<void>;
   removeSessionsByServiceId: (serviceId: ServiceIdString) => Promise<void>;
-  removeAllSessions: () => Promise<void>;
+  removeAllSessions: () => Promise<number>;
   getAllSessions: () => Promise<Array<SessionType>>;
 
   getConversationCount: () => Promise<number>;
@@ -635,8 +634,10 @@ export type DataInterface = {
   }): Promise<MessageType | undefined>;
   getAllCallHistory: () => Promise<ReadonlyArray<CallHistoryDetails>>;
   clearCallHistory: (beforeTimestamp: number) => Promise<Array<string>>;
+  cleanupCallHistoryMessages: () => Promise<void>;
   getCallHistoryUnreadCount(): Promise<number>;
   markCallHistoryRead(callId: string): Promise<void>;
+  markAllCallHistoryRead(): Promise<ReadonlyArray<string>>;
   getCallHistoryMessageByCallId(options: {
     conversationId: string;
     callId: string;
@@ -702,8 +703,8 @@ export type DataInterface = {
     id: string,
     pending: boolean
   ) => Promise<void>;
-  removeAttachmentDownloadJob: (id: string) => Promise<void>;
-  removeAllAttachmentDownloadJobs: () => Promise<void>;
+  removeAttachmentDownloadJob: (id: string) => Promise<number>;
+  removeAllAttachmentDownloadJobs: () => Promise<number>;
 
   createOrUpdateStickerPack: (pack: StickerPackType) => Promise<void>;
   updateStickerPackStatus: (
@@ -792,7 +793,7 @@ export type DataInterface = {
   countStoryReadsByConversation(conversationId: string): Promise<number>;
 
   removeAll: () => Promise<void>;
-  removeAllConfiguration: (type?: RemoveAllConfiguration) => Promise<void>;
+  removeAllConfiguration: () => Promise<void>;
   eraseStorageServiceState: () => Promise<void>;
 
   getMessagesNeedingUpgrade: (
@@ -899,6 +900,7 @@ export type ServerInterface = DataInterface & {
   // Server-only
 
   initialize: (options: {
+    appVersion: string;
     configDir: string;
     key: string;
     logger: LoggerType;
@@ -918,6 +920,8 @@ export type ServerInterface = DataInterface & {
     allStickers: ReadonlyArray<string>
   ) => Promise<Array<string>>;
   getAllBadgeImageFileLocalPaths: () => Promise<Set<string>>;
+
+  runCorruptionChecks: () => void;
 };
 
 export type GetRecentStoryRepliesOptionsType = {

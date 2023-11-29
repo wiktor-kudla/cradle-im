@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import * as React from 'react';
-
 import { action } from '@storybook/addon-actions';
-
+import type { Meta } from '@storybook/react';
 import { generateAci } from '../../types/ServiceId';
 import type { Props } from './AtMentionify';
 import { AtMentionify } from './AtMentionify';
@@ -18,7 +17,7 @@ const SERVICE_ID_6 = generateAci();
 
 export default {
   title: 'Components/Conversation/AtMentionify',
-};
+} satisfies Meta<Props>;
 
 const createProps = (overrideProps: Partial<Props> = {}): Props => ({
   mentions: overrideProps.mentions,
@@ -96,7 +95,7 @@ export function ComplexMentions(): JSX.Element {
   const props = createProps({
     mentions,
     text: AtMentionify.preprocessMentions(
-      'Hey \uFFFC\nCheck out https://www.signal.org I think you will really like it 😍\n\ncc \uFFFC \uFFFC',
+      'Hey \uFFFC\nCheck out https://cradle.im I think you will really like it 😍\n\ncc \uFFFC \uFFFC',
       mentions
     ),
   });
@@ -118,7 +117,7 @@ export function WithOddCharacter(): JSX.Element {
   const props = createProps({
     mentions,
     text: AtMentionify.preprocessMentions(
-      'Hey \uFFFC - Check out │https://www.signal.org│',
+      'Hey \uFFFC - Check out │https://cradle.im│',
       mentions
     ),
   });

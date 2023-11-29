@@ -11,7 +11,7 @@
   z-index: $z-index-above-base;
 
   @include light-theme() {
-    background-color: $color-white;
+    background-color: $color-purple-03;
   }
 
   @include dark-theme() {
@@ -35,7 +35,7 @@
 
     @include light-theme {
       color: $color-gray-90;
-      background-color: $color-white;
+      background-color: $color-purple-03;
     }
     @include dark-theme {
       color: $color-gray-02;
@@ -82,7 +82,7 @@
       @include light-theme {
         @include color-svg(
           '../images/icons/v3/chevron/chevron-left.svg',
-          $color-gray-90
+          $color-white
         );
       }
       @include dark-theme {

@@ -5,6 +5,8 @@ import type { Database } from '@signalapp/better-sqlite3';
 import { callIdFromEra } from '@signalapp/ringrtc';
 import Long from 'long';
 import { v4 as generateUuid } from 'uuid';
+import { isObject } from 'lodash';
+
 import type { SetOptional } from 'type-fest';
 import type { LoggerType } from '../../types/Logging';
 import { jsonToObject, sql } from '../util';
@@ -21,7 +23,7 @@ import { CallMode } from '../../types/Calling';
 import type { MessageType, ConversationType } from '../Interface';
 import { strictAssert } from '../../util/assert';
 import { missingCaseError } from '../../util/missingCaseError';
-import { isAciString } from '../../types/ServiceId';
+import { isAciString } from '../../util/isAciString';
 
 // Legacy type for calls that never had a call id
 type DirectCallHistoryDetailsType = {
@@ -37,7 +39,7 @@ type GroupCallHistoryDetailsType = {
   callMode: CallMode.Group;
   creatorUuid: string;
   eraId: string;
-  startedTime: number;
+  startedTime?: number; // Treat this as optional, some calls may be missing it
 };
 export type CallHistoryDetailsType =
   | DirectCallHistoryDetailsType
@@ -113,7 +115,8 @@ function convertLegacyCallDetails(
   ourUuid: string | undefined,
   peerId: string,
   message: MessageType,
-  partialDetails: CallHistoryDetailsFromDiskType
+  partialDetails: CallHistoryDetailsFromDiskType,
+  logger: LoggerType
 ): CallHistoryDetails {
   const details = upcastCallHistoryDetailsFromDiskType(partialDetails);
   const { callMode: mode } = details;
@@ -126,6 +129,10 @@ function convertLegacyCallDetails(
   let ringerId: string | null = null;
 
   strictAssert(mode != null, 'mode must exist');
+
+  // If we cannot find any timestamp on the message, we'll use 0
+  const fallbackTimestamp =
+    message.timestamp ?? message.sent_at ?? message.received_at_ms ?? 0;
 
   if (mode === CallMode.Direct) {
     // We don't have a callId for older calls, generating a uuid instead
@@ -141,7 +148,7 @@ function convertLegacyCallDetails(
         ? DirectCallStatus.Declined
         : DirectCallStatus.Missed;
     }
-    timestamp = details.acceptedTime ?? details.endedTime ?? message.timestamp;
+    timestamp = details.acceptedTime ?? details.endedTime ?? fallbackTimestamp;
   } else if (mode === CallMode.Group) {
     callId = Long.fromValue(callIdFromEra(details.eraId)).toString();
     type = CallType.Group;
@@ -150,7 +157,7 @@ function convertLegacyCallDetails(
         ? CallDirection.Outgoing
         : CallDirection.Incoming;
     status = GroupCallStatus.GenericGroupCall;
-    timestamp = details.startedTime;
+    timestamp = details.startedTime ?? fallbackTimestamp;
     ringerId = details.creatorUuid;
   } else {
     throw missingCaseError(mode);
@@ -167,7 +174,16 @@ function convertLegacyCallDetails(
     timestamp,
   };
 
-  return callHistoryDetailsSchema.parse(callHistory);
+  const result = callHistoryDetailsSchema.safeParse(callHistory);
+  if (result.success) {
+    return result.data;
+  }
+
+  logger.error(
+    `convertLegacyCallDetails: Could not convert ${mode} call`,
+    result.error.toString()
+  );
+  throw new Error(`Failed to convert legacy ${mode} call details`);
 }
 
 export default function updateToSchemaVersion89(
@@ -234,6 +250,7 @@ export default function updateToSchemaVersion89(
     const [selectQuery] = sql`
       SELECT
         messages.json AS messageJson,
+        conversations.id AS conversationId,
         conversations.json AS conversationJson
       FROM messages
       LEFT JOIN conversations ON conversations.id = messages.conversationId
@@ -247,15 +264,24 @@ export default function updateToSchemaVersion89(
     // Must match query above
     type CallHistoryRow = {
       messageJson: string;
+      conversationId: string;
       conversationJson: string;
     };
 
     const rows: Array<CallHistoryRow> = db.prepare(selectQuery).all();
 
     for (const row of rows) {
-      const { messageJson, conversationJson } = row;
+      const { messageJson, conversationId, conversationJson } = row;
       const message = jsonToObject<MessageWithCallHistoryDetails>(messageJson);
       const conversation = jsonToObject<ConversationType>(conversationJson);
+
+      if (!isObject(conversation)) {
+        logger.warn(
+          `updateToSchemaVersion89: Private conversation (${conversationId}) ` +
+            'has non-object json column'
+        );
+        continue;
+      }
 
       const details = message.callHistoryDetails;
 
@@ -265,7 +291,8 @@ export default function updateToSchemaVersion89(
         ourUuid,
         peerId,
         message,
-        details
+        details,
+        logger
       );
 
       const [insertQuery, insertParams] = sql`

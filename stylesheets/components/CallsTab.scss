@@ -5,6 +5,7 @@
   display: flex;
   width: 100%;
   height: 100%;
+  background-color: $color-purple-03;
 }
 
 .CallsTab__NewCallActionIcon {
@@ -14,7 +15,7 @@
   @include light-theme {
     @include color-svg(
       '../images/icons/v3/phone/phone-plus-light.svg',
-      $color-black
+      $color-white
     );
   }
   @include dark-theme {
@@ -30,7 +31,7 @@
   width: 20px;
   height: 20px;
   @include light-theme {
-    @include color-svg('../images/icons/v3/more/more.svg', $color-black);
+    @include color-svg('../images/icons/v3/more/more.svg', $color-white);
   }
   @include dark-theme {
     @include color-svg('../images/icons/v3/more/more.svg', $color-gray-15);
@@ -63,7 +64,7 @@
   margin-inline: 0;
   opacity: 0.7;
   @include light-theme {
-    color: $color-gray-60;
+    color: $color-white;
   }
   @include dark-theme {
     color: $color-gray-25;
@@ -84,7 +85,7 @@
   @include light-theme {
     @include color-svg(
       '../images/icons/v3/trash/trash-compact.svg',
-      $color-gray-90
+      $color-white
     );
   }
   @include dark-theme {
@@ -108,19 +109,18 @@
 
   &:not(.CallsList__ToggleFilterByMissed--pressed):hover {
     @include light-theme {
-      background: $color-gray-20;
+      background-color: $color-purple-01;
     }
     @include dark-theme {
-      background: $color-gray-62;
+      background-color: $color-white-alpha-06;
     }
   }
 
   &:focus {
     outline: none;
-  }
-
-  &:focus-visible {
-    box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-ultramarine;
+    @include keyboard-mode {
+      box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-ultramarine;
+    }
   }
 
   &::before {
@@ -129,7 +129,7 @@
     width: 20px;
     height: 20px;
     @include light-theme {
-      @include color-svg('../images/icons/v3/filter/filter.svg', $color-black);
+      @include color-svg('../images/icons/v3/filter/filter.svg', $color-white);
     }
     @include dark-theme {
       @include color-svg(
@@ -142,7 +142,7 @@
 
 .CallsList__ToggleFilterByMissed--pressed {
   border-radius: 9999px;
-  background: $color-accent-blue;
+  background: $color-purple-01;
   &::before {
     @include color-svg('../images/icons/v3/filter/filter.svg', $color-white);
   }
@@ -180,7 +180,7 @@
 
 .CallsList__ItemIcon--Phone {
   @include light-theme {
-    @include color-svg('../images/icons/v3/phone/phone.svg', $color-black);
+    @include color-svg('../images/icons/v3/phone/phone.svg', $color-white);
   }
   @include dark-theme {
     @include color-svg('../images/icons/v3/phone/phone.svg', $color-gray-15);
@@ -189,7 +189,7 @@
 
 .CallsList__ItemIcon--Video {
   @include light-theme {
-    @include color-svg('../images/icons/v3/video/video.svg', $color-black);
+    @include color-svg('../images/icons/v3/video/video.svg', $color-white);
   }
   @include dark-theme {
     @include color-svg('../images/icons/v3/video/video.svg', $color-gray-15);
@@ -234,7 +234,13 @@
 
 // Override .ListTile__subtitle so ellipsis is correct color
 .CallsList__Item--missed .ListTile__subtitle {
-  color: $color-accent-red;
+  // Need to override the themed selector specificity of .ListTile__subtitle
+  @include light-theme {
+    color: $color-accent-red;
+  }
+  @include dark-theme {
+    color: $color-accent-red;
+  }
 }
 
 // Override .ListTile
@@ -279,6 +285,7 @@
   padding-block: 10px;
   padding-inline: 24px;
   @include font-body-1-bold;
+  color: $color-white;
 }
 
 .CallsNewCall__EmptyState {
@@ -307,9 +314,9 @@
   }
   &:focus {
     outline: none;
-  }
-  &:focus-visible {
-    box-shadow: 0 0 0 2px $color-ultramarine;
+    @include keyboard-mode {
+      box-shadow: 0 0 0 2px $color-ultramarine;
+    }
   }
   &:disabled,
   &[aria-disabled='true'] {
@@ -325,7 +332,7 @@
 
 .CallsNewCall__ItemIcon--Phone {
   @include light-theme {
-    @include color-svg('../images/icons/v3/phone/phone.svg', $color-black);
+    @include color-svg('../images/icons/v3/phone/phone.svg', $color-white);
   }
   @include dark-theme {
     @include color-svg('../images/icons/v3/phone/phone.svg', $color-gray-15);
@@ -334,7 +341,7 @@
 
 .CallsNewCall__ItemIcon--Video {
   @include light-theme {
-    @include color-svg('../images/icons/v3/video/video.svg', $color-black);
+    @include color-svg('../images/icons/v3/video/video.svg', $color-white);
   }
   @include dark-theme {
     @include color-svg('../images/icons/v3/video/video.svg', $color-gray-15);

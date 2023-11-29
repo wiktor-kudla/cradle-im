@@ -18,7 +18,7 @@
 
       // To differentiate it from bold formatting, we increase the color contrast
       @include light-theme {
-        color: $color-black; // vs color-gray-60 normally
+        color: $color-gray-60; // vs color-gray-60 normally
       }
       @include dark-theme {
         color: $color-white; // vs color-gray-25 normally

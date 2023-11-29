@@ -6,7 +6,6 @@ import { v4 as uuid } from 'uuid';
 import { omit } from 'lodash';
 import type { MessageReactionType } from '../../model-types.d';
 import { isEmpty } from '../../util/iterables';
-import { generateAci } from '../../types/ServiceId';
 
 import {
   addOutgoingReaction,
@@ -25,9 +24,9 @@ describe('reaction utilities', () => {
   ): MessageReactionType => ({
     emoji,
     fromId: OUR_CONVO_ID,
-    targetAuthorAci: generateAci(),
     targetTimestamp: Date.now(),
     timestamp: Date.now(),
+    receivedAtDate: Date.now(),
     ...(isPending ? { isSentByConversationId: { [uuid()]: false } } : {}),
   });
 

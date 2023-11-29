@@ -8,6 +8,7 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
+
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -89,7 +90,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Bepalings & Privaatheidsbeleid",
-    "description": "Shown in the about box for the link to https://cradle.org/legal"
+    "description": "Shown in the about box for the link to https://signal.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -109,11 +110,27 @@
   },
   "icu:databaseError": {
     "messageformat": "Databasisfout",
-    "description": "Shown in a popup if the database cannot start up properly"
+    "description": "Title of a popup if the database cannot start up properly"
+  },
+  "icu:databaseError__detail": {
+    "messageformat": "'n Databasisfout het voorgekom. Jy kan die fout kopieer en Signal-steundiens kontak om die probleem te help oplos. As jy Signal dadelik moet gebruik, kan jy jou data skrap en weer begin.\n\nKontak die steundiens deur te gaan na: {link}",
+    "description": "Description shown in a popup if the database cannot start up properly"
   },
   "icu:deleteAndRestart": {
-    "messageformat": "Skrap alle data en begin weer",
-    "description": "Shown in a popup if the database cannot start up properly; allows user to delete database and restart"
+    "messageformat": "Skrap data en begin weer",
+    "description": "Text of a button shown in a popup if the database cannot start up properly; allows user to delete all data in their database and restart"
+  },
+  "icu:databaseError__deleteDataConfirmation": {
+    "messageformat": "Skrap alle data permanent?",
+    "description": "Header of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__deleteDataConfirmation__detail": {
+    "messageformat": "Jou hele boodskapgeskiedenis en media sal permanent van hierdie toestel geskrap word. Jy sal Signal op hierdie toestel kan gebruik nadat jy dit herkoppel het. Dit sal nie enige data van jou foon af skrap nie.",
+    "description": "Description of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__startOldVersion": {
+    "messageformat": "Die weergawe van jou databasis pas nie by hierdie weergawe van Signal nie. Maak seker dat jy die jongste weergawe van Signal op jou rekenaar oopmaak.",
+    "description": "Text in a popup shown if the app cannot start because the user started an older version of Signal"
   },
   "icu:mainMenuFile": {
     "messageformat": "&Lêer",
@@ -160,7 +177,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Sluit Cradle af",
+    "messageformat": "Sluit Signal af",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -272,7 +289,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Dateer Cradle op",
+    "messageformat": "Dateer Signal op",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -299,40 +316,68 @@
     "messageformat": "Kletse",
     "description": "Shown as a header for non-pinned conversations in the left pane"
   },
+  "icu:LeftPane--corrupted-username--text": {
+    "messageformat": "Iets het verkeerd geloop met jou gebruikernaam, dit is nie meer aan jou rekening toegewys nie. Jy kan probeer om dit weer op te stel of 'n nuwe een kies.",
+    "description": "Text of corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username--action-text": {
+    "messageformat": "Stel nou reg",
+    "description": "Text of the button in the corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--text": {
+    "messageformat": "Iets het verkeerd geloop met jou QR-kode en gebruikernaamskakel, dit is nie meer geldig nie. Skep 'n nuwe skakel om met ander te deel.",
+    "description": "Text of corrupted username link banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--action-text": {
+    "messageformat": "Stel nou reg",
+    "description": "Text of the button in the corrupted username link banner in the left pane"
+  },
   "icu:NavTabsToggle__showTabs": {
-    "messageformat": "Show Tabs",
+    "messageformat": "Wys navigasie-ikone",
     "description": "Show in the left pane when the nav tabs are hidden, shows the nav tabs"
   },
   "icu:NavTabsToggle__hideTabs": {
-    "messageformat": "Hide Tabs",
+    "messageformat": "Versteek navigasie-ikone",
     "description": "Show in the nav tabs when the nav tabs are visible, hides the nav tabs"
   },
   "icu:NavTabs__ItemIconLabel--HasError": {
-    "messageformat": "An error occurred",
+    "messageformat": "'n Fout het voorgekom",
     "description": "Nav Tabs > Tab has error > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--UnreadCount": {
-    "messageformat": "{count,number} unread",
+    "messageformat": "{count,number} ongelees",
     "description": "Nav Tabs > Unread badge > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--MarkedUnread": {
-    "messageformat": "Marked unread",
+    "messageformat": "As ongelees gemerk",
     "description": "Nav Tabs > Unread badge > when conversation is marked unread > Accessibility Text"
   },
+  "icu:NavTabs__ItemLabel--Chats": {
+    "messageformat": "Kletse",
+    "description": "Nav Tabs > Chats Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Calls": {
+    "messageformat": "Oproepe",
+    "description": "Nav Tabs > Calls Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Stories": {
+    "messageformat": "Stories",
+    "description": "Nav Tabs > Stories Button > Label & Accessibility Text"
+  },
   "icu:NavTabs__ItemLabel--Settings": {
-    "messageformat": "Settings",
+    "messageformat": "Instellings",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Update": {
-    "messageformat": "Update Signal",
+    "messageformat": "Dateer Signal op",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Profile": {
-    "messageformat": "Profile",
+    "messageformat": "Profiel",
     "description": "Nav Tabs > Profile Button > Accessibility Text"
   },
   "icu:NavSidebar__BackButtonLabel": {
-    "messageformat": "Back",
+    "messageformat": "Terug",
     "description": "Shown in the sidebar header when on a nested panel within the current sidebar, takes the user back to the previous step or default sidebar state"
   },
   "icu:archiveHelperText": {
@@ -428,7 +473,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Jy het pas deur die uitvoerproses gegaan, en jou kontakte en boodskappe wag geduldig op jou rekenaar. Kies die lêer wat jou gestoorde Cradle-data bevat.",
+    "messageformat": "Jy het pas deur die uitvoerproses gegaan, en jou kontakte en boodskappe wag geduldig op jou rekenaar. Kies die lêer wat jou gestoorde Signal-data bevat.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -444,7 +489,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Maak seker dat jy die korrekte lêer wat jou gestoorde Cradle-data bevat, gekies het. Die naam moet met 'Cradle Uitvoer' begin. Jy kan ook 'n nuwe kopie van jou data stoor vanaf die Chrome App.",
+    "messageformat": "Maak seker dat jy die korrekte lêer wat jou gestoorde Signal-data bevat, gekies het. Die naam moet met 'Signal Uitvoer' begin. Jy kan ook 'n nuwe kopie van jou data stoor vanaf die Chrome App.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -460,7 +505,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Begin om Cradle Desktop te gebruik",
+    "messageformat": "Begin om Signal Desktop te gebruik",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -544,11 +589,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "Die veiligheidsnommer wat jy tans probeer verifieer, het verander. Gaan asseblief jou nuwe veiligheidsnommer met {name1} na. Onthou, hierdie verandering kan beteken dat iemand probeer om jou kommunikasie te onderskep, of dat {name2} eenvoudig net Signal/Cradle herïnstalleer het.",
+    "messageformat": "Die veiligheidsnommer wat jy tans probeer verifieer, het verander. Gaan asseblief jou nuwe veiligheidsnommer met {name1} na. Onthou, hierdie verandering kan beteken dat iemand probeer om jou kommunikasie te onderskep, of dat {name2} eenvoudig net Signal herïnstalleer het.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Die volgende mense het moontlik Signal/Cradle herinstalleer of van toestelle verander. Klik op 'n ontvanger om hulle nuwe veiligheidsnommer te bevestig. Dit is opsioneel.",
+    "messageformat": "Die volgende mense het moontlik Signal herinstalleer of van toestelle verander. Klik op 'n ontvanger om hulle nuwe veiligheidsnommer te bevestig. Dit is opsioneel.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -560,7 +605,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {Jy het 1 konneksie wat moontlik Signal/Cradle herinstalleer of van toestelle verander het. Voordat jy stuur, het jy die opsie om hulle veiligheidsnommers na te gaan.} other {Jy het {count,number} konneksies wat moontlik Signal/Cradle herinstalleer of van toestelle verander het. Voordat jy stuur, het jy die opsie om hulle veiligheidsnommers na te gaan.}}",
+    "messageformat": "{count, plural, one {Jy het 1 konneksie wat moontlik Signal herinstalleer of van toestelle verander het. Voordat jy stuur, het jy die opsie om hulle veiligheidsnommers na te gaan.} other {Jy het {count,number} konneksies wat moontlik Signal herinstalleer of van toestelle verander het. Voordat jy stuur, het jy die opsie om hulle veiligheidsnommers na te gaan.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -592,7 +637,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Jou veiligheidsnommer met {name1} het verander. Dit kan óf beteken dat iemand probeer om jou kommunikasie te onderskep, óf dat {name2} eenvoudig Signal/Cradle herïnstalleer het. Jy moet dalk jou veiligheidsnommer met hierdie kontak verifieer.",
+    "messageformat": "Jou veiligheidsnommer met {name1} het verander. Dit kan óf beteken dat iemand probeer om jou kommunikasie te onderskep, óf dat {name2} eenvoudig Signal herïnstalleer het. Jy moet dalk jou veiligheidsnommer met hierdie kontak verifieer.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -611,6 +656,10 @@
     "messageformat": "Skakel in elk geval",
     "description": "Used on a warning dialog to make it clear that it might be risky to call the conversation."
   },
+  "icu:joinAnyway": {
+    "messageformat": "Sluit in elk geval aan",
+    "description": "Used on a warning dialog to make it clear that it might be risky to join the call."
+  },
   "icu:continueCall": {
     "messageformat": "Sit oproep voort",
     "description": "Used on a warning dialog to make it clear that it might be risky to continue the group call."
@@ -628,7 +677,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Iets het verkeerd geloop met die oplaai! Stuur asb. 'n e-pos aan support@cradle.org en heg jou log as 'n tekslêer aan.",
+    "messageformat": "Iets het verkeerd geloop met die oplaai! Stuur asb. 'n e-pos aan support@signal.org en heg jou log as 'n tekslêer aan.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -672,23 +721,23 @@
   },
   "icu:SafetyNumberViewer__migration__text": {
     "messageformat": "Veiligheidsnommers word tans op datum gebring.",
-    "description": "An explanatory note in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) An explanatory note in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__migration__learn_more": {
     "messageformat": "Vind meer uit",
-    "description": "A link text in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) A link text in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__card__prev": {
     "messageformat": "Vorige Veiligheidsnommer",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__card__next": {
     "messageformat": "Volgende Veiligheidsnommer",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__carousel__dot": {
     "messageformat": "Veiligheidsnommerweergawe, {index,number} van {total,number}",
-    "description": "An ARIA label for safety number carousel button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number carousel button."
   },
   "icu:SafetyNumberViewer__markAsVerified": {
     "messageformat": "Merk as geverifieer",
@@ -698,33 +747,41 @@
     "messageformat": "Maak verifiëring skoon",
     "description": "Safety number viewer, verification toggle button, when verified, clears verification state"
   },
+  "icu:SafetyNumberViewer__hint": {
+    "messageformat": "Om end-tot-end-enkriptering met {name} te verifieer, vergelyk die nommers hierbo met hul toestel. Hulle kan ook jou kode met hul toestel skandeer.",
+    "description": "Safety number viewer, text of the hint"
+  },
+  "icu:SafetyNumberViewer__learn_more": {
+    "messageformat": "Vind meer uit",
+    "description": "Text of 'Learn more' button of SafetyNumberViewerModal modal"
+  },
   "icu:SafetyNumberViewer__hint--migration": {
     "messageformat": "Om jou end-tot-end-enkriptering met {name} te verifieer, vergelyk die kleurkaart hierbo met hul toestel en vergelyk die nommers. As dié nie ooreenstem nie, probeer die ander paar veiligheidsnommers. Slegs een paar hoef ooreen te stem.",
-    "description": "Safety number viewer, text of the hint during migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint during migration period"
   },
   "icu:SafetyNumberViewer__hint--normal": {
     "messageformat": "Om end-tot-end-enkriptering met {name} te verifieer, vergelyk die nommers hierbo met hul toestel. Hulle kan ook jou kode met hul toestel skandeer.",
-    "description": "Safety number viewer, text of the hint after migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint after migration period"
   },
   "icu:SafetyNumberOnboarding__title": {
     "messageformat": "Veranderinge aan veiligheidsnommers",
-    "description": "Title of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Title of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p1": {
     "messageformat": "Veiligheidsnommers word gedurende 'n oorgangstydperk op datum gebring om komende privaatheidskenmerke in Signal te aktiveer.",
-    "description": "Paragraph 1 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 1 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p2": {
     "messageformat": "Om veiligheidsnommers te verifieer, vergelyk die kleurkaart met jou kontak se toestel. As dié nie ooreenstem nie, probeer die ander paar veiligheidsnommers. Slegs een paar hoef ooreen te stem.",
-    "description": "Paragraph 2 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 2 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__help": {
     "messageformat": "Hulp nodig?",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__close": {
     "messageformat": "Ek verstaan",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberNotReady__body": {
     "messageformat": "'n Veiligheidsnommer sal met hierdie persoon geskep word nadat jy boodskappe met hulle uitgeruil het.",
@@ -750,7 +807,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "Jou veiligheidsnommer met hierdie kontak het verander. Dit kan óf beteken dat iemand probeer om jou kommunikasie te onderskep, óf dat hierdie kontak eenvoudig Signal/Cradle  herinstalleer het. Jy moet dalk die onderstaande nuwe veiligheidsnommer verifieer."
+    "messageformat": "Jou veiligheidsnommer met hierdie kontak het verander. Dit kan óf beteken dat iemand probeer om jou kommunikasie te onderskep, óf dat hierdie kontak eenvoudig Signal  herinstalleer het. Jy moet dalk die onderstaande nuwe veiligheidsnommer verifieer."
   },
   "icu:incomingError": {
     "messageformat": "Kon nie die inkomende boodskap hanteer nie"
@@ -813,15 +870,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Laai tans voorskou…",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "Voorskou van konsep-duimnaelskakel vir {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "Voorskou van duimnaelskakel vir {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Konsep-duimnaelskakel-aanhegsel: {path}",
@@ -916,18 +973,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Sluit aan by die Beta",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Cradle Desktop voorkeure",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "messageformat": "Signal Desktop voorkeure",
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Plakkerpakket-skepper",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "Oor Cradle Desktop",
+    "messageformat": "Oor Signal Desktop",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -951,7 +1008,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Cradle Desktop",
+    "messageformat": "Signal Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -1003,7 +1060,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Welkom by Cradle"
+    "messageformat": "Welkom by Signal"
   },
   "icu:whatsNew": {
     "messageformat": "Kyk {whatsNew} in hierdie bywerking",
@@ -1134,15 +1191,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Om stemboodskappe te stuur, gee Cradle Desktop toegang tot jou mikrofoon.",
+    "messageformat": "Om stemboodskappe te stuur, gee Signal Desktop toegang tot jou mikrofoon.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Om oproepe te maak, moet jy vir Cradle Desktop toegang tot jou mikrofoon gee.",
+    "messageformat": "Om oproepe te maak, moet jy vir Signal Desktop toegang tot jou mikrofoon gee.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Om video-oproepe te maak, moet jy vir Cradle Desktop toegang tot jou mikrofoon gee.",
+    "messageformat": "Om video-oproepe te maak, moet jy vir Signal Desktop toegang tot jou mikrofoon gee.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1182,15 +1239,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Cradle kon nie bywerking doen nie. {retry} of besoek {url} om dit met die hand te installeer. {support} dan oor hierdie probleem.",
+    "messageformat": "Signal kon nie bywerking doen nie. {retry} of besoek {url} om dit met die hand te installeer. {support} dan oor hierdie probleem.",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Cradle kon nie bywerking doen nie. Besoek {url} om dit met die hand te installeer. {support} dan oor hierdie probleem.",
+    "messageformat": "Signal kon nie bywerking doen nie. Besoek {url} om dit met die hand te installeer. {support} dan oor hierdie probleem.",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Cradle Desktop is waarskynlik in 'n macOS-kwarantyn en sal nie outomaties kan opdateer nie. Probeer {app} na {folder} te skuif met Vindfunksie.",
+    "messageformat": "Signal Desktop is waarskynlik in 'n macOS-kwarantyn en sal nie outomaties kan opdateer nie. Probeer {app} na {folder} te skuif met Vindfunksie.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1246,7 +1303,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Hierdie boodskap sal vir almal in die klets geskrap word indien hulle ’n onlangse weergawe van Signal/Cradle gebruik. Hulle sal kan sien dat jy ’n boodskap geskrap het.",
+    "messageformat": "Hierdie boodskap sal vir almal in die klets geskrap word indien hulle ’n onlangse weergawe van Signal gebruik. Hulle sal kan sien dat jy ’n boodskap geskrap het.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1365,17 +1422,17 @@
     "messageformat": "Inligting",
     "description": "Shown on the drop-down menu for an individual message, takes you to message detail screen"
   },
-  "icu:deleteMessages": {
-    "messageformat": "Skrap",
-    "description": "Menu item for deleting messages, title case."
+  "icu:deleteMessagesInConversation": {
+    "messageformat": "Skrap boodskappe",
+    "description": "Menu item for deleting all messages in a conversation from your device"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Skrap klets?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__title": {
+    "messageformat": "Skrap boodskap?",
+    "description": "Title for confirmation modal to delete all messages in a conversation"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "Hierdie klets sal van hierdie toestel af geskrap word.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__description": {
+    "messageformat": "Boodskappe in hierdie klets sal van hierdie toestel af geskrap word. Jy kan steeds vir hierdie klets soek nadat jy boodskappe uitgevee het.",
+    "description": "Description for confirmation modal to delete all messages in a conversation"
   },
   "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
     "messageformat": "Verlaat groep",
@@ -1410,7 +1467,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Cradle gebruik end-tot-end-enkripsie en gaan dalk soms van jou kletssessies moet verfris. Dit beïnvloed nie jou kletssekuriteit nie, maar jy kan dalk ’n boodskap van hierdie kontak gemis het en kan hulle vra om dit weer te stuur.",
+    "messageformat": "Signal gebruik end-tot-end-enkripsie en gaan dalk soms van jou kletssessies moet verfris. Dit beïnvloed nie jou kletssekuriteit nie, maar jy kan dalk ’n boodskap van hierdie kontak gemis het en kan hulle vra om dit weer te stuur.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1469,6 +1526,14 @@
     "messageformat": "Jou boodskap vir beide kletse is hier saamgevoeg.",
     "description": "Contents of a dialog shown after clicking 'learn more' button on a conversation merge event."
   },
+  "icu:PhoneNumberDiscovery--notification--withSharedGroup": {
+    "messageformat": "{phoneNumber} behoort aan {conversationTitle}. Julle is albei lede van {sharedGroup}.",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with."
+  },
+  "icu:PhoneNumberDiscovery--notification--noSharedGroup": {
+    "messageformat": "{phoneNumber} behoort aan {conversationTitle}",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with, but you have no shared groups."
+  },
   "icu:quoteThumbnailAlt": {
     "messageformat": "Duimnael van die beeld uit die aangehaalde boodskap",
     "description": "Used in alt tag of thumbnail images inside of an embedded message quote"
@@ -1502,20 +1567,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Welkom by Cradle Desktop",
+    "messageformat": "Welkom by Signal Desktop",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "Privaatheid is moontlik. Cradle maak dit maklik.",
+    "messageformat": "Privaatheid is moontlik. Signal maak dit maklik.",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "Gekoppelde toestelle",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Koppel nuwe toestel",
-    "description": "The menu option shown in Cradle iOS to add a new linked device"
+    "description": "The menu option shown in Signal iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Vind meer uit",
@@ -1589,7 +1654,7 @@
     "messageformat": "Jammer, jy het te veel toestelle reeds gekoppel. Probeer om sommige van die toestelle te verwyder."
   },
   "icu:installTooOld": {
-    "messageformat": "Werk Cradle op hierdie toestel by om jou selfoon te koppel."
+    "messageformat": "Werk Signal op hierdie toestel by om jou selfoon te koppel."
   },
   "icu:installErrorHeader": {
     "messageformat": "Iets het verkeerd geloop!"
@@ -1616,10 +1681,6 @@
     "messageformat": "Bel weer",
     "description": "Button to call someone again"
   },
-  "icu:calling__start": {
-    "messageformat": "Begin oproep",
-    "description": "Button label in the call lobby for starting a call"
-  },
   "icu:calling__join": {
     "messageformat": "Sluit aan by oproep",
     "description": "Button label in the call lobby for joining a call"
@@ -1632,13 +1693,25 @@
     "messageformat": "Mikrofoon gedemp a.g.v. die grootte van die oproep",
     "description": "Shown in a call lobby toast if there are a lot of people already on the call"
   },
+  "icu:calling__toasts--aria-label": {
+    "messageformat": "Oproepkennisgewings",
+    "description": "Aria label for region of toasts shown during a call (for, e.g. reconnecting, person joined, audio device changed notifications)"
+  },
   "icu:calling__call-is-full": {
     "messageformat": "Oproep is vol",
     "description": "Text in the call lobby when you can't join because the call is full"
   },
-  "icu:calling__button--video__label": {
-    "messageformat": "Kamera",
-    "description": "Label under the video button"
+  "icu:CallingLobbyJoinButton--join": {
+    "messageformat": "Sluit aan",
+    "description": "Button label in the call lobby for joining a call"
+  },
+  "icu:CallingLobbyJoinButton--start": {
+    "messageformat": "Begin",
+    "description": "Button label in the call lobby for starting a call"
+  },
+  "icu:CallingLobbyJoinButton--call-full": {
+    "messageformat": "Oproep vol",
+    "description": "Button in the call lobby when you can't join because the call is full"
   },
   "icu:calling__button--video-disabled": {
     "messageformat": "Kamera gedeaktiveer",
@@ -1652,10 +1725,6 @@
     "messageformat": "Skakel kamera aan",
     "description": "Button tooltip label for turning on the camera"
   },
-  "icu:calling__button--audio__label": {
-    "messageformat": "Demp",
-    "description": "Label under the audio button"
-  },
   "icu:calling__button--audio-disabled": {
     "messageformat": "Mikrofoon gedeaktiveer",
     "description": "Button tooltip label when the microphone is disabled"
@@ -1667,10 +1736,6 @@
   "icu:calling__button--audio-on": {
     "messageformat": "Ontdemp mikrofoon",
     "description": "Button tooltip label for turning on the microphone"
-  },
-  "icu:calling__button--presenting__label": {
-    "messageformat": "Deel",
-    "description": "Label under the share screen button"
   },
   "icu:calling__button--presenting-disabled": {
     "messageformat": "Aanbieding gedeaktiveer",
@@ -1684,10 +1749,6 @@
     "messageformat": "Stop aanbieding",
     "description": "Button tooltip label for stopping screen sharing"
   },
-  "icu:calling__button--ring__label": {
-    "messageformat": "Bel",
-    "description": "Label under the ring button"
-  },
   "icu:calling__button--ring__disabled-because-group-is-too-large": {
     "messageformat": "Groep is te groot om deelnemers te bel.",
     "description": "Button tooltip label when you can't ring because the group is too large"
@@ -1699,6 +1760,26 @@
   "icu:calling__button--ring__on": {
     "messageformat": "Aktiveer lui",
     "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton__ring-off": {
+    "messageformat": "Skakel lui af",
+    "description": "Button tooltip label for turning ringing off"
+  },
+  "icu:CallingButton--ring-on": {
+    "messageformat": "Skakel lui aan",
+    "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton--more-options": {
+    "messageformat": "Meer opsies",
+    "description": "Tooltip label for button in the calling screen that opens a menu with other call actions such as React or Raise Hand."
+  },
+  "icu:CallingRaisedHandsList__Title": {
+    "messageformat": "{count, plural, one {Hand opgesteek · {count,number} persoon} other {Hande opgesteek · {count,number} persone}}",
+    "description": "Shown in the call raised hands list to describe how many people have active raised hands"
+  },
+  "icu:CallingReactions--me": {
+    "messageformat": "Jy",
+    "description": "Label next to in-call reactions to indicate that the current user sent that reaction."
   },
   "icu:calling__your-video-is-off": {
     "messageformat": "Jou kamera is af",
@@ -1725,23 +1806,23 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--many-people-in-call": {
-    "messageformat": "{first}, {second} en {others} ander is in hierdie oproep",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others are in this call",
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Cradle sal {person} bel",
+    "messageformat": "Signal sal {person} bel",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Cradle sal {first} en {second} bel",
+    "messageformat": "Signal sal {first} en {second} bel",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Cradle sal {first}, {second} en {third} bel",
+    "messageformat": "Signal sal {first}, {second} en {third} bel",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Cradle sal {first}, {second} en {others} ander bel",
+    "messageformat": "Signal will ring {first}, {second}, and {others, plural, other {#}} others",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1757,7 +1838,7 @@
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__pre-call-info--will-notify-many": {
-    "messageformat": "{first}, {second} en {others} ander sal in kennis gestel word",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others will be notified",
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__in-this-call--zero": {
@@ -1797,7 +1878,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Cradle is besig om {window} te deel.",
+    "messageformat": "Signal is besig om {window} te deel.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1821,7 +1902,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Cradle benodig toestemming om toegang tot jou rekenaar se skermopneemfunksie te verkry.",
+    "messageformat": "Signal benodig toestemming om toegang tot jou rekenaar se skermopneemfunksie te verkry.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1833,7 +1914,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "Aan die regterkant, merk die blokkie langs Cradle. As jy Cradle nie in die lys sien nie, klik die + om dit by te voeg.",
+    "messageformat": "Aan die regterkant, merk die blokkie langs Signal. As jy Signal nie in die lys sien nie, klik die + om dit by te voeg.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1877,12 +1958,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "Die speltoets sal die volgende keer as Cradle begin, geaktiveer word.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "Die speltoets sal die volgende keer as Signal begin, geaktiveer word.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "Die speltoets sal die volgende keer as Cradle begin, gedeaktiveer word.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "Die speltoets sal die volgende keer as Signal begin, gedeaktiveer word.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Minimaliseer na stelsellaai",
@@ -1897,15 +1978,15 @@
     "description": "Description for the automatic launch setting"
   },
   "icu:clearDataHeader": {
-    "messageformat": "Vee toepassingsdata uit",
+    "messageformat": "Delete application data",
     "description": "Header in the settings dialog for the section dealing with data deletion"
   },
   "icu:clearDataExplanation": {
-    "messageformat": "Dit sal alle data in die aansoek uitvee, alle boodskappe en gestoorde rekeninginligting verwyder.",
+    "messageformat": "This will delete all data in the application, removing all messages and saved account information.",
     "description": "Text describing what the clear data button will do."
   },
   "icu:clearDataButton": {
-    "messageformat": "Vee data uit",
+    "messageformat": "Delete data",
     "description": "Button in the settings dialog starting process to delete all data"
   },
   "icu:deleteAllDataHeader": {
@@ -1913,7 +1994,7 @@
     "description": "Header of the full-screen delete data confirmation screen"
   },
   "icu:deleteAllDataBody": {
-    "messageformat": "Jy is op die punt om al die gestoorde rekeninginligting van hierdie toepassing te skrap, insluitend alle kontakte en alle boodskappe. Jy kan altyd weer met jou selfoon koppel, maar dit sal nie die verwyderde boodskappe herstel nie.",
+    "messageformat": "Delete all data and messages from this version of Signal Desktop? You can always relink this desktop, but your messages will not restore. Your Signal account and data on your phone or other linked devices will not be deleted.",
     "description": "Text describing what exactly will happen if the user clicks the button to delete all data"
   },
   "icu:deleteAllDataButton": {
@@ -1925,8 +2006,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Jy het verouderde data uit 'n vorige installasie van Cradle Desktop. As jy kies om voort te gaan, sal dit geskrap word en jy sal van voor af begin.",
-    "description": "Shown if user last ran Cradle Desktop before October 2018"
+    "messageformat": "Jy het verouderde data uit 'n vorige installasie van Signal Desktop. As jy kies om voort te gaan, sal dit geskrap word en jy sal van voor af begin.",
+    "description": "Shown if user last ran Signal Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Skrap ou data",
@@ -2007,11 +2088,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "Hierdie weergawe van Cradle Desktop het verval. Gradeer asseblief op na die jongste weergawe om voort te gaan om boodskappe te stuur en ontvang.",
+    "messageformat": "Hierdie weergawe van Signal Desktop het verval. Gradeer asseblief op na die jongste weergawe om voort te gaan om boodskappe te stuur en ontvang.",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Klik om na cradle.org/download te gaan",
+    "messageformat": "Klik om na signal.org/download te gaan",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2179,7 +2260,7 @@
     "description": "In conversation details, label for button to view safety number, opens safety number modal"
   },
   "icu:ConversationDetails__HeaderButton--Message": {
-    "messageformat": "Message",
+    "messageformat": "Boodskap",
     "description": "In conversation details, label for button to switch to the conversation view in order to draft a message in that converation"
   },
   "icu:SafetyNumberNotification__viewSafetyNumber": {
@@ -2264,22 +2345,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Kon nie gebruikersnaam herroep nie. Kontroleer jou verbinding en probeer weer.",
-    "description": "Shown if request to Cradle servers to find username fails"
+    "description": "Shown if request to Signal servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "Kon nie telefoonnommer herroep nie. Kontroleer jou verbinding en probeer weer.",
-    "description": "Shown if request to Cradle servers to find phone number fails"
+    "description": "Shown if request to Signal servers to find phone number fails"
   },
-  "icu:ToastManager__CannotEditMessage": {
-    "messageformat": "Wysigings kan slegs aangebring word binne 3 uur vanaf die tyd wat jy hierdie boodskap gestuur het.",
+  "icu:ToastManager__CannotEditMessage_24": {
+    "messageformat": "Wysigings kan slegs aangebring word binne 24 uur vanaf die tyd wat jy hierdie boodskap gestuur het.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "Gebruiker nie gevind nie. {atUsername} is nie ’n Signal/Cradle-gebruiker nie; maak seker jy het die volledige gebruikersnaam ingevoer.",
+    "messageformat": "Gebruiker nie gevind nie. {atUsername} is nie ’n Signal-gebruiker nie; maak seker jy het die volledige gebruikersnaam ingevoer.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "Gebruiker nie gevind nie. \"{phoneNumber}\" is nie 'n Signal/Cradle-gebruiker.",
+    "messageformat": "Gebruiker nie gevind nie. \"{phoneNumber}\" is nie 'n Signal-gebruiker.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2307,7 +2388,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Cradle-groepe kan 'n maksimum van {max,number} lede hê.",
+    "messageformat": "Signal-groepe kan 'n maksimum van {max,number} lede hê.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2315,7 +2396,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Cradle-groepe werk die beste met {max,number} of minder lede. Byvoeging van nog lede sal vertraging in die stuur en ontvang van boodskappe veroorsaak.",
+    "messageformat": "Signal-groepe werk die beste met {max,number} of minder lede. Byvoeging van nog lede sal vertraging in die stuur en ontvang van boodskappe veroorsaak.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2367,7 +2448,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Klik om Cradle Desktop weer aan jou mobiele toestel te koppel om voort te gaan met boodskappe stuur."
+    "messageformat": "Klik om Signal Desktop weer aan jou mobiele toestel te koppel om voort te gaan met boodskappe stuur."
   },
   "icu:unlinked": {
     "messageformat": "Ontkoppel"
@@ -2385,17 +2466,17 @@
     "messageformat": "kontak steundiens"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Klik om Cradle te herlaai"
+    "messageformat": "Klik om Signal te herlaai"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Klik om bywerking af te laai"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Cradle kon nie bygewerk word nie. Klik om weer te probeer.",
+    "messageformat": "Signal kon nie bygewerk word nie. Klik om weer te probeer.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Herlaai Cradle"
+    "messageformat": "Herlaai Signal"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "Later"
@@ -2514,6 +2595,14 @@
   "icu:message--deletedForEveryone": {
     "messageformat": "Hierdie boodskap is geskrap.",
     "description": "Shown in a message's bubble when the message has been deleted for everyone."
+  },
+  "icu:message--attachmentTooBig--one": {
+    "messageformat": "Aanhegsel te groot om te vertoon.",
+    "description": "Shown in a message bubble if no attachments are left on message when too-large attachments are dropped"
+  },
+  "icu:message--attachmentTooBig--multiple": {
+    "messageformat": "Sommige aanhegsels is te groot om te vertoon.",
+    "description": "Shown in a message bubble if any attachments are left on message when too-large attachments are dropped"
   },
   "icu:donation--missing": {
     "messageformat": "Kan nie detail van skenking herroep nie",
@@ -2653,15 +2742,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Stel plakkers bekend: Bandiet, die Kat",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Stel plakkers bekend",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "Waarom woorde gebruik as jy plakkers kan gebruik?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Maak die plakker-kieser oop",
@@ -2804,20 +2893,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} het vir jou 'n boodskap gestuur wat nie verwerk of vertoon kan word nie, omdat dit 'n gebruik maak van 'n nuwe Signal/Cradle-funksie."
+    "messageformat": "{contact} het vir jou 'n boodskap gestuur wat nie verwerk of vertoon kan word nie, omdat dit 'n gebruik maak van 'n nuwe Signal-funksie."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Jy kan {contact} vra om hierdie boodskap weer te stuur nou dat jy 'n bygewerkte weergawe van Cradle gebruik."
+    "messageformat": "Jy kan {contact} vra om hierdie boodskap weer te stuur nou dat jy 'n bygewerkte weergawe van Signal gebruik."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Een van jou toestelle het 'n boodskap gestuur wat nie verwerk of vertoon kan word nie, omdat dit gebruik maak van 'n nuwe Signal/Cradle-funksie."
+    "messageformat": "Een van jou toestelle het 'n boodskap gestuur wat nie verwerk of vertoon kan word nie, omdat dit gebruik maak van 'n nuwe Signal-funksie."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "Toekomstige boodskappe soos hierdie sal gesinkroniseer word nou dat jy 'n bygewerkte weergawe van Cradle gebruik."
+    "messageformat": "Toekomstige boodskappe soos hierdie sal gesinkroniseer word nou dat jy 'n bygewerkte weergawe van Signal gebruik."
   },
   "icu:Message--update-signal": {
-    "messageformat": "Dateer Cradle op",
-    "description": "Text for a button which will take user to Cradle download page"
+    "messageformat": "Dateer Signal op",
+    "description": "Text for a button which will take user to Signal download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Bekyk",
@@ -3156,11 +3245,19 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Slegs Cradle-beta",
-    "description": "Title of the modal shown before sending your first edit message"
+    "messageformat": "Slegs Signal-beta",
+    "description": "(deleted 8/30) Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "Wysiging van boodskappe is slegs vir Cradle-beta-gebruikers beskikbaar. Indien jy 'n boodskap wysig, sal dit slegs sigbaar wees vir mense wat op die jongste weergawe van Cradle-beta is.",
+    "messageformat": "Wysiging van boodskappe is slegs vir Signal-beta-gebruikers beskikbaar. Indien jy 'n boodskap wysig, sal dit slegs sigbaar wees vir mense wat op die jongste weergawe van Signal-beta is.",
+    "description": "(deleted 8/30) Body text of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--title2": {
+    "messageformat": "Wysig boodskap",
+    "description": "Title of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--body2": {
+    "messageformat": "Indien jy 'n boodskap wysig, sal dit slegs sigbaar wees vir mense wat op die jongste weergawes van Signal is. Hulle sal kan sien dat jy 'n boodskap gewysig het.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3168,20 +3265,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "Sommige mense gebruik dalk 'n weergawe van Cradle wat nie geformateerde teks ondersteun nie. Hulle sal nie die formateringveranderinge kan sien wat jy aan jou boodskap gemaak het nie.",
+    "messageformat": "Sommige mense gebruik dalk 'n weergawe van Signal wat nie geformateerde teks ondersteun nie. Hulle sal nie die formateringveranderinge kan sien wat jy aan jou boodskap gemaak het nie.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "Wil jy die Cradle-plakkerpakket-skepper oopmaak?",
-    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
+    "messageformat": "Wil jy die Signal-plakkerpakket-skepper oopmaak?",
+    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Bevestig",
-    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Wys weg",
-    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "Stel Signal op jou foon en tafelblad in om die Plakkerpakket-skepper te gebruik",
@@ -3332,7 +3429,7 @@
     "description": "Shown in the conversation hero to indicate this user is a member of four mutual groups"
   },
   "icu:member-of-more-than-3-groups--multiple-more": {
-    "messageformat": "Lid van {group1}, {group2}, {group3}, en {remainingCount,number}meer",
+    "messageformat": "Member of {group1}, {group2}, {group3} and {remainingCount, plural, other {#}} more",
     "description": "Shown in the conversation hero to indicate this user is a member of 5+ mutual groups."
   },
   "icu:ConversationHero--membership-added": {
@@ -3400,12 +3497,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Cradle is steeds oop",
-    "description": "Shown in a notification title when Cradle is minimized to tray"
+    "messageformat": "Signal is steeds oop",
+    "description": "Shown in a notification title when Signal is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Cradle sal steeds in die kennisgewingafdeling oop wees. Jy kan dit in Cradle-instellings verander.",
-    "description": "Shown in a notification body when Cradle is minimized to tray"
+    "messageformat": "Signal sal steeds in die kennisgewingafdeling oop wees. Jy kan dit in Signal-instellings verander.",
+    "description": "Shown in a notification body when Signal is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Inkomende stem-oproep...",
@@ -3416,11 +3513,11 @@
     "description": "Shown in both the incoming call bar and notification for an incoming video call"
   },
   "icu:outgoingAudioCall": {
-    "messageformat": "Outgoing voice call",
+    "messageformat": "Uitgaande stemoproep",
     "description": "Shown in the timeline for an outgoing voice call"
   },
   "icu:outgoingVideoCall": {
-    "messageformat": "Outgoing video call",
+    "messageformat": "Uitgaande video-oproep",
     "description": "Shown in the timeline for an outgoing video call"
   },
   "icu:incomingGroupCall__ringing-you": {
@@ -3467,9 +3564,69 @@
     "messageformat": "Besig om te herkonnekteer…",
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
-  "icu:callDuration": {
-    "messageformat": "Cradle {duration}",
-    "description": "Shown in the call screen to indicate how long the call has been connected"
+  "icu:CallControls__InfoDisplay--participants": {
+    "messageformat": "{count, plural, one {{count,number} mens} other {{count,number} mense}}",
+    "description": "Shown in the call screen and lobby for group calls to specify the number of members in the call or in the group. Count is at always at least 1."
+  },
+  "icu:CallControls__InfoDisplay--audio-call": {
+    "messageformat": "Oudio-oproep",
+    "description": "Shown in the call lobby for a direct 1:1 call when the caller's video is disabled, to specify that an audio call will be placed when clicking the Start button."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-1-1": {
+    "messageformat": "Beëindig",
+    "description": "Title for the hangup button for a direct 1:1 call with only 2 participants."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-group": {
+    "messageformat": "Verlaat",
+    "description": "Title for the hangup button for a group call."
+  },
+  "icu:CallControls__MutedToast--muted": {
+    "messageformat": "Mikrofoon afgeskakel",
+    "description": "Shown in a call when the user mutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__MutedToast--unmuted": {
+    "messageformat": "Mikrofoon aangeskakel",
+    "description": "Shown in a call when the user is muted and then unmutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-on": {
+    "messageformat": "Lui aangeskakel",
+    "description": "Shown in a group call lobby when call ringing is disabled, then the user enables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-off": {
+    "messageformat": "Lui afgeskakel",
+    "description": "Shown in a group call lobby when call ringing is enabled, then the user disables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RaiseHandsToast--you": {
+    "messageformat": "Jou hand is opgesteek.",
+    "description": "Shown in a call when the user raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--one": {
+    "messageformat": "{name} het 'n hand opgesteek.",
+    "description": "Shown in a call when someone else raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--two": {
+    "messageformat": "{name} en {otherName} het 'n hand opgesteek.",
+    "description": "Shown in a call when 2 persons raise their hands."
+  },
+  "icu:CallControls__RaiseHandsToast--more": {
+    "messageformat": "{name}, {otherName}, and {overflowCount, plural, other {#}} more raised a hand.",
+    "description": "Shown in a call when 3 or more persons raise their hands."
+  },
+  "icu:CallControls__RaiseHands--open-queue": {
+    "messageformat": "Maak lys oop",
+    "description": "Link in call raised hands list and in toast shown when someone else raises their hand. Link opens the list of all raised hands."
+  },
+  "icu:CallControls__RaiseHands--lower": {
+    "messageformat": "Laat sak",
+    "description": "Link in call raised hands list and in toast shown when user raises their hand. Link allows user to lower their hand."
+  },
+  "icu:CallControls__MenuItemRaiseHand": {
+    "messageformat": "Steek hand op",
+    "description": "Menu item to raise your hand during a call."
+  },
+  "icu:CallControls__MenuItemRaiseHand--lower": {
+    "messageformat": "Laat sak hand",
+    "description": "Menu item to lower your previously raised hand during a call."
   },
   "icu:callingDeviceSelection__settings": {
     "messageformat": "Instellings",
@@ -3511,13 +3668,25 @@
     "messageformat": "Volskermoproep",
     "description": "Title for picture-in-picture toggle"
   },
-  "icu:calling__switch-view--to-grid": {
-    "messageformat": "Verander na rooster-skermbeeld",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__change-view": {
+    "messageformat": "Verander uitleg",
+    "description": "Tooltip for changing the in-call layout of remote participants in a group call"
   },
-  "icu:calling__switch-view--to-speaker": {
-    "messageformat": "Verander na spreker-skermbeeld",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__view_mode--paginated": {
+    "messageformat": "Roosteruitleg",
+    "description": "Label for option to view participants in a group call in a paginated grid view"
+  },
+  "icu:calling__view_mode--overflow": {
+    "messageformat": "Sykolom-uitleg",
+    "description": "Label for option to view participants in a group call where videos that don't fit onto the page are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--speaker": {
+    "messageformat": "Sprekeruitleg",
+    "description": "Label for option to view participants where only the current speaker's video is fully visible and all others are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--updated": {
+    "messageformat": "Uitleg opgedateer",
+    "description": "Toast shown whenver the calling view mode is changed (e.g. paginated view -> speaker view)"
   },
   "icu:calling__hangup": {
     "messageformat": "Verlaat oproep",
@@ -3619,6 +3788,14 @@
     "messageformat": "Goed",
     "description": "Button to dismiss popup dialog when user-initiated task has gone wrong"
   },
+  "icu:MessageMaxEditsModal__Title": {
+    "messageformat": "Kan nie boodskap wysig nie",
+    "description": "Title in popup dialog when attempting to edit a message too many times."
+  },
+  "icu:MessageMaxEditsModal__Description": {
+    "messageformat": "Only {max, plural, other {#}} edits can be applied to this message.",
+    "description": "Description text in popup dialog when attempting to edit a message too many times."
+  },
   "icu:unknown-sgnl-link": {
     "messageformat": "Jammer, daardie sgnl:// skakel het nie sin gemaak nie!",
     "description": "Shown if you click on a sgnl:// link not currently supported by Desktop"
@@ -3656,7 +3833,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "Hierdie skakel word nie deur hierdie weergawe van Cradle Desktop ondersteun nie.",
+    "messageformat": "Hierdie skakel word nie deur hierdie weergawe van Signal Desktop ondersteun nie.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4040,7 +4217,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--other": {
-    "messageformat": "{memberName} het {count,number} persone na die groep genooi.",
+    "messageformat": "{memberName} invited {count, plural, other {#}} people to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--you": {
@@ -4048,7 +4225,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--unknown": {
-    "messageformat": "{count,number} persone is na die groep genooi.",
+    "messageformat": "{count, plural, other {#}} people were invited to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--other": {
@@ -4124,7 +4301,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--other": {
-    "messageformat": "{adminName} het uitnodigings na die groep vir {count,number} mense, deur {memberName} genooi, herroep.",
+    "messageformat": "{adminName} revoked invitations to the group for {count, plural, other {#}} people invited by {memberName}.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--you": {
@@ -4364,7 +4541,7 @@
     "description": "Shown in timeline when a group is upgraded and one person was removed entirely during the upgrade"
   },
   "icu:GroupV1--Migration--removed--many": {
-    "messageformat": "{count,number} lede is van die groep verwyder.",
+    "messageformat": "{count, plural, other {#}} members were removed from the group.",
     "description": "Shown in timeline when a group is upgraded and some people were removed entirely during the upgrade"
   },
   "icu:close": {
@@ -4412,11 +4589,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Hierdie persoon gebruik nie Signal/Cradle nie",
+    "messageformat": "Hierdie persoon gebruik nie Signal nie",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal/Cradle Desktop kan nie boodskappe stuur aan nie-Signal/Cradle-kontakte nie. Vra die persoon om Signal/Cradle te installeer vir ’n veiliger boodskapdiens.",
+    "messageformat": "Signal Desktop kan nie boodskappe stuur aan nie-Signal-kontakte nie. Vra die persoon om Signal te installeer vir ’n veiliger boodskapdiens.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4752,7 +4929,7 @@
     "description": "conversation > in select mode > composition area actions > exit select mode > accessibility label"
   },
   "icu:SelectModeActions--selectedMessages": {
-    "messageformat": "{count,number} geselekteer",
+    "messageformat": "{count, plural, other {#}} selected",
     "description": "conversation > in select mode > composition area actions > count of selected messsages"
   },
   "icu:SelectModeActions--deleteSelectedMessages": {
@@ -4957,10 +5134,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "Oor boodskapversoeke",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Gaan versoeke noukeurig na. Cradle het 'n ander kontak met dieselfde naam gevind. <reviewRequestLink>Gaan versoek na</reviewRequestLink>",
+    "messageformat": "Gaan versoeke noukeurig na. Signal het 'n ander kontak met dieselfde naam gevind. <reviewRequestLink>Gaan versoek na</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -5024,7 +5201,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Voltooi asb. verifikasie om gemorspos op Cradle te help voorkom.",
+    "messageformat": "Voltooi asb. verifikasie om gemorspos op Signal te help voorkom.",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5295,9 +5472,29 @@
     "messageformat": "Gebruikersnaam",
     "description": "Default text for username field"
   },
+  "icu:ProfileEditor--username--corrupted--body": {
+    "messageformat": "Iets het verkeerd geloop met jou gebruikernaam, dit is nie meer aan jou rekening toegewys nie.",
+    "description": "Text of confirmation modal when the username gets corrupted"
+  },
+  "icu:ProfileEditor--username--corrupted--delete-button": {
+    "messageformat": "Skrap gebruikernaam",
+    "description": "Button text for deletion of the username in case of corruption"
+  },
+  "icu:ProfileEditor--username--corrupted--create-button": {
+    "messageformat": "Skep gebruikernaam",
+    "description": "Button text for creation of a new username in case of corruption"
+  },
   "icu:ProfileEditor__username-link": {
     "messageformat": "QR-kode of skakel",
     "description": "Label of a profile editor row that navigates to username link and qr code modal"
+  },
+  "icu:ProfileEditor__username__error-icon": {
+    "messageformat": "Gebruikernaam moet teruggestel word",
+    "description": "Accessibility title of an icon in profile editor"
+  },
+  "icu:ProfileEditor__username-link__error-icon": {
+    "messageformat": "Gebruikernaamskakel moet teruggestel word",
+    "description": "Accessibility title of an icon in profile editor"
   },
   "icu:ProfileEditor__username-link__tooltip__title": {
     "messageformat": "Deel jou gebruikersnaam",
@@ -5552,7 +5749,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Kies wie jou telefoonnommer kan sien en wie jou daarmee op Cradle kan kontak.",
+    "messageformat": "Kies wie jou telefoonnommer kan sien en wie jou daarmee op Signal kan kontak.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5560,11 +5757,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Jou telefoonnommer sal sigbaar wees vir mense en groepe aan wie jy boodskappe stuur. Mense wat jou nommer in hulle telefoonkontakte het, sal dit ook in Cradle kan sien.",
+    "messageformat": "Jou telefoonnommer sal sigbaar wees vir mense en groepe aan wie jy boodskappe stuur. Mense wat jou nommer in hulle telefoonkontakte het, sal dit ook in Signal kan sien.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Niemand sal jou telefoonnommer in Signal/Cradle kan sien nie.",
+    "messageformat": "Niemand sal jou telefoonnommer in Signal kan sien nie.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5584,11 +5781,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Enigiemand wat jou telefoonnommer in hulle kontakte het, sal jou as 'n kontak in Signal/Cradle sien. Ander sal jou op jou telefoonnommer kan bereik wanneer hulle 'n nuwe klets of groep begin.",
+    "messageformat": "Enigiemand wat jou telefoonnommer in hulle kontakte het, sal jou as 'n kontak in Signal sien. Ander sal jou op jou telefoonnommer kan bereik wanneer hulle 'n nuwe klets of groep begin.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Niemand op Signal/Cradle sal jou met jou telefoonnommer kan bereik nie.",
+    "messageformat": "Niemand op Signal sal jou met jou telefoonnommer kan bereik nie.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5651,6 +5848,42 @@
     "messageformat": "Jy sal nie meer stories kan deel of sien nie. Storiebywerkings wat jy onlangs gedeel het, sal ook uitgevee word.",
     "description": "Confirmation modal body for disabling stories"
   },
+  "icu:Preferences__Language__Label": {
+    "messageformat": "Taal",
+    "description": "Language setting label"
+  },
+  "icu:Preferences__Language__ModalTitle": {
+    "messageformat": "Taal",
+    "description": "Language setting modal title"
+  },
+  "icu:Preferences__Language__SystemLanguage": {
+    "messageformat": "Stelseltaal",
+    "description": "Option for system language"
+  },
+  "icu:Preferences__Language__SearchLanguages": {
+    "messageformat": "Soek deur tale",
+    "description": "Placholder for language preference search box"
+  },
+  "icu:Preferences__Language__NoResults": {
+    "messageformat": "Geen resultate vir \"{searchTerm}\" nie",
+    "description": "When no results are found for language preference search"
+  },
+  "icu:Preferences__LanguageModal__Set": {
+    "messageformat": "Stel",
+    "description": "Button to set language preference"
+  },
+  "icu:Preferences__LanguageModal__Restart__Title": {
+    "messageformat": "Herlaai Signal om toe te pas",
+    "description": "Title for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Description": {
+    "messageformat": "Om die taal te verander, moet die toepassing herlaai word.",
+    "description": "Description for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Button": {
+    "messageformat": "Herlaai",
+    "description": "Button to restart Signal to apply language changes"
+  },
   "icu:DialogUpdate--version-available": {
     "messageformat": "Bywerking na weergawe {version} is beskikbaar",
     "description": "Tooltip for new update available"
@@ -5668,7 +5901,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Om voort te gaan om Cradle te gebruik, moet jy na die jongste weergawe opdateer.",
+    "messageformat": "Om voort te gaan om Signal te gebruik, moet jy na die jongste weergawe opdateer.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5676,15 +5909,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "Herlaai Cradle om die opdatering te installeer.",
+    "messageformat": "Herlaai Signal om die opdatering te installeer.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Cradle Desktop kon nie opdateer nie, maar daar is 'n nuwe weergawe beskikbaar. Gaan na {downloadUrl} en installeer die nuwe weergawe met die hand; kontak dan ondersteuning óf rapporteer 'n fout oor hierdie probleem.",
+    "messageformat": "Signal Desktop kon nie opdateer nie, maar daar is 'n nuwe weergawe beskikbaar. Gaan na {downloadUrl} en installeer die nuwe weergawe met die hand; kontak dan ondersteuning óf rapporteer 'n fout oor hierdie probleem.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Cradle kan nie toegemaak word nie.",
+    "messageformat": "Signal kan nie toegemaak word nie.",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5704,15 +5937,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "'n Nuwer weergawe van Cradle is reeds geïnstalleer. Is jy seker jy wil voortgaan?",
-    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
+    "messageformat": "'n Nuwer weergawe van Signal is reeds geïnstalleer. Is jy seker jy wil voortgaan?",
+    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Toepassing het uitgebom",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Cradle het uitgebom en moes weer begin. Jy kan ’n uitbomverslag stuur om Cradle te help om die probleem te ondersoek.",
+    "messageformat": "Signal het uitgebom en moes weer begin. Jy kan ’n uitbomverslag stuur om Signal te help om die probleem te ondersoek.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5734,6 +5967,10 @@
   "icu:CustomizingPreferredReactions__had-save-error": {
     "messageformat": "Jou instellings kon nie gestoor word nie. Probeer asb. weer.",
     "description": "Shown if there is an error when saving your preferred reaction settings. Should be very rare to see this message."
+  },
+  "icu:MediaEditor__input-placeholder": {
+    "messageformat": "Boodskap",
+    "description": "Placeholder for the input in the media editor"
   },
   "icu:MediaEditor__clock-more-styles": {
     "messageformat": "Meer style",
@@ -5908,8 +6145,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Cradle-verbindings",
-    "description": "The phrase/term: 'Cradle Connections'"
+    "messageformat": "Signal-verbindings",
+    "description": "The phrase/term: 'Signal Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} is mense wat jy vertrou, hetsy deur:",
@@ -6088,7 +6325,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Alle Cradle-verbindings",
+    "messageformat": "Alle Signal-verbindings",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6100,7 +6337,7 @@
     "description": "Input label to create a block list"
   },
   "icu:StoriesSettings__mine__exclude--description": {
-    "messageformat": "{num,number} mense uitgesluit",
+    "messageformat": "{num, plural, other {#}} people excluded",
     "description": "Description of how many people are excluded in a list"
   },
   "icu:StoriesSettings__mine__only--label": {
@@ -6208,7 +6445,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Kies watter Cradle-verbindings jou storie kan sien. Jy kan dit altyd in privaatheidinstellings verander. <learnMoreLink>Vind meer uit.</learnMoreLink>",
+    "messageformat": "Kies watter Signal-verbindings jou storie kan sien. Jy kan dit altyd in privaatheidinstellings verander. <learnMoreLink>Vind meer uit.</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6224,11 +6461,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {All Cradle Connections · 1 Viewer} other {All Cradle Connections · {viewersCount,number} Viewers}}",
+    "messageformat": "{viewersCount, plural, one {All Signal Connections · 1 Viewer} other {All Signal Connections · {viewersCount,number} Viewers}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {All Cradle Connections · 1 Excluded} other {All Cradle Connections · {excludedCount,number} Excluded}}",
+    "messageformat": "{excludedCount, plural, one {All Signal Connections · 1 Excluded} other {All Signal Connections · {excludedCount,number} Excluded}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6572,7 +6809,7 @@
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__done": {
-    "messageformat": "Done",
+    "messageformat": "Klaar",
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__color__radio": {
@@ -6583,8 +6820,16 @@
     "messageformat": "As jy jou QR-kode terugstel, sal jou bestaande QR-kode en skakel nie meer werk nie.",
     "description": "Text of confirmation modal when resetting the username link"
   },
+  "icu:UsernameLinkModalBody__resetting-link": {
+    "messageformat": "Besig om skakel terug te stel…",
+    "description": "Text shown when resetting the username link"
+  },
+  "icu:UsernameLinkModalBody__error__text": {
+    "messageformat": "QR-kode en skakel nie gestel nie. Gaan jou netwerkverbinding na en probeer weer.",
+    "description": "Text of the confirmation dialog shown on username link error"
+  },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Stel jou Cradle-gebruikersnaam op",
+    "messageformat": "Stel jou Signal-gebruikersnaam op",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6608,15 +6853,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Cradle vir rekenaars sal binnekort nie meer jou rekenaar se weergawe van {OS} ondersteun nie. Om voort te gaan om Cradle te gebruik, doen 'n opdatering van jou rekenaar se bedryfstelsel teen {expirationDate}. <learnMoreLink>Vind meer uit</learnMoreLink>",
+    "messageformat": "Signal vir rekenaars sal binnekort nie meer jou rekenaar se weergawe van {OS} ondersteun nie. Om voort te gaan om Signal te gebruik, doen 'n opdatering van jou rekenaar se bedryfstelsel teen {expirationDate}. <learnMoreLink>Vind meer uit</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Cradle vir rekenaars werk nie meer op hierdie rekenaar nie. Doen 'n opdatering van jou rekenaar se weergawe van {OS} om Cradle vir rekenaars weer te kan gebruik. <learnMoreLink>Vind meer uit</learnMoreLink>",
+    "messageformat": "Signal vir rekenaars werk nie meer op hierdie rekenaar nie. Doen 'n opdatering van jou rekenaar se weergawe van {OS} om Signal vir rekenaars weer te kan gebruik. <learnMoreLink>Vind meer uit</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Cradle vir rekenaars werk nie meer op hierdie rekenaar nie. Doen 'n opdatering van jou rekenaar se weergawe van {OS} om Cradle vir rekenaars weer te kan gebruik.",
+    "messageformat": "Signal vir rekenaars werk nie meer op hierdie rekenaar nie. Doen 'n opdatering van jou rekenaar se weergawe van {OS} om Signal vir rekenaars weer te kan gebruik.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6636,119 +6881,123 @@
     "description": "Button text for the confirmation dialog shown to user when attempting to resend message edit"
   },
   "icu:StoriesTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Meer aksies",
     "description": "Stories Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__HeaderTitle--CallsList": {
-    "messageformat": "Calls",
+    "messageformat": "Oproepe",
     "description": "Calls Tab > Header > Title > On Calls List screen"
   },
   "icu:CallsTab__HeaderTitle--NewCall": {
-    "messageformat": "New Call",
+    "messageformat": "Nuwe oproep",
     "description": "Calls Tab > Header > Title > On New Call screen"
   },
   "icu:CallsTab__NewCallActionLabel": {
-    "messageformat": "New Call",
+    "messageformat": "Nuwe oproep",
     "description": "Calls Tab > New Call Action Button > Accessibility Label"
   },
   "icu:CallsTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Meer aksies",
     "description": "Calls Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__ClearCallHistoryLabel": {
-    "messageformat": "Clear call history",
+    "messageformat": "Vee oproepgeskiedenis uit",
     "description": "Calls Tab > More Actions Context Menu > Clear Call History Button Label"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Title": {
-    "messageformat": "Clear call history?",
+    "messageformat": "Vee oproepgeskiedenis uit?",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Title"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Body": {
-    "messageformat": "This will permanently delete all call history",
+    "messageformat": "Dit sal die hele oproepgeskiedenis permanent uitvee",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Body Text"
   },
   "icu:CallsTab__ConfirmClearCallHistory__ConfirmButton": {
-    "messageformat": "Clear",
+    "messageformat": "Vee uit",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Confirm Button"
   },
   "icu:CallsTab__ToastCallHistoryCleared": {
-    "messageformat": "Call history cleared",
+    "messageformat": "Oproepgeskiedenis uitgevee",
     "description": "Calls Tab > Clear Call History > Toast"
   },
   "icu:CallsTab__EmptyStateText": {
-    "messageformat": "Click to view or start a call",
+    "messageformat": "Klik om 'n oproep te sien of te begin",
     "description": "Calls Tab > When no call is selected > Empty state > Call to action text"
   },
   "icu:CallsList__SearchInputPlaceholder": {
-    "messageformat": "Search",
+    "messageformat": "Soek",
     "description": "Calls Tab > Calls List > Search Input > Placeholder"
   },
   "icu:CallsList__ToggleFilterByMissedLabel": {
-    "messageformat": "Filter by missed",
+    "messageformat": "Filtreer volgens gemis",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility label"
   },
   "icu:CallsList__ToggleFilterByMissed__RoleDescription": {
-    "messageformat": "Toggle",
+    "messageformat": "Skakel aan of af",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility role description ('A toggle button')"
   },
   "icu:CallsList__EmptyState--noQuery": {
-    "messageformat": "No recent calls. Get started by calling a friend.",
+    "messageformat": "Geen onlangse oproepe nie. Begin deur 'n vriend te bel.",
     "description": "Calls Tab > Calls List > When no results found > With no search query"
   },
   "icu:CallsList__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "Geen resultate vir \"{query}\" nie",
     "description": "Calls Tab > Calls List > When no results found > With a search query"
   },
   "icu:CallsList__ItemCallInfo--Incoming": {
-    "messageformat": "Incoming",
+    "messageformat": "Inkomend",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was incoming"
   },
   "icu:CallsList__ItemCallInfo--Outgoing": {
-    "messageformat": "Outgoing",
+    "messageformat": "Uitgaande",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was outgoing"
   },
   "icu:CallsList__ItemCallInfo--Missed": {
-    "messageformat": "Missed",
+    "messageformat": "Gemis",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was missed"
   },
   "icu:CallsList__ItemCallInfo--GroupCall": {
-    "messageformat": "Group call",
+    "messageformat": "Groepoproep",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When group call is in its default state"
   },
   "icu:CallsNewCall__EmptyState--noQuery": {
-    "messageformat": "No recent conversations.",
+    "messageformat": "Geen onlangse gesprekke nie.",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With no search query"
   },
   "icu:CallsNewCall__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "Geen resultate vir \"{query}\" nie",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With a search query"
   },
   "icu:CallHistory__Description--Default": {
-    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Outgoing voice call} other {Incoming voice call}}} Video {{direction, select, Outgoing {Outgoing video call} other {Incoming video call}}} Group {{direction, select, Outgoing {Outgoing group call} other {Incoming group call}}} other {{direction, select, Outgoing {Outgoing  call} other {Incoming  call}}}}",
+    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Uitgaande stemoproep} other {Inkomende stemoproep}}} Video {{direction, select, Outgoing {Uitgaande video-oproep} other {Inkomende video-oproep}}} Group {{direction, select, Outgoing {Uitgaande groepoproep} other {Inkomende groepoproep}}} other {{direction, select, Outgoing {Uitgaande oproep} other {Inkomende oproep}}}}",
     "description": "Call History > Short description of call > When call was not missed or declined (generally accepted)"
   },
   "icu:CallHistory__Description--Missed": {
-    "messageformat": "{type, select, Audio {Missed voice call} Video {Missed video call} Group {Missed group call} other {Missed  call}}",
+    "messageformat": "{type, select, Audio {Gemiste stemoproep} Video {Gemiste video-oproep} Group {Gemiste groepoproep} other {Gemiste oproep}}",
     "description": "Call History > Short description of call > When incoming call was missed"
   },
   "icu:CallHistory__Description--Unanswered": {
-    "messageformat": "{type, select, Audio {Unanswered voice call} Video {Unanswered video call} Group {Unanswered group call} other {Unanswered  call}}",
+    "messageformat": "{type, select, Audio {Onbeantwoorde stemoproep} Video {Onbeantwoorde video-oproep} Group {Onbeantwoorde groepoproep} other {Onbeantwoorde oproep}}",
     "description": "Call History > Short description of call > When outgoing call was unanswered"
   },
   "icu:CallHistory__Description--Declined": {
-    "messageformat": "{type, select, Audio {Declined voice call} Video {Declined video call} Group {Declined group call} other {Declined  call}}",
+    "messageformat": "{type, select, Audio {Stemoproep geweier} Video {Video-oproep geweier} Group {Groepoproep geweier} other {Oproep geweier}}",
     "description": "Call History > Short description of call > When call was declined"
+  },
+  "icu:TypingBubble__avatar--overflow-count": {
+    "messageformat": "{count, plural, one {{count,number} ander persoon is besig om te tik.} other {{count,number} ander persone is besig om te tik.}}",
+    "description": "Group chat multiple person typing indicator when space isn't available to show every avatar, this is the count of avatars hidden."
   },
   "icu:WhatsNew__modal-title": {
     "messageformat": "Wat is nuut",
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Hierdie weergawe bevat ’n aantal klein aanpassings en regstellings om Cradle glad te laat werk.",
+    "messageformat": "Hierdie weergawe bevat ’n aantal klein aanpassings en regstellings om Signal glad te laat werk.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Bykomende klein veranderings, foutregstellings en prestasieverbeterings. Dankie dat jy Cradle Gebruik!",
+    "messageformat": "Bykomende klein veranderings, foutregstellings en prestasieverbeterings. Dankie dat jy Signal Gebruik!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6768,16 +7017,25 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Klein veranderings, foutregstellings en prestasieverbeterings. Dankie dat jy Cradle gebruik!",
+    "messageformat": "Klein veranderings, foutregstellings en prestasieverbeterings. Dankie dat jy Signal gebruik!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.29--0": {
-    "messageformat": "Die Kletskleur-pasmaakskerm word nou korrek oor verskillende tale en geselekteerde lokaliteite vertoon."
+  "icu:WhatsNew__v6.42--0": {
+    "messageformat": "Ons het 'n fout reggemaak wat voorgekom het wanneer aangehaalde antwoorde op video's vertoon word."
   },
-  "icu:WhatsNew__v6.29--1": {
-    "messageformat": "Ons het kennisgewingondersteuning in Windows verbeter. As jy nie op 'n kennisgewing klik wanneer dit die eerste keer aankom nie, sal die jongste gemiste kennisgewing in die Windows-kennisgewingsentrum verskyn. As jy op daardie kennisgewing klik, sal dit jou nou direk na daardie klets toe neem. Ons wil graag vir Julien Richard bedank vir sy terugvoer."
+  "icu:WhatsNew__v6.42--1": {
+    "messageformat": "Dankie aan {linkToGithub1} en {linkToGithub2} vir hul hulp met hierdie vrystelling."
   },
-  "icu:WhatsNew__v6.30--0": {
-    "messageformat": "Keep tabs on your calls with the new calls tab. Start a new call or return a call that you missed without having to find the corresponding chat. Now you can say hello with your voice without also saying goodbye to the unread marker for messages in that thread."
+  "icu:WhatsNew__v6.43--0": {
+    "messageformat": "Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat."
+  },
+  "icu:WhatsNew__v6.43--1": {
+    "messageformat": "The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Signal Settings > Appearance > Language). Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--2": {
+    "messageformat": "The playback speed indicators in voice messages have a slightly new look. X marks the spot. Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--3": {
+    "messageformat": "We would also like to thank {linkToGithub1}, {linkToGithub2}, and {linkToGithub3} for their contributions to this release."
   }
 }

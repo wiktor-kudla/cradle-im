@@ -49,13 +49,13 @@ export function About({
           <div>
             <a
               className="acknowledgments"
-              href="https://github.com/cradle-im/Cradle-Desktop/blob/main/ACKNOWLEDGMENTS.md"
+              href="https://github.com/wiktor-kudla/cradle-im/blob/main/ACKNOWLEDGMENTS.md"
             >
               {i18n('icu:softwareAcknowledgments')}
             </a>
           </div>
           <div>
-            <a className="privacy" href="https://cradle.im/legal">
+            <a className="privacy" href="https://signal.org/legal">
               {i18n('icu:privacyPolicy')}
             </a>
           </div>

@@ -2,6 +2,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 .CompositionArea {
+  background: $color-purple-01;
+  color: $color-white;
   position: relative;
   min-height: 42px;
   padding-block: 10px;
@@ -41,6 +43,7 @@
     align-items: center;
     height: 100%;
     flex-shrink: 0;
+    color: white;
 
     &:first-child {
       margin-inline-start: 12px;
@@ -59,7 +62,7 @@
     @include button-reset;
     @include rounded-corners;
     align-items: center;
-    background-color: $color-gray-45;
+    background-color: $color-white;
     display: flex;
     height: 28px;
     justify-content: center;
@@ -139,7 +142,6 @@
     }
 
     @include light-theme() {
-      // background-color: $color-white;
       background-color: $color-purple-01;
     }
 
@@ -265,8 +267,7 @@
       @include light-theme {
         @include color-svg(
           '../images/icons/v3/attach/attach.svg',
-          // $color-gray-75
-          $color-white
+          $color-gray-75
         );
       }
       @include dark-theme {

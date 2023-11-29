@@ -8,6 +8,7 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
+
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -89,7 +90,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Conditions générales d’utilisation et politique de confidentialité",
-    "description": "Shown in the about box for the link to https://cradle.org/legal"
+    "description": "Shown in the about box for the link to https://signal.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -109,11 +110,27 @@
   },
   "icu:databaseError": {
     "messageformat": "Erreur de base de données",
-    "description": "Shown in a popup if the database cannot start up properly"
+    "description": "Title of a popup if the database cannot start up properly"
+  },
+  "icu:databaseError__detail": {
+    "messageformat": "Une erreur liée à la base de données s’est produite. Vous pouvez transférer les détails du problème à l’équipe d’assistance Signal pour qu’elle vous aide à le résoudre. Si vous devez utiliser Signal immédiatement, vous pouvez supprimer vos données et redémarrer. \n\nContactez l’équipe d’assistance en vous rendant sur : {link}",
+    "description": "Description shown in a popup if the database cannot start up properly"
   },
   "icu:deleteAndRestart": {
-    "messageformat": "Supprimer toutes les données et relancer",
-    "description": "Shown in a popup if the database cannot start up properly; allows user to delete database and restart"
+    "messageformat": "Supprimer les données et redémarrer",
+    "description": "Text of a button shown in a popup if the database cannot start up properly; allows user to delete all data in their database and restart"
+  },
+  "icu:databaseError__deleteDataConfirmation": {
+    "messageformat": "Supprimer définitivement toutes les données ?",
+    "description": "Header of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__deleteDataConfirmation__detail": {
+    "messageformat": "Tout l’historique de vos messages et de vos fichiers sera définitivement supprimé de cet appareil. Vous pourrez utiliser Signal sur cet appareil après l’avoir relié. Cette action ne supprimera aucune donnée de votre téléphone.",
+    "description": "Description of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__startOldVersion": {
+    "messageformat": "La version de votre base de données ne peut pas supporter cette version de Signal. Assurez-vous d’ouvrir la dernière version de Signal sur votre ordinateur.",
+    "description": "Text in a popup shown if the app cannot start because the user started an older version of Signal"
   },
   "icu:mainMenuFile": {
     "messageformat": "&Fichier",
@@ -160,7 +177,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Fermer Cradle",
+    "messageformat": "Fermer Signal",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -272,7 +289,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Mettre Cradle à jour",
+    "messageformat": "Mettre Signal à jour",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -299,40 +316,68 @@
     "messageformat": "Conversations",
     "description": "Shown as a header for non-pinned conversations in the left pane"
   },
+  "icu:LeftPane--corrupted-username--text": {
+    "messageformat": "Une erreur s’est produite et votre nom d’utilisateur n’est plus associé à votre compte. Vous pouvez tenter de le reconfigurer ou en choisir un autre.",
+    "description": "Text of corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username--action-text": {
+    "messageformat": "Résoudre",
+    "description": "Text of the button in the corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--text": {
+    "messageformat": "Une erreur s'est produite et vos code QR et lien d'utilisateur ne sont plus valides. Créez un nouveau lien à partager avec d’autres utilisateurs.",
+    "description": "Text of corrupted username link banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--action-text": {
+    "messageformat": "Résoudre",
+    "description": "Text of the button in the corrupted username link banner in the left pane"
+  },
   "icu:NavTabsToggle__showTabs": {
-    "messageformat": "Show Tabs",
+    "messageformat": "Afficher les onglets",
     "description": "Show in the left pane when the nav tabs are hidden, shows the nav tabs"
   },
   "icu:NavTabsToggle__hideTabs": {
-    "messageformat": "Hide Tabs",
+    "messageformat": "Masquer les onglets",
     "description": "Show in the nav tabs when the nav tabs are visible, hides the nav tabs"
   },
   "icu:NavTabs__ItemIconLabel--HasError": {
-    "messageformat": "An error occurred",
+    "messageformat": "Une erreur s’est produite",
     "description": "Nav Tabs > Tab has error > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--UnreadCount": {
-    "messageformat": "{count,number} unread",
+    "messageformat": "{count,number} non lu(s)",
     "description": "Nav Tabs > Unread badge > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--MarkedUnread": {
-    "messageformat": "Marked unread",
+    "messageformat": "Marqué comme non lu",
     "description": "Nav Tabs > Unread badge > when conversation is marked unread > Accessibility Text"
   },
+  "icu:NavTabs__ItemLabel--Chats": {
+    "messageformat": "Conversations",
+    "description": "Nav Tabs > Chats Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Calls": {
+    "messageformat": "Appels",
+    "description": "Nav Tabs > Calls Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Stories": {
+    "messageformat": "Stories",
+    "description": "Nav Tabs > Stories Button > Label & Accessibility Text"
+  },
   "icu:NavTabs__ItemLabel--Settings": {
-    "messageformat": "Settings",
+    "messageformat": "Paramètres",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Update": {
-    "messageformat": "Update Signal",
+    "messageformat": "Mettre Signal à jour",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Profile": {
-    "messageformat": "Profile",
+    "messageformat": "Profil",
     "description": "Nav Tabs > Profile Button > Accessibility Text"
   },
   "icu:NavSidebar__BackButtonLabel": {
-    "messageformat": "Back",
+    "messageformat": "Retour",
     "description": "Shown in the sidebar header when on a nested panel within the current sidebar, takes the user back to the previous step or default sidebar state"
   },
   "icu:archiveHelperText": {
@@ -428,7 +473,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Vous venez de passer par le processus d’exportation, et vos contacts et messages attendent patiemment sur votre ordinateur. Sélectionnez le dossier contenant vos données relatives à Cradle enregistrées.",
+    "messageformat": "Vous venez de passer par le processus d’exportation, et vos contacts et messages attendent patiemment sur votre ordinateur. Sélectionnez le dossier contenant vos données relatives à Signal enregistrées.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -444,7 +489,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Assurez-vous d’avoir sélectionné le bon répertoire qui comprend vos données Cradle enregistrées. Son nom devrait commencer par « Cradle Export ». Vous pouvez également enregistrer une nouvelle copie de vos données dans l’appli Chrome.",
+    "messageformat": "Assurez-vous d’avoir sélectionné le bon répertoire qui comprend vos données Signal enregistrées. Son nom devrait commencer par « Signal Export ». Vous pouvez également enregistrer une nouvelle copie de vos données dans l’appli Chrome.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -460,7 +505,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Commencer à utiliser Cradle Desktop pour ordinateur",
+    "messageformat": "Commencer à utiliser Signal Desktop pour ordinateur",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -544,11 +589,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "Le numéro de sécurité que vous essayez de confirmer a changé. Veuillez vérifier votre nouveau numéro de sécurité avec {name1}. N’oubliez pas que ce changement peut signifier que quelqu’un essaie d’intercepter vos communications ou que {name2} a simplement réinstallé Signal/Cradle.",
+    "messageformat": "Le numéro de sécurité que vous essayez de confirmer a changé. Veuillez vérifier votre nouveau numéro de sécurité avec {name1}. N’oubliez pas que ce changement peut signifier que quelqu’un essaie d’intercepter vos communications ou que {name2} a simplement réinstallé Signal.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Les contacts suivants ont peut-être réinstallé Signal/Cradle ou changé d’appareil. Appuyez sur le contact pour confirmer le nouveau numéro de sécurité. Cette étape est facultative.",
+    "messageformat": "Les contacts suivants ont peut-être réinstallé Signal ou changé d’appareil. Appuyez sur le contact pour confirmer le nouveau numéro de sécurité. Cette étape est facultative.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -560,7 +605,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {{count,number} connexion a peut-être réinstallé Signal/Cradle ou changé d’appareil. Vous avez la possibilité de vérifier son numéro de sécurité avant d’appuyer sur envoyer.} other {{count,number} connexions ont peut-être réinstallé Signal/Cradle ou changé d’appareil. Vous avez la possibilité de vérifier leur numéro de sécurité avant d’appuyer sur envoyer.}}",
+    "messageformat": "{count, plural, one {{count,number} connexion a peut-être réinstallé Signal ou changé d’appareil. Vous avez la possibilité de vérifier son numéro de sécurité avant d’appuyer sur envoyer.} other {{count,number} connexions ont peut-être réinstallé Signal ou changé d’appareil. Vous avez la possibilité de vérifier leur numéro de sécurité avant d’appuyer sur envoyer.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -592,7 +637,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Votre numéro de sécurité avec {name1} a changé. Cela pourrait signifier soit que quelqu’un tente d’intercepter votre communication, soit que {name2} a simplement réinstallé Signal/Cradle. Vous devriez peut-être confirmer votre numéro de sécurité avec ce contact.",
+    "messageformat": "Votre numéro de sécurité avec {name1} a changé. Cela pourrait signifier soit que quelqu’un tente d’intercepter votre communication, soit que {name2} a simplement réinstallé Signal. Vous devriez peut-être confirmer votre numéro de sécurité avec ce contact.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -611,6 +656,10 @@
     "messageformat": "Appeler quand même",
     "description": "Used on a warning dialog to make it clear that it might be risky to call the conversation."
   },
+  "icu:joinAnyway": {
+    "messageformat": "Participer quand même",
+    "description": "Used on a warning dialog to make it clear that it might be risky to join the call."
+  },
   "icu:continueCall": {
     "messageformat": "Poursuivre l’appel",
     "description": "Used on a warning dialog to make it clear that it might be risky to continue the group call."
@@ -628,7 +677,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Un problème est survenu lors du téléversement ! Veuillez nous envoyer un courriel à support@cradle.org et joindre votre journal comme fichier texte.",
+    "messageformat": "Un problème est survenu lors du téléversement ! Veuillez nous envoyer un courriel à support@signal.org et joindre votre journal comme fichier texte.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -672,23 +721,23 @@
   },
   "icu:SafetyNumberViewer__migration__text": {
     "messageformat": "Les numéros de sécurité sont mis à jour.",
-    "description": "An explanatory note in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) An explanatory note in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__migration__learn_more": {
     "messageformat": "En apprendre davantage",
-    "description": "A link text in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) A link text in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__card__prev": {
     "messageformat": "Numéro de sécurité précédent",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__card__next": {
     "messageformat": "Numéro de sécurité suivant",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__carousel__dot": {
     "messageformat": "Version du numéro de sécurité, {index,number} de {total,number}",
-    "description": "An ARIA label for safety number carousel button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number carousel button."
   },
   "icu:SafetyNumberViewer__markAsVerified": {
     "messageformat": "Marquer comme confirmé",
@@ -698,33 +747,41 @@
     "messageformat": "Annuler la confirmation",
     "description": "Safety number viewer, verification toggle button, when verified, clears verification state"
   },
+  "icu:SafetyNumberViewer__hint": {
+    "messageformat": "Pour vérifier le chiffrement de bout en bout avec {name}, comparez les chiffres ci-dessus avec leur appareil. Ils peuvent également lire votre code avec leur appareil.",
+    "description": "Safety number viewer, text of the hint"
+  },
+  "icu:SafetyNumberViewer__learn_more": {
+    "messageformat": "En savoir plus",
+    "description": "Text of 'Learn more' button of SafetyNumberViewerModal modal"
+  },
   "icu:SafetyNumberViewer__hint--migration": {
     "messageformat": "Pour vérifier le cryptage de bout en bout avec {name}, faites correspondre la carte de couleur en haut avec leur appareil et comparez-en les chiffres. Si ces numéros ne correspondent pas, essayez l'autre paire de numéros de sécurité. Une seule paire doit être associée.",
-    "description": "Safety number viewer, text of the hint during migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint during migration period"
   },
   "icu:SafetyNumberViewer__hint--normal": {
     "messageformat": "Pour vérifier le chiffrement de bout en bout avec {name}, comparez les chiffres ci-dessus avec leur appareil. Ils peuvent également lire votre code avec leur appareil.",
-    "description": "Safety number viewer, text of the hint after migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint after migration period"
   },
   "icu:SafetyNumberOnboarding__title": {
     "messageformat": "Modifications des numéros de sécurité",
-    "description": "Title of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Title of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p1": {
     "messageformat": "Les numéros de sécurité sont mis à jour au cours d'une période de transition afin d'activer les prochaines fonctions de confidentialité de Signal.",
-    "description": "Paragraph 1 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 1 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p2": {
     "messageformat": "Pour vérifier les numéros de sécurité, faites correspondre ceux de la carte de couleur avec ceux de l'appareil de votre contact. Si ces numéros ne correspondent pas, essayez l'autre paire de numéros de sécurité. Une seule paire doit être associée.",
-    "description": "Paragraph 2 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 2 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__help": {
     "messageformat": "Besoin d’aide ?",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__close": {
     "messageformat": "Compris",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberNotReady__body": {
     "messageformat": "Un numéro de sécurité sera créé avec cette personne après l'échange de messages.",
@@ -750,7 +807,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "Votre numéro de sécurité avec ce contact a changé. Cela pourrait signifier soit que quelqu’un tente d’intercepter votre communication, soit que ce contact a simplement réinstallé Signal/Cradle. Vous devriez peut-être confirmer le nouveau numéro de sécurité ce-dessous."
+    "messageformat": "Votre numéro de sécurité avec ce contact a changé. Cela pourrait signifier soit que quelqu’un tente d’intercepter votre communication, soit que ce contact a simplement réinstallé Signal. Vous devriez peut-être confirmer le nouveau numéro de sécurité ce-dessous."
   },
   "icu:incomingError": {
     "messageformat": "Erreur de traitement du message entrant"
@@ -813,26 +870,26 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Chargement de l’aperçu…",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "Brouillon d’imagette d’aperçu de lien pour {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "Imagette d’aperçu de lien pour {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Brouillon d’image jointe : {path}",
     "description": "Alt text for staged attachments"
   },
   "icu:cdsMirroringErrorToast": {
-    "messageformat": "Le service de découverte des contacts de Cradle Desktop a rencontré une incohérence.",
+    "messageformat": "Le service de découverte des contacts de Signal Desktop a rencontré une incohérence.",
     "description": "An error popup when we discovered an inconsistency between mirrored Contact Discovery Service requests."
   },
   "icu:decryptionErrorToast": {
-    "messageformat": "Cradle Desktop a rencontré une erreur de déchiffrement de {name}, appareil {deviceId}.",
+    "messageformat": "Signal Desktop a rencontré une erreur de déchiffrement de {name}, appareil {deviceId}.",
     "description": "An error popup when we haven't added an in-timeline error for decryption error, only for beta/internal users."
   },
   "icu:decryptionErrorToastAction": {
@@ -916,18 +973,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Tester la version bêta",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Préférences de Cradle Desktop pour ordinateur",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "messageformat": "Préférences de Signal Desktop pour ordinateur",
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Créateur de paquet d’autocollants",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "À propos de Cradle Desktop pour ordinateur",
+    "messageformat": "À propos de Signal Desktop pour ordinateur",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -951,7 +1008,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Cradle Desktop pour ordinateur",
+    "messageformat": "Signal Desktop pour ordinateur",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -971,7 +1028,7 @@
     "description": "Shown in the search left pane when no results were found"
   },
   "icu:noSearchResults--sms-only": {
-    "messageformat": "Les contacts de textos et de messages multimédias ne sont pas proposés sur Cradle pour ordinateur.",
+    "messageformat": "Les contacts de textos et de messages multimédias ne sont pas proposés sur Signal pour ordinateur.",
     "description": "Shown in the search left pane when no results were found and primary device has SMS/MMS handling enabled"
   },
   "icu:noSearchResultsInConversation": {
@@ -1003,7 +1060,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Bienvenue sur Cradle"
+    "messageformat": "Bienvenue sur Signal"
   },
   "icu:whatsNew": {
     "messageformat": "Consulter {whatsNew} dans cette mise à jour",
@@ -1134,15 +1191,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Pour envoyer des messages vocaux, autorisez Cradle Desktop à accéder à votre microphone.",
+    "messageformat": "Pour envoyer des messages vocaux, autorisez Signal Desktop à accéder à votre microphone.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Pour appeler, vous devez autoriser l’accès de Cradle Desktop pour ordinateur à votre micro.",
+    "messageformat": "Pour appeler, vous devez autoriser l’accès de Signal Desktop pour ordinateur à votre micro.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Pour les appels vidéo, vous devez autoriser l’accès de Cradle Desktop pour ordinateur à votre caméra.",
+    "messageformat": "Pour les appels vidéo, vous devez autoriser l’accès de Signal Desktop pour ordinateur à votre caméra.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1182,15 +1239,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Cradle n’a pas pu être mise à jour. {retry} ou visitez {url} pour l’installer manuellement. Puis, {support} au sujet de ce problème",
+    "messageformat": "Signal n’a pas pu être mise à jour. {retry} ou visitez {url} pour l’installer manuellement. Puis, {support} au sujet de ce problème",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Cradle n’a pas pu être mise à jour. Visitez {url} pour l’installer manuellement. Puis, {support} au sujet de ce problème",
+    "messageformat": "Signal n’a pas pu être mise à jour. Visitez {url} pour l’installer manuellement. Puis, {support} au sujet de ce problème",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Cradle Desktop pour ordinateur a probablement été mise en quarantaine par macOS et ne pourra pas se mettre automatiquement à jour. Avec Finder, essayez de déplacer  {app} dans  {folder}.",
+    "messageformat": "Signal Desktop pour ordinateur a probablement été mise en quarantaine par macOS et ne pourra pas se mettre automatiquement à jour. Avec Finder, essayez de déplacer  {app} dans  {folder}.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1246,7 +1303,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Ce message sera supprimé pour tous les membres participant à la conversation s’ils utilisent une version récente de Signal/Cradle. Ils pourront voir que vous avez supprimé un message.",
+    "messageformat": "Ce message sera supprimé pour tous les membres participant à la conversation s’ils utilisent une version récente de Signal. Ils pourront voir que vous avez supprimé un message.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1365,17 +1422,17 @@
     "messageformat": "Info",
     "description": "Shown on the drop-down menu for an individual message, takes you to message detail screen"
   },
-  "icu:deleteMessages": {
-    "messageformat": "Supprimer",
-    "description": "Menu item for deleting messages, title case."
+  "icu:deleteMessagesInConversation": {
+    "messageformat": "Supprimer les messages",
+    "description": "Menu item for deleting all messages in a conversation from your device"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Supprimer la conversation ?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__title": {
+    "messageformat": "Supprimer le message ?",
+    "description": "Title for confirmation modal to delete all messages in a conversation"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "Cette conversation sera supprimée de cet appareil.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__description": {
+    "messageformat": "Les messages de cette conversation seront supprimés de cet appareil. Vous pourrez tout de même rechercher cette conversation après avoir supprimé les messages.",
+    "description": "Description for confirmation modal to delete all messages in a conversation"
   },
   "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
     "messageformat": "Quitter le groupe",
@@ -1410,7 +1467,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Cradle utilise un chiffrement de bout en bout, et l’actualisation de votre session de conversation pourrait parfois être nécessaire. Cela n’affecte pas la sécurité de votre conversation, mais vous pourriez alors manquer un message de ce contact. Vous pouvez lui demander de vous le renvoyer.",
+    "messageformat": "Signal utilise un chiffrement de bout en bout, et l’actualisation de votre session de conversation pourrait parfois être nécessaire. Cela n’affecte pas la sécurité de votre conversation, mais vous pourriez alors manquer un message de ce contact. Vous pouvez lui demander de vous le renvoyer.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1469,6 +1526,14 @@
     "messageformat": "L’historique de vos messages contenus dans les deux conversations a été fusionné ici.",
     "description": "Contents of a dialog shown after clicking 'learn more' button on a conversation merge event."
   },
+  "icu:PhoneNumberDiscovery--notification--withSharedGroup": {
+    "messageformat": "{phoneNumber} appartient à {conversationTitle}. Vous êtes tous deux membres du groupe {sharedGroup}.",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with."
+  },
+  "icu:PhoneNumberDiscovery--notification--noSharedGroup": {
+    "messageformat": "{phoneNumber} appartient à {conversationTitle}",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with, but you have no shared groups."
+  },
   "icu:quoteThumbnailAlt": {
     "messageformat": "Imagette du message cité",
     "description": "Used in alt tag of thumbnail images inside of an embedded message quote"
@@ -1502,20 +1567,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Bienvenue sur Cradle Desktop pour ordinateur",
+    "messageformat": "Bienvenue sur Signal Desktop pour ordinateur",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "La confidentialité est possible. Cradle la facilite.",
+    "messageformat": "La confidentialité est possible. Signal la facilite.",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "Appareils reliés",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Relier un nouvel appareil",
-    "description": "The menu option shown in Cradle iOS to add a new linked device"
+    "description": "The menu option shown in Signal iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "En apprendre davantage",
@@ -1589,7 +1654,7 @@
     "messageformat": "Désolé, trop d’appareils sont déjà reliés. Essayez d’en supprimer."
   },
   "icu:installTooOld": {
-    "messageformat": "Mettez Cradle à jour sur cet appareil pour relier votre téléphone."
+    "messageformat": "Mettez Signal à jour sur cet appareil pour relier votre téléphone."
   },
   "icu:installErrorHeader": {
     "messageformat": "Une erreur s’est produite."
@@ -1616,10 +1681,6 @@
     "messageformat": "Rappeler",
     "description": "Button to call someone again"
   },
-  "icu:calling__start": {
-    "messageformat": "Démarrer un appel",
-    "description": "Button label in the call lobby for starting a call"
-  },
   "icu:calling__join": {
     "messageformat": "Me joindre à l’appel",
     "description": "Button label in the call lobby for joining a call"
@@ -1632,13 +1693,25 @@
     "messageformat": "Microphone coupé en raison du nombre de participants à l’appel",
     "description": "Shown in a call lobby toast if there are a lot of people already on the call"
   },
+  "icu:calling__toasts--aria-label": {
+    "messageformat": "Notifications d’appels",
+    "description": "Aria label for region of toasts shown during a call (for, e.g. reconnecting, person joined, audio device changed notifications)"
+  },
   "icu:calling__call-is-full": {
     "messageformat": "L’appel est complet",
     "description": "Text in the call lobby when you can't join because the call is full"
   },
-  "icu:calling__button--video__label": {
-    "messageformat": "Caméra",
-    "description": "Label under the video button"
+  "icu:CallingLobbyJoinButton--join": {
+    "messageformat": "Rejoindre",
+    "description": "Button label in the call lobby for joining a call"
+  },
+  "icu:CallingLobbyJoinButton--start": {
+    "messageformat": "Commencer",
+    "description": "Button label in the call lobby for starting a call"
+  },
+  "icu:CallingLobbyJoinButton--call-full": {
+    "messageformat": "Appel complet",
+    "description": "Button in the call lobby when you can't join because the call is full"
   },
   "icu:calling__button--video-disabled": {
     "messageformat": "La caméra est désactivée",
@@ -1652,10 +1725,6 @@
     "messageformat": "Activer la caméra",
     "description": "Button tooltip label for turning on the camera"
   },
-  "icu:calling__button--audio__label": {
-    "messageformat": "Sourdine",
-    "description": "Label under the audio button"
-  },
   "icu:calling__button--audio-disabled": {
     "messageformat": "Le microphone a été désactivé",
     "description": "Button tooltip label when the microphone is disabled"
@@ -1667,10 +1736,6 @@
   "icu:calling__button--audio-on": {
     "messageformat": "Réactiver le microphone",
     "description": "Button tooltip label for turning on the microphone"
-  },
-  "icu:calling__button--presenting__label": {
-    "messageformat": "Partager",
-    "description": "Label under the share screen button"
   },
   "icu:calling__button--presenting-disabled": {
     "messageformat": "Présentation désactivée",
@@ -1684,10 +1749,6 @@
     "messageformat": "Arrêter la présentation",
     "description": "Button tooltip label for stopping screen sharing"
   },
-  "icu:calling__button--ring__label": {
-    "messageformat": "Sonnerie",
-    "description": "Label under the ring button"
-  },
   "icu:calling__button--ring__disabled-because-group-is-too-large": {
     "messageformat": "Le groupe est trop grand pour appeler tous les participants.",
     "description": "Button tooltip label when you can't ring because the group is too large"
@@ -1699,6 +1760,26 @@
   "icu:calling__button--ring__on": {
     "messageformat": "Activer la sonnerie",
     "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton__ring-off": {
+    "messageformat": "Désactiver la sonnerie",
+    "description": "Button tooltip label for turning ringing off"
+  },
+  "icu:CallingButton--ring-on": {
+    "messageformat": "Activer la sonnerie",
+    "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton--more-options": {
+    "messageformat": "Plus d’options",
+    "description": "Tooltip label for button in the calling screen that opens a menu with other call actions such as React or Raise Hand."
+  },
+  "icu:CallingRaisedHandsList__Title": {
+    "messageformat": "{count, plural, one {Mains levées · {count,number} personne} other {Mains levées · {count,number} personnes}}",
+    "description": "Shown in the call raised hands list to describe how many people have active raised hands"
+  },
+  "icu:CallingReactions--me": {
+    "messageformat": "Vous",
+    "description": "Label next to in-call reactions to indicate that the current user sent that reaction."
   },
   "icu:calling__your-video-is-off": {
     "messageformat": "Votre caméra est désactivée",
@@ -1725,23 +1806,23 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--many-people-in-call": {
-    "messageformat": "{first}, {second} et {others} autres personnes font partie de cet appel",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others are in this call",
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Cradle sonnera chez {person}",
+    "messageformat": "Signal sonnera chez {person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Cradle sonnera chez {first} et {second}",
+    "messageformat": "Signal sonnera chez {first} et {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Cradle sonnera chez {first}, {second} et {third}",
+    "messageformat": "Signal sonnera chez {first}, {second} et {third}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Cradle sonnera chez {first}, {second} et {others} autres",
+    "messageformat": "Signal will ring {first}, {second}, and {others, plural, other {#}} others",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1757,7 +1838,7 @@
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__pre-call-info--will-notify-many": {
-    "messageformat": "{first}, {second} et {others} autres seront notifiés",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others will be notified",
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__in-this-call--zero": {
@@ -1797,7 +1878,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Cradle est en train de partager {window}.",
+    "messageformat": "Signal est en train de partager {window}.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1821,7 +1902,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Cradle a besoin d’une autorisation pour accéder à l’enregistrement de l’écran de votre ordinateur.",
+    "messageformat": "Signal a besoin d’une autorisation pour accéder à l’enregistrement de l’écran de votre ordinateur.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1833,7 +1914,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "Sur la droite, cochez la case à côté de Cradle. Si vous ne voyez pas Cradle dans la liste, cliquez sur + pour l’ajouter.",
+    "messageformat": "Sur la droite, cochez la case à côté de Signal. Si vous ne voyez pas Signal dans la liste, cliquez sur + pour l’ajouter.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1877,12 +1958,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "La vérification orthographique sera activée au prochain démarrage de Cradle.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "La vérification orthographique sera activée au prochain démarrage de Signal.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "La vérification orthographique sera désactivée au prochain démarrage de Cradle.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "La vérification orthographique sera désactivée au prochain démarrage de Signal.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Réduire dans la zone de notification",
@@ -1897,15 +1978,15 @@
     "description": "Description for the automatic launch setting"
   },
   "icu:clearDataHeader": {
-    "messageformat": "Supprimer les données de l’application",
+    "messageformat": "Delete application data",
     "description": "Header in the settings dialog for the section dealing with data deletion"
   },
   "icu:clearDataExplanation": {
-    "messageformat": "Toutes les données dans l’application seront supprimées, y compris tous les messages et les informations de compte enregistrées.",
+    "messageformat": "This will delete all data in the application, removing all messages and saved account information.",
     "description": "Text describing what the clear data button will do."
   },
   "icu:clearDataButton": {
-    "messageformat": "Supprimer les données",
+    "messageformat": "Delete data",
     "description": "Button in the settings dialog starting process to delete all data"
   },
   "icu:deleteAllDataHeader": {
@@ -1913,7 +1994,7 @@
     "description": "Header of the full-screen delete data confirmation screen"
   },
   "icu:deleteAllDataBody": {
-    "messageformat": "Vous êtes sur le point de supprimer toutes les informations de compte enregistrées de cette application, y compris tous les contacts et messages. Vous pourrez toujours relier votre appareil mobile de nouveau, mais cela ne restaurera pas les messages supprimés.",
+    "messageformat": "Delete all data and messages from this version of Signal Desktop? You can always relink this desktop, but your messages will not restore. Your Signal account and data on your phone or other linked devices will not be deleted.",
     "description": "Text describing what exactly will happen if the user clicks the button to delete all data"
   },
   "icu:deleteAllDataButton": {
@@ -1925,8 +2006,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Vous avez des données périmées qui proviennent d’une ancienne installation de Cradle pour ordinateur. Si vous choisissez de poursuivre, elles seront supprimées et vous recommencerez à zéro.",
-    "description": "Shown if user last ran Cradle Desktop before October 2018"
+    "messageformat": "Vous avez des données périmées qui proviennent d’une ancienne installation de Signal pour ordinateur. Si vous choisissez de poursuivre, elles seront supprimées et vous recommencerez à zéro.",
+    "description": "Shown if user last ran Signal Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Supprimer les anciennes données",
@@ -2007,11 +2088,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "Cette version de Cradle Desktop pour ordinateur est expirée. Veuillez la mettre à niveau vers la version la plus récente afin de continuer à échanger.",
+    "messageformat": "Cette version de Signal Desktop pour ordinateur est expirée. Veuillez la mettre à niveau vers la version la plus récente afin de continuer à échanger.",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Cliquez pour accéder à cradle.org/download",
+    "messageformat": "Cliquez pour accéder à signal.org/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2179,7 +2260,7 @@
     "description": "In conversation details, label for button to view safety number, opens safety number modal"
   },
   "icu:ConversationDetails__HeaderButton--Message": {
-    "messageformat": "Message",
+    "messageformat": "Écrire",
     "description": "In conversation details, label for button to switch to the conversation view in order to draft a message in that converation"
   },
   "icu:SafetyNumberNotification__viewSafetyNumber": {
@@ -2264,22 +2345,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Échec de la récupération du nom d'utilisateur. Vérifiez votre connexion et réessayez.",
-    "description": "Shown if request to Cradle servers to find username fails"
+    "description": "Shown if request to Signal servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "Échec de la récupération du numéro de téléphone. Vérifiez votre connexion et réessayez.",
-    "description": "Shown if request to Cradle servers to find phone number fails"
+    "description": "Shown if request to Signal servers to find phone number fails"
   },
-  "icu:ToastManager__CannotEditMessage": {
-    "messageformat": "Les modifications peuvent être appliquées uniquement dans un délai de 3 heures à compter de l’envoi du message.",
+  "icu:ToastManager__CannotEditMessage_24": {
+    "messageformat": "Vous ne pouvez modifier que pendant les 24 heures suivant l’envoi du message.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "Utilisateur non trouvé.{atUsername} n’est pas un utilisateur de Signal/Cradle ; assurez-vous d’avoir saisi le nom d'utilisateur complet.",
+    "messageformat": "Utilisateur non trouvé.{atUsername} n’est pas un utilisateur de Signal ; assurez-vous d’avoir saisi le nom d'utilisateur complet.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "L’utilisateur est introuvable. « {phoneNumber} » n’est pas un utilisateur de Signal/Cradle.",
+    "messageformat": "L’utilisateur est introuvable. « {phoneNumber} » n’est pas un utilisateur de Signal.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2307,7 +2388,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Les groupes Cradle peuvent avoir un maximum de {max,number} membres.",
+    "messageformat": "Les groupes Signal peuvent avoir un maximum de {max,number} membres.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2315,7 +2396,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Les groupes Cradle fonctionnent mieux avec {max,number} membres ou moins. Ajouter davantage de membres entraînera des retards dans l’envoi et la réception des messages.",
+    "messageformat": "Les groupes Signal fonctionnent mieux avec {max,number} membres ou moins. Ajouter davantage de membres entraînera des retards dans l’envoi et la réception des messages.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2367,7 +2448,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Cliquez pour relier Cradle Desktop pour ordinateur à votre appareil mobile et continuer à communiquer."
+    "messageformat": "Cliquez pour relier Signal Desktop pour ordinateur à votre appareil mobile et continuer à communiquer."
   },
   "icu:unlinked": {
     "messageformat": "Non relié"
@@ -2385,17 +2466,17 @@
     "messageformat": "contactez l’assistance"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Cliquez pour redémarrer Cradle"
+    "messageformat": "Cliquez pour redémarrer Signal"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Cliquez pour télécharger la mise à jour"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Cradle n’a pas pu être mise à jour. Cliquez pour réessayer.",
+    "messageformat": "Signal n’a pas pu être mise à jour. Cliquez pour réessayer.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Redémarrer Cradle"
+    "messageformat": "Redémarrer Signal"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "Plus tard"
@@ -2514,6 +2595,14 @@
   "icu:message--deletedForEveryone": {
     "messageformat": "Ce message a été supprimé.",
     "description": "Shown in a message's bubble when the message has been deleted for everyone."
+  },
+  "icu:message--attachmentTooBig--one": {
+    "messageformat": "Pièce jointe trop volumineuse pour être affichée.",
+    "description": "Shown in a message bubble if no attachments are left on message when too-large attachments are dropped"
+  },
+  "icu:message--attachmentTooBig--multiple": {
+    "messageformat": "Certaines pièces jointes sont trop volumineuses pour être affichées.",
+    "description": "Shown in a message bubble if any attachments are left on message when too-large attachments are dropped"
   },
   "icu:donation--missing": {
     "messageformat": "Impossible de récupérer les détails du don",
@@ -2653,15 +2742,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Nous présentons les autocollants : Bandit le chat",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Nous présentons les autocollants",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "Pourquoi utiliser des mots quand vous pouvez utiliser des autocollants ?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Ouvrir le sélecteur d’autocollants",
@@ -2804,20 +2893,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} vous a envoyé un message qui ne peut être ni traité ni affiché, car il utilise une nouvelle fonction de Signal/Cradle."
+    "messageformat": "{contact} vous a envoyé un message qui ne peut être ni traité ni affiché, car il utilise une nouvelle fonction de Signal."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Vous pouvez demander à {contact} de renvoyer ce message, maintenant que vous utilisez une version à jour de Cradle."
+    "messageformat": "Vous pouvez demander à {contact} de renvoyer ce message, maintenant que vous utilisez une version à jour de Signal."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Un de vos appareils a envoyé un message qui ne peut être ni traité ni affiché, car il utilise une nouvelle fonction de Signal/Cradle."
+    "messageformat": "Un de vos appareils a envoyé un message qui ne peut être ni traité ni affiché, car il utilise une nouvelle fonction de Signal."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "De tels messages futurs seront synchronisés, maintenant que vous utilisez une version à jour de Cradle."
+    "messageformat": "De tels messages futurs seront synchronisés, maintenant que vous utilisez une version à jour de Signal."
   },
   "icu:Message--update-signal": {
-    "messageformat": "Mettre Cradle à jour",
-    "description": "Text for a button which will take user to Cradle download page"
+    "messageformat": "Mettre Signal à jour",
+    "description": "Text for a button which will take user to Signal download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Visualisé",
@@ -3156,11 +3245,19 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Pour la version bêta de Cradle uniquement",
-    "description": "Title of the modal shown before sending your first edit message"
+    "messageformat": "Pour la version bêta de Signal uniquement",
+    "description": "(deleted 8/30) Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "La fonction permettant de modifier les messages est disponible pour les utilisateurs de la version bêta de Cradle uniquement. Les modifications apportées à un message ne seront visibles que pour les personnes utilisant la dernière version bêta de Cradle.",
+    "messageformat": "La fonction permettant de modifier les messages est disponible pour les utilisateurs de la version bêta de Signal uniquement. Les modifications apportées à un message ne seront visibles que pour les personnes utilisant la dernière version bêta de Signal.",
+    "description": "(deleted 8/30) Body text of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--title2": {
+    "messageformat": "Modifier le message",
+    "description": "Title of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--body2": {
+    "messageformat": "Les modifications apportées aux messages ne seront visibles que par les personnes utilisant les dernières versions de Signal. Elles pourront voir que vous avez modifié un message.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3168,20 +3265,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "Certaines personnes utilisent peut-être une version de Cradle qui ne prend pas en charge le texte formaté. Elles ne pourront pas voir les changements de formatage appliqués à un message.",
+    "messageformat": "Certaines personnes utilisent peut-être une version de Signal qui ne prend pas en charge le texte formaté. Elles ne pourront pas voir les changements de formatage appliqués à un message.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
     "messageformat": "Souhaitez-vous ouvrir l’outil de création de packs d’autocollants ?",
-    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
+    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Confirmer",
-    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Fermer",
-    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "Veuillez configurer Signal sur votre téléphone et votre ordinateur pour utiliser l’outil de création de packs d’autocollants",
@@ -3244,11 +3341,11 @@
     "description": "Shown as the body in the confirmation modal for unblocking a group message request"
   },
   "icu:MessageRequests--block-and-report-spam": {
-    "messageformat": "Cradleer comme indésirable et bloquer",
+    "messageformat": "Signaler comme indésirable et bloquer",
     "description": "Shown as a button to let the user block a message request and report spam"
   },
   "icu:MessageRequests--block-and-report-spam-success-toast": {
-    "messageformat": "Cradleé comme indésirable et bloqué.",
+    "messageformat": "Signalé comme indésirable et bloqué.",
     "description": "Shown in a toast when you successfully block a user and report them as spam"
   },
   "icu:MessageRequests--block-direct-confirm-title": {
@@ -3332,7 +3429,7 @@
     "description": "Shown in the conversation hero to indicate this user is a member of four mutual groups"
   },
   "icu:member-of-more-than-3-groups--multiple-more": {
-    "messageformat": "Membre de {group1}, {group2}, {group3} et {remainingCount,number} autres",
+    "messageformat": "Member of {group1}, {group2}, {group3} and {remainingCount, plural, other {#}} more",
     "description": "Shown in the conversation hero to indicate this user is a member of 5+ mutual groups."
   },
   "icu:ConversationHero--membership-added": {
@@ -3400,12 +3497,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Cradle fonctionne toujours",
-    "description": "Shown in a notification title when Cradle is minimized to tray"
+    "messageformat": "Signal fonctionne toujours",
+    "description": "Shown in a notification title when Signal is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Les notifications Cradle continueront de fonctionner. Rendez-vous dans les Paramètres pour modifier les notifications.",
-    "description": "Shown in a notification body when Cradle is minimized to tray"
+    "messageformat": "Les notifications Signal continueront de fonctionner. Rendez-vous dans les Paramètres pour modifier les notifications.",
+    "description": "Shown in a notification body when Signal is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Appel vocal entrant...",
@@ -3416,11 +3513,11 @@
     "description": "Shown in both the incoming call bar and notification for an incoming video call"
   },
   "icu:outgoingAudioCall": {
-    "messageformat": "Outgoing voice call",
+    "messageformat": "Appel vocal sortant",
     "description": "Shown in the timeline for an outgoing voice call"
   },
   "icu:outgoingVideoCall": {
-    "messageformat": "Outgoing video call",
+    "messageformat": "Appel vidéo sortant",
     "description": "Shown in the timeline for an outgoing video call"
   },
   "icu:incomingGroupCall__ringing-you": {
@@ -3467,9 +3564,69 @@
     "messageformat": "Reconnexion…",
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
-  "icu:callDuration": {
-    "messageformat": "Cradle {duration}",
-    "description": "Shown in the call screen to indicate how long the call has been connected"
+  "icu:CallControls__InfoDisplay--participants": {
+    "messageformat": "{count, plural, one {{count,number} personne} other {{count,number} personnes}}",
+    "description": "Shown in the call screen and lobby for group calls to specify the number of members in the call or in the group. Count is at always at least 1."
+  },
+  "icu:CallControls__InfoDisplay--audio-call": {
+    "messageformat": "Appel audio",
+    "description": "Shown in the call lobby for a direct 1:1 call when the caller's video is disabled, to specify that an audio call will be placed when clicking the Start button."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-1-1": {
+    "messageformat": "Terminer",
+    "description": "Title for the hangup button for a direct 1:1 call with only 2 participants."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-group": {
+    "messageformat": "Quitter",
+    "description": "Title for the hangup button for a group call."
+  },
+  "icu:CallControls__MutedToast--muted": {
+    "messageformat": "Micro désactivé",
+    "description": "Shown in a call when the user mutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__MutedToast--unmuted": {
+    "messageformat": "Micro activé",
+    "description": "Shown in a call when the user is muted and then unmutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-on": {
+    "messageformat": "Sonnerie activée",
+    "description": "Shown in a group call lobby when call ringing is disabled, then the user enables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-off": {
+    "messageformat": "Sonnerie désactivée",
+    "description": "Shown in a group call lobby when call ringing is enabled, then the user disables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RaiseHandsToast--you": {
+    "messageformat": "Votre main est levée.",
+    "description": "Shown in a call when the user raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--one": {
+    "messageformat": "{name} a levé la main.",
+    "description": "Shown in a call when someone else raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--two": {
+    "messageformat": "{name} et {otherName} ont levé la main.",
+    "description": "Shown in a call when 2 persons raise their hands."
+  },
+  "icu:CallControls__RaiseHandsToast--more": {
+    "messageformat": "{name}, {otherName}, and {overflowCount, plural, other {#}} more raised a hand.",
+    "description": "Shown in a call when 3 or more persons raise their hands."
+  },
+  "icu:CallControls__RaiseHands--open-queue": {
+    "messageformat": "Ouvrir la file d'attente",
+    "description": "Link in call raised hands list and in toast shown when someone else raises their hand. Link opens the list of all raised hands."
+  },
+  "icu:CallControls__RaiseHands--lower": {
+    "messageformat": "Baisser la main",
+    "description": "Link in call raised hands list and in toast shown when user raises their hand. Link allows user to lower their hand."
+  },
+  "icu:CallControls__MenuItemRaiseHand": {
+    "messageformat": "Lever la main",
+    "description": "Menu item to raise your hand during a call."
+  },
+  "icu:CallControls__MenuItemRaiseHand--lower": {
+    "messageformat": "Baisser la main",
+    "description": "Menu item to lower your previously raised hand during a call."
   },
   "icu:callingDeviceSelection__settings": {
     "messageformat": "Paramètres",
@@ -3511,13 +3668,25 @@
     "messageformat": "Appel plein écran",
     "description": "Title for picture-in-picture toggle"
   },
-  "icu:calling__switch-view--to-grid": {
-    "messageformat": "Afficher une vue en grille",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__change-view": {
+    "messageformat": "Modifier l'affichage",
+    "description": "Tooltip for changing the in-call layout of remote participants in a group call"
   },
-  "icu:calling__switch-view--to-speaker": {
-    "messageformat": "Afficher la personne qui parle",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__view_mode--paginated": {
+    "messageformat": "En grille",
+    "description": "Label for option to view participants in a group call in a paginated grid view"
+  },
+  "icu:calling__view_mode--overflow": {
+    "messageformat": "Latérale",
+    "description": "Label for option to view participants in a group call where videos that don't fit onto the page are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--speaker": {
+    "messageformat": "Vue du présentateur",
+    "description": "Label for option to view participants where only the current speaker's video is fully visible and all others are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--updated": {
+    "messageformat": "Vue modifiée",
+    "description": "Toast shown whenver the calling view mode is changed (e.g. paginated view -> speaker view)"
   },
   "icu:calling__hangup": {
     "messageformat": "Quitter l’appel",
@@ -3619,6 +3788,14 @@
     "messageformat": "Valider",
     "description": "Button to dismiss popup dialog when user-initiated task has gone wrong"
   },
+  "icu:MessageMaxEditsModal__Title": {
+    "messageformat": "Impossible de modifier le message",
+    "description": "Title in popup dialog when attempting to edit a message too many times."
+  },
+  "icu:MessageMaxEditsModal__Description": {
+    "messageformat": "Only {max, plural, other {#}} edits can be applied to this message.",
+    "description": "Description text in popup dialog when attempting to edit a message too many times."
+  },
   "icu:unknown-sgnl-link": {
     "messageformat": "Désolé, ce lien sgnl:// était invalide",
     "description": "Shown if you click on a sgnl:// link not currently supported by Desktop"
@@ -3656,7 +3833,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "Ce lien n’est pas pris en charge par cette version de Cradle Desktop pour ordinateur.",
+    "messageformat": "Ce lien n’est pas pris en charge par cette version de Signal Desktop pour ordinateur.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4040,7 +4217,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--other": {
-    "messageformat": "{memberName} a invité {count,number} personnes au groupe.",
+    "messageformat": "{memberName} invited {count, plural, other {#}} people to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--you": {
@@ -4048,7 +4225,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--unknown": {
-    "messageformat": "{count,number} personnes ont été invitées au groupe.",
+    "messageformat": "{count, plural, other {#}} people were invited to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--other": {
@@ -4124,7 +4301,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--other": {
-    "messageformat": "{adminName} a révoqué les invitations au groupe pour {count,number} personnes invitées par {memberName}.",
+    "messageformat": "{adminName} revoked invitations to the group for {count, plural, other {#}} people invited by {memberName}.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--you": {
@@ -4364,7 +4541,7 @@
     "description": "Shown in timeline when a group is upgraded and one person was removed entirely during the upgrade"
   },
   "icu:GroupV1--Migration--removed--many": {
-    "messageformat": "{count,number} membres ont été retirés du groupe.",
+    "messageformat": "{count, plural, other {#}} members were removed from the group.",
     "description": "Shown in timeline when a group is upgraded and some people were removed entirely during the upgrade"
   },
   "icu:close": {
@@ -4412,11 +4589,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Cette personne n’utilise pas Signal/Cradle",
+    "messageformat": "Cette personne n’utilise pas Signal",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal/Cradle pour ordinateur ne permet pas d’échanger de messages avec des contacts qui ne sont pas sur Signal/Cradle. Pour échanger des messages en toute sécurité, demandez à cette personne d’installer Signal/Cradle.",
+    "messageformat": "Signal pour ordinateur ne permet pas d’échanger de messages avec des contacts qui ne sont pas sur Signal. Pour échanger des messages en toute sécurité, demandez à cette personne d’installer Signal.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4752,7 +4929,7 @@
     "description": "conversation > in select mode > composition area actions > exit select mode > accessibility label"
   },
   "icu:SelectModeActions--selectedMessages": {
-    "messageformat": "{count,number} sélectionnés",
+    "messageformat": "{count, plural, other {#}} selected",
     "description": "conversation > in select mode > composition area actions > count of selected messsages"
   },
   "icu:SelectModeActions--deleteSelectedMessages": {
@@ -4957,10 +5134,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "À propos des demandes de message",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Examinez les demandes avec attention. Cradle a trouvé un autre contact avec le même nom. <reviewRequestLink>Examiner la demande</reviewRequestLink>",
+    "messageformat": "Examinez les demandes avec attention. Signal a trouvé un autre contact avec le même nom. <reviewRequestLink>Examiner la demande</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -5024,7 +5201,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Pour aider à prévenir les indésirables sur Cradle, veuillez procéder à la confirmation.",
+    "messageformat": "Pour aider à prévenir les indésirables sur Signal, veuillez procéder à la confirmation.",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5295,9 +5472,29 @@
     "messageformat": "Nom d’utilisateur",
     "description": "Default text for username field"
   },
+  "icu:ProfileEditor--username--corrupted--body": {
+    "messageformat": "Une erreur s’est produite et votre nom d’utilisateur n’est plus associé à votre compte.",
+    "description": "Text of confirmation modal when the username gets corrupted"
+  },
+  "icu:ProfileEditor--username--corrupted--delete-button": {
+    "messageformat": "Supprimer le nom d’utilisateur",
+    "description": "Button text for deletion of the username in case of corruption"
+  },
+  "icu:ProfileEditor--username--corrupted--create-button": {
+    "messageformat": "Créer un nom d’utilisateur",
+    "description": "Button text for creation of a new username in case of corruption"
+  },
   "icu:ProfileEditor__username-link": {
     "messageformat": "Code QR ou lien",
     "description": "Label of a profile editor row that navigates to username link and qr code modal"
+  },
+  "icu:ProfileEditor__username__error-icon": {
+    "messageformat": "Le nom d'utilisateur doit être réinitialisé",
+    "description": "Accessibility title of an icon in profile editor"
+  },
+  "icu:ProfileEditor__username-link__error-icon": {
+    "messageformat": "Le lien d'utilisateur doit être réinitialisé",
+    "description": "Accessibility title of an icon in profile editor"
   },
   "icu:ProfileEditor__username-link__tooltip__title": {
     "messageformat": "Partagez votre pseudo",
@@ -5552,7 +5749,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Choisissez qui peut voir votre numéro de téléphone et qui peut vous contacter sur Cradle avec celui-ci.",
+    "messageformat": "Choisissez qui peut voir votre numéro de téléphone et qui peut vous contacter sur Signal avec celui-ci.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5560,11 +5757,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Votre numéro de téléphone sera visible par les personnes et les groupes avec lesquels vous échangez des messages. Les personnes qui ont votre numéro dans les contacts de leur téléphone le verront aussi sur Cradle.",
+    "messageformat": "Votre numéro de téléphone sera visible par les personnes et les groupes avec lesquels vous échangez des messages. Les personnes qui ont votre numéro dans les contacts de leur téléphone le verront aussi sur Signal.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Personne ne verra votre numéro de téléphone sur Signal/Cradle.",
+    "messageformat": "Personne ne verra votre numéro de téléphone sur Signal.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5584,11 +5781,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Toutes les personnes ayant votre numéro de téléphone dans leurs contacts pourront vous retrouver sur Signal/Cradle. Les autres pourront vous trouver grâce à votre numéro de téléphone lorsqu’ils commenceront une nouvelle conversation ou créeront un nouveau groupe.",
+    "messageformat": "Toutes les personnes ayant votre numéro de téléphone dans leurs contacts pourront vous retrouver sur Signal. Les autres pourront vous trouver grâce à votre numéro de téléphone lorsqu’ils commenceront une nouvelle conversation ou créeront un nouveau groupe.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Aucun utilisateur Signal/Cradle ne pourra vous retrouver grâce à votre numéro de téléphone.",
+    "messageformat": "Aucun utilisateur Signal ne pourra vous retrouver grâce à votre numéro de téléphone.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5651,6 +5848,42 @@
     "messageformat": "Vous ne pourrez plus partager ou voir de Stories. Les nouveaux contenus récemment ajoutés à vos Stories seront également supprimés.",
     "description": "Confirmation modal body for disabling stories"
   },
+  "icu:Preferences__Language__Label": {
+    "messageformat": "Langue",
+    "description": "Language setting label"
+  },
+  "icu:Preferences__Language__ModalTitle": {
+    "messageformat": "Langue",
+    "description": "Language setting modal title"
+  },
+  "icu:Preferences__Language__SystemLanguage": {
+    "messageformat": "Langue du système",
+    "description": "Option for system language"
+  },
+  "icu:Preferences__Language__SearchLanguages": {
+    "messageformat": "Rechercher une langue",
+    "description": "Placholder for language preference search box"
+  },
+  "icu:Preferences__Language__NoResults": {
+    "messageformat": "Aucun résultat pour « {searchTerm} »",
+    "description": "When no results are found for language preference search"
+  },
+  "icu:Preferences__LanguageModal__Set": {
+    "messageformat": "Définir",
+    "description": "Button to set language preference"
+  },
+  "icu:Preferences__LanguageModal__Restart__Title": {
+    "messageformat": "Redémarrer Signal pour appliquer",
+    "description": "Title for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Description": {
+    "messageformat": "Pour changer de langue, l'application doit être redémarrée.",
+    "description": "Description for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Button": {
+    "messageformat": "Redémarrer",
+    "description": "Button to restart Signal to apply language changes"
+  },
   "icu:DialogUpdate--version-available": {
     "messageformat": "Une mise à jour vers la version {version} est proposée",
     "description": "Tooltip for new update available"
@@ -5668,7 +5901,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Pour pouvoir continuer à utiliser Cradle, veuillez installer la dernière version de l’appli.",
+    "messageformat": "Pour pouvoir continuer à utiliser Signal, veuillez installer la dernière version de l’appli.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5676,15 +5909,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "Redémarrez Cradle pour installer la nouvelle version.",
+    "messageformat": "Redémarrez Signal pour installer la nouvelle version.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "La mise à jour de Cradle Desktop a échoué mais une nouvelle version est disponible. Rendez-vous sur {downloadUrl} et installez la nouvelle version manuellement. Contactez ensuite l’assistance ou envoyez un rapport concernant le problème que vous avez rencontré.",
+    "messageformat": "La mise à jour de Signal Desktop a échoué mais une nouvelle version est disponible. Rendez-vous sur {downloadUrl} et installez la nouvelle version manuellement. Contactez ensuite l’assistance ou envoyez un rapport concernant le problème que vous avez rencontré.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Cradle ne peut pas être fermé.",
+    "messageformat": "Signal ne peut pas être fermé.",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5704,15 +5937,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Une nouvelle version de Cradle est déjà installée. Êtes-vous sûr de vouloir continuer ?",
-    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
+    "messageformat": "Une nouvelle version de Signal est déjà installée. Êtes-vous sûr de vouloir continuer ?",
+    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "L’application a planté",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Cradle a redémarré après un plantage. Vous pouvez envoyer un rapport de plantage pour aider Cradle à enquêter sur le problème.",
+    "messageformat": "Signal a redémarré après un plantage. Vous pouvez envoyer un rapport de plantage pour aider Signal à enquêter sur le problème.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5734,6 +5967,10 @@
   "icu:CustomizingPreferredReactions__had-save-error": {
     "messageformat": "Une erreur est survenue lors de l’enregistrement de vos paramètres. Veuillez réessayer.",
     "description": "Shown if there is an error when saving your preferred reaction settings. Should be very rare to see this message."
+  },
+  "icu:MediaEditor__input-placeholder": {
+    "messageformat": "Message",
+    "description": "Placeholder for the input in the media editor"
   },
   "icu:MediaEditor__clock-more-styles": {
     "messageformat": "Plus de modes",
@@ -5908,8 +6145,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Connexions Cradle",
-    "description": "The phrase/term: 'Cradle Connections'"
+    "messageformat": "Connexions Signal",
+    "description": "The phrase/term: 'Signal Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections}sont les personnes en qui vous avez choisi de faire confiance, soit par :",
@@ -6088,7 +6325,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Toutes les connexions Cradle",
+    "messageformat": "Toutes les connexions Signal",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6100,7 +6337,7 @@
     "description": "Input label to create a block list"
   },
   "icu:StoriesSettings__mine__exclude--description": {
-    "messageformat": "{num,number} personne(s) exclue(s)",
+    "messageformat": "{num, plural, other {#}} people excluded",
     "description": "Description of how many people are excluded in a list"
   },
   "icu:StoriesSettings__mine__only--label": {
@@ -6208,7 +6445,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Choisissez les connexions Cradle qui peuvent voir votre Story. Vous pourrez modifier vos préférences à tout moment dans les paramètres de confidentialité. <learnMoreLink>En apprendre davantage.</learnMoreLink>",
+    "messageformat": "Choisissez les connexions Signal qui peuvent voir votre Story. Vous pourrez modifier vos préférences à tout moment dans les paramètres de confidentialité. <learnMoreLink>En apprendre davantage.</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6224,11 +6461,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {Toutes les connexions Cradle · {viewersCount,number} spectateur} other {Toutes les connexions Cradle · {viewersCount,number} spectateurs}}",
+    "messageformat": "{viewersCount, plural, one {Toutes les connexions Signal · {viewersCount,number} spectateur} other {Toutes les connexions Signal · {viewersCount,number} spectateurs}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {Toutes les connexions Cradle · {excludedCount,number} exclu} other {Toutes les connexions Cradle · {excludedCount,number} exclus}}",
+    "messageformat": "{excludedCount, plural, one {Toutes les connexions Signal · {excludedCount,number} exclu} other {Toutes les connexions Signal · {excludedCount,number} exclus}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6572,7 +6809,7 @@
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__done": {
-    "messageformat": "Done",
+    "messageformat": "Terminé",
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__color__radio": {
@@ -6583,8 +6820,16 @@
     "messageformat": "Si vous réinitialisez votre code QR, votre lien et code QR existants ne fonctionneront plus.",
     "description": "Text of confirmation modal when resetting the username link"
   },
+  "icu:UsernameLinkModalBody__resetting-link": {
+    "messageformat": "Réinitialisation du lien…",
+    "description": "Text shown when resetting the username link"
+  },
+  "icu:UsernameLinkModalBody__error__text": {
+    "messageformat": "Le code QR et le lien ne sont pas définis. Veuillez vérifier votre connexion réseau puis réessayez.",
+    "description": "Text of the confirmation dialog shown on username link error"
+  },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Configurer votre nom d’utilisateur Cradle",
+    "messageformat": "Configurer votre nom d’utilisateur Signal",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6608,15 +6853,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "La version Desktop de Cradle ne prendra bientôt plus en charge la version {OS} de votre ordinateur. Pour continuer d’utiliser Cradle, veuillez mettre à jour le système d’exploitation de votre ordinateur avant le {expirationDate}. <learnMoreLink>En savoir plus</learnMoreLink>",
+    "messageformat": "La version Desktop de Signal ne prendra bientôt plus en charge la version {OS} de votre ordinateur. Pour continuer d’utiliser Signal, veuillez mettre à jour le système d’exploitation de votre ordinateur avant le {expirationDate}. <learnMoreLink>En savoir plus</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "La version Desktop de Cradle ne fonctionne plus sur cet ordinateur. Pour continuer d’utiliser la version Desktop de Cradle, veuillez mettre à jour la version {OS} de votre ordinateur. <learnMoreLink>En savoir plus</learnMoreLink>",
+    "messageformat": "La version Desktop de Signal ne fonctionne plus sur cet ordinateur. Pour continuer d’utiliser la version Desktop de Signal, veuillez mettre à jour la version {OS} de votre ordinateur. <learnMoreLink>En savoir plus</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "La version Desktop de Cradle ne fonctionne plus sur cet ordinateur. Pour continuer d’utiliser la version Desktop de Cradle, veuillez mettre à jour la version {OS} de votre ordinateur.",
+    "messageformat": "La version Desktop de Signal ne fonctionne plus sur cet ordinateur. Pour continuer d’utiliser la version Desktop de Signal, veuillez mettre à jour la version {OS} de votre ordinateur.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6636,119 +6881,123 @@
     "description": "Button text for the confirmation dialog shown to user when attempting to resend message edit"
   },
   "icu:StoriesTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Davantage d’actions",
     "description": "Stories Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__HeaderTitle--CallsList": {
-    "messageformat": "Calls",
+    "messageformat": "Appels",
     "description": "Calls Tab > Header > Title > On Calls List screen"
   },
   "icu:CallsTab__HeaderTitle--NewCall": {
-    "messageformat": "New Call",
+    "messageformat": "Nouvel appel",
     "description": "Calls Tab > Header > Title > On New Call screen"
   },
   "icu:CallsTab__NewCallActionLabel": {
-    "messageformat": "New Call",
+    "messageformat": "Nouvel appel",
     "description": "Calls Tab > New Call Action Button > Accessibility Label"
   },
   "icu:CallsTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Davantage d’actions",
     "description": "Calls Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__ClearCallHistoryLabel": {
-    "messageformat": "Clear call history",
+    "messageformat": "Effacer l’historique des appels",
     "description": "Calls Tab > More Actions Context Menu > Clear Call History Button Label"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Title": {
-    "messageformat": "Clear call history?",
+    "messageformat": "Effacer l’historique des appels ?",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Title"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Body": {
-    "messageformat": "This will permanently delete all call history",
+    "messageformat": "Cette action supprimera l’historique des appels de manière permanente.",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Body Text"
   },
   "icu:CallsTab__ConfirmClearCallHistory__ConfirmButton": {
-    "messageformat": "Clear",
+    "messageformat": "Réinitialiser",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Confirm Button"
   },
   "icu:CallsTab__ToastCallHistoryCleared": {
-    "messageformat": "Call history cleared",
+    "messageformat": "Journal d'appels vidé",
     "description": "Calls Tab > Clear Call History > Toast"
   },
   "icu:CallsTab__EmptyStateText": {
-    "messageformat": "Click to view or start a call",
+    "messageformat": "Cliquer pour voir ou démarrer un onglet",
     "description": "Calls Tab > When no call is selected > Empty state > Call to action text"
   },
   "icu:CallsList__SearchInputPlaceholder": {
-    "messageformat": "Search",
+    "messageformat": "Chercher",
     "description": "Calls Tab > Calls List > Search Input > Placeholder"
   },
   "icu:CallsList__ToggleFilterByMissedLabel": {
-    "messageformat": "Filter by missed",
+    "messageformat": "Rechercher dans les appels manqués",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility label"
   },
   "icu:CallsList__ToggleFilterByMissed__RoleDescription": {
-    "messageformat": "Toggle",
+    "messageformat": "Activer/désactiver",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility role description ('A toggle button')"
   },
   "icu:CallsList__EmptyState--noQuery": {
-    "messageformat": "No recent calls. Get started by calling a friend.",
+    "messageformat": "Aucun appel récent. Commencez en appelant un ami.",
     "description": "Calls Tab > Calls List > When no results found > With no search query"
   },
   "icu:CallsList__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "Aucun résultat pour « {query} »",
     "description": "Calls Tab > Calls List > When no results found > With a search query"
   },
   "icu:CallsList__ItemCallInfo--Incoming": {
-    "messageformat": "Incoming",
+    "messageformat": "Entrant",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was incoming"
   },
   "icu:CallsList__ItemCallInfo--Outgoing": {
-    "messageformat": "Outgoing",
+    "messageformat": "Sortant",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was outgoing"
   },
   "icu:CallsList__ItemCallInfo--Missed": {
-    "messageformat": "Missed",
+    "messageformat": "Manqué",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was missed"
   },
   "icu:CallsList__ItemCallInfo--GroupCall": {
-    "messageformat": "Group call",
+    "messageformat": "Appel de groupe",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When group call is in its default state"
   },
   "icu:CallsNewCall__EmptyState--noQuery": {
-    "messageformat": "No recent conversations.",
+    "messageformat": "Aucune conversation récente.",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With no search query"
   },
   "icu:CallsNewCall__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "Aucun résultat pour « {query} »",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With a search query"
   },
   "icu:CallHistory__Description--Default": {
-    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Outgoing voice call} other {Incoming voice call}}} Video {{direction, select, Outgoing {Outgoing video call} other {Incoming video call}}} Group {{direction, select, Outgoing {Outgoing group call} other {Incoming group call}}} other {{direction, select, Outgoing {Outgoing  call} other {Incoming  call}}}}",
+    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Appel vocal sortant} other {Appel vocal entrant}}} Video {{direction, select, Outgoing {Appel vidéo sortant} other {Appel vidéo entrant}}} Group {{direction, select, Outgoing {Appel de groupe sortant} other {Appel de groupe entrant}}} other {{direction, select, Outgoing {Appel sortant} other {Appel entrant}}}}",
     "description": "Call History > Short description of call > When call was not missed or declined (generally accepted)"
   },
   "icu:CallHistory__Description--Missed": {
-    "messageformat": "{type, select, Audio {Missed voice call} Video {Missed video call} Group {Missed group call} other {Missed  call}}",
+    "messageformat": "{type, select, Audio {Appel vocal manqué} Video {Appel vidéo manqué} Group {Appel de groupe manqué} other {Appel manqué}}",
     "description": "Call History > Short description of call > When incoming call was missed"
   },
   "icu:CallHistory__Description--Unanswered": {
-    "messageformat": "{type, select, Audio {Unanswered voice call} Video {Unanswered video call} Group {Unanswered group call} other {Unanswered  call}}",
+    "messageformat": "{type, select, Audio {Appel vocal sans réponse} Video {Appel vidéo sans réponse} Group {Appel de groupe sans réponse} other {Appel sans réponse}}",
     "description": "Call History > Short description of call > When outgoing call was unanswered"
   },
   "icu:CallHistory__Description--Declined": {
-    "messageformat": "{type, select, Audio {Declined voice call} Video {Declined video call} Group {Declined group call} other {Declined  call}}",
+    "messageformat": "{type, select, Audio {Appel vocal rejeté} Video {Appel vidéo rejeté} Group {Appel de groupe rejeté} other {Appel rejeté}}",
     "description": "Call History > Short description of call > When call was declined"
+  },
+  "icu:TypingBubble__avatar--overflow-count": {
+    "messageformat": "{count, plural, one {{count,number} autre personne est en train d’écrire.} other {{count,number} autres personnes sont en train d’écrire.}}",
+    "description": "Group chat multiple person typing indicator when space isn't available to show every avatar, this is the count of avatars hidden."
   },
   "icu:WhatsNew__modal-title": {
     "messageformat": "Les nouveautés",
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Cette version contient un certain nombre de petits ajustements et de corrections de bogues pour assurer le bon fonctionnement de Cradle.",
+    "messageformat": "Cette version contient un certain nombre de petits ajustements et de corrections de bogues pour assurer le bon fonctionnement de Signal.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Petits ajustements supplémentaires, corrections de bugs et améliorations des performances. Merci d'utiliser Cradle !",
+    "messageformat": "Petits ajustements supplémentaires, corrections de bugs et améliorations des performances. Merci d'utiliser Signal !",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6768,16 +7017,25 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Petits ajustements, corrections de bugs et améliorations des performances. Nous vous remercions d’utiliser Cradle !",
+    "messageformat": "Petits ajustements, corrections de bugs et améliorations des performances. Nous vous remercions d’utiliser Signal !",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.29--0": {
-    "messageformat": "L’écran de personnalisation de couleur de la conversation s’affiche désormais correctement dans toutes les langues et certaines langues régionales."
+  "icu:WhatsNew__v6.42--0": {
+    "messageformat": "Nous avons corrigé un bug qui affichait des réponses à des vidéos comme s'il s'agissait de réponses à des photos. (Même si, quand on y pense, une vidéo est en fait une série de photos montées les unes à la suite des autres.)"
   },
-  "icu:WhatsNew__v6.29--1": {
-    "messageformat": "Nous avons amélioré la prise en charge des notifications sous Windows. Si vous ne cliquez pas sur les notifications dès leur apparition, la dernière en date apparaîtra dans le centre de notifications Windows. En cliquant sur une notification, vous accéderez directement à la conversation correspondante. Nous aimerions remercier Julien Richard pour son commentaire."
+  "icu:WhatsNew__v6.42--1": {
+    "messageformat": "Merci {linkToGithub1} et {linkToGithub2} pour leur aide dans le lancement de cette version."
   },
-  "icu:WhatsNew__v6.30--0": {
-    "messageformat": "Keep tabs on your calls with the new calls tab. Start a new call or return a call that you missed without having to find the corresponding chat. Now you can say hello with your voice without also saying goodbye to the unread marker for messages in that thread."
+  "icu:WhatsNew__v6.43--0": {
+    "messageformat": "Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat."
+  },
+  "icu:WhatsNew__v6.43--1": {
+    "messageformat": "The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Signal Settings > Appearance > Language). Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--2": {
+    "messageformat": "The playback speed indicators in voice messages have a slightly new look. X marks the spot. Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--3": {
+    "messageformat": "We would also like to thank {linkToGithub1}, {linkToGithub2}, and {linkToGithub3} for their contributions to this release."
   }
 }

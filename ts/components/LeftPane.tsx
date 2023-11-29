@@ -34,6 +34,7 @@ import type { PropsType as UnsupportedOSDialogPropsType } from '../state/smart/U
 
 import { ConversationList } from './ConversationList';
 import { ContactCheckboxDisabledReason } from './conversationList/ContactCheckbox';
+import { LeftPaneBanner } from './LeftPaneBanner';
 
 import type {
   DeleteAvatarFromDiskActionType,
@@ -67,8 +68,9 @@ export type PropsType = {
   hasRelinkDialog: boolean;
   hasUpdateDialog: boolean;
   isUpdateDownloaded: boolean;
-  isContactManagementEnabled: boolean;
   unsupportedOSDialogType: 'error' | 'warning' | undefined;
+  usernameCorrupted: boolean;
+  usernameLinkCorrupted: boolean;
 
   // These help prevent invalid states. For example, we don't need the list of pinned
   //   conversations if we're trying to start a new conversation. Ideally these would be
@@ -135,6 +137,7 @@ export type PropsType = {
   toggleComposeEditingAvatar: () => unknown;
   toggleConversationInChooseMembers: (conversationId: string) => void;
   toggleNavTabsCollapse: (navTabsCollapsed: boolean) => void;
+  toggleProfileEditor: () => void;
   updateSearchTerm: (_: string) => void;
 
   // Render Props
@@ -153,7 +156,7 @@ export type PropsType = {
   ) => JSX.Element;
   renderCaptchaDialog: (props: { onSkip(): void }) => JSX.Element;
   renderCrashReportDialog: () => JSX.Element;
-} & LookupConversationWithoutUuidActionsType;
+} & LookupConversationWithoutServiceIdActionsType;
 
 export function LeftPane({
   otherTabsUnreadStats,
@@ -170,6 +173,7 @@ export function LeftPane({
   crashReportCount,
   createGroup,
   getPreferredBadge,
+  hasFailedStorySends,
   hasNetworkDialog,
   hasPendingUpdate,
   hasRelinkDialog,
@@ -178,7 +182,6 @@ export function LeftPane({
   lookupConversationWithoutServiceId,
   isMacOS,
   isUpdateDownloaded,
-  isContactManagementEnabled,
   modeSpecificProps,
   navTabsCollapsed,
   onOutgoingAudioCallInConversation,
@@ -198,6 +201,7 @@ export function LeftPane({
   selectedConversationId,
   targetedMessageId,
   toggleNavTabsCollapse,
+  toggleProfileEditor,
   setChallengeStatus,
   setComposeGroupAvatar,
   setComposeGroupExpireTimer,
@@ -216,6 +220,8 @@ export function LeftPane({
   toggleComposeEditingAvatar,
   toggleConversationInChooseMembers,
   unsupportedOSDialogType,
+  usernameCorrupted,
+  usernameLinkCorrupted,
   updateSearchTerm,
 }: PropsType): JSX.Element {
   const previousModeSpecificProps = usePrevious(
@@ -539,6 +545,31 @@ export function LeftPane({
     }
   }
 
+  let maybeBanner: JSX.Element | undefined;
+  if (usernameCorrupted) {
+    maybeBanner = (
+      <LeftPaneBanner
+        actionText={i18n('icu:LeftPane--corrupted-username--action-text')}
+        onClick={toggleProfileEditor}
+      >
+        {i18n('icu:LeftPane--corrupted-username--text')}
+      </LeftPaneBanner>
+    );
+  } else if (usernameLinkCorrupted) {
+    maybeBanner = (
+      <LeftPaneBanner
+        actionText={i18n('icu:LeftPane--corrupted-username-link--action-text')}
+        onClick={toggleProfileEditor}
+      >
+        {i18n('icu:LeftPane--corrupted-username-link--text')}
+      </LeftPaneBanner>
+    );
+  }
+
+  if (maybeBanner) {
+    dialogs.push({ key: 'banner', dialog: maybeBanner });
+  }
+
   return (
     <NavSidebar
       title="Chats"
@@ -555,7 +586,10 @@ export function LeftPane({
       navTabsCollapsed={navTabsCollapsed}
       onToggleNavTabsCollapse={toggleNavTabsCollapse}
       preferredLeftPaneWidth={preferredWidthFromStorage}
-      requiresFullWidth={modeSpecificProps.mode !== LeftPaneMode.Inbox}
+      requiresFullWidth={
+        modeSpecificProps.mode !== LeftPaneMode.Inbox ||
+        modeSpecificProps.isAboutToSearch
+      }
       savePreferredLeftPaneWidth={savePreferredLeftPaneWidth}
       actions={
         <>
@@ -677,9 +711,7 @@ export function LeftPane({
                 onOutgoingVideoCallInConversation={
                   onOutgoingVideoCallInConversation
                 }
-                removeConversation={
-                  isContactManagementEnabled ? removeConversation : undefined
-                }
+                removeConversation={removeConversation}
                 renderMessageSearchResult={renderMessageSearchResult}
                 rowCount={helper.getRowCount()}
                 scrollBehavior={scrollBehavior}

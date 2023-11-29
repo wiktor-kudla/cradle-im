@@ -6,14 +6,14 @@ import { v4 as generateUuid } from 'uuid';
 
 import type { ReactionAttributesType } from '../messageModifiers/Reactions';
 import { ReactionSource } from './ReactionSource';
-import { getMessageById } from '../messages/getMessageById';
+import { __DEPRECATED$getMessageById } from '../messages/getMessageById';
 import { getSourceServiceId, isStory } from '../messages/helpers';
 import { strictAssert } from '../util/assert';
 import { isDirectConversation } from '../util/whatTypeOfConversation';
 import { incrementMessageCounter } from '../util/incrementMessageCounter';
 import { repeat, zipObject } from '../util/iterables';
 import { getMessageSentTimestamp } from '../util/getMessageSentTimestamp';
-import { isAciString } from '../types/ServiceId';
+import { isAciString } from '../util/isAciString';
 import { SendStatus } from '../messages/MessageSendState';
 import * as log from '../logging/log';
 
@@ -26,7 +26,7 @@ export async function enqueueReactionForSend({
   messageId: string;
   remove: boolean;
 }>): Promise<void> {
-  const message = await getMessageById(messageId);
+  const message = await __DEPRECATED$getMessageById(messageId);
   strictAssert(message, 'enqueueReactionForSend: no message found');
 
   const targetAuthorAci = getSourceServiceId(message.attributes);
@@ -55,6 +55,21 @@ export async function enqueueReactionForSend({
   );
 
   const isMessageAStory = isStory(message.attributes);
+
+  if (
+    !isMessageAStory ||
+    isDirectConversation(messageConversation.attributes)
+  ) {
+    log.info('Enabling profile sharing for reaction send');
+    if (!messageConversation.get('profileSharing')) {
+      messageConversation.set('profileSharing', true);
+      await window.Signal.Data.updateConversation(
+        messageConversation.attributes
+      );
+    }
+    await messageConversation.restoreContact();
+  }
+
   const targetConversation =
     isMessageAStory && isDirectConversation(messageConversation.attributes)
       ? window.ConversationController.get(targetAuthorAci)
@@ -109,6 +124,7 @@ export async function enqueueReactionForSend({
     storyReactionMessage,
     targetAuthorAci,
     targetTimestamp,
+    receivedAtDate: timestamp,
     timestamp,
   };
 

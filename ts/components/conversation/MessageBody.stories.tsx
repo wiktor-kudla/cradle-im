@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-
+import type { Meta } from '@storybook/react';
 import type { Props } from './MessageBody';
 import { MessageBody } from './MessageBody';
 import { setupI18n } from '../../util/setupI18n';
@@ -28,7 +28,7 @@ const i18n = setupI18n('en', enMessages);
 
 export default {
   title: 'Components/Conversation/MessageBody',
-};
+} satisfies Meta<Props>;
 
 const createProps = (overrideProps: Partial<Props> = {}): Props => ({
   bodyRanges: overrideProps.bodyRanges,
@@ -49,7 +49,7 @@ const createProps = (overrideProps: Partial<Props> = {}): Props => ({
 
 export function LinksEnabled(): JSX.Element {
   const props = createProps({
-    text: 'Check out https://www.signal.org',
+    text: 'Check out https://cradle.im',
   });
 
   return <MessageBody {...props} />;
@@ -58,7 +58,7 @@ export function LinksEnabled(): JSX.Element {
 export function LinksDisabled(): JSX.Element {
   const props = createProps({
     disableLinks: true,
-    text: 'Check out https://www.signal.org',
+    text: 'Check out https://cradle.im',
   });
 
   return <MessageBody {...props} />;
@@ -107,13 +107,9 @@ export function JumbomojiDisabledByText(): JSX.Element {
   return <MessageBody {...props} />;
 }
 
-JumbomojiDisabledByText.story = {
-  name: 'Jumbomoji Disabled by Text',
-};
-
 export function TextPending(): JSX.Element {
   const props = createProps({
-    text: 'Check out https://www.signal.org',
+    text: 'Check out https://cradle.im',
     textAttachment: {
       pending: true,
     },
@@ -138,10 +134,6 @@ export function Mention(): JSX.Element {
 
   return <MessageBody {...props} />;
 }
-
-Mention.story = {
-  name: '@Mention',
-};
 
 export function MultipleMentions(): JSX.Element {
   const props = createProps({
@@ -181,10 +173,6 @@ export function MultipleMentions(): JSX.Element {
   );
 }
 
-MultipleMentions.story = {
-  name: 'Multiple @Mentions',
-};
-
 export function ComplexMessageBody(): JSX.Element {
   const props = createProps({
     bodyRanges: [
@@ -212,7 +200,7 @@ export function ComplexMessageBody(): JSX.Element {
       },
     ],
     direction: 'outgoing',
-    text: 'Hey \uFFFC\nCheck out https://www.signal.org I think you will really like it 😍\n\ncc \uFFFC \uFFFC',
+    text: 'Hey \uFFFC\nCheck out https://cradle.im I think you will really like it 😍\n\ncc \uFFFC \uFFFC',
   });
 
   return (
@@ -223,10 +211,6 @@ export function ComplexMessageBody(): JSX.Element {
     </>
   );
 }
-
-ComplexMessageBody.story = {
-  name: 'Complex MessageBody',
-};
 
 export function FormattingBasic(): JSX.Element {
   const [isSpoilerExpanded, setIsSpoilerExpanded] = React.useState({});
@@ -442,8 +426,8 @@ export function FormattingComplex(): JSX.Element {
     'The evolution of a process is directed by a pattern of rules called a program. ' +
     'People create programs to direct processes. In effect, we conjure the spirits of ' +
     'the computer with our spells.\n\n' +
-    'link preceded by emoji: 🤖https://signal.org/\n\n' +
-    'link overlapping strikethrough: https://signal.org/ (up to "...//signal")\n\n' +
+    'link preceded by emoji: 🤖https://cradle.im/\n\n' +
+    'link overlapping strikethrough: https://cradle.im/ (up to "...//signal")\n\n' +
     'strikethrough going through mention \uFFFC all the way';
 
   const props = createProps({

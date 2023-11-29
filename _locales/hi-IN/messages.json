@@ -8,6 +8,7 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
+
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -89,7 +90,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "नियम और गोपनीयता नीति",
-    "description": "Shown in the about box for the link to https://cradle.org/legal"
+    "description": "Shown in the about box for the link to https://signal.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -109,11 +110,27 @@
   },
   "icu:databaseError": {
     "messageformat": "डेटाबेस त्रुटि",
-    "description": "Shown in a popup if the database cannot start up properly"
+    "description": "Title of a popup if the database cannot start up properly"
+  },
+  "icu:databaseError__detail": {
+    "messageformat": "कोई डेटाबेस त्रुटि हुई। आप त्रुटि को कॉपी कर सकते हैं और समस्या को ठीक करने में मदद के लिए सिग्नल सपोर्ट से संपर्क कर सकते हैं। यदि आपको बिल्कुल अभी सिग्नल का उपयोग करने की जरूरत है, तो आप अपना डेटा डिलीट करके रीस्टार्ट कर सकते हैं।\n\nयहां जाकर सपोर्ट से संपर्क करें: {link}",
+    "description": "Description shown in a popup if the database cannot start up properly"
   },
   "icu:deleteAndRestart": {
-    "messageformat": "सारा डेटा डिलीट करें और रीस्टार्ट करें",
-    "description": "Shown in a popup if the database cannot start up properly; allows user to delete database and restart"
+    "messageformat": "डेटा को डिलीट करें और रीस्टार्ट करें",
+    "description": "Text of a button shown in a popup if the database cannot start up properly; allows user to delete all data in their database and restart"
+  },
+  "icu:databaseError__deleteDataConfirmation": {
+    "messageformat": "सारा डेटा हमेशा के लिए डिलीट करें?",
+    "description": "Header of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__deleteDataConfirmation__detail": {
+    "messageformat": "आपकी सारी संदेश हिस्ट्री और मीडिया को हमेशा के लिए इस डिवाइस से डिलीट कर दिया जाएगा। दोबारा लिंक करने के बाद ही आप इस डिवाइस पर सिग्नल का उपयोग कर पाएंगे। इससे आपके फोन से कोई भी डेटा डिलीट नहीं होगा।",
+    "description": "Description of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__startOldVersion": {
+    "messageformat": "आपके डेटाबेस का वर्ज़न सिग्नल के इस वर्ज़न से मेल नहीं खाता है। सुनिश्चित करें कि आप अपने कंप्यूटर पर सिग्नल का सबसे नया वर्ज़न खोल रहे हैं।",
+    "description": "Text in a popup shown if the app cannot start because the user started an older version of Signal"
   },
   "icu:mainMenuFile": {
     "messageformat": "&File",
@@ -160,7 +177,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Cradle बंद करें",
+    "messageformat": "Signal बंद करें",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -272,7 +289,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Cradle अपडेट करें",
+    "messageformat": "Signal अपडेट करें",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -299,40 +316,68 @@
     "messageformat": "चैट",
     "description": "Shown as a header for non-pinned conversations in the left pane"
   },
+  "icu:LeftPane--corrupted-username--text": {
+    "messageformat": "आपके यूज़रनेम में कुछ गलत है, यह अब आपके अकाउंट के लिए असाइन नहीं है। आप इसे फिर से सेट करने की कोशिश कर सकते हैं या एक नया चुन सकते हैं।",
+    "description": "Text of corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username--action-text": {
+    "messageformat": "अभी ठीक करें",
+    "description": "Text of the button in the corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--text": {
+    "messageformat": "आपके QR कोड और यूज़रनेम लिंक में कुछ गड़बड़ है, यह अब मान्य नहीं है। दूसरों के साथ साझा करने के लिए एक नया लिंक बनाएं।",
+    "description": "Text of corrupted username link banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--action-text": {
+    "messageformat": "अभी ठीक करें",
+    "description": "Text of the button in the corrupted username link banner in the left pane"
+  },
   "icu:NavTabsToggle__showTabs": {
-    "messageformat": "Show Tabs",
+    "messageformat": "टैब दिखाएं",
     "description": "Show in the left pane when the nav tabs are hidden, shows the nav tabs"
   },
   "icu:NavTabsToggle__hideTabs": {
-    "messageformat": "Hide Tabs",
+    "messageformat": "टैब छिपाएं",
     "description": "Show in the nav tabs when the nav tabs are visible, hides the nav tabs"
   },
   "icu:NavTabs__ItemIconLabel--HasError": {
-    "messageformat": "An error occurred",
+    "messageformat": "एक त्रुटी हुई",
     "description": "Nav Tabs > Tab has error > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--UnreadCount": {
-    "messageformat": "{count,number} unread",
+    "messageformat": "{count,number} अपठित",
     "description": "Nav Tabs > Unread badge > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--MarkedUnread": {
-    "messageformat": "Marked unread",
+    "messageformat": "अपठित चिह्नित",
     "description": "Nav Tabs > Unread badge > when conversation is marked unread > Accessibility Text"
   },
+  "icu:NavTabs__ItemLabel--Chats": {
+    "messageformat": "चैट",
+    "description": "Nav Tabs > Chats Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Calls": {
+    "messageformat": "कॉल",
+    "description": "Nav Tabs > Calls Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Stories": {
+    "messageformat": "स्टोरीज़",
+    "description": "Nav Tabs > Stories Button > Label & Accessibility Text"
+  },
   "icu:NavTabs__ItemLabel--Settings": {
-    "messageformat": "Settings",
+    "messageformat": "सेटिंग्स",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Update": {
-    "messageformat": "Update Signal",
+    "messageformat": "Signal अपडेट करें",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Profile": {
-    "messageformat": "Profile",
+    "messageformat": "प्रोफ़ाइल",
     "description": "Nav Tabs > Profile Button > Accessibility Text"
   },
   "icu:NavSidebar__BackButtonLabel": {
-    "messageformat": "Back",
+    "messageformat": "पीछे जाएं",
     "description": "Shown in the sidebar header when on a nested panel within the current sidebar, takes the user back to the previous step or default sidebar state"
   },
   "icu:archiveHelperText": {
@@ -428,7 +473,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "आप अभी निर्यात की प्रक्रिया से गुज़रें हैं और आपके संपर्क तथा मेसेज आपके कंप्यूटर में आपका इंतेज़ार कर रहे हैं। वह फोलडर चुनें जिसमें आपका Cradle डाटा है।",
+    "messageformat": "आप अभी निर्यात की प्रक्रिया से गुज़रें हैं और आपके संपर्क तथा मेसेज आपके कंप्यूटर में आपका इंतेज़ार कर रहे हैं। वह फोलडर चुनें जिसमें आपका Signal डाटा है।",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -444,7 +489,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "ध्यान रखें कि आपने सही डायरेक्ट्री चुनी है जिसमें आपका Cradle डाटा है। उसका नाम 'Cradle Export' से शुरु होना चाहिये। आप अपने डाटा की नयी कॉपी क्रोम ऐप से भी सहेज सकते हैं।",
+    "messageformat": "ध्यान रखें कि आपने सही डायरेक्ट्री चुनी है जिसमें आपका Signal डाटा है। उसका नाम 'Signal Export' से शुरु होना चाहिये। आप अपने डाटा की नयी कॉपी क्रोम ऐप से भी सहेज सकते हैं।",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -460,7 +505,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Cradle Desktop इस्तेमाल करना शुुरु करें",
+    "messageformat": "Signal Desktop इस्तेमाल करना शुुरु करें",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -544,11 +589,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "आप जिस सुरक्षा नंबर को वेरिफाई करने की कोशिश कर रहे हैं, वह बदल गया है। कृपया {name1} के साथ अपने नए सुरक्षा नंबर की समीक्षा करें। याद रखें, इस बदलाव का मतलब हो सकता है कि कोई आपके संवाद को रोकने का प्रयास कर रहा है या बस {name2} ने Signal/Cradle को री-इंस्टॉल किया है।",
+    "messageformat": "आप जिस सुरक्षा नंबर को वेरिफाई करने की कोशिश कर रहे हैं, वह बदल गया है। कृपया {name1} के साथ अपने नए सुरक्षा नंबर की समीक्षा करें। याद रखें, इस बदलाव का मतलब हो सकता है कि कोई आपके संवाद को रोकने का प्रयास कर रहा है या बस {name2} ने Signal को री-इंस्टॉल किया है।",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "निम्नलिखित लोगों ने शायद Signal/Cradle को फिर से इंस्टॉल किया हो या डिवाइस बदले हों। किसी प्राप्तकर्ता पर क्लिक करके अपनी नई सुरक्षा संख्या की पुष्टि करें। यह वैकल्पिक है।",
+    "messageformat": "निम्नलिखित लोगों ने शायद Signal को फिर से इंस्टॉल किया हो या डिवाइस बदले हों। किसी प्राप्तकर्ता पर क्लिक करके अपनी नई सुरक्षा संख्या की पुष्टि करें। यह वैकल्पिक है।",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -560,7 +605,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {आपका {count,number} कनेक्शन है जिसने शायद Signal/Cradle फिर से इंस्टॉल किया हो या डिवाइस बदले हों। आप उसे भेजने से पहले वैकल्पिक तौर पर उनकी सुरक्षा संख्याओं की समीक्षा कर सकते हैं।} other {आपके {count,number} कनेक्शन हैं जिन्होंने शायद Signal/Cradle फिर से इंस्टॉल किया हो या डिवाइस बदले हों। आप उन्हें भेजने से पहले वैकल्पिक तौर पर उनकी सुरक्षा संख्याओं की समीक्षा कर सकते हैं।}}",
+    "messageformat": "{count, plural, one {आपका {count,number} कनेक्शन है जिसने शायद Signal फिर से इंस्टॉल किया हो या डिवाइस बदले हों। आप उसे भेजने से पहले वैकल्पिक तौर पर उनकी सुरक्षा संख्याओं की समीक्षा कर सकते हैं।} other {आपके {count,number} कनेक्शन हैं जिन्होंने शायद Signal फिर से इंस्टॉल किया हो या डिवाइस बदले हों। आप उन्हें भेजने से पहले वैकल्पिक तौर पर उनकी सुरक्षा संख्याओं की समीक्षा कर सकते हैं।}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -592,7 +637,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "{name1} के साथ आपका सुरक्षा नंबर बदल गया है। इसका मतलब या तो यह हो सकता है कि कोई आपके संवाद को रोकने का प्रयास कर रहा है या बस {name2} ने Signal/Cradle को री-इंस्टॉल किया है। आप इस संपर्क के साथ अपने सुरक्षा नंबर को वेरिफाई करना चाह सकता हैं।",
+    "messageformat": "{name1} के साथ आपका सुरक्षा नंबर बदल गया है। इसका मतलब या तो यह हो सकता है कि कोई आपके संवाद को रोकने का प्रयास कर रहा है या बस {name2} ने Signal को री-इंस्टॉल किया है। आप इस संपर्क के साथ अपने सुरक्षा नंबर को वेरिफाई करना चाह सकता हैं।",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -611,6 +656,10 @@
     "messageformat": "फिर भी कॉल करें",
     "description": "Used on a warning dialog to make it clear that it might be risky to call the conversation."
   },
+  "icu:joinAnyway": {
+    "messageformat": "फिर भी जुड़ें",
+    "description": "Used on a warning dialog to make it clear that it might be risky to join the call."
+  },
   "icu:continueCall": {
     "messageformat": "कॉल जारी रखें",
     "description": "Used on a warning dialog to make it clear that it might be risky to continue the group call."
@@ -628,7 +677,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "अपलोड में कुछ गड़बड़ी हुई! कृपया support@cradle.org पर ईमेल करें और अपने लॉग को टेक्स्ट फ़ाइल के रूप में लगाएं .",
+    "messageformat": "अपलोड में कुछ गड़बड़ी हुई! कृपया support@signal.org पर ईमेल करें और अपने लॉग को टेक्स्ट फ़ाइल के रूप में लगाएं .",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -672,23 +721,23 @@
   },
   "icu:SafetyNumberViewer__migration__text": {
     "messageformat": "सुरक्षा संख्या को अपडेट किया जा रहा है।",
-    "description": "An explanatory note in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) An explanatory note in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__migration__learn_more": {
     "messageformat": "अधिक जानें",
-    "description": "A link text in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) A link text in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__card__prev": {
     "messageformat": "पिछली सुरक्षा संख्या",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__card__next": {
     "messageformat": "अगली सुरक्षा संख्या",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__carousel__dot": {
     "messageformat": "सुरक्षा संख्या वर्ज़न, {index,number} / {total,number}",
-    "description": "An ARIA label for safety number carousel button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number carousel button."
   },
   "icu:SafetyNumberViewer__markAsVerified": {
     "messageformat": "साटिपिट होने का मार्क कीजीये",
@@ -698,33 +747,41 @@
     "messageformat": "जांच क्लियर करें",
     "description": "Safety number viewer, verification toggle button, when verified, clears verification state"
   },
+  "icu:SafetyNumberViewer__hint": {
+    "messageformat": "{name} के साथ अपने एंड-टू-एंड एन्क्रिप्शन की पुष्टि करने के लिए, ऊपर दिए गए नंबरों की उनके डिवाइस से तुलना करें। वे आपके कोड को अपनी डिवाइस से भी स्कैन कर सकते हैं।",
+    "description": "Safety number viewer, text of the hint"
+  },
+  "icu:SafetyNumberViewer__learn_more": {
+    "messageformat": "अधिक जानें",
+    "description": "Text of 'Learn more' button of SafetyNumberViewerModal modal"
+  },
   "icu:SafetyNumberViewer__hint--migration": {
     "messageformat": "{name} के साथ एंड-टू-एंड एन्क्रिप्शन सत्यापित करने के लिए, ऊपर दिए गए कलर कार्ड का उनकी डिवाइस से मिलान करें और नंबरों की तुलना करें। यदि ये मेल नहीं खाते, तो सुरक्षा संख्या की दूसरी जोड़ी आज़माएं। केवल एक जोड़ी का मिलान ज़रूरी है।",
-    "description": "Safety number viewer, text of the hint during migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint during migration period"
   },
   "icu:SafetyNumberViewer__hint--normal": {
     "messageformat": "{name} के साथ अपने एंड-टू-एंड एन्क्रिप्शन की पुष्टि करने के लिए, ऊपर दिए गए नंबरों की उनके डिवाइस से तुलना करें। वे आपके कोड को अपनी डिवाइस से भी स्कैन कर सकते हैं।",
-    "description": "Safety number viewer, text of the hint after migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint after migration period"
   },
   "icu:SafetyNumberOnboarding__title": {
     "messageformat": "सुरक्षा नंबरों में बदलाव",
-    "description": "Title of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Title of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p1": {
     "messageformat": "Signal में आगामी गोपनीयता फीचर्स को सक्षम करने के लिए ट्रांजीशन अवधि में सुरक्षा संख्या अपडेट किए जा रहे हैं।",
-    "description": "Paragraph 1 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 1 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p2": {
     "messageformat": "सुरक्षा संख्या सत्यापित करने के लिए, कलर कार्ड का अपने संपर्क की डिवाइस से मिलान करें। यदि ये मेल नहीं खाते, तो सुरक्षा संख्या की दूसरी जोड़ी आज़माएं। केवल एक जोड़ी का मिलान ज़रूरी है।",
-    "description": "Paragraph 2 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 2 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__help": {
     "messageformat": "मदद चाहिए?",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__close": {
     "messageformat": "समझ गया",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberNotReady__body": {
     "messageformat": "आपके द्वारा इस व्यक्ति के साथ संदेशों का आदान-प्रदान करने के बाद एक सुरक्षा संख्या निर्मित किया जाएगा।",
@@ -750,7 +807,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "इस संपर्क के साथ आपकी सुरक्षा संख्या बदल गई है इसका मतलब यह हो सकता है कि कोई आपके संचार को अवरुद्ध करने का प्रयास कर रहा है, या इस संपर्क को केवल Signal/Cradle को पुनः स्थापित किया गया है आप नीचे नई सुरक्षा संख्या को सत्यापित करना चाह सकते हैं।"
+    "messageformat": "इस संपर्क के साथ आपकी सुरक्षा संख्या बदल गई है इसका मतलब यह हो सकता है कि कोई आपके संचार को अवरुद्ध करने का प्रयास कर रहा है, या इस संपर्क को केवल Signal को पुनः स्थापित किया गया है आप नीचे नई सुरक्षा संख्या को सत्यापित करना चाह सकते हैं।"
   },
   "icu:incomingError": {
     "messageformat": "आने वाले मेसेज को संभालने में त्रुटि"
@@ -813,15 +870,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "प्रीव्यू लोड हो रहा है...",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "{domain} के लिये ड्राफ्ट थंबनेल लिंक पूर्वावलोकन",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "{domain} के लिये थंबनेल लिंक पूर्वावलोकन",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "ड्राफ्ट तस्वीर अटैचमेंट: {path}",
@@ -916,18 +973,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "बीटा के साथ जुड़ें",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Cradle Desktop पसंदगी",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "messageformat": "Signal Desktop पसंदगी",
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "स्टिकर पैक निर्माता",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "Cradle डेस्कटॉप के बारे में",
+    "messageformat": "Signal डेस्कटॉप के बारे में",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -951,7 +1008,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Cradle Desktop",
+    "messageformat": "Signal Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -1003,7 +1060,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Cradle में आपका स्वागत है"
+    "messageformat": "Signal में आपका स्वागत है"
   },
   "icu:whatsNew": {
     "messageformat": "इस अपडेट में {whatsNew} देखें",
@@ -1134,15 +1191,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "वॉयस मेसेज भेजने के लिए, Cradle Desktop को अपने माइक्रोफ़ोन को ऐक्सेस करने की अनुमति दें।",
+    "messageformat": "वॉयस मेसेज भेजने के लिए, Signal Desktop को अपने माइक्रोफ़ोन को ऐक्सेस करने की अनुमति दें।",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "कॉल करने के लिए, आपको अपने माइक्रोफोन को एक्सेस करने देने के लिए Cradle Desktop को इजाज़त देनी होगी।",
+    "messageformat": "कॉल करने के लिए, आपको अपने माइक्रोफोन को एक्सेस करने देने के लिए Signal Desktop को इजाज़त देनी होगी।",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "वीडियो कॉलिंग के लिए, आपको Cradle Desktop को अपना कैमरा एक्सेस करने देने के लिए इजाज़त देनी होगी।",
+    "messageformat": "वीडियो कॉलिंग के लिए, आपको Signal Desktop को अपना कैमरा एक्सेस करने देने के लिए इजाज़त देनी होगी।",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1182,15 +1239,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Cradle अपडेट नहीं हो सका। {retry} या उसे मैनुअल तरीके से इंस्टॉल करने के लिए {url} पर विज़िट करें। फिर इस समस्या के बारे में {support}",
+    "messageformat": "Signal अपडेट नहीं हो सका। {retry} या उसे मैनुअल तरीके से इंस्टॉल करने के लिए {url} पर विज़िट करें। फिर इस समस्या के बारे में {support}",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Cradle अपडेट नहीं हो सका। उसे मैनुअल तरीके से इंस्टॉल करने के लिए {url} पर विज़िट करें। फिर इस समस्या के बारे में {support}",
+    "messageformat": "Signal अपडेट नहीं हो सका। उसे मैनुअल तरीके से इंस्टॉल करने के लिए {url} पर विज़िट करें। फिर इस समस्या के बारे में {support}",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Cradle Desktop संभव रूप से macOS क्वारंटाइन में है, और ऑटो-अपडेट होने के योग्य नहीं है। कृपया फाइंडर के साथ  को {app}से {folder} में मूव करने का प्रयास करें।",
+    "messageformat": "Signal Desktop संभव रूप से macOS क्वारंटाइन में है, और ऑटो-अपडेट होने के योग्य नहीं है। कृपया फाइंडर के साथ  को {app}से {folder} में मूव करने का प्रयास करें।",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1246,7 +1303,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "यह मेसेज चैट में शामिल सभी के लिए डिलीट कर दिया जाएगा यदि वे Signal/Cradle के नवीनमत वर्ज़न पर हैं। वे देख सकेंगे कि आपने एक मेसेज को डिलीट कर दिया है।",
+    "messageformat": "यह मेसेज चैट में शामिल सभी के लिए डिलीट कर दिया जाएगा यदि वे Signal के नवीनमत वर्ज़न पर हैं। वे देख सकेंगे कि आपने एक मेसेज को डिलीट कर दिया है।",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1365,17 +1422,17 @@
     "messageformat": "जानकारी",
     "description": "Shown on the drop-down menu for an individual message, takes you to message detail screen"
   },
-  "icu:deleteMessages": {
-    "messageformat": "डिलीट करें",
-    "description": "Menu item for deleting messages, title case."
+  "icu:deleteMessagesInConversation": {
+    "messageformat": "संदेश डिलीट करें",
+    "description": "Menu item for deleting all messages in a conversation from your device"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "चैट को डिलीट करना है?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__title": {
+    "messageformat": "संदेश डिलीट करें?",
+    "description": "Title for confirmation modal to delete all messages in a conversation"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "इस चैट को इस डिवाइस से डिलीट कर दिया जाएगा।",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__description": {
+    "messageformat": "इस चैट के संदेश इस डिवाइस से हटा दिए जाएंगे। संदेश हटाने के बाद भी आप इस चैट को खोज सकते हैं।",
+    "description": "Description for confirmation modal to delete all messages in a conversation"
   },
   "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
     "messageformat": "समूह छोड़ दें",
@@ -1410,7 +1467,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Cradle एंड-टू-एंड एंक्रिप्शन का इस्तेमाल करता है और इसे कभी-कभी आपके चैट सेशन को रीफ़्रेश करने की ज़रूरत हो सकती है। इससे आपकी चैट की सुरक्षा प्रभावित नहीं होती है लेकिन हो सकता है कि इस संपर्क से कोई संदेश छूट गया हो और आप उन्हें उसे दोबारा भेजने के लिए कह सकते हैं।",
+    "messageformat": "Signal एंड-टू-एंड एंक्रिप्शन का इस्तेमाल करता है और इसे कभी-कभी आपके चैट सेशन को रीफ़्रेश करने की ज़रूरत हो सकती है। इससे आपकी चैट की सुरक्षा प्रभावित नहीं होती है लेकिन हो सकता है कि इस संपर्क से कोई संदेश छूट गया हो और आप उन्हें उसे दोबारा भेजने के लिए कह सकते हैं।",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1469,6 +1526,14 @@
     "messageformat": "दोनों चैट के लिए आपके संदेश इतिहास को यहां मर्ज कर दिया गया है।",
     "description": "Contents of a dialog shown after clicking 'learn more' button on a conversation merge event."
   },
+  "icu:PhoneNumberDiscovery--notification--withSharedGroup": {
+    "messageformat": "{conversationTitle} का फ़ोन नंबर {phoneNumber} है। आप दोनों ही {sharedGroup} के सदस्य हैं।",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with."
+  },
+  "icu:PhoneNumberDiscovery--notification--noSharedGroup": {
+    "messageformat": "{phoneNumber} {conversationTitle} का है",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with, but you have no shared groups."
+  },
   "icu:quoteThumbnailAlt": {
     "messageformat": "कोटेड मेसेज में से तस्वीर का थंबनेल",
     "description": "Used in alt tag of thumbnail images inside of an embedded message quote"
@@ -1502,20 +1567,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Cradle डेस्कटॉप में आपका स्वागत है",
+    "messageformat": "Signal डेस्कटॉप में आपका स्वागत है",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "गोपनीयता संभव है. Cradle उसे आसान बनता है",
+    "messageformat": "गोपनीयता संभव है. Signal उसे आसान बनता है",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "लिंक की गईं डिवाइसें",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "नया डिवाइस लिंक करें",
-    "description": "The menu option shown in Cradle iOS to add a new linked device"
+    "description": "The menu option shown in Signal iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "अधिक जानें",
@@ -1589,7 +1654,7 @@
     "messageformat": "क्षमा करें, आपके पास बहुत से डिवाइस पहले ही लिंक किए गए हैं कुछ को निकालने का प्रयास करें"
   },
   "icu:installTooOld": {
-    "messageformat": "अपना फोन लिंक करने के लिए इस डिवाइस पर Cradle को अपडेट करें।"
+    "messageformat": "अपना फोन लिंक करने के लिए इस डिवाइस पर Signal को अपडेट करें।"
   },
   "icu:installErrorHeader": {
     "messageformat": "कुछ गलत हो गया"
@@ -1613,12 +1678,8 @@
     "description": "Button to call someone back"
   },
   "icu:calling__call-again": {
-    "messageformat": "दोबारा कोल करें",
+    "messageformat": "दोबारा कॉल करें",
     "description": "Button to call someone again"
-  },
-  "icu:calling__start": {
-    "messageformat": "कॉल शुरू करें",
-    "description": "Button label in the call lobby for starting a call"
   },
   "icu:calling__join": {
     "messageformat": "कॉल से जुड़ें",
@@ -1632,13 +1693,25 @@
     "messageformat": "कॉल में लोगों की संख्या के चलते माइक्रोफ़ोन म्यूट किया गया",
     "description": "Shown in a call lobby toast if there are a lot of people already on the call"
   },
+  "icu:calling__toasts--aria-label": {
+    "messageformat": "कॉल नोटिफ़िकेशन",
+    "description": "Aria label for region of toasts shown during a call (for, e.g. reconnecting, person joined, audio device changed notifications)"
+  },
   "icu:calling__call-is-full": {
     "messageformat": "कॉल पूर्ण है",
     "description": "Text in the call lobby when you can't join because the call is full"
   },
-  "icu:calling__button--video__label": {
-    "messageformat": "कैमरा",
-    "description": "Label under the video button"
+  "icu:CallingLobbyJoinButton--join": {
+    "messageformat": "जुड़ें",
+    "description": "Button label in the call lobby for joining a call"
+  },
+  "icu:CallingLobbyJoinButton--start": {
+    "messageformat": "शुरू",
+    "description": "Button label in the call lobby for starting a call"
+  },
+  "icu:CallingLobbyJoinButton--call-full": {
+    "messageformat": "पूर्ण कॉल करें",
+    "description": "Button in the call lobby when you can't join because the call is full"
   },
   "icu:calling__button--video-disabled": {
     "messageformat": "कैमरा डिसेबल किया गया",
@@ -1652,10 +1725,6 @@
     "messageformat": "कैमरा चालू करें",
     "description": "Button tooltip label for turning on the camera"
   },
-  "icu:calling__button--audio__label": {
-    "messageformat": "म्युट करें",
-    "description": "Label under the audio button"
-  },
   "icu:calling__button--audio-disabled": {
     "messageformat": "माइक्रोफोन डिसेबल किया गया",
     "description": "Button tooltip label when the microphone is disabled"
@@ -1667,10 +1736,6 @@
   "icu:calling__button--audio-on": {
     "messageformat": "माइक को अनम्यूट करें",
     "description": "Button tooltip label for turning on the microphone"
-  },
-  "icu:calling__button--presenting__label": {
-    "messageformat": "साझा करें",
-    "description": "Label under the share screen button"
   },
   "icu:calling__button--presenting-disabled": {
     "messageformat": "प्रस्तुत निर्योग्य है",
@@ -1684,10 +1749,6 @@
     "messageformat": "प्रस्तुत करना बंद करें",
     "description": "Button tooltip label for stopping screen sharing"
   },
-  "icu:calling__button--ring__label": {
-    "messageformat": "रिंग करें",
-    "description": "Label under the ring button"
-  },
   "icu:calling__button--ring__disabled-because-group-is-too-large": {
     "messageformat": "भाग लेने वालों को रिंग करने के लिए ग्रूप बहुत बड़ा है.",
     "description": "Button tooltip label when you can't ring because the group is too large"
@@ -1699,6 +1760,26 @@
   "icu:calling__button--ring__on": {
     "messageformat": "रिंगिंग को एनेबल करें",
     "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton__ring-off": {
+    "messageformat": "रिंगिंग बंद करें",
+    "description": "Button tooltip label for turning ringing off"
+  },
+  "icu:CallingButton--ring-on": {
+    "messageformat": "रिंगिंग चालू करें",
+    "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton--more-options": {
+    "messageformat": "अधिक विकल्प",
+    "description": "Tooltip label for button in the calling screen that opens a menu with other call actions such as React or Raise Hand."
+  },
+  "icu:CallingRaisedHandsList__Title": {
+    "messageformat": "{count, plural, one {हाथ उठाए हुए · {count,number} व्यक्ति} other {हाथ उठाए हुए · {count,number} लोग}}",
+    "description": "Shown in the call raised hands list to describe how many people have active raised hands"
+  },
+  "icu:CallingReactions--me": {
+    "messageformat": "आप",
+    "description": "Label next to in-call reactions to indicate that the current user sent that reaction."
   },
   "icu:calling__your-video-is-off": {
     "messageformat": "आपका कैमरा बंद है",
@@ -1725,7 +1806,7 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--many-people-in-call": {
-    "messageformat": "{first}, {second}, और {others} अन्य लोग इस कॉल में हैं",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others are in this call",
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
@@ -1741,7 +1822,7 @@
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "सिग्नल {first}, {second}, और {others} अन्य पर बजेगा",
+    "messageformat": "Signal will ring {first}, {second}, and {others, plural, other {#}} others",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1757,7 +1838,7 @@
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__pre-call-info--will-notify-many": {
-    "messageformat": "{first}, {second}, और {others} अन्य को सूचित किया जाएगा",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others will be notified",
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__in-this-call--zero": {
@@ -1797,7 +1878,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Cradle {window} साझा कर रहा है।",
+    "messageformat": "Signal {window} साझा कर रहा है।",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1821,7 +1902,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Cradle को आपके कंप्यूटर की स्क्रीन रिकॉर्डिंग तक पहुँचने के लिए अनुमति की आवश्यकता है।",
+    "messageformat": "Signal को आपके कंप्यूटर की स्क्रीन रिकॉर्डिंग तक पहुँचने के लिए अनुमति की आवश्यकता है।",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1833,7 +1914,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "दाईं ओर, Cradle के आगे वाले बॉक्स को चेक करें। यदि आपको सूची में Cradle नहीं दिखाई देता है, तो इसे जोड़ने के लिए + पर क्लिक करें।",
+    "messageformat": "दाईं ओर, Signal के आगे वाले बॉक्स को चेक करें। यदि आपको सूची में Signal नहीं दिखाई देता है, तो इसे जोड़ने के लिए + पर क्लिक करें।",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1877,12 +1958,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "स्पेल चेक अगली बार Cradle के शुरू होने पर एनेबल किया जाएगा।",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "स्पेल चेक अगली बार Signal के शुरू होने पर एनेबल किया जाएगा।",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "स्पेल चेक अगली बार Cradle के शुरू होने पर डिसेबल किया जाएगा।",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "स्पेल चेक अगली बार Signal के शुरू होने पर डिसेबल किया जाएगा।",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "सिस्टम ट्रे छोटा करें",
@@ -1897,15 +1978,15 @@
     "description": "Description for the automatic launch setting"
   },
   "icu:clearDataHeader": {
-    "messageformat": "एप्लिकेशन डेटा क्लियर करें",
+    "messageformat": "Delete application data",
     "description": "Header in the settings dialog for the section dealing with data deletion"
   },
   "icu:clearDataExplanation": {
-    "messageformat": "यह आपके एप्लिकेशन से सारा डाटा, मेसेज और ख़ाते की जानकारी सहित हटा देगा।",
+    "messageformat": "This will delete all data in the application, removing all messages and saved account information.",
     "description": "Text describing what the clear data button will do."
   },
   "icu:clearDataButton": {
-    "messageformat": "डाटा हटाएँ",
+    "messageformat": "Delete data",
     "description": "Button in the settings dialog starting process to delete all data"
   },
   "icu:deleteAllDataHeader": {
@@ -1913,7 +1994,7 @@
     "description": "Header of the full-screen delete data confirmation screen"
   },
   "icu:deleteAllDataBody": {
-    "messageformat": "आप इस एप्लिकेशन के सारे अकाउंट की जानकारी, संपर्क और मेसेज सहित डिलीट करने जा रहे हैं। आप अपना मोबाइल डिवाइस फिर से लिंक कर सकते हैं पर उससे डिलीट करे हुए मेसेज वापस नहीं आएँगे।",
+    "messageformat": "Delete all data and messages from this version of Signal Desktop? You can always relink this desktop, but your messages will not restore. Your Signal account and data on your phone or other linked devices will not be deleted.",
     "description": "Text describing what exactly will happen if the user clicks the button to delete all data"
   },
   "icu:deleteAllDataButton": {
@@ -1925,8 +2006,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "आपके पास Cradle Desktop के पिछले इंस्टॉलेशन से बेकार डेटा है। अगर आप जारी रखने का चयन करते हैं, तो इसे डिलीट कर दिया जाएगा और आप दोबारा से शुरुआत करेंगे।",
-    "description": "Shown if user last ran Cradle Desktop before October 2018"
+    "messageformat": "आपके पास Signal Desktop के पिछले इंस्टॉलेशन से बेकार डेटा है। अगर आप जारी रखने का चयन करते हैं, तो इसे डिलीट कर दिया जाएगा और आप दोबारा से शुरुआत करेंगे।",
+    "description": "Shown if user last ran Signal Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "पुराने डेटा को डिलीट करें",
@@ -2007,11 +2088,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "Cradle डेस्कटॉप का यह वर्ज़न समाप्त हो गया है। संदेश जारी रखने के लिए कृपया नवीनतम वर्ज़न में नवीनीकृत करें।",
+    "messageformat": "Signal डेस्कटॉप का यह वर्ज़न समाप्त हो गया है। संदेश जारी रखने के लिए कृपया नवीनतम वर्ज़न में नवीनीकृत करें।",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "cradle.org/download पर जाने के लिए क्लिक करें",
+    "messageformat": "signal.org/download पर जाने के लिए क्लिक करें",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2179,7 +2260,7 @@
     "description": "In conversation details, label for button to view safety number, opens safety number modal"
   },
   "icu:ConversationDetails__HeaderButton--Message": {
-    "messageformat": "Message",
+    "messageformat": "संदेश",
     "description": "In conversation details, label for button to switch to the conversation view in order to draft a message in that converation"
   },
   "icu:SafetyNumberNotification__viewSafetyNumber": {
@@ -2264,22 +2345,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "यूज़र का नाम ढूंढने में असफ़ल. अपने कनेक्शन को चेक करें और फिर से कोशिश करें.",
-    "description": "Shown if request to Cradle servers to find username fails"
+    "description": "Shown if request to Signal servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "फ़ोन नंबर नहीं ला सका। अपना कनेक्शन जाँचें और फिर से प्रयास करें।",
-    "description": "Shown if request to Cradle servers to find phone number fails"
+    "description": "Shown if request to Signal servers to find phone number fails"
   },
-  "icu:ToastManager__CannotEditMessage": {
-    "messageformat": "आपके द्वारा इस संदेश को भेजे जाने के 3 घंटे के भीतर ही संपादन लागू किए जा सकते हैं।",
+  "icu:ToastManager__CannotEditMessage_24": {
+    "messageformat": "आपके द्वारा इस संदेश को भेजे जाने के 24 घंटे के भीतर ही संपादन लागू किए जा सकते हैं।",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "यूज़र नहीं मिला. {atUsername} एक Signal/Cradle यूज़र नहीं है; सुनिश्चित करें कि आपने पूरा यूज़र नाम दर्ज किया है.",
+    "messageformat": "यूज़र नहीं मिला. {atUsername} एक Signal यूज़र नहीं है; सुनिश्चित करें कि आपने पूरा यूज़र नाम दर्ज किया है.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "यूज़र नहीं मिला। \"{phoneNumber}\" एक Signal/Cradle यूज़र नहीं है।",
+    "messageformat": "यूज़र नहीं मिला। \"{phoneNumber}\" एक Signal यूज़र नहीं है।",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2307,7 +2388,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Cradle समूहों में अधिकतम {max,number} सदस्य हो सकते हैं।",
+    "messageformat": "Signal समूहों में अधिकतम {max,number} सदस्य हो सकते हैं।",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2315,7 +2396,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Cradle समूह {max,number} या उससे कम सदस्यों के साथ सर्वश्रेष्ठ प्रदर्शन करते हैं। अधिक सदस्यों को जोड़ने से संदेश भेजने और प्राप्त करने में देरी होगी।",
+    "messageformat": "Signal समूह {max,number} या उससे कम सदस्यों के साथ सर्वश्रेष्ठ प्रदर्शन करते हैं। अधिक सदस्यों को जोड़ने से संदेश भेजने और प्राप्त करने में देरी होगी।",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2391,11 +2472,11 @@
     "messageformat": "अपडेट डाउनलोड करने के लिए क्लिक करें"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Cradle अपडेट नहीं हो सका। फिर से प्रयास करने के लिए क्लिक करें।",
+    "messageformat": "Signal अपडेट नहीं हो सका। फिर से प्रयास करने के लिए क्लिक करें।",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Cradle पुनः आरंभ करे"
+    "messageformat": "Signal पुनः आरंभ करे"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "बाद में"
@@ -2514,6 +2595,14 @@
   "icu:message--deletedForEveryone": {
     "messageformat": "यह मेसेज डिलीट कर दिया गया है।",
     "description": "Shown in a message's bubble when the message has been deleted for everyone."
+  },
+  "icu:message--attachmentTooBig--one": {
+    "messageformat": "अटैचमेंट प्रदर्शित करने के लिहाज से बहुत बड़ा है।",
+    "description": "Shown in a message bubble if no attachments are left on message when too-large attachments are dropped"
+  },
+  "icu:message--attachmentTooBig--multiple": {
+    "messageformat": "कुछ अटैचमेंट प्रदर्शित करने के लिहाज से बहुत बड़े हैं।",
+    "description": "Shown in a message bubble if any attachments are left on message when too-large attachments are dropped"
   },
   "icu:donation--missing": {
     "messageformat": "दान विवरण प्राप्त करने में असमर्थ",
@@ -2653,15 +2742,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "पेश करते हैं स्टिकर्स: बैंडिट दि कैट",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "पेश है स्टिकर",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "शब्द क्युँ इस्तेमाल करने जब आप स्टिकर इस्तेमाल कर सकते हैं?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "स्टिकर पिकर खोलें",
@@ -2804,20 +2893,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} ने एक मेसेज भेजा है जो याहाँ दिखाया नहीं जा सकता क्योंकि वह Signal/Cradle का नया फ़ीचर इस्तेमाल करता है।"
+    "messageformat": "{contact} ने एक मेसेज भेजा है जो याहाँ दिखाया नहीं जा सकता क्योंकि वह Signal का नया फ़ीचर इस्तेमाल करता है।"
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "आप Cradle का नवीनतम वर्ज़न तक अपडेट हो चुके हैं, अब आप {contact} को यह मेसेज फिर से भेजने के लिये कह सकते हैं।"
+    "messageformat": "आप Signal का नवीनतम वर्ज़न तक अपडेट हो चुके हैं, अब आप {contact} को यह मेसेज फिर से भेजने के लिये कह सकते हैं।"
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "आपके किसी डिवाइस ने एक मेसेज भेजा है जो याहाँ दिखाया नहीं जा सकता क्योंकि वह Signal/Cradle का नया फ़ीचर इस्तेमाल करता है।"
+    "messageformat": "आपके किसी डिवाइस ने एक मेसेज भेजा है जो याहाँ दिखाया नहीं जा सकता क्योंकि वह Signal का नया फ़ीचर इस्तेमाल करता है।"
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "अब जब आप Cradle का नवीनतम वर्ज़न तक अपडेट हो चुके हैं, आपके आगे के मेसेज सिंक्रनाइज़ कर दिये जाएँगे"
+    "messageformat": "अब जब आप Signal का नवीनतम वर्ज़न तक अपडेट हो चुके हैं, आपके आगे के मेसेज सिंक्रनाइज़ कर दिये जाएँगे"
   },
   "icu:Message--update-signal": {
-    "messageformat": "Cradle अपडेट करें",
-    "description": "Text for a button which will take user to Cradle download page"
+    "messageformat": "Signal अपडेट करें",
+    "description": "Text for a button which will take user to Signal download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "देखा गया",
@@ -3156,11 +3245,19 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "केवल Cradle बीटा",
-    "description": "Title of the modal shown before sending your first edit message"
+    "messageformat": "केवल Signal बीटा",
+    "description": "(deleted 8/30) Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "संदेशों का संपादन केवल Cradle बीटा उपयोगकर्ताओं के लिए उपलब्ध है। यदि आप किसी संदेश को संपादित करते हैं, तो वह केवल उन लोगों को दिखाई देगा जो Cradle बीटा के नवीनतम संस्करण पर हैं।",
+    "messageformat": "संदेशों का संपादन केवल Signal बीटा उपयोगकर्ताओं के लिए उपलब्ध है। यदि आप किसी संदेश को संपादित करते हैं, तो वह केवल उन लोगों को दिखाई देगा जो Signal बीटा के नवीनतम संस्करण पर हैं।",
+    "description": "(deleted 8/30) Body text of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--title2": {
+    "messageformat": "संदेश संपादित करें",
+    "description": "Title of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--body2": {
+    "messageformat": "यदि आप किसी संदेश को संपादित करते हैं, तो वह केवल उन लोगों को दिखाई देगा जो Signal के नवीनतम संस्करण पर हैं। वे आपके द्वारा संपादित संदेश देख सकेंगे।",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3168,20 +3265,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "कुछ लोग Cradle के ऐसे संस्करण का इस्तेमाल कर रहे होंगे जो फॉर्मेटेड टेक्स्ट को सपोर्ट नहीं करता। वे आपके द्वारा अपने संदेश में किए गए फॉर्मेटिंग बदलावों को नहीं देख पाएंगे।",
+    "messageformat": "कुछ लोग Signal के ऐसे संस्करण का इस्तेमाल कर रहे होंगे जो फॉर्मेटेड टेक्स्ट को सपोर्ट नहीं करता। वे आपके द्वारा अपने संदेश में किए गए फॉर्मेटिंग बदलावों को नहीं देख पाएंगे।",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "क्या आप Cradle स्टीकर पैक क्रिएटर खोलना चाहते हैं?",
-    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
+    "messageformat": "क्या आप Signal स्टीकर पैक क्रिएटर खोलना चाहते हैं?",
+    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "पुष्टि करें",
-    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "हटाएँ",
-    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "स्टिकर पैक क्रिएटर का उपयोग करने के लिए कृपया अपने फोन और डेस्कटॉप पर Signal को सेट अप करें",
@@ -3332,7 +3429,7 @@
     "description": "Shown in the conversation hero to indicate this user is a member of four mutual groups"
   },
   "icu:member-of-more-than-3-groups--multiple-more": {
-    "messageformat": "{group1}, {group2}, {group3} और  {remainingCount,number} अधिक।",
+    "messageformat": "Member of {group1}, {group2}, {group3} and {remainingCount, plural, other {#}} more",
     "description": "Shown in the conversation hero to indicate this user is a member of 5+ mutual groups."
   },
   "icu:ConversationHero--membership-added": {
@@ -3400,12 +3497,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Cradle अब भी चल रहा है",
-    "description": "Shown in a notification title when Cradle is minimized to tray"
+    "messageformat": "Signal अब भी चल रहा है",
+    "description": "Shown in a notification title when Signal is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "नोटिफ़िकेशन क्षेत्र में Cradle चलता रहेगा। आप इसे Cradle की सेटिंग्स में बदल सकते हैं।",
-    "description": "Shown in a notification body when Cradle is minimized to tray"
+    "messageformat": "नोटिफ़िकेशन क्षेत्र में Signal चलता रहेगा। आप इसे Signal की सेटिंग्स में बदल सकते हैं।",
+    "description": "Shown in a notification body when Signal is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "वॉयस कॉल आ रही है…",
@@ -3416,11 +3513,11 @@
     "description": "Shown in both the incoming call bar and notification for an incoming video call"
   },
   "icu:outgoingAudioCall": {
-    "messageformat": "Outgoing voice call",
+    "messageformat": "आउटगोइंग वॉयस कॉल",
     "description": "Shown in the timeline for an outgoing voice call"
   },
   "icu:outgoingVideoCall": {
-    "messageformat": "Outgoing video call",
+    "messageformat": "वीडियो कॉल की जा रही है",
     "description": "Shown in the timeline for an outgoing video call"
   },
   "icu:incomingGroupCall__ringing-you": {
@@ -3467,9 +3564,69 @@
     "messageformat": "फिर से जोड़ रहे हैं...",
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
-  "icu:callDuration": {
-    "messageformat": "Cradle {duration}",
-    "description": "Shown in the call screen to indicate how long the call has been connected"
+  "icu:CallControls__InfoDisplay--participants": {
+    "messageformat": "{count, plural, one {{count,number} व्यक्ति} other {{count,number} लोग}}",
+    "description": "Shown in the call screen and lobby for group calls to specify the number of members in the call or in the group. Count is at always at least 1."
+  },
+  "icu:CallControls__InfoDisplay--audio-call": {
+    "messageformat": "ऑडियो कॉल",
+    "description": "Shown in the call lobby for a direct 1:1 call when the caller's video is disabled, to specify that an audio call will be placed when clicking the Start button."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-1-1": {
+    "messageformat": "समाप्त",
+    "description": "Title for the hangup button for a direct 1:1 call with only 2 participants."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-group": {
+    "messageformat": "छोङें",
+    "description": "Title for the hangup button for a group call."
+  },
+  "icu:CallControls__MutedToast--muted": {
+    "messageformat": "माइक बंद",
+    "description": "Shown in a call when the user mutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__MutedToast--unmuted": {
+    "messageformat": "माइक चालू",
+    "description": "Shown in a call when the user is muted and then unmutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-on": {
+    "messageformat": "रिंगिंग चालू",
+    "description": "Shown in a group call lobby when call ringing is disabled, then the user enables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-off": {
+    "messageformat": "रिंगिंग बंद",
+    "description": "Shown in a group call lobby when call ringing is enabled, then the user disables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RaiseHandsToast--you": {
+    "messageformat": "आपका हाथ उठा हुआ है।",
+    "description": "Shown in a call when the user raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--one": {
+    "messageformat": "{name} ने हाथ उठाया।",
+    "description": "Shown in a call when someone else raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--two": {
+    "messageformat": "{name}, और {otherName} और ने हाथ उठाया।",
+    "description": "Shown in a call when 2 persons raise their hands."
+  },
+  "icu:CallControls__RaiseHandsToast--more": {
+    "messageformat": "{name}, {otherName}, and {overflowCount, plural, other {#}} more raised a hand.",
+    "description": "Shown in a call when 3 or more persons raise their hands."
+  },
+  "icu:CallControls__RaiseHands--open-queue": {
+    "messageformat": "कतार खोलें",
+    "description": "Link in call raised hands list and in toast shown when someone else raises their hand. Link opens the list of all raised hands."
+  },
+  "icu:CallControls__RaiseHands--lower": {
+    "messageformat": "नीचे करें",
+    "description": "Link in call raised hands list and in toast shown when user raises their hand. Link allows user to lower their hand."
+  },
+  "icu:CallControls__MenuItemRaiseHand": {
+    "messageformat": "हाथ बढ़ाएं",
+    "description": "Menu item to raise your hand during a call."
+  },
+  "icu:CallControls__MenuItemRaiseHand--lower": {
+    "messageformat": "हाथ नीचे करें",
+    "description": "Menu item to lower your previously raised hand during a call."
   },
   "icu:callingDeviceSelection__settings": {
     "messageformat": "सेटिंग्स",
@@ -3511,13 +3668,25 @@
     "messageformat": "कॉल को फुलस्क्रीन करें",
     "description": "Title for picture-in-picture toggle"
   },
-  "icu:calling__switch-view--to-grid": {
-    "messageformat": "ग्रिड व्यू पर स्विच करें",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__change-view": {
+    "messageformat": "व्यु बदलें",
+    "description": "Tooltip for changing the in-call layout of remote participants in a group call"
   },
-  "icu:calling__switch-view--to-speaker": {
-    "messageformat": "स्पीकर व्यू पर स्विच करें",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__view_mode--paginated": {
+    "messageformat": "ग्रिड व्यु",
+    "description": "Label for option to view participants in a group call in a paginated grid view"
+  },
+  "icu:calling__view_mode--overflow": {
+    "messageformat": "साइडबार व्यु",
+    "description": "Label for option to view participants in a group call where videos that don't fit onto the page are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--speaker": {
+    "messageformat": "स्पीकर व्यु",
+    "description": "Label for option to view participants where only the current speaker's video is fully visible and all others are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--updated": {
+    "messageformat": "व्यु अपडेट किया गया",
+    "description": "Toast shown whenver the calling view mode is changed (e.g. paginated view -> speaker view)"
   },
   "icu:calling__hangup": {
     "messageformat": "कॉल छोड़ें",
@@ -3619,6 +3788,14 @@
     "messageformat": "ठीक है",
     "description": "Button to dismiss popup dialog when user-initiated task has gone wrong"
   },
+  "icu:MessageMaxEditsModal__Title": {
+    "messageformat": "संदेश संपादित नहीं किया जा सकता",
+    "description": "Title in popup dialog when attempting to edit a message too many times."
+  },
+  "icu:MessageMaxEditsModal__Description": {
+    "messageformat": "Only {max, plural, other {#}} edits can be applied to this message.",
+    "description": "Description text in popup dialog when attempting to edit a message too many times."
+  },
   "icu:unknown-sgnl-link": {
     "messageformat": "क्षमा करें, वह sgnl: // लिंक समझ में नहीं आया!",
     "description": "Shown if you click on a sgnl:// link not currently supported by Desktop"
@@ -3656,7 +3833,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "यह लिंक Cradle Desktop के इस संस्करण द्वारा समर्थित नहीं है।",
+    "messageformat": "यह लिंक Signal Desktop के इस संस्करण द्वारा समर्थित नहीं है।",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4040,7 +4217,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--other": {
-    "messageformat": "{memberName} ने {count,number} लोगों को ग्रुप में आमंत्रित किया।",
+    "messageformat": "{memberName} invited {count, plural, other {#}} people to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--you": {
@@ -4048,7 +4225,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--unknown": {
-    "messageformat": "{count,number} लोगों को ग्रुप में आमंत्रित किया गया था।",
+    "messageformat": "{count, plural, other {#}} people were invited to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--other": {
@@ -4124,7 +4301,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--other": {
-    "messageformat": "{adminName} ने {memberName} द्वारा ग्रुप के लिए आमंत्रित {count,number} लोगों के आमंत्रण वापस ले लिए।",
+    "messageformat": "{adminName} revoked invitations to the group for {count, plural, other {#}} people invited by {memberName}.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--you": {
@@ -4364,7 +4541,7 @@
     "description": "Shown in timeline when a group is upgraded and one person was removed entirely during the upgrade"
   },
   "icu:GroupV1--Migration--removed--many": {
-    "messageformat": "{count,number} मेंबर्स को ग्रुप में से हटा दिया गया था।",
+    "messageformat": "{count, plural, other {#}} members were removed from the group.",
     "description": "Shown in timeline when a group is upgraded and some people were removed entirely during the upgrade"
   },
   "icu:close": {
@@ -4412,11 +4589,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "यह व्यक्ति Signal/Cradle का उपयोग नहीं कर रहा है",
+    "messageformat": "यह व्यक्ति Signal का उपयोग नहीं कर रहा है",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal/Cradle Desktop गैर-Signal/Cradle संपर्कों को संदेश भेजने का समर्थन नहीं करता है। अधिक सुरक्षित संदेश सेवा अनुभव के लिए इस व्यक्ति को Signal/Cradle स्थापित करने के लिए कहें।",
+    "messageformat": "Signal Desktop गैर-Signal संपर्कों को संदेश भेजने का समर्थन नहीं करता है। अधिक सुरक्षित संदेश सेवा अनुभव के लिए इस व्यक्ति को Signal स्थापित करने के लिए कहें।",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4752,7 +4929,7 @@
     "description": "conversation > in select mode > composition area actions > exit select mode > accessibility label"
   },
   "icu:SelectModeActions--selectedMessages": {
-    "messageformat": "{count,number} चुना हुआ",
+    "messageformat": "{count, plural, other {#}} selected",
     "description": "conversation > in select mode > composition area actions > count of selected messsages"
   },
   "icu:SelectModeActions--deleteSelectedMessages": {
@@ -4957,10 +5134,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "संदेश रिक्वेस्ट के बारे में",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "अनुरोधों की सावधानीपूर्वक समीक्षा करें। Cradle को एक ही नाम वाला एक और संपर्क मिला। <reviewRequestLink>निवेदन की समीक्षा करें</reviewRequestLink>",
+    "messageformat": "अनुरोधों की सावधानीपूर्वक समीक्षा करें। Signal को एक ही नाम वाला एक और संपर्क मिला। <reviewRequestLink>निवेदन की समीक्षा करें</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -5024,7 +5201,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Cradle पर स्पैम रोकने में मदद करने के लिए, कृपया सत्यापन पूर्ण करें।",
+    "messageformat": "Signal पर स्पैम रोकने में मदद करने के लिए, कृपया सत्यापन पूर्ण करें।",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5295,9 +5472,29 @@
     "messageformat": "यूज़रनेम",
     "description": "Default text for username field"
   },
+  "icu:ProfileEditor--username--corrupted--body": {
+    "messageformat": "आपके यूज़रनेम में कुछ गलत है, यह अब आपके अकाउंट के लिए असाइन नहीं है।",
+    "description": "Text of confirmation modal when the username gets corrupted"
+  },
+  "icu:ProfileEditor--username--corrupted--delete-button": {
+    "messageformat": "यूज़र नाम डिलीट करें",
+    "description": "Button text for deletion of the username in case of corruption"
+  },
+  "icu:ProfileEditor--username--corrupted--create-button": {
+    "messageformat": "उपयोगकर्ता नाम बनाएँ",
+    "description": "Button text for creation of a new username in case of corruption"
+  },
   "icu:ProfileEditor__username-link": {
     "messageformat": "QR कोड या लिंक",
     "description": "Label of a profile editor row that navigates to username link and qr code modal"
+  },
+  "icu:ProfileEditor__username__error-icon": {
+    "messageformat": "यूज़रनेम को फिर से स्थापित करने की आवश्यकता है",
+    "description": "Accessibility title of an icon in profile editor"
+  },
+  "icu:ProfileEditor__username-link__error-icon": {
+    "messageformat": "यूज़रनेम लिंक को फिर से स्थापित करने की आवश्यकता है",
+    "description": "Accessibility title of an icon in profile editor"
   },
   "icu:ProfileEditor__username-link__tooltip__title": {
     "messageformat": "अपना यूज़रनेम साझा करें",
@@ -5552,7 +5749,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "चुनें कि कौन आपका फोन नंबर देख सकता है और कौन इसके साथ Cradle पर आपसे संपर्क कर सकता है।",
+    "messageformat": "चुनें कि कौन आपका फोन नंबर देख सकता है और कौन इसके साथ Signal पर आपसे संपर्क कर सकता है।",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5560,11 +5757,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "आपका फ़ोन नंबर उन लोगों और ग्रुप्स को दिखेगा जिन्हें आप मेसेज भेजेंगे। वे लोग जिनके फोन संपर्कों में आपका नंबर है, वे भी Cradle पर इसे देख पाएँगे।",
+    "messageformat": "आपका फ़ोन नंबर उन लोगों और ग्रुप्स को दिखेगा जिन्हें आप मेसेज भेजेंगे। वे लोग जिनके फोन संपर्कों में आपका नंबर है, वे भी Signal पर इसे देख पाएँगे।",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "कोई भी Signal/Cradle पर आपका फोन नंबर नहीं देखेगा।",
+    "messageformat": "कोई भी Signal पर आपका फोन नंबर नहीं देखेगा।",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5584,11 +5781,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "जिस किसी के भी संपर्क में फोन नंबर है, वो आपको Signal/Cradle पर एक संपर्क के रूप में देखेगा। जब अन्य लोग कोई नई चैट या ग्रुप शुरू करेंगे, तो वे आपके फोन नंबर के माध्यम से आपसे संपर्क कर सकेंगे।",
+    "messageformat": "जिस किसी के भी संपर्क में फोन नंबर है, वो आपको Signal पर एक संपर्क के रूप में देखेगा। जब अन्य लोग कोई नई चैट या ग्रुप शुरू करेंगे, तो वे आपके फोन नंबर के माध्यम से आपसे संपर्क कर सकेंगे।",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Signal/Cradle पर कोई भी आपको आपके फ़ोन नंबर से नहीं पहुंच पाएगा।",
+    "messageformat": "Signal पर कोई भी आपको आपके फ़ोन नंबर से नहीं पहुंच पाएगा।",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5651,6 +5848,42 @@
     "messageformat": "अब आप स्टोरीज़ न तो शेयर कर पाएंगे, न ही उन्हें देख पाएंगे। हाल ही में आपका द्वारा शेयर किए गए स्टोरी अपडेट भी डिलीट कर दिए जाएंगे।",
     "description": "Confirmation modal body for disabling stories"
   },
+  "icu:Preferences__Language__Label": {
+    "messageformat": "भाषा",
+    "description": "Language setting label"
+  },
+  "icu:Preferences__Language__ModalTitle": {
+    "messageformat": "भाषा",
+    "description": "Language setting modal title"
+  },
+  "icu:Preferences__Language__SystemLanguage": {
+    "messageformat": "सिस्टम भाषा",
+    "description": "Option for system language"
+  },
+  "icu:Preferences__Language__SearchLanguages": {
+    "messageformat": "भाषाएँ खोजें",
+    "description": "Placholder for language preference search box"
+  },
+  "icu:Preferences__Language__NoResults": {
+    "messageformat": "“{searchTerm}” के लिए कोई परिणाम नहीं",
+    "description": "When no results are found for language preference search"
+  },
+  "icu:Preferences__LanguageModal__Set": {
+    "messageformat": "सेट",
+    "description": "Button to set language preference"
+  },
+  "icu:Preferences__LanguageModal__Restart__Title": {
+    "messageformat": "लागू करने के लिए Signal को पुनरारंभ करें",
+    "description": "Title for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Description": {
+    "messageformat": "भाषा बदलने के लिए, ऐप को पुनरारंभ करना होगा।",
+    "description": "Description for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Button": {
+    "messageformat": "पुनः आरंभ करें",
+    "description": "Button to restart Signal to apply language changes"
+  },
   "icu:DialogUpdate--version-available": {
     "messageformat": "{version} में अपडेट करने का वर्शन उपलब्ध",
     "description": "Tooltip for new update available"
@@ -5668,7 +5901,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Cradle का उपयोग जारी रखने के लिए, आपको नवीनतम संस्करण में अपडेट करना होगा।",
+    "messageformat": "Signal का उपयोग जारी रखने के लिए, आपको नवीनतम संस्करण में अपडेट करना होगा।",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5676,11 +5909,11 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "अद्यतन स्थापित करने के लिए Cradle को पुनरारंभ करें।",
+    "messageformat": "अद्यतन स्थापित करने के लिए Signal को पुनरारंभ करें।",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Cradle डेस्कटॉप अपडेट करने में विफल रहा, लेकिन एक नया संस्करण उपलब्ध है। {downloadUrl} पर जाएं और नया संस्करण मैन्युअल रूप से स्थापित करें, फिर या तो समर्थन से संपर्क करें या इस समस्या के बारे में एक बग फ़ाइल करें।",
+    "messageformat": "Signal डेस्कटॉप अपडेट करने में विफल रहा, लेकिन एक नया संस्करण उपलब्ध है। {downloadUrl} पर जाएं और नया संस्करण मैन्युअल रूप से स्थापित करें, फिर या तो समर्थन से संपर्क करें या इस समस्या के बारे में एक बग फ़ाइल करें।",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
@@ -5704,15 +5937,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Cradle का एक नया संस्करण पहले से स्थापित है। क्या आप वाकई जारी रखना चाहते हैं?",
-    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
+    "messageformat": "Signal का एक नया संस्करण पहले से स्थापित है। क्या आप वाकई जारी रखना चाहते हैं?",
+    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "ऐप्लीकेशन क्रैश हो गया",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "एक क्रैश के बाद Cradle फिर से शुरू हुआ। इस मामले की छानबीन में Cradle की मदद करने के लिए आप एक क्रैश रिपोर्ट जमा कर सकते हैं।",
+    "messageformat": "एक क्रैश के बाद Signal फिर से शुरू हुआ। इस मामले की छानबीन में Signal की मदद करने के लिए आप एक क्रैश रिपोर्ट जमा कर सकते हैं।",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5734,6 +5967,10 @@
   "icu:CustomizingPreferredReactions__had-save-error": {
     "messageformat": "आपकी सेटिंग सेव करते वक़्त एक एरर हुआ. कृपया फिर से कोशिश करें.",
     "description": "Shown if there is an error when saving your preferred reaction settings. Should be very rare to see this message."
+  },
+  "icu:MediaEditor__input-placeholder": {
+    "messageformat": "संदेश",
+    "description": "Placeholder for the input in the media editor"
   },
   "icu:MediaEditor__clock-more-styles": {
     "messageformat": "और स्टाइल",
@@ -5908,8 +6145,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Cradle कनेक्शन",
-    "description": "The phrase/term: 'Cradle Connections'"
+    "messageformat": "Signal कनेक्शन",
+    "description": "The phrase/term: 'Signal Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} वे लोग हैं जिन्हें आपने भरोसे के लिए निम्नलिखित में से किसी एक द्वारा चुना है :",
@@ -6088,7 +6325,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "सभी Cradle कनेक्शन",
+    "messageformat": "सभी Signal कनेक्शन",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6100,7 +6337,7 @@
     "description": "Input label to create a block list"
   },
   "icu:StoriesSettings__mine__exclude--description": {
-    "messageformat": "{num,number} लोग बाहर रखे गए",
+    "messageformat": "{num, plural, other {#}} people excluded",
     "description": "Description of how many people are excluded in a list"
   },
   "icu:StoriesSettings__mine__only--label": {
@@ -6208,7 +6445,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "चुनें कि कौन-से Cradle कनेक्शन आपकी स्टोरी देख सकते हैं। आप इसे निजता सेटिंग्स में कभी भी बदल सकते हैं। <learnMoreLink>अधिक जानें।</learnMoreLink>",
+    "messageformat": "चुनें कि कौन-से Signal कनेक्शन आपकी स्टोरी देख सकते हैं। आप इसे निजता सेटिंग्स में कभी भी बदल सकते हैं। <learnMoreLink>अधिक जानें।</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6224,11 +6461,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {सभी Cradle कनेक्शन · {viewersCount,number} व्यूअर} other {सभी Cradle कनेक्शन · {viewersCount,number} व्यूअर}}",
+    "messageformat": "{viewersCount, plural, one {सभी Signal कनेक्शन · {viewersCount,number} व्यूअर} other {सभी Signal कनेक्शन · {viewersCount,number} व्यूअर}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {सभी Cradle कनेक्शन · {excludedCount,number} को छोड़कर} other {सभी Cradle कनेक्शन · {excludedCount,number} को छोड़कर}}",
+    "messageformat": "{excludedCount, plural, one {सभी Signal कनेक्शन · {excludedCount,number} को छोड़कर} other {सभी Signal कनेक्शन · {excludedCount,number} को छोड़कर}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6572,7 +6809,7 @@
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__done": {
-    "messageformat": "Done",
+    "messageformat": "पूर्ण",
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__color__radio": {
@@ -6583,8 +6820,16 @@
     "messageformat": "यदि आप अपना QR कोड फिर से स्थापित करते हैं, तो आपका मौजूदा QR कोड और लिंक अब काम नहीं करेगा।",
     "description": "Text of confirmation modal when resetting the username link"
   },
+  "icu:UsernameLinkModalBody__resetting-link": {
+    "messageformat": "लिंक फिर से स्थापित किया जा रहा है...",
+    "description": "Text shown when resetting the username link"
+  },
+  "icu:UsernameLinkModalBody__error__text": {
+    "messageformat": "QR कोड और लिंक सेट नहीं है। अपने नेटवर्क कनेक्शन की जांच करके पुनः प्रयास करें।",
+    "description": "Text of the confirmation dialog shown on username link error"
+  },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "अपना Cradle उपयोगकर्ता नाम सेटअप करें",
+    "messageformat": "अपना Signal उपयोगकर्ता नाम सेटअप करें",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6608,15 +6853,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Cradle डेस्कटॉप जल्द ही आपके कंप्यूटर के {OS} संस्करण को सपोर्ट नहीं करेगा। Cradle का इस्तेमाल जारी रखने के लिए, अपने कंप्यूटर के ऑपरेटिंग सिस्टम को {expirationDate} पर अपडेट करें। <learnMoreLink>अधिक जानें</learnMoreLink>",
+    "messageformat": "Signal डेस्कटॉप जल्द ही आपके कंप्यूटर के {OS} संस्करण को सपोर्ट नहीं करेगा। Signal का इस्तेमाल जारी रखने के लिए, अपने कंप्यूटर के ऑपरेटिंग सिस्टम को {expirationDate} पर अपडेट करें। <learnMoreLink>अधिक जानें</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Cradle डेस्कटॉप अब इस कंप्यूटर पर काम नहीं करता। Cradle डेस्कटॉप दोबारा इस्तेमाल करने के लिए, अपने कंप्यूटर के {OS} के संस्करण को अपडेट करें। <learnMoreLink>अधिक जानें</learnMoreLink>",
+    "messageformat": "Signal डेस्कटॉप अब इस कंप्यूटर पर काम नहीं करता। Signal डेस्कटॉप दोबारा इस्तेमाल करने के लिए, अपने कंप्यूटर के {OS} के संस्करण को अपडेट करें। <learnMoreLink>अधिक जानें</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Cradle डेस्कटॉप अब इस कंप्यूटर पर काम नहीं करता। Cradle डेस्कटॉप दोबारा इस्तेमाल करने के लिए, अपने कंप्यूटर के {OS} के संस्करण को अपडेट करें।",
+    "messageformat": "Signal डेस्कटॉप अब इस कंप्यूटर पर काम नहीं करता। Signal डेस्कटॉप दोबारा इस्तेमाल करने के लिए, अपने कंप्यूटर के {OS} के संस्करण को अपडेट करें।",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6636,108 +6881,112 @@
     "description": "Button text for the confirmation dialog shown to user when attempting to resend message edit"
   },
   "icu:StoriesTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "अधिक कनेक्शन",
     "description": "Stories Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__HeaderTitle--CallsList": {
-    "messageformat": "Calls",
+    "messageformat": "कॉल",
     "description": "Calls Tab > Header > Title > On Calls List screen"
   },
   "icu:CallsTab__HeaderTitle--NewCall": {
-    "messageformat": "New Call",
+    "messageformat": "नई कॉल",
     "description": "Calls Tab > Header > Title > On New Call screen"
   },
   "icu:CallsTab__NewCallActionLabel": {
-    "messageformat": "New Call",
+    "messageformat": "नई कॉल",
     "description": "Calls Tab > New Call Action Button > Accessibility Label"
   },
   "icu:CallsTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "अधिक कनेक्शन",
     "description": "Calls Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__ClearCallHistoryLabel": {
-    "messageformat": "Clear call history",
+    "messageformat": "कॉल इतिहास साफ करें",
     "description": "Calls Tab > More Actions Context Menu > Clear Call History Button Label"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Title": {
-    "messageformat": "Clear call history?",
+    "messageformat": "कॉल इतिहास साफ करें?",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Title"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Body": {
-    "messageformat": "This will permanently delete all call history",
+    "messageformat": "इससे सभी कॉल इतिहास स्थायी रूप से हट जाएगा",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Body Text"
   },
   "icu:CallsTab__ConfirmClearCallHistory__ConfirmButton": {
-    "messageformat": "Clear",
+    "messageformat": "हटाएँ",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Confirm Button"
   },
   "icu:CallsTab__ToastCallHistoryCleared": {
-    "messageformat": "Call history cleared",
+    "messageformat": "कॉल इतिहास साफ किया गया",
     "description": "Calls Tab > Clear Call History > Toast"
   },
   "icu:CallsTab__EmptyStateText": {
-    "messageformat": "Click to view or start a call",
+    "messageformat": "कॉल देखने या शुरू करने के लिए क्लिक करें",
     "description": "Calls Tab > When no call is selected > Empty state > Call to action text"
   },
   "icu:CallsList__SearchInputPlaceholder": {
-    "messageformat": "Search",
+    "messageformat": "सर्च",
     "description": "Calls Tab > Calls List > Search Input > Placeholder"
   },
   "icu:CallsList__ToggleFilterByMissedLabel": {
-    "messageformat": "Filter by missed",
+    "messageformat": "मिस्ड द्वारा फ़िल्टर करें",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility label"
   },
   "icu:CallsList__ToggleFilterByMissed__RoleDescription": {
-    "messageformat": "Toggle",
+    "messageformat": "टॉगल करें",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility role description ('A toggle button')"
   },
   "icu:CallsList__EmptyState--noQuery": {
-    "messageformat": "No recent calls. Get started by calling a friend.",
+    "messageformat": "कोई नवीनतम कॉल नहीं। किसी दोस्त को कॉल करके शुरू करें।",
     "description": "Calls Tab > Calls List > When no results found > With no search query"
   },
   "icu:CallsList__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "“{query}” के लिए कोई परिणाम नहीं",
     "description": "Calls Tab > Calls List > When no results found > With a search query"
   },
   "icu:CallsList__ItemCallInfo--Incoming": {
-    "messageformat": "Incoming",
+    "messageformat": "इनकमिंग",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was incoming"
   },
   "icu:CallsList__ItemCallInfo--Outgoing": {
-    "messageformat": "Outgoing",
+    "messageformat": "आउटगोइंग",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was outgoing"
   },
   "icu:CallsList__ItemCallInfo--Missed": {
-    "messageformat": "Missed",
+    "messageformat": "मिस्ड",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was missed"
   },
   "icu:CallsList__ItemCallInfo--GroupCall": {
-    "messageformat": "Group call",
+    "messageformat": "ग्रुप कॉल",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When group call is in its default state"
   },
   "icu:CallsNewCall__EmptyState--noQuery": {
-    "messageformat": "No recent conversations.",
+    "messageformat": "कोई हालिया बातचीत नहीं।",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With no search query"
   },
   "icu:CallsNewCall__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "“{query}” के लिए कोई परिणाम नहीं",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With a search query"
   },
   "icu:CallHistory__Description--Default": {
-    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Outgoing voice call} other {Incoming voice call}}} Video {{direction, select, Outgoing {Outgoing video call} other {Incoming video call}}} Group {{direction, select, Outgoing {Outgoing group call} other {Incoming group call}}} other {{direction, select, Outgoing {Outgoing  call} other {Incoming  call}}}}",
+    "messageformat": "{type, select, Audio {{direction, select, Outgoing {आउटगोइंग वॉयस कॉल} other {इनकमिंग वॉयस कॉल}}} Video {{direction, select, Outgoing {वीडियो कॉल की जा रही है} other {वीडियो कॉल आ रही है}}} Group {{direction, select, Outgoing {आउटगोइंग ग्रुप कॉल} other {इनकमिंग ग्रुप कॉल}}} other {{direction, select, Outgoing {जाने वाली कॉल} other {आने वाली कॉल}}}}",
     "description": "Call History > Short description of call > When call was not missed or declined (generally accepted)"
   },
   "icu:CallHistory__Description--Missed": {
-    "messageformat": "{type, select, Audio {Missed voice call} Video {Missed video call} Group {Missed group call} other {Missed  call}}",
+    "messageformat": "{type, select, Audio {छूटी हुई वॉयस कॉल} Video {मिस हुई वीडियो कॉल} Group {मिस्ड ग्रुप कॉल} other {मिस कॉल}}",
     "description": "Call History > Short description of call > When incoming call was missed"
   },
   "icu:CallHistory__Description--Unanswered": {
-    "messageformat": "{type, select, Audio {Unanswered voice call} Video {Unanswered video call} Group {Unanswered group call} other {Unanswered  call}}",
+    "messageformat": "{type, select, Audio {अनुत्तरित वॉयस कॉल} Video {वीडियो कॉल जो उठाई नहीं गई} Group {अनुत्तरित ग्रुप कॉल} other {अनुत्तरित  कॉल}}",
     "description": "Call History > Short description of call > When outgoing call was unanswered"
   },
   "icu:CallHistory__Description--Declined": {
-    "messageformat": "{type, select, Audio {Declined voice call} Video {Declined video call} Group {Declined group call} other {Declined  call}}",
+    "messageformat": "{type, select, Audio {अस्वीकृत वॉयस कॉल} Video {अस्वीकृत वीडियो कॉल} Group {अस्वीकृत ग्रुप कॉल} other {अस्वीकृत  कॉल}}",
     "description": "Call History > Short description of call > When call was declined"
+  },
+  "icu:TypingBubble__avatar--overflow-count": {
+    "messageformat": "{count, plural, one {{count,number} अन्य टाइप कर रहा/रही है।} other {{count,number} अन्य टाइप कर रहे/रही हैं।}}",
+    "description": "Group chat multiple person typing indicator when space isn't available to show every avatar, this is the count of avatars hidden."
   },
   "icu:WhatsNew__modal-title": {
     "messageformat": "नया क्या है",
@@ -6748,7 +6997,7 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "अतिरिक्त छोटे-छोटे ट्वीक, बग फ़िक्स, और प्रदर्शन में सुधार। Cradle इस्तेमाल करने के लिए आपका धन्यवाद।",
+    "messageformat": "अतिरिक्त छोटे-छोटे ट्वीक, बग फ़िक्स, और प्रदर्शन में सुधार। Signal इस्तेमाल करने के लिए आपका धन्यवाद।",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6768,16 +7017,25 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "छोटे-छोटे ट्वीक, बग फ़िक्स, और प्रदर्शन में सुधार। Cradle इस्तेमाल करने के लिए धन्यवाद।",
+    "messageformat": "छोटे-छोटे ट्वीक, बग फ़िक्स, और प्रदर्शन में सुधार। Signal इस्तेमाल करने के लिए धन्यवाद।",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.29--0": {
-    "messageformat": "चैट कलर कस्टमाइजेशन स्क्रीन अब अलग-अलग भाषाओं और चयनित स्थानों में सही ढंग से प्रदर्शित होती है।"
+  "icu:WhatsNew__v6.42--0": {
+    "messageformat": "हमने एक बग ठीक कर दिया है जो वीडियो में उद्धृत जवाबों को ऐसे प्रदर्शित करता है जैसे कि वे फ़ोटो के लिए उद्धृत जवाब थे, भले ही यदि आप इसके बारे में सोचते हैं तो प्रत्येक वीडियो वास्तव में फ़ोटो का एक क्रम मात्र है।"
   },
-  "icu:WhatsNew__v6.29--1": {
-    "messageformat": "हमने विंडोज़ पर नोटिफ़िकेशन सपोर्ट को बेहतर बनाया है। यदि आप पहली बार किसी नोटिफ़िकेशन के आने पर उस पर क्लिक नहीं करते, तो नवीनतम छूटा हुआ नोटिफ़िकेशन विंडोज नोटिफ़िकेशन सेंटर में दिखाई देगा। उस नोटिफ़िकेशन पर क्लिक करने से अब आप सीधे उसी चैट पर पहुंच जाएंगे। हम जूलियन रिचर्ड को उनके फीडबैक के लिए धन्यवाद देना चाहेंगे।"
+  "icu:WhatsNew__v6.42--1": {
+    "messageformat": "इस रिलीज़ में सहायता के लिए {linkToGithub1} और {linkToGithub2} को धन्यवाद।"
   },
-  "icu:WhatsNew__v6.30--0": {
-    "messageformat": "Keep tabs on your calls with the new calls tab. Start a new call or return a call that you missed without having to find the corresponding chat. Now you can say hello with your voice without also saying goodbye to the unread marker for messages in that thread."
+  "icu:WhatsNew__v6.43--0": {
+    "messageformat": "Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat."
+  },
+  "icu:WhatsNew__v6.43--1": {
+    "messageformat": "The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Signal Settings > Appearance > Language). Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--2": {
+    "messageformat": "The playback speed indicators in voice messages have a slightly new look. X marks the spot. Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--3": {
+    "messageformat": "We would also like to thank {linkToGithub1}, {linkToGithub2}, and {linkToGithub3} for their contributions to this release."
   }
 }

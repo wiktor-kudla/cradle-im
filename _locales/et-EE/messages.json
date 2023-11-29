@@ -8,6 +8,7 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
+
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -89,7 +90,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Tingimused ja privaatsuspoliitika",
-    "description": "Shown in the about box for the link to https://cradle.org/legal"
+    "description": "Shown in the about box for the link to https://signal.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple Silicon",
@@ -109,11 +110,27 @@
   },
   "icu:databaseError": {
     "messageformat": "Andmebaasi tõrge",
-    "description": "Shown in a popup if the database cannot start up properly"
+    "description": "Title of a popup if the database cannot start up properly"
+  },
+  "icu:databaseError__detail": {
+    "messageformat": "Tekkis andmebaasi viga. Saad vea kopeerida ja Signali kasutajatoega ühendust võtta, et probleem lahendada. Kui sul on vaja Signalit kohe kasutada, saad oma andmed kustutada ja taaskäivitada.\n\nKasutajatoega saad ühendust võtta aadressil {link}",
+    "description": "Description shown in a popup if the database cannot start up properly"
   },
   "icu:deleteAndRestart": {
-    "messageformat": "Kustuta kõik andmed ja taaskäivita",
-    "description": "Shown in a popup if the database cannot start up properly; allows user to delete database and restart"
+    "messageformat": "Kustuta andmed ja taaskäivita",
+    "description": "Text of a button shown in a popup if the database cannot start up properly; allows user to delete all data in their database and restart"
+  },
+  "icu:databaseError__deleteDataConfirmation": {
+    "messageformat": "Kas kustutada jäädavalt kõik andmed?",
+    "description": "Header of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__deleteDataConfirmation__detail": {
+    "messageformat": "Kogu sinu sõnumiajalugu ja meedia kustutatakse sellest seadmest jäädavalt. Saad Signalit selles seadmes kasutada, kui selle taasühendad. Selle käigus ei kustutata andmeid sinu telefonist.",
+    "description": "Description of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__startOldVersion": {
+    "messageformat": "Sinu andmebaasi versioon ei klapi selle Signali versiooniga. Veendu, et avasid oma arvutis uusima Signali versiooni.",
+    "description": "Text in a popup shown if the app cannot start because the user started an older version of Signal"
   },
   "icu:mainMenuFile": {
     "messageformat": "&Fail",
@@ -160,7 +177,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Välju Cradleist",
+    "messageformat": "Välju Signalist",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -272,7 +289,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Uuenda Cradleit",
+    "messageformat": "Uuenda Signalit",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -299,40 +316,68 @@
     "messageformat": "Vestlused",
     "description": "Shown as a header for non-pinned conversations in the left pane"
   },
+  "icu:LeftPane--corrupted-username--text": {
+    "messageformat": "Sinu kasutajanimega seoses läks midagi valesti ja see ei ole enam sinu kontoga seotud. Saad proovida seda uuesti seadistada või valida uue.",
+    "description": "Text of corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username--action-text": {
+    "messageformat": "Paranda",
+    "description": "Text of the button in the corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--text": {
+    "messageformat": "Midagi läks sinu QR-koodi ja kasutajanime lingiga valesti ning see ei kehti enam. Loo teistega jagamiseks uus link.",
+    "description": "Text of corrupted username link banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--action-text": {
+    "messageformat": "Paranda",
+    "description": "Text of the button in the corrupted username link banner in the left pane"
+  },
   "icu:NavTabsToggle__showTabs": {
-    "messageformat": "Show Tabs",
+    "messageformat": "Kuva vahekaardid",
     "description": "Show in the left pane when the nav tabs are hidden, shows the nav tabs"
   },
   "icu:NavTabsToggle__hideTabs": {
-    "messageformat": "Hide Tabs",
+    "messageformat": "Peida vahekaardid",
     "description": "Show in the nav tabs when the nav tabs are visible, hides the nav tabs"
   },
   "icu:NavTabs__ItemIconLabel--HasError": {
-    "messageformat": "An error occurred",
+    "messageformat": "Tekkis viga",
     "description": "Nav Tabs > Tab has error > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--UnreadCount": {
-    "messageformat": "{count,number} unread",
+    "messageformat": "{count,number} lugemata",
     "description": "Nav Tabs > Unread badge > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--MarkedUnread": {
-    "messageformat": "Marked unread",
+    "messageformat": "Mitteloetuks märgitud",
     "description": "Nav Tabs > Unread badge > when conversation is marked unread > Accessibility Text"
   },
+  "icu:NavTabs__ItemLabel--Chats": {
+    "messageformat": "Vestlused",
+    "description": "Nav Tabs > Chats Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Calls": {
+    "messageformat": "Kõned",
+    "description": "Nav Tabs > Calls Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Stories": {
+    "messageformat": "Lood",
+    "description": "Nav Tabs > Stories Button > Label & Accessibility Text"
+  },
   "icu:NavTabs__ItemLabel--Settings": {
-    "messageformat": "Settings",
+    "messageformat": "Sätted",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Update": {
-    "messageformat": "Update Signal",
+    "messageformat": "Uuenda Signalit",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Profile": {
-    "messageformat": "Profile",
+    "messageformat": "Profiil",
     "description": "Nav Tabs > Profile Button > Accessibility Text"
   },
   "icu:NavSidebar__BackButtonLabel": {
-    "messageformat": "Back",
+    "messageformat": "Tagasi",
     "description": "Shown in the sidebar header when on a nested panel within the current sidebar, takes the user back to the previous step or default sidebar state"
   },
   "icu:archiveHelperText": {
@@ -428,7 +473,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Sa läbisid just eksportimisprotsessi ja sinu kontaktid ning sõnumid ootavad nüüd kannatlikult arvutis. Vali kaust, mis sisaldab sinu salvestatud Cradlei andmeid.",
+    "messageformat": "Sa läbisid just eksportimisprotsessi ja sinu kontaktid ning sõnumid ootavad nüüd kannatlikult arvutis. Vali kaust, mis sisaldab sinu salvestatud Signali andmeid.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -444,7 +489,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Ole kindel, et oled valinud õige kataloogi, mis sisaldab sinu salvestatud Cradlei andmeid. Selle nimi peaks algama fraasiga \"Cradle Export\". Sul on võimalik salvestada andmetest ka uus koopia rakendusest Chrome App.",
+    "messageformat": "Ole kindel, et oled valinud õige kataloogi, mis sisaldab sinu salvestatud Signali andmeid. Selle nimi peaks algama fraasiga \"Signal Export\". Sul on võimalik salvestada andmetest ka uus koopia rakendusest Chrome App.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -460,7 +505,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Alusta Cradle Desktopi kasutamist",
+    "messageformat": "Alusta Signal Desktopi kasutamist",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -544,11 +589,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "Turvanumber, mida püüad kinnitada, on muutunud. Palun vaata üle uus turvanumber kasutajaga {name1}. Jäta meelde, et see muudatus võib tähendada, et keegi püüab teie suhtlust pealt kuulata või on {name2} lihtsalt Signal/Cradlei uuesti paigaldanud.",
+    "messageformat": "Turvanumber, mida püüad kinnitada, on muutunud. Palun vaata üle uus turvanumber kasutajaga {name1}. Jäta meelde, et see muudatus võib tähendada, et keegi püüab teie suhtlust pealt kuulata või on {name2} lihtsalt Signali uuesti paigaldanud.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Järgmised inimesed võivad olla Signal/Cradlei uuesti alla laadinud või seadet vahetanud. Klõpsa saajale, et kinnitada tema uus turvanumber. See on valikuline.",
+    "messageformat": "Järgmised inimesed võivad olla Signali uuesti alla laadinud või seadet vahetanud. Klõpsa saajale, et kinnitada tema uus turvanumber. See on valikuline.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -560,7 +605,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {Sul on {count,number} kontakt, kes võib olla Signal/Cradlei uuesti paigaldanud või oma seadme välja vahetanud. Enne saatmist on sul võimalik kontrollida tema turvanumbrit.} other {Sul on {count,number} kontakti, kes võivad olla Signal/Cradlei uuesti paigaldanud või oma seadme välja vahetanud. Enne saatmist on sul võimalik kontrollida nende turvanumbreid.}}",
+    "messageformat": "{count, plural, one {Sul on {count,number} kontakt, kes võib olla Signali uuesti paigaldanud või oma seadme välja vahetanud. Enne saatmist on sul võimalik kontrollida tema turvanumbrit.} other {Sul on {count,number} kontakti, kes võivad olla Signali uuesti paigaldanud või oma seadme välja vahetanud. Enne saatmist on sul võimalik kontrollida nende turvanumbreid.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -592,7 +637,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Sinu turvanumber kasutajaga {name1} on muutunud. See võib tähendada, et keegi püüab teie suhtlust pealt kuulata või et {name2} on lihtsalt Signal/Cradlei uuesti paigaldanud. Kontrolli enda turvakoodi selle kontaktiga.",
+    "messageformat": "Sinu turvanumber kasutajaga {name1} on muutunud. See võib tähendada, et keegi püüab teie suhtlust pealt kuulata või et {name2} on lihtsalt Signali uuesti paigaldanud. Kontrolli enda turvakoodi selle kontaktiga.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -611,6 +656,10 @@
     "messageformat": "Helista siiski",
     "description": "Used on a warning dialog to make it clear that it might be risky to call the conversation."
   },
+  "icu:joinAnyway": {
+    "messageformat": "Liitu siiski",
+    "description": "Used on a warning dialog to make it clear that it might be risky to join the call."
+  },
   "icu:continueCall": {
     "messageformat": "Kõnega jätkamine",
     "description": "Used on a warning dialog to make it clear that it might be risky to continue the group call."
@@ -628,7 +677,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Midagi läks üleslaadimisega kehvasti! Palun saada kiri aadressile support@cradle.org ja lisa logifailid tekstifailina.",
+    "messageformat": "Midagi läks üleslaadimisega kehvasti! Palun saada kiri aadressile support@signal.org ja lisa logifailid tekstifailina.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -672,23 +721,23 @@
   },
   "icu:SafetyNumberViewer__migration__text": {
     "messageformat": "Turvanumbreid uuendatakse.",
-    "description": "An explanatory note in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) An explanatory note in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__migration__learn_more": {
     "messageformat": "Rohkem infot",
-    "description": "A link text in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) A link text in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__card__prev": {
     "messageformat": "Eelmine turvanumber",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__card__next": {
     "messageformat": "Järgmine turvanumber",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__carousel__dot": {
     "messageformat": "Turvanumbri versioon, {index,number} koguarvust {total,number}",
-    "description": "An ARIA label for safety number carousel button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number carousel button."
   },
   "icu:SafetyNumberViewer__markAsVerified": {
     "messageformat": "Märgi kinnitatuks",
@@ -698,33 +747,41 @@
     "messageformat": "Tühista kontrollimine",
     "description": "Safety number viewer, verification toggle button, when verified, clears verification state"
   },
+  "icu:SafetyNumberViewer__hint": {
+    "messageformat": "Kasutajaga {name} otspunktkrüpteerimise kontrollimiseks võrdle ülalpool olevaid numbreid tema seadmes olevatega. Võid ka paluda tal skannida oma seadmega sinu koodi.",
+    "description": "Safety number viewer, text of the hint"
+  },
+  "icu:SafetyNumberViewer__learn_more": {
+    "messageformat": "Rohkem infot",
+    "description": "Text of 'Learn more' button of SafetyNumberViewerModal modal"
+  },
   "icu:SafetyNumberViewer__hint--migration": {
     "messageformat": "Selleks, et kontrollida otspunktkrüpteerimist kasutajaga {name}, võrdle ülalolevat värvikaarti ja numbreid tema seadmes olevatega. Kui need on erinevad, proovi teist turvanumbrite paari. Vaid üks paar peab omavahel klappima.",
-    "description": "Safety number viewer, text of the hint during migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint during migration period"
   },
   "icu:SafetyNumberViewer__hint--normal": {
     "messageformat": "Kasutajaga {name} otspunktkrüpteerimise kontrollimiseks võrdle ülalpool olevaid numbreid tema seadmes olevatega. Võid ka paluda tal skannida oma seadmega sinu koodi.",
-    "description": "Safety number viewer, text of the hint after migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint after migration period"
   },
   "icu:SafetyNumberOnboarding__title": {
     "messageformat": "Muudatused turvanumbrites",
-    "description": "Title of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Title of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p1": {
     "messageformat": "Turvanumbreid uuendatakse üleminekuperioodi jooksul, et võimaldada Signali uusi privaatsusfunktsioone.",
-    "description": "Paragraph 1 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 1 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p2": {
     "messageformat": "Turvanumbrite kontrollimiseks võrdle värvikaarti oma kontakti seadmes olevaga. Kui need on erinevad, proovi teist turvanumbrite paari. Vaid üks paar peab omavahel klappima.",
-    "description": "Paragraph 2 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 2 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__help": {
     "messageformat": "Kas vajad abi?",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__close": {
     "messageformat": "Sain aru",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberNotReady__body": {
     "messageformat": "Pärast seda, kui te omavahel sõnumeid vahetate, luuakse selle isikuga turvanumber.",
@@ -750,7 +807,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "Sinu turvanumber selle kontaktiga on muutunud. See võib tähendada, et keegi püüab teie suhtlust pealt kuulata või et see kontakt on lihtsalt Signal/Cradlei uuesti paigaldanud. Kontrolli uut turvakoodi allpool."
+    "messageformat": "Sinu turvanumber selle kontaktiga on muutunud. See võib tähendada, et keegi püüab teie suhtlust pealt kuulata või et see kontakt on lihtsalt Signali uuesti paigaldanud. Kontrolli uut turvakoodi allpool."
   },
   "icu:incomingError": {
     "messageformat": "Sissetuleva sõnumi käsitlemisel tekkis tõrge."
@@ -813,15 +870,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Eelvaate laadimine…",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "Lingi eelvaate pisipildi mustand: {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "Lingi eelvaate pisipilt: {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Piltmanuse mustand: {path}",
@@ -916,18 +973,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Liitu beeta-programmiga",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Cradle Desktopi eelistused",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "messageformat": "Signal Desktopi eelistused",
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Kleebisepaki looja",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "Teave Cradle Desktopi kohta",
+    "messageformat": "Teave Signal Desktopi kohta",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -951,7 +1008,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Cradle Desktop",
+    "messageformat": "Signal Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -971,7 +1028,7 @@
     "description": "Shown in the search left pane when no results were found"
   },
   "icu:noSearchResults--sms-only": {
-    "messageformat": "SMS/MMS kontaktid pole Cradle Desktopis saadaval.",
+    "messageformat": "SMS/MMS kontaktid pole Signal Desktopis saadaval.",
     "description": "Shown in the search left pane when no results were found and primary device has SMS/MMS handling enabled"
   },
   "icu:noSearchResultsInConversation": {
@@ -1003,7 +1060,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Tere tulemast Cradleisse"
+    "messageformat": "Tere tulemast Signalisse"
   },
   "icu:whatsNew": {
     "messageformat": "Vaata {whatsNew} selles versioonis",
@@ -1134,15 +1191,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Häälsõnumite saatmiseks luba Cradle Desktopil oma mikrofoni kasutada.",
+    "messageformat": "Häälsõnumite saatmiseks luba Signal Desktopil oma mikrofoni kasutada.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Häälkõnede tegemiseks pead andma Cradle Desktop-ile mikrofonile ligipääsu.",
+    "messageformat": "Häälkõnede tegemiseks pead andma Signal Desktop-ile mikrofonile ligipääsu.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Videokõnede tegemiseks pead andma Cradle Desktop-ile kaamerale ligipääsu.",
+    "messageformat": "Videokõnede tegemiseks pead andma Signal Desktop-ile kaamerale ligipääsu.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1182,15 +1239,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Cradlei uuendamine nurjus. {retry} või külasta lehte {url}, et see käsitsi paigaldada. Seejärel {support} seoses selle probleemiga",
+    "messageformat": "Signali uuendamine nurjus. {retry} või külasta lehte {url}, et see käsitsi paigaldada. Seejärel {support} seoses selle probleemiga",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Cradlei uuendamine nurjus. Külasta lehte {url}, et see käsitsi paigaldada. Seejärel {support} seoses selle probleemiga",
+    "messageformat": "Signali uuendamine nurjus. Külasta lehte {url}, et see käsitsi paigaldada. Seejärel {support} seoses selle probleemiga",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Cradle Desktop on tõenäoliselt macOS-i karantiinis ja seda pole võimalik automaatselt uuendada. Palun teisalda {app} kausta {folder} Finderi abil.",
+    "messageformat": "Signal Desktop on tõenäoliselt macOS-i karantiinis ja seda pole võimalik automaatselt uuendada. Palun teisalda {app} kausta {folder} Finderi abil.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1246,7 +1303,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "See sõnum kustutatakse kõigilt vestluse liikmetelt, kui nad kasutavad Signal/Cradlei värsket versiooni. Nad näevad, et sa kustutasid sõnumi.",
+    "messageformat": "See sõnum kustutatakse kõigilt vestluse liikmetelt, kui nad kasutavad Signali värsket versiooni. Nad näevad, et sa kustutasid sõnumi.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1365,17 +1422,17 @@
     "messageformat": "Teave",
     "description": "Shown on the drop-down menu for an individual message, takes you to message detail screen"
   },
-  "icu:deleteMessages": {
-    "messageformat": "Kustuta",
-    "description": "Menu item for deleting messages, title case."
+  "icu:deleteMessagesInConversation": {
+    "messageformat": "Kustuta sõnumid",
+    "description": "Menu item for deleting all messages in a conversation from your device"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Kas kustutada vestlus?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__title": {
+    "messageformat": "Kas kustutada sõnumid?",
+    "description": "Title for confirmation modal to delete all messages in a conversation"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "See vestlus kustutatakse sellest seadmest.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__description": {
+    "messageformat": "Selle vestluse sõnumid kustutatakse sellest seadmest. Saad pärast sõnumite kustutamist endiselt seda vestlust otsida.",
+    "description": "Description for confirmation modal to delete all messages in a conversation"
   },
   "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
     "messageformat": "Lahku grupist",
@@ -1410,7 +1467,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Cradle kasutab otspunktkrüptimist ja võib mõnikord vajada vestluse seansi värskendamist. See ei mõjuta vestluse turvalisust, aga sa võisid mõnest selle kontakti sõnumist ilma jääda, seepärast palu tal vajadusel see uuesti saata.",
+    "messageformat": "Signal kasutab otspunktkrüptimist ja võib mõnikord vajada vestluse seansi värskendamist. See ei mõjuta vestluse turvalisust, aga sa võisid mõnest selle kontakti sõnumist ilma jääda, seepärast palu tal vajadusel see uuesti saata.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1469,6 +1526,14 @@
     "messageformat": "Sinu mõlema vestluse sõnumite ajalugu on siin liidetud.",
     "description": "Contents of a dialog shown after clicking 'learn more' button on a conversation merge event."
   },
+  "icu:PhoneNumberDiscovery--notification--withSharedGroup": {
+    "messageformat": "{phoneNumber} kuulub vestlusesse {conversationTitle}. Olete mõlemad grupi {sharedGroup} liikmed.",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with."
+  },
+  "icu:PhoneNumberDiscovery--notification--noSharedGroup": {
+    "messageformat": "{phoneNumber} kuulub vestlusesse {conversationTitle}",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with, but you have no shared groups."
+  },
   "icu:quoteThumbnailAlt": {
     "messageformat": "Tsiteeritud sõnumist pärit pildi pisipilt",
     "description": "Used in alt tag of thumbnail images inside of an embedded message quote"
@@ -1502,20 +1567,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Tere tulemast Cradle Desktopi kasutama",
+    "messageformat": "Tere tulemast Signal Desktopi kasutama",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "Privaatsus on võimalik. Cradle teeb selle lihtsaks.",
+    "messageformat": "Privaatsus on võimalik. Signal teeb selle lihtsaks.",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "Ühendatud seadmed",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Ühenda uus seade",
-    "description": "The menu option shown in Cradle iOS to add a new linked device"
+    "description": "The menu option shown in Signal iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Rohkem infot",
@@ -1589,7 +1654,7 @@
     "messageformat": "Kahjuks on sul juba liiga palju ühendatud seadmeid. Proovi mõni eemaldada."
   },
   "icu:installTooOld": {
-    "messageformat": "Telefoni ühendamiseks pead selles seadmes Cradleit uuendama."
+    "messageformat": "Telefoni ühendamiseks pead selles seadmes Signalit uuendama."
   },
   "icu:installErrorHeader": {
     "messageformat": "Midagi läks valesti!"
@@ -1616,10 +1681,6 @@
     "messageformat": "Helista uuesti",
     "description": "Button to call someone again"
   },
-  "icu:calling__start": {
-    "messageformat": "Alusta kõnet",
-    "description": "Button label in the call lobby for starting a call"
-  },
   "icu:calling__join": {
     "messageformat": "Liitu kõnega",
     "description": "Button label in the call lobby for joining a call"
@@ -1632,13 +1693,25 @@
     "messageformat": "Mikrofon on kõne suuruse tõttu vaigistatud",
     "description": "Shown in a call lobby toast if there are a lot of people already on the call"
   },
+  "icu:calling__toasts--aria-label": {
+    "messageformat": "Kõneteavitused",
+    "description": "Aria label for region of toasts shown during a call (for, e.g. reconnecting, person joined, audio device changed notifications)"
+  },
   "icu:calling__call-is-full": {
     "messageformat": "Kõne on täis",
     "description": "Text in the call lobby when you can't join because the call is full"
   },
-  "icu:calling__button--video__label": {
-    "messageformat": "Kaamera",
-    "description": "Label under the video button"
+  "icu:CallingLobbyJoinButton--join": {
+    "messageformat": "Liitu",
+    "description": "Button label in the call lobby for joining a call"
+  },
+  "icu:CallingLobbyJoinButton--start": {
+    "messageformat": "Alusta",
+    "description": "Button label in the call lobby for starting a call"
+  },
+  "icu:CallingLobbyJoinButton--call-full": {
+    "messageformat": "Kõne on täis",
+    "description": "Button in the call lobby when you can't join because the call is full"
   },
   "icu:calling__button--video-disabled": {
     "messageformat": "Kaamera on keelatud",
@@ -1652,10 +1725,6 @@
     "messageformat": "Kaamera sisse",
     "description": "Button tooltip label for turning on the camera"
   },
-  "icu:calling__button--audio__label": {
-    "messageformat": "Vaigista",
-    "description": "Label under the audio button"
-  },
   "icu:calling__button--audio-disabled": {
     "messageformat": "Mikrofon on keelatud",
     "description": "Button tooltip label when the microphone is disabled"
@@ -1667,10 +1736,6 @@
   "icu:calling__button--audio-on": {
     "messageformat": "Lülita mikrofon sisse",
     "description": "Button tooltip label for turning on the microphone"
-  },
-  "icu:calling__button--presenting__label": {
-    "messageformat": "Jaga",
-    "description": "Label under the share screen button"
   },
   "icu:calling__button--presenting-disabled": {
     "messageformat": "Esitlemine on keelatud",
@@ -1684,10 +1749,6 @@
     "messageformat": "Lõpeta esitlus",
     "description": "Button tooltip label for stopping screen sharing"
   },
-  "icu:calling__button--ring__label": {
-    "messageformat": "Helista",
-    "description": "Label under the ring button"
-  },
   "icu:calling__button--ring__disabled-because-group-is-too-large": {
     "messageformat": "Grupp on liikmetele helistamiseks liiga suur.",
     "description": "Button tooltip label when you can't ring because the group is too large"
@@ -1699,6 +1760,26 @@
   "icu:calling__button--ring__on": {
     "messageformat": "Luba helistamine",
     "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton__ring-off": {
+    "messageformat": "Lülita helin välja",
+    "description": "Button tooltip label for turning ringing off"
+  },
+  "icu:CallingButton--ring-on": {
+    "messageformat": "Lülita helin sisse",
+    "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton--more-options": {
+    "messageformat": "Rohkem valikuid",
+    "description": "Tooltip label for button in the calling screen that opens a menu with other call actions such as React or Raise Hand."
+  },
+  "icu:CallingRaisedHandsList__Title": {
+    "messageformat": "{count, plural, one {Tõstetud käsi · {count,number} isik} other {Tõstetud käsi · {count,number} isikut}}",
+    "description": "Shown in the call raised hands list to describe how many people have active raised hands"
+  },
+  "icu:CallingReactions--me": {
+    "messageformat": "Sina",
+    "description": "Label next to in-call reactions to indicate that the current user sent that reaction."
   },
   "icu:calling__your-video-is-off": {
     "messageformat": "Sinu kaamera on väljas",
@@ -1725,23 +1806,23 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--many-people-in-call": {
-    "messageformat": "{first}, {second} ja {others} muud kasutajat on selles kõnes",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others are in this call",
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Cradle helistab isikule {person}",
+    "messageformat": "Signal helistab isikule {person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Cradle helistab isikutele {first} ja {second}",
+    "messageformat": "Signal helistab isikutele {first} ja {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Cradle helistab isikutele {first}, {second} ja {third}",
+    "messageformat": "Signal helistab isikutele {first}, {second} ja {third}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Cradle helistab isikutele {first}, {second} ja {others} teist",
+    "messageformat": "Signal will ring {first}, {second}, and {others, plural, other {#}} others",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1757,7 +1838,7 @@
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__pre-call-info--will-notify-many": {
-    "messageformat": "{first}, {second} ja {others} teist saavad teavituse",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others will be notified",
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__in-this-call--zero": {
@@ -1797,7 +1878,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Cradle jagab {window}.",
+    "messageformat": "Signal jagab {window}.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1821,7 +1902,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Cradle vajab juurdepääsu sinu arvuti ekraanisalvestusele.",
+    "messageformat": "Signal vajab juurdepääsu sinu arvuti ekraanisalvestusele.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1833,7 +1914,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "Paremal pool märgista Cradlei kõrval olev kasti. Kui sa ei näe Cradleit nimekirjas, siis klõpsa \"+\" ja lisa see.",
+    "messageformat": "Paremal pool märgista Signali kõrval olev kasti. Kui sa ei näe Signalit nimekirjas, siis klõpsa \"+\" ja lisa see.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1877,12 +1958,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "Õigekirja kontroll lubatakse järgmisel Cradlei käivitamisel.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "Õigekirja kontroll lubatakse järgmisel Signali käivitamisel.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "Õigekirja kontroll keelatakse järgmisel Cradlei käivitamisel.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "Õigekirja kontroll keelatakse järgmisel Signali käivitamisel.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Minimeeri süsteemisalve",
@@ -1897,15 +1978,15 @@
     "description": "Description for the automatic launch setting"
   },
   "icu:clearDataHeader": {
-    "messageformat": "Eemalda rakenduse andmed",
+    "messageformat": "Delete application data",
     "description": "Header in the settings dialog for the section dealing with data deletion"
   },
   "icu:clearDataExplanation": {
-    "messageformat": "Eemaldatakse kõik rakenduse andmed, kustutatakse kõik sõnumid ja salvestatud teave konto kohta.",
+    "messageformat": "This will delete all data in the application, removing all messages and saved account information.",
     "description": "Text describing what the clear data button will do."
   },
   "icu:clearDataButton": {
-    "messageformat": "Eemalda andmed",
+    "messageformat": "Delete data",
     "description": "Button in the settings dialog starting process to delete all data"
   },
   "icu:deleteAllDataHeader": {
@@ -1913,7 +1994,7 @@
     "description": "Header of the full-screen delete data confirmation screen"
   },
   "icu:deleteAllDataBody": {
-    "messageformat": "Oled kustutamas rakenduses salvestatud infot, kaasa arvatud kõik kontaktid ja sõnumid. Sul on alati võimalus ühendada nutiseade uuesti, aga see ei taasta kustutatud sõnumeid.",
+    "messageformat": "Delete all data and messages from this version of Signal Desktop? You can always relink this desktop, but your messages will not restore. Your Signal account and data on your phone or other linked devices will not be deleted.",
     "description": "Text describing what exactly will happen if the user clicks the button to delete all data"
   },
   "icu:deleteAllDataButton": {
@@ -1925,8 +2006,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Sul on Cradle Desktop-i varasematest paigaldustest jäänud üleliigseid andmeid. Kui valid jätkamise, siis need andmed kustutatakse ja sa alustad algusest peale.",
-    "description": "Shown if user last ran Cradle Desktop before October 2018"
+    "messageformat": "Sul on Signal Desktop-i varasematest paigaldustest jäänud üleliigseid andmeid. Kui valid jätkamise, siis need andmed kustutatakse ja sa alustad algusest peale.",
+    "description": "Shown if user last ran Signal Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Kustuta vanad andmed",
@@ -2007,11 +2088,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "See Cradle Desktopi versioon on aegunud. Palun uuenda uusimale versioonile sõnumite saatmiseks jätkamiseks.",
+    "messageformat": "See Signal Desktopi versioon on aegunud. Palun uuenda uusimale versioonile sõnumite saatmiseks jätkamiseks.",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Klõpsa aadressile cradle.org/download minemiseks",
+    "messageformat": "Klõpsa aadressile signal.org/download minemiseks",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2127,7 +2208,7 @@
     "description": "Displayed in the conversation list when the timer is turned off"
   },
   "icu:youDisabledDisappearingMessages": {
-    "messageformat": "Sa keelasid kaduvad sõnumid.",
+    "messageformat": "Sa lülitasid kaduvad sõnumid välja.",
     "description": "Displayed in the conversation list when the timer is turned off"
   },
   "icu:timerSetTo": {
@@ -2179,7 +2260,7 @@
     "description": "In conversation details, label for button to view safety number, opens safety number modal"
   },
   "icu:ConversationDetails__HeaderButton--Message": {
-    "messageformat": "Message",
+    "messageformat": "Sõnum",
     "description": "In conversation details, label for button to switch to the conversation view in order to draft a message in that converation"
   },
   "icu:SafetyNumberNotification__viewSafetyNumber": {
@@ -2264,22 +2345,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Kasutajanimega ei saadud ühendust. Kontrolli oma ühendust ja proovi uuesti.",
-    "description": "Shown if request to Cradle servers to find username fails"
+    "description": "Shown if request to Signal servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "Telefoninumbriga ei saadud ühendust. Kontrolli oma ühendust ja proovi uuesti.",
-    "description": "Shown if request to Cradle servers to find phone number fails"
+    "description": "Shown if request to Signal servers to find phone number fails"
   },
-  "icu:ToastManager__CannotEditMessage": {
-    "messageformat": "Muutmine on võimalik vaid 3 tunni jooksul alates sõnumi saatmisest.",
+  "icu:ToastManager__CannotEditMessage_24": {
+    "messageformat": "Muutmine on võimalik vaid 24 tunni jooksul alates sõnumi saatmisest.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "Kasutajat ei leitud. {atUsername} ei ole Signal/Cradlei kasutaja. Palun kontrolli sisestatud kasutajanime.",
+    "messageformat": "Kasutajat ei leitud. {atUsername} ei ole Signali kasutaja. Palun kontrolli sisestatud kasutajanime.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "Kasutajat ei leitud. \"{phoneNumber}\" ei ole Signal/Cradlei kasutaja.",
+    "messageformat": "Kasutajat ei leitud. \"{phoneNumber}\" ei ole Signali kasutaja.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2307,7 +2388,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Cradlei grupis võib olla maksimaalselt {max,number} liiget.",
+    "messageformat": "Signali grupis võib olla maksimaalselt {max,number} liiget.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2315,7 +2396,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Cradlei grupid toimivad kõige paremini {max,number} või vähema liikmega. Rohkem liikmete lisamine põhjustab viivitusi sõnumite saatmises ja saamises.",
+    "messageformat": "Signali grupid toimivad kõige paremini {max,number} või vähema liikmega. Rohkem liikmete lisamine põhjustab viivitusi sõnumite saatmises ja saamises.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2367,7 +2448,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Klõpsa Cradle Desktopi nutiseadmega ühendamiseks, et jätkata sõnumite saatmisega."
+    "messageformat": "Klõpsa Signal Desktopi nutiseadmega ühendamiseks, et jätkata sõnumite saatmisega."
   },
   "icu:unlinked": {
     "messageformat": "Ühendus eemaldatud"
@@ -2385,17 +2466,17 @@
     "messageformat": "võta ühendust kasutajatoega"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Klõpsa Cradlei taaskäivitamiseks"
+    "messageformat": "Klõpsa Signali taaskäivitamiseks"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Klõpsa uuenduse allalaadimiseks"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Cradleit ei saanud uuendada. Klõpsa, et uuesti proovida.",
+    "messageformat": "Signalit ei saanud uuendada. Klõpsa, et uuesti proovida.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Taaskäivita Cradle"
+    "messageformat": "Taaskäivita Signal"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "Hiljem"
@@ -2514,6 +2595,14 @@
   "icu:message--deletedForEveryone": {
     "messageformat": "See sõnum kustutati.",
     "description": "Shown in a message's bubble when the message has been deleted for everyone."
+  },
+  "icu:message--attachmentTooBig--one": {
+    "messageformat": "Manus on kuvamiseks liiga suur.",
+    "description": "Shown in a message bubble if no attachments are left on message when too-large attachments are dropped"
+  },
+  "icu:message--attachmentTooBig--multiple": {
+    "messageformat": "Mõned manused on kuvamiseks liiga suured.",
+    "description": "Shown in a message bubble if any attachments are left on message when too-large attachments are dropped"
   },
   "icu:donation--missing": {
     "messageformat": "Annetuse andmeid ei õnnestunud saada",
@@ -2653,15 +2742,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Tutvustame kleebiseid: Bandiit kass",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Tutvustame kleebiseid",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "Miks kasutada sõnu, kui saab kasutada kleebiseid?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Ava kleebisepakk",
@@ -2804,20 +2893,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} saatis sulle sõnumi, mida ei saa töödelda või kuvada, sest see kasutab Signal/Cradlei uut funktsionaalsust."
+    "messageformat": "{contact} saatis sulle sõnumi, mida ei saa töödelda või kuvada, sest see kasutab Signali uut funktsionaalsust."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Nüüd, kui kasutad Cradlei uuendatud versiooni, siis palu kontaktil {contact} sõnum uuesti saata."
+    "messageformat": "Nüüd, kui kasutad Signali uuendatud versiooni, siis palu kontaktil {contact} sõnum uuesti saata."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Üks sinu seadmetest saatis sõnumi, mida ei saa töödelda või kuvada, sest see kasutab Signal/Cradlei uut funktsionaalsust."
+    "messageformat": "Üks sinu seadmetest saatis sõnumi, mida ei saa töödelda või kuvada, sest see kasutab Signali uut funktsionaalsust."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "Tulevikusõnumid nagu see sünkroniseeritakse nüüd, kui kasutad värskendatud Cradlei versiooni."
+    "messageformat": "Tulevikusõnumid nagu see sünkroniseeritakse nüüd, kui kasutad värskendatud Signali versiooni."
   },
   "icu:Message--update-signal": {
-    "messageformat": "Uuenda Cradleit",
-    "description": "Text for a button which will take user to Cradle download page"
+    "messageformat": "Uuenda Signalit",
+    "description": "Text for a button which will take user to Signal download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Vaadatud",
@@ -3156,11 +3245,19 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Ainult Cradle beeta",
-    "description": "Title of the modal shown before sending your first edit message"
+    "messageformat": "Ainult Signal beeta",
+    "description": "(deleted 8/30) Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "Sõnumeid saavad muuta ainult Cradlei beetakasutajad. Kui sõnumit muudad, on see nähtav ainult inimestele, kellel on uusim Cradlei beetaversioon.",
+    "messageformat": "Sõnumeid saavad muuta ainult Signali beetakasutajad. Kui sõnumit muudad, on see nähtav ainult inimestele, kellel on uusim Signali beetaversioon.",
+    "description": "(deleted 8/30) Body text of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--title2": {
+    "messageformat": "Muuda sõnumit",
+    "description": "Title of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--body2": {
+    "messageformat": "Kui sõnumit muudad, on see nähtav ainult inimestele, kellel on Signali uusimad versioonid. Nad näevad, et oled sõnumit muutnud.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3168,20 +3265,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "Mõned kasutavad sellist Cradlei versiooni, mis vormindatud teksti ei toeta. Nemad ei näe vormingumuutusi, mille sõnumile lisasid.",
+    "messageformat": "Mõned kasutavad sellist Signali versiooni, mis vormindatud teksti ei toeta. Nemad ei näe vormingumuutusi, mille sõnumile lisasid.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "Kas soovid avada Cradlei kleebiste komplekti loomiskeskkonna?",
-    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
+    "messageformat": "Kas soovid avada Signali kleebiste komplekti loomiskeskkonna?",
+    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Kinnita",
-    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Tühista",
-    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "Kleebiste komplekti loomiskeskkonna kasutamiseks pead seadistama Signali nii enda telefonis kui arvutis",
@@ -3332,7 +3429,7 @@
     "description": "Shown in the conversation hero to indicate this user is a member of four mutual groups"
   },
   "icu:member-of-more-than-3-groups--multiple-more": {
-    "messageformat": "Gruppide {group1}, {group2}, {group3} ja {remainingCount,number} muu grupi liige",
+    "messageformat": "Member of {group1}, {group2}, {group3} and {remainingCount, plural, other {#}} more",
     "description": "Shown in the conversation hero to indicate this user is a member of 5+ mutual groups."
   },
   "icu:ConversationHero--membership-added": {
@@ -3400,12 +3497,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Cradle töötab endiselt",
-    "description": "Shown in a notification title when Cradle is minimized to tray"
+    "messageformat": "Signal töötab endiselt",
+    "description": "Shown in a notification title when Signal is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Cradle jääb teavituste alal tööle. Saad seda Cradlei sätete alt muuta.",
-    "description": "Shown in a notification body when Cradle is minimized to tray"
+    "messageformat": "Signal jääb teavituste alal tööle. Saad seda Signali sätete alt muuta.",
+    "description": "Shown in a notification body when Signal is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Sissetulev häälkõne …",
@@ -3416,11 +3513,11 @@
     "description": "Shown in both the incoming call bar and notification for an incoming video call"
   },
   "icu:outgoingAudioCall": {
-    "messageformat": "Outgoing voice call",
+    "messageformat": "Väljuv häälkõne",
     "description": "Shown in the timeline for an outgoing voice call"
   },
   "icu:outgoingVideoCall": {
-    "messageformat": "Outgoing video call",
+    "messageformat": "Tehtud videokõne",
     "description": "Shown in the timeline for an outgoing video call"
   },
   "icu:incomingGroupCall__ringing-you": {
@@ -3467,9 +3564,69 @@
     "messageformat": "Ühenduse taastamine…",
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
-  "icu:callDuration": {
-    "messageformat": "Cradle {duration}",
-    "description": "Shown in the call screen to indicate how long the call has been connected"
+  "icu:CallControls__InfoDisplay--participants": {
+    "messageformat": "{count, plural, one {{count,number} inimene} other {{count,number} inimest}}",
+    "description": "Shown in the call screen and lobby for group calls to specify the number of members in the call or in the group. Count is at always at least 1."
+  },
+  "icu:CallControls__InfoDisplay--audio-call": {
+    "messageformat": "Häälkõne",
+    "description": "Shown in the call lobby for a direct 1:1 call when the caller's video is disabled, to specify that an audio call will be placed when clicking the Start button."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-1-1": {
+    "messageformat": "Lõpeta",
+    "description": "Title for the hangup button for a direct 1:1 call with only 2 participants."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-group": {
+    "messageformat": "Lahku",
+    "description": "Title for the hangup button for a group call."
+  },
+  "icu:CallControls__MutedToast--muted": {
+    "messageformat": "Mikrofon väljas",
+    "description": "Shown in a call when the user mutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__MutedToast--unmuted": {
+    "messageformat": "Mikrofon sees",
+    "description": "Shown in a call when the user is muted and then unmutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-on": {
+    "messageformat": "Helin sees",
+    "description": "Shown in a group call lobby when call ringing is disabled, then the user enables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-off": {
+    "messageformat": "Helin väljas",
+    "description": "Shown in a group call lobby when call ringing is enabled, then the user disables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RaiseHandsToast--you": {
+    "messageformat": "Sinu käsi on tõstetud.",
+    "description": "Shown in a call when the user raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--one": {
+    "messageformat": "{name} tõstis käe.",
+    "description": "Shown in a call when someone else raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--two": {
+    "messageformat": "{name} ja {otherName} tõstsid käe.",
+    "description": "Shown in a call when 2 persons raise their hands."
+  },
+  "icu:CallControls__RaiseHandsToast--more": {
+    "messageformat": "{name}, {otherName}, and {overflowCount, plural, other {#}} more raised a hand.",
+    "description": "Shown in a call when 3 or more persons raise their hands."
+  },
+  "icu:CallControls__RaiseHands--open-queue": {
+    "messageformat": "Vaata järjekorda",
+    "description": "Link in call raised hands list and in toast shown when someone else raises their hand. Link opens the list of all raised hands."
+  },
+  "icu:CallControls__RaiseHands--lower": {
+    "messageformat": "Langeta",
+    "description": "Link in call raised hands list and in toast shown when user raises their hand. Link allows user to lower their hand."
+  },
+  "icu:CallControls__MenuItemRaiseHand": {
+    "messageformat": "Tõsta käsi",
+    "description": "Menu item to raise your hand during a call."
+  },
+  "icu:CallControls__MenuItemRaiseHand--lower": {
+    "messageformat": "Langeta käsi",
+    "description": "Menu item to lower your previously raised hand during a call."
   },
   "icu:callingDeviceSelection__settings": {
     "messageformat": "Sätted",
@@ -3511,13 +3668,25 @@
     "messageformat": "Täisekraanil kõne",
     "description": "Title for picture-in-picture toggle"
   },
-  "icu:calling__switch-view--to-grid": {
-    "messageformat": "Lülita võrgustikuvaatele",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__change-view": {
+    "messageformat": "Muuda vaadet",
+    "description": "Tooltip for changing the in-call layout of remote participants in a group call"
   },
-  "icu:calling__switch-view--to-speaker": {
-    "messageformat": "Lülita rääkija vaatele",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__view_mode--paginated": {
+    "messageformat": "Ruudustikvaade",
+    "description": "Label for option to view participants in a group call in a paginated grid view"
+  },
+  "icu:calling__view_mode--overflow": {
+    "messageformat": "Külgriba vaade",
+    "description": "Label for option to view participants in a group call where videos that don't fit onto the page are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--speaker": {
+    "messageformat": "Kõneleja vaade",
+    "description": "Label for option to view participants where only the current speaker's video is fully visible and all others are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--updated": {
+    "messageformat": "Kuva uuendatud",
+    "description": "Toast shown whenver the calling view mode is changed (e.g. paginated view -> speaker view)"
   },
   "icu:calling__hangup": {
     "messageformat": "Lahku kõnest",
@@ -3619,6 +3788,14 @@
     "messageformat": "Sobib",
     "description": "Button to dismiss popup dialog when user-initiated task has gone wrong"
   },
+  "icu:MessageMaxEditsModal__Title": {
+    "messageformat": "Sõnumit ei saa muuta",
+    "description": "Title in popup dialog when attempting to edit a message too many times."
+  },
+  "icu:MessageMaxEditsModal__Description": {
+    "messageformat": "Only {max, plural, other {#}} edits can be applied to this message.",
+    "description": "Description text in popup dialog when attempting to edit a message too many times."
+  },
   "icu:unknown-sgnl-link": {
     "messageformat": "Vabandust, see sgnl:// link ei ole arusaadav!",
     "description": "Shown if you click on a sgnl:// link not currently supported by Desktop"
@@ -3656,7 +3833,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "See Cradle Desktop ei toeta seda linki.",
+    "messageformat": "See Signal Desktop ei toeta seda linki.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4040,7 +4217,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--other": {
-    "messageformat": "{memberName} kutsus {count,number} isikut gruppi.",
+    "messageformat": "{memberName} invited {count, plural, other {#}} people to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--you": {
@@ -4048,7 +4225,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--unknown": {
-    "messageformat": "{count,number} isikut kutsuti gruppi.",
+    "messageformat": "{count, plural, other {#}} people were invited to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--other": {
@@ -4124,7 +4301,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--other": {
-    "messageformat": "{adminName}tühistas {count,number} inimese {memberName} poolt saadetud grupiga liitumise kutsed.",
+    "messageformat": "{adminName} revoked invitations to the group for {count, plural, other {#}} people invited by {memberName}.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--you": {
@@ -4364,7 +4541,7 @@
     "description": "Shown in timeline when a group is upgraded and one person was removed entirely during the upgrade"
   },
   "icu:GroupV1--Migration--removed--many": {
-    "messageformat": "{count,number} isikut eemaldati grupist.",
+    "messageformat": "{count, plural, other {#}} members were removed from the group.",
     "description": "Shown in timeline when a group is upgraded and some people were removed entirely during the upgrade"
   },
   "icu:close": {
@@ -4412,11 +4589,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "See isik ei kasuta Signal/Cradleit",
+    "messageformat": "See isik ei kasuta Signalit",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal/Cradle Desktop ei toeta sõnumite vahetamist kontaktidega, kes ei kasuta Signal/Cradleit. Palu sellel isikul turvalisema sõnumivahetuskogemuse saamiseks Signal/Cradle paigaldada.",
+    "messageformat": "Signal Desktop ei toeta sõnumite vahetamist kontaktidega, kes ei kasuta Signalit. Palu sellel isikul turvalisema sõnumivahetuskogemuse saamiseks Signal paigaldada.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4752,7 +4929,7 @@
     "description": "conversation > in select mode > composition area actions > exit select mode > accessibility label"
   },
   "icu:SelectModeActions--selectedMessages": {
-    "messageformat": "{count,number} valitud",
+    "messageformat": "{count, plural, other {#}} selected",
     "description": "conversation > in select mode > composition area actions > count of selected messsages"
   },
   "icu:SelectModeActions--deleteSelectedMessages": {
@@ -4957,10 +5134,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "Teave sõnumitaotluste kohta",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Vaata taotlused tähelepanelikult üle. Cradle leidis teise samanimelise kontakti. <reviewRequestLink>Vaata taotlus üle</reviewRequestLink>",
+    "messageformat": "Vaata taotlused tähelepanelikult üle. Signal leidis teise samanimelise kontakti. <reviewRequestLink>Vaata taotlus üle</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -5024,7 +5201,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Rämpspostituste vältimiseks Cradleis täida palun verifitseerimine.",
+    "messageformat": "Rämpspostituste vältimiseks Signalis täida palun verifitseerimine.",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5295,9 +5472,29 @@
     "messageformat": "Kasutajanimi",
     "description": "Default text for username field"
   },
+  "icu:ProfileEditor--username--corrupted--body": {
+    "messageformat": "Sinu kasutajanimega seoses läks midagi valesti ja see ei ole enam sinu kontoga seotud.",
+    "description": "Text of confirmation modal when the username gets corrupted"
+  },
+  "icu:ProfileEditor--username--corrupted--delete-button": {
+    "messageformat": "Eemalda kasutajanimi",
+    "description": "Button text for deletion of the username in case of corruption"
+  },
+  "icu:ProfileEditor--username--corrupted--create-button": {
+    "messageformat": "Loo kasutajanimi",
+    "description": "Button text for creation of a new username in case of corruption"
+  },
   "icu:ProfileEditor__username-link": {
     "messageformat": "QR-kood või link",
     "description": "Label of a profile editor row that navigates to username link and qr code modal"
+  },
+  "icu:ProfileEditor__username__error-icon": {
+    "messageformat": "Kasutajanimi tuleb lähtestada",
+    "description": "Accessibility title of an icon in profile editor"
+  },
+  "icu:ProfileEditor__username-link__error-icon": {
+    "messageformat": "Kasutajanime link tuleb lähtestada",
+    "description": "Accessibility title of an icon in profile editor"
   },
   "icu:ProfileEditor__username-link__tooltip__title": {
     "messageformat": "Jaga oma kasutajanime",
@@ -5552,7 +5749,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Vali, kes sinu telefoninumbrit näevad ja sinuga selle kaudu Cradleis ühendust saavad võtta.",
+    "messageformat": "Vali, kes sinu telefoninumbrit näevad ja sinuga selle kaudu Signalis ühendust saavad võtta.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5560,11 +5757,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Sinu telefoninumber on nähtav isikutele ja gruppidele, millega suhtled. Isikud, kellel on sinu telefoninumber nende telefonikontaktides, näevad seda ka Cradleis.",
+    "messageformat": "Sinu telefoninumber on nähtav isikutele ja gruppidele, millega suhtled. Isikud, kellel on sinu telefoninumber nende telefonikontaktides, näevad seda ka Signalis.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Mitte keegi ei näe Signal/Cradleis sinu telefoninumbrit.",
+    "messageformat": "Mitte keegi ei näe Signalis sinu telefoninumbrit.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5584,11 +5781,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Kõik, kellel sinu telefoninumber kontaktide hulgas on, näevad sind Signal/Cradleis kontaktina. Teised saavad uut vestlust või gruppi alustades sinuga ühendust su telefoninumbri kaudu.",
+    "messageformat": "Kõik, kellel sinu telefoninumber kontaktide hulgas on, näevad sind Signalis kontaktina. Teised saavad uut vestlust või gruppi alustades sinuga ühendust su telefoninumbri kaudu.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Mitte keegi Signal/Cradleis ei leia sind sinu telefoninumbri kaudu.",
+    "messageformat": "Mitte keegi Signalis ei leia sind sinu telefoninumbri kaudu.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5651,6 +5848,42 @@
     "messageformat": "Sa ei saa enam lugusid jagada ega vaadata. Sinu hiljuti jagatud lugude uuendused kustutatakse samuti.",
     "description": "Confirmation modal body for disabling stories"
   },
+  "icu:Preferences__Language__Label": {
+    "messageformat": "Keel",
+    "description": "Language setting label"
+  },
+  "icu:Preferences__Language__ModalTitle": {
+    "messageformat": "Keel",
+    "description": "Language setting modal title"
+  },
+  "icu:Preferences__Language__SystemLanguage": {
+    "messageformat": "Süsteemi keel",
+    "description": "Option for system language"
+  },
+  "icu:Preferences__Language__SearchLanguages": {
+    "messageformat": "Otsi keeli",
+    "description": "Placholder for language preference search box"
+  },
+  "icu:Preferences__Language__NoResults": {
+    "messageformat": "„{searchTerm}“ ei andnud otsingutulemusi",
+    "description": "When no results are found for language preference search"
+  },
+  "icu:Preferences__LanguageModal__Set": {
+    "messageformat": "Määra",
+    "description": "Button to set language preference"
+  },
+  "icu:Preferences__LanguageModal__Restart__Title": {
+    "messageformat": "Taaskäivita Signal, et muudatused rakenduksid",
+    "description": "Title for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Description": {
+    "messageformat": "Keele vahetamiseks tuleb äpp taaskäivitada.",
+    "description": "Description for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Button": {
+    "messageformat": "Taaskäivita",
+    "description": "Button to restart Signal to apply language changes"
+  },
   "icu:DialogUpdate--version-available": {
     "messageformat": "Versioonile {version} on uuendus saadaval",
     "description": "Tooltip for new update available"
@@ -5668,7 +5901,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Selleks, et Cradleit edasi kasutada, pead uuendama uusimale versioonile.",
+    "messageformat": "Selleks, et Signalit edasi kasutada, pead uuendama uusimale versioonile.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5676,15 +5909,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "Uuenduse paigaldamiseks taaskäivita Cradle.",
+    "messageformat": "Uuenduse paigaldamiseks taaskäivita Signal.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Cradle Desktopi uuendamine nurjus, kuid uus versioon on saadaval. Ava {downloadUrl} ja paigalda uus versioon käsitsi ning teavita probleemist kasutajatuge või saada veateade.",
+    "messageformat": "Signal Desktopi uuendamine nurjus, kuid uus versioon on saadaval. Ava {downloadUrl} ja paigalda uus versioon käsitsi ning teavita probleemist kasutajatuge või saada veateade.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Cradleit ei saa sulgeda.",
+    "messageformat": "Signalit ei saa sulgeda.",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5704,15 +5937,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Cradlei uuem versioon on juba paigaldatud. Kas oled kindel, et soovid jätkata?",
-    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
+    "messageformat": "Signali uuem versioon on juba paigaldatud. Kas oled kindel, et soovid jätkata?",
+    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Rakendus jooksis kokku",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Cradle taaskäivitus pärast kokkujooksmist. Võid kokkujooksmise kohta teavituse saata, et aidata Cradleil probleemi uurida.",
+    "messageformat": "Signal taaskäivitus pärast kokkujooksmist. Võid kokkujooksmise kohta teavituse saata, et aidata Signalil probleemi uurida.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5734,6 +5967,10 @@
   "icu:CustomizingPreferredReactions__had-save-error": {
     "messageformat": "Sätete salvestamisel tekkis tõrge. Palun proovi uuesti.",
     "description": "Shown if there is an error when saving your preferred reaction settings. Should be very rare to see this message."
+  },
+  "icu:MediaEditor__input-placeholder": {
+    "messageformat": "Sõnum",
+    "description": "Placeholder for the input in the media editor"
   },
   "icu:MediaEditor__clock-more-styles": {
     "messageformat": "Rohkem stiile",
@@ -5908,8 +6145,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Cradlei kontaktid",
-    "description": "The phrase/term: 'Cradle Connections'"
+    "messageformat": "Signali kontaktid",
+    "description": "The phrase/term: 'Signal Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} on inimesed, keda oled otsustanud usaldada, kas siis …",
@@ -6088,7 +6325,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Kõik Cradlei kontaktid",
+    "messageformat": "Kõik Signali kontaktid",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6100,7 +6337,7 @@
     "description": "Input label to create a block list"
   },
   "icu:StoriesSettings__mine__exclude--description": {
-    "messageformat": "{num,number} inimest välja arvatud",
+    "messageformat": "{num, plural, other {#}} people excluded",
     "description": "Description of how many people are excluded in a list"
   },
   "icu:StoriesSettings__mine__only--label": {
@@ -6208,7 +6445,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Vali, millised Cradlei kontaktid sinu lugu vaadata saavad. Saad seda privaatsussätete alt alati muuta. <learnMoreLink>Rohkem teavet.</learnMoreLink>",
+    "messageformat": "Vali, millised Signali kontaktid sinu lugu vaadata saavad. Saad seda privaatsussätete alt alati muuta. <learnMoreLink>Rohkem teavet.</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6224,11 +6461,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {All Cradle Connections · 1 Viewer} other {All Cradle Connections · {viewersCount,number} Viewers}}",
+    "messageformat": "{viewersCount, plural, one {All Signal Connections · 1 Viewer} other {All Signal Connections · {viewersCount,number} Viewers}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {All Cradle Connections · 1 Excluded} other {All Cradle Connections · {excludedCount,number} Excluded}}",
+    "messageformat": "{excludedCount, plural, one {All Signal Connections · 1 Excluded} other {All Signal Connections · {excludedCount,number} Excluded}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6572,7 +6809,7 @@
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__done": {
-    "messageformat": "Done",
+    "messageformat": "Tehtud",
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__color__radio": {
@@ -6583,8 +6820,16 @@
     "messageformat": "Kui oma QR-koodi lähtestad, lõpetavad olemasolev QR-kood ja link toimimise.",
     "description": "Text of confirmation modal when resetting the username link"
   },
+  "icu:UsernameLinkModalBody__resetting-link": {
+    "messageformat": "Lingi lähtestamine …",
+    "description": "Text shown when resetting the username link"
+  },
+  "icu:UsernameLinkModalBody__error__text": {
+    "messageformat": "QR-kood ja link ei ole seadistatud. Kontrolli oma võrguühendust ja proovi uuesti.",
+    "description": "Text of the confirmation dialog shown on username link error"
+  },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Seadista oma Cradlei kasutajanimi",
+    "messageformat": "Seadista oma Signali kasutajanimi",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6608,15 +6853,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Cradlei veebiversioon lõpetab varsti sinu arvuti {OS} versiooni toetamise. Kui soovid jätkata Cradlei kasutamist, uuenda oma arvuti operatsioonisüsteemi hiljemalt {expirationDate}. <learnMoreLink>Rohkem teavet</learnMoreLink>",
+    "messageformat": "Signali veebiversioon lõpetab varsti sinu arvuti {OS} versiooni toetamise. Kui soovid jätkata Signali kasutamist, uuenda oma arvuti operatsioonisüsteemi hiljemalt {expirationDate}. <learnMoreLink>Rohkem teavet</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Cradlei veebiversioon ei tööta enam selles arvutis. Kui soovid jätkata Cradlei kasutamist, uuenda oma arvuti {OS} versiooni. <learnMoreLink>Rohkem teavet</learnMoreLink>",
+    "messageformat": "Signali veebiversioon ei tööta enam selles arvutis. Kui soovid jätkata Signali kasutamist, uuenda oma arvuti {OS} versiooni. <learnMoreLink>Rohkem teavet</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Cradlei veebiversioon ei tööta enam selles arvutis. Kui soovid jätkata Cradlei kasutamist, uuenda oma arvuti {OS} versiooni.",
+    "messageformat": "Signali veebiversioon ei tööta enam selles arvutis. Kui soovid jätkata Signali kasutamist, uuenda oma arvuti {OS} versiooni.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6636,119 +6881,123 @@
     "description": "Button text for the confirmation dialog shown to user when attempting to resend message edit"
   },
   "icu:StoriesTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Rohkem tegevusi",
     "description": "Stories Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__HeaderTitle--CallsList": {
-    "messageformat": "Calls",
+    "messageformat": "Kõned",
     "description": "Calls Tab > Header > Title > On Calls List screen"
   },
   "icu:CallsTab__HeaderTitle--NewCall": {
-    "messageformat": "New Call",
+    "messageformat": "Uus kõne",
     "description": "Calls Tab > Header > Title > On New Call screen"
   },
   "icu:CallsTab__NewCallActionLabel": {
-    "messageformat": "New Call",
+    "messageformat": "Uus kõne",
     "description": "Calls Tab > New Call Action Button > Accessibility Label"
   },
   "icu:CallsTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Rohkem tegevusi",
     "description": "Calls Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__ClearCallHistoryLabel": {
-    "messageformat": "Clear call history",
+    "messageformat": "Tühjenda kõneajalugu",
     "description": "Calls Tab > More Actions Context Menu > Clear Call History Button Label"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Title": {
-    "messageformat": "Clear call history?",
+    "messageformat": "Kas tühjendada kõneajalugu?",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Title"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Body": {
-    "messageformat": "This will permanently delete all call history",
+    "messageformat": "See kustutab jäädavalt kogu kõneajaloo",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Body Text"
   },
   "icu:CallsTab__ConfirmClearCallHistory__ConfirmButton": {
-    "messageformat": "Clear",
+    "messageformat": "Eemalda",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Confirm Button"
   },
   "icu:CallsTab__ToastCallHistoryCleared": {
-    "messageformat": "Call history cleared",
+    "messageformat": "Kõneajalugu on eemaldatud",
     "description": "Calls Tab > Clear Call History > Toast"
   },
   "icu:CallsTab__EmptyStateText": {
-    "messageformat": "Click to view or start a call",
+    "messageformat": "Klõpsa, et kõnet näha või alustada",
     "description": "Calls Tab > When no call is selected > Empty state > Call to action text"
   },
   "icu:CallsList__SearchInputPlaceholder": {
-    "messageformat": "Search",
+    "messageformat": "Otsi",
     "description": "Calls Tab > Calls List > Search Input > Placeholder"
   },
   "icu:CallsList__ToggleFilterByMissedLabel": {
-    "messageformat": "Filter by missed",
+    "messageformat": "Filtreeri vastamata kõnede alusel",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility label"
   },
   "icu:CallsList__ToggleFilterByMissed__RoleDescription": {
-    "messageformat": "Toggle",
+    "messageformat": "Lülita",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility role description ('A toggle button')"
   },
   "icu:CallsList__EmptyState--noQuery": {
-    "messageformat": "No recent calls. Get started by calling a friend.",
+    "messageformat": "Hiljutised kõned puuduvad. Tee ots lahti ja helista sõbrale.",
     "description": "Calls Tab > Calls List > When no results found > With no search query"
   },
   "icu:CallsList__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "„{query}“ ei andnud otsingutulemusi",
     "description": "Calls Tab > Calls List > When no results found > With a search query"
   },
   "icu:CallsList__ItemCallInfo--Incoming": {
-    "messageformat": "Incoming",
+    "messageformat": "Sissetulev",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was incoming"
   },
   "icu:CallsList__ItemCallInfo--Outgoing": {
-    "messageformat": "Outgoing",
+    "messageformat": "Väljuv",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was outgoing"
   },
   "icu:CallsList__ItemCallInfo--Missed": {
-    "messageformat": "Missed",
+    "messageformat": "Vastamata",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was missed"
   },
   "icu:CallsList__ItemCallInfo--GroupCall": {
-    "messageformat": "Group call",
+    "messageformat": "Grupikõne",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When group call is in its default state"
   },
   "icu:CallsNewCall__EmptyState--noQuery": {
-    "messageformat": "No recent conversations.",
+    "messageformat": "Hiljutisi vestlusi pole.",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With no search query"
   },
   "icu:CallsNewCall__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "„{query}“ ei andnud otsingutulemusi",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With a search query"
   },
   "icu:CallHistory__Description--Default": {
-    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Outgoing voice call} other {Incoming voice call}}} Video {{direction, select, Outgoing {Outgoing video call} other {Incoming video call}}} Group {{direction, select, Outgoing {Outgoing group call} other {Incoming group call}}} other {{direction, select, Outgoing {Outgoing  call} other {Incoming  call}}}}",
+    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Väljuv häälkõne} other {Sissetulev häälkõne}}} Video {{direction, select, Outgoing {Tehtud videokõne} other {Sissetulev videokõne}}} Group {{direction, select, Outgoing {Väljuv grupikõne} other {Sissetulev grupikõne}}} other {{direction, select, Outgoing {Väljaminev kõne} other {Sissetulev kõne}}}}",
     "description": "Call History > Short description of call > When call was not missed or declined (generally accepted)"
   },
   "icu:CallHistory__Description--Missed": {
-    "messageformat": "{type, select, Audio {Missed voice call} Video {Missed video call} Group {Missed group call} other {Missed  call}}",
+    "messageformat": "{type, select, Audio {Vastamata häälkõne} Video {Vastamata videokõne} Group {Vastamata grupikõne} other {Vastamata kõne}}",
     "description": "Call History > Short description of call > When incoming call was missed"
   },
   "icu:CallHistory__Description--Unanswered": {
-    "messageformat": "{type, select, Audio {Unanswered voice call} Video {Unanswered video call} Group {Unanswered group call} other {Unanswered  call}}",
+    "messageformat": "{type, select, Audio {Vastamata häälkõne} Video {Vastamata videokõne} Group {Vastamata grupikõne} other {Vastamata kõne}}",
     "description": "Call History > Short description of call > When outgoing call was unanswered"
   },
   "icu:CallHistory__Description--Declined": {
-    "messageformat": "{type, select, Audio {Declined voice call} Video {Declined video call} Group {Declined group call} other {Declined  call}}",
+    "messageformat": "{type, select, Audio {Sa keeldusid häälkõnest} Video {Sa keeldusid videokõnest} Group {Sa keeldusid grupikõnest} other {Sa keeldusid kõnest}}",
     "description": "Call History > Short description of call > When call was declined"
+  },
+  "icu:TypingBubble__avatar--overflow-count": {
+    "messageformat": "{count, plural, one {{count,number} veel kirjutab.} other {{count,number} veel kirjutavad.}}",
+    "description": "Group chat multiple person typing indicator when space isn't available to show every avatar, this is the count of avatars hidden."
   },
   "icu:WhatsNew__modal-title": {
     "messageformat": "Mis on uut",
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "See versioon sisaldab paljusid väikseid parendusi, mis Cradlei sujuvalt käimas.",
+    "messageformat": "See versioon sisaldab paljusid väikseid parendusi, mis Signali sujuvalt käimas.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Täiendavad väikesed muudatused, vigade parandused ja jõudluse täiustused. Aitäh, et kasutad Cradleit!",
+    "messageformat": "Täiendavad väikesed muudatused, vigade parandused ja jõudluse täiustused. Aitäh, et kasutad Signalit!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6768,16 +7017,25 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Väikesed muudatused, vigade parandused ja jõudluse täiustused. Aitäh, et kasutad Cradleit!",
+    "messageformat": "Väikesed muudatused, vigade parandused ja jõudluse täiustused. Aitäh, et kasutad Signalit!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.29--0": {
-    "messageformat": "Vestluse värvi kohandamise akent kuvatakse nüüd erinevates keeltes ja valitud asukohtades õigesti."
+  "icu:WhatsNew__v6.42--0": {
+    "messageformat": "Parandasime vea, mis tekkis videotele tsiteeritud vastuste näitamisel."
   },
-  "icu:WhatsNew__v6.29--1": {
-    "messageformat": "Muutsime Windowsi teavituste tuge paremaks. Kui sa ei klõpsa teavitusel selle esmakordsel saabumisel, kuvatakse viimane nägemata teavitus Windowsi teavituskeskuses. Kui sellel teavitusel klõpsad, suunatakse sind otse vastava vestluse juurde. Täname Julien Richardit antud tagasiside eest."
+  "icu:WhatsNew__v6.42--1": {
+    "messageformat": "Aitäh kasutajatele {linkToGithub1} ja {linkToGithub2} abi eest selle väljalaskega."
   },
-  "icu:WhatsNew__v6.30--0": {
-    "messageformat": "Keep tabs on your calls with the new calls tab. Start a new call or return a call that you missed without having to find the corresponding chat. Now you can say hello with your voice without also saying goodbye to the unread marker for messages in that thread."
+  "icu:WhatsNew__v6.43--0": {
+    "messageformat": "Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat."
+  },
+  "icu:WhatsNew__v6.43--1": {
+    "messageformat": "The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Signal Settings > Appearance > Language). Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--2": {
+    "messageformat": "The playback speed indicators in voice messages have a slightly new look. X marks the spot. Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--3": {
+    "messageformat": "We would also like to thank {linkToGithub1}, {linkToGithub2}, and {linkToGithub3} for their contributions to this release."
   }
 }

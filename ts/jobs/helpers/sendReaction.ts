@@ -14,7 +14,8 @@ import type { ConversationModel } from '../../models/conversations';
 
 import * as reactionUtil from '../../reactions/util';
 import { isSent, SendStatus } from '../../messages/MessageSendState';
-import { getMessageById } from '../../messages/getMessageById';
+import { __DEPRECATED$getMessageById } from '../../messages/getMessageById';
+import { isIncoming } from '../../messages/helpers';
 import {
   isMe,
   isDirectConversation,
@@ -26,7 +27,8 @@ import { handleMessageSend } from '../../util/handleMessageSend';
 import { ourProfileKeyService } from '../../services/ourProfileKey';
 import { canReact, isStory } from '../../state/selectors/message';
 import { findAndFormatContact } from '../../util/findAndFormatContact';
-import type { ServiceIdString } from '../../types/ServiceId';
+import type { AciString, ServiceIdString } from '../../types/ServiceId';
+import { isAciString } from '../../util/isAciString';
 import { handleMultipleSendErrors } from './handleMultipleSendErrors';
 import { incrementMessageCounter } from '../../util/incrementMessageCounter';
 
@@ -58,7 +60,7 @@ export async function sendReaction(
   const ourConversationId =
     window.ConversationController.getOurConversationIdOrThrow();
 
-  const message = await getMessageById(messageId);
+  const message = await __DEPRECATED$getMessageById(messageId);
   if (!message) {
     log.info(
       `message ${messageId} was not found, maybe because it was deleted. Giving up on sending its reactions`
@@ -136,8 +138,18 @@ export async function sendReaction(
       ? await ourProfileKeyService.get()
       : undefined;
 
-    const { emoji, targetAuthorAci, ...restOfPendingReaction } =
-      pendingReaction;
+    const { emoji, ...restOfPendingReaction } = pendingReaction;
+
+    let targetAuthorAci: AciString;
+    if (isIncoming(message.attributes)) {
+      strictAssert(
+        isAciString(message.attributes.sourceServiceId),
+        'incoming message does not have sender ACI'
+      );
+      ({ sourceServiceId: targetAuthorAci } = message.attributes);
+    } else {
+      targetAuthorAci = ourAci;
+    }
 
     const reactionForSend = {
       ...restOfPendingReaction,
@@ -161,6 +173,11 @@ export async function sendReaction(
         })
       ),
     });
+    // Adds the reaction's attributes to the message cache so that we can
+    // safely `set` on it later.
+    window.MessageCache.toMessageAttributes(
+      ephemeralMessageForReactionSend.attributes
+    );
 
     ephemeralMessageForReactionSend.doNotSave = true;
 
@@ -181,10 +198,11 @@ export async function sendReaction(
         recipients: allRecipientServiceIds,
         timestamp: pendingReaction.timestamp,
       });
-      await ephemeralMessageForReactionSend.sendSyncMessageOnly(
+      await ephemeralMessageForReactionSend.sendSyncMessageOnly({
         dataMessage,
-        saveErrors
-      );
+        saveErrors,
+        targetTimestamp: pendingReaction.timestamp,
+      });
 
       didFullySend = true;
       successfulConversationIds.add(ourConversationId);
@@ -272,13 +290,14 @@ export async function sendReaction(
         );
       }
 
-      await ephemeralMessageForReactionSend.send(
-        handleMessageSend(promise, {
+      await ephemeralMessageForReactionSend.send({
+        promise: handleMessageSend(promise, {
           messageIds: [messageId],
           sendType: 'reaction',
         }),
-        saveErrors
-      );
+        saveErrors,
+        targetTimestamp: pendingReaction.timestamp,
+      });
 
       // Because message.send swallows and processes errors, we'll await the inner promise
       //   to get the SendMessageProtoError, which gives us information upstream
@@ -322,7 +341,11 @@ export async function sendReaction(
         });
 
         void conversation.addSingleMessage(
-          window.MessageController.register(reactionMessage.id, reactionMessage)
+          window.MessageCache.__DEPRECATED$register(
+            reactionMessage.id,
+            reactionMessage,
+            'sendReaction'
+          )
         );
       }
     }
@@ -366,7 +389,7 @@ const setReactions = (
   if (reactions.length) {
     message.set('reactions', reactions);
   } else {
-    message.unset('reactions');
+    message.set('reactions', undefined);
   }
 };
 

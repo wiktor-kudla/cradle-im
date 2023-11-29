@@ -26,7 +26,7 @@
     @include font-body-1-bold;
 
     @include light-theme() {
-      color: $color-gray-90;
+      color: $color-white;
     }
 
     @include dark-theme() {
@@ -43,8 +43,6 @@
   border-radius: 8px;
 
   @include light-theme {
-    // background: $color-gray-02;
-    // color: $color-gray-60;
     background: $color-purple-02;
     color: $color-text-01;
   }
@@ -128,6 +126,7 @@
 
     &__title {
       flex: 1;
+      color: $color-white;
     }
 
     &__author {

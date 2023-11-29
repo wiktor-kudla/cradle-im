@@ -99,7 +99,7 @@ async function main() {
     '<!-- SPDX-License-Identifier: AGPL-3.0-only -->',
     '# Acknowledgments',
     '',
-    'Signal Desktop makes use of the following open source projects.',
+    'Cradle Desktop makes use of the following open source projects.',
     '',
     markdownsForDependency.join('\n\n'),
   ].join('\n');

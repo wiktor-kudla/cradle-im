@@ -66,12 +66,13 @@ describe('state/selectors/calling', () => {
       hasLocalAudio: true,
       hasLocalVideo: false,
       localAudioLevel: 0,
-      viewMode: CallViewMode.Grid,
+      viewMode: CallViewMode.Paginated,
       showParticipantsList: false,
       safetyNumberChangedAcis: [],
       outgoingRing: true,
       pip: false,
       settingsDialogOpen: false,
+      joinedAt: null,
     },
   };
 
@@ -96,6 +97,7 @@ describe('state/selectors/calling', () => {
     conversationId: 'fake-group-call-conversation-id',
     connectionState: GroupCallConnectionState.NotConnected,
     joinState: GroupCallJoinState.NotJoined,
+    localDemuxId: undefined,
     peekInfo: {
       acis: [ACI_1],
       creatorAci: ACI_1,

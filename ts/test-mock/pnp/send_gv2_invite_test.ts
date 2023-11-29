@@ -16,7 +16,7 @@ const IdentifierType = Proto.ManifestRecord.Identifier.Type;
 
 export const debug = createDebug('mock:test:gv2');
 
-describe('pnp/send gv2 invite', function needsName() {
+describe('pnp/send gv2 invite', function (this: Mocha.Suite) {
   this.timeout(durations.MINUTE);
 
   let bootstrap: Bootstrap;
@@ -84,7 +84,7 @@ describe('pnp/send gv2 invite', function needsName() {
     app = await bootstrap.link();
   });
 
-  afterEach(async function after() {
+  afterEach(async function (this: Mocha.Context) {
     await bootstrap.maybeSaveLogs(this.currentTest, app);
     await app.close();
     await bootstrap.teardown();
@@ -165,9 +165,7 @@ describe('pnp/send gv2 invite', function needsName() {
       .locator('button.module-ConversationHeader__button--more')
       .click();
 
-    await conversationStack
-      .locator('.react-contextmenu-item >> "Group settings"')
-      .click();
+    await window.locator('.react-contextmenu-item >> "Group settings"').click();
 
     debug('editing group title');
     {

@@ -21,20 +21,11 @@ export const createTemplate = (
   }
 
   const {
-    isProduction,
-    devTools,
     includeSetup,
-    openContactUs,
-    openForums,
-    openJoinTheBeta,
-    openReleaseNotes,
-    openSupportPage,
     platform,
     setupAsNewDevice,
     setupAsStandalone,
-    forceUpdate,
     showAbout,
-    showDebugLog,
     showKeyboardShortcuts,
     showSettings,
     openArtCreator,
@@ -124,33 +115,7 @@ export const createTemplate = (
         {
           role: 'togglefullscreen',
           label: i18n('icu:viewMenuToggleFullScreen'),
-        },
-        {
-          type: 'separator',
-        },
-        {
-          label: i18n('icu:debugLog'),
-          click: showDebugLog,
-        },
-        ...(devTools
-          ? [
-              {
-                type: 'separator' as const,
-              },
-              {
-                role: 'toggleDevTools' as const,
-                label: i18n('icu:viewMenuToggleDevTools'),
-              },
-            ]
-          : []),
-        ...(devTools && platform !== 'linux'
-          ? [
-              {
-                label: i18n('icu:forceUpdate'),
-                click: forceUpdate,
-              },
-            ]
-          : []),
+        }
       ],
     },
     {
@@ -172,33 +137,6 @@ export const createTemplate = (
           accelerator: 'CmdOrCtrl+/',
           click: showKeyboardShortcuts,
         },
-        {
-          type: 'separator',
-        },
-        {
-          label: i18n('icu:contactUs'),
-          click: openContactUs,
-        },
-        {
-          label: i18n('icu:goToReleaseNotes'),
-          click: openReleaseNotes,
-        },
-        {
-          label: i18n('icu:goToForums'),
-          click: openForums,
-        },
-        {
-          label: i18n('icu:goToSupportPage'),
-          click: openSupportPage,
-        },
-        ...(isProduction
-          ? [
-              {
-                label: i18n('icu:joinTheBeta'),
-                click: openJoinTheBeta,
-              },
-            ]
-          : []),
         {
           type: 'separator',
         },

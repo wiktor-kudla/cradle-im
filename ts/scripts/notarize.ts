@@ -4,7 +4,7 @@
 import path from 'path';
 import type { AfterPackContext } from 'electron-builder';
 
-import { notarize } from 'electron-notarize';
+import { notarize } from '@electron/notarize';
 
 import * as packageJson from '../../package.json';
 
@@ -13,7 +13,10 @@ export async function afterSign({
   packager,
   electronPlatformName,
 }: AfterPackContext): Promise<void> {
-  return;
+  if (electronPlatformName !== 'darwin') {
+    console.log('notarize: Skipping, not on macOS');
+    return;
+  }
 
   const { productFilename } = packager.appInfo;
 
@@ -54,12 +57,12 @@ export async function afterSign({
   console.log(`  primaryBundleId: ${appBundleId}`);
   console.log(`  username: ${appleId}`);
   console.log(`  file: ${appPath}`);
-/*
+
   await notarize({
-    tool: 'notarytool',
+    appBundleId,
     appPath,
     appleId,
     appleIdPassword,
     teamId,
-  });*/
+  });
 }

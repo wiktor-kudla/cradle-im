@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { ConversationType } from '../state/ducks/conversations';
-import { isAciString } from '../types/ServiceId';
+import { isAciString } from './isAciString';
 
 export const isSafetyNumberNotAvailable = (
   contact?: ConversationType
@@ -12,5 +12,5 @@ export const isSafetyNumberNotAvailable = (
     return true;
   }
 
-  return isAciString(contact.serviceId);
+  return !isAciString(contact.serviceId);
 };

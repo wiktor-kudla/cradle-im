@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 .module-conversation-hero {
+  background: $color-purple-03;
   padding-block: 32px 28px;
   padding-inline: 0;
   text-align: center;
@@ -19,7 +20,7 @@
     margin-bottom: 2px;
 
     @include light-theme {
-      // color: $color-gray-90;
+      color: white;
     }
 
     @include dark-theme {
@@ -35,7 +36,7 @@
     max-width: 500px;
 
     @include light-theme {
-      color: $color-gray-60;
+      color: white;
     }
 
     @include dark-theme {
@@ -51,7 +52,7 @@
     padding-inline: 16px;
 
     @include light-theme {
-      color: $color-gray-60;
+      color: white;
     }
 
     @include dark-theme {
@@ -74,7 +75,7 @@
       user-select: none;
 
       @include light-theme {
-        color: $color-gray-60;
+        color: white;
       }
       @include dark-theme {
         color: $color-gray-25;

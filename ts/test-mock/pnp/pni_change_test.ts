@@ -7,13 +7,16 @@ import type { PrimaryDevice } from '@signalapp/mock-server';
 import createDebug from 'debug';
 
 import * as durations from '../../util/durations';
-import { generatePni } from '../../types/ServiceId';
+import { generatePni, toUntaggedPni } from '../../types/ServiceId';
 import { Bootstrap } from '../bootstrap';
 import type { App } from '../bootstrap';
 
 export const debug = createDebug('mock:test:pni-change');
 
-describe('pnp/PNI Change', function needsName() {
+// Note that all tests also generate an PhoneNumberDiscovery notification, also known as a
+// Session Switchover Event (SSE). See for reference:
+// https://github.com/signalapp/Signal-Android-Private/blob/df83c941804512c613a1010b7d8e5ce4f0aec71c/app/src/androidTest/java/org/thoughtcrime/securesms/database/RecipientTableTest_getAndPossiblyMerge.kt#L266-L270
+describe('pnp/PNI Change', function (this: Mocha.Suite) {
   this.timeout(durations.MINUTE);
 
   let bootstrap: Bootstrap;
@@ -47,7 +50,7 @@ describe('pnp/PNI Change', function needsName() {
         whitelisted: true,
         serviceE164: contactA.device.number,
         identityKey: contactA.getPublicKey(ServiceIdKind.PNI).serialize(),
-        pni: contactA.device.getServiceIdByKind(ServiceIdKind.PNI),
+        pni: toUntaggedPni(contactA.device.pni),
         givenName: 'ContactA',
       },
       ServiceIdKind.PNI
@@ -61,13 +64,13 @@ describe('pnp/PNI Change', function needsName() {
     app = await bootstrap.link();
   });
 
-  afterEach(async function after() {
+  afterEach(async function (this: Mocha.Context) {
     await bootstrap.maybeSaveLogs(this.currentTest, app);
     await app.close();
     await bootstrap.teardown();
   });
 
-  it('shows no identity change if identity key is the same', async () => {
+  it('shows phone number change if identity key is the same, learned via storage service', async () => {
     const { desktop, phone } = bootstrap;
 
     const window = await app.getWindow();
@@ -131,8 +134,7 @@ describe('pnp/PNI Change', function needsName() {
         state
           .removeRecord(
             item =>
-              item.record.contact?.pni ===
-              contactA.device.getServiceIdByKind(ServiceIdKind.PNI)
+              item.record.contact?.pni === toUntaggedPni(contactA.device.pni)
           )
           .addContact(
             contactA,
@@ -140,8 +142,7 @@ describe('pnp/PNI Change', function needsName() {
               identityState: Proto.ContactRecord.IdentityState.DEFAULT,
               whitelisted: true,
               serviceE164: contactA.device.number,
-              aci: updatedPni,
-              pni: updatedPni,
+              pni: toUntaggedPni(updatedPni),
               identityKey: contactA.getPublicKey(ServiceIdKind.PNI).serialize(),
             },
             ServiceIdKind.PNI
@@ -163,13 +164,16 @@ describe('pnp/PNI Change', function needsName() {
       const messages = window.locator('.module-message__text');
       assert.strictEqual(await messages.count(), 1, 'message count');
 
-      // No notifications - PNI changed, but identity key is the same
+      // Only a PhoneNumberDiscovery notification
       const notifications = window.locator('.SystemMessage');
-      assert.strictEqual(await notifications.count(), 0, 'notification count');
+      assert.strictEqual(await notifications.count(), 1, 'notification count');
+
+      const first = await notifications.first();
+      assert.match(await first.innerText(), /.* belongs to ContactA/);
     }
   });
 
-  it('shows identity change if identity key has changed', async () => {
+  it('shows identity and phone number change if identity key has changed', async () => {
     const { desktop, phone } = bootstrap;
 
     const window = await app.getWindow();
@@ -231,8 +235,7 @@ describe('pnp/PNI Change', function needsName() {
         state
           .removeRecord(
             item =>
-              item.record.contact?.pni ===
-              contactA.device.getServiceIdByKind(ServiceIdKind.PNI)
+              item.record.contact?.pni === toUntaggedPni(contactA.device.pni)
           )
           .addContact(
             contactB,
@@ -240,7 +243,7 @@ describe('pnp/PNI Change', function needsName() {
               identityState: Proto.ContactRecord.IdentityState.DEFAULT,
               whitelisted: true,
               serviceE164: contactA.device.number,
-              pni: contactB.device.getServiceIdByKind(ServiceIdKind.PNI),
+              pni: toUntaggedPni(contactB.device.pni),
 
               // Key change - different identity key
               identityKey: contactB.publicKey.serialize(),
@@ -264,16 +267,19 @@ describe('pnp/PNI Change', function needsName() {
       const messages = window.locator('.module-message__text');
       assert.strictEqual(await messages.count(), 1, 'message count');
 
-      // One notification - the safety number change
+      // Two notifications - the safety number change and PhoneNumberDiscovery
       const notifications = window.locator('.SystemMessage');
-      assert.strictEqual(await notifications.count(), 1, 'notification count');
+      assert.strictEqual(await notifications.count(), 2, 'notification count');
 
       const first = await notifications.first();
-      assert.match(await first.innerText(), /Safety Number has changed/);
+      assert.match(await first.innerText(), /.* belongs to ContactA/);
+
+      const second = await notifications.nth(1);
+      assert.match(await second.innerText(), /Safety Number has changed/);
     }
   });
 
-  it('shows identity change when sending to contact', async () => {
+  it('shows identity and phone number change on send to contact when e165 has changed owners', async () => {
     const { desktop, phone } = bootstrap;
 
     const window = await app.getWindow();
@@ -335,8 +341,7 @@ describe('pnp/PNI Change', function needsName() {
         state
           .removeRecord(
             item =>
-              item.record.contact?.pni ===
-              contactA.device.getServiceIdByKind(ServiceIdKind.PNI)
+              item.record.contact?.pni === toUntaggedPni(contactA.device.pni)
           )
           .addContact(
             contactB,
@@ -344,7 +349,7 @@ describe('pnp/PNI Change', function needsName() {
               identityState: Proto.ContactRecord.IdentityState.DEFAULT,
               whitelisted: true,
               serviceE164: contactA.device.number,
-              pni: contactB.device.getServiceIdByKind(ServiceIdKind.PNI),
+              pni: toUntaggedPni(contactB.device.pni),
 
               // Note: No identityKey key provided here!
             },
@@ -398,16 +403,19 @@ describe('pnp/PNI Change', function needsName() {
       const messages = window.locator('.module-message__text');
       assert.strictEqual(await messages.count(), 2, 'message count');
 
-      // One notification - the safety number change
+      // Two notifications - the safety number change and PhoneNumberDiscovery
       const notifications = window.locator('.SystemMessage');
-      assert.strictEqual(await notifications.count(), 1, 'notification count');
+      assert.strictEqual(await notifications.count(), 2, 'notification count');
 
       const first = await notifications.first();
-      assert.match(await first.innerText(), /Safety Number has changed/);
+      assert.match(await first.innerText(), /.* belongs to ContactA/);
+
+      const second = await notifications.nth(1);
+      assert.match(await second.innerText(), /Safety Number has changed/);
     }
   });
 
-  it('Sends with no warning when key is the same', async () => {
+  it('Get phone number change warning when e164 leaves contact then goes back to same contact', async () => {
     const { desktop, phone } = bootstrap;
 
     const window = await app.getWindow();
@@ -469,8 +477,7 @@ describe('pnp/PNI Change', function needsName() {
         state
           .removeRecord(
             item =>
-              item.record.contact?.pni ===
-              contactA.device.getServiceIdByKind(ServiceIdKind.PNI)
+              item.record.contact?.pni === toUntaggedPni(contactA.device.pni)
           )
           .addContact(
             contactB,
@@ -478,7 +485,7 @@ describe('pnp/PNI Change', function needsName() {
               identityState: Proto.ContactRecord.IdentityState.DEFAULT,
               whitelisted: true,
               serviceE164: contactA.device.number,
-              pni: contactB.device.getServiceIdByKind(ServiceIdKind.PNI),
+              pni: toUntaggedPni(contactB.device.pni),
 
               // Note: No identityKey key provided here!
             },
@@ -502,8 +509,7 @@ describe('pnp/PNI Change', function needsName() {
         state
           .removeRecord(
             item =>
-              item.record.contact?.pni ===
-              contactB.device.getServiceIdByKind(ServiceIdKind.PNI)
+              item.record.contact?.pni === toUntaggedPni(contactB.device.pni)
           )
           .addContact(
             contactB,
@@ -511,7 +517,7 @@ describe('pnp/PNI Change', function needsName() {
               identityState: Proto.ContactRecord.IdentityState.DEFAULT,
               whitelisted: true,
               serviceE164: contactA.device.number,
-              pni: contactA.device.getServiceIdByKind(ServiceIdKind.PNI),
+              pni: toUntaggedPni(contactA.device.pni),
             },
             ServiceIdKind.PNI
           )
@@ -556,9 +562,12 @@ describe('pnp/PNI Change', function needsName() {
       const messages = window.locator('.module-message__text');
       assert.strictEqual(await messages.count(), 2, 'message count');
 
-      // No notifications - the key is the same
+      // Only a PhoneNumberDiscovery notification
       const notifications = window.locator('.SystemMessage');
-      assert.strictEqual(await notifications.count(), 0, 'notification count');
+      assert.strictEqual(await notifications.count(), 1, 'notification count');
+
+      const first = await notifications.first();
+      assert.match(await first.innerText(), /.* belongs to ContactA/);
     }
   });
 });

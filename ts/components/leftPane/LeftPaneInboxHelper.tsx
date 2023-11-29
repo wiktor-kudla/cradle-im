@@ -124,7 +124,7 @@ export class LeftPaneInboxHelper extends LeftPaneHelper<LeftPaneInboxPropsType> 
               components={{
                 composeIcon: (
                   <span>
-                    <strong className='text-white'>{i18n('icu:composeIcon')}</strong>
+                    <strong>{i18n('icu:composeIcon')}</strong>
                     <span className="module-left-pane__empty--composer_icon">
                       <i className="module-left-pane__empty--composer_icon--icon" />
                     </span>

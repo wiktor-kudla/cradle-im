@@ -12,7 +12,6 @@ import type {
   ConversationRenderInfoType,
 } from './model-types.d';
 import type { ConversationModel } from './models/conversations';
-import type { MessageModel } from './models/messages';
 
 import dataInterface from './sql/Client';
 import * as log from './logging/log';
@@ -25,10 +24,10 @@ import { isGroupV1, isGroupV2 } from './util/whatTypeOfConversation';
 import type { ServiceIdString, AciString, PniString } from './types/ServiceId';
 import {
   isServiceIdString,
-  normalizeAci,
   normalizePni,
   normalizeServiceId,
 } from './types/ServiceId';
+import { normalizeAci } from './util/normalizeAci';
 import { sleep } from './util/sleep';
 import { isNotNil } from './util/isNotNil';
 import { MINUTE, SECOND } from './util/durations';
@@ -472,7 +471,7 @@ export class ConversationController {
     e164,
     pni: providedPni,
     reason,
-    fromPniSignature,
+    fromPniSignature = false,
     mergeOldAndNew = safeCombineConversations,
   }: {
     aci?: AciString;
@@ -527,6 +526,12 @@ export class ConversationController {
     let unusedMatches: Array<ConvoMatchType> = [];
 
     let targetConversation: ConversationModel | undefined;
+    let targetOldServiceIds:
+      | {
+          aci?: AciString;
+          pni?: PniString;
+        }
+      | undefined;
     let matchCount = 0;
     matches.forEach(item => {
       const { key, value, match } = item;
@@ -597,6 +602,11 @@ export class ConversationController {
               `so created new target conversation - ${targetConversation.idForLogging()}`
           );
         }
+
+        targetOldServiceIds = {
+          aci: targetConversation.getAci(),
+          pni: targetConversation.getPni(),
+        };
 
         log.info(
           `${logId}: Applying new value for ${unused.key} to target conversation`
@@ -687,8 +697,31 @@ export class ConversationController {
         //   `${logId}: Match on ${key} is target conversation - ${match.idForLogging()}`
         // );
         targetConversation = match;
+        targetOldServiceIds = {
+          aci: targetConversation.getAci(),
+          pni: targetConversation.getPni(),
+        };
       }
     });
+
+    // If the change is not coming from PNI Signature, and target conversation
+    // had PNI and has acquired new ACI and/or PNI we should check if it had
+    // a PNI session on the original PNI. If yes - add a PhoneNumberDiscovery notification
+    if (
+      e164 &&
+      pni &&
+      targetConversation &&
+      targetOldServiceIds?.pni &&
+      !fromPniSignature &&
+      (targetOldServiceIds.pni !== pni ||
+        (aci && targetOldServiceIds.aci !== aci))
+    ) {
+      mergePromises.push(
+        targetConversation.addPhoneNumberDiscoveryIfNeeded(
+          targetOldServiceIds.pni
+        )
+      );
+    }
 
     if (targetConversation) {
       return { conversation: targetConversation, mergePromises };
@@ -1127,13 +1160,11 @@ export class ConversationController {
       });
     }
 
-    log.warn(`${logId}: Update cached messages in MessageController`);
-    window.MessageController.update((message: MessageModel) => {
-      if (message.get('conversationId') === obsoleteId) {
-        message.set({ conversationId: currentId });
-      }
+    log.warn(`${logId}: Update cached messages in MessageCache`);
+    window.MessageCache.replaceAllObsoleteConversationIds({
+      conversationId: currentId,
+      obsoleteId,
     });
-
     log.warn(`${logId}: Update messages table`);
     await migrateConversationMessages(obsoleteId, currentId);
 
@@ -1296,6 +1327,26 @@ export class ConversationController {
 
       window.Signal.Data.updateConversation(convo.attributes);
     }
+  }
+
+  async clearShareMyPhoneNumber(): Promise<void> {
+    const sharedWith = this.getAll().filter(c => c.get('shareMyPhoneNumber'));
+
+    if (sharedWith.length === 0) {
+      return;
+    }
+
+    log.info(
+      'ConversationController.clearShareMyPhoneNumber: ' +
+        `updating ${sharedWith.length} conversations`
+    );
+
+    await window.Signal.Data.updateConversations(
+      sharedWith.map(c => {
+        c.unset('shareMyPhoneNumber');
+        return c.attributes;
+      })
+    );
   }
 
   // For testing

@@ -6,7 +6,6 @@ import { ipcRenderer } from 'electron';
 import type {
   AudioDevice,
   CallId,
-  CallMessageUrgency,
   DeviceId,
   PeekInfo,
   UserId,
@@ -18,6 +17,7 @@ import {
   BusyMessage,
   Call,
   CallingMessage,
+  CallMessageUrgency,
   CallLogLevel,
   CallState,
   CanvasVideoRenderer,
@@ -40,6 +40,7 @@ import {
 import { uniqBy, noop } from 'lodash';
 
 import Long from 'long';
+import * as RemoteConfig from '../RemoteConfig';
 import type {
   ActionsType as CallingReduxActionsType,
   GroupCallParticipantInfoType,
@@ -70,7 +71,8 @@ import {
   findBestMatchingCameraId,
 } from '../calling/findBestMatchingDevice';
 import type { LocalizerType } from '../types/Util';
-import { normalizeAci, isAciString } from '../types/ServiceId';
+import { normalizeAci } from '../util/normalizeAci';
+import { isAciString } from '../util/isAciString';
 import * as Errors from '../types/errors';
 import type { ConversationModel } from '../models/conversations';
 import * as Bytes from '../Bytes';
@@ -95,6 +97,7 @@ import {
 import { callingMessageToProto } from '../util/callingMessageToProto';
 import { getSendOptions } from '../util/getSendOptions';
 import { requestMicrophonePermissions } from '../util/requestMicrophonePermissions';
+import OS from '../util/os/osMain';
 import { SignalService as Proto } from '../protobuf';
 import dataInterface from '../sql/Client';
 import {
@@ -125,6 +128,7 @@ import {
 } from '../util/callDisposition';
 import { isNormalNumber } from '../util/isNormalNumber';
 import { LocalCallEvent } from '../types/CallDisposition';
+import { isInSystemContacts } from '../util/isInSystemContacts';
 
 const {
   processGroupCallRingCancellation,
@@ -159,8 +163,10 @@ type CallingReduxInterface = Pick<
   | 'callStateChange'
   | 'cancelIncomingGroupCallRing'
   | 'groupCallAudioLevelsChange'
+  | 'groupCallRaisedHandsChange'
   | 'groupCallStateChange'
   | 'outgoingCall'
+  | 'receiveGroupCallReactions'
   | 'receiveIncomingDirectCall'
   | 'receiveIncomingGroupCall'
   | 'refreshIODevices'
@@ -168,6 +174,7 @@ type CallingReduxInterface = Pick<
   | 'remoteVideoChange'
   | 'setPresenting'
   | 'startCallingLobby'
+  | 'peekNotConnectedGroupCall'
 > & {
   areAnyCallsActiveOrRinging(): boolean;
 };
@@ -379,6 +386,10 @@ export class CallingClass {
     });
 
     void this.cleanExpiredGroupCallRingsAndLoop();
+
+    if (process.platform === 'darwin') {
+      drop(this.enumerateMediaDevices());
+    }
   }
 
   private attemptToGiveOurServiceIdToRingRtc(): void {
@@ -823,6 +834,26 @@ export class CallingClass {
             remoteDeviceStates,
           });
         },
+        onLowBandwidthForVideo: (_groupCall, _recovered) => {
+          // TODO: Implement handling of "low outgoing bandwidth for video" notification.
+        },
+
+        /**
+         * @param reactions A list of reactions received by the client ordered
+         * from oldest to newest.
+         */
+        onReactions: (_groupCall, reactions) => {
+          this.reduxInterface?.receiveGroupCallReactions({
+            conversationId,
+            reactions,
+          });
+        },
+        onRaisedHands: (_groupCall, raisedHands) => {
+          this.reduxInterface?.groupCallRaisedHandsChange({
+            conversationId,
+            raisedHands,
+          });
+        },
         onPeekChanged: groupCall => {
           const localDeviceState = groupCall.getLocalDeviceState();
           const peekInfo = groupCall.getPeekInfo() ?? null;
@@ -1075,6 +1106,7 @@ export class CallingClass {
       joinState,
       hasLocalAudio: !localDeviceState.audioMuted,
       hasLocalVideo: !localDeviceState.videoMuted,
+      localDemuxId: localDeviceState.demuxId,
       peekInfo: peekInfo
         ? this.formatGroupCallPeekInfoForRedux(peekInfo)
         : undefined,
@@ -1125,6 +1157,22 @@ export class CallingClass {
     groupCall.resendMediaKeys();
   }
 
+  public sendGroupCallRaiseHand(conversationId: string, raise: boolean): void {
+    const groupCall = this.getGroupCall(conversationId);
+    if (!groupCall) {
+      throw new Error('Could not find matching call');
+    }
+    groupCall.raiseHand(raise);
+  }
+
+  public sendGroupCallReaction(conversationId: string, value: string): void {
+    const groupCall = this.getGroupCall(conversationId);
+    if (!groupCall) {
+      throw new Error('Could not find matching call');
+    }
+    groupCall.react(value);
+  }
+
   private syncGroupCallToRedux(
     conversationId: string,
     groupCall: GroupCall
@@ -1135,6 +1183,7 @@ export class CallingClass {
     });
   }
 
+  // Used specifically to send updates about in-progress group calls, nothing else
   private async sendGroupCallUpdateMessage(
     conversationId: string,
     eraId: string
@@ -1177,7 +1226,7 @@ export class CallingClass {
             sendOptions,
             sendTarget: conversation.toSenderKeyTarget(),
             sendType: 'callingMessage',
-            urgent: false,
+            urgent: true,
           })
         ),
       sendType: 'callingMessage',
@@ -1329,8 +1378,20 @@ export class CallingClass {
   }
 
   async getPresentingSources(): Promise<Array<PresentableSource>> {
+    // There's a Linux Wayland Electron bug where requesting desktopCapturer.
+    // getSources() with types as ['screen', 'window'] (the default) pops 2
+    // OS permissions dialogs in an unusable state (Dialog 1 for Share Window
+    // is the foreground and ignores input; Dialog 2 for Share Screen is background
+    // and requires input. As a workaround, request both sources sequentially.
+    // https://github.com/signalapp/Signal-Desktop/issues/5350#issuecomment-1688614149
     const sources: ReadonlyArray<DesktopCapturerSource> =
-      await ipcRenderer.invoke('getScreenCaptureSources');
+      OS.isLinux() && OS.isWaylandEnabled()
+        ? (
+            await ipcRenderer.invoke('getScreenCaptureSources', ['screen'])
+          ).concat(
+            await ipcRenderer.invoke('getScreenCaptureSources', ['window'])
+          )
+        : await ipcRenderer.invoke('getScreenCaptureSources');
 
     const presentableSources: Array<PresentableSource> = [];
 
@@ -1369,13 +1430,20 @@ export class CallingClass {
     this.videoCapturer.disable();
     if (source) {
       this.hadLocalVideoBeforePresenting = hasLocalVideo;
-      this.videoCapturer.enableCaptureAndSend(call, {
+      const options = {
         // 15fps is much nicer but takes up a lot more CPU.
         maxFramerate: 5,
         maxHeight: 1080,
         maxWidth: 1920,
         screenShareSourceId: source.id,
-      });
+      };
+
+      if (RemoteConfig.isEnabled('desktop.calling.sendScreenShare1800')) {
+        options.maxWidth = 2880;
+        options.maxHeight = 1800;
+      }
+
+      this.videoCapturer.enableCaptureAndSend(call, options);
       this.setOutgoingVideo(conversationId, true);
     } else {
       this.setOutgoingVideo(
@@ -1677,7 +1745,7 @@ export class CallingClass {
       );
 
       const message = new CallingMessage();
-      message.legacyHangup = hangup;
+      message.hangup = hangup;
 
       await this.handleOutgoingSignaling(remoteUserId, message);
 
@@ -1799,6 +1867,7 @@ export class CallingClass {
     return this.handleOutgoingSignaling(userId, message, urgency);
   }
 
+  // Used to send a variety of group call messages, including the initial call message
   private async handleSendCallMessageToGroup(
     groupIdBytes: Buffer,
     data: Buffer,
@@ -1822,6 +1891,10 @@ export class CallingClass {
       urgency
     );
 
+    // If this message isn't droppable, we'll wake up recipient devices. The important one
+    //   is the first message to start the call.
+    const urgent = urgency === CallMessageUrgency.HandleImmediately;
+
     // We "fire and forget" because sending this message is non-essential.
     // We also don't sync this message.
     const { ContentHint } = Proto.UnidentifiedSenderMessage.Message;
@@ -1837,7 +1910,7 @@ export class CallingClass {
           sendTarget: conversation.toSenderKeyTarget(),
           sendType: 'callingMessage',
           timestamp,
-          urgent: false,
+          urgent,
         }),
         { messageIds: [], sendType: 'callingMessage' }
       )
@@ -1865,6 +1938,12 @@ export class CallingClass {
     if (!conversation) {
       log.error('handleGroupCallRingUpdate(): could not find conversation');
       return;
+    }
+
+    if (update === RingUpdate.Requested) {
+      this.reduxInterface?.peekNotConnectedGroupCall({
+        conversationId: conversation.id,
+      });
     }
 
     const logId = `handleGroupCallRingUpdate(${conversation.idForLogging()})`;
@@ -1943,6 +2022,7 @@ export class CallingClass {
     }
   }
 
+  // Used for all 1:1 call messages, including the initial message to start the call
   private async handleOutgoingSignaling(
     remoteUserId: UserId,
     message: CallingMessage,
@@ -1958,12 +2038,18 @@ export class CallingClass {
       return false;
     }
 
+    // We want 1:1 call initiate messages to wake up recipient devices, but not others
+    const urgent =
+      urgency === CallMessageUrgency.HandleImmediately ||
+      Boolean(message.offer);
+
     try {
       assertDev(isAciString(remoteUserId), 'remoteUserId is not a aci');
       const result = await handleMessageSend(
         window.textsecure.messaging.sendCallingMessage(
           remoteUserId,
           callingMessageToProto(message, urgency),
+          urgent,
           sendOptions
         ),
         { messageIds: [], sendType: 'callingMessage' }
@@ -2087,8 +2173,14 @@ export class CallingClass {
       return;
     }
 
+    let acceptedTime: number | null = null;
+
     // eslint-disable-next-line no-param-reassign
     call.handleStateChanged = async () => {
+      if (call.state === CallState.Accepted) {
+        acceptedTime = acceptedTime ?? Date.now();
+      }
+
       if (call.state === CallState.Ended) {
         this.stopDeviceReselectionTimer();
         this.lastMediaDeviceSettings = undefined;
@@ -2107,6 +2199,7 @@ export class CallingClass {
         conversationId: conversation.id,
         callState: call.state,
         callEndedReason: call.endedReason,
+        acceptedTime,
       });
     };
 
@@ -2124,6 +2217,11 @@ export class CallingClass {
         conversationId: conversation.id,
         isSharingScreen: Boolean(call.remoteSharingScreen),
       });
+    };
+
+    // eslint-disable-next-line no-param-reassign
+    call.handleLowBandwidthForVideo = _recovered => {
+      // TODO: Implement handling of "low outgoing bandwidth for video" notification.
     };
   }
 
@@ -2239,15 +2337,15 @@ export class CallingClass {
       return false;
     }
 
-    // If the peer is 'unknown', i.e. not in the contact list, force IP hiding.
-    const isContactUnknown = !conversation.isFromOrAddedByTrustedContact();
+    // If the peer is not in the user's system contacts, force IP hiding.
+    const isContactUntrusted = !isInSystemContacts(conversation.attributes);
 
     const callSettings = {
       iceServer: {
         ...iceServer,
         urls: iceServer.urls.slice(),
       },
-      hideIp: shouldRelayCalls || isContactUnknown,
+      hideIp: shouldRelayCalls || isContactUntrusted,
       dataMode: DataMode.Normal,
       // TODO: DESKTOP-3101
       // audioLevelsIntervalMillis: AUDIO_LEVEL_INTERVAL_MS,
@@ -2261,7 +2359,7 @@ export class CallingClass {
 
   public async updateCallHistoryForGroupCall(
     conversationId: string,
-    joinState: GroupCallJoinState,
+    joinState: GroupCallJoinState | null,
     peekInfo: PeekInfo | null
   ): Promise<void> {
     const groupCallMeta = getGroupCallMeta(peekInfo);
@@ -2376,6 +2474,23 @@ export class CallingClass {
     setTimeout(() => {
       void this.cleanExpiredGroupCallRingsAndLoop();
     }, CLEAN_EXPIRED_GROUP_CALL_RINGS_INTERVAL);
+  }
+
+  // MacOS: Preload devices to work around delay when first entering call lobby
+  // https://bugs.chromium.org/p/chromium/issues/detail?id=1287628
+  private async enumerateMediaDevices(): Promise<void> {
+    try {
+      const microphoneStatus = await window.IPC.getMediaAccessStatus(
+        'microphone'
+      );
+      if (microphoneStatus !== 'granted') {
+        return;
+      }
+
+      drop(window.navigator.mediaDevices.enumerateDevices());
+    } catch (error) {
+      log.error('enumerateMediaDevices failed:', Errors.toLogFormat(error));
+    }
   }
 }
 

@@ -19,6 +19,7 @@ const EPHEMERAL_NAME_MAP = new Map([
   ['spellCheck', 'spell-check'],
   ['systemTraySetting', 'system-tray-setting'],
   ['themeSetting', 'theme-setting'],
+  ['localeOverride', 'localeOverride'],
 ]);
 
 type ResponseQueueEntry = Readonly<{
@@ -62,8 +63,6 @@ export class SettingsChannel extends EventEmitter {
     this.installCallback('isPrimary');
     this.installCallback('syncRequest');
     this.installCallback('isPhoneNumberSharingEnabled');
-    this.installCallback('isFormattingFlagEnabled');
-    this.installCallback('shouldShowStoriesSettings');
 
     // Getters only. These are set by the primary device
     this.installSetting('blockedCount', { setter: false });
@@ -79,6 +78,9 @@ export class SettingsChannel extends EventEmitter {
       isEphemeral: true,
     });
 
+    this.installSetting('localeOverride', {
+      isEphemeral: true,
+    });
     this.installSetting('notificationSetting');
     this.installSetting('notificationDrawAttention');
     this.installSetting('audioMessage');

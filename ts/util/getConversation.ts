@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import memoizee from 'memoizee';
-import { head, sortBy } from 'lodash';
+import { sortBy } from 'lodash';
 import type { ConversationModel } from '../models/conversations';
 import type { ConversationType } from '../state/ducks/conversations';
 import type { ConversationAttributesType } from '../model-types';
@@ -77,8 +77,13 @@ function sortConversationTitles(
 //   `ATTRIBUTES_THAT_DONT_INVALIDATE_PROPS_CACHE`, remove it from that list.
 export function getConversation(model: ConversationModel): ConversationType {
   const { attributes } = model;
-  const typingValues = Object.values(model.contactTypingTimers || {});
-  const typingMostRecent = head(sortBy(typingValues, 'timestamp'));
+  const typingValues = sortBy(
+    Object.values(model.contactTypingTimers || {}),
+    'timestamp'
+  );
+  const typingContactIdTimestamps = Object.fromEntries(
+    typingValues.map(({ senderId, timestamp }) => [senderId, timestamp])
+  );
 
   const ourAci = window.textsecure.storage.user.getAci();
   const ourPni = window.textsecure.storage.user.getPni();
@@ -92,9 +97,6 @@ export function getConversation(model: ConversationModel): ConversationType {
     hasDraft(attributes) && draftTimestamp && draftTimestamp >= (timestamp || 0)
   );
   const inboxPosition = attributes.inbox_position;
-  const messageRequestsEnabled = window.Signal.RemoteConfig.isEnabled(
-    'desktop.messageRequests'
-  );
   const ourConversationId =
     window.ConversationController.getOurConversationId();
 
@@ -172,9 +174,6 @@ export function getConversation(model: ConversationModel): ConversationType {
     groupId: attributes.groupId,
     groupLink: buildGroupLink(attributes),
     hideStory: Boolean(attributes.hideStory),
-    hiddenFromConversationSearch: Boolean(
-      attributes.hiddenFromConversationSearch
-    ),
     inboxPosition,
     isArchived: attributes.isArchived,
     isBlocked: isBlocked(attributes),
@@ -196,7 +195,6 @@ export function getConversation(model: ConversationModel): ConversationType {
     pendingApprovalMemberships: getPendingApprovalMemberships(attributes),
     bannedMemberships: getBannedMemberships(attributes),
     profileKey: attributes.profileKey,
-    messageRequestsEnabled,
     accessControlAddFromInviteLink: attributes.accessControl?.addFromInviteLink,
     accessControlAttributes: attributes.accessControl?.attributes,
     accessControlMembers: attributes.accessControl?.members,
@@ -219,7 +217,7 @@ export function getConversation(model: ConversationModel): ConversationType {
     timestamp: dropNull(timestamp),
     title: getTitle(attributes),
     titleNoDefault: getTitleNoDefault(attributes),
-    typingContactId: typingMostRecent?.senderId,
+    typingContactIdTimestamps,
     searchableTitle: isMe(attributes)
       ? window.i18n('icu:noteToSelf')
       : getTitle(attributes),

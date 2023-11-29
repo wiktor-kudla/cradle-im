@@ -10,9 +10,10 @@ import classNames from 'classnames';
 import { noop } from 'lodash';
 
 import type { ModalConfigType } from '../hooks/useAnimated';
-import { Theme } from '../util/theme';
+import type { Theme } from '../util/theme';
 import { assertDev } from '../util/assert';
 import { getClassNamesFor } from '../util/getClassNamesFor';
+import { themeClassName } from '../util/theme';
 import { useEscapeHandling } from '../hooks/useEscapeHandling';
 import { usePrevious } from '../hooks/usePrevious';
 import { handleOutsideClick } from '../util/handleOutsideClick';
@@ -44,6 +45,7 @@ export const ModalHost = React.memo(function ModalHostInner({
   onEscape,
   onTopOfEverything,
   overlayStyles,
+  theme,
   useFocusTrap = true,
 }: PropsType) {
   const [root, setRoot] = React.useState<HTMLElement | null>(null);
@@ -94,8 +96,7 @@ export const ModalHost = React.memo(function ModalHostInner({
   }, [noMouseClose, onClose, containerRef, modalName, modalContainer]);
 
   const className = classNames([
-    // theme ? themeClassName(theme) : undefined,
-    (window.initialTheme === "light") ? 'light-theme' : 'dark-theme',
+    theme ? themeClassName(theme) : undefined,
     onTopOfEverything ? 'module-modal-host--on-top-of-everything' : undefined,
   ]);
   const getClassName = getClassNamesFor('module-modal-host', moduleClassName);

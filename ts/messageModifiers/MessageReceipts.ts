@@ -15,6 +15,7 @@ import * as Errors from '../types/errors';
 import {
   SendActionType,
   SendStatus,
+  UNDELIVERED_SEND_STATUSES,
   sendStateReducer,
 } from '../messages/MessageSendState';
 import type { DeleteSentProtoRecipientOptionsType } from '../sql/Interface';
@@ -24,6 +25,8 @@ import { getSourceServiceId } from '../messages/helpers';
 import { queueUpdateMessage } from '../util/messageBatcher';
 import { getMessageSentTimestamp } from '../util/getMessageSentTimestamp';
 import { getMessageIdForLogging } from '../util/idForLogging';
+import { generateCacheKey } from './generateCacheKey';
+import { getPropForTimestamp } from '../util/editHelpers';
 
 const { deleteSentProtoRecipient } = dataInterface;
 
@@ -37,7 +40,7 @@ export type MessageReceiptAttributesType = {
   envelopeId: string;
   messageSentAt: number;
   receiptTimestamp: number;
-  removeFromMessageReceiverCache: () => unknown;
+  removeFromMessageReceiverCache: () => void;
   sourceConversationId: string;
   sourceDevice: number;
   sourceServiceId: ServiceIdString;
@@ -78,42 +81,85 @@ const deleteSentProtoBatcher = createWaitBatcher({
 });
 
 function remove(receipt: MessageReceiptAttributesType): void {
-  receipts.delete(receipt.envelopeId);
+  receipts.delete(
+    generateCacheKey({
+      sender: receipt.sourceServiceId,
+      timestamp: receipt.messageSentAt,
+      type: receipt.type,
+    })
+  );
   receipt.removeFromMessageReceiverCache();
 }
 
-async function getTargetMessage(
-  sourceId: string,
-  serviceId: ServiceIdString,
-  messages: ReadonlyArray<MessageAttributesType>
-): Promise<MessageModel | null> {
+function getTargetMessage({
+  sourceConversationId,
+  messages,
+  targetTimestamp,
+}: {
+  sourceConversationId: string;
+  messages: ReadonlyArray<MessageAttributesType>;
+  targetTimestamp: number;
+}): MessageModel | null {
   if (messages.length === 0) {
     return null;
   }
-  const message = messages.find(
-    item =>
-      (isOutgoing(item) || isStory(item)) && sourceId === item.conversationId
-  );
-  if (message) {
-    return window.MessageController.register(message.id, message);
-  }
 
-  const groups = await window.Signal.Data.getAllGroupsInvolvingServiceId(
-    serviceId
-  );
+  const matchingMessages = messages
+    .filter(msg => isOutgoing(msg) || isStory(msg))
+    .filter(msg => {
+      const sendStateByConversationId = getPropForTimestamp({
+        message: msg,
+        prop: 'sendStateByConversationId',
+        targetTimestamp,
+        log,
+      });
 
-  const ids = groups.map(item => item.id);
-  ids.push(sourceId);
+      const isRecipient = Object.hasOwn(
+        sendStateByConversationId ?? {},
+        sourceConversationId
+      );
+      if (!isRecipient) {
+        return false;
+      }
 
-  const target = messages.find(
-    item =>
-      (isOutgoing(item) || isStory(item)) && ids.includes(item.conversationId)
-  );
-  if (!target) {
+      const sendStatus =
+        sendStateByConversationId?.[sourceConversationId]?.status;
+
+      if (
+        sendStatus === undefined ||
+        UNDELIVERED_SEND_STATUSES.includes(sendStatus)
+      ) {
+        log.warn(`
+          MessageReceipts.getTargetMessage: received receipt for undelivered message,
+          status: ${sendStatus},
+          sourceConversationId: ${sourceConversationId}, 
+          message: ${getMessageIdForLogging(message)}.
+        `);
+        return false;
+      }
+
+      return true;
+    });
+
+  if (matchingMessages.length === 0) {
     return null;
   }
 
-  return window.MessageController.register(target.id, target);
+  if (matchingMessages.length > 1) {
+    log.warn(`
+      MessageReceipts.getTargetMessage: multiple (${matchingMessages.length}) 
+      matching messages for receipt, 
+      sentAt=${targetTimestamp}, 
+      sourceConversationId=${sourceConversationId}
+    `);
+  }
+
+  const message = matchingMessages[0];
+  return window.MessageCache.__DEPRECATED$register(
+    message.id,
+    message,
+    'MessageReceipts.getTargetMessage'
+  );
 }
 
 const wasDeliveredWithSealedSender = (
@@ -263,7 +309,7 @@ async function updateMessageSendState(
 
   const editMessageTimestamp = message.get('editMessageTimestamp');
   if (
-    messageSentAt === message.get('timestamp') ||
+    (!editMessageTimestamp && messageSentAt === message.get('timestamp')) ||
     messageSentAt === editMessageTimestamp
   ) {
     const oldSendStateByConversationId =
@@ -333,7 +379,14 @@ async function updateMessageSendState(
 export async function onReceipt(
   receipt: MessageReceiptAttributesType
 ): Promise<void> {
-  receipts.set(receipt.envelopeId, receipt);
+  receipts.set(
+    generateCacheKey({
+      sender: receipt.sourceServiceId,
+      timestamp: receipt.messageSentAt,
+      type: receipt.type,
+    }),
+    receipt
+  );
 
   const { messageSentAt, sourceConversationId, sourceServiceId, type } =
     receipt;
@@ -345,11 +398,11 @@ export async function onReceipt(
       messageSentAt
     );
 
-    const message = await getTargetMessage(
+    const message = getTargetMessage({
       sourceConversationId,
-      sourceServiceId,
-      messages
-    );
+      messages,
+      targetTimestamp: receipt.messageSentAt,
+    });
 
     if (message) {
       await updateMessageSendState(receipt, message);
@@ -376,7 +429,11 @@ export async function onReceipt(
 
       await Promise.all(
         targetMessages.map(msg => {
-          const model = window.MessageController.register(msg.id, msg);
+          const model = window.MessageCache.__DEPRECATED$register(
+            msg.id,
+            msg,
+            'MessageReceipts.onReceipt'
+          );
           return updateMessageSendState(receipt, model);
         })
       );

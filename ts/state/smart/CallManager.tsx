@@ -12,12 +12,17 @@ import { getMe, getConversationSelector } from '../selectors/conversations';
 import { getActiveCall } from '../ducks/calling';
 import type { ConversationType } from '../ducks/conversations';
 import { getIncomingCall } from '../selectors/calling';
-import { isGroupCallOutboundRingEnabled } from '../../util/isGroupCallOutboundRingEnabled';
+import { isGroupCallRaiseHandEnabled } from '../../util/isGroupCallRaiseHandEnabled';
+import { isGroupCallReactionsEnabled } from '../../util/isGroupCallReactionsEnabled';
 import type {
+  ActiveCallBaseType,
   ActiveCallType,
+  ActiveDirectCallType,
+  ActiveGroupCallType,
+  ConversationsByDemuxIdType,
   GroupCallRemoteParticipantType,
 } from '../../types/Calling';
-import { isAciString } from '../../types/ServiceId';
+import { isAciString } from '../../util/isAciString';
 import type { AciString } from '../../types/ServiceId';
 import { CallMode, CallState } from '../../types/Calling';
 import type { StateType } from '../reducer';
@@ -40,6 +45,8 @@ import * as log from '../../logging/log';
 import { getPreferredBadgeSelector } from '../selectors/badges';
 import { isConversationTooBigToRing } from '../../conversations/isConversationTooBigToRing';
 import { strictAssert } from '../../util/assert';
+import { renderEmojiPicker } from './renderEmojiPicker';
+import { renderReactionPicker } from './renderReactionPicker';
 
 function renderDeviceSelection(): JSX.Element {
   return <SmartCallingDeviceSelection />;
@@ -138,12 +145,13 @@ const mapStateToActiveCallProp = (
     return convoForAci ? conversationSelector(convoForAci.id) : undefined;
   });
 
-  const baseResult = {
+  const baseResult: ActiveCallBaseType = {
     conversation,
     hasLocalAudio: activeCallState.hasLocalAudio,
     hasLocalVideo: activeCallState.hasLocalVideo,
     localAudioLevel: activeCallState.localAudioLevel,
     viewMode: activeCallState.viewMode,
+    viewModeBeforePresentation: activeCallState.viewModeBeforePresentation,
     joinedAt: activeCallState.joinedAt,
     outgoingRing: activeCallState.outgoingRing,
     pip: activeCallState.pip,
@@ -154,6 +162,7 @@ const mapStateToActiveCallProp = (
       activeCallState.showNeedsScreenRecordingPermissionsWarning
     ),
     showParticipantsList: activeCallState.showParticipantsList,
+    reactions: activeCallState.reactions,
   };
 
   switch (call.callMode) {
@@ -185,12 +194,15 @@ const mapStateToActiveCallProp = (
             serviceId: conversation.serviceId,
           },
         ],
-      };
+      } satisfies ActiveDirectCallType;
     case CallMode.Group: {
       const conversationsWithSafetyNumberChanges: Array<ConversationType> = [];
       const groupMembers: Array<ConversationType> = [];
       const remoteParticipants: Array<GroupCallRemoteParticipantType> = [];
       const peekedParticipants: Array<ConversationType> = [];
+      const conversationsByDemuxId: ConversationsByDemuxIdType = new Map();
+      const { localDemuxId } = call;
+      const raisedHands: Set<number> = new Set(call.raisedHands ?? []);
 
       const { memberships = [] } = conversation;
 
@@ -229,15 +241,32 @@ const mapStateToActiveCallProp = (
 
         remoteParticipants.push({
           ...remoteConversation,
+          aci: remoteParticipant.aci,
           demuxId: remoteParticipant.demuxId,
           hasRemoteAudio: remoteParticipant.hasRemoteAudio,
           hasRemoteVideo: remoteParticipant.hasRemoteVideo,
+          isHandRaised: raisedHands.has(remoteParticipant.demuxId),
           presenting: remoteParticipant.presenting,
           sharingScreen: remoteParticipant.sharingScreen,
           speakerTime: remoteParticipant.speakerTime,
           videoAspectRatio: remoteParticipant.videoAspectRatio,
         });
+        conversationsByDemuxId.set(
+          remoteParticipant.demuxId,
+          remoteConversation
+        );
       }
+
+      if (localDemuxId !== undefined) {
+        conversationsByDemuxId.set(localDemuxId, getMe(state));
+      }
+
+      // Filter raisedHands to ensure valid demuxIds.
+      raisedHands.forEach(demuxId => {
+        if (!conversationsByDemuxId.has(demuxId)) {
+          raisedHands.delete(demuxId);
+        }
+      });
 
       for (
         let i = 0;
@@ -273,15 +302,18 @@ const mapStateToActiveCallProp = (
         callMode: CallMode.Group,
         connectionState: call.connectionState,
         conversationsWithSafetyNumberChanges,
+        conversationsByDemuxId,
         deviceCount: peekInfo.deviceCount,
         groupMembers,
         isConversationTooBigToRing: isConversationTooBigToRing(conversation),
         joinState: call.joinState,
+        localDemuxId,
         maxDevices: peekInfo.maxDevices,
         peekedParticipants,
+        raisedHands,
         remoteParticipants,
         remoteAudioLevels: call.remoteAudioLevels || new Map<number, number>(),
-      };
+      } satisfies ActiveGroupCallType;
     }
     default:
       throw missingCaseError(call);
@@ -342,12 +374,15 @@ const mapStateToProps = (state: StateType) => {
     getGroupCallVideoFrameSource,
     getPreferredBadge: getPreferredBadgeSelector(state),
     i18n: getIntl(state),
-    isGroupCallOutboundRingEnabled: isGroupCallOutboundRingEnabled(),
+    isGroupCallRaiseHandEnabled: isGroupCallRaiseHandEnabled(),
+    isGroupCallReactionsEnabled: isGroupCallReactionsEnabled(),
     incomingCall,
     me: getMe(state),
     notifyForCall,
     playRingtone,
     stopRingtone,
+    renderEmojiPicker,
+    renderReactionPicker,
     renderDeviceSelection,
     renderSafetyNumberViewer,
     theme: getTheme(state),

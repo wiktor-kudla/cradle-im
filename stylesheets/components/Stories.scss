@@ -2,9 +2,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 .Stories {
   background: $color-purple-03;
-  @include dark-theme {
-    background: $color-gray-95;
-  }
   display: flex;
   height: var(--window-height);
   inset-inline-start: 0;
@@ -21,31 +18,31 @@
   }
 
   &__pane {
-
     background: $color-purple-02;
-    // border-inline-end: 1px solid $color-gray-65;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 380px;
-
-    padding-top: calc(14px + var(--title-bar-drag-area-height));
-
+    padding-top: calc(2px + var(--title-bar-drag-area-height));
+    @include light-theme {
+      background: $color-gray-04;
+      border-inline-end: 1px solid $color-black-alpha-16;
+    }
     @include dark-theme {
       background: $color-gray-80;
+      border-inline-end: 1px solid $color-white-alpha-16;
     }
-    
-    &__add-story__button {
-      @include color-svg('../images/icons/v3/plus/plus.svg', $color-white);
-      height: 20px;
-      position: absolute;
-      inset-inline-end: 64px;
-      top: 0px;
-      width: 20px;
 
+    &__add-story__container {
+      padding: 4px;
+      border-radius: 4px;
+      &:hover,
       &:focus {
-        @include keyboard-mode {
-          background-color: $color-ultramarine;
+        @include light-theme {
+          background-color: $color-black-alpha-06;
+        }
+        @include dark-theme {
+          background-color: $color-white-alpha-06;
         }
       }
     }
@@ -53,7 +50,12 @@
     &__add-story__button {
       height: 20px;
       width: 20px;
-      @include color-svg('../images/icons/v3/plus/plus.svg', $color-white);
+      @include light-theme {
+        @include color-svg('../images/icons/v3/plus/plus.svg', $color-white);
+      }
+      @include dark-theme {
+        @include color-svg('../images/icons/v3/plus/plus.svg', $color-gray-15);
+      }
 
       &:focus {
         @include keyboard-mode {
@@ -118,27 +120,34 @@
 
   &__placeholder {
     align-items: center;
-    color: $color-white;
     display: flex;
     flex-direction: column;
     flex: 1;
     justify-content: center;
-    
+    opacity: 0.7;
+    @include light-theme {
+      color: $color-gray-60;
+    }
     @include dark-theme {
-      color: $color-gray-45;  
+      color: $color-gray-25;
     }
 
     &__stories {
       height: 56px;
       margin-bottom: 22px;
       width: 56px;
-
-      @include color-svg(
-        // '../images/icons/v3/stories/stories-display.svg',
-        '../images/icons/v3/stories/stories-display-2.svg',
-        // $color-gray-45
-        $color-white
-      );
+      @include light-theme {
+        @include color-svg(
+          '../images/icons/v3/stories/stories-display.svg',
+          $color-gray-60
+        );
+      }
+      @include dark-theme {
+        @include color-svg(
+          '../images/icons/v3/stories/stories-display.svg',
+          $color-gray-25
+        );
+      }
     }
   }
 
@@ -206,7 +215,7 @@
   width: 20px;
   height: 20px;
   @include light-theme {
-    @include color-svg('../images/icons/v3/more/more.svg', $color-black);
+    @include color-svg('../images/icons/v3/more/more.svg', $color-white);
   }
   @include dark-theme {
     @include color-svg('../images/icons/v3/more/more.svg', $color-gray-15);

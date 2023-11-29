@@ -22,7 +22,7 @@ import {
   GroupCallJoinState,
 } from '../types/Calling';
 import type { AciString } from '../types/ServiceId';
-import { isAciString } from '../types/ServiceId';
+import { isAciString } from './isAciString';
 import { isMe } from './whatTypeOfConversation';
 import * as log from '../logging/log';
 import * as Errors from '../types/errors';
@@ -59,7 +59,7 @@ import {
   callDetailsSchema,
 } from '../types/CallDisposition';
 import type { ConversationType } from '../state/ducks/conversations';
-import { drop } from './drop';
+import type { ConversationModel } from '../models/conversations';
 
 // utils
 // -----
@@ -353,20 +353,20 @@ export function getLocalCallEventFromRingUpdate(
 }
 
 export function getLocalCallEventFromJoinState(
-  joinState: GroupCallJoinState,
+  joinState: GroupCallJoinState | null,
   groupCallMeta: GroupCallMeta
 ): LocalCallEvent | null {
   const direction = getCallDirectionFromRingerId(groupCallMeta.ringerId);
   log.info(
     'getLocalCallEventFromGroupCall',
     direction,
-    GroupCallJoinState[joinState]
+    joinState != null ? GroupCallJoinState[joinState] : null
   );
   if (direction === CallDirection.Incoming) {
     if (joinState === GroupCallJoinState.Joined) {
       return LocalCallEvent.Accepted;
     }
-    if (joinState === GroupCallJoinState.NotJoined) {
+    if (joinState === GroupCallJoinState.NotJoined || joinState == null) {
       return LocalCallEvent.Started;
     }
     if (
@@ -377,7 +377,7 @@ export function getLocalCallEventFromJoinState(
     }
     throw missingCaseError(joinState);
   } else {
-    if (joinState === GroupCallJoinState.NotJoined) {
+    if (joinState === GroupCallJoinState.NotJoined || joinState == null) {
       return LocalCallEvent.Started;
     }
     return LocalCallEvent.Ringing;
@@ -504,7 +504,10 @@ export function transitionCallHistory(
     throw missingCaseError(mode);
   }
 
-  const timestamp = Math.max(callEvent.timestamp, callHistory?.timestamp ?? 0);
+  const timestamp = transitionTimestamp(callHistory, callEvent);
+  log.info(
+    `transitionCallHistory: Transitioned call history timestamp (before: ${callHistory?.timestamp}, after: ${timestamp})`
+  );
 
   return callHistoryDetailsSchema.parse({
     callId,
@@ -516,6 +519,71 @@ export function transitionCallHistory(
     timestamp,
     status,
   });
+}
+
+function transitionTimestamp(
+  callHistory: CallHistoryDetails | null,
+  callEvent: CallEventDetails
+): number {
+  // Sometimes when a device is asleep the timestamp will be stuck in the past.
+  // In some cases, we'll accept whatever the most recent timestamp is.
+  const latestTimestamp = Math.max(
+    callEvent.timestamp,
+    callHistory?.timestamp ?? 0
+  );
+
+  // Always accept the timestamp if we have no other timestamps.
+  if (callHistory == null) {
+    return callEvent.timestamp;
+  }
+
+  // Deleted call history should never be changed
+  if (
+    callHistory.status === DirectCallStatus.Deleted ||
+    callHistory.status === GroupCallStatus.Deleted
+  ) {
+    return callHistory.timestamp;
+  }
+
+  // Accepted call history should only be changed if we get a remote accepted
+  // event with possibly a better timestamp.
+  if (
+    callHistory.status === DirectCallStatus.Accepted ||
+    callHistory.status === GroupCallStatus.Accepted ||
+    callHistory.status === GroupCallStatus.Joined
+  ) {
+    if (callEvent.event === RemoteCallEvent.Accepted) {
+      return latestTimestamp;
+    }
+    return callHistory.timestamp;
+  }
+
+  // Declined call history should only be changed if if we transition to an
+  // accepted state or get a remote 'not accepted' event with possibly a better
+  // timestamp.
+  if (
+    callHistory.status === DirectCallStatus.Declined ||
+    callHistory.status === GroupCallStatus.Declined
+  ) {
+    if (callEvent.event === RemoteCallEvent.NotAccepted) {
+      return latestTimestamp;
+    }
+    return callHistory.timestamp;
+  }
+
+  // We don't care about holding onto timestamps that were from these states
+  if (
+    callHistory.status === DirectCallStatus.Pending ||
+    callHistory.status === GroupCallStatus.GenericGroupCall ||
+    callHistory.status === GroupCallStatus.OutgoingRing ||
+    callHistory.status === GroupCallStatus.Ringing ||
+    callHistory.status === DirectCallStatus.Missed ||
+    callHistory.status === GroupCallStatus.Missed
+  ) {
+    return latestTimestamp;
+  }
+
+  throw missingCaseError(callHistory.status);
 }
 
 function transitionDirectCallStatus(
@@ -714,102 +782,153 @@ async function updateLocalCallHistory(
         return null;
       }
 
-      log.info(
-        'updateLocalCallHistory: Saving call history:',
-        formatCallHistory(callHistory)
+      const updatedCallHistory = await saveCallHistory(
+        callHistory,
+        conversation,
+        receivedAtCounter
       );
-      await window.Signal.Data.saveCallHistory(callHistory);
-      window.reduxActions.callHistory.cacheCallHistory(callHistory);
-
-      const prevMessage =
-        await window.Signal.Data.getCallHistoryMessageByCallId({
-          conversationId: conversation.id,
-          callId: callHistory.callId,
-        });
-
-      if (prevMessage != null) {
-        log.info(
-          'updateLocalCallHistory: Found previous call history message:',
-          prevMessage.id
-        );
-      } else {
-        log.info(
-          'updateLocalCallHistory: No previous call history message',
-          conversation.id
-        );
-      }
-
-      let unread = false;
-      if (callHistory.mode === CallMode.Direct) {
-        unread =
-          callHistory.direction === CallDirection.Incoming &&
-          callHistory.status === DirectCallStatus.Missed;
-      } else if (callHistory.mode === CallMode.Group) {
-        unread =
-          callHistory.direction === CallDirection.Incoming &&
-          (callHistory.status === GroupCallStatus.GenericGroupCall ||
-            callHistory.status === GroupCallStatus.Missed);
-      }
-
-      let readStatus = unread ? ReadStatus.Unread : ReadStatus.Read;
-      let seenStatus = unread ? SeenStatus.Unseen : SeenStatus.NotApplicable;
-
-      if (prevMessage?.readStatus != null) {
-        readStatus = maxReadStatus(readStatus, prevMessage.readStatus);
-      }
-      if (prevMessage?.seenStatus != null) {
-        seenStatus = maxSeenStatus(seenStatus, prevMessage.seenStatus);
-      }
-
-      const message: MessageAttributesType = {
-        id: prevMessage?.id ?? generateGuid(),
-        conversationId: conversation.id,
-        type: 'call-history',
-        sent_at: callHistory.timestamp,
-        timestamp: callHistory.timestamp,
-        received_at: receivedAtCounter ?? incrementMessageCounter(),
-        received_at_ms: callHistory.timestamp,
-        readStatus,
-        seenStatus,
-        callId: callHistory.callId,
-      };
-
-      const id = await window.Signal.Data.saveMessage(message, {
-        ourAci: window.textsecure.storage.user.getCheckedAci(),
-        // We don't want to force save if we're updating an existing message
-        forceSave: prevMessage == null,
-      });
-      log.info('updateLocalCallHistory: Saved call history message:', id);
-
-      const model = window.MessageController.register(
-        id,
-        new window.Whisper.Message({
-          ...message,
-          id,
-        })
-      );
-
-      if (callHistory.direction === CallDirection.Outgoing) {
-        conversation.incrementSentMessageCount();
-      } else {
-        conversation.incrementMessageCount();
-      }
-
-      conversation.trigger('newmessage', model);
-
-      void conversation.updateLastMessage();
-      void conversation.updateUnread();
-      conversation.set('active_at', callHistory.timestamp);
-
-      if (canConversationBeUnarchived(conversation.attributes)) {
-        conversation.setArchived(false);
-      } else {
-        window.Signal.Data.updateConversation(conversation.attributes);
-      }
-
-      return callHistory;
+      return updatedCallHistory;
     }
   );
+}
+
+async function saveCallHistory(
+  callHistory: CallHistoryDetails,
+  conversation: ConversationModel,
+  receivedAtCounter: number | null
+): Promise<CallHistoryDetails> {
+  log.info(
+    'saveCallHistory: Saving call history:',
+    formatCallHistory(callHistory)
+  );
+
+  const isDeleted =
+    callHistory.status === DirectCallStatus.Deleted ||
+    callHistory.status === GroupCallStatus.Deleted;
+
+  await window.Signal.Data.saveCallHistory(callHistory);
+
+  if (isDeleted) {
+    window.reduxActions.callHistory.removeCallHistory(callHistory.callId);
+  } else {
+    window.reduxActions.callHistory.addCallHistory(callHistory);
+  }
+
+  const prevMessage = await window.Signal.Data.getCallHistoryMessageByCallId({
+    conversationId: conversation.id,
+    callId: callHistory.callId,
+  });
+
+  if (prevMessage != null) {
+    log.info(
+      'saveCallHistory: Found previous call history message:',
+      prevMessage.id
+    );
+  } else {
+    log.info(
+      'saveCallHistory: No previous call history message',
+      conversation.id
+    );
+  }
+
+  if (isDeleted) {
+    if (prevMessage != null) {
+      await window.Signal.Data.removeMessage(prevMessage.id);
+    }
+    return callHistory;
+  }
+
+  let unread = false;
+  if (callHistory.mode === CallMode.Direct) {
+    unread =
+      callHistory.direction === CallDirection.Incoming &&
+      (callHistory.status === DirectCallStatus.Missed ||
+        callHistory.status === DirectCallStatus.Pending);
+  } else if (callHistory.mode === CallMode.Group) {
+    unread =
+      callHistory.direction === CallDirection.Incoming &&
+      (callHistory.status === GroupCallStatus.Ringing ||
+        callHistory.status === GroupCallStatus.GenericGroupCall ||
+        callHistory.status === GroupCallStatus.Missed);
+  }
+
+  let readStatus = unread ? ReadStatus.Unread : ReadStatus.Read;
+  let seenStatus = unread ? SeenStatus.Unseen : SeenStatus.NotApplicable;
+
+  if (prevMessage?.readStatus != null) {
+    readStatus = maxReadStatus(readStatus, prevMessage.readStatus);
+  }
+  if (prevMessage?.seenStatus != null) {
+    seenStatus = maxSeenStatus(seenStatus, prevMessage.seenStatus);
+  }
+
+  const message: MessageAttributesType = {
+    id: prevMessage?.id ?? generateGuid(),
+    conversationId: conversation.id,
+    type: 'call-history',
+    timestamp: prevMessage?.timestamp ?? callHistory.timestamp,
+    sent_at: prevMessage?.sent_at ?? callHistory.timestamp,
+    received_at:
+      prevMessage?.received_at ??
+      receivedAtCounter ??
+      incrementMessageCounter(),
+    received_at_ms: prevMessage?.received_at_ms ?? callHistory.timestamp,
+    readStatus,
+    seenStatus,
+    callId: callHistory.callId,
+  };
+
+  const id = await window.Signal.Data.saveMessage(message, {
+    ourAci: window.textsecure.storage.user.getCheckedAci(),
+    // We don't want to force save if we're updating an existing message
+    forceSave: prevMessage == null,
+  });
+  log.info('saveCallHistory: Saved call history message:', id);
+
+  const model = window.MessageCache.__DEPRECATED$register(
+    id,
+    new window.Whisper.Message({
+      ...message,
+      id,
+    }),
+    'callDisposition'
+  );
+
+  if (prevMessage == null) {
+    if (callHistory.direction === CallDirection.Outgoing) {
+      conversation.incrementSentMessageCount();
+    } else {
+      conversation.incrementMessageCount();
+    }
+    conversation.trigger('newmessage', model);
+  }
+
+  await conversation.updateLastMessage().catch(error => {
+    log.error(
+      'saveCallHistory: Failed to update last message:',
+      Errors.toLogFormat(error)
+    );
+  });
+
+  await conversation.updateUnread().catch(error => {
+    log.error(
+      'saveCallHistory: Failed to update unread',
+      Errors.toLogFormat(error)
+    );
+  });
+
+  conversation.set(
+    'active_at',
+    Math.max(conversation.get('active_at') ?? 0, callHistory.timestamp)
+  );
+
+  if (canConversationBeUnarchived(conversation.attributes)) {
+    conversation.setArchived(false);
+  } else {
+    window.Signal.Data.updateConversation(conversation.attributes);
+  }
+
+  return callHistory;
 }
 
 async function updateRemoteCallHistory(
@@ -886,7 +1005,7 @@ export async function clearCallHistoryDataAndSync(): Promise<void> {
     const messageIds = await window.Signal.Data.clearCallHistory(timestamp);
 
     messageIds.forEach(messageId => {
-      const message = window.MessageController.getById(messageId);
+      const message = window.MessageCache.__DEPRECATED$getById(messageId);
       const conversation = message?.getConversation();
       if (message == null || conversation == null) {
         return;
@@ -895,8 +1014,8 @@ export async function clearCallHistoryDataAndSync(): Promise<void> {
         messageId,
         message.get('conversationId')
       );
-      drop(conversation.updateLastMessage());
-      window.MessageController.unregister(messageId);
+      conversation.debouncedUpdateLastMessage();
+      window.MessageCache.__DEPRECATED$unregister(messageId);
     });
 
     const ourAci = window.textsecure.storage.user.getCheckedAci();
@@ -928,4 +1047,48 @@ export async function clearCallHistoryDataAndSync(): Promise<void> {
   } catch (error) {
     log.error('clearCallHistory: Failed to clear call history', error);
   }
+}
+
+export async function updateLocalGroupCallHistoryTimestamp(
+  conversationId: string,
+  callId: string,
+  timestamp: number
+): Promise<CallHistoryDetails | null> {
+  const conversation = window.ConversationController.get(conversationId);
+  if (conversation == null) {
+    return null;
+  }
+  const peerId = getPeerIdFromConversation(conversation.attributes);
+
+  const prevCallHistory =
+    (await window.Signal.Data.getCallHistory(callId, peerId)) ?? null;
+
+  // We don't have all the details to add new call history here
+  if (prevCallHistory != null) {
+    log.info(
+      'updateLocalGroupCallHistoryTimestamp: Found previous call history:',
+      formatCallHistory(prevCallHistory)
+    );
+  } else {
+    log.info('updateLocalGroupCallHistoryTimestamp: No previous call history');
+    return null;
+  }
+
+  if (timestamp >= prevCallHistory.timestamp) {
+    log.info(
+      'updateLocalGroupCallHistoryTimestamp: New timestamp is later than existing call history, ignoring'
+    );
+    return prevCallHistory;
+  }
+
+  const updatedCallHistory = await saveCallHistory(
+    {
+      ...prevCallHistory,
+      timestamp,
+    },
+    conversation,
+    null
+  );
+
+  return updatedCallHistory;
 }

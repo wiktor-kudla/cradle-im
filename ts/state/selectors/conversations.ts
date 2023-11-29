@@ -1049,12 +1049,12 @@ export function isMissingRequiredProfileSharing(
   const doesConversationRequireIt =
     !conversation.isMe &&
     !conversation.left &&
+    !conversation.removalStage &&
     (isGroupV1(conversation) || isDirectConversation(conversation));
 
   return Boolean(
     doesConversationRequireIt &&
       !conversation.profileSharing &&
-      window.Signal.RemoteConfig.isEnabled('desktop.mandatoryProfileSharing') &&
       conversation.hasMessages
   );
 }
@@ -1215,6 +1215,7 @@ export const getConversationTitle = createSelector(
     getConversationTitleForPanelType(i18n, panel?.type)
 );
 
+// Note that this doesn't take into account max edit count. See canEditMessage.
 export const getLastEditableMessageId = createSelector(
   getConversationMessages,
   getMessages,

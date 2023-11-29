@@ -21,7 +21,6 @@ import * as Errors from '../../types/errors';
 import * as SingleServePromise from '../../services/singleServePromise';
 import * as Stickers from '../../types/Stickers';
 import * as log from '../../logging/log';
-import { getMessageById } from '../../messages/getMessageById';
 import { getMessagePropsSelector } from '../selectors/message';
 import type { BoundActionCreatorsMapObject } from '../../hooks/useBoundActions';
 import { longRunningTaskWrapper } from '../../util/longRunningTaskWrapper';
@@ -136,7 +135,7 @@ const CLOSE_GV2_MIGRATION_DIALOG = 'globalModals/CLOSE_GV2_MIGRATION_DIALOG';
 const SHOW_STICKER_PACK_PREVIEW = 'globalModals/SHOW_STICKER_PACK_PREVIEW';
 const CLOSE_STICKER_PACK_PREVIEW = 'globalModals/CLOSE_STICKER_PACK_PREVIEW';
 const CLOSE_ERROR_MODAL = 'globalModals/CLOSE_ERROR_MODAL';
-const SHOW_ERROR_MODAL = 'globalModals/SHOW_ERROR_MODAL';
+export const SHOW_ERROR_MODAL = 'globalModals/SHOW_ERROR_MODAL';
 const SHOW_FORMATTING_WARNING_MODAL =
   'globalModals/SHOW_FORMATTING_WARNING_MODAL';
 const SHOW_SEND_EDIT_WARNING_MODAL =
@@ -287,7 +286,7 @@ type CloseErrorModalActionType = ReadonlyDeep<{
   type: typeof CLOSE_ERROR_MODAL;
 }>;
 
-type ShowErrorModalActionType = ReadonlyDeep<{
+export type ShowErrorModalActionType = ReadonlyDeep<{
   type: typeof SHOW_ERROR_MODAL;
   payload: {
     description?: string;
@@ -559,15 +558,12 @@ function toggleForwardMessagesModal(
 
     const messagesProps = await Promise.all(
       messageIds.map(async messageId => {
-        const message = await getMessageById(messageId);
+        const messageAttributes = await window.MessageCache.resolveAttributes(
+          'toggleForwardMessagesModal',
+          messageId
+        );
 
-        if (!message) {
-          throw new Error(
-            `toggleForwardMessagesModal: no message found for ${messageId}`
-          );
-        }
-
-        const attachments = message.get('attachments') ?? [];
+        const { attachments = [] } = messageAttributes;
 
         if (!attachments.every(isDownloaded)) {
           dispatch(
@@ -576,7 +572,7 @@ function toggleForwardMessagesModal(
         }
 
         const messagePropsSelector = getMessagePropsSelector(getState());
-        const messageProps = messagePropsSelector(message.attributes);
+        const messageProps = messagePropsSelector(messageAttributes);
 
         return messageProps;
       })
@@ -765,14 +761,10 @@ function showEditHistoryModal(
   messageId: string
 ): ThunkAction<void, RootStateType, unknown, ShowEditHistoryModalActionType> {
   return async dispatch => {
-    const message = await getMessageById(messageId);
-
-    if (!message) {
-      log.warn('showEditHistoryModal: no message found');
-      return;
-    }
-
-    const messageAttributes = message.attributes;
+    const messageAttributes = await window.MessageCache.resolveAttributes(
+      'showEditHistoryModal',
+      messageId
+    );
     const nextEditHistoryMessages =
       copyOverMessageAttributesIntoEditHistory(messageAttributes);
 

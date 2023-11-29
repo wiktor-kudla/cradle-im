@@ -9,6 +9,10 @@ import { mapDispatchToProps } from '../actions';
 import type { Props as ComponentPropsType } from '../../components/CompositionArea';
 import { CompositionArea } from '../../components/CompositionArea';
 import type { StateType } from '../reducer';
+import type {
+  DraftBodyRanges,
+  HydratedBodyRangesType,
+} from '../../types/BodyRange';
 import { isConversationSMSOnly } from '../../util/isConversationSMSOnly';
 import { dropNull } from '../../util/dropNull';
 import { imageToBlurHash } from '../../util/imageToBlurHash';
@@ -21,7 +25,11 @@ import {
   getTheme,
   getUserConversationId,
 } from '../selectors/user';
-import { getEmojiSkinTone, getTextFormattingEnabled } from '../selectors/items';
+import {
+  getDefaultConversationColor,
+  getEmojiSkinTone,
+  getTextFormattingEnabled,
+} from '../selectors/items';
 import {
   getConversationSelector,
   getGroupAdminsSelector,
@@ -40,16 +48,12 @@ import {
   getRecentStickers,
 } from '../selectors/stickers';
 import { isSignalConversation } from '../../util/isSignalConversation';
-import {
-  getComposerStateForConversationIdSelector,
-  getIsFormattingFlagEnabled,
-  getIsFormattingSpoilersFlagEnabled,
-} from '../selectors/composer';
+import { getComposerStateForConversationIdSelector } from '../selectors/composer';
 import type { SmartCompositionRecordingProps } from './CompositionRecording';
 import { SmartCompositionRecording } from './CompositionRecording';
 import type { SmartCompositionRecordingDraftProps } from './CompositionRecordingDraft';
 import { SmartCompositionRecordingDraft } from './CompositionRecordingDraft';
-import { BodyRange } from '../../types/BodyRange';
+import { hydrateRanges } from '../../types/BodyRange';
 
 type ExternalProps = {
   id: string;
@@ -123,11 +127,14 @@ const mapStateToProps = (state: StateType, props: ExternalProps) => {
   const selectedMessageIds = getSelectedMessageIds(state);
 
   const isFormattingEnabled = getTextFormattingEnabled(state);
-  const isFormattingFlagEnabled = getIsFormattingFlagEnabled(state);
-  const isFormattingSpoilersFlagEnabled =
-    getIsFormattingSpoilersFlagEnabled(state);
 
   const lastEditableMessageId = getLastEditableMessageId(state);
+
+  const convertDraftBodyRangesIntoHydrated = (
+    bodyRanges: DraftBodyRanges | undefined
+  ): HydratedBodyRangesType | undefined => {
+    return hydrateRanges(bodyRanges, conversationSelector);
+  };
 
   return {
     // Base
@@ -138,14 +145,13 @@ const mapStateToProps = (state: StateType, props: ExternalProps) => {
     i18n: getIntl(state),
     isDisabled,
     isFormattingEnabled,
-    isFormattingFlagEnabled,
-    isFormattingSpoilersFlagEnabled,
     lastEditableMessageId,
     messageCompositionId,
     platform,
     sendCounter,
     shouldHidePopovers,
     theme: getTheme(state),
+    convertDraftBodyRangesIntoHydrated,
 
     // AudioCapture
     errorDialogAudioRecorderType:
@@ -169,6 +175,7 @@ const mapStateToProps = (state: StateType, props: ExternalProps) => {
       ? getPropsForQuote(quotedMessage, {
           conversationSelector,
           ourConversationId: getUserConversationId(state),
+          defaultConversationColor: getDefaultConversationColor(state),
         })
       : undefined,
     quotedMessageAuthorAci: quotedMessage?.quote?.authorAci,
@@ -199,19 +206,7 @@ const mapStateToProps = (state: StateType, props: ExternalProps) => {
     groupAdmins: getGroupAdminsSelector(state)(conversation.id),
 
     draftText: dropNull(draftText),
-    draftBodyRanges: draftBodyRanges?.map(bodyRange => {
-      if (BodyRange.isMention(bodyRange)) {
-        const mentionConvo = conversationSelector(bodyRange.mentionAci);
-
-        return {
-          ...bodyRange,
-          conversationID: mentionConvo.id,
-          replacementText: mentionConvo.title,
-        };
-      }
-
-      return bodyRange;
-    }),
+    draftBodyRanges: hydrateRanges(draftBodyRanges, conversationSelector),
     renderSmartCompositionRecording: (
       recProps: SmartCompositionRecordingProps
     ) => {

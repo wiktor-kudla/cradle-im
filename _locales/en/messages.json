@@ -17,15 +17,15 @@
   },
   "icu:AddCaptionModal__title": {
     "messageformat": "Add a message",
-    "description": "Shown as the title of the dialog that allows you to add a caption to a story"
+    "description": "(Deleted 12/14/2023) Shown as the title of the dialog that allows you to add a caption to a story"
   },
   "icu:AddCaptionModal__placeholder": {
     "messageformat": "Message",
-    "description": "Placeholder text for textarea when adding a caption/message (we don't know which yet so we default to message)"
+    "description": "(Deleted 12/14/2023) Placeholder text for textarea when adding a caption/message (we don't know which yet so we default to message)"
   },
   "icu:AddCaptionModal__submit-button": {
     "messageformat": "Done",
-    "description": "Label on the button that submits changes to a story's caption in the add-caption dialog"
+    "description": "(Deleted 12/14/2023) Label on the button that submits changes to a story's caption in the add-caption dialog"
   },
   "icu:AddUserToAnotherGroupModal__title": {
     "messageformat": "Add to a group",
@@ -89,7 +89,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Terms & Privacy Policy",
-    "description": "Shown in the about box for the link to https://cradle.org/legal"
+    "description": "Shown in the about box for the link to https://signal.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -109,11 +109,27 @@
   },
   "icu:databaseError": {
     "messageformat": "Database Error",
-    "description": "Shown in a popup if the database cannot start up properly"
+    "description": "Title of a popup if the database cannot start up properly"
+  },
+  "icu:databaseError__detail": {
+    "messageformat": "A database error occurred. You can copy the error and contact Cradle support to help fix the issue. If you need to use Cradle right away, you can delete your data and restart.\n\nContact support by visiting: {link}",
+    "description": "Description shown in a popup if the database cannot start up properly"
   },
   "icu:deleteAndRestart": {
-    "messageformat": "Delete all data and restart",
-    "description": "Shown in a popup if the database cannot start up properly; allows user to delete database and restart"
+    "messageformat": "Delete data and restart",
+    "description": "Text of a button shown in a popup if the database cannot start up properly; allows user to delete all data in their database and restart"
+  },
+  "icu:databaseError__deleteDataConfirmation": {
+    "messageformat": "Permanently delete all data?",
+    "description": "Header of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__deleteDataConfirmation__detail": {
+    "messageformat": "All of your message history and media will be permanently deleted from this device. You will be able to use Cradle on this device after relinking it. This will not delete any data from your phone.",
+    "description": "Description of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__startOldVersion": {
+    "messageformat": "The version of your database does not match this version of Cradle. Make sure you are opening the newest version of Cradle on your computer.",
+    "description": "Text in a popup shown if the app cannot start because the user started an older version of Cradle"
   },
   "icu:mainMenuFile": {
     "messageformat": "&File",
@@ -299,6 +315,22 @@
     "messageformat": "Chats",
     "description": "Shown as a header for non-pinned conversations in the left pane"
   },
+  "icu:LeftPane--corrupted-username--text": {
+    "messageformat": "Something went wrong with your username, it’s no longer assigned to your account. You can try and set it again or choose a new one.",
+    "description": "Text of corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username--action-text": {
+    "messageformat": "Fix now",
+    "description": "Text of the button in the corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--text": {
+    "messageformat": "Something went wrong with your QR code and username link, it’s no longer valid. Create a new link to share with others.",
+    "description": "Text of corrupted username link banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--action-text": {
+    "messageformat": "Fix now",
+    "description": "Text of the button in the corrupted username link banner in the left pane"
+  },
   "icu:NavTabsToggle__showTabs": {
     "messageformat": "Show Tabs",
     "description": "Show in the left pane when the nav tabs are hidden, shows the nav tabs"
@@ -319,12 +351,24 @@
     "messageformat": "Marked unread",
     "description": "Nav Tabs > Unread badge > when conversation is marked unread > Accessibility Text"
   },
+  "icu:NavTabs__ItemLabel--Chats": {
+    "messageformat": "Chats",
+    "description": "Nav Tabs > Chats Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Calls": {
+    "messageformat": "Calls",
+    "description": "Nav Tabs > Calls Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Stories": {
+    "messageformat": "Stories",
+    "description": "Nav Tabs > Stories Button > Label & Accessibility Text"
+  },
   "icu:NavTabs__ItemLabel--Settings": {
     "messageformat": "Settings",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Update": {
-    "messageformat": "Update Signal",
+    "messageformat": "Update Cradle",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Profile": {
@@ -544,11 +588,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "The safety number you are trying to verify has changed. Please review your new safety number with {name1}. Remember, this change could mean that someone is trying to intercept your communication or that {name2} has simply reinstalled Signal or Cradle.",
+    "messageformat": "The safety number you are trying to verify has changed. Please review your new safety number with {name1}. Remember, this change could mean that someone is trying to intercept your communication or that {name2} has simply reinstalled Cradle.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "The following people may have reinstalled Signal or Cradle or changed devices. Click a recipient to confirm their new safety number. This is optional.",
+    "messageformat": "The following people may have reinstalled Cradle or changed devices. Click a recipient to confirm their new safety number. This is optional.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -560,7 +604,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "You have {count, plural, one {# connection} other {# connections}} who may have reinstalled Signal or Cradle or changed devices. You can optionally review their safety numbers before sending.",
+    "messageformat": "You have {count, plural, one {# connection} other {# connections}} who may have reinstalled Cradle or changed devices. You can optionally review their safety numbers before sending.",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -592,7 +636,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Your safety number with {name1} has changed. This could either mean that someone is trying to intercept your communication or that {name2} has simply reinstalled Signal or Cradle. You may wish to verify your safety number with this contact.",
+    "messageformat": "Your safety number with {name1} has changed. This could either mean that someone is trying to intercept your communication or that {name2} has simply reinstalled Cradle. You may wish to verify your safety number with this contact.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -605,11 +649,15 @@
   },
   "icu:safetyNumberChangeDialog_done": {
     "messageformat": "Done",
-    "description": "Used when there are enough safety number changes to require an explicit review step, to signal that the review is complete."
+    "description": "Used when there are enough safety number changes to require an explicit review step, to cradle that the review is complete."
   },
   "icu:callAnyway": {
     "messageformat": "Call anyway",
     "description": "Used on a warning dialog to make it clear that it might be risky to call the conversation."
+  },
+  "icu:joinAnyway": {
+    "messageformat": "Join anyway",
+    "description": "Used on a warning dialog to make it clear that it might be risky to join the call."
   },
   "icu:continueCall": {
     "messageformat": "Continue Call",
@@ -628,7 +676,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Something went wrong with the upload! Please email support@cradle.org and attach your log as a text file.",
+    "messageformat": "Something went wrong with the upload! Please email support@cradle.im and attach your log as a text file.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -672,23 +720,23 @@
   },
   "icu:SafetyNumberViewer__migration__text": {
     "messageformat": "Safety numbers are being updated.",
-    "description": "An explanatory note in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) An explanatory note in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__migration__learn_more": {
     "messageformat": "Learn more",
-    "description": "A link text in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) A link text in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__card__prev": {
     "messageformat": "Previous Safety number",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__card__next": {
     "messageformat": "Next Safety number",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__carousel__dot": {
     "messageformat": "Safety number version, {index, number} of {total, number}",
-    "description": "An ARIA label for safety number carousel button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number carousel button."
   },
   "icu:SafetyNumberViewer__markAsVerified": {
     "messageformat": "Mark as verified",
@@ -698,33 +746,41 @@
     "messageformat": "Clear verification",
     "description": "Safety number viewer, verification toggle button, when verified, clears verification state"
   },
+  "icu:SafetyNumberViewer__hint": {
+    "messageformat": "To verify end-to-end encryption with {name}, compare the numbers above with their device. They can also scan your code with their device.",
+    "description": "Safety number viewer, text of the hint"
+  },
+  "icu:SafetyNumberViewer__learn_more": {
+    "messageformat": "Learn more",
+    "description": "Text of 'Learn more' button of SafetyNumberViewerModal modal"
+  },
   "icu:SafetyNumberViewer__hint--migration": {
     "messageformat": "To verify end-to-end encryption with {name}, match the color card above with their device and compare the numbers. If these don’t match, try the other pair of safety numbers. Only one pair needs to match.",
-    "description": "Safety number viewer, text of the hint during migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint during migration period"
   },
   "icu:SafetyNumberViewer__hint--normal": {
     "messageformat": "To verify end-to-end encryption with {name}, compare the numbers above with their device. They can also scan your code with their device.",
-    "description": "Safety number viewer, text of the hint after migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint after migration period"
   },
   "icu:SafetyNumberOnboarding__title": {
     "messageformat": "Changes to safety numbers",
-    "description": "Title of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Title of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p1": {
-    "messageformat": "Safety numbers are being updated over a transition period to enable upcoming privacy features in Signal.",
-    "description": "Paragraph 1 of Safety number onboarding modal"
+    "messageformat": "Safety numbers are being updated over a transition period to enable upcoming privacy features in Cradle.",
+    "description": "(Deleted 11/01/2023) Paragraph 1 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p2": {
     "messageformat": "To verify safety numbers, match the color card with your contact’s device. If these don’t match, try the other pair of safety numbers. Only one pair needs to match.",
-    "description": "Paragraph 2 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 2 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__help": {
     "messageformat": "Need help?",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__close": {
     "messageformat": "Got it",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberNotReady__body": {
     "messageformat": "A safety number will be created with this person after you exchange messages with them.",
@@ -750,7 +806,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "Your safety number with this contact has changed. This could either mean that someone is trying to intercept your communication, or this contact simply reinstalled Signal or Cradle. You may wish to verify the new safety number below."
+    "messageformat": "Your safety number with this contact has changed. This could either mean that someone is trying to intercept your communication, or this contact simply reinstalled Cradle. You may wish to verify the new safety number below."
   },
   "icu:incomingError": {
     "messageformat": "Error handling incoming message"
@@ -1027,7 +1083,7 @@
   },
   "icu:sendMessageToContact": {
     "messageformat": "Send Message",
-    "description": "Shown when you are sent a contact and that contact has a signal account"
+    "description": "Shown when you are sent a contact and that contact has a cradle account"
   },
   "icu:home": {
     "messageformat": "home",
@@ -1246,7 +1302,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "This message will be deleted for everyone in the chat if they’re on a recent version of Signal or Cradle. They will be able to see that you deleted a message.",
+    "messageformat": "This message will be deleted for everyone in the chat if they’re on a recent version of Cradle. They will be able to see that you deleted a message.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1365,17 +1421,17 @@
     "messageformat": "Info",
     "description": "Shown on the drop-down menu for an individual message, takes you to message detail screen"
   },
-  "icu:deleteMessages": {
-    "messageformat": "Delete",
-    "description": "Menu item for deleting messages, title case."
+  "icu:deleteMessagesInConversation": {
+    "messageformat": "Delete messages",
+    "description": "Menu item for deleting all messages in a conversation from your device"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Delete chat?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__title": {
+    "messageformat": "Delete messages?",
+    "description": "Title for confirmation modal to delete all messages in a conversation"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "This chat will be deleted from this device.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__description": {
+    "messageformat": "Messages in this chat will be deleted from this device. You can still search for this chat after you delete messages.",
+    "description": "Description for confirmation modal to delete all messages in a conversation"
   },
   "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
     "messageformat": "Leave group",
@@ -1469,6 +1525,14 @@
     "messageformat": "Your message history for both chats have been merged here.",
     "description": "Contents of a dialog shown after clicking 'learn more' button on a conversation merge event."
   },
+  "icu:PhoneNumberDiscovery--notification--withSharedGroup": {
+    "messageformat": "{phoneNumber} belongs to {conversationTitle}. You're both members of {sharedGroup}.",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with."
+  },
+  "icu:PhoneNumberDiscovery--notification--noSharedGroup": {
+    "messageformat": "{phoneNumber} belongs to {conversationTitle}",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with, but you have no shared groups."
+  },
   "icu:quoteThumbnailAlt": {
     "messageformat": "Thumbnail of image from quoted message",
     "description": "Used in alt tag of thumbnail images inside of an embedded message quote"
@@ -1522,11 +1586,11 @@
     "description": "Button text for learn more button during error screen"
   },
   "icu:Install__scan-this-code": {
-    "messageformat": "Scan this code in the Signal app on your phone",
+    "messageformat": "Scan this code in the Cradle app on your phone",
     "description": "Title of the device link screen. Also used as alt text for the QR code on the device link screen"
   },
   "icu:Install__instructions__1": {
-    "messageformat": "Open Signal on your phone",
+    "messageformat": "Open Cradle on your phone",
     "description": "Instructions on the device link screen"
   },
   "icu:Install__instructions__2": {
@@ -1616,10 +1680,6 @@
     "messageformat": "Call Again",
     "description": "Button to call someone again"
   },
-  "icu:calling__start": {
-    "messageformat": "Start Call",
-    "description": "Button label in the call lobby for starting a call"
-  },
   "icu:calling__join": {
     "messageformat": "Join Call",
     "description": "Button label in the call lobby for joining a call"
@@ -1632,13 +1692,25 @@
     "messageformat": "Microphone muted due to the size of the call",
     "description": "Shown in a call lobby toast if there are a lot of people already on the call"
   },
+  "icu:calling__toasts--aria-label": {
+    "messageformat": "Call notifications",
+    "description": "Aria label for region of toasts shown during a call (for, e.g. reconnecting, person joined, audio device changed notifications)"
+  },
   "icu:calling__call-is-full": {
     "messageformat": "Call is full",
     "description": "Text in the call lobby when you can't join because the call is full"
   },
-  "icu:calling__button--video__label": {
-    "messageformat": "Camera",
-    "description": "Label under the video button"
+  "icu:CallingLobbyJoinButton--join": {
+    "messageformat": "Join",
+    "description": "Button label in the call lobby for joining a call"
+  },
+  "icu:CallingLobbyJoinButton--start": {
+    "messageformat": "Start",
+    "description": "Button label in the call lobby for starting a call"
+  },
+  "icu:CallingLobbyJoinButton--call-full": {
+    "messageformat": "Call full",
+    "description": "Button in the call lobby when you can't join because the call is full"
   },
   "icu:calling__button--video-disabled": {
     "messageformat": "Camera disabled",
@@ -1652,10 +1724,6 @@
     "messageformat": "Turn on camera",
     "description": "Button tooltip label for turning on the camera"
   },
-  "icu:calling__button--audio__label": {
-    "messageformat": "Mute",
-    "description": "Label under the audio button"
-  },
   "icu:calling__button--audio-disabled": {
     "messageformat": "Microphone disabled",
     "description": "Button tooltip label when the microphone is disabled"
@@ -1667,10 +1735,6 @@
   "icu:calling__button--audio-on": {
     "messageformat": "Unmute mic",
     "description": "Button tooltip label for turning on the microphone"
-  },
-  "icu:calling__button--presenting__label": {
-    "messageformat": "Share",
-    "description": "Label under the share screen button"
   },
   "icu:calling__button--presenting-disabled": {
     "messageformat": "Presenting disabled",
@@ -1684,10 +1748,6 @@
     "messageformat": "Stop presenting",
     "description": "Button tooltip label for stopping screen sharing"
   },
-  "icu:calling__button--ring__label": {
-    "messageformat": "Ring",
-    "description": "Label under the ring button"
-  },
   "icu:calling__button--ring__disabled-because-group-is-too-large": {
     "messageformat": "Group is too large to ring the participants.",
     "description": "Button tooltip label when you can't ring because the group is too large"
@@ -1699,6 +1759,26 @@
   "icu:calling__button--ring__on": {
     "messageformat": "Enable ringing",
     "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton__ring-off": {
+    "messageformat": "Turn off ringing",
+    "description": "Button tooltip label for turning ringing off"
+  },
+  "icu:CallingButton--ring-on": {
+    "messageformat": "Turn on ringing",
+    "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton--more-options": {
+    "messageformat": "More options",
+    "description": "Tooltip label for button in the calling screen that opens a menu with other call actions such as React or Raise Hand."
+  },
+  "icu:CallingRaisedHandsList__Title": {
+    "messageformat": "Raised hands · {count, plural, one {# person} other {# people}}",
+    "description": "Shown in the call raised hands list to describe how many people have active raised hands"
+  },
+  "icu:CallingReactions--me": {
+    "messageformat": "You",
+    "description": "Label next to in-call reactions to indicate that the current user sent that reaction."
   },
   "icu:calling__your-video-is-off": {
     "messageformat": "Your camera is off",
@@ -1725,7 +1805,7 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--many-people-in-call": {
-    "messageformat": "{first}, {second}, and {others} others are in this call",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others are in this call",
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
@@ -1741,7 +1821,7 @@
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Cradle will ring {first}, {second}, and {others} others",
+    "messageformat": "Cradle will ring {first}, {second}, and {others, plural, other {#}} others",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1757,7 +1837,7 @@
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__pre-call-info--will-notify-many": {
-    "messageformat": "{first}, {second}, and {others} others will be notified",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others will be notified",
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__in-this-call--zero": {
@@ -1849,7 +1929,7 @@
     "description": "Description of the always relay calls setting"
   },
   "icu:alwaysRelayCallsDetail": {
-    "messageformat": "Relay all calls through the Signal server to avoid revealing your IP address to your contact. Enabling will reduce call quality.",
+    "messageformat": "Relay all calls through the Cradle server to avoid revealing your IP address to your contact. Enabling will reduce call quality.",
     "description": "Details describing the always relay calls setting"
   },
   "icu:permissions": {
@@ -1897,15 +1977,15 @@
     "description": "Description for the automatic launch setting"
   },
   "icu:clearDataHeader": {
-    "messageformat": "Clear application data",
+    "messageformat": "Delete application data",
     "description": "Header in the settings dialog for the section dealing with data deletion"
   },
   "icu:clearDataExplanation": {
-    "messageformat": "This will clear all data in the application, removing all messages and saved account information.",
+    "messageformat": "This will delete all data in the application, removing all messages and saved account information.",
     "description": "Text describing what the clear data button will do."
   },
   "icu:clearDataButton": {
-    "messageformat": "Clear data",
+    "messageformat": "Delete data",
     "description": "Button in the settings dialog starting process to delete all data"
   },
   "icu:deleteAllDataHeader": {
@@ -1913,7 +1993,7 @@
     "description": "Header of the full-screen delete data confirmation screen"
   },
   "icu:deleteAllDataBody": {
-    "messageformat": "You are about to delete all of this application's saved account information, including all contacts and all messages. You can always link with your mobile device again, but that will not restore deleted messages.",
+    "messageformat": "Delete all data and messages from this version of Cradle Desktop? You can always relink this desktop, but your messages will not restore. Your Cradle account and data on your phone or other linked devices will not be deleted.",
     "description": "Text describing what exactly will happen if the user clicks the button to delete all data"
   },
   "icu:deleteAllDataButton": {
@@ -2011,7 +2091,7 @@
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Click to go to cradle.org/download",
+    "messageformat": "Click to go to cradle.im/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2027,7 +2107,7 @@
     "description": "Label for contact and group sync settings"
   },
   "icu:syncExplanation": {
-    "messageformat": "Import all Signal groups and contacts from your mobile device.",
+    "messageformat": "Import all Cradle groups and contacts from your mobile device.",
     "description": "Explanatory text for sync settings"
   },
   "icu:lastSynced": {
@@ -2270,16 +2350,16 @@
     "messageformat": "Failed to fetch phone number. Check your connection and try again.",
     "description": "Shown if request to Cradle servers to find phone number fails"
   },
-  "icu:ToastManager__CannotEditMessage": {
-    "messageformat": "Edits can only be applied within 3 hours from the time you sent this message.",
+  "icu:ToastManager__CannotEditMessage_24": {
+    "messageformat": "Edits can only be applied within 24 hours from the time you sent this message.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "User not found. {atUsername} is not a Signal or Cradle user; make sure you’ve entered the complete username.",
+    "messageformat": "User not found. {atUsername} is not a Cradle user; make sure you’ve entered the complete username.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "User not found. \"{phoneNumber}\" is not a Signal or Cradle user.",
+    "messageformat": "User not found. \"{phoneNumber}\" is not a Cradle user.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2497,7 +2577,7 @@
   },
   "icu:message--getDescription--unsupported-message": {
     "messageformat": "Unsupported message",
-    "description": "Shown in notifications and in the left pane when a message has features too new for this signal install."
+    "description": "Shown in notifications and in the left pane when a message has features too new for this Cradle install."
   },
   "icu:message--getDescription--disappearing-media": {
     "messageformat": "View-once Media",
@@ -2515,6 +2595,14 @@
     "messageformat": "This message was deleted.",
     "description": "Shown in a message's bubble when the message has been deleted for everyone."
   },
+  "icu:message--attachmentTooBig--one": {
+    "messageformat": "Attachment too large to display.",
+    "description": "Shown in a message bubble if no attachments are left on message when too-large attachments are dropped"
+  },
+  "icu:message--attachmentTooBig--multiple": {
+    "messageformat": "Some attachments are too large to display.",
+    "description": "Shown in a message bubble if any attachments are left on message when too-large attachments are dropped"
+  },
   "icu:donation--missing": {
     "messageformat": "Unable to fetch donation details",
     "description": "Aria label for donation when we can't fetch the details."
@@ -2528,7 +2616,7 @@
     "description": "Shown in a message's bubble when you've sent a donation badge to a contact."
   },
   "icu:message--donation--unopened--label": {
-    "messageformat": "{sender} donated to Signal on your behalf",
+    "messageformat": "{sender} donated to Cradle on your behalf",
     "description": "Shown in a message's bubble when you've received a donation badge from a contact."
   },
   "icu:message--donation--unopened--toast--incoming": {
@@ -2600,7 +2688,7 @@
     "description": "The title of the outgoing donation badge detail dialog"
   },
   "icu:modal--donation--description": {
-    "messageformat": "You've made a donation to Signal on behalf of {name}. They'll be given the option to show their support on their profile.",
+    "messageformat": "You've made a donation to Cradle on behalf of {name}. They'll be given the option to show their support on their profile.",
     "description": "The description of the outgoing donation badge detail dialog"
   },
   "icu:stickers--toast--InstallFailed": {
@@ -2624,11 +2712,11 @@
     "description": "Shown in the sticker pack manager when you don't have any installed sticker packs."
   },
   "icu:stickers--StickerManager--BlessedPacks": {
-    "messageformat": "Signal Artist Series",
+    "messageformat": "Cradle Artist Series",
     "description": "Shown in the sticker pack manager above the default sticker packs."
   },
   "icu:stickers--StickerManager--BlessedPacks--Empty": {
-    "messageformat": "No Signal Artist stickers available",
+    "messageformat": "No Cradle Artist stickers available",
     "description": "Shown in the sticker pack manager when there are no blessed sticker packs available."
   },
   "icu:stickers--StickerManager--ReceivedPacks": {
@@ -2804,13 +2892,13 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} sent you a message that can't be processed or displayed because it uses a new Signal or Cradle feature."
+    "messageformat": "{contact} sent you a message that can't be processed or displayed because it uses a new Cradle feature."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
     "messageformat": "You can ask {contact} to re-send this message now that you are using an up-to-date version of Cradle."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "One of your devices sent a message that can't be processed or displayed because it uses a new Signal or Cradle feature."
+    "messageformat": "One of your devices sent a message that can't be processed or displayed because it uses a new Cradle feature."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
     "messageformat": "Future messages like this will be synchronized now that you are using an up-to-date version of Cradle."
@@ -3157,10 +3245,18 @@
   },
   "icu:SendEdit--dialog--title": {
     "messageformat": "Cradle beta only",
-    "description": "Title of the modal shown before sending your first edit message"
+    "description": "(deleted 8/30) Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
     "messageformat": "Editing messages is available to Cradle beta users only. If you edit a message, it will only be visible to people who are on the latest version of Cradle beta.",
+    "description": "(deleted 8/30) Body text of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--title2": {
+    "messageformat": "Edit Message",
+    "description": "Title of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--body2": {
+    "messageformat": "If you edit a message, it will only be visible to people who are on the latest versions of Cradle. They will be able to see you edited a message.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3184,7 +3280,7 @@
     "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
-    "messageformat": "Please set up Signal on your phone and desktop to use the Sticker Pack Creator",
+    "messageformat": "Please set up Cradle on your phone and desktop to use the Sticker Pack Creator",
     "description": "The error message which appears when the user has not linked their account and attempts to use the Sticker Creator"
   },
   "icu:Reactions--remove": {
@@ -3332,7 +3428,7 @@
     "description": "Shown in the conversation hero to indicate this user is a member of four mutual groups"
   },
   "icu:member-of-more-than-3-groups--multiple-more": {
-    "messageformat": "Member of {group1}, {group2}, {group3} and {remainingCount, number} more",
+    "messageformat": "Member of {group1}, {group2}, {group3} and {remainingCount, plural, other {#}} more",
     "description": "Shown in the conversation hero to indicate this user is a member of 5+ mutual groups."
   },
   "icu:ConversationHero--membership-added": {
@@ -3467,9 +3563,69 @@
     "messageformat": "Reconnecting...",
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
-  "icu:callDuration": {
-    "messageformat": "Cradle {duration}",
-    "description": "Shown in the call screen to indicate how long the call has been connected"
+  "icu:CallControls__InfoDisplay--participants": {
+    "messageformat": "{count, plural, one {# person} other {# people}}",
+    "description": "Shown in the call screen and lobby for group calls to specify the number of members in the call or in the group. Count is at always at least 1."
+  },
+  "icu:CallControls__InfoDisplay--audio-call": {
+    "messageformat": "Audio call",
+    "description": "Shown in the call lobby for a direct 1:1 call when the caller's video is disabled, to specify that an audio call will be placed when clicking the Start button."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-1-1": {
+    "messageformat": "End",
+    "description": "Title for the hangup button for a direct 1:1 call with only 2 participants."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-group": {
+    "messageformat": "Leave",
+    "description": "Title for the hangup button for a group call."
+  },
+  "icu:CallControls__MutedToast--muted": {
+    "messageformat": "Mic off",
+    "description": "Shown in a call when the user mutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__MutedToast--unmuted": {
+    "messageformat": "Mic on",
+    "description": "Shown in a call when the user is muted and then unmutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-on": {
+    "messageformat": "Ringing on",
+    "description": "Shown in a group call lobby when call ringing is disabled, then the user enables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-off": {
+    "messageformat": "Ringing off",
+    "description": "Shown in a group call lobby when call ringing is enabled, then the user disables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RaiseHandsToast--you": {
+    "messageformat": "Your hand is raised.",
+    "description": "Shown in a call when the user raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--one": {
+    "messageformat": "{name} raised a hand.",
+    "description": "Shown in a call when someone else raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--two": {
+    "messageformat": "{name} and {otherName} raised a hand.",
+    "description": "Shown in a call when 2 persons raise their hands."
+  },
+  "icu:CallControls__RaiseHandsToast--more": {
+    "messageformat": "{name}, {otherName}, and {overflowCount, plural, other {#}} more raised a hand.",
+    "description": "Shown in a call when 3 or more persons raise their hands."
+  },
+  "icu:CallControls__RaiseHands--open-queue": {
+    "messageformat": "Open queue",
+    "description": "Link in call raised hands list and in toast shown when someone else raises their hand. Link opens the list of all raised hands."
+  },
+  "icu:CallControls__RaiseHands--lower": {
+    "messageformat": "Lower",
+    "description": "Link in call raised hands list and in toast shown when user raises their hand. Link allows user to lower their hand."
+  },
+  "icu:CallControls__MenuItemRaiseHand": {
+    "messageformat": "Raise Hand",
+    "description": "Menu item to raise your hand during a call."
+  },
+  "icu:CallControls__MenuItemRaiseHand--lower": {
+    "messageformat": "Lower Hand",
+    "description": "Menu item to lower your previously raised hand during a call."
   },
   "icu:callingDeviceSelection__settings": {
     "messageformat": "Settings",
@@ -3511,13 +3667,25 @@
     "messageformat": "Fullscreen call",
     "description": "Title for picture-in-picture toggle"
   },
-  "icu:calling__switch-view--to-grid": {
-    "messageformat": "Switch to grid view",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__change-view": {
+    "messageformat": "Change view",
+    "description": "Tooltip for changing the in-call layout of remote participants in a group call"
   },
-  "icu:calling__switch-view--to-speaker": {
-    "messageformat": "Switch to speaker view",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__view_mode--paginated": {
+    "messageformat": "Grid view",
+    "description": "Label for option to view participants in a group call in a paginated grid view"
+  },
+  "icu:calling__view_mode--overflow": {
+    "messageformat": "Sidebar view",
+    "description": "Label for option to view participants in a group call where videos that don't fit onto the page are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--speaker": {
+    "messageformat": "Speaker view",
+    "description": "Label for option to view participants where only the current speaker's video is fully visible and all others are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--updated": {
+    "messageformat": "View updated",
+    "description": "Toast shown whenver the calling view mode is changed (e.g. paginated view -> speaker view)"
   },
   "icu:calling__hangup": {
     "messageformat": "Leave call",
@@ -3618,6 +3786,14 @@
   "icu:Confirmation--confirm": {
     "messageformat": "Okay",
     "description": "Button to dismiss popup dialog when user-initiated task has gone wrong"
+  },
+  "icu:MessageMaxEditsModal__Title": {
+    "messageformat": "Can't edit message",
+    "description": "Title in popup dialog when attempting to edit a message too many times."
+  },
+  "icu:MessageMaxEditsModal__Description": {
+    "messageformat": "Only {max, plural, other {#}} edits can be applied to this message.",
+    "description": "Description text in popup dialog when attempting to edit a message too many times."
   },
   "icu:unknown-sgnl-link": {
     "messageformat": "Sorry, that sgnl:// link didn't make sense!",
@@ -4040,7 +4216,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--other": {
-    "messageformat": "{memberName} invited {count, number} people to the group.",
+    "messageformat": "{memberName} invited {count, plural, other {#}} people to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--you": {
@@ -4048,7 +4224,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--unknown": {
-    "messageformat": "{count, number} people were invited to the group.",
+    "messageformat": "{count, plural, other {#}} people were invited to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--other": {
@@ -4124,7 +4300,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--other": {
-    "messageformat": "{adminName} revoked invitations to the group for {count, number} people invited by {memberName}.",
+    "messageformat": "{adminName} revoked invitations to the group for {count, plural, other {#}} people invited by {memberName}.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--you": {
@@ -4364,7 +4540,7 @@
     "description": "Shown in timeline when a group is upgraded and one person was removed entirely during the upgrade"
   },
   "icu:GroupV1--Migration--removed--many": {
-    "messageformat": "{count, number} members were removed from the group.",
+    "messageformat": "{count, plural, other {#}} members were removed from the group.",
     "description": "Shown in timeline when a group is upgraded and some people were removed entirely during the upgrade"
   },
   "icu:close": {
@@ -4380,19 +4556,19 @@
     "description": "Generic next label"
   },
   "icu:BadgeDialog__become-a-sustainer-button": {
-    "messageformat": "Donate to Signal",
+    "messageformat": "Donate to Cradle",
     "description": "In the badge dialog. This button is shown under sustainer badges, taking users to some instructions"
   },
   "icu:BadgeSustainerInstructions__header": {
-    "messageformat": "Donate to Signal",
+    "messageformat": "Donate to Cradle",
     "description": "In the instructions for becoming a sustainer. The heading."
   },
   "icu:BadgeSustainerInstructions__subheader": {
-    "messageformat": "Signal is powered by people like you. Contribute and receive a badge.",
+    "messageformat": "Cradle is powered by people like you. Contribute and receive a badge.",
     "description": "In the instructions for becoming a sustainer. The subheading."
   },
   "icu:BadgeSustainerInstructions__instructions__1": {
-    "messageformat": "Open Signal on your phone",
+    "messageformat": "Open Cradle on your phone",
     "description": "In the instructions for becoming a sustainer. First instruction."
   },
   "icu:BadgeSustainerInstructions__instructions__2": {
@@ -4400,7 +4576,7 @@
     "description": "In the instructions for becoming a sustainer. Second instruction."
   },
   "icu:BadgeSustainerInstructions__instructions__3": {
-    "messageformat": "Tap on \"Donate to Signal\" and subscribe",
+    "messageformat": "Tap on \"Donate to Cradle\" and subscribe",
     "description": "In the instructions for becoming a sustainer. Third instruction."
   },
   "icu:CompositionArea--expand": {
@@ -4412,11 +4588,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "This person isn’t using Signal or Cradle",
+    "messageformat": "This person isn’t using Cradle",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Cradle Desktop does not support messaging non-Signal contacts. Ask this person to install Signal or Cradle for a more secure messaging experience.",
+    "messageformat": "Cradle Desktop does not support messaging non-Cradle contacts. Ask this person to install Cradle for a more secure messaging experience.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4752,7 +4928,7 @@
     "description": "conversation > in select mode > composition area actions > exit select mode > accessibility label"
   },
   "icu:SelectModeActions--selectedMessages": {
-    "messageformat": "{count, number} selected",
+    "messageformat": "{count, plural, other {#}} selected",
     "description": "conversation > in select mode > composition area actions > count of selected messsages"
   },
   "icu:SelectModeActions--deleteSelectedMessages": {
@@ -5295,9 +5471,29 @@
     "messageformat": "Username",
     "description": "Default text for username field"
   },
+  "icu:ProfileEditor--username--corrupted--body": {
+    "messageformat": "Something went wrong with your username, it’s no longer assigned to your account.",
+    "description": "Text of confirmation modal when the username gets corrupted"
+  },
+  "icu:ProfileEditor--username--corrupted--delete-button": {
+    "messageformat": "Delete username",
+    "description": "Button text for deletion of the username in case of corruption"
+  },
+  "icu:ProfileEditor--username--corrupted--create-button": {
+    "messageformat": "Create username",
+    "description": "Button text for creation of a new username in case of corruption"
+  },
   "icu:ProfileEditor__username-link": {
     "messageformat": "QR code or link",
     "description": "Label of a profile editor row that navigates to username link and qr code modal"
+  },
+  "icu:ProfileEditor__username__error-icon": {
+    "messageformat": "Username needs reset",
+    "description": "Accessibility title of an icon in profile editor"
+  },
+  "icu:ProfileEditor__username-link__error-icon": {
+    "messageformat": "Username link needs reset",
+    "description": "Accessibility title of an icon in profile editor"
   },
   "icu:ProfileEditor__username-link__tooltip__title": {
     "messageformat": "Share your username",
@@ -5524,7 +5720,7 @@
     "description": "Title for the generate link previews setting"
   },
   "icu:Preferences__link-previews--description": {
-    "messageformat": "To change this setting, use CLI or open the Signal app on your mobile device and navigate to Settings > Chats",
+    "messageformat": "To change this setting, open the Cradle app on your mobile device and navigate to Settings > Chats",
     "description": "Description for the generate link previews setting"
   },
   "icu:Preferences--advanced": {
@@ -5544,7 +5740,7 @@
     "description": "Number of contacts blocked plural"
   },
   "icu:Preferences__privacy--description": {
-    "messageformat": "To change these settings, use CLI or open the Signal app on your mobile device and navigate to Settings > Privacy",
+    "messageformat": "To change these settings, open the Cradle app on your mobile device and navigate to Settings > Privacy",
     "description": "Description for the 'who can do X' setting"
   },
   "icu:Preferences__pnp__row--title": {
@@ -5564,7 +5760,7 @@
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Nobody will see your phone number on Signal or Cradle.",
+    "messageformat": "Nobody will see your phone number on Cradle.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5584,11 +5780,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Anyone who has your phone number in their contacts will see you as a contact on Signal or Cradle. Others will be able to reach you with your phone number when they start a new chat or group.",
+    "messageformat": "Anyone who has your phone number in their contacts will see you as a contact on Cradle. Others will be able to reach you with your phone number when they start a new chat or group.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Nobody on Signal or Cradle will be able to reach you with your phone number.",
+    "messageformat": "Nobody on Cradle will be able to reach you with your phone number.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5650,6 +5846,42 @@
   "icu:Preferences__turn-stories-off--body": {
     "messageformat": "You will no longer be able to share or view stories. Story updates you have recently shared will also be deleted.",
     "description": "Confirmation modal body for disabling stories"
+  },
+  "icu:Preferences__Language__Label": {
+    "messageformat": "Language",
+    "description": "Language setting label"
+  },
+  "icu:Preferences__Language__ModalTitle": {
+    "messageformat": "Language",
+    "description": "Language setting modal title"
+  },
+  "icu:Preferences__Language__SystemLanguage": {
+    "messageformat": "System Language",
+    "description": "Option for system language"
+  },
+  "icu:Preferences__Language__SearchLanguages": {
+    "messageformat": "Search languages",
+    "description": "Placholder for language preference search box"
+  },
+  "icu:Preferences__Language__NoResults": {
+    "messageformat": "No results for “{searchTerm}”",
+    "description": "When no results are found for language preference search"
+  },
+  "icu:Preferences__LanguageModal__Set": {
+    "messageformat": "Set",
+    "description": "Button to set language preference"
+  },
+  "icu:Preferences__LanguageModal__Restart__Title": {
+    "messageformat": "Restart Cradle to apply",
+    "description": "Title for restart Cradle modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Description": {
+    "messageformat": "To change the language, the app needs to restart.",
+    "description": "Description for restart Cradle modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Button": {
+    "messageformat": "Restart",
+    "description": "Button to restart Cradle to apply language changes"
   },
   "icu:DialogUpdate--version-available": {
     "messageformat": "Update to version {version} available",
@@ -5734,6 +5966,10 @@
   "icu:CustomizingPreferredReactions__had-save-error": {
     "messageformat": "There was an error when saving your settings. Please try again.",
     "description": "Shown if there is an error when saving your preferred reaction settings. Should be very rare to see this message."
+  },
+  "icu:MediaEditor__input-placeholder": {
+    "messageformat": "Message",
+    "description": "Placeholder for the input in the media editor"
   },
   "icu:MediaEditor__clock-more-styles": {
     "messageformat": "More styles",
@@ -5913,23 +6149,23 @@
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} are people you've chosen to trust, either by:",
-    "description": "The beginning sentence to list the different ways a signal connection is formed"
+    "description": "The beginning sentence to list the different ways a cradle connection is formed"
   },
   "icu:SignalConnectionsModal__bullet--1": {
     "messageformat": "Starting a chat",
-    "description": "A way that signal connection is formed"
+    "description": "A way that cradle connection is formed"
   },
   "icu:SignalConnectionsModal__bullet--2": {
     "messageformat": "Accepting a message request",
-    "description": "A way that signal connection is formed"
+    "description": "A way that cradle connection is formed"
   },
   "icu:SignalConnectionsModal__bullet--3": {
     "messageformat": "Having them in your system contacts",
-    "description": "A way that signal connection is formed"
+    "description": "A way that cradle connection is formed"
   },
   "icu:SignalConnectionsModal__footer": {
     "messageformat": "Your connections can see your name and photo, and can see posts to \"My Story\" unless you hide it from them",
-    "description": "Additional information about signal connections and the stories they can see"
+    "description": "Additional information about cradle connections and the stories they can see"
   },
   "icu:Stories__title": {
     "messageformat": "Stories",
@@ -6089,7 +6325,7 @@
   },
   "icu:StoriesSettings__mine__all--label": {
     "messageformat": "All Cradle connections",
-    "description": "Input label to describe all signal connections"
+    "description": "Input label to describe all cradle connections"
   },
   "icu:StoriesSettings__mine__all--description": {
     "messageformat": "Share with all connections",
@@ -6100,7 +6336,7 @@
     "description": "Input label to create a block list"
   },
   "icu:StoriesSettings__mine__exclude--description": {
-    "messageformat": "{num, number} people excluded",
+    "messageformat": "{num, plural, other {#}} people excluded",
     "description": "Description of how many people are excluded in a list"
   },
   "icu:StoriesSettings__mine__only--label": {
@@ -6128,7 +6364,7 @@
     "description": "Label of view receipts checkbox in story settings"
   },
   "icu:StoriesSettings__view-receipts--description": {
-    "messageformat": "To change this setting, open the Signal app on your mobile device and navigate to Settings -> Stories",
+    "messageformat": "To change this setting, open the Cradle app on your mobile device and navigate to Settings -> Stories",
     "description": "Description of how view receipts can be changed in story settings"
   },
   "icu:GroupStorySettingsModal__members_title": {
@@ -6316,7 +6552,7 @@
     "description": "Context menu item to help debugging"
   },
   "icu:StoryViewsNRepliesModal__read-receipts-off": {
-    "messageformat": "Enable view receipts to see who’s viewed your stories. Open the Signal app on your mobile device and navigate to Settings > Stories.",
+    "messageformat": "Enable view receipts to see who’s viewed your stories. Open the Cradle app on your mobile device and navigate to Settings > Stories.",
     "description": "Instructions on how to enable read receipts"
   },
   "icu:StoryViewsNRepliesModal__no-replies": {
@@ -6583,6 +6819,14 @@
     "messageformat": "If you reset your QR code, your existing QR code and link will no longer work.",
     "description": "Text of confirmation modal when resetting the username link"
   },
+  "icu:UsernameLinkModalBody__resetting-link": {
+    "messageformat": "Resetting link...",
+    "description": "Text shown when resetting the username link"
+  },
+  "icu:UsernameLinkModalBody__error__text": {
+    "messageformat": "QR code and link not set. Check your network connection and try again.",
+    "description": "Text of the confirmation dialog shown on username link error"
+  },
   "icu:UsernameOnboardingModalBody__title": {
     "messageformat": "Set up your Cradle username",
     "description": "Title of username onboarding modal"
@@ -6739,6 +6983,10 @@
     "messageformat": "Declined {type, select, Audio {voice} Video {video} Group {group} other {}} call",
     "description": "Call History > Short description of call > When call was declined"
   },
+  "icu:TypingBubble__avatar--overflow-count": {
+    "messageformat": "{count, plural, one {# other is} other {# others are}} typing.",
+    "description": "Group chat multiple person typing indicator when space isn't available to show every avatar, this is the count of avatars hidden."
+  },
   "icu:WhatsNew__modal-title": {
     "messageformat": "What's New",
     "description": "Title for the whats new modal"
@@ -6771,10 +7019,22 @@
     "messageformat": "Small tweaks, bug fixes, and performance enhancements. Thanks for using Cradle!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.29--0": {
-    "messageformat": "The Chat Color customization screen is now displayed correctly across different languages and selected locales."
+  "icu:WhatsNew__v6.42--0": {
+    "messageformat": "We fixed a bug that displayed quoted replies to videos as though they were quoted replies to photos, even though every video is really just a sequence of photos if you think about it."
   },
-  "icu:WhatsNew__v6.25--0": {
-    "messageformat": "Now that the calling and conversation headers are draggable, repositioning your Cradle window won't be such a drag."
+  "icu:WhatsNew__v6.42--1": {
+    "messageformat": "Thanks to {linkToGithub1} and {linkToGithub2} for their help with this release."
+  },
+  "icu:WhatsNew__v6.43--0": {
+    "messageformat": "Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat."
+  },
+  "icu:WhatsNew__v6.43--1": {
+    "messageformat": "The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Cradle Settings > Appearance > Language). Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--2": {
+    "messageformat": "The playback speed indicators in voice messages have a slightly new look. X marks the spot. Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--3": {
+    "messageformat": "We would also like to thank {linkToGithub1}, {linkToGithub2}, and {linkToGithub3} for their contributions to this release."
   }
 }

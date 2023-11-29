@@ -62,12 +62,7 @@ const getExpectedViewMenu = (): MenuItemConstructorOptions => ({
     { accelerator: 'CmdOrCtrl+=', label: 'Zoom In', role: 'zoomIn' },
     { label: 'Zoom Out', role: 'zoomOut' },
     { type: 'separator' },
-    { label: 'Toggle Full Screen', role: 'togglefullscreen' },
-    { type: 'separator' },
-    { label: 'Debug Log', click: showDebugLog },
-    { type: 'separator' },
-    { label: 'Toggle Developer Tools', role: 'toggleDevTools' },
-    { label: 'Force Update', click: forceUpdate },
+    { label: 'Toggle Full Screen', role: 'togglefullscreen' }
   ],
 });
 
@@ -83,15 +78,10 @@ const getExpectedHelpMenu = (
       click: showKeyboardShortcuts,
     },
     { type: 'separator' },
-    { label: 'Contact Us', click: openContactUs },
-    { label: 'Go to Release Notes', click: openReleaseNotes },
-    { label: 'Go to Forums', click: openForums },
-    { label: 'Go to Support Page', click: openSupportPage },
-    { label: 'Join the Beta', click: openJoinTheBeta },
     ...(includeAbout
       ? ([
           { type: 'separator' },
-          { label: 'About Cradle Desktop', click: showAbout },
+          { label: 'About Signal Desktop', click: showAbout },
         ] as MenuListType)
       : []),
   ],
@@ -101,7 +91,7 @@ const EXPECTED_MACOS: MenuListType = [
   {
     label: 'Signal Desktop',
     submenu: [
-      { label: 'About Cradle Desktop', click: showAbout },
+      { label: 'About Signal Desktop', click: showAbout },
       { type: 'separator' },
       {
         label: 'Preferences…',
@@ -115,7 +105,7 @@ const EXPECTED_MACOS: MenuListType = [
       { label: 'Hide Others', role: 'hideOthers' },
       { label: 'Show All', role: 'unhide' },
       { type: 'separator' },
-      { label: 'Quit Cradle', role: 'quit' },
+      { label: 'Quit Signal', role: 'quit' },
     ],
   },
   {
@@ -153,7 +143,7 @@ const EXPECTED_WINDOWS: MenuListType = [
         click: showSettings,
       },
       { type: 'separator' },
-      { label: 'Quit Cradle', role: 'quit' },
+      { label: 'Quit Signal', role: 'quit' },
     ],
   },
   getExpectedEditMenu(false),
@@ -199,6 +189,8 @@ const PLATFORMS = [
 describe('createTemplate', () => {
   const { i18n } = loadLocale({
     preferredSystemLocales: ['en'],
+    localeOverride: null,
+    localeDirectionTestingOverride: null,
     hourCyclePreference: HourCyclePreference.UnknownPreference,
     logger: {
       fatal: stub().throwsArg(0),

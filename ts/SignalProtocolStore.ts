@@ -50,7 +50,6 @@ import type {
   UnprocessedUpdateType,
   CompatPreKeyType,
 } from './textsecure/Types.d';
-import type { RemoveAllConfiguration } from './types/RemoveAllConfiguration';
 import type { ServiceIdString, PniString, AciString } from './types/ServiceId';
 import { isServiceIdString, ServiceIdKind } from './types/ServiceId';
 import type { Address } from './types/Address';
@@ -64,6 +63,7 @@ import {
   KYBER_KEY_ID_KEY,
   SIGNED_PRE_KEY_ID_KEY,
 } from './textsecure/AccountManager';
+import { formatGroups, groupWhile } from './util/groupWhile';
 
 const TIMESTAMP_THRESHOLD = 5 * 1000; // 5 seconds
 const LOW_KEYS_THRESHOLD = 25;
@@ -98,6 +98,20 @@ function validateIdentityKey(attrs: unknown): attrs is IdentityKeyType {
   // We'll throw if this doesn't match
   identityKeySchema.parse(attrs);
   return true;
+}
+/*
+ * Potentially hundreds of items, so we'll group together sequences,
+ * take the first 10 of the sequences, format them as ranges,
+ * and log that once.
+ * => '1-10, 12, 14-20'
+ */
+function formatKeys(keys: Array<number>): string {
+  return formatGroups(
+    groupWhile(keys.sort(), (a, b) => a + 1 === b).slice(0, 10),
+    '-',
+    ', ',
+    String
+  );
 }
 
 type HasIdType<T> = {
@@ -526,7 +540,9 @@ export class SignalProtocolStore extends EventEmitter {
 
     const ids = keyIds.map(keyId => this._getKeyId(ourServiceId, keyId));
 
-    await window.Signal.Data.removeKyberPreKeyById(ids);
+    log.info('removeKyberPreKeys: Removing kyber prekeys:', formatKeys(keyIds));
+    const changes = await window.Signal.Data.removeKyberPreKeyById(ids);
+    log.info(`removeKyberPreKeys: Removed ${changes} kyber prekeys`);
     ids.forEach(id => {
       kyberPreKeyCache.delete(id);
     });
@@ -543,7 +559,8 @@ export class SignalProtocolStore extends EventEmitter {
     if (this.kyberPreKeys) {
       this.kyberPreKeys.clear();
     }
-    await window.Signal.Data.removeAllKyberPreKeys();
+    const changes = await window.Signal.Data.removeAllKyberPreKeys();
+    log.info(`clearKyberPreKeyStore: Removed ${changes} kyber prekeys`);
   }
 
   // PreKeys
@@ -623,6 +640,7 @@ export class SignalProtocolStore extends EventEmitter {
       toSave.push(preKey);
     });
 
+    log.info(`storePreKeys: Saving ${toSave.length} prekeys`);
     await window.Signal.Data.bulkAddPreKeys(toSave);
     toSave.forEach(preKey => {
       preKeyCache.set(preKey.id, {
@@ -643,7 +661,10 @@ export class SignalProtocolStore extends EventEmitter {
 
     const ids = keyIds.map(keyId => this._getKeyId(ourServiceId, keyId));
 
-    await window.Signal.Data.removePreKeyById(ids);
+    log.info('removePreKeys: Removing prekeys:', formatKeys(keyIds));
+
+    const changes = await window.Signal.Data.removePreKeyById(ids);
+    log.info(`removePreKeys: Removed ${changes} prekeys`);
     ids.forEach(id => {
       preKeyCache.delete(id);
     });
@@ -657,7 +678,8 @@ export class SignalProtocolStore extends EventEmitter {
     if (this.preKeys) {
       this.preKeys.clear();
     }
-    await window.Signal.Data.removeAllPreKeys();
+    const changes = await window.Signal.Data.removeAllPreKeys();
+    log.info(`clearPreKeyStore: Removed ${changes} prekeys`);
   }
 
   // Signed PreKeys
@@ -787,6 +809,10 @@ export class SignalProtocolStore extends EventEmitter {
 
     const ids = keyIds.map(keyId => this._getKeyId(ourServiceId, keyId));
 
+    log.info(
+      'removeSignedPreKeys: Removing signed prekeys:',
+      formatKeys(keyIds)
+    );
     await window.Signal.Data.removeSignedPreKeyById(ids);
     ids.forEach(id => {
       signedPreKeyCache.delete(id);
@@ -797,7 +823,8 @@ export class SignalProtocolStore extends EventEmitter {
     if (this.signedPreKeys) {
       this.signedPreKeys.clear();
     }
-    await window.Signal.Data.removeAllSignedPreKeys();
+    const changes = await window.Signal.Data.removeAllSignedPreKeys();
+    log.info(`clearSignedPreKeysStore: Removed ${changes} signed prekeys`);
   }
 
   // Sender Key
@@ -1044,15 +1071,27 @@ export class SignalProtocolStore extends EventEmitter {
     });
   }
 
-  private _getIdentityQueue(serviceId: ServiceIdString): PQueue {
+  private _runOnIdentityQueue<T>(
+    serviceId: ServiceIdString,
+    zone: Zone,
+    name: string,
+    body: () => Promise<T>
+  ): Promise<T> {
+    let queue: PQueue;
+
     const cachedQueue = this.identityQueues.get(serviceId);
     if (cachedQueue) {
-      return cachedQueue;
+      queue = cachedQueue;
+    } else {
+      queue = this._createIdentityQueue();
+      this.identityQueues.set(serviceId, queue);
     }
 
-    const freshQueue = this._createIdentityQueue();
-    this.identityQueues.set(serviceId, freshQueue);
-    return freshQueue;
+    // We run the identity queue task in zone because `saveIdentity` needs to
+    // be able to archive sibling sessions on keychange. Not entering the zone
+    // now would mean that we can take locks in different order here and in
+    // MessageReceiver which will lead to a deadlock.
+    return this.withZone(zone, name, () => queue.add(body));
   }
 
   // Sessions
@@ -1427,6 +1466,18 @@ export class SignalProtocolStore extends EventEmitter {
     });
   }
 
+  async hasSessionWith(serviceId: ServiceIdString): Promise<boolean> {
+    return this.withZone(GLOBAL_ZONE, 'hasSessionWith', async () => {
+      if (!this.sessions) {
+        throw new Error('getOpenDevices: this.sessions not yet cached!');
+      }
+
+      return this._getAllSessions().some(
+        ({ fromDB }) => fromDB.serviceId === serviceId
+      );
+    });
+  }
+
   async getOpenDevices(
     ourServiceId: ServiceIdString,
     serviceIds: ReadonlyArray<ServiceIdString>,
@@ -1716,7 +1767,8 @@ export class SignalProtocolStore extends EventEmitter {
         this.sessions.clear();
       }
       this.pendingSessions.clear();
-      await window.Signal.Data.removeAllSessions();
+      const changes = await window.Signal.Data.removeAllSessions();
+      log.info(`clearSessionStore: Removed ${changes} sessions`);
     });
   }
 
@@ -1836,7 +1888,13 @@ export class SignalProtocolStore extends EventEmitter {
     await this._saveIdentityKey(newRecord);
 
     this.identityKeys.delete(record.fromDB.id);
-    await window.Signal.Data.removeIdentityKeyById(record.fromDB.id);
+    const changes = await window.Signal.Data.removeIdentityKeyById(
+      record.fromDB.id
+    );
+
+    log.info(
+      `getOrMigrateIdentityRecord: Removed ${changes} old identity keys for ${record.fromDB.id}`
+    );
 
     return newRecord;
   }
@@ -1991,7 +2049,7 @@ export class SignalProtocolStore extends EventEmitter {
     encodedAddress: Address,
     publicKey: Uint8Array,
     nonblockingApproval = false,
-    { zone }: SessionTransactionOptions = {}
+    { zone = GLOBAL_ZONE }: SessionTransactionOptions = {}
   ): Promise<boolean> {
     if (!this.identityKeys) {
       throw new Error('saveIdentity: this.identityKeys not yet cached!');
@@ -2009,105 +2067,110 @@ export class SignalProtocolStore extends EventEmitter {
       nonblockingApproval = false;
     }
 
-    return this._getIdentityQueue(encodedAddress.serviceId).add(async () => {
-      const identityRecord = await this.getOrMigrateIdentityRecord(
-        encodedAddress.serviceId
-      );
-
-      const id = encodedAddress.serviceId;
-      const logId = `saveIdentity(${id})`;
-
-      if (!identityRecord || !identityRecord.publicKey) {
-        // Lookup failed, or the current key was removed, so save this one.
-        log.info(`${logId}: Saving new identity...`);
-        await this._saveIdentityKey({
-          id,
-          publicKey,
-          firstUse: true,
-          timestamp: Date.now(),
-          verified: VerifiedStatus.DEFAULT,
-          nonblockingApproval,
-        });
-
-        this.checkPreviousKey(
-          encodedAddress.serviceId,
-          publicKey,
-          'saveIdentity'
-        );
-
-        return false;
-      }
-
-      const identityKeyChanged = !constantTimeEqual(
-        identityRecord.publicKey,
-        publicKey
-      );
-
-      if (identityKeyChanged) {
-        const isOurIdentifier = window.textsecure.storage.user.isOurServiceId(
+    return this._runOnIdentityQueue(
+      encodedAddress.serviceId,
+      zone,
+      'saveIdentity',
+      async () => {
+        const identityRecord = await this.getOrMigrateIdentityRecord(
           encodedAddress.serviceId
         );
 
-        if (isOurIdentifier && identityKeyChanged) {
-          log.warn(`${logId}: ignoring identity for ourselves`);
+        const id = encodedAddress.serviceId;
+        const logId = `saveIdentity(${id})`;
+
+        if (!identityRecord || !identityRecord.publicKey) {
+          // Lookup failed, or the current key was removed, so save this one.
+          log.info(`${logId}: Saving new identity...`);
+          await this._saveIdentityKey({
+            id,
+            publicKey,
+            firstUse: true,
+            timestamp: Date.now(),
+            verified: VerifiedStatus.DEFAULT,
+            nonblockingApproval,
+          });
+
+          this.checkPreviousKey(
+            encodedAddress.serviceId,
+            publicKey,
+            'saveIdentity'
+          );
+
           return false;
         }
 
-        log.info(`${logId}: Replacing existing identity...`);
-        const previousStatus = identityRecord.verified;
-        let verifiedStatus;
-        if (
-          previousStatus === VerifiedStatus.VERIFIED ||
-          previousStatus === VerifiedStatus.UNVERIFIED
-        ) {
-          verifiedStatus = VerifiedStatus.UNVERIFIED;
-        } else {
-          verifiedStatus = VerifiedStatus.DEFAULT;
-        }
+        const identityKeyChanged = !constantTimeEqual(
+          identityRecord.publicKey,
+          publicKey
+        );
 
-        await this._saveIdentityKey({
-          id,
-          publicKey,
-          firstUse: false,
-          timestamp: Date.now(),
-          verified: verifiedStatus,
-          nonblockingApproval,
-        });
-
-        // See `addKeyChange` in `ts/models/conversations.ts` for sender key info
-        // update caused by this.
-        try {
-          this.emit(
-            'keychange',
-            encodedAddress.serviceId,
-            'saveIdentity - change'
+        if (identityKeyChanged) {
+          const isOurIdentifier = window.textsecure.storage.user.isOurServiceId(
+            encodedAddress.serviceId
           );
-        } catch (error) {
-          log.error(
-            `${logId}: error triggering keychange:`,
-            Errors.toLogFormat(error)
-          );
+
+          if (isOurIdentifier && identityKeyChanged) {
+            log.warn(`${logId}: ignoring identity for ourselves`);
+            return false;
+          }
+
+          log.info(`${logId}: Replacing existing identity...`);
+          const previousStatus = identityRecord.verified;
+          let verifiedStatus;
+          if (
+            previousStatus === VerifiedStatus.VERIFIED ||
+            previousStatus === VerifiedStatus.UNVERIFIED
+          ) {
+            verifiedStatus = VerifiedStatus.UNVERIFIED;
+          } else {
+            verifiedStatus = VerifiedStatus.DEFAULT;
+          }
+
+          await this._saveIdentityKey({
+            id,
+            publicKey,
+            firstUse: false,
+            timestamp: Date.now(),
+            verified: verifiedStatus,
+            nonblockingApproval,
+          });
+
+          // See `addKeyChange` in `ts/models/conversations.ts` for sender key info
+          // update caused by this.
+          try {
+            this.emit(
+              'keychange',
+              encodedAddress.serviceId,
+              'saveIdentity - change'
+            );
+          } catch (error) {
+            log.error(
+              `${logId}: error triggering keychange:`,
+              Errors.toLogFormat(error)
+            );
+          }
+
+          // Pass the zone to facilitate transactional session use in
+          // MessageReceiver.ts
+          await this.archiveSiblingSessions(encodedAddress, {
+            zone,
+          });
+
+          return true;
         }
+        if (this.isNonBlockingApprovalRequired(identityRecord)) {
+          log.info(`${logId}: Setting approval status...`);
 
-        // Pass the zone to facilitate transactional session use in
-        // MessageReceiver.ts
-        await this.archiveSiblingSessions(encodedAddress, {
-          zone,
-        });
+          identityRecord.nonblockingApproval = nonblockingApproval;
+          await this._saveIdentityKey(identityRecord);
 
-        return true;
-      }
-      if (this.isNonBlockingApprovalRequired(identityRecord)) {
-        log.info(`${logId}: Setting approval status...`);
-
-        identityRecord.nonblockingApproval = nonblockingApproval;
-        await this._saveIdentityKey(identityRecord);
+          return false;
+        }
 
         return false;
       }
-
-      return false;
-    });
+    );
   }
 
   // https://github.com/signalapp/Signal-Android/blob/fc3db538bcaa38dc149712a483d3032c9c1f3998/app/src/main/java/org/thoughtcrime/securesms/crypto/storage/SignalBaseIdentityKeyStore.java#L257
@@ -2125,9 +2188,14 @@ export class SignalProtocolStore extends EventEmitter {
     serviceId: ServiceIdString,
     attributes: Partial<IdentityKeyType>
   ): Promise<void> {
-    return this._getIdentityQueue(serviceId).add(async () => {
-      return this.saveIdentityWithAttributesOnQueue(serviceId, attributes);
-    });
+    return this._runOnIdentityQueue(
+      serviceId,
+      GLOBAL_ZONE,
+      'saveIdentityWithAttributes',
+      async () => {
+        return this.saveIdentityWithAttributesOnQueue(serviceId, attributes);
+      }
+    );
   }
 
   private async saveIdentityWithAttributesOnQueue(
@@ -2172,16 +2240,21 @@ export class SignalProtocolStore extends EventEmitter {
       throw new Error('setApproval: Invalid approval status');
     }
 
-    return this._getIdentityQueue(serviceId).add(async () => {
-      const identityRecord = await this.getOrMigrateIdentityRecord(serviceId);
+    return this._runOnIdentityQueue(
+      serviceId,
+      GLOBAL_ZONE,
+      'setApproval',
+      async () => {
+        const identityRecord = await this.getOrMigrateIdentityRecord(serviceId);
 
-      if (!identityRecord) {
-        throw new Error(`setApproval: No identity record for ${serviceId}`);
+        if (!identityRecord) {
+          throw new Error(`setApproval: No identity record for ${serviceId}`);
+        }
+
+        identityRecord.nonblockingApproval = nonblockingApproval;
+        await this._saveIdentityKey(identityRecord);
       }
-
-      identityRecord.nonblockingApproval = nonblockingApproval;
-      await this._saveIdentityKey(identityRecord);
-    });
+    );
   }
 
   // https://github.com/signalapp/Signal-Android/blob/fc3db538bcaa38dc149712a483d3032c9c1f3998/app/src/main/java/org/thoughtcrime/securesms/crypto/storage/SignalBaseIdentityKeyStore.java#L215
@@ -2198,21 +2271,26 @@ export class SignalProtocolStore extends EventEmitter {
       throw new Error('setVerified: Invalid verified status');
     }
 
-    return this._getIdentityQueue(serviceId).add(async () => {
-      const identityRecord = await this.getOrMigrateIdentityRecord(serviceId);
+    return this._runOnIdentityQueue(
+      serviceId,
+      GLOBAL_ZONE,
+      'setVerified',
+      async () => {
+        const identityRecord = await this.getOrMigrateIdentityRecord(serviceId);
 
-      if (!identityRecord) {
-        throw new Error(`setVerified: No identity record for ${serviceId}`);
-      }
+        if (!identityRecord) {
+          throw new Error(`setVerified: No identity record for ${serviceId}`);
+        }
 
-      if (validateIdentityKey(identityRecord)) {
-        await this._saveIdentityKey({
-          ...identityRecord,
-          ...extra,
-          verified: verifiedStatus,
-        });
+        if (validateIdentityKey(identityRecord)) {
+          await this._saveIdentityKey({
+            ...identityRecord,
+            ...extra,
+            verified: verifiedStatus,
+          });
+        }
       }
-    });
+    );
   }
 
   async getVerified(serviceId: ServiceIdString): Promise<number> {
@@ -2279,56 +2357,69 @@ export class SignalProtocolStore extends EventEmitter {
       `Invalid verified status: ${verifiedStatus}`
     );
 
-    return this._getIdentityQueue(serviceId).add(async () => {
-      const identityRecord = await this.getOrMigrateIdentityRecord(serviceId);
-      const hadEntry = identityRecord !== undefined;
-      const keyMatches = Boolean(
-        identityRecord?.publicKey &&
-          constantTimeEqual(publicKey, identityRecord.publicKey)
-      );
-      const statusMatches =
-        keyMatches && verifiedStatus === identityRecord?.verified;
+    return this._runOnIdentityQueue(
+      serviceId,
+      GLOBAL_ZONE,
+      'updateIdentityAfterSync',
+      async () => {
+        const identityRecord = await this.getOrMigrateIdentityRecord(serviceId);
+        const hadEntry = identityRecord !== undefined;
+        const keyMatches = Boolean(
+          identityRecord?.publicKey &&
+            constantTimeEqual(publicKey, identityRecord.publicKey)
+        );
+        const statusMatches =
+          keyMatches && verifiedStatus === identityRecord?.verified;
 
-      if (!keyMatches || !statusMatches) {
-        await this.saveIdentityWithAttributesOnQueue(serviceId, {
-          publicKey,
-          verified: verifiedStatus,
-          firstUse: !hadEntry,
-          timestamp: Date.now(),
-          nonblockingApproval: true,
-        });
-      }
-      if (!hadEntry) {
-        this.checkPreviousKey(serviceId, publicKey, 'updateIdentityAfterSync');
-      } else if (hadEntry && !keyMatches) {
-        try {
-          this.emit('keychange', serviceId, 'updateIdentityAfterSync - change');
-        } catch (error) {
-          log.error(
-            'updateIdentityAfterSync: error triggering keychange:',
-            Errors.toLogFormat(error)
-          );
+        if (!keyMatches || !statusMatches) {
+          await this.saveIdentityWithAttributesOnQueue(serviceId, {
+            publicKey,
+            verified: verifiedStatus,
+            firstUse: !hadEntry,
+            timestamp: Date.now(),
+            nonblockingApproval: true,
+          });
         }
-      }
+        if (!hadEntry) {
+          this.checkPreviousKey(
+            serviceId,
+            publicKey,
+            'updateIdentityAfterSync'
+          );
+        } else if (hadEntry && !keyMatches) {
+          try {
+            this.emit(
+              'keychange',
+              serviceId,
+              'updateIdentityAfterSync - change'
+            );
+          } catch (error) {
+            log.error(
+              'updateIdentityAfterSync: error triggering keychange:',
+              Errors.toLogFormat(error)
+            );
+          }
+        }
 
-      // See: https://github.com/signalapp/Signal-Android/blob/fc3db538bcaa38dc149712a483d3032c9c1f3998/app/src/main/java/org/thoughtcrime/securesms/database/RecipientDatabase.kt#L921-L936
-      if (
-        verifiedStatus === VerifiedStatus.VERIFIED &&
-        (!hadEntry || identityRecord?.verified !== VerifiedStatus.VERIFIED)
-      ) {
-        // Needs a notification.
-        return true;
+        // See: https://github.com/signalapp/Signal-Android/blob/fc3db538bcaa38dc149712a483d3032c9c1f3998/app/src/main/java/org/thoughtcrime/securesms/database/RecipientDatabase.kt#L921-L936
+        if (
+          verifiedStatus === VerifiedStatus.VERIFIED &&
+          (!hadEntry || identityRecord?.verified !== VerifiedStatus.VERIFIED)
+        ) {
+          // Needs a notification.
+          return true;
+        }
+        if (
+          verifiedStatus !== VerifiedStatus.VERIFIED &&
+          hadEntry &&
+          identityRecord?.verified === VerifiedStatus.VERIFIED
+        ) {
+          // Needs a notification.
+          return true;
+        }
+        return false;
       }
-      if (
-        verifiedStatus !== VerifiedStatus.VERIFIED &&
-        hadEntry &&
-        identityRecord?.verified === VerifiedStatus.VERIFIED
-      ) {
-        // Needs a notification.
-        return true;
-      }
-      return false;
-    });
+    );
   }
 
   isUntrusted(
@@ -2607,8 +2698,8 @@ export class SignalProtocolStore extends EventEmitter {
     this.emit('removeAllData');
   }
 
-  async removeAllConfiguration(mode: RemoveAllConfiguration): Promise<void> {
-    await window.Signal.Data.removeAllConfiguration(mode);
+  async removeAllConfiguration(): Promise<void> {
+    await window.Signal.Data.removeAllConfiguration();
     await this.hydrateCaches();
 
     window.storage.reset();

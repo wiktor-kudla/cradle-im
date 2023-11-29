@@ -19,6 +19,7 @@ import { MAX_READ_KEYS as MAX_STORAGE_READ_KEYS } from '../services/storageConst
 import * as durations from '../util/durations';
 import { drop } from '../util/drop';
 import { App } from './playwright';
+import { CONTACT_COUNT } from './benchmarks/fixtures';
 
 export { App };
 
@@ -40,6 +41,10 @@ const CONTACT_FIRST_NAMES = [
   'Alice',
   'Bob',
   'Charlie',
+  'Danielle',
+  'Elaine',
+  'Frankie',
+  'Grandma',
   'Paul',
   'Steve',
   'William',
@@ -51,13 +56,37 @@ const CONTACT_LAST_NAMES = [
   'Miller',
   'Davis',
   'Lopez',
-  'Gonazales',
+  'Gonzales',
+  'Singh',
+  'Baker',
+  'Farmer',
+];
+
+const CONTACT_SUFFIXES = [
+  'Sr.',
+  'Jr.',
+  'the 3rd',
+  'the 4th',
+  'the 5th',
+  'the 6th',
+  'the 7th',
+  'the 8th',
+  'the 9th',
+  'the 10th',
 ];
 
 const CONTACT_NAMES = new Array<string>();
 for (const firstName of CONTACT_FIRST_NAMES) {
   for (const lastName of CONTACT_LAST_NAMES) {
     CONTACT_NAMES.push(`${firstName} ${lastName}`);
+  }
+}
+
+for (const suffix of CONTACT_SUFFIXES) {
+  for (const firstName of CONTACT_FIRST_NAMES) {
+    for (const lastName of CONTACT_LAST_NAMES) {
+      CONTACT_NAMES.push(`${firstName} ${lastName}, ${suffix}`);
+    }
   }
 }
 
@@ -70,6 +99,7 @@ export type BootstrapOptions = Readonly<{
   linkedDevices?: number;
   contactCount?: number;
   contactsWithoutProfileKey?: number;
+  unknownContactCount?: number;
   contactNames?: ReadonlyArray<string>;
   contactPreKeyCount?: number;
 }>;
@@ -80,6 +110,7 @@ type BootstrapInternalOptions = Pick<BootstrapOptions, 'extraConfig'> &
     linkedDevices: number;
     contactCount: number;
     contactsWithoutProfileKey: number;
+    unknownContactCount: number;
     contactNames: ReadonlyArray<string>;
   }>;
 
@@ -114,6 +145,7 @@ export class Bootstrap {
   private readonly options: BootstrapInternalOptions;
   private privContacts?: ReadonlyArray<PrimaryDevice>;
   private privContactsWithoutProfileKey?: ReadonlyArray<PrimaryDevice>;
+  private privUnknownContacts?: ReadonlyArray<PrimaryDevice>;
   private privPhone?: PrimaryDevice;
   private privDesktop?: Device;
   private storagePath?: string;
@@ -128,18 +160,21 @@ export class Bootstrap {
 
     this.options = {
       linkedDevices: 5,
-      contactCount: MAX_CONTACTS,
+      contactCount: CONTACT_COUNT,
       contactsWithoutProfileKey: 0,
+      unknownContactCount: 0,
       contactNames: CONTACT_NAMES,
       benchmark: false,
 
       ...options,
     };
 
-    assert(
-      this.options.contactCount + this.options.contactsWithoutProfileKey <=
-        this.options.contactNames.length
-    );
+    const totalContactCount =
+      this.options.contactCount +
+      this.options.contactsWithoutProfileKey +
+      this.options.unknownContactCount;
+    assert(totalContactCount <= this.options.contactNames.length);
+    assert(totalContactCount <= MAX_CONTACTS);
   }
 
   public async init(): Promise<void> {
@@ -150,29 +185,36 @@ export class Bootstrap {
     const { port } = this.server.address();
     debug('started server on port=%d', port);
 
-    const contactNames = this.options.contactNames.slice(
-      0,
-      this.options.contactCount + this.options.contactsWithoutProfileKey
-    );
+    const totalContactCount =
+      this.options.contactCount +
+      this.options.contactsWithoutProfileKey +
+      this.options.unknownContactCount;
 
     const allContacts = await Promise.all(
-      contactNames.map(async profileName => {
-        const primary = await this.server.createPrimaryDevice({
-          profileName,
-        });
+      this.options.contactNames
+        .slice(0, totalContactCount)
+        .map(async profileName => {
+          const primary = await this.server.createPrimaryDevice({
+            profileName,
+          });
 
-        for (let i = 0; i < this.options.linkedDevices; i += 1) {
-          // eslint-disable-next-line no-await-in-loop
-          await this.server.createSecondaryDevice(primary);
-        }
+          for (let i = 0; i < this.options.linkedDevices; i += 1) {
+            // eslint-disable-next-line no-await-in-loop
+            await this.server.createSecondaryDevice(primary);
+          }
 
-        return primary;
-      })
+          return primary;
+        })
     );
 
-    this.privContacts = allContacts.slice(0, this.options.contactCount);
-    this.privContactsWithoutProfileKey = allContacts.slice(
-      this.contacts.length
+    this.privContacts = allContacts.splice(0, this.options.contactCount);
+    this.privContactsWithoutProfileKey = allContacts.splice(
+      0,
+      this.options.contactsWithoutProfileKey
+    );
+    this.privUnknownContacts = allContacts.splice(
+      0,
+      this.options.unknownContactCount
     );
 
     this.privPhone = await this.server.createPrimaryDevice({
@@ -269,21 +311,44 @@ export class Bootstrap {
     debug('starting the app');
 
     const { port } = this.server.address();
+    const config = await this.generateConfig(port);
 
-    const app = new App({
-      main: ELECTRON,
-      args: [CI_SCRIPT],
-      config: await this.generateConfig(port),
-    });
-
-    await app.start();
-
-    this.lastApp = app;
-    app.on('close', () => {
-      if (this.lastApp === app) {
-        this.lastApp = undefined;
+    let startAttempts = 0;
+    const MAX_ATTEMPTS = 5;
+    let app: App | undefined;
+    while (!app) {
+      startAttempts += 1;
+      if (startAttempts > MAX_ATTEMPTS) {
+        throw new Error(
+          `App failed to start after ${MAX_ATTEMPTS} times, giving up`
+        );
       }
-    });
+      const startedApp = new App({
+        main: ELECTRON,
+        args: [CI_SCRIPT],
+        config,
+      });
+      try {
+        // eslint-disable-next-line no-await-in-loop
+        await startedApp.start();
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(
+          `Failed to start the app, attempt ${startAttempts}, retrying`,
+          error
+        );
+        continue;
+      }
+
+      this.lastApp = startedApp;
+      startedApp.on('close', () => {
+        if (this.lastApp === startedApp) {
+          this.lastApp = undefined;
+        }
+      });
+
+      app = startedApp;
+    }
 
     return app;
   }
@@ -330,6 +395,12 @@ export class Bootstrap {
     const { logsDir } = this;
     await fs.rename(logsDir, outDir);
 
+    const page = await app?.getWindow();
+    if (process.env.TRACING) {
+      await page
+        ?.context()
+        .tracing.stop({ path: path.join(outDir, 'trace.zip') });
+    }
     if (app) {
       const window = await app.getWindow();
       const screenshot = await window.screenshot();
@@ -372,9 +443,20 @@ export class Bootstrap {
     );
     return this.privContactsWithoutProfileKey;
   }
+  public get unknownContacts(): ReadonlyArray<PrimaryDevice> {
+    assert(
+      this.privUnknownContacts,
+      'Bootstrap has to be initialized first, see: bootstrap.init()'
+    );
+    return this.privUnknownContacts;
+  }
 
   public get allContacts(): ReadonlyArray<PrimaryDevice> {
-    return [...this.contacts, ...this.contactsWithoutProfileKey];
+    return [
+      ...this.contacts,
+      ...this.contactsWithoutProfileKey,
+      ...this.unknownContacts,
+    ];
   }
 
   //
@@ -393,6 +475,9 @@ export class Bootstrap {
 
     try {
       await pTimeout(fn(bootstrap), timeout);
+      if (process.env.FORCE_ARTIFACT_SAVE) {
+        await bootstrap.saveLogs();
+      }
     } catch (error) {
       await bootstrap.saveLogs();
       throw error;
@@ -418,7 +503,7 @@ export class Bootstrap {
         '0': url,
         '2': url,
       },
-      updatesEnabled: true,
+      updatesEnabled: false,
 
       directoreType: 'cdsi',
       directoryCDSIUrl: url,

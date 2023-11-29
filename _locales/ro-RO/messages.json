@@ -8,6 +8,7 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
+
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -89,7 +90,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Termeni și politică de confidențialitate",
-    "description": "Shown in the about box for the link to https://cradle.org/legal"
+    "description": "Shown in the about box for the link to https://signal.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -109,11 +110,27 @@
   },
   "icu:databaseError": {
     "messageformat": "Eroare de bază de date",
-    "description": "Shown in a popup if the database cannot start up properly"
+    "description": "Title of a popup if the database cannot start up properly"
+  },
+  "icu:databaseError__detail": {
+    "messageformat": "A apărut o eroare la baza de date. Poți copia eroarea și contacta serviciul de asistență Signal, pentru a ajuta la remedierea problemei. Dacă trebuie să utilizezi Signal imediat, îți poți șterge datele și să repornești.\n\nContactează serviciul de asistență vizitând: {link}",
+    "description": "Description shown in a popup if the database cannot start up properly"
   },
   "icu:deleteAndRestart": {
-    "messageformat": "Șterge toate datele și repornește",
-    "description": "Shown in a popup if the database cannot start up properly; allows user to delete database and restart"
+    "messageformat": "Șterge datele și repornește",
+    "description": "Text of a button shown in a popup if the database cannot start up properly; allows user to delete all data in their database and restart"
+  },
+  "icu:databaseError__deleteDataConfirmation": {
+    "messageformat": "Ștergi toate datele permanent?",
+    "description": "Header of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__deleteDataConfirmation__detail": {
+    "messageformat": "Tot istoricul mesajelor și conținutul media vor fi șterse definitiv de pe acest dispozitiv. Vei putea folosi Signal pe acest dispozitiv după ce îl reconectezi. Asta nu va șterge datele de pe telefonul tău.",
+    "description": "Description of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__startOldVersion": {
+    "messageformat": "Versiunea bazei de date nu se potrivește cu această versiune de Signal. Asigură-te că deschizi cea mai nouă versiune de Signal pe computer.",
+    "description": "Text in a popup shown if the app cannot start because the user started an older version of Signal"
   },
   "icu:mainMenuFile": {
     "messageformat": "&Fișier",
@@ -160,7 +177,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Închide Cradle",
+    "messageformat": "Închide Signal",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -272,7 +289,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Actualizează Cradle",
+    "messageformat": "Actualizează Signal",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -299,40 +316,68 @@
     "messageformat": "Conversații",
     "description": "Shown as a header for non-pinned conversations in the left pane"
   },
+  "icu:LeftPane--corrupted-username--text": {
+    "messageformat": "Ceva nu a funcționat corect cu numele tău de utilizator, nu mai este atribuit contului tău. Poți încerca să îl stabilești din nou sau să alegi unul nou.",
+    "description": "Text of corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username--action-text": {
+    "messageformat": "Repară acum",
+    "description": "Text of the button in the corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--text": {
+    "messageformat": "Ceva nu a funcționat cu codul tău QR și linkul numelui de utilizator, nu mai este valid. Creează un link nou pe care să îl distribui altora.",
+    "description": "Text of corrupted username link banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--action-text": {
+    "messageformat": "Repară acum",
+    "description": "Text of the button in the corrupted username link banner in the left pane"
+  },
   "icu:NavTabsToggle__showTabs": {
-    "messageformat": "Show Tabs",
+    "messageformat": "Arată file",
     "description": "Show in the left pane when the nav tabs are hidden, shows the nav tabs"
   },
   "icu:NavTabsToggle__hideTabs": {
-    "messageformat": "Hide Tabs",
+    "messageformat": "Ascunde Filele",
     "description": "Show in the nav tabs when the nav tabs are visible, hides the nav tabs"
   },
   "icu:NavTabs__ItemIconLabel--HasError": {
-    "messageformat": "An error occurred",
+    "messageformat": "A apărut o eroare",
     "description": "Nav Tabs > Tab has error > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--UnreadCount": {
-    "messageformat": "{count,number} unread",
+    "messageformat": "{count,number} necitite",
     "description": "Nav Tabs > Unread badge > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--MarkedUnread": {
-    "messageformat": "Marked unread",
+    "messageformat": "Marchează necitit",
     "description": "Nav Tabs > Unread badge > when conversation is marked unread > Accessibility Text"
   },
+  "icu:NavTabs__ItemLabel--Chats": {
+    "messageformat": "Conversații",
+    "description": "Nav Tabs > Chats Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Calls": {
+    "messageformat": "Apeluri",
+    "description": "Nav Tabs > Calls Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Stories": {
+    "messageformat": "Povești",
+    "description": "Nav Tabs > Stories Button > Label & Accessibility Text"
+  },
   "icu:NavTabs__ItemLabel--Settings": {
-    "messageformat": "Settings",
+    "messageformat": "Setări",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Update": {
-    "messageformat": "Update Signal",
+    "messageformat": "Actualizează Signal",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Profile": {
-    "messageformat": "Profile",
+    "messageformat": "Profil",
     "description": "Nav Tabs > Profile Button > Accessibility Text"
   },
   "icu:NavSidebar__BackButtonLabel": {
-    "messageformat": "Back",
+    "messageformat": "Înapoi",
     "description": "Shown in the sidebar header when on a nested panel within the current sidebar, takes the user back to the previous step or default sidebar state"
   },
   "icu:archiveHelperText": {
@@ -428,7 +473,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Tocmai ai trecut prin procesul de export iar contactele și mesajele tale așteaptă răbdător în calculatorul tău. Alege directorul care conține datele tale Cradle salvate.",
+    "messageformat": "Tocmai ai trecut prin procesul de export iar contactele și mesajele tale așteaptă răbdător în calculatorul tău. Alege directorul care conține datele tale Signal salvate.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -444,7 +489,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Asigură-te că ai ales directorul corect ce conține datele Cradle salvate. Numele acestuia ar trebui să înceapă cu \"Cradle Export\". De asemenea, poți salva o nouă copie a datelor tale din aplicația Chrome.",
+    "messageformat": "Asigură-te că ai ales directorul corect ce conține datele Signal salvate. Numele acestuia ar trebui să înceapă cu \"Signal Export\". De asemenea, poți salva o nouă copie a datelor tale din aplicația Chrome.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -460,7 +505,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Începe să folosești Cradle Desktop",
+    "messageformat": "Începe să folosești Signal Desktop",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -544,11 +589,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "Numărul de siguranță pe care îl verifici s-a schimbat. Te rugăm să revizuiești numărul de siguranță cu {name1}. Reține, această schimbare poate însemna că cineva încearcă să vă intercepteze comunicarea sau că {name2} pur și simplu a reinstalat Signal/Cradle.",
+    "messageformat": "Numărul de siguranță pe care îl verifici s-a schimbat. Te rugăm să revizuiești numărul de siguranță cu {name1}. Reține, această schimbare poate însemna că cineva încearcă să vă intercepteze comunicarea sau că {name2} pur și simplu a reinstalat Signal.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "E posibil ca următoarele persoane să fi reinstalat Signal/Cradle sau să fi schimbat dispozitivele. Dă clic pe una dintre ele ca să confirmi noul lor număr de siguranță. Este opțional.",
+    "messageformat": "E posibil ca următoarele persoane să fi reinstalat Signal sau să fi schimbat dispozitivele. Dă clic pe una dintre ele ca să confirmi noul lor număr de siguranță. Este opțional.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -560,7 +605,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {Ai {count,number} conexiune care e posibil să fi reinstalat Signal/Cradle sau să fi schimbat dispozitive. Poți, dacă vrei, să revizuiești numărul său de siguranță înainte de a trimite.} few {Ai {count,number} conexiuni care e posibil să fi reinstalat Signal/Cradle sau să fi schimbat dispozitive. Poți, dacă vrei, să revizuiești numerele lor de siguranță înainte de a trimite.} other {Ai {count,number} de conexiuni care e posibil să fi reinstalat Signal/Cradle sau să fi schimbat dispozitive. Poți, dacă vrei, să revizuiești numerele lor de siguranță înainte de a trimite.}}",
+    "messageformat": "{count, plural, one {Ai {count,number} conexiune care e posibil să fi reinstalat Signal sau să fi schimbat dispozitive. Poți, dacă vrei, să revizuiești numărul său de siguranță înainte de a trimite.} few {Ai {count,number} conexiuni care e posibil să fi reinstalat Signal sau să fi schimbat dispozitive. Poți, dacă vrei, să revizuiești numerele lor de siguranță înainte de a trimite.} other {Ai {count,number} de conexiuni care e posibil să fi reinstalat Signal sau să fi schimbat dispozitive. Poți, dacă vrei, să revizuiești numerele lor de siguranță înainte de a trimite.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -592,7 +637,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "Numărul tău de siguranță cu {name1} s-a schimbat. Asta ar putea însemna fie că cineva încearcă să intercepteze comunicarea voastră fie că {name2} pur și simplu a reinstalat Signal/Cradle. Ar trebui să verifici numărul tău de siguranță cu acest contact.",
+    "messageformat": "Numărul tău de siguranță cu {name1} s-a schimbat. Asta ar putea însemna fie că cineva încearcă să intercepteze comunicarea voastră fie că {name2} pur și simplu a reinstalat Signal. Ar trebui să verifici numărul tău de siguranță cu acest contact.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -611,6 +656,10 @@
     "messageformat": "Sună oricum",
     "description": "Used on a warning dialog to make it clear that it might be risky to call the conversation."
   },
+  "icu:joinAnyway": {
+    "messageformat": "Alătură-te oricum",
+    "description": "Used on a warning dialog to make it clear that it might be risky to join the call."
+  },
   "icu:continueCall": {
     "messageformat": "Continuă apelul",
     "description": "Used on a warning dialog to make it clear that it might be risky to continue the group call."
@@ -628,7 +677,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Ceva nu a funcționat în timpul încărcării! Te rugăm trimite un e-mail la support@cradle.org și atașează jurnalul ca fișier text.",
+    "messageformat": "Ceva nu a funcționat în timpul încărcării! Te rugăm trimite un e-mail la support@signal.org și atașează jurnalul ca fișier text.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -672,23 +721,23 @@
   },
   "icu:SafetyNumberViewer__migration__text": {
     "messageformat": "Se actualizează numerele de siguranță.",
-    "description": "An explanatory note in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) An explanatory note in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__migration__learn_more": {
     "messageformat": "Află mai multe",
-    "description": "A link text in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) A link text in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__card__prev": {
     "messageformat": "Numărul de siguranță anterior",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__card__next": {
     "messageformat": "Următorul număr de siguranță",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__carousel__dot": {
     "messageformat": "Versiunea numărului de siguranță, {index,number} din {total,number}",
-    "description": "An ARIA label for safety number carousel button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number carousel button."
   },
   "icu:SafetyNumberViewer__markAsVerified": {
     "messageformat": "Marchează ca fiind verificat",
@@ -698,33 +747,41 @@
     "messageformat": "Șterge verificarea",
     "description": "Safety number viewer, verification toggle button, when verified, clears verification state"
   },
+  "icu:SafetyNumberViewer__hint": {
+    "messageformat": "Pentru a verifica criptarea integrală cu {name}, compară numerele de mai sus cu cele de pe dispozitivul lor. Ei pot, de asemenea, să scaneze codul tău cu dispozitivul lor.",
+    "description": "Safety number viewer, text of the hint"
+  },
+  "icu:SafetyNumberViewer__learn_more": {
+    "messageformat": "Află mai multe",
+    "description": "Text of 'Learn more' button of SafetyNumberViewerModal modal"
+  },
   "icu:SafetyNumberViewer__hint--migration": {
     "messageformat": "Pentru a verifica criptarea integrală a conversației tale cu {name}, potrivește cardul de culoare de mai sus cu dispozitivul său și compară numerele. Dacă nu se potrivesc, glisează și încearcă cealaltă pereche de numere de siguranță. Doar o pereche trebuie să se potrivească.",
-    "description": "Safety number viewer, text of the hint during migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint during migration period"
   },
   "icu:SafetyNumberViewer__hint--normal": {
     "messageformat": "Pentru a verifica criptarea integrală cu {name}, compară numerele de mai sus cu cele de pe dispozitivul lor. Ei pot, de asemenea, să scaneze codul tău cu dispozitivul lor.",
-    "description": "Safety number viewer, text of the hint after migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint after migration period"
   },
   "icu:SafetyNumberOnboarding__title": {
     "messageformat": "Modificări ale numerelor de siguranță",
-    "description": "Title of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Title of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p1": {
     "messageformat": "Numerele de siguranță sunt actualizate într-o perioadă de tranziție pentru a activa viitoarele funcții de confidențialitate în Signal.",
-    "description": "Paragraph 1 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 1 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p2": {
     "messageformat": "Pentru a verifica numerele de siguranță, potrivește cardul de culoare cu dispozitivul persoanei de contact. Dacă nu se potrivesc, încearcă cealaltă pereche de numere de siguranță. Doar o pereche trebuie să se potrivească.",
-    "description": "Paragraph 2 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 2 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__help": {
     "messageformat": "Ai nevoie de ajutor?",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__close": {
     "messageformat": "Am înțeles",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberNotReady__body": {
     "messageformat": "Un număr de siguranță va fi creat cu această persoană după ce schimbi mesaje cu ea.",
@@ -750,7 +807,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "Numărul de siguranță pentru acest contact s-a schimbat. Asta poate însemna că cineva încearcă să intercepteze comunicarea, sau contactul și-a reinstalat Signal/Cradle. E posibil să vrei să verifici noul număr de siguranță de mai jos."
+    "messageformat": "Numărul de siguranță pentru acest contact s-a schimbat. Asta poate însemna că cineva încearcă să intercepteze comunicarea, sau contactul și-a reinstalat Signal. E posibil să vrei să verifici noul număr de siguranță de mai jos."
   },
   "icu:incomingError": {
     "messageformat": "Eroare la procesarea mesajului primit"
@@ -813,15 +870,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Se încarcă previzualizarea...",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "Miniatură schiță a previzualizări pentru {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "Miniatură a previzualizări pentru {domain}",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Schiță atașament imagine: {path}",
@@ -916,18 +973,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "înscrie-te la beta",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Preferințe Cradle Desktop",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "messageformat": "Preferințe Signal Desktop",
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Creator pachet cu autocolante",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "Despre Cradle Desktop",
+    "messageformat": "Despre Signal Desktop",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -951,7 +1008,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Cradle Desktop",
+    "messageformat": "Signal Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -1003,7 +1060,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Bun venit la Cradle"
+    "messageformat": "Bun venit la Signal"
   },
   "icu:whatsNew": {
     "messageformat": "Vezi {whatsNew} în această actualizare",
@@ -1134,15 +1191,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Pentru a trimite mesaje vocale, permite aplicației Cradle Desktop accesul la microfonul tău.",
+    "messageformat": "Pentru a trimite mesaje vocale, permite aplicației Signal Desktop accesul la microfonul tău.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Pentru a apela, trebuie să-i permiți lui Cradle Desktop să-ți acceseze microfonul.",
+    "messageformat": "Pentru a apela, trebuie să-i permiți lui Signal Desktop să-ți acceseze microfonul.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Pentru apeluri video, trebuie să-i permiți lui Cradle Desktop să-ți acceseze camera.",
+    "messageformat": "Pentru apeluri video, trebuie să-i permiți lui Signal Desktop să-ți acceseze camera.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1182,15 +1239,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Cradle nu a putut fi actualizat. {retry} sau mergi la {url} pentru a o instala manual. Apoi, {support} în legătură cu această problemă",
+    "messageformat": "Signal nu a putut fi actualizat. {retry} sau mergi la {url} pentru a o instala manual. Apoi, {support} în legătură cu această problemă",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Cradle nu a putut fi actualizat. Mergi la {url} pentru a instala manual. Apoi, {support} în legătură cu această problemă",
+    "messageformat": "Signal nu a putut fi actualizat. Mergi la {url} pentru a instala manual. Apoi, {support} în legătură cu această problemă",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Cradle Desktop se află probabil în carantină macOS, și nu va putea fi actualizat automat. Te rugăm să încearci să muți {app} în {folder} folosind Finder.",
+    "messageformat": "Signal Desktop se află probabil în carantină macOS, și nu va putea fi actualizat automat. Te rugăm să încearci să muți {app} în {folder} folosind Finder.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1246,7 +1303,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Acest mesaj va fi șters pentru toți participanții la conversație dacă aceștia folosesc o versiune recentă Signal/Cradle. Participanții vor putea vedea că ai șters mesajul.",
+    "messageformat": "Acest mesaj va fi șters pentru toți participanții la conversație dacă aceștia folosesc o versiune recentă Signal. Participanții vor putea vedea că ai șters mesajul.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1365,17 +1422,17 @@
     "messageformat": "Informații",
     "description": "Shown on the drop-down menu for an individual message, takes you to message detail screen"
   },
-  "icu:deleteMessages": {
-    "messageformat": "Șterge",
-    "description": "Menu item for deleting messages, title case."
+  "icu:deleteMessagesInConversation": {
+    "messageformat": "Șterge mesajele",
+    "description": "Menu item for deleting all messages in a conversation from your device"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Ștergi conversația?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__title": {
+    "messageformat": "Ștergi mesajele?",
+    "description": "Title for confirmation modal to delete all messages in a conversation"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "Această conversație va fi ștearsă de pe acest dispozitiv.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__description": {
+    "messageformat": "Mesajele din această conversație vor fi șterse de pe acest dispozitiv. Poți căuta în continuare acest chat, după ce ștergi mesajele.",
+    "description": "Description for confirmation modal to delete all messages in a conversation"
   },
   "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
     "messageformat": "Părăsește grupul",
@@ -1410,7 +1467,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Cradle folosește criptarea integrală și câteodată va fi nevoie să actualizeze sesiunea conversației. Acest lucru nu va afecta securitatea conversației dar este posibil să fi ratat un mesaj de la acest contact dar îi poți cere să-l retrimită.",
+    "messageformat": "Signal folosește criptarea integrală și câteodată va fi nevoie să actualizeze sesiunea conversației. Acest lucru nu va afecta securitatea conversației dar este posibil să fi ratat un mesaj de la acest contact dar îi poți cere să-l retrimită.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1469,6 +1526,14 @@
     "messageformat": "Istoricul mesajelor pentru ambele conversații au fost cumulate aici.",
     "description": "Contents of a dialog shown after clicking 'learn more' button on a conversation merge event."
   },
+  "icu:PhoneNumberDiscovery--notification--withSharedGroup": {
+    "messageformat": "{phoneNumber} aparține lui {conversationTitle}. Sunteți membri ai {sharedGroup}.",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with."
+  },
+  "icu:PhoneNumberDiscovery--notification--noSharedGroup": {
+    "messageformat": "{phoneNumber} aparține persoanei {conversationTitle}",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with, but you have no shared groups."
+  },
   "icu:quoteThumbnailAlt": {
     "messageformat": "Miniatură a unei imagini dintr-un mesaj citat",
     "description": "Used in alt tag of thumbnail images inside of an embedded message quote"
@@ -1502,20 +1567,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Bun venit la Cradle Desktop",
+    "messageformat": "Bun venit la Signal Desktop",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "Confidențialitatea este posibilă. Cradle face asta ușor.",
+    "messageformat": "Confidențialitatea este posibilă. Signal face asta ușor.",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "Dispozitive asociate",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Asociază dispozitiv nou",
-    "description": "The menu option shown in Cradle iOS to add a new linked device"
+    "description": "The menu option shown in Signal iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Află mai multe",
@@ -1589,7 +1654,7 @@
     "messageformat": "Ne pare rău, ai prea multe dispozitive asociate deja. Încearcă să elimini câteva."
   },
   "icu:installTooOld": {
-    "messageformat": "Actualizează Cradle de pe acest dispozitiv pentru a asocia telefonul tău."
+    "messageformat": "Actualizează Signal de pe acest dispozitiv pentru a asocia telefonul tău."
   },
   "icu:installErrorHeader": {
     "messageformat": "Ceva nu a funcționat!"
@@ -1616,10 +1681,6 @@
     "messageformat": "Sună din nou",
     "description": "Button to call someone again"
   },
-  "icu:calling__start": {
-    "messageformat": "Începe apelul",
-    "description": "Button label in the call lobby for starting a call"
-  },
   "icu:calling__join": {
     "messageformat": "Alătură-te apelului",
     "description": "Button label in the call lobby for joining a call"
@@ -1632,13 +1693,25 @@
     "messageformat": "Microfonul a fost oprit datorită dimensiuni apelului",
     "description": "Shown in a call lobby toast if there are a lot of people already on the call"
   },
+  "icu:calling__toasts--aria-label": {
+    "messageformat": "Notificări de apel",
+    "description": "Aria label for region of toasts shown during a call (for, e.g. reconnecting, person joined, audio device changed notifications)"
+  },
   "icu:calling__call-is-full": {
     "messageformat": "Numărul maxim de participanți a fost atins",
     "description": "Text in the call lobby when you can't join because the call is full"
   },
-  "icu:calling__button--video__label": {
-    "messageformat": "Cameră foto",
-    "description": "Label under the video button"
+  "icu:CallingLobbyJoinButton--join": {
+    "messageformat": "Alătură-te",
+    "description": "Button label in the call lobby for joining a call"
+  },
+  "icu:CallingLobbyJoinButton--start": {
+    "messageformat": "Start",
+    "description": "Button label in the call lobby for starting a call"
+  },
+  "icu:CallingLobbyJoinButton--call-full": {
+    "messageformat": "Numărul maxim de participanți a fost atins",
+    "description": "Button in the call lobby when you can't join because the call is full"
   },
   "icu:calling__button--video-disabled": {
     "messageformat": "Cameră dezactivată",
@@ -1652,10 +1725,6 @@
     "messageformat": "Pornește camera",
     "description": "Button tooltip label for turning on the camera"
   },
-  "icu:calling__button--audio__label": {
-    "messageformat": "Silențios",
-    "description": "Label under the audio button"
-  },
   "icu:calling__button--audio-disabled": {
     "messageformat": "Microfon dezactivat",
     "description": "Button tooltip label when the microphone is disabled"
@@ -1667,10 +1736,6 @@
   "icu:calling__button--audio-on": {
     "messageformat": "Pornește microfonul",
     "description": "Button tooltip label for turning on the microphone"
-  },
-  "icu:calling__button--presenting__label": {
-    "messageformat": "Partajează",
-    "description": "Label under the share screen button"
   },
   "icu:calling__button--presenting-disabled": {
     "messageformat": "Prezentări dezactivate",
@@ -1684,10 +1749,6 @@
     "messageformat": "Oprește prezentarea",
     "description": "Button tooltip label for stopping screen sharing"
   },
-  "icu:calling__button--ring__label": {
-    "messageformat": "Sună",
-    "description": "Label under the ring button"
-  },
   "icu:calling__button--ring__disabled-because-group-is-too-large": {
     "messageformat": "Grupul este prea mare pentru a apela participanții.",
     "description": "Button tooltip label when you can't ring because the group is too large"
@@ -1699,6 +1760,26 @@
   "icu:calling__button--ring__on": {
     "messageformat": "Activează soneria",
     "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton__ring-off": {
+    "messageformat": "Dezactivează soneria",
+    "description": "Button tooltip label for turning ringing off"
+  },
+  "icu:CallingButton--ring-on": {
+    "messageformat": "Activează soneria",
+    "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton--more-options": {
+    "messageformat": "Mai multe opțiuni",
+    "description": "Tooltip label for button in the calling screen that opens a menu with other call actions such as React or Raise Hand."
+  },
+  "icu:CallingRaisedHandsList__Title": {
+    "messageformat": "{count, plural, one {Mâini ridicate · {count,number} persoană} few {Mâini ridicate · {count,number} persoane} other {Mâini ridicate · {count,number} de persoane}}",
+    "description": "Shown in the call raised hands list to describe how many people have active raised hands"
+  },
+  "icu:CallingReactions--me": {
+    "messageformat": "Tu",
+    "description": "Label next to in-call reactions to indicate that the current user sent that reaction."
   },
   "icu:calling__your-video-is-off": {
     "messageformat": "Camera ta este oprită",
@@ -1725,23 +1806,23 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--many-people-in-call": {
-    "messageformat": "{first}, {second} și alte {others} persoane sunt în acest apel",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others are in this call",
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Cradle va suna pe {person}",
+    "messageformat": "Signal va suna pe {person}",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Cradle va suna pe {first} și {second}",
+    "messageformat": "Signal va suna pe {first} și {second}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Cradle va suna pe {first}, {second} și {third}",
+    "messageformat": "Signal va suna pe {first}, {second} și {third}",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Cradle va suna pe {first}, {second} și {others} alții",
+    "messageformat": "Signal will ring {first}, {second}, and {others, plural, other {#}} others",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1757,7 +1838,7 @@
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__pre-call-info--will-notify-many": {
-    "messageformat": "{first}, {second} și alte {others} persoane vor fi notificate",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others will be notified",
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__in-this-call--zero": {
@@ -1797,7 +1878,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Cradle partajează {window}",
+    "messageformat": "Signal partajează {window}",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1821,7 +1902,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Cradle are nevoie de permisiune pentru a accesa înregistrarea ecranului tău.",
+    "messageformat": "Signal are nevoie de permisiune pentru a accesa înregistrarea ecranului tău.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1833,7 +1914,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "În partea dreapta, bifează caseta de lângă Cradle. Dacă nu găsești Cradle în listă, apasă + pentru a-l adăuga.",
+    "messageformat": "În partea dreapta, bifează caseta de lângă Signal. Dacă nu găsești Signal în listă, apasă + pentru a-l adăuga.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1877,12 +1958,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "Verificarea ortografică va fi activată la următoarea pornire a Cradle.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "Verificarea ortografică va fi activată la următoarea pornire a Signal.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "Verificarea ortografică va fi dezactivată la următoarea pornire a Cradle.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "Verificarea ortografică va fi dezactivată la următoarea pornire a Signal.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Minimizare în bara de sistem",
@@ -1897,15 +1978,15 @@
     "description": "Description for the automatic launch setting"
   },
   "icu:clearDataHeader": {
-    "messageformat": "Șterge datele aplicației",
+    "messageformat": "Delete application data",
     "description": "Header in the settings dialog for the section dealing with data deletion"
   },
   "icu:clearDataExplanation": {
-    "messageformat": "Această acțiune va șterge toate datele din aplicație, înlăturând toate mesajele și informațiile salvate despre cont",
+    "messageformat": "This will delete all data in the application, removing all messages and saved account information.",
     "description": "Text describing what the clear data button will do."
   },
   "icu:clearDataButton": {
-    "messageformat": "Șterge datele",
+    "messageformat": "Delete data",
     "description": "Button in the settings dialog starting process to delete all data"
   },
   "icu:deleteAllDataHeader": {
@@ -1913,7 +1994,7 @@
     "description": "Header of the full-screen delete data confirmation screen"
   },
   "icu:deleteAllDataBody": {
-    "messageformat": "Ești pe cale să ștergi toate informațiile de cont salvate ale acestei aplicații, inclusiv toate persoanele de contact și toate mesajele. Poți oricând să te conectezi din nou cu dispozitivul mobil, dar mesajele șterse nu vor fi restabilite.",
+    "messageformat": "Delete all data and messages from this version of Signal Desktop? You can always relink this desktop, but your messages will not restore. Your Signal account and data on your phone or other linked devices will not be deleted.",
     "description": "Text describing what exactly will happen if the user clicks the button to delete all data"
   },
   "icu:deleteAllDataButton": {
@@ -1925,8 +2006,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Ai date învechite de la o instalare anterioara a Cradle Desktop. Dacă alegi să continui, acestea vor fi șterse și vei începe de la zero.",
-    "description": "Shown if user last ran Cradle Desktop before October 2018"
+    "messageformat": "Ai date învechite de la o instalare anterioara a Signal Desktop. Dacă alegi să continui, acestea vor fi șterse și vei începe de la zero.",
+    "description": "Shown if user last ran Signal Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Șterge Datele Vechi",
@@ -2007,11 +2088,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "Această versiune de Cradle Desktop a expirat. Te rugăm actualizează la cea mai recentă versiune pentru a putea trimite mesaje în continuare.",
+    "messageformat": "Această versiune de Signal Desktop a expirat. Te rugăm actualizează la cea mai recentă versiune pentru a putea trimite mesaje în continuare.",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Apasă pentru a deschide cradle.org/download",
+    "messageformat": "Apasă pentru a deschide signal.org/download",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2179,7 +2260,7 @@
     "description": "In conversation details, label for button to view safety number, opens safety number modal"
   },
   "icu:ConversationDetails__HeaderButton--Message": {
-    "messageformat": "Message",
+    "messageformat": "Mesaj",
     "description": "In conversation details, label for button to switch to the conversation view in order to draft a message in that converation"
   },
   "icu:SafetyNumberNotification__viewSafetyNumber": {
@@ -2264,22 +2345,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Nu s-a găsit numele de utilizator. Verifică conexiunea și încearcă din nou.",
-    "description": "Shown if request to Cradle servers to find username fails"
+    "description": "Shown if request to Signal servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "Nu s-a găsit numărul de telefon. Verifică conexiunea și încearcă din nou.",
-    "description": "Shown if request to Cradle servers to find phone number fails"
+    "description": "Shown if request to Signal servers to find phone number fails"
   },
-  "icu:ToastManager__CannotEditMessage": {
-    "messageformat": "Modificările pot fi aplicate numai în termen de 3 de ore din momentul în care ai trimis acest mesaj.",
+  "icu:ToastManager__CannotEditMessage_24": {
+    "messageformat": "Editările pot fi făcute numai în termen de 24 de ore de la trimiterea acestui mesaj.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "Utilizatorul nu a fost găsit. {atUsername} nu este un utilizator Signal/Cradle, asigură-te că ai introdus numele de utilizator complet.",
+    "messageformat": "Utilizatorul nu a fost găsit. {atUsername} nu este un utilizator Signal, asigură-te că ai introdus numele de utilizator complet.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "Utilizator nu a fost găsit. \"{phoneNumber}\" nu este un utilizator Signal/Cradle.",
+    "messageformat": "Utilizator nu a fost găsit. \"{phoneNumber}\" nu este un utilizator Signal.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2307,7 +2388,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Grupurile Cradle pot avea un maximum de {max,number} membri.",
+    "messageformat": "Grupurile Signal pot avea un maximum de {max,number} membri.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2315,7 +2396,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Grupurile Cradle funcționează cel mai bine cu {max,number} de membri sau mai puțin. Adăugarea mai multor membri va cauza întârzieri la trimiterea și primirea mesajelor.",
+    "messageformat": "Grupurile Signal funcționează cel mai bine cu {max,number} de membri sau mai puțin. Adăugarea mai multor membri va cauza întârzieri la trimiterea și primirea mesajelor.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2367,7 +2448,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Apasă pentru a asocia din nou Cradle Desktop cu dispozitivul tău mobil și pentru a continua să trimiți mesaje."
+    "messageformat": "Apasă pentru a asocia din nou Signal Desktop cu dispozitivul tău mobil și pentru a continua să trimiți mesaje."
   },
   "icu:unlinked": {
     "messageformat": "Disociat"
@@ -2385,17 +2466,17 @@
     "messageformat": "Contactează asistența"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Apasă pentru a reporni Cradle"
+    "messageformat": "Apasă pentru a reporni Signal"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Apasă pentru a descărca actualizarea"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Cradle nu a putut fi actualizat. Apasă pentru a încerca din nou.",
+    "messageformat": "Signal nu a putut fi actualizat. Apasă pentru a încerca din nou.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Repornește Cradle"
+    "messageformat": "Repornește Signal"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "Mai târziu"
@@ -2514,6 +2595,14 @@
   "icu:message--deletedForEveryone": {
     "messageformat": "Acest mesaj a fost șters.",
     "description": "Shown in a message's bubble when the message has been deleted for everyone."
+  },
+  "icu:message--attachmentTooBig--one": {
+    "messageformat": "Atașamentul este prea mare pentru a fi afișat.",
+    "description": "Shown in a message bubble if no attachments are left on message when too-large attachments are dropped"
+  },
+  "icu:message--attachmentTooBig--multiple": {
+    "messageformat": "Unele atașamente sunt prea mari pentru a fi afișate.",
+    "description": "Shown in a message bubble if any attachments are left on message when too-large attachments are dropped"
   },
   "icu:donation--missing": {
     "messageformat": "Nu am putut să obținem detaliile donației",
@@ -2653,15 +2742,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Vă prezentăm autocolantele: Pisica bandită",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Vă prezentăm autocolantele",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "De ce să folosești cuvinte când poți folosi autocolante?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Deschide selectorul de autocolante",
@@ -2804,20 +2893,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact} v-a trimis un mesaj ce nu poate fi procesat sau afișat deoarece folosește o nouă funcționalitate Signal/Cradle."
+    "messageformat": "{contact} v-a trimis un mesaj ce nu poate fi procesat sau afișat deoarece folosește o nouă funcționalitate Signal."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Îl poți ruga pe {contact} să retrimită acest mesaj acum că folosești o versiune actualizată de Cradle."
+    "messageformat": "Îl poți ruga pe {contact} să retrimită acest mesaj acum că folosești o versiune actualizată de Signal."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Unul dintre dispozitivele tale a trimis un mesaj ce nu poate fi procesat sau afișat pentru că utilizează o nouă funcționalitate Signal/Cradle."
+    "messageformat": "Unul dintre dispozitivele tale a trimis un mesaj ce nu poate fi procesat sau afișat pentru că utilizează o nouă funcționalitate Signal."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "Mesajele viitoare de acest tip vor fi sincronizate acum că folosești o versiune actualizată a Cradle."
+    "messageformat": "Mesajele viitoare de acest tip vor fi sincronizate acum că folosești o versiune actualizată a Signal."
   },
   "icu:Message--update-signal": {
-    "messageformat": "Actualizează Cradle",
-    "description": "Text for a button which will take user to Cradle download page"
+    "messageformat": "Actualizează Signal",
+    "description": "Text for a button which will take user to Signal download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Vizualizată",
@@ -3156,11 +3245,19 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Doar Cradle beta",
-    "description": "Title of the modal shown before sending your first edit message"
+    "messageformat": "Doar Signal beta",
+    "description": "(deleted 8/30) Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "Editarea mesajelor este disponibilă numai pentru utilizatorii Cradle beta. Dacă editezi un mesaj, acesta va fi vizibil numai pentru persoanele care au cea mai recentă versiune de Cradle beta.",
+    "messageformat": "Editarea mesajelor este disponibilă numai pentru utilizatorii Signal beta. Dacă editezi un mesaj, acesta va fi vizibil numai pentru persoanele care au cea mai recentă versiune de Signal beta.",
+    "description": "(deleted 8/30) Body text of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--title2": {
+    "messageformat": "Editează Mesajul",
+    "description": "Title of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--body2": {
+    "messageformat": "Dacă editezi un mesaj, acesta va fi vizibil numai pentru persoanele care au cea mai recentă versiune de Signal beta. Ei vor putea să vadă că ai editat un mesaj.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3168,20 +3265,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "Este posibil ca anumite persoane să folosească o versiune Cradle care nu acceptă text formatat. Acele persoane nu vor vedea schimbările de formatare pe care le-ai făcut la mesajul tău.",
+    "messageformat": "Este posibil ca anumite persoane să folosească o versiune Signal care nu acceptă text formatat. Acele persoane nu vor vedea schimbările de formatare pe care le-ai făcut la mesajul tău.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "Vrei să deschizi Cradle Sticker Pack Creator?",
-    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
+    "messageformat": "Vrei să deschizi Signal Sticker Pack Creator?",
+    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Confirmă",
-    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Revocare",
-    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "Te rugăm să configurezi Signal pe telefonul și desktopul tău pentru a utiliza creatorul de autocolante",
@@ -3332,7 +3429,7 @@
     "description": "Shown in the conversation hero to indicate this user is a member of four mutual groups"
   },
   "icu:member-of-more-than-3-groups--multiple-more": {
-    "messageformat": "Membru al {group1}, {group2}, {group3} și încă {remainingCount,number}",
+    "messageformat": "Member of {group1}, {group2}, {group3} and {remainingCount, plural, other {#}} more",
     "description": "Shown in the conversation hero to indicate this user is a member of 5+ mutual groups."
   },
   "icu:ConversationHero--membership-added": {
@@ -3400,12 +3497,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Cradle încă funcționează",
-    "description": "Shown in a notification title when Cradle is minimized to tray"
+    "messageformat": "Signal încă funcționează",
+    "description": "Shown in a notification title when Signal is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Cradle va continua să funcționeze în zona de notificări. Poți schimba asta în setările Cradle.",
-    "description": "Shown in a notification body when Cradle is minimized to tray"
+    "messageformat": "Signal va continua să funcționeze în zona de notificări. Poți schimba asta în setările Signal.",
+    "description": "Shown in a notification body when Signal is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Apel vocal de intrare…",
@@ -3416,11 +3513,11 @@
     "description": "Shown in both the incoming call bar and notification for an incoming video call"
   },
   "icu:outgoingAudioCall": {
-    "messageformat": "Outgoing voice call",
+    "messageformat": "Apel de ieșire vocal",
     "description": "Shown in the timeline for an outgoing voice call"
   },
   "icu:outgoingVideoCall": {
-    "messageformat": "Outgoing video call",
+    "messageformat": "Apel de ieșire video",
     "description": "Shown in the timeline for an outgoing video call"
   },
   "icu:incomingGroupCall__ringing-you": {
@@ -3467,9 +3564,69 @@
     "messageformat": "Se reconectează…",
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
-  "icu:callDuration": {
-    "messageformat": "Cradle {duration}",
-    "description": "Shown in the call screen to indicate how long the call has been connected"
+  "icu:CallControls__InfoDisplay--participants": {
+    "messageformat": "{count, plural, one {{count,number} persoană} few {{count,number} persoane} other {{count,number} persoane}}",
+    "description": "Shown in the call screen and lobby for group calls to specify the number of members in the call or in the group. Count is at always at least 1."
+  },
+  "icu:CallControls__InfoDisplay--audio-call": {
+    "messageformat": "Apel audio",
+    "description": "Shown in the call lobby for a direct 1:1 call when the caller's video is disabled, to specify that an audio call will be placed when clicking the Start button."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-1-1": {
+    "messageformat": "Sfârşit",
+    "description": "Title for the hangup button for a direct 1:1 call with only 2 participants."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-group": {
+    "messageformat": "Părăsește",
+    "description": "Title for the hangup button for a group call."
+  },
+  "icu:CallControls__MutedToast--muted": {
+    "messageformat": "Microfon dezactivat",
+    "description": "Shown in a call when the user mutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__MutedToast--unmuted": {
+    "messageformat": "Microfon activat",
+    "description": "Shown in a call when the user is muted and then unmutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-on": {
+    "messageformat": "Sunet de apel activat",
+    "description": "Shown in a group call lobby when call ringing is disabled, then the user enables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-off": {
+    "messageformat": "Sunet de apel dezactivat",
+    "description": "Shown in a group call lobby when call ringing is enabled, then the user disables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RaiseHandsToast--you": {
+    "messageformat": "Mâna ta este ridicată.",
+    "description": "Shown in a call when the user raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--one": {
+    "messageformat": "{name} a ridicat mâna.",
+    "description": "Shown in a call when someone else raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--two": {
+    "messageformat": "{name} și {otherName} au ridicat mâna.",
+    "description": "Shown in a call when 2 persons raise their hands."
+  },
+  "icu:CallControls__RaiseHandsToast--more": {
+    "messageformat": "{name}, {otherName}, and {overflowCount, plural, other {#}} more raised a hand.",
+    "description": "Shown in a call when 3 or more persons raise their hands."
+  },
+  "icu:CallControls__RaiseHands--open-queue": {
+    "messageformat": "Deschide coada",
+    "description": "Link in call raised hands list and in toast shown when someone else raises their hand. Link opens the list of all raised hands."
+  },
+  "icu:CallControls__RaiseHands--lower": {
+    "messageformat": "Coboară",
+    "description": "Link in call raised hands list and in toast shown when user raises their hand. Link allows user to lower their hand."
+  },
+  "icu:CallControls__MenuItemRaiseHand": {
+    "messageformat": "Ridică mâna",
+    "description": "Menu item to raise your hand during a call."
+  },
+  "icu:CallControls__MenuItemRaiseHand--lower": {
+    "messageformat": "Coboară mâna",
+    "description": "Menu item to lower your previously raised hand during a call."
   },
   "icu:callingDeviceSelection__settings": {
     "messageformat": "Setări",
@@ -3511,13 +3668,25 @@
     "messageformat": "Apel pe ecran complet",
     "description": "Title for picture-in-picture toggle"
   },
-  "icu:calling__switch-view--to-grid": {
-    "messageformat": "Comută la vizualizare grilă",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__change-view": {
+    "messageformat": "Schimbă vizualizarea",
+    "description": "Tooltip for changing the in-call layout of remote participants in a group call"
   },
-  "icu:calling__switch-view--to-speaker": {
-    "messageformat": "Comută la vizualizare vorbitor",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__view_mode--paginated": {
+    "messageformat": "Vizualizare grilă",
+    "description": "Label for option to view participants in a group call in a paginated grid view"
+  },
+  "icu:calling__view_mode--overflow": {
+    "messageformat": "Vizualizare bara laterală",
+    "description": "Label for option to view participants in a group call where videos that don't fit onto the page are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--speaker": {
+    "messageformat": "Vizualizare vorbitor",
+    "description": "Label for option to view participants where only the current speaker's video is fully visible and all others are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--updated": {
+    "messageformat": "Vizualizare actualizată",
+    "description": "Toast shown whenver the calling view mode is changed (e.g. paginated view -> speaker view)"
   },
   "icu:calling__hangup": {
     "messageformat": "Părăsește apelul",
@@ -3619,6 +3788,14 @@
     "messageformat": "Okay",
     "description": "Button to dismiss popup dialog when user-initiated task has gone wrong"
   },
+  "icu:MessageMaxEditsModal__Title": {
+    "messageformat": "Nu se poate edita mesajul",
+    "description": "Title in popup dialog when attempting to edit a message too many times."
+  },
+  "icu:MessageMaxEditsModal__Description": {
+    "messageformat": "Only {max, plural, other {#}} edits can be applied to this message.",
+    "description": "Description text in popup dialog when attempting to edit a message too many times."
+  },
   "icu:unknown-sgnl-link": {
     "messageformat": "Ne pare rău, linkul sgnl:// nu a fost înțeles!",
     "description": "Shown if you click on a sgnl:// link not currently supported by Desktop"
@@ -3656,7 +3833,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "Acest link nu este acceptat de această versiune de Cradle Desktop.",
+    "messageformat": "Acest link nu este acceptat de această versiune de Signal Desktop.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4040,7 +4217,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--other": {
-    "messageformat": "{memberName} a invitat {count,number} persoane la grup.",
+    "messageformat": "{memberName} invited {count, plural, other {#}} people to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--you": {
@@ -4048,7 +4225,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--unknown": {
-    "messageformat": "{count,number} persoane au fost invitate la grup.",
+    "messageformat": "{count, plural, other {#}} people were invited to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--other": {
@@ -4124,7 +4301,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--other": {
-    "messageformat": "{adminName} a revocat invitațiile la grup pentru {count,number} persoane invitate de {memberName}.",
+    "messageformat": "{adminName} revoked invitations to the group for {count, plural, other {#}} people invited by {memberName}.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--you": {
@@ -4364,7 +4541,7 @@
     "description": "Shown in timeline when a group is upgraded and one person was removed entirely during the upgrade"
   },
   "icu:GroupV1--Migration--removed--many": {
-    "messageformat": "{count,number} membri au fost eliminați din grup.",
+    "messageformat": "{count, plural, other {#}} members were removed from the group.",
     "description": "Shown in timeline when a group is upgraded and some people were removed entirely during the upgrade"
   },
   "icu:close": {
@@ -4412,11 +4589,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Această persoană nu folosește Signal/Cradle",
+    "messageformat": "Această persoană nu folosește Signal",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal/Cradle Desktop nu poate trimite mesaje persoanelor de contact ce nu folosesc Signal/Cradle. Roagă această persoană să instaleze Signal/Cradle pentru a avea o conversație mai sigură.",
+    "messageformat": "Signal Desktop nu poate trimite mesaje persoanelor de contact ce nu folosesc Signal. Roagă această persoană să instaleze Signal pentru a avea o conversație mai sigură.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4752,7 +4929,7 @@
     "description": "conversation > in select mode > composition area actions > exit select mode > accessibility label"
   },
   "icu:SelectModeActions--selectedMessages": {
-    "messageformat": "{count,number} selectate",
+    "messageformat": "{count, plural, other {#}} selected",
     "description": "conversation > in select mode > composition area actions > count of selected messsages"
   },
   "icu:SelectModeActions--deleteSelectedMessages": {
@@ -4957,10 +5134,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "Despre solicitări mesaj",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Examinează cu atenție solicitările. Cradle a găsit un alt contact cu același nume. <reviewRequestLink>Revizuire solicitare</reviewRequestLink>",
+    "messageformat": "Examinează cu atenție solicitările. Signal a găsit un alt contact cu același nume. <reviewRequestLink>Revizuire solicitare</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -5024,7 +5201,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Pentru a ajuta la prevenirea spam-ului pe Cradle, te rugăm să completezi verificarea.",
+    "messageformat": "Pentru a ajuta la prevenirea spam-ului pe Signal, te rugăm să completezi verificarea.",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5295,9 +5472,29 @@
     "messageformat": "Nume de utilizator",
     "description": "Default text for username field"
   },
+  "icu:ProfileEditor--username--corrupted--body": {
+    "messageformat": "Ceva nu a funcționat corect cu numele tău de utilizator, nu mai este atribuit contului tău.",
+    "description": "Text of confirmation modal when the username gets corrupted"
+  },
+  "icu:ProfileEditor--username--corrupted--delete-button": {
+    "messageformat": "Șterge numele de utilizator",
+    "description": "Button text for deletion of the username in case of corruption"
+  },
+  "icu:ProfileEditor--username--corrupted--create-button": {
+    "messageformat": "Creați un nume de utilizator",
+    "description": "Button text for creation of a new username in case of corruption"
+  },
   "icu:ProfileEditor__username-link": {
     "messageformat": "Cod QR sau link",
     "description": "Label of a profile editor row that navigates to username link and qr code modal"
+  },
+  "icu:ProfileEditor__username__error-icon": {
+    "messageformat": "Numele de utilizator trebuie resetat",
+    "description": "Accessibility title of an icon in profile editor"
+  },
+  "icu:ProfileEditor__username-link__error-icon": {
+    "messageformat": "Linkul numelui de utilizator trebuie resetat",
+    "description": "Accessibility title of an icon in profile editor"
   },
   "icu:ProfileEditor__username-link__tooltip__title": {
     "messageformat": "Împărtășește-ți numele de utilizator",
@@ -5552,7 +5749,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Alege cine îți poate vedea numărul de telefon și cine te poate contacta pe Cradle cu el.",
+    "messageformat": "Alege cine îți poate vedea numărul de telefon și cine te poate contacta pe Signal cu el.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5560,11 +5757,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Numărul tău de telefon va fi vizibil pentru persoanele și grupurile către care trimiți mesaje. Persoanele care au numărul tău de telefon în lista lor de contacte îl vor vedea și pe Cradle.",
+    "messageformat": "Numărul tău de telefon va fi vizibil pentru persoanele și grupurile către care trimiți mesaje. Persoanele care au numărul tău de telefon în lista lor de contacte îl vor vedea și pe Signal.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Nimeni nu va vedea numărul tău de telefon pe Signal/Cradle.",
+    "messageformat": "Nimeni nu va vedea numărul tău de telefon pe Signal.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5584,11 +5781,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Oricine are numărul tău de telefon în agenda lor te va vedea ca un contact pe Signal/Cradle. Alte persoane vor putea să te apeleze pe numărul de telefon când încep o nouă conversație sau un nou grup.",
+    "messageformat": "Oricine are numărul tău de telefon în agenda lor te va vedea ca un contact pe Signal. Alte persoane vor putea să te apeleze pe numărul de telefon când încep o nouă conversație sau un nou grup.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Nimeni de pe Signal/Cradle nu va putea să te găsească cu numărul de telefon.",
+    "messageformat": "Nimeni de pe Signal nu va putea să te găsească cu numărul de telefon.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5651,6 +5848,42 @@
     "messageformat": "Nu vei mai putea să distribui sau să vezi povești. Actualizările poveștilor pe care le-ai distribuit recent vor fi și ele șterse.",
     "description": "Confirmation modal body for disabling stories"
   },
+  "icu:Preferences__Language__Label": {
+    "messageformat": "Limba",
+    "description": "Language setting label"
+  },
+  "icu:Preferences__Language__ModalTitle": {
+    "messageformat": "Limba",
+    "description": "Language setting modal title"
+  },
+  "icu:Preferences__Language__SystemLanguage": {
+    "messageformat": "Limbă sistem",
+    "description": "Option for system language"
+  },
+  "icu:Preferences__Language__SearchLanguages": {
+    "messageformat": "Caută limbi",
+    "description": "Placholder for language preference search box"
+  },
+  "icu:Preferences__Language__NoResults": {
+    "messageformat": "Fără rezultate pentru „{searchTerm}“",
+    "description": "When no results are found for language preference search"
+  },
+  "icu:Preferences__LanguageModal__Set": {
+    "messageformat": "Aplicare",
+    "description": "Button to set language preference"
+  },
+  "icu:Preferences__LanguageModal__Restart__Title": {
+    "messageformat": "Repornește Signal pentru a aplica",
+    "description": "Title for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Description": {
+    "messageformat": "Pentru a schimba limba, aplicația trebuie să repornească.",
+    "description": "Description for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Button": {
+    "messageformat": "Repornește",
+    "description": "Button to restart Signal to apply language changes"
+  },
   "icu:DialogUpdate--version-available": {
     "messageformat": "Este disponibilă actualizarea la versiunea {version}",
     "description": "Tooltip for new update available"
@@ -5668,7 +5901,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Ca să continui să folosești Cradle, trebuie să actualizezi la cea mai recentă versiune.",
+    "messageformat": "Ca să continui să folosești Signal, trebuie să actualizezi la cea mai recentă versiune.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5676,15 +5909,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "Restartează Cradle ca să instalezi actualizarea.",
+    "messageformat": "Restartează Signal ca să instalezi actualizarea.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Cradle Desktop nu a reușit să se actualizeze, dar există o nouă versiune disponibilă. Mergi la {downloadUrl} și instalează noua versiune manual, apoi fie contactezi serviciul de asistență sau raportezi un bug despre această problemă.",
+    "messageformat": "Signal Desktop nu a reușit să se actualizeze, dar există o nouă versiune disponibilă. Mergi la {downloadUrl} și instalează noua versiune manual, apoi fie contactezi serviciul de asistență sau raportezi un bug despre această problemă.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Cradle nu poate fi închis",
+    "messageformat": "Signal nu poate fi închis",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5704,15 +5937,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "O versiune mai nouă de Cradle este deja instalată. Sigur vrei să continui?",
-    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
+    "messageformat": "O versiune mai nouă de Signal este deja instalată. Sigur vrei să continui?",
+    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Aplicația s-a oprit",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Cradle a repornit după o oprire neașteptată. Poți trimite un jurnal de depanare pentru a ajuta Cradle să găsească problema.",
+    "messageformat": "Signal a repornit după o oprire neașteptată. Poți trimite un jurnal de depanare pentru a ajuta Signal să găsească problema.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5734,6 +5967,10 @@
   "icu:CustomizingPreferredReactions__had-save-error": {
     "messageformat": "S-a produs o eroare la salvarea setărilor tale. Te rugăm să încerci din nou.",
     "description": "Shown if there is an error when saving your preferred reaction settings. Should be very rare to see this message."
+  },
+  "icu:MediaEditor__input-placeholder": {
+    "messageformat": "Mesaj",
+    "description": "Placeholder for the input in the media editor"
   },
   "icu:MediaEditor__clock-more-styles": {
     "messageformat": "Mai multe stiluri",
@@ -5908,8 +6145,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Conexiunile Cradle",
-    "description": "The phrase/term: 'Cradle Connections'"
+    "messageformat": "Conexiunile Signal",
+    "description": "The phrase/term: 'Signal Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections}sunt persoane în care ai ales să ai încredere, fie prin:",
@@ -6088,7 +6325,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Toate conexiunile Cradle",
+    "messageformat": "Toate conexiunile Signal",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6100,7 +6337,7 @@
     "description": "Input label to create a block list"
   },
   "icu:StoriesSettings__mine__exclude--description": {
-    "messageformat": "{num,number}persoane excluse",
+    "messageformat": "{num, plural, other {#}} people excluded",
     "description": "Description of how many people are excluded in a list"
   },
   "icu:StoriesSettings__mine__only--label": {
@@ -6208,7 +6445,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Alege ce conexiuni Cradle pot să-ți vadă povestea. Poți oricând să schimbi asta din setările de confidențialitate. <learnMoreLink>Află mai multe.</learnMoreLink>",
+    "messageformat": "Alege ce conexiuni Signal pot să-ți vadă povestea. Poți oricând să schimbi asta din setările de confidențialitate. <learnMoreLink>Află mai multe.</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6224,11 +6461,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {Toate conexiunile Cradle · {viewersCount,number} spectator} few {Toate conexiunile Cradle · {viewersCount,number} spectatori} other {Toate conexiunile Cradle · {viewersCount,number} de spectatori}}",
+    "messageformat": "{viewersCount, plural, one {Toate conexiunile Signal · {viewersCount,number} spectator} few {Toate conexiunile Signal · {viewersCount,number} spectatori} other {Toate conexiunile Signal · {viewersCount,number} de spectatori}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {Toate conexiunile Cradle · {excludedCount,number} exclusă} few {Toate conexiunile Cradle · {excludedCount,number} excluse} other {Toate conexiunile Cradle · {excludedCount,number} excluse}}",
+    "messageformat": "{excludedCount, plural, one {Toate conexiunile Signal · {excludedCount,number} exclusă} few {Toate conexiunile Signal · {excludedCount,number} excluse} other {Toate conexiunile Signal · {excludedCount,number} excluse}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6572,7 +6809,7 @@
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__done": {
-    "messageformat": "Done",
+    "messageformat": "Gata",
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__color__radio": {
@@ -6583,8 +6820,16 @@
     "messageformat": "Dacă resetezi codul QR, codul QR existent și linkul nu vor mai funcționa.",
     "description": "Text of confirmation modal when resetting the username link"
   },
+  "icu:UsernameLinkModalBody__resetting-link": {
+    "messageformat": "Se resetează linkul...",
+    "description": "Text shown when resetting the username link"
+  },
+  "icu:UsernameLinkModalBody__error__text": {
+    "messageformat": "Codul QR și linkul nu sunt setate. Verifică-ți conexiunea la rețea și încearcă din nou.",
+    "description": "Text of the confirmation dialog shown on username link error"
+  },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Stabilește-ți numele de utilizator Cradle",
+    "messageformat": "Stabilește-ți numele de utilizator Signal",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6608,15 +6853,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Cradle desktop nu va mai accepta versiunea calculatorului tău de {OS} în curând. Ca să continui să folosești Cradle, actualizează-ți sistemul de operare al calculatorului până la {expirationDate}. <learnMoreLink>Află mai multe</learnMoreLink>",
+    "messageformat": "Signal desktop nu va mai accepta versiunea calculatorului tău de {OS} în curând. Ca să continui să folosești Signal, actualizează-ți sistemul de operare al calculatorului până la {expirationDate}. <learnMoreLink>Află mai multe</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Cradle desktop nu mai funcționează pe acest calculator. Ca să folosești Cradle desktop din nou, actualizează-ți versiunea calculatorului de {OS}. <learnMoreLink>Află mai multe</learnMoreLink>",
+    "messageformat": "Signal desktop nu mai funcționează pe acest calculator. Ca să folosești Signal desktop din nou, actualizează-ți versiunea calculatorului de {OS}. <learnMoreLink>Află mai multe</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Cradle desktop nu mai funcționează pe acest calculator. Ca să folosești Cradle desktop din nou, actualizează-ți versiunea calculatorului de {OS}.",
+    "messageformat": "Signal desktop nu mai funcționează pe acest calculator. Ca să folosești Signal desktop din nou, actualizează-ți versiunea calculatorului de {OS}.",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6636,119 +6881,123 @@
     "description": "Button text for the confirmation dialog shown to user when attempting to resend message edit"
   },
   "icu:StoriesTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Mai multe acțiuni",
     "description": "Stories Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__HeaderTitle--CallsList": {
-    "messageformat": "Calls",
+    "messageformat": "Apeluri",
     "description": "Calls Tab > Header > Title > On Calls List screen"
   },
   "icu:CallsTab__HeaderTitle--NewCall": {
-    "messageformat": "New Call",
+    "messageformat": "Apel nou",
     "description": "Calls Tab > Header > Title > On New Call screen"
   },
   "icu:CallsTab__NewCallActionLabel": {
-    "messageformat": "New Call",
+    "messageformat": "Apel nou",
     "description": "Calls Tab > New Call Action Button > Accessibility Label"
   },
   "icu:CallsTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Mai multe acțiuni",
     "description": "Calls Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__ClearCallHistoryLabel": {
-    "messageformat": "Clear call history",
+    "messageformat": "Ștergeți istoricul apelurilor",
     "description": "Calls Tab > More Actions Context Menu > Clear Call History Button Label"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Title": {
-    "messageformat": "Clear call history?",
+    "messageformat": "Ștergi istoricul apelurilor?",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Title"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Body": {
-    "messageformat": "This will permanently delete all call history",
+    "messageformat": "Aceasta va șterge definitiv tot istoricul apelurilor",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Body Text"
   },
   "icu:CallsTab__ConfirmClearCallHistory__ConfirmButton": {
-    "messageformat": "Clear",
+    "messageformat": "Eliminare",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Confirm Button"
   },
   "icu:CallsTab__ToastCallHistoryCleared": {
-    "messageformat": "Call history cleared",
+    "messageformat": "Istoria apelurilor a fost ștearsă",
     "description": "Calls Tab > Clear Call History > Toast"
   },
   "icu:CallsTab__EmptyStateText": {
-    "messageformat": "Click to view or start a call",
+    "messageformat": "Dă clic și vezi sau începe un apel",
     "description": "Calls Tab > When no call is selected > Empty state > Call to action text"
   },
   "icu:CallsList__SearchInputPlaceholder": {
-    "messageformat": "Search",
+    "messageformat": "Caută",
     "description": "Calls Tab > Calls List > Search Input > Placeholder"
   },
   "icu:CallsList__ToggleFilterByMissedLabel": {
-    "messageformat": "Filter by missed",
+    "messageformat": "Filtrează după apeluri ratate",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility label"
   },
   "icu:CallsList__ToggleFilterByMissed__RoleDescription": {
-    "messageformat": "Toggle",
+    "messageformat": "Comutare",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility role description ('A toggle button')"
   },
   "icu:CallsList__EmptyState--noQuery": {
-    "messageformat": "No recent calls. Get started by calling a friend.",
+    "messageformat": "Nu exista apeluri recente. Începe prin a suna un prieten.",
     "description": "Calls Tab > Calls List > When no results found > With no search query"
   },
   "icu:CallsList__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "Fără rezultate pentru „{query}“",
     "description": "Calls Tab > Calls List > When no results found > With a search query"
   },
   "icu:CallsList__ItemCallInfo--Incoming": {
-    "messageformat": "Incoming",
+    "messageformat": "Primite",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was incoming"
   },
   "icu:CallsList__ItemCallInfo--Outgoing": {
-    "messageformat": "Outgoing",
+    "messageformat": "Trimise",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was outgoing"
   },
   "icu:CallsList__ItemCallInfo--Missed": {
-    "messageformat": "Missed",
+    "messageformat": "Ratate",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was missed"
   },
   "icu:CallsList__ItemCallInfo--GroupCall": {
-    "messageformat": "Group call",
+    "messageformat": "Apel de grup",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When group call is in its default state"
   },
   "icu:CallsNewCall__EmptyState--noQuery": {
-    "messageformat": "No recent conversations.",
+    "messageformat": "Fără conversații recente.",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With no search query"
   },
   "icu:CallsNewCall__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "Fără rezultate pentru „{query}“",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With a search query"
   },
   "icu:CallHistory__Description--Default": {
-    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Outgoing voice call} other {Incoming voice call}}} Video {{direction, select, Outgoing {Outgoing video call} other {Incoming video call}}} Group {{direction, select, Outgoing {Outgoing group call} other {Incoming group call}}} other {{direction, select, Outgoing {Outgoing  call} other {Incoming  call}}}}",
+    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Apel de ieșire vocal} other {Apel de intrare vocal}}} Video {{direction, select, Outgoing {Apel de ieșire video} other {Apel de intrare video}}} Group {{direction, select, Outgoing {Apel de ieșire de grup} other {Apel de intrare de grup}}} other {{direction, select, Outgoing {Apel de ieșire} other {Apel de intrare}}}}",
     "description": "Call History > Short description of call > When call was not missed or declined (generally accepted)"
   },
   "icu:CallHistory__Description--Missed": {
-    "messageformat": "{type, select, Audio {Missed voice call} Video {Missed video call} Group {Missed group call} other {Missed  call}}",
+    "messageformat": "{type, select, Audio {Apel vocal nepreluat} Video {Apel video nepreluat} Group {Apel de grup ratat} other {Apel ratat}}",
     "description": "Call History > Short description of call > When incoming call was missed"
   },
   "icu:CallHistory__Description--Unanswered": {
-    "messageformat": "{type, select, Audio {Unanswered voice call} Video {Unanswered video call} Group {Unanswered group call} other {Unanswered  call}}",
+    "messageformat": "{type, select, Audio {Apel vocal nepreluat} Video {Apel video nepreluat} Group {Apel de grup fără răspuns} other {Apel  fără răspuns}}",
     "description": "Call History > Short description of call > When outgoing call was unanswered"
   },
   "icu:CallHistory__Description--Declined": {
-    "messageformat": "{type, select, Audio {Declined voice call} Video {Declined video call} Group {Declined group call} other {Declined  call}}",
+    "messageformat": "{type, select, Audio {Apel video respins} Video {Apel video respins} Group {Apel de grup respins} other {Respinge apelul}}",
     "description": "Call History > Short description of call > When call was declined"
+  },
+  "icu:TypingBubble__avatar--overflow-count": {
+    "messageformat": "{count, plural, one {încă {count,number} scrie.} few {încă {count,number} alții scriu.} other {încă {count,number} alții scriu.}}",
+    "description": "Group chat multiple person typing indicator when space isn't available to show every avatar, this is the count of avatars hidden."
   },
   "icu:WhatsNew__modal-title": {
     "messageformat": "Ce este nou",
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Această versiune conține o serie de mici modificări și remedieri ale unor erori pentru ca Cradle să funcționeze fără probleme.",
+    "messageformat": "Această versiune conține o serie de mici modificări și remedieri ale unor erori pentru ca Signal să funcționeze fără probleme.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Reparări de bug-uri, mici ajustări și îmbunătățiri ale performanței. Îți mulțumim că folosești Cradle!",
+    "messageformat": "Reparări de bug-uri, mici ajustări și îmbunătățiri ale performanței. Îți mulțumim că folosești Signal!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6768,16 +7017,25 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Mici ajustări, soluționări de bug-uri și îmbunătățiri ale performanței. Mersi că folosești Cradle!",
+    "messageformat": "Mici ajustări, soluționări de bug-uri și îmbunătățiri ale performanței. Mersi că folosești Signal!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.29--0": {
-    "messageformat": "Ecranul de personalizare Chat Color este acum afișat corect în diferite limbi și localități selectate."
+  "icu:WhatsNew__v6.42--0": {
+    "messageformat": "Am remediat o eroare care afișa răspunsuri citate la videoclipuri ca și cum ar fi răspunsuri citate la fotografii, chiar dacă fiecare videoclip este de fapt doar o secvență de fotografii într-un fel."
   },
-  "icu:WhatsNew__v6.29--1": {
-    "messageformat": "Am îmbunătățit suportul pentru notificări pe Windows. Dacă nu faci clic pe o notificare când sosește prima dată, cea mai recentă notificare ratată va apărea în Centrul de Notificări Windows. Făcând clic pe notificare, aceasta va trece direct la acel chat. Am dori să-i mulțumim lui Julien Richard pentru feedback."
+  "icu:WhatsNew__v6.42--1": {
+    "messageformat": "Mulțumiri, {linkToGithub1} și {linkToGithub2}, pentru ajutorul acordat la această versiune."
   },
-  "icu:WhatsNew__v6.30--0": {
-    "messageformat": "Keep tabs on your calls with the new calls tab. Start a new call or return a call that you missed without having to find the corresponding chat. Now you can say hello with your voice without also saying goodbye to the unread marker for messages in that thread."
+  "icu:WhatsNew__v6.43--0": {
+    "messageformat": "Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat."
+  },
+  "icu:WhatsNew__v6.43--1": {
+    "messageformat": "The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Signal Settings > Appearance > Language). Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--2": {
+    "messageformat": "The playback speed indicators in voice messages have a slightly new look. X marks the spot. Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--3": {
+    "messageformat": "We would also like to thank {linkToGithub1}, {linkToGithub2}, and {linkToGithub3} for their contributions to this release."
   }
 }

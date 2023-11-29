@@ -2,13 +2,13 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import * as React from 'react';
-
+import type { Meta } from '@storybook/react';
 import type { Props } from './Linkify';
 import { Linkify } from './Linkify';
 
 export default {
   title: 'Components/Conversation/Linkify',
-};
+} satisfies Meta<Props>;
 
 const createProps = (overrideProps: Partial<Props> = {}): Props => ({
   renderNonLink: overrideProps.renderNonLink,
@@ -17,7 +17,7 @@ const createProps = (overrideProps: Partial<Props> = {}): Props => ({
 
 export function OnlyLink(): JSX.Element {
   const props = createProps({
-    text: 'https://www.signal.org',
+    text: 'https://cradle.im',
   });
 
   return <Linkify {...props} />;
@@ -25,27 +25,19 @@ export function OnlyLink(): JSX.Element {
 
 export function LinksWithText(): JSX.Element {
   const props = createProps({
-    text: 'you should see this: https://www.signal.org - it is good. Also: https://placekitten.com!',
+    text: 'you should see this: https://cradle.im - it is good. Also: https://placekitten.com!',
   });
 
   return <Linkify {...props} />;
 }
-
-LinksWithText.story = {
-  name: 'Links with Text',
-};
 
 export function LinksWithEmojiWithoutSpace(): JSX.Element {
   const props = createProps({
-    text: '👍https://www.signal.org😎',
+    text: '👍https://cradle.im😎',
   });
 
   return <Linkify {...props} />;
 }
-
-LinksWithEmojiWithoutSpace.story = {
-  name: 'Links with Emoji without space',
-};
 
 export function LinksWithEmojiAndText(): JSX.Element {
   const props = createProps({
@@ -54,10 +46,6 @@ export function LinksWithEmojiAndText(): JSX.Element {
 
   return <Linkify {...props} />;
 }
-
-LinksWithEmojiAndText.story = {
-  name: 'Links with Emoji and Text',
-};
 
 export function NoLink(): JSX.Element {
   const props = createProps({
@@ -82,10 +70,6 @@ export function MissingProtocols(): JSX.Element {
 
   return <Linkify {...props} />;
 }
-
-MissingProtocols.story = {
-  name: 'Missing protocols',
-};
 
 export function CustomTextRender(): JSX.Element {
   const props = createProps({

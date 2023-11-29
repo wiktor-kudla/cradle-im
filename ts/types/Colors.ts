@@ -177,7 +177,7 @@ export type DefaultConversationColorType = {
 };
 
 export const DEFAULT_CONVERSATION_COLOR: DefaultConversationColorType = {
-  color: 'ultramarine',
+  color: 'fluorescent',
 };
 
 export type CustomColorsItemType = {

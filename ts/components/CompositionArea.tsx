@@ -5,7 +5,10 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import type { ReadonlyDeep } from 'type-fest';
 
-import type { DraftBodyRanges } from '../types/BodyRange';
+import type {
+  DraftBodyRanges,
+  HydratedBodyRangesType,
+} from '../types/BodyRange';
 import type { LocalizerType, ThemeType } from '../types/Util';
 import type { ErrorDialogAudioRecorderType } from '../types/AudioRecorder';
 import { RecordingState } from '../types/AudioRecorder';
@@ -68,7 +71,6 @@ import type { SmartCompositionRecordingProps } from '../state/smart/CompositionR
 import SelectModeActions from './conversation/SelectModeActions';
 import type { ShowToastAction } from '../state/ducks/toast';
 import type { DraftEditMessageType } from '../model-types.d';
-import OS from '../util/os/osMain';
 
 export type OwnProps = Readonly<{
   acceptedMessageRequest?: boolean;
@@ -86,6 +88,9 @@ export type OwnProps = Readonly<{
     conversationId: string,
     onRecordingComplete: (rec: InMemoryAttachmentDraftType) => unknown
   ) => unknown;
+  convertDraftBodyRangesIntoHydrated: (
+    bodyRanges: DraftBodyRanges | undefined
+  ) => HydratedBodyRangesType | undefined;
   conversationId: string;
   discardEditMessage: (id: string) => unknown;
   draftEditMessage?: DraftEditMessageType;
@@ -100,8 +105,6 @@ export type OwnProps = Readonly<{
   isDisabled: boolean;
   isFetchingUUID?: boolean;
   isFormattingEnabled: boolean;
-  isFormattingFlagEnabled: boolean;
-  isFormattingSpoilersFlagEnabled: boolean;
   isGroupV1AndDisabled?: boolean;
   isMissingMandatoryProfileSharing?: boolean;
   isSignalConversation?: boolean;
@@ -113,7 +116,6 @@ export type OwnProps = Readonly<{
   left?: boolean;
   linkPreviewLoading: boolean;
   linkPreviewResult?: LinkPreviewType;
-  messageRequestsEnabled?: boolean;
   onClearAttachments(conversationId: string): unknown;
   onCloseLinkPreview(conversationId: string): unknown;
   platform: string;
@@ -222,6 +224,7 @@ export function CompositionArea({
   // Base props
   addAttachment,
   conversationId,
+  convertDraftBodyRangesIntoHydrated,
   discardEditMessage,
   draftEditMessage,
   focusCounter,
@@ -270,8 +273,6 @@ export function CompositionArea({
   getPreferredBadge,
   getQuotedMessage,
   isFormattingEnabled,
-  isFormattingFlagEnabled,
-  isFormattingSpoilersFlagEnabled,
   onEditorStateChange,
   onTextTooLong,
   sendCounter,
@@ -302,7 +303,6 @@ export function CompositionArea({
   isBlocked,
   isMissingMandatoryProfileSharing,
   left,
-  messageRequestsEnabled,
   removalStage,
   acceptConversation,
   blockConversation,
@@ -338,15 +338,6 @@ export function CompositionArea({
   const fileInputRef = useRef<null | HTMLInputElement>(null);
 
   const handleForceSend = useCallback(() => {
-    /*if (OS.isMacOS()) {
-      const {
-        getAuthStatus, askForCameraAccess, askForMicrophoneAccess 
-      } = require('node-mac-permissions');
-      if (getAuthStatus('camera') !== 'authorized')
-        askForCameraAccess();
-      if (getAuthStatus('microphone') !== 'authorized')
-        askForMicrophoneAccess();
-    }*/
     setLarge(false);
     if (inputApiRef.current) {
       inputApiRef.current.submit();
@@ -546,7 +537,6 @@ export function CompositionArea({
         <EmojiButton
           emojiButtonApi={emojiButtonRef}
           i18n={i18n}
-          doSend={handleForceSend}
           onPickEmoji={insertEmoji}
           onClose={() => setComposerFocus(conversationId)}
           recentEmojis={recentEmojis}
@@ -740,9 +730,7 @@ export function CompositionArea({
   if (
     isBlocked ||
     areWePending ||
-    (messageRequestsEnabled &&
-      !acceptedMessageRequest &&
-      removalStage !== 'justNotification')
+    (!acceptedMessageRequest && removalStage !== 'justNotification')
   ) {
     return (
       <MessageRequestActions
@@ -793,7 +781,7 @@ export function CompositionArea({
   // If no message request, but we haven't shared profile yet, we show profile-sharing UI
   if (
     !left &&
-    ((conversationType === 'direct' && removalStage !== 'justNotification') ||
+    (conversationType === 'direct' ||
       (conversationType === 'group' && groupVersion === 1)) &&
     isMissingMandatoryProfileSharing
   ) {
@@ -863,12 +851,23 @@ export function CompositionArea({
         'url' in attachmentToEdit &&
         attachmentToEdit.url && (
           <MediaEditor
+            draftBodyRanges={draftBodyRanges}
+            draftText={draftText}
+            getPreferredBadge={getPreferredBadge}
             i18n={i18n}
             imageSrc={attachmentToEdit.url}
             imageToBlurHash={imageToBlurHash}
+            installedPacks={installedPacks}
+            isFormattingEnabled={isFormattingEnabled}
             isSending={false}
             onClose={() => setAttachmentToEdit(undefined)}
-            onDone={({ data, contentType, blurHash }) => {
+            onDone={({
+              caption,
+              captionBodyRanges,
+              data,
+              contentType,
+              blurHash,
+            }) => {
               const newAttachment = {
                 ...attachmentToEdit,
                 contentType,
@@ -879,9 +878,25 @@ export function CompositionArea({
 
               addAttachment(conversationId, newAttachment);
               setAttachmentToEdit(undefined);
+              onEditorStateChange?.({
+                bodyRanges: captionBodyRanges ?? [],
+                conversationId,
+                messageText: caption ?? '',
+                sendCounter,
+              });
+
+              inputApiRef.current?.setContents(
+                caption ?? '',
+                convertDraftBodyRangesIntoHydrated(captionBodyRanges),
+                true
+              );
             }}
-            installedPacks={installedPacks}
+            onPickEmoji={onPickEmoji}
+            onTextTooLong={onTextTooLong}
+            platform={platform}
             recentStickers={recentStickers}
+            skinTone={skinTone}
+            sortedGroupMembers={sortedGroupMembers}
           />
         )}
       <div className="CompositionArea__toggle-large">
@@ -967,8 +982,6 @@ export function CompositionArea({
             i18n={i18n}
             inputApi={inputApiRef}
             isFormattingEnabled={isFormattingEnabled}
-            isFormattingFlagEnabled={isFormattingFlagEnabled}
-            isFormattingSpoilersFlagEnabled={isFormattingSpoilersFlagEnabled}
             large={large}
             linkPreviewLoading={linkPreviewLoading}
             linkPreviewResult={linkPreviewResult}

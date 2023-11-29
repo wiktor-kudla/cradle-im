@@ -11,8 +11,6 @@
   display: flex;
   flex-direction: column;
   @include light-theme() {
-    // background: $color-white;
-    // color: $color-gray-90;
     background: $color-purple-02;
     color: $color-white;
   }
@@ -23,15 +21,17 @@
   }
 
   &__header {
+    &--with-back-button .module-Modal__title {
+      text-align: center;
+    }
+  }
+
+  &__headerTitle {
     align-items: center;
     display: flex;
     justify-content: space-between;
     padding-block: 16px 1em;
     padding-inline: 16px;
-
-    &--with-back-button .module-Modal__title {
-      text-align: center;
-    }
   }
 
   &__title {
@@ -89,7 +89,6 @@
       height: 100%;
 
       @include light-theme {
-        // @include color-svg('../images/icons/v3/x/x.svg', $color-gray-75);
         @include color-svg('../images/icons/v3/x/x.svg', $color-white);
       }
 
@@ -190,7 +189,7 @@
     padding-inline: 16px;
     gap: 8px;
 
-    .module-Button {
+    .module-Button:not(:first-child) {
       margin-inline-start: 8px;
     }
 

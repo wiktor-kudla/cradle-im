@@ -15,6 +15,7 @@ import { markViewed } from '../services/MessageUpdater';
 import { notificationService } from '../services/notifications';
 import { queueAttachmentDownloads } from '../util/queueAttachmentDownloads';
 import { queueUpdateMessage } from '../util/messageBatcher';
+import { generateCacheKey } from './generateCacheKey';
 
 export type ViewSyncAttributesType = {
   envelopeId: string;
@@ -29,7 +30,13 @@ export type ViewSyncAttributesType = {
 const viewSyncs = new Map<string, ViewSyncAttributesType>();
 
 function remove(sync: ViewSyncAttributesType): void {
-  viewSyncs.delete(sync.envelopeId);
+  viewSyncs.delete(
+    generateCacheKey({
+      sender: sync.senderId,
+      timestamp: sync.timestamp,
+      type: 'viewsync',
+    })
+  );
   sync.removeFromMessageReceiverCache();
 }
 
@@ -68,7 +75,14 @@ export function forMessage(
 }
 
 export async function onSync(sync: ViewSyncAttributesType): Promise<void> {
-  viewSyncs.set(sync.envelopeId, sync);
+  viewSyncs.set(
+    generateCacheKey({
+      sender: sync.senderId,
+      timestamp: sync.timestamp,
+      type: 'viewsync',
+    }),
+    sync
+  );
 
   const logId = `ViewSyncs.onSync(timestamp=${sync.timestamp})`;
 
@@ -99,7 +113,11 @@ export async function onSync(sync: ViewSyncAttributesType): Promise<void> {
 
     notificationService.removeBy({ messageId: found.id });
 
-    const message = window.MessageController.register(found.id, found);
+    const message = window.MessageCache.__DEPRECATED$register(
+      found.id,
+      found,
+      'ViewSyncs.onSync'
+    );
     let didChangeMessage = false;
 
     if (message.get('readStatus') !== ReadStatus.Viewed) {

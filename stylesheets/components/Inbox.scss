@@ -22,11 +22,14 @@
     overflow: hidden;
     position: relative;
     text-align: center;
+    background-color: $color-purple-03;
+    color: white;
   }
 
   .__conversation {
     @include light-theme {
-      background-color: $color-white;
+      background-color: $color-purple-03;
+      color: white;
     }
 
     @include dark-theme {

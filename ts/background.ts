@@ -3,7 +3,6 @@
 
 import { webFrame } from 'electron';
 import { isNumber, throttle, groupBy } from 'lodash';
-import { bindActionCreators } from 'redux';
 import { render } from 'react-dom';
 import { batch as batchDispatch } from 'react-redux';
 import PQueue from 'p-queue';
@@ -39,7 +38,6 @@ import { isWindowDragElement } from './util/isWindowDragElement';
 import { assertDev, strictAssert } from './util/assert';
 import { filter } from './util/iterables';
 import { isNotNil } from './util/isNotNil';
-import { isPnpEnabled } from './util/isPnpEnabled';
 import { setAppLoadingScreenMessage } from './setAppLoadingScreenMessage';
 import { IdleDetector } from './IdleDetector';
 import { expiringMessagesDeletionService } from './services/expiringMessagesDeletion';
@@ -53,7 +51,7 @@ import { senderCertificateService } from './services/senderCertificate';
 import { GROUP_CREDENTIALS_KEY } from './services/groupCredentialFetcher';
 import * as KeyboardLayout from './services/keyboardLayout';
 import * as StorageService from './services/storage';
-import { optimizeFTS } from './services/ftsOptimizer';
+import { usernameIntegrity } from './services/usernameIntegrity';
 import { RoutineProfileRefresher } from './routineProfileRefresh';
 import { isOlderThan, toDayMillis } from './util/timestamp';
 import { isValidReactionEmoji } from './reactions/isValidReactionEmoji';
@@ -109,7 +107,6 @@ import { AppViewType } from './state/ducks/app';
 import type { BadgesStateType } from './state/ducks/badges';
 import { areAnyCallsActiveOrRinging } from './state/selectors/calling';
 import { badgeImageFileDownloader } from './badges/badgeImageFileDownloader';
-import { actionCreators } from './state/actions';
 import * as Deletes from './messageModifiers/Deletes';
 import type { EditAttributesType } from './messageModifiers/Edits';
 import * as Edits from './messageModifiers/Edits';
@@ -140,14 +137,10 @@ import {
 } from './util/handleRetry';
 import { themeChanged } from './shims/themeChanged';
 import { createIPCEvents } from './util/createIPCEvents';
-import { RemoveAllConfiguration } from './types/RemoveAllConfiguration';
 import type { ServiceIdString } from './types/ServiceId';
-import {
-  ServiceIdKind,
-  isAciString,
-  isServiceIdString,
-  normalizeAci,
-} from './types/ServiceId';
+import { ServiceIdKind, isServiceIdString } from './types/ServiceId';
+import { isAciString } from './util/isAciString';
+import { normalizeAci } from './util/normalizeAci';
 import * as log from './logging/log';
 import { loadRecentEmojis } from './util/loadRecentEmojis';
 import { deleteAllLogs } from './util/deleteAllLogs';
@@ -158,7 +151,6 @@ import { startInteractionMode } from './services/InteractionMode';
 import type { MainWindowStatsType } from './windows/context';
 import { ReactionSource } from './reactions/ReactionSource';
 import { singleProtoJobQueue } from './jobs/singleProtoJobQueue';
-import { getInitialState } from './state/getInitialState';
 import {
   conversationJobQueue,
   conversationQueueJobEnum,
@@ -167,8 +159,8 @@ import { SeenStatus } from './MessageSeenStatus';
 import MessageSender from './textsecure/SendMessage';
 import type AccountManager from './textsecure/AccountManager';
 import { onStoryRecipientUpdate } from './util/onStoryRecipientUpdate';
-import { downloadOnboardingStory } from './util/downloadOnboardingStory';
 import { flushAttachmentDownloadQueue } from './util/attachmentDownloadQueue';
+import { initializeRedux } from './state/initializeRedux';
 import { StartupQueue } from './util/StartupQueue';
 import { showConfirmationDialog } from './util/showConfirmationDialog';
 import { onCallEventSync } from './util/onCallEventSync';
@@ -191,6 +183,11 @@ import {
   getCallsHistoryForRedux,
   loadCallsHistory,
 } from './services/callHistoryLoader';
+import {
+  getCallIdFromEra,
+  updateLocalGroupCallHistoryTimestamp,
+} from './util/callDisposition';
+import { deriveStorageServiceKey } from './Crypto';
 
 export function isOverHourIntoPast(timestamp: number): boolean {
   return isNumber(timestamp) && isOlderThan(timestamp, HOUR);
@@ -255,10 +252,6 @@ export async function startApp(): Promise<void> {
     });
     window.textsecure.server = server;
     window.textsecure.messaging = new window.textsecure.MessageSender(server);
-
-    initializeAllJobQueues({
-      server,
-    });
 
     challengeHandler = new ChallengeHandler({
       storage: window.storage,
@@ -837,6 +830,14 @@ export async function startApp(): Promise<void> {
       );
     });
 
+    window.document.body.classList.add('window-focused');
+    window.addEventListener('focus', () => {
+      window.document.body.classList.add('window-focused');
+    });
+    window.addEventListener('blur', () =>
+      window.document.body.classList.remove('window-focused')
+    );
+
     // How long since we were last running?
     const lastHeartbeat = toDayMillis(window.storage.get('lastHeartbeat', 0));
     const previousLastStartup = window.storage.get('lastStartup');
@@ -847,7 +848,7 @@ export async function startApp(): Promise<void> {
       log.warn(
         `This instance has not been used for 30 days. Last heartbeat: ${lastHeartbeat}. Last startup: ${previousLastStartup}.`
       );
-      await unlinkAndDisconnect(RemoveAllConfiguration.Soft);
+      await unlinkAndDisconnect();
     }
 
     // Start heartbeat timer
@@ -959,10 +960,14 @@ export async function startApp(): Promise<void> {
         await window.Signal.Data.removeAllProfileKeyCredentials();
       }
 
+      if (window.isBeforeVersion(lastVersion, 'v6.38.0-beta.1')) {
+        await window.storage.remove('hasCompletedSafetyNumberOnboarding');
+      }
+
       // This one should always be last - it could restart the app
       if (window.isBeforeVersion(lastVersion, 'v5.30.0-alpha')) {
         await deleteAllLogs();
-        window.IPC.restart();
+        window.SignalContext.restartApp();
         return;
       }
     }
@@ -974,8 +979,6 @@ export async function startApp(): Promise<void> {
 
     if (newVersion) {
       await window.Signal.Data.cleanupOrphanedAttachments();
-
-      optimizeFTS();
 
       drop(window.Signal.Data.ensureFilePermissions());
     }
@@ -1138,7 +1141,6 @@ export async function startApp(): Promise<void> {
         (async () => {
           menuOptions = await window.SignalContext.getMenuOptions();
         })(),
-        downloadOnboardingStory(),
       ]);
       await window.ConversationController.checkForConflicts();
     } catch (error) {
@@ -1147,7 +1149,7 @@ export async function startApp(): Promise<void> {
         Errors.toLogFormat(error)
       );
     } finally {
-      initializeRedux({ mainWindowStats, menuOptions });
+      setupAppState({ mainWindowStats, menuOptions });
       drop(start());
       window.Signal.Services.initializeNetworkObserver(
         window.reduxActions.network
@@ -1169,89 +1171,24 @@ export async function startApp(): Promise<void> {
     }
   });
 
-  function initializeRedux({
+  function setupAppState({
     mainWindowStats,
     menuOptions,
   }: {
     mainWindowStats: MainWindowStatsType;
     menuOptions: MenuOptionsType;
   }) {
-    // Here we set up a full redux store with initial state for our LeftPane Root
-    const convoCollection = window.getConversations();
-    const initialState = getInitialState({
-      badges: initialBadgesState,
+    initializeRedux({
+      callsHistory: getCallsHistoryForRedux(),
+      initialBadgesState,
       mainWindowStats,
       menuOptions,
       stories: getStoriesForRedux(),
       storyDistributionLists: getDistributionListsForRedux(),
-      callsHistory: getCallsHistoryForRedux(),
     });
 
-    const store = window.Signal.State.createStore(initialState);
-    window.reduxStore = store;
-
-    // Binding these actions to our redux store and exposing them allows us to update
-    //   redux when things change in the backbone world.
-    window.reduxActions = {
-      accounts: bindActionCreators(actionCreators.accounts, store.dispatch),
-      app: bindActionCreators(actionCreators.app, store.dispatch),
-      audioPlayer: bindActionCreators(
-        actionCreators.audioPlayer,
-        store.dispatch
-      ),
-      audioRecorder: bindActionCreators(
-        actionCreators.audioRecorder,
-        store.dispatch
-      ),
-      badges: bindActionCreators(actionCreators.badges, store.dispatch),
-      callHistory: bindActionCreators(
-        actionCreators.callHistory,
-        store.dispatch
-      ),
-      calling: bindActionCreators(actionCreators.calling, store.dispatch),
-      composer: bindActionCreators(actionCreators.composer, store.dispatch),
-      conversations: bindActionCreators(
-        actionCreators.conversations,
-        store.dispatch
-      ),
-      crashReports: bindActionCreators(
-        actionCreators.crashReports,
-        store.dispatch
-      ),
-      inbox: bindActionCreators(actionCreators.inbox, store.dispatch),
-      emojis: bindActionCreators(actionCreators.emojis, store.dispatch),
-      expiration: bindActionCreators(actionCreators.expiration, store.dispatch),
-      globalModals: bindActionCreators(
-        actionCreators.globalModals,
-        store.dispatch
-      ),
-      items: bindActionCreators(actionCreators.items, store.dispatch),
-      lightbox: bindActionCreators(actionCreators.lightbox, store.dispatch),
-      linkPreviews: bindActionCreators(
-        actionCreators.linkPreviews,
-        store.dispatch
-      ),
-      mediaGallery: bindActionCreators(
-        actionCreators.mediaGallery,
-        store.dispatch
-      ),
-      network: bindActionCreators(actionCreators.network, store.dispatch),
-      safetyNumber: bindActionCreators(
-        actionCreators.safetyNumber,
-        store.dispatch
-      ),
-      search: bindActionCreators(actionCreators.search, store.dispatch),
-      stickers: bindActionCreators(actionCreators.stickers, store.dispatch),
-      stories: bindActionCreators(actionCreators.stories, store.dispatch),
-      storyDistributionLists: bindActionCreators(
-        actionCreators.storyDistributionLists,
-        store.dispatch
-      ),
-      toast: bindActionCreators(actionCreators.toast, store.dispatch),
-      updates: bindActionCreators(actionCreators.updates, store.dispatch),
-      user: bindActionCreators(actionCreators.user, store.dispatch),
-      username: bindActionCreators(actionCreators.username, store.dispatch),
-    };
+    // Here we set up a full redux store with initial state for our LeftPane Root
+    const convoCollection = window.getConversations();
 
     const {
       conversationAdded,
@@ -1405,31 +1342,20 @@ export async function startApp(): Promise<void> {
   });
 
   window.Whisper.events.on('unlinkAndDisconnect', () => {
-    void unlinkAndDisconnect(RemoveAllConfiguration.Full);
+    void unlinkAndDisconnect();
   });
 
   async function runStorageService() {
     StorageService.enableStorageService();
-
-    if (window.ConversationController.areWePrimaryDevice()) {
-      log.warn(
-        'background/runStorageService: We are primary device; not sending key sync request'
-      );
-      return;
-    }
-
-    try {
-      await singleProtoJobQueue.add(MessageSender.getRequestKeySyncMessage());
-    } catch (error) {
-      log.error(
-        'runStorageService: Failed to queue sync message',
-        Errors.toLogFormat(error)
-      );
-    }
   }
 
   async function start() {
     // Storage is ready because `start()` is called from `storage.onready()`
+
+    strictAssert(server !== undefined, 'start: server not initialized');
+    initializeAllJobQueues({
+      server,
+    });
 
     strictAssert(challengeHandler, 'start: challengeHandler');
     await challengeHandler.load();
@@ -1497,19 +1423,19 @@ export async function startApp(): Promise<void> {
     log.info('Expiration start timestamp cleanup: complete');
 
     log.info('listening for registration events');
-    window.Whisper.events.on('registration_done', () => {
+    window.Whisper.events.on('registration_done', async () => {
       log.info('handling registration event');
 
       strictAssert(server !== undefined, 'WebAPI not ready');
-      void server.authenticate(
+      await server.authenticate(
         window.textsecure.storage.user.getWebAPICredentials()
       );
 
       // Cancel throttled calls to refreshRemoteConfig since our auth changed.
       window.Signal.RemoteConfig.maybeRefreshRemoteConfig.cancel();
-      void window.Signal.RemoteConfig.maybeRefreshRemoteConfig(server);
+      drop(window.Signal.RemoteConfig.maybeRefreshRemoteConfig(server));
 
-      void connect(true);
+      drop(connect(true));
     });
 
     cancelInitializationMessage();
@@ -1585,27 +1511,6 @@ export async function startApp(): Promise<void> {
       }
     );
 
-    // Listen for changes to the `desktop.messageRequests` remote configuration flag
-    const removeMessageRequestListener = window.Signal.RemoteConfig.onChange(
-      'desktop.messageRequests',
-      ({ enabled }) => {
-        if (!enabled) {
-          return;
-        }
-
-        const conversations = window.getConversations();
-        conversations.forEach(conversation => {
-          conversation.set({
-            messageCountBeforeMessageRequests:
-              conversation.get('messageCount') || 0,
-          });
-          window.Signal.Data.updateConversation(conversation.attributes);
-        });
-
-        removeMessageRequestListener();
-      }
-    );
-
     if (resolveOnAppView) {
       resolveOnAppView();
       resolveOnAppView = undefined;
@@ -1651,6 +1556,10 @@ export async function startApp(): Promise<void> {
       log.warn('Already online. Had a blip in online/offline status.');
       Timers.clearTimeout(disconnectTimer);
       disconnectTimer = undefined;
+
+      if (challengeHandler) {
+        drop(challengeHandler.onOnline());
+      }
       return;
     }
     if (disconnectTimer) {
@@ -1853,7 +1762,7 @@ export async function startApp(): Promise<void> {
 
       if (!window.textsecure.storage.user.getAci()) {
         log.error('UUID not captured during registration, unlinking');
-        return unlinkAndDisconnect(RemoveAllConfiguration.Full);
+        return unlinkAndDisconnect();
       }
 
       if (connectCount === 1) {
@@ -1861,7 +1770,7 @@ export async function startApp(): Promise<void> {
           // Note: we always have to register our capabilities all at once, so we do this
           //   after connect on every startup
           await server.registerCapabilities({
-            pni: isPnpEnabled(),
+            pni: true,
           });
         } catch (error) {
           log.error(
@@ -1873,10 +1782,30 @@ export async function startApp(): Promise<void> {
 
       if (!window.textsecure.storage.user.getPni()) {
         log.error('PNI not captured during registration, unlinking softly');
-        return unlinkAndDisconnect(RemoveAllConfiguration.Soft);
+        return unlinkAndDisconnect();
       }
 
       if (firstRun === true && deviceId !== 1) {
+        if (!window.storage.get('masterKey')) {
+          const lastSent = window.storage.get('masterKeyLastRequestTime') ?? 0;
+          const now = Date.now();
+
+          // If we last attempted sync one day in the past, or if we time
+          // traveled.
+          if (isOlderThan(lastSent, DAY) || lastSent > now) {
+            log.warn('connect: masterKey not captured, requesting sync');
+            await singleProtoJobQueue.add(
+              MessageSender.getRequestKeySyncMessage()
+            );
+            await window.storage.put('masterKeyLastRequestTime', now);
+          } else {
+            log.warn(
+              'connect: masterKey not captured, but sync requested recently.' +
+                'Not running'
+            );
+          }
+        }
+
         const hasThemeSetting = Boolean(window.storage.get('theme-setting'));
         if (
           !hasThemeSetting &&
@@ -2102,6 +2031,8 @@ export async function startApp(): Promise<void> {
 
       void routineProfileRefresher.start();
     }
+
+    drop(usernameIntegrity.start());
   }
 
   let initialStartupCount = 0;
@@ -2466,6 +2397,7 @@ export async function startApp(): Promise<void> {
         storyReactionMessage: message,
         targetAuthorAci,
         targetTimestamp: reaction.targetTimestamp,
+        receivedAtDate: data.receivedAtDate,
         timestamp,
       };
 
@@ -2800,6 +2732,7 @@ export async function startApp(): Promise<void> {
         storyReactionMessage: message,
         targetAuthorAci,
         targetTimestamp: reaction.targetTimestamp,
+        receivedAtDate: data.receivedAtDate,
         timestamp,
       };
       drop(Reactions.onReaction(attributes));
@@ -2907,9 +2840,29 @@ export async function startApp(): Promise<void> {
   ): boolean {
     if (message.groupCallUpdate) {
       if (message.groupV2 && messageDescriptor.type === Message.GROUP) {
+        const conversationId = messageDescriptor.id;
+        const callId =
+          message.groupCallUpdate?.eraId != null
+            ? getCallIdFromEra(message.groupCallUpdate.eraId)
+            : null;
+        log.info(
+          'handleGroupCallUpdateMessage',
+          message.timestamp,
+          callId,
+          conversationId
+        );
         window.reduxActions.calling.peekNotConnectedGroupCall({
-          conversationId: messageDescriptor.id,
+          conversationId,
         });
+        if (callId != null) {
+          drop(
+            updateLocalGroupCallHistoryTimestamp(
+              conversationId,
+              callId,
+              message.timestamp
+            )
+          );
+        }
         return true;
       }
       log.warn(
@@ -2919,9 +2872,7 @@ export async function startApp(): Promise<void> {
     return false;
   }
 
-  async function unlinkAndDisconnect(
-    mode: RemoveAllConfiguration
-  ): Promise<void> {
+  async function unlinkAndDisconnect(): Promise<void> {
     window.Whisper.events.trigger('unauthorized');
 
     log.warn(
@@ -2961,7 +2912,7 @@ export async function startApp(): Promise<void> {
     );
 
     try {
-      log.info(`unlinkAndDisconnect: removing configuration, mode ${mode}`);
+      log.info('unlinkAndDisconnect: removing configuration');
 
       // First, make changes to conversations in memory
       window.getConversations().forEach(conversation => {
@@ -2975,7 +2926,7 @@ export async function startApp(): Promise<void> {
       await window.Signal.Data.getItemById('manifestVersion');
 
       // Finally, conversations in the database, and delete all config tables
-      await window.textsecure.storage.protocol.removeAllConfiguration(mode);
+      await window.textsecure.storage.protocol.removeAllConfiguration();
 
       // These three bits of data are important to ensure that the app loads up
       //   the conversation list, instead of showing just the QR code screen.
@@ -3005,6 +2956,9 @@ export async function startApp(): Promise<void> {
       }
       await window.textsecure.storage.put(VERSION_KEY, window.getVersion());
 
+      // Re-hydrate items from memory; removeAllConfiguration above changed database
+      await window.storage.fetch();
+
       log.info('unlinkAndDisconnect: Successfully cleared local configuration');
     } catch (eraseError) {
       log.error(
@@ -3025,7 +2979,7 @@ export async function startApp(): Promise<void> {
       error instanceof HTTPError &&
       (error.code === 401 || error.code === 403)
     ) {
-      void unlinkAndDisconnect(RemoveAllConfiguration.Full);
+      void unlinkAndDisconnect();
       return;
     }
 
@@ -3079,7 +3033,17 @@ export async function startApp(): Promise<void> {
   async function onKeysSync(ev: KeysEvent) {
     ev.confirm();
 
-    const { storageServiceKey } = ev;
+    const { masterKey } = ev;
+    let { storageServiceKey } = ev;
+
+    if (masterKey == null) {
+      log.info('onKeysSync: deleting window.masterKey');
+      await window.storage.remove('masterKey');
+    } else {
+      // Override provided storageServiceKey because it is deprecated.
+      storageServiceKey = deriveStorageServiceKey(masterKey);
+      await window.storage.put('masterKey', Bytes.toBase64(masterKey));
+    }
 
     if (storageServiceKey == null) {
       log.info('onKeysSync: deleting window.storageKey');
@@ -3321,13 +3285,14 @@ export async function startApp(): Promise<void> {
       'onDeliveryReceipt: missing valid sourceServiceId'
     );
     strictAssert(sourceDevice, 'onDeliveryReceipt: missing sourceDevice');
+    strictAssert(sourceConversation, 'onDeliveryReceipt: missing conversation');
 
     const attributes: MessageReceiptAttributesType = {
       envelopeId: ev.deliveryReceipt.envelopeId,
       removeFromMessageReceiverCache: ev.confirm,
       messageSentAt: timestamp,
       receiptTimestamp: envelopeTimestamp,
-      sourceConversationId: sourceConversation?.id,
+      sourceConversationId: sourceConversation.id,
       sourceServiceId,
       sourceDevice,
       type: MessageReceipts.MessageReceiptType.Delivery,

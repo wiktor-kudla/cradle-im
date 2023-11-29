@@ -20,16 +20,12 @@ import type { BoundActionCreatorsMapObject } from '../../hooks/useBoundActions';
 import type { DraftBodyRanges } from '../../types/BodyRange';
 import { BodyRange } from '../../types/BodyRange';
 import type { LinkPreviewType } from '../../types/message/LinkPreviews';
-import type {
-  DraftEditMessageType,
-  MessageAttributesType,
-} from '../../model-types.d';
+import type { MessageAttributesType } from '../../model-types.d';
 import type { NoopActionType } from './noop';
 import type { ShowToastActionType } from './toast';
 import type { StateType as RootStateType } from '../reducer';
 import * as log from '../../logging/log';
 import * as Errors from '../../types/errors';
-import * as LinkPreview from '../../types/LinkPreview';
 import {
   ADD_PREVIEW as ADD_LINK_PREVIEW,
   REMOVE_PREVIEW as REMOVE_LINK_PREVIEW,
@@ -55,7 +51,7 @@ import {
   suspendLinkPreviews,
 } from '../../services/LinkPreview';
 import {
-  getMaximumAttachmentSizeInKb,
+  getMaximumOutgoingAttachmentSizeInKb,
   getRenderDetailsForLimit,
   KIBIBYTE,
 } from '../../types/AttachmentSize';
@@ -71,7 +67,7 @@ import { resolveAttachmentDraftData } from '../../util/resolveAttachmentDraftDat
 import { resolveDraftAttachmentOnDisk } from '../../util/resolveDraftAttachmentOnDisk';
 import { shouldShowInvalidMessageToast } from '../../util/shouldShowInvalidMessageToast';
 import { writeDraftAttachment } from '../../util/writeDraftAttachment';
-import { getMessageById } from '../../messages/getMessageById';
+import { __DEPRECATED$getMessageById } from '../../messages/getMessageById';
 import { canReply } from '../selectors/message';
 import { getContactId } from '../../messages/helpers';
 import { getConversationSelector } from '../selectors/conversations';
@@ -254,24 +250,6 @@ export const actions = {
   setQuoteByMessageId,
   setQuotedMessage,
 };
-
-function hadSameLinkPreviewDismissed(
-  messageText: string,
-  draftEditMessage: DraftEditMessageType | undefined
-): boolean {
-  if (!draftEditMessage) {
-    return false;
-  }
-
-  const currentLink = LinkPreview.findLinks(messageText).find(
-    LinkPreview.shouldPreviewHref
-  );
-  const prevLink = LinkPreview.findLinks(draftEditMessage.body).find(
-    LinkPreview.shouldPreviewHref
-  );
-
-  return currentLink === prevLink && !draftEditMessage.preview;
-}
 
 function incrementSendCounter(conversationId: string): IncrementSendActionType {
   return {
@@ -769,7 +747,9 @@ export function setQuoteByMessageId(
       return;
     }
 
-    const message = messageId ? await getMessageById(messageId) : undefined;
+    const message = messageId
+      ? await __DEPRECATED$getMessageById(messageId)
+      : undefined;
     const state = getState();
 
     if (
@@ -1014,11 +994,7 @@ function onEditorStateChange({
       hasDraftAttachments(conversation.attributes.draftAttachments, {
         includePending: true,
       }) ||
-      Boolean(conversation.attributes.draftEditMessage?.attachmentThumbnail) ||
-      hadSameLinkPreviewDismissed(
-        messageText,
-        conversation.attributes.draftEditMessage
-      )
+      Boolean(conversation.attributes.draftEditMessage?.attachmentThumbnail)
     ) {
       return;
     }
@@ -1161,14 +1137,6 @@ function preProcessAttachment(
     return;
   }
 
-  const limitKb = getMaximumAttachmentSizeInKb(getRemoteConfigValue);
-  if (file.size / KIBIBYTE > limitKb) {
-    return {
-      toastType: ToastType.FileSize,
-      parameters: getRenderDetailsForLimit(limitKb),
-    };
-  }
-
   if (isFileDangerous(file.name)) {
     return { toastType: ToastType.DangerousFileType };
   }
@@ -1195,6 +1163,16 @@ function preProcessAttachment(
   // You can't add a non-image attachment if you already have attachments staged
   if (!imageOrVideo && draftAttachments.length > 0) {
     return { toastType: ToastType.CannotMixMultiAndNonMultiAttachments };
+  }
+
+  // Putting this after everything else because the other checks are more
+  // important to show to the user.
+  const limitKb = getMaximumOutgoingAttachmentSizeInKb(getRemoteConfigValue);
+  if (file.size / KIBIBYTE > limitKb) {
+    return {
+      toastType: ToastType.FileSize,
+      parameters: getRenderDetailsForLimit(limitKb),
+    };
   }
 
   return undefined;

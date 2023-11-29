@@ -8,9 +8,8 @@
     @include font-body-2;
     -webkit-appearance: none;
     border-radius: 4px;
-    // border: 1px solid $color-gray-25;
     border: 1px solid $color-purple-01;
-    background-color: unset;
+    background-color: $color-purple-02;
     color: $color-white;
     cursor: pointer;
     height: 40px;
@@ -48,7 +47,7 @@
     @include light-theme {
       @include color-svg(
         '../images/icons/v3/dropdown/dropdown-compact-light.svg',
-        $color-gray-60
+        $color-white
       );
     }
 

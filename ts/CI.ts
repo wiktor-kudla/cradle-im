@@ -9,6 +9,8 @@ import * as log from './logging/log';
 import { explodePromise } from './util/explodePromise';
 import { ipcInvoke } from './sql/channels';
 import { SECOND } from './util/durations';
+import { isSignalRoute } from './util/signalRoutes';
+import { strictAssert } from './util/assert';
 
 type ResolveType = (data: unknown) => void;
 
@@ -28,6 +30,7 @@ export type CIType = {
       ignorePastEvents?: boolean;
     }
   ) => unknown;
+  openSignalRoute(url: string): Promise<void>;
 };
 
 export function getCI(deviceName: string): CIType {
@@ -120,12 +123,31 @@ export function getCI(deviceName: string): CIType {
       [sentAt]
     );
     return messages.map(
-      m => window.MessageController.register(m.id, m).attributes
+      m =>
+        window.MessageCache.__DEPRECATED$register(
+          m.id,
+          m,
+          'CI.getMessagesBySentAt'
+        ).attributes
     );
   }
 
   function getConversationId(address: string | null): string | null {
     return window.ConversationController.getConversationId(address);
+  }
+
+  async function openSignalRoute(url: string) {
+    strictAssert(
+      isSignalRoute(url),
+      `openSignalRoute: not a valid signal route ${url}`
+    );
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.hidden = true;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   }
 
   return {
@@ -136,5 +158,6 @@ export function getCI(deviceName: string): CIType {
     setProvisioningURL,
     solveChallenge,
     waitForEvent,
+    openSignalRoute,
   };
 }

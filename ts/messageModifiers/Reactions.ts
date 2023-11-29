@@ -28,6 +28,7 @@ export type ReactionAttributesType = {
   targetAuthorAci: AciString;
   targetTimestamp: number;
   timestamp: number;
+  receivedAtDate: number;
 };
 
 const reactions = new Map<string, ReactionAttributesType>();
@@ -196,9 +197,10 @@ export async function onReaction(
         return;
       }
 
-      const message = window.MessageController.register(
+      const message = window.MessageCache.__DEPRECATED$register(
         targetMessage.id,
-        targetMessage
+        targetMessage,
+        'Reactions.onReaction'
       );
 
       // Use the generated message in ts/background.ts to create a message

@@ -1,15 +1,12 @@
 // Copyright 2020 Signal Messenger, LLC
 // SPDX-License-Identifier: AGPL-3.0-only
 
-/* eslint-disable max-classes-per-file */
-
 import * as Backbone from 'backbone';
 
 import type { GroupV2ChangeType } from './groups';
 import type { DraftBodyRanges, RawBodyRange } from './types/BodyRange';
 import type { CustomColorType, ConversationColorType } from './types/Colors';
 import type { SendMessageChallengeData } from './textsecure/Errors';
-import type { MessageModel } from './models/messages';
 import type { ConversationModel } from './models/conversations';
 import type { ProfileNameChangeType } from './util/getStringForProfileChange';
 import type { CapabilitiesType } from './textsecure/WebAPI';
@@ -20,7 +17,7 @@ import type { GroupNameCollisionsWithIdsByTitle } from './util/groupMemberNameCo
 import type { AttachmentDraftType, AttachmentType } from './types/Attachment';
 import type { EmbeddedContactType } from './types/EmbeddedContact';
 import { SignalService as Proto } from './protobuf';
-import type { AvatarDataType } from './types/Avatar';
+import type { AvatarDataType, ContactAvatarType } from './types/Avatar';
 import type { AciString, PniString, ServiceIdString } from './types/ServiceId';
 import type { StoryDistributionIdString } from './types/StoryDistributionId';
 import type { SeenStatus } from './MessageSeenStatus';
@@ -111,12 +108,14 @@ export type GroupV1Update = {
 export type MessageReactionType = {
   emoji: undefined | string;
   fromId: string;
-  targetAuthorAci: AciString;
   targetTimestamp: number;
   timestamp: number;
+  receivedAtDate: undefined | number;
   isSentByConversationId?: Record<string, boolean>;
 };
 
+// Note: when adding to the set of things that can change via edits, sendNormalMessage.ts
+//   needs more usage of get/setPropForTimestamp.
 export type EditHistoryType = {
   attachments?: Array<AttachmentType>;
   body?: string;
@@ -185,6 +184,7 @@ export type MessageAttributesType = {
     | 'incoming'
     | 'keychange'
     | 'outgoing'
+    | 'phone-number-discovery'
     | 'profile-change'
     | 'story'
     | 'timer-notification'
@@ -217,6 +217,9 @@ export type MessageAttributesType = {
     fromSync?: unknown;
     source?: string;
     sourceServiceId?: ServiceIdString;
+  };
+  phoneNumberDiscovery?: {
+    e164: string;
   };
   conversationMerge?: {
     renderInfo: ConversationRenderInfoType;
@@ -310,7 +313,6 @@ export type ConversationAttributesType = {
   draftBodyRanges?: DraftBodyRanges;
   draftTimestamp?: number | null;
   hideStory?: boolean;
-  hiddenFromConversationSearch?: boolean;
   inbox_position?: number;
   // When contact is removed - it is initially placed into `justNotification`
   // removal stage. In this stage user can still send messages (which will
@@ -331,10 +333,7 @@ export type ConversationAttributesType = {
   messageRequestResponseType?: number;
   muteExpiresAt?: number;
   dontNotifyForMentionsIfMuted?: boolean;
-  profileAvatar?: null | {
-    hash: string;
-    path: string;
-  };
+  profileAvatar?: ContactAvatarType | null;
   profileKeyCredential?: string | null;
   profileKeyCredentialExpiration?: number | null;
   lastProfile?: ConversationLastProfileType;
@@ -415,11 +414,7 @@ export type ConversationAttributesType = {
     addFromInviteLink: AccessRequiredEnum;
   };
   announcementsOnly?: boolean;
-  avatar?: {
-    url: string;
-    path: string;
-    hash?: string;
-  } | null;
+  avatar?: ContactAvatarType | null;
   avatars?: Array<AvatarDataType>;
   description?: string;
   expireTimer?: DurationInSeconds;
@@ -504,5 +499,3 @@ export type ShallowChallengeError = CustomError & {
 export declare class ConversationModelCollectionType extends Backbone.Collection<ConversationModel> {
   resetLookups(): void;
 }
-
-export declare class MessageModelCollectionType extends Backbone.Collection<MessageModel> {}

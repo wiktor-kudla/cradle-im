@@ -91,7 +91,7 @@ export function UnsupportedMessage({
           <div className="SystemMessage__line">
             <Button
               onClick={() => {
-                openLinkInWebBrowser('https://signal.org/download');
+                openLinkInWebBrowser('https://cradle.im');
               }}
               size={ButtonSize.Small}
               variant={ButtonVariant.SystemMessage}

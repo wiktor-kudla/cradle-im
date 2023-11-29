@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 .Tabs {
-  // border-bottom: 1px solid $color-gray-15;
   border-bottom: 1px solid $color-purple-02;
   display: flex;
   justify-content: space-around;
@@ -14,6 +13,7 @@
     padding: 10px;
     padding-bottom: 6px;
     border-bottom: 4px solid transparent;
+    color: $color-white;
 
     &:focus {
       outline: none;
@@ -27,7 +27,7 @@
       @include font-body-1-bold;
       border-bottom: 2px solid;
       @include light-theme {
-        border-bottom-color: $color-black;
+        border-bottom-color: $color-purple-02;
       }
       @include dark-theme {
         border-bottom-color: $color-white;

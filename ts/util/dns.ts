@@ -1,35 +1,17 @@
 // Copyright 2023 Signal Messenger, LLC
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import type { LookupOneOptions, LookupAllOptions, LookupAddress } from 'dns';
-import { lookup as nodeLookup } from 'dns';
+import type {
+  LookupOneOptions,
+  LookupAllOptions,
+  LookupAddress,
+  lookup as nodeLookup,
+} from 'dns';
 import { ipcRenderer, net } from 'electron';
 import type { ResolvedHost } from 'electron';
 
 import { strictAssert } from './assert';
 import { drop } from './drop';
-
-const HOST_ALLOWLIST = new Set([
-  // Production
-  'chat.signal.org',
-  'storage.signal.org',
-  'cdsi.signal.org',
-  'cdn.signal.org',
-  'cdn2.signal.org',
-  'create.signal.art',
-
-  // Staging
-  'chat.staging.signal.org',
-  'storage-staging.signal.org',
-  'cdsi.staging.signal.org',
-  'cdn-staging.signal.org',
-  'cdn2-staging.signal.org',
-  'create.staging.signal.art',
-
-  // Common
-  'updates2.signal.org',
-  'sfu.voip.signal.org',
-]);
 
 function lookupAll(
   hostname: string,
@@ -40,11 +22,6 @@ function lookupAll(
     family?: number
   ) => void
 ): void {
-  if (!HOST_ALLOWLIST.has(hostname)) {
-    nodeLookup(hostname, opts, callback);
-    return;
-  }
-
   // Node.js support various signatures, but we only support one.
   strictAssert(typeof opts === 'object', 'missing options');
   strictAssert(typeof callback === 'function', 'missing callback');
@@ -109,6 +86,46 @@ function lookupAll(
   }
 
   drop(run());
+}
+
+export function interleaveAddresses(
+  addresses: ReadonlyArray<LookupAddress>
+): Array<LookupAddress> {
+  const firstAddr = addresses.find(
+    ({ family }) => family === 4 || family === 6
+  );
+  if (!firstAddr) {
+    throw new Error('interleaveAddresses: no addresses to interleave');
+  }
+
+  const v4 = addresses.filter(({ family }) => family === 4);
+  const v6 = addresses.filter(({ family }) => family === 6);
+
+  // Interleave addresses for Happy Eyeballs, but keep the first address
+  // type from the DNS response first in the list.
+  const interleaved = new Array<LookupAddress>();
+  while (v4.length !== 0 || v6.length !== 0) {
+    const v4Entry = v4.pop();
+    const v6Entry = v6.pop();
+
+    if (firstAddr.family === 4) {
+      if (v4Entry !== undefined) {
+        interleaved.push(v4Entry);
+      }
+      if (v6Entry !== undefined) {
+        interleaved.push(v6Entry);
+      }
+    } else {
+      if (v6Entry !== undefined) {
+        interleaved.push(v6Entry);
+      }
+      if (v4Entry !== undefined) {
+        interleaved.push(v4Entry);
+      }
+    }
+  }
+
+  return interleaved;
 }
 
 // Note: `nodeLookup` has a complicated type due to compatibility requirements.

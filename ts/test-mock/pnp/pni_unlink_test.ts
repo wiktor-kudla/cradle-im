@@ -12,13 +12,13 @@ import {
 import createDebug from 'debug';
 
 import * as durations from '../../util/durations';
-import { generatePni } from '../../types/ServiceId';
+import { generatePni, toUntaggedPni } from '../../types/ServiceId';
 import { Bootstrap } from '../bootstrap';
 import type { App } from '../bootstrap';
 
 export const debug = createDebug('mock:test:pni-unlink');
 
-describe('pnp/PNI DecryptionError unlink', function needsName() {
+describe('pnp/PNI DecryptionError unlink', function (this: Mocha.Suite) {
   this.timeout(durations.MINUTE);
 
   let bootstrap: Bootstrap;
@@ -33,7 +33,7 @@ describe('pnp/PNI DecryptionError unlink', function needsName() {
     await bootstrap.linkAndClose();
   });
 
-  afterEach(async function after() {
+  afterEach(async function (this: Mocha.Context) {
     if (app) {
       await bootstrap.maybeSaveLogs(this.currentTest, app);
       await app.close();
@@ -91,7 +91,10 @@ describe('pnp/PNI DecryptionError unlink', function needsName() {
             pniChangeNumber,
           },
         },
-        { timestamp: bootstrap.getTimestamp(), updatedPni: generatePni() }
+        {
+          timestamp: bootstrap.getTimestamp(),
+          updatedPni: toUntaggedPni(generatePni()),
+        }
       )
     );
     sendPromises.push(
@@ -102,7 +105,10 @@ describe('pnp/PNI DecryptionError unlink', function needsName() {
             pniChangeNumber,
           },
         },
-        { timestamp: bootstrap.getTimestamp(), updatedPni: desktop.pni }
+        {
+          timestamp: bootstrap.getTimestamp(),
+          updatedPni: toUntaggedPni(desktop.pni),
+        }
       )
     );
 

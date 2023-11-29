@@ -14,13 +14,14 @@ export enum Environment {
 let environment: undefined | Environment;
 
 export function getEnvironment(): Environment {
-  if (environment === undefined) {
+  /*if (environment === undefined) {
     // This should never happen—we should always have initialized the environment by this
     //   point. It'd be nice to log here but the logger depends on the environment and we
     //   can't have circular dependencies.
     return Environment.Production;
   }
-  return environment;
+  return environment;*/
+  return Environment.Production;
 }
 
 /**

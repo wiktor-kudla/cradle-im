@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 import { ThemeType, type LocalizerType } from '../../types/Util';
 import type { StateType } from '../reducer';
 import { LinkPreviewSourceType } from '../../types/LinkPreview';
-import { SmartCompositionTextArea } from './CompositionTextArea';
 import { StoryCreator } from '../../components/StoryCreator';
 import {
   getAllSignalConnections,
@@ -18,29 +17,31 @@ import {
   selectMostRecentActiveStoryTimestampByGroupOrDistributionList,
 } from '../selectors/conversations';
 import { getDistributionListsWithMembers } from '../selectors/storyDistributionLists';
-import { getIntl, getUserConversationId } from '../selectors/user';
+import { getIntl, getPlatform, getUserConversationId } from '../selectors/user';
 import {
   getInstalledStickerPacks,
   getRecentStickers,
 } from '../selectors/stickers';
 import { getAddStoryData } from '../selectors/stories';
+import { getLinkPreview } from '../selectors/linkPreviews';
+import { getPreferredBadgeSelector } from '../selectors/badges';
 import {
   getEmojiSkinTone,
   getHasSetMyStoriesPrivacy,
+  getTextFormattingEnabled,
 } from '../selectors/items';
-import { getLinkPreview } from '../selectors/linkPreviews';
-import { getPreferredBadgeSelector } from '../selectors/badges';
 import { imageToBlurHash } from '../../util/imageToBlurHash';
 import { processAttachment } from '../../util/processAttachment';
-import { useConversationsActions } from '../ducks/conversations';
 import { useActions as useEmojisActions } from '../ducks/emojis';
+import { useAudioPlayerActions } from '../ducks/audioPlayer';
+import { useComposerActions } from '../ducks/composer';
+import { useConversationsActions } from '../ducks/conversations';
 import { useGlobalModalActions } from '../ducks/globalModals';
 import { useItemsActions } from '../ducks/items';
 import { useLinkPreviewActions } from '../ducks/linkPreviews';
 import { useRecentEmojis } from '../selectors/emojis';
 import { useStoriesActions } from '../ducks/stories';
 import { useStoryDistributionListsActions } from '../ducks/storyDistributionLists';
-import { useAudioPlayerActions } from '../ducks/audioPlayer';
 
 export type PropsType = {
   file?: File;
@@ -99,6 +100,11 @@ export function SmartStoryCreator(): JSX.Element | null {
   const { onSetSkinTone } = useItemsActions();
   const { onUseEmoji } = useEmojisActions();
   const { pauseVoiceNotePlayer } = useAudioPlayerActions();
+  const { onTextTooLong } = useComposerActions();
+  const { onUseEmoji: onPickEmoji } = useEmojisActions();
+
+  const isFormattingEnabled = useSelector(getTextFormattingEnabled);
+  const platform = useSelector(getPlatform);
 
   return (
     <StoryCreator
@@ -113,6 +119,7 @@ export function SmartStoryCreator(): JSX.Element | null {
       i18n={i18n}
       imageToBlurHash={imageToBlurHash}
       installedPacks={installedPacks}
+      isFormattingEnabled={isFormattingEnabled}
       isSending={isSending}
       linkPreview={linkPreviewForSource(LinkPreviewSourceType.StoryCreator)}
       me={me}
@@ -123,19 +130,21 @@ export function SmartStoryCreator(): JSX.Element | null {
       onDeleteList={deleteDistributionList}
       onDistributionListCreated={createDistributionList}
       onHideMyStoriesFrom={hideMyStoriesFrom}
+      onMediaPlaybackStart={pauseVoiceNotePlayer}
+      onPickEmoji={onPickEmoji}
       onRemoveMembers={removeMembersFromDistributionList}
       onRepliesNReactionsChanged={allowsRepliesChanged}
       onSelectedStoryList={verifyStoryListMembers}
       onSend={sendStoryMessage}
       onSetSkinTone={onSetSkinTone}
+      onTextTooLong={onTextTooLong}
       onUseEmoji={onUseEmoji}
       onViewersUpdated={updateStoryViewers}
-      onMediaPlaybackStart={pauseVoiceNotePlayer}
       ourConversationId={ourConversationId}
+      platform={platform}
       processAttachment={processAttachment}
       recentEmojis={recentEmojis}
       recentStickers={recentStickers}
-      renderCompositionTextArea={SmartCompositionTextArea}
       sendStoryModalOpenStateChanged={sendStoryModalOpenStateChanged}
       setMyStoriesToAllSignalConnections={setMyStoriesToAllSignalConnections}
       signalConnections={signalConnections}

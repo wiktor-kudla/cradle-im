@@ -69,7 +69,7 @@ async function main(
       }
 
       // eslint-disable-next-line no-useless-escape
-      const patchedURL = url.replace(/cradle-desktop-[^\/.]+/g, 'electron');
+      const patchedURL = url.replace(/signal-desktop-[^\/.]+/g, 'electron');
 
       https.get(`${TARGET_URL}${patchedURL}`, remoteRes => {
         res.writeHead(remoteRes.statusCode ?? 500, remoteRes.headers);
@@ -108,7 +108,17 @@ async function symbolicate(
   await fs.mkdir(tmpDir, { recursive: true });
 
   const encoded = await fs.readFile(fileName);
-  const { reports } = Proto.CrashReportList.decode(encoded);
+  let reports: ReadonlyArray<Proto.ICrashReport>;
+  if (fileName.endsWith('.raw')) {
+    reports = [
+      {
+        filename: 'report.dmp',
+        content: encoded,
+      },
+    ];
+  } else {
+    ({ reports } = Proto.CrashReportList.decode(encoded));
+  }
 
   const { name: prefix } = path.parse(fileName);
 

@@ -24,7 +24,7 @@ const nodeDefaults = {
 const bundleDefaults = {
   ...nodeDefaults,
   define: {
-    'process.env.NODE_ENV': isProd ? '"production"' : '"development"',
+    'process.env.NODE_ENV': '"production"', // isProd ? '"production"' : '"development"',
   },
   bundle: true,
   minify: isProd,
@@ -66,7 +66,7 @@ const bundleDefaults = {
 const sandboxedPreloadDefaults = {
   ...nodeDefaults,
   define: {
-    'process.env.NODE_ENV': isProd ? '"production"' : '"development"',
+    'process.env.NODE_ENV': '"production"', // isProd ? '"production"' : '"development"',
   },
   external: ['electron'],
   bundle: true,

@@ -23,8 +23,8 @@ $NavTabs__ProfileAvatar__size: 28px;
   height: 100%;
   padding-top: var(--title-bar-drag-area-height);
   @include light-theme {
-    background-color: $color-gray-04;
-    border-inline-end: 1px solid $color-black-alpha-16;
+    background-color: $color-purple-01;
+    border-inline-end: 2px solid $color-black-alpha-16;
   }
   @include dark-theme {
     background-color: $color-gray-80;
@@ -63,22 +63,29 @@ $NavTabs__ProfileAvatar__size: 28px;
   justify-content: center;
   padding-block: $NavTabs__ItemButton__blockPadding;
   border-radius: 8px;
+ .NavTabs__Item {
+  background: $color-purple-01;
+ }
+
   .NavTabs__Item:hover &,
-  .NavTabs__Item:focus-visible & {
+  .NavTabs__Item:focus & {
     @include light-theme {
-      background-color: $color-black-alpha-06;
+      background-color: $color-purple-02;
     }
     @include dark-theme {
       background-color: $color-white-alpha-06;
     }
   }
-  .NavTabs__Item:focus-visible & {
-    box-shadow: 0 0 0 2px $color-ultramarine;
+  .NavTabs__Item:focus & {
+    outline: none;
+    @include keyboard-mode {
+      box-shadow: 0 0 0 2px $color-ultramarine;
+    }
   }
   .NavTabs__Item:active &,
   .NavTabs__Item[aria-selected='true'] & {
     @include light-theme {
-      background: $color-gray-20;
+      background: $color-purple-02;
     }
     @include dark-theme {
       background: $color-gray-62;
@@ -144,13 +151,13 @@ $NavTabs__ProfileAvatar__size: 28px;
 
 .NavTabs__ItemIcon {
   display: block;
-  width: $NavTabs__ItemIcon__size;
-  height: $NavTabs__ItemIcon__size;
+  width: 25px;
+  height: 25px;
 }
 
 @mixin NavTabs__Icon($icon) {
   @include light-theme {
-    @include color-svg($icon, $color-black);
+    @include color-svg($icon, $color-purple-03);
   }
   @include dark-theme {
     @include color-svg($icon, $color-gray-15);
@@ -220,22 +227,22 @@ $NavTabs__ProfileAvatar__size: 28px;
   @include dark-theme {
     @include color-svg(
       '../images/icons/v3/settings/settings.svg',
-      $color-white
+      $color-gray-05
     );
   }
   @include light-theme {
     @include color-svg(
       '../images/icons/v3/settings/settings.svg',
-      $color-black
+      $color-purple-03
     );
   }
 }
 
 .NavTabs__ContextMenuIcon--Update {
   @include dark-theme {
-    @include color-svg('../images/icons/v3/refresh/refresh.svg', $color-white);
+    @include color-svg('../images/icons/v3/refresh/refresh.svg', $color-purple-01);
   }
   @include light-theme {
-    @include color-svg('../images/icons/v3/refresh/refresh.svg', $color-black);
+    @include color-svg('../images/icons/v3/refresh/refresh.svg', $color-purple-03);
   }
 }

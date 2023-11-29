@@ -37,8 +37,7 @@
       width: 20px;
 
       @include light-theme {
-        // @include color-svg('../images/icons/v3/mic/mic.svg', $color-gray-75);
-        @include color-svg('../images/icons/v3/mic/mic.svg', $color-white);
+        @include color-svg('../images/icons/v3/mic/mic.svg', $color-gray-75);
       }
       @include dark-theme {
         @include color-svg('../images/icons/v3/mic/mic.svg', $color-gray-15);

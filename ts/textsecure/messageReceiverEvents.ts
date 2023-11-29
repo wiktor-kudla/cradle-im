@@ -12,7 +12,7 @@ import type {
   ProcessedDataMessage,
   ProcessedSent,
 } from './Types.d';
-import type { ModifiedContactDetails } from './ContactsParser';
+import type { ContactDetailsWithAvatar } from './ContactsParser';
 import type { CallEventDetails, CallLogEvent } from '../types/CallDisposition';
 
 export class EmptyEvent extends Event {
@@ -74,7 +74,7 @@ export class ErrorEvent extends Event {
 
 export class ContactSyncEvent extends Event {
   constructor(
-    public readonly contacts: ReadonlyArray<ModifiedContactDetails>,
+    public readonly contacts: ReadonlyArray<ContactDetailsWithAvatar>,
     public readonly complete: boolean,
     public readonly receivedAtCounter: number,
     public readonly sentAt: number
@@ -355,12 +355,23 @@ export class FetchLatestEvent extends ConfirmableEvent {
   }
 }
 
+export type KeysEventData = Readonly<{
+  storageServiceKey: Uint8Array | undefined;
+  masterKey: Uint8Array | undefined;
+}>;
+
 export class KeysEvent extends ConfirmableEvent {
+  public readonly storageServiceKey: Uint8Array | undefined;
+  public readonly masterKey: Uint8Array | undefined;
+
   constructor(
-    public readonly storageServiceKey: Uint8Array,
+    { storageServiceKey, masterKey }: KeysEventData,
     confirm: ConfirmCallback
   ) {
     super('keys', confirm);
+
+    this.storageServiceKey = storageServiceKey;
+    this.masterKey = masterKey;
   }
 }
 

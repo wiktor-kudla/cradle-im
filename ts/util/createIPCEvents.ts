@@ -4,7 +4,6 @@
 import { webFrame } from 'electron';
 import type { AudioDevice } from '@signalapp/ringrtc';
 import { noop } from 'lodash';
-import { getStoriesAvailable } from './stories';
 
 import type { ZoomFactorType } from '../types/Storage.d';
 import type {
@@ -35,16 +34,13 @@ import * as durations from './durations';
 import type { DurationInSeconds } from './durations';
 import { isPhoneNumberSharingEnabled } from './isPhoneNumberSharingEnabled';
 import * as Registration from './registration';
-import {
-  parseE164FromSignalDotMeHash,
-  parseUsernameBase64FromSignalDotMeHash,
-} from './sgnlHref';
 import { lookupConversationWithoutServiceId } from './lookupConversationWithoutServiceId';
 import * as log from '../logging/log';
 import { deleteAllMyStories } from './deleteAllMyStories';
-import { isEnabled } from '../RemoteConfig';
 import type { NotificationClickData } from '../services/notifications';
 import { StoryViewModeType, StoryViewTargetType } from '../types/Stories';
+import { isValidE164 } from './isValidE164';
+import { fromWebSafeBase64 } from './webSafeBase64';
 
 type SentMediaQualityType = 'standard' | 'high';
 type ThemeType = 'light' | 'dark' | 'system';
@@ -63,6 +59,7 @@ export type IPCEventsValuesType = {
   hideMenuBar: boolean | undefined;
   incomingCallNotification: boolean;
   lastSyncTime: number | undefined;
+  localeOverride: string | null;
   notificationDrawAttention: boolean;
   notificationSetting: NotificationSettingType;
   preferredAudioInputDevice: AudioDevice | undefined;
@@ -108,8 +105,10 @@ export type IPCEventsCallbacksType = {
   deleteAllMyStories: () => Promise<void>;
   editCustomColor: (colorId: string, customColor: CustomColorType) => void;
   getConversationsWithCustomColor: (x: string) => Array<ConversationType>;
+  getMediaAccessStatus: (
+    mediaType: 'screen' | 'microphone' | 'camera'
+  ) => Promise<string | unknown>;
   installStickerPack: (packId: string, key: string) => Promise<void>;
-  isFormattingFlagEnabled: () => boolean;
   isPhoneNumberSharingEnabled: () => boolean;
   isPrimary: () => boolean;
   removeCustomColor: (x: string) => void;
@@ -118,9 +117,12 @@ export type IPCEventsCallbacksType = {
   resetAllChatColors: () => void;
   resetDefaultChatColor: () => void;
   showConversationViaNotification: (data: NotificationClickData) => void;
-  showConversationViaSignalDotMe: (hash: string) => Promise<void>;
+  showConversationViaSignalDotMe: (
+    kind: string,
+    value: string
+  ) => Promise<void>;
   showKeyboardShortcuts: () => void;
-  showGroupViaLink: (x: string) => Promise<void>;
+  showGroupViaLink: (value: string) => Promise<void>;
   showReleaseNotes: () => void;
   showStickerPack: (packId: string, key: string) => void;
   shutdown: () => Promise<void>;
@@ -131,7 +133,6 @@ export type IPCEventsCallbacksType = {
     color: ConversationColorType,
     customColor?: { id: string; value: CustomColorType }
   ) => void;
-  shouldShowStoriesSettings: () => boolean;
   getDefaultConversationColor: () => DefaultConversationColorType;
   persistZoomFactor: (factor: number) => Promise<void>;
 };
@@ -368,6 +369,12 @@ export function createIPCEvents(
       return promise;
     },
 
+    getLocaleOverride: () => {
+      return window.storage.get('localeOverride') ?? null;
+    },
+    setLocaleOverride: async (locale: string | null) => {
+      await window.storage.put('localeOverride', locale);
+    },
     getNotificationSetting: () =>
       window.storage.get('notification-setting', 'message'),
     setNotificationSetting: (value: 'message' | 'name' | 'count' | 'off') =>
@@ -418,10 +425,8 @@ export function createIPCEvents(
       return window.IPC.setAutoLaunch(value);
     },
 
-    isFormattingFlagEnabled: () => isEnabled('desktop.textFormatting'),
     isPhoneNumberSharingEnabled: () => isPhoneNumberSharingEnabled(),
     isPrimary: () => window.textsecure.storage.user.getDeviceId() === 1,
-    shouldShowStoriesSettings: () => getStoriesAvailable(),
     syncRequest: () =>
       new Promise<void>((resolve, reject) => {
         const FIVE_MINUTES = 5 * durations.MINUTE;
@@ -494,14 +499,14 @@ export function createIPCEvents(
       }
       window.reduxActions.globalModals.showStickerPackPreview(packId, key);
     },
-    showGroupViaLink: async hash => {
+    showGroupViaLink: async value => {
       // We can get these events even if the user has never linked this instance.
       if (!Registration.everDone()) {
         log.warn('showGroupViaLink: Not registered, returning early');
         return;
       }
       try {
-        await window.Signal.Groups.joinViaLink(hash);
+        await window.Signal.Groups.joinViaLink(value);
       } catch (error) {
         log.error(
           'showGroupViaLink: Ran into an error!',
@@ -529,14 +534,14 @@ export function createIPCEvents(
         } else {
           window.reduxActions.conversations.showConversation({
             conversationId,
-            messageId,
+            messageId: messageId ?? undefined,
           });
         }
       } else {
         window.reduxActions.app.openInbox();
       }
     },
-    async showConversationViaSignalDotMe(hash: string) {
+    async showConversationViaSignalDotMe(kind: string, value: string) {
       if (!Registration.everDone()) {
         log.info(
           'showConversationViaSignalDotMe: Not registered, returning early'
@@ -546,42 +551,35 @@ export function createIPCEvents(
 
       const { showUserNotFoundModal } = window.reduxActions.globalModals;
 
-      const maybeE164 = parseE164FromSignalDotMeHash(hash);
-      if (maybeE164) {
-        const convoId = await lookupConversationWithoutServiceId({
-          type: 'e164',
-          e164: maybeE164,
-          phoneNumber: maybeE164,
-          showUserNotFoundModal,
-          setIsFetchingUUID: noop,
-        });
-        if (convoId) {
-          window.reduxActions.conversations.showConversation({
-            conversationId: convoId,
+      let conversationId: string | undefined;
+
+      if (kind === 'phoneNumber') {
+        if (isValidE164(value, true)) {
+          conversationId = await lookupConversationWithoutServiceId({
+            type: 'e164',
+            e164: value,
+            phoneNumber: value,
+            showUserNotFoundModal,
+            setIsFetchingUUID: noop,
           });
-          return;
         }
-        // We will show not found modal on error
-        return;
+      } else if (kind === 'encryptedUsername') {
+        const usernameBase64 = fromWebSafeBase64(value);
+        const username = await resolveUsernameByLinkBase64(usernameBase64);
+        if (username != null) {
+          conversationId = await lookupConversationWithoutServiceId({
+            type: 'username',
+            username,
+            showUserNotFoundModal,
+            setIsFetchingUUID: noop,
+          });
+        }
       }
 
-      const maybeUsernameBase64 = parseUsernameBase64FromSignalDotMeHash(hash);
-      if (maybeUsernameBase64) {
-        const username = await resolveUsernameByLinkBase64(maybeUsernameBase64);
-
-        const convoId = await lookupConversationWithoutServiceId({
-          type: 'username',
-          username,
-          showUserNotFoundModal,
-          setIsFetchingUUID: noop,
+      if (conversationId != null) {
+        window.reduxActions.conversations.showConversation({
+          conversationId,
         });
-        if (convoId) {
-          window.reduxActions.conversations.showConversation({
-            conversationId: convoId,
-          });
-          return;
-        }
-        // We will show not found modal on error
         return;
       }
 
@@ -606,6 +604,11 @@ export function createIPCEvents(
       showWhatsNewModal();
     },
 
+    getMediaAccessStatus: async (
+      mediaType: 'screen' | 'microphone' | 'camera'
+    ) => {
+      return window.IPC.getMediaAccessStatus(mediaType);
+    },
     getMediaPermissions: window.IPC.getMediaPermissions,
     getMediaCameraPermissions: window.IPC.getMediaCameraPermissions,
 

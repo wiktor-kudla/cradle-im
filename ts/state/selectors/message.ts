@@ -34,6 +34,7 @@ import type { PropsDataType as GroupV1MigrationPropsType } from '../../component
 import type { PropsDataType as DeliveryIssuePropsType } from '../../components/conversation/DeliveryIssueNotification';
 import type { PropsType as PaymentEventNotificationPropsType } from '../../components/conversation/PaymentEventNotification';
 import type { PropsDataType as ConversationMergePropsType } from '../../components/conversation/ConversationMergeNotification';
+import type { PropsDataType as PhoneNumberDiscoveryPropsType } from '../../components/conversation/PhoneNumberDiscoveryNotification';
 import type {
   PropsData as GroupNotificationProps,
   ChangeType,
@@ -50,17 +51,15 @@ import type {
 
 import type { EmbeddedContactType } from '../../types/EmbeddedContact';
 import { embeddedContactSelector } from '../../types/EmbeddedContact';
-import type {
-  HydratedBodyRangeMention,
-  HydratedBodyRangesType,
-} from '../../types/BodyRange';
-import { BodyRange, hydrateRanges } from '../../types/BodyRange';
+import type { HydratedBodyRangesType } from '../../types/BodyRange';
+import { hydrateRanges } from '../../types/BodyRange';
 import type { AssertProps } from '../../types/Util';
 import type { LinkPreviewType } from '../../types/message/LinkPreviews';
 import { getMentionsRegex } from '../../types/Message';
 import { SignalService as Proto } from '../../protobuf';
 import type { AttachmentType } from '../../types/Attachment';
 import { isVoiceMessage, canBeDownloaded } from '../../types/Attachment';
+import type { DefaultConversationColorType } from '../../types/Colors';
 import { ReadStatus } from '../../messages/MessageReadStatus';
 
 import type { CallingNotificationType } from '../../util/callingNotification';
@@ -73,6 +72,7 @@ import { strictAssert } from '../../util/assert';
 import { canEditMessage } from '../../util/canEditMessage';
 
 import { getAccountSelector } from './accounts';
+import { getDefaultConversationColor } from './items';
 import {
   getContactNameColorSelector,
   getConversationSelector,
@@ -114,7 +114,7 @@ import {
 } from '../../messages/MessageSendState';
 import * as log from '../../logging/log';
 import { getConversationColorAttributes } from '../../util/getConversationColorAttributes';
-import { DAY, HOUR, DurationInSeconds } from '../../util/durations';
+import { DAY, DurationInSeconds } from '../../util/durations';
 import { getStoryReplyText } from '../../util/getStoryReplyText';
 import type { MessageAttributesWithPaymentEvent } from '../../messages/helpers';
 import {
@@ -128,16 +128,20 @@ import { calculateExpirationTimestamp } from '../../util/expirationTimer';
 import { isSignalConversation } from '../../util/isSignalConversation';
 import type { AnyPaymentEvent } from '../../types/Payment';
 import { isPaymentNotificationEvent } from '../../types/Payment';
-import { getTitleNoDefault, getNumber } from '../../util/getTitle';
+import {
+  getTitleNoDefault,
+  getNumber,
+  renderNumber,
+} from '../../util/getTitle';
 import { getMessageSentTimestamp } from '../../util/getMessageSentTimestamp';
 import type { CallHistorySelectorType } from './callHistory';
 import { CallMode } from '../../types/Calling';
 import { CallDirection } from '../../types/CallDisposition';
 import { getCallIdFromEra } from '../../util/callDisposition';
+import { LONG_MESSAGE } from '../../types/MIME';
 
 export { isIncoming, isOutgoing, isStory };
 
-const THREE_HOURS = 3 * HOUR;
 const linkify = LinkifyIt();
 
 type FormattedContact = Partial<ConversationType> &
@@ -176,6 +180,7 @@ export type GetPropsForBubbleOptions = Readonly<{
   activeCall?: CallStateType;
   accountSelector: AccountSelectorType;
   contactNameColorSelector: ContactNameColorSelectorType;
+  defaultConversationColor: DefaultConversationColorType;
 }>;
 
 export function hasErrors(
@@ -309,11 +314,15 @@ export const getAttachmentsForMessage = ({
       },
     ];
   }
-
-  return attachments
-    .filter(attachment => !attachment.error || canBeDownloaded(attachment))
-    .map(attachment => getPropsForAttachment(attachment))
-    .filter(isNotNil);
+  return (
+    attachments
+      .filter(attachment => !attachment.error || canBeDownloaded(attachment))
+      // Long message attachments are removed from message.attachments quickly,
+      // but in case they are still around, let's make sure not to show them
+      .filter(attachment => attachment.contentType !== LONG_MESSAGE)
+      .map(attachment => getPropsForAttachment(attachment))
+      .filter(isNotNil)
+  );
 };
 
 export const processBodyRanges = (
@@ -327,29 +336,6 @@ export const processBodyRanges = (
   return hydrateRanges(bodyRanges, options.conversationSelector)?.sort(
     (a, b) => b.start - a.start
   );
-};
-
-export const extractHydratedMentions = (
-  { bodyRanges }: Pick<MessageWithUIFieldsType, 'bodyRanges'>,
-  options: { conversationSelector: GetConversationByIdType }
-): ReadonlyArray<HydratedBodyRangeMention> | undefined => {
-  if (!bodyRanges) {
-    return undefined;
-  }
-
-  return bodyRanges
-    .filter(BodyRange.isMention)
-    .map(range => {
-      const { conversationSelector } = options;
-      const conversation = conversationSelector(range.mentionAci);
-
-      return {
-        ...range,
-        conversationID: conversation.id,
-        replacementText: conversation.title,
-      };
-    })
-    .sort((a, b) => b.start - a.start);
 };
 
 const getAuthorForMessage = (
@@ -474,9 +460,11 @@ const getPropsForStoryReplyContext = (
   {
     conversationSelector,
     ourConversationId,
+    defaultConversationColor,
   }: {
     conversationSelector: GetConversationByIdType;
     ourConversationId?: string;
+    defaultConversationColor: DefaultConversationColorType;
   }
 ): PropsData['storyReplyContext'] => {
   const { storyReaction, storyReplyContext } = message;
@@ -491,8 +479,10 @@ const getPropsForStoryReplyContext = (
 
   const conversation = getConversation(message, conversationSelector);
 
-  const { conversationColor, customColor } =
-    getConversationColorAttributes(conversation);
+  const { conversationColor, customColor } = getConversationColorAttributes(
+    conversation,
+    defaultConversationColor
+  );
 
   return {
     authorTitle,
@@ -515,9 +505,11 @@ export const getPropsForQuote = (
   {
     conversationSelector,
     ourConversationId,
+    defaultConversationColor,
   }: {
     conversationSelector: GetConversationByIdType;
     ourConversationId?: string;
+    defaultConversationColor: DefaultConversationColorType;
   }
 ): PropsData['quote'] => {
   const { quote } = message;
@@ -548,8 +540,10 @@ export const getPropsForQuote = (
   const firstAttachment = quote.attachments && quote.attachments[0];
   const conversation = getConversation(message, conversationSelector);
 
-  const { conversationColor, customColor } =
-    getConversationColorAttributes(conversation);
+  const { conversationColor, customColor } = getConversationColorAttributes(
+    conversation,
+    defaultConversationColor
+  );
 
   return {
     authorId,
@@ -587,6 +581,7 @@ export type GetPropsForMessageOptions = Pick<
   | 'regionCode'
   | 'accountSelector'
   | 'contactNameColorSelector'
+  | 'defaultConversationColor'
 >;
 
 function getTextAttachment(
@@ -660,6 +655,9 @@ export const getPropsForMessage = (
   message: MessageWithUIFieldsType,
   options: GetPropsForMessageOptions
 ): Omit<PropsForMessage, 'renderingContext' | 'menu' | 'contextMenu'> => {
+  const attachmentDroppedDueToSize = message.attachments?.some(
+    item => item.wasTooBig
+  );
   const attachments = getAttachmentsForMessage(message);
   const bodyRanges = processBodyRanges(message, options);
   const author = getAuthorForMessage(message, options);
@@ -681,6 +679,7 @@ export const getPropsForMessage = (
     targetedMessageCounter,
     selectedMessageIds,
     contactNameColorSelector,
+    defaultConversationColor,
   } = options;
 
   const { expireTimer, expirationStartTimestamp, conversationId } = message;
@@ -710,11 +709,14 @@ export const getPropsForMessage = (
   });
   const contactNameColor = contactNameColorSelector(conversationId, authorId);
 
-  const { conversationColor, customColor } =
-    getConversationColorAttributes(conversation);
+  const { conversationColor, customColor } = getConversationColorAttributes(
+    conversation,
+    defaultConversationColor
+  );
 
   return {
     attachments,
+    attachmentDroppedDueToSize,
     author,
     bodyRanges,
     previews,
@@ -767,6 +769,7 @@ export const getPropsForMessage = (
     text: message.body,
     textDirection: getTextDirection(message.body),
     timestamp: getMessageSentTimestamp(message, { includeEdits: true, log }),
+    receivedAtMS: message.received_at_ms,
   };
 };
 
@@ -785,6 +788,7 @@ export const getMessagePropsSelector = createSelector(
   getContactNameColorSelector,
   getTargetedMessage,
   getSelectedMessageIds,
+  getDefaultConversationColor,
   (
       conversationSelector,
       ourConversationId,
@@ -795,7 +799,8 @@ export const getMessagePropsSelector = createSelector(
       accountSelector,
       contactNameColorSelector,
       targetedMessage,
-      selectedMessageIds
+      selectedMessageIds,
+      defaultConversationColor
     ) =>
     (message: MessageWithUIFieldsType) => {
       return getPropsForMessage(message, {
@@ -810,6 +815,7 @@ export const getMessagePropsSelector = createSelector(
         targetedMessageCounter: targetedMessage?.counter,
         targetedMessageId: targetedMessage?.id,
         selectedMessageIds,
+        defaultConversationColor,
       });
     }
 );
@@ -931,6 +937,13 @@ export function getPropsForBubble(
     return {
       type: 'conversationMerge',
       data: getPropsForConversationMerge(message, options),
+      timestamp,
+    };
+  }
+  if (isPhoneNumberDiscovery(message)) {
+    return {
+      type: 'phoneNumberDiscovery',
+      data: getPropsForPhoneNumberDiscovery(message, options),
       timestamp,
     };
   }
@@ -1315,6 +1328,8 @@ export type GetPropsForCallHistoryOptions = Pick<
   | 'callHistorySelector'
   | 'conversationSelector'
   | 'ourConversationId'
+  | 'selectedMessageIds'
+  | 'targetedMessageId'
 >;
 
 const emptyCallNotification: CallingNotificationType = {
@@ -1324,6 +1339,8 @@ const emptyCallNotification: CallingNotificationType = {
   groupCallEnded: null,
   maxDevices: Infinity,
   deviceCount: 0,
+  isSelectMode: false,
+  isTargeted: false,
 };
 
 export function getPropsForCallHistory(
@@ -1334,6 +1351,8 @@ export function getPropsForCallHistory(
     activeCall,
     conversationSelector,
     ourConversationId,
+    selectedMessageIds,
+    targetedMessageId,
   }: GetPropsForCallHistoryOptions
 ): CallingNotificationType {
   const { callId } = message;
@@ -1355,6 +1374,8 @@ export function getPropsForCallHistory(
     'getPropsForCallHistory: Missing conversation'
   );
 
+  const isSelectMode = selectedMessageIds != null;
+
   let callCreator: ConversationType | null = null;
   if (callHistory.ringerId) {
     callCreator = conversationSelector(callHistory.ringerId);
@@ -1370,6 +1391,8 @@ export function getPropsForCallHistory(
       groupCallEnded: false,
       deviceCount: 0,
       maxDevices: Infinity,
+      isSelectMode,
+      isTargeted: message.id === targetedMessageId,
     };
   }
 
@@ -1397,6 +1420,8 @@ export function getPropsForCallHistory(
     groupCallEnded: callId !== conversationCallId || deviceCount === 0,
     deviceCount,
     maxDevices,
+    isSelectMode,
+    isTargeted: message.id === targetedMessageId,
   };
 }
 
@@ -1497,6 +1522,34 @@ export function getPropsForConversationMerge(
     conversationTitle,
     obsoleteConversationTitle,
     obsoleteConversationNumber,
+  };
+}
+
+export function isPhoneNumberDiscovery(
+  message: MessageWithUIFieldsType
+): boolean {
+  return message.type === 'phone-number-discovery';
+}
+export function getPropsForPhoneNumberDiscovery(
+  message: MessageWithUIFieldsType,
+  { conversationSelector }: GetPropsForBubbleOptions
+): PhoneNumberDiscoveryPropsType {
+  const { phoneNumberDiscovery } = message;
+  if (!phoneNumberDiscovery) {
+    throw new Error(
+      'getPropsForPhoneNumberDiscovery: message is missing phoneNumberDiscovery!'
+    );
+  }
+
+  const conversation = getConversation(message, conversationSelector);
+  const conversationTitle = conversation.title;
+  const sharedGroup = conversation.sharedGroupNames[0];
+  const { e164 } = phoneNumberDiscovery;
+
+  return {
+    conversationTitle,
+    phoneNumber: renderNumber(e164) ?? e164,
+    sharedGroup,
   };
 }
 
@@ -1725,7 +1778,10 @@ function canReplyOrReact(
     return false;
   }
 
-  if (!conversation.acceptedMessageRequest) {
+  if (
+    !conversation.acceptedMessageRequest &&
+    conversation.removalStage !== 'justNotification'
+  ) {
     return false;
   }
 
@@ -1824,7 +1880,7 @@ export function canDeleteForEveryone(
     // Has the message already been deleted?
     !message.deletedForEveryone &&
     // Is it too old to delete?
-    isMoreRecentThan(message.sent_at, THREE_HOURS) &&
+    isMoreRecentThan(message.sent_at, DAY) &&
     // Is it sent to anyone?
     someSendStatus(message.sendStateByConversationId, isSent)
   );
@@ -1919,6 +1975,7 @@ export const getMessageDetails = createSelector(
   getUserConversationId,
   getUserNumber,
   getSelectedMessageIds,
+  getDefaultConversationColor,
   (
     accountSelector,
     contactNameColorSelector,
@@ -1930,7 +1987,8 @@ export const getMessageDetails = createSelector(
     ourPni,
     ourConversationId,
     ourNumber,
-    selectedMessageIds
+    selectedMessageIds,
+    defaultConversationColor
   ): SmartMessageDetailPropsType | undefined => {
     if (!message || !ourConversationId) {
       return;
@@ -2066,6 +2124,7 @@ export const getMessageDetails = createSelector(
         ourNumber,
         regionCode,
         selectedMessageIds,
+        defaultConversationColor,
       }),
       receivedAt: Number(message.received_at_ms || message.received_at),
     };

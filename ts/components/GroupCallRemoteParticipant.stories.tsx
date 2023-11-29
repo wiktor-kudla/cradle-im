@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import * as React from 'react';
-import { memoize, noop } from 'lodash';
-import { select } from '@storybook/addon-knobs';
-
+import { memoize } from 'lodash';
+import type { Meta } from '@storybook/react';
 import type { PropsType } from './GroupCallRemoteParticipant';
 import { GroupCallRemoteParticipant } from './GroupCallRemoteParticipant';
 import { getDefaultConversation } from '../test-both/helpers/getDefaultConversation';
@@ -39,21 +38,26 @@ const createProps = (
     isBlocked = false,
     hasRemoteAudio = false,
     presenting = false,
+    isHandRaised = false,
   }: {
     isBlocked?: boolean;
     hasRemoteAudio?: boolean;
     presenting?: boolean;
+    isHandRaised?: boolean;
   } = {}
 ): PropsType => ({
   getFrameBuffer,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  getGroupCallVideoFrameSource: noop as any,
+  getGroupCallVideoFrameSource: () => {
+    return { receiveVideoFrame: () => undefined };
+  },
   i18n,
   audioLevel: 0,
   remoteParticipant: {
+    aci: generateAci(),
     demuxId: 123,
     hasRemoteAudio,
     hasRemoteVideo: true,
+    isHandRaised,
     presenting,
     sharingScreen: false,
     videoAspectRatio: 1.3,
@@ -66,12 +70,15 @@ const createProps = (
   },
   remoteParticipantsCount: 1,
   isActiveSpeakerInSpeakerView: false,
+  isCallReconnecting: false,
   ...overrideProps,
 });
 
 export default {
   title: 'Components/GroupCallRemoteParticipant',
-};
+  argTypes: {},
+  args: {},
+} satisfies Meta<PropsType>;
 
 export function Default(): JSX.Element {
   return (
@@ -100,7 +107,7 @@ export function Speaking(): JSX.Element {
         left: (120 + 10) * index,
         top: 0,
         width: 120,
-        audioLevel: select('audioLevel', [0, 0.5, 1], 0.5),
+        audioLevel: 0.5,
         remoteParticipantsCount,
       },
       { hasRemoteAudio: true, presenting }
@@ -115,6 +122,23 @@ export function Speaking(): JSX.Element {
   );
 }
 
+export function HandRaised(): JSX.Element {
+  return (
+    <GroupCallRemoteParticipant
+      {...createProps(
+        {
+          isInPip: false,
+          height: 120,
+          left: 0,
+          top: 0,
+          width: 120,
+        },
+        { isHandRaised: true }
+      )}
+    />
+  );
+}
+
 export function IsInPip(): JSX.Element {
   return (
     <GroupCallRemoteParticipant
@@ -124,10 +148,6 @@ export function IsInPip(): JSX.Element {
     />
   );
 }
-
-IsInPip.story = {
-  name: 'isInPip',
-};
 
 export function Blocked(): JSX.Element {
   return (

@@ -9,10 +9,7 @@ import type PQueue from 'p-queue/dist';
 import type { assert } from 'chai';
 import type { PhoneNumber, PhoneNumberFormat } from 'google-libphonenumber';
 
-import type {
-  ConversationModelCollectionType,
-  MessageModelCollectionType,
-} from './model-types.d';
+import type { ConversationModelCollectionType } from './model-types.d';
 import type { textsecure } from './textsecure';
 import type { Storage } from './textsecure/Storage';
 import type {
@@ -33,7 +30,6 @@ import type { LocalizerType, ThemeType } from './types/Util';
 import type { Receipt } from './types/Receipt';
 import type { ConversationController } from './ConversationController';
 import type { ReduxActions } from './state/types';
-import type { createStore } from './state/createStore';
 import type { createApp } from './state/roots/createApp';
 import type Data from './sql/Client';
 import type { MessageModel } from './models/messages';
@@ -43,7 +39,7 @@ import type { ConfirmationDialog } from './components/ConfirmationDialog';
 import type { SignalProtocolStore } from './SignalProtocolStore';
 import type { SocketStatus } from './types/SocketStatus';
 import type SyncRequest from './textsecure/SyncRequest';
-import type { MessageController } from './util/MessageController';
+import type { MessageCache } from './services/MessageCache';
 import type { StateType } from './state/reducer';
 import type { SystemTraySetting } from './types/SystemTraySetting';
 import type { Address } from './types/Address';
@@ -70,12 +66,14 @@ export type IPCType = {
   };
   drawAttention: () => void;
   getAutoLaunch: () => Promise<boolean>;
+  getMediaAccessStatus: (
+    mediaType: 'screen' | 'microphone' | 'camera'
+  ) => Promise<string | undefined>;
   getMediaCameraPermissions: () => Promise<boolean>;
   getMediaPermissions: () => Promise<boolean>;
   logAppLoadedEvent?: (options: { processedCount?: number }) => void;
   readyForUpdates: () => void;
   removeSetupMenuItems: () => unknown;
-  restart: () => void;
   setAutoHideMenuBar: (value: boolean) => void;
   setAutoLaunch: (value: boolean) => Promise<void>;
   setBadge: (badge: number | 'marked-unread') => void;
@@ -164,7 +162,6 @@ export type SignalCoreType = {
   };
   OS: OSType;
   State: {
-    createStore: typeof createStore;
     Roots: {
       createApp: typeof createApp;
     };
@@ -235,7 +232,7 @@ declare global {
     ConversationController: ConversationController;
     Events: IPCEventsType;
     FontFace: typeof FontFace;
-    MessageController: MessageController;
+    MessageCache: MessageCache;
     SignalProtocolStore: typeof SignalProtocolStore;
     WebAPI: WebAPIConnectType;
     Whisper: WhisperType;
@@ -277,10 +274,10 @@ declare global {
     RETRY_DELAY: boolean;
     assert: typeof assert;
     testUtilities: {
+      debug: (info: unknown) => void;
+      initialize: () => Promise<void>;
       onComplete: (info: unknown) => void;
       prepareTests: () => void;
-      installMessageController: () => void;
-      initializeMessageCounter: () => Promise<void>;
     };
   }
 
@@ -308,7 +305,6 @@ export type WhisperType = {
   Conversation: typeof ConversationModel;
   ConversationCollection: typeof ConversationModelCollectionType;
   Message: typeof MessageModel;
-  MessageCollection: typeof MessageModelCollectionType;
 
   deliveryReceiptQueue: PQueue;
   deliveryReceiptBatcher: BatcherType<Receipt>;

@@ -1,23 +1,22 @@
 // Copyright 2019 Signal Messenger, LLC
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import type { BrowserWindow } from 'electron';
-import _fs from 'fs';
-import type { Updater } from './common';
+import config from 'config';
+
+import type { Updater, UpdaterOptionsType } from './common';
+import { MacOSUpdater } from './macos';
+import { WindowsUpdater } from './windows';
 import { isLinuxVersionSupported } from './linux';
-import type { LoggerType } from '../types/Logging';
 import { DialogType } from '../types/Dialogs';
 
 let initialized = false;
 
 let updater: Updater | undefined;
 
-export async function start(
-  logger: LoggerType,
-  getMainWindow: () => BrowserWindow | undefined
-): Promise<void> {
+export async function start(options: UpdaterOptionsType): Promise<void> {
   const { platform } = process;
-  
+  const { logger, getMainWindow } = options;
+
   if (initialized) {
     throw new Error('updater/start: Updates have already been initialized!');
   }
@@ -36,6 +35,22 @@ export async function start(
     }
   }
 
+  if (autoUpdateDisabled()) {
+    logger.info(
+      'updater/start: Updates disabled - not starting new version checks'
+    );
+
+    return;
+  }
+
+  if (platform === 'win32') {
+    updater = new WindowsUpdater(options);
+  } else if (platform === 'darwin') {
+    updater = new MacOSUpdater(options);
+  } else {
+    throw new Error('updater/start: Unsupported platform');
+  }
+
   await updater?.start();
 }
 
@@ -47,4 +62,10 @@ export async function force(): Promise<void> {
   if (updater) {
     await updater.force();
   }
+}
+
+function autoUpdateDisabled() {
+  return (
+    process.platform === 'linux' || process.mas || !config.get('updatesEnabled')
+  );
 }

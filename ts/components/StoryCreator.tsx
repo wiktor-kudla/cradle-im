@@ -17,6 +17,7 @@ import type { PropsType as SendStoryModalPropsType } from './SendStoryModal';
 import type { StoryDistributionIdString } from '../types/StoryDistributionId';
 import type { imageToBlurHash } from '../util/imageToBlurHash';
 import type { PropsType as TextStoryCreatorPropsType } from './TextStoryCreator';
+import type { PropsType as MediaEditorPropsType } from './MediaEditor';
 
 import { TEXT_ATTACHMENT } from '../types/MIME';
 import { isVideoAttachment } from '../types/Attachment';
@@ -24,7 +25,6 @@ import { SendStoryModal } from './SendStoryModal';
 
 import { MediaEditor } from './MediaEditor';
 import { TextStoryCreator } from './TextStoryCreator';
-import type { SmartCompositionTextAreaProps } from '../state/smart/CompositionTextArea';
 import type { DraftBodyRanges } from '../types/BodyRange';
 
 function usePortalElement(testid: string): HTMLDivElement | null {
@@ -63,9 +63,6 @@ export type PropsType = {
   processAttachment: (
     file: File
   ) => Promise<void | InMemoryAttachmentDraftType>;
-  renderCompositionTextArea: (
-    props: SmartCompositionTextAreaProps
-  ) => JSX.Element;
   sendStoryModalOpenStateChanged: (isOpen: boolean) => unknown;
   theme: ThemeType;
 } & Pick<StickerButtonProps, 'installedPacks' | 'recentStickers'> &
@@ -96,6 +93,10 @@ export type PropsType = {
   Pick<
     TextStoryCreatorPropsType,
     'onUseEmoji' | 'skinTone' | 'onSetSkinTone' | 'recentEmojis'
+  > &
+  Pick<
+    MediaEditorPropsType,
+    'isFormattingEnabled' | 'onPickEmoji' | 'onTextTooLong' | 'platform'
   >;
 
 export function StoryCreator({
@@ -110,6 +111,7 @@ export function StoryCreator({
   i18n,
   imageToBlurHash,
   installedPacks,
+  isFormattingEnabled,
   isSending,
   linkPreview,
   me,
@@ -118,19 +120,21 @@ export function StoryCreator({
   onDeleteList,
   onDistributionListCreated,
   onHideMyStoriesFrom,
+  onMediaPlaybackStart,
+  onPickEmoji,
   onRemoveMembers,
   onRepliesNReactionsChanged,
   onSelectedStoryList,
   onSend,
   onSetSkinTone,
+  onTextTooLong,
   onUseEmoji,
   onViewersUpdated,
-  onMediaPlaybackStart,
   ourConversationId,
+  platform,
   processAttachment,
   recentEmojis,
   recentStickers,
-  renderCompositionTextArea,
   sendStoryModalOpenStateChanged,
   setMyStoriesToAllSignalConnections,
   signalConnections,
@@ -209,7 +213,7 @@ export function StoryCreator({
               ourConversationId={ourConversationId}
               i18n={i18n}
               me={me}
-              onClose={() => setDraftAttachment(undefined)}
+              onClose={() => setIsReadyToSend(false)}
               onDeleteList={onDeleteList}
               onDistributionListCreated={onDistributionListCreated}
               onHideMyStoriesFrom={onHideMyStoriesFrom}
@@ -234,17 +238,17 @@ export function StoryCreator({
               toggleSignalConnectionsModal={toggleSignalConnectionsModal}
             />
           )}
-          {draftAttachment && !isReadyToSend && attachmentUrl && (
+          {draftAttachment && attachmentUrl && (
             <MediaEditor
               doneButtonLabel={i18n('icu:next2')}
+              getPreferredBadge={getPreferredBadge}
               i18n={i18n}
               imageSrc={attachmentUrl}
+              imageToBlurHash={imageToBlurHash}
               installedPacks={installedPacks}
+              isFormattingEnabled={isFormattingEnabled}
               isSending={isSending}
               onClose={onClose}
-              supportsCaption
-              renderCompositionTextArea={renderCompositionTextArea}
-              imageToBlurHash={imageToBlurHash}
               onDone={({
                 contentType,
                 data,
@@ -263,7 +267,11 @@ export function StoryCreator({
                 setBodyRanges(captionBodyRanges);
                 setIsReadyToSend(true);
               }}
+              onPickEmoji={onPickEmoji}
+              onTextTooLong={onTextTooLong}
+              platform={platform}
               recentStickers={recentStickers}
+              skinTone={skinTone}
             />
           )}
           {!file && (

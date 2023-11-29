@@ -15,7 +15,7 @@
   flex-direction: column;
 
   @include light-theme() {
-    background: $color-white;
+    background: $color-purple-01;
     color: $color-gray-90;
   }
 

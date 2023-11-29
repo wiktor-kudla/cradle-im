@@ -15,7 +15,7 @@ import { ErrorWithToast } from '../types/ErrorWithToast';
 import { SendStatus } from '../messages/MessageSendState';
 import { ToastType } from '../types/Toast';
 import type { AciString } from '../types/ServiceId';
-import { canEditMessage } from './canEditMessage';
+import { canEditMessage, isWithinMaxEdits } from './canEditMessage';
 import {
   conversationJobQueue,
   conversationQueueJobEnum,
@@ -23,7 +23,7 @@ import {
 import { concat, filter, map, repeat, zipObject, find } from './iterables';
 import { getConversationIdForLogging } from './idForLogging';
 import { isQuoteAMatch } from '../messages/helpers';
-import { getMessageById } from '../messages/getMessageById';
+import { __DEPRECATED$getMessageById } from '../messages/getMessageById';
 import { handleEditMessage } from './handleEditMessage';
 import { incrementMessageCounter } from './incrementMessageCounter';
 import { isGroupV1 } from './whatTypeOfConversation';
@@ -64,7 +64,7 @@ export async function sendEditedMessage(
     conversation.attributes
   )})`;
 
-  const targetMessage = await getMessageById(targetMessageId);
+  const targetMessage = await __DEPRECATED$getMessageById(targetMessageId);
   strictAssert(targetMessage, 'could not find message to edit');
 
   if (isGroupV1(conversation.attributes)) {
@@ -77,7 +77,10 @@ export async function sendEditedMessage(
     return;
   }
 
-  if (!canEditMessage(targetMessage.attributes)) {
+  if (
+    !canEditMessage(targetMessage.attributes) ||
+    !isWithinMaxEdits(targetMessage.attributes)
+  ) {
     throw new ErrorWithToast(
       `${idLog}: cannot edit`,
       ToastType.CannotEditMessage
@@ -215,7 +218,7 @@ export async function sendEditedMessage(
           conversationId,
           messageId: targetMessageId,
           revision: conversation.get('revision'),
-          editedMessageTimestamp: targetSentTimestamp,
+          editedMessageTimestamp: timestamp,
         },
         async jobToInsert => {
           log.info(
@@ -243,7 +246,7 @@ export async function sendEditedMessage(
         now: timestamp,
       });
     },
-    duration => `${idLog}: batchDisptach took ${duration}ms`
+    duration => `${idLog}: batchDispatch took ${duration}ms`
   );
 
   window.Signal.Data.updateConversation(conversation.attributes);

@@ -8,6 +8,7 @@
         "key": "{*}/messageformat",
         "instruction": "*/description"
       },
+
       {
         "key": "{*}/message",
         "path": "*/message",
@@ -89,7 +90,7 @@
   },
   "icu:privacyPolicy": {
     "messageformat": "Baldintzak eta pribatutasun arauak",
-    "description": "Shown in the about box for the link to https://cradle.org/legal"
+    "description": "Shown in the about box for the link to https://signal.org/legal"
   },
   "icu:appleSilicon": {
     "messageformat": "Apple silicon",
@@ -109,11 +110,27 @@
   },
   "icu:databaseError": {
     "messageformat": "Datubasearen Errorea",
-    "description": "Shown in a popup if the database cannot start up properly"
+    "description": "Title of a popup if the database cannot start up properly"
+  },
+  "icu:databaseError__detail": {
+    "messageformat": "Datu-baseko errore bat gertatu da. Errorea kopiatu, eta Signal-en zerbitzu teknikoarekin harremanetan jar zaitezke, arazoa konpontzen lagun diezazuten. Signal berehala erabili behar baduzu, zure datuak ezabatu, eta berrabiarazi egin dezakezu.\n\nJarri harremanetan laguntza-zerbitzuarekin hemen: {link}",
+    "description": "Description shown in a popup if the database cannot start up properly"
   },
   "icu:deleteAndRestart": {
-    "messageformat": "Ezabatu datu guztiak eta berrabiarazi",
-    "description": "Shown in a popup if the database cannot start up properly; allows user to delete database and restart"
+    "messageformat": "Ezabatu datuak eta berrabiarazi",
+    "description": "Text of a button shown in a popup if the database cannot start up properly; allows user to delete all data in their database and restart"
+  },
+  "icu:databaseError__deleteDataConfirmation": {
+    "messageformat": "Datu guztiak behin betiko ezabatu nahi dituzu?",
+    "description": "Header of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__deleteDataConfirmation__detail": {
+    "messageformat": "Zure mezuen historia eta multimedia-elementu guztiak betiko ezabatuko dira gailu honetatik. Gailu honetan Signal erabili ahal izateko, berriro lotu beharko duzu. Horrek ez du daturik ezabatuko telefonotik.",
+    "description": "Description of a confirmation popup shown if the database cannot start up properly and the user selects 'delete data and restart'"
+  },
+  "icu:databaseError__startOldVersion": {
+    "messageformat": "Zure datu-basearen bertsioa ez dator bat Signal-en bertsio honekin. Ziurtatu Signal-en bertsio berriena erabiltzen ari zarela ordenagailuan.",
+    "description": "Text in a popup shown if the app cannot start because the user started an older version of Signal"
   },
   "icu:mainMenuFile": {
     "messageformat": "&Fitxategia",
@@ -160,7 +177,7 @@
     "description": "Application menu command to show all application windows"
   },
   "icu:appMenuQuit": {
-    "messageformat": "Irten Cradle-etik",
+    "messageformat": "Irten Signal-etik",
     "description": "Application menu command to close the application"
   },
   "icu:editMenuUndo": {
@@ -272,7 +289,7 @@
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:avatarMenuUpdateAvailable": {
-    "messageformat": "Eguneratu Cradle",
+    "messageformat": "Eguneratu Signal",
     "description": "One of the menu options available in the Avatar popup menu"
   },
   "icu:loading": {
@@ -299,40 +316,68 @@
     "messageformat": "Txatak",
     "description": "Shown as a header for non-pinned conversations in the left pane"
   },
+  "icu:LeftPane--corrupted-username--text": {
+    "messageformat": "Arazoren bat izan da erabiltzaile-izenarekin, eta jada ez dago kontuari esleitua. Berriro konfiguratu, edo beste bat aukera dezakezu.",
+    "description": "Text of corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username--action-text": {
+    "messageformat": "Konpondu orain",
+    "description": "Text of the button in the corrupted username banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--text": {
+    "messageformat": "Arazoren bat izan da QR kodearekin edo erabiltzaile-izenaren estekarekin, eta jada ez du balio. Sortu jendearekin partekatzeko beste esteka bat.",
+    "description": "Text of corrupted username link banner in the left pane"
+  },
+  "icu:LeftPane--corrupted-username-link--action-text": {
+    "messageformat": "Konpondu orain",
+    "description": "Text of the button in the corrupted username link banner in the left pane"
+  },
   "icu:NavTabsToggle__showTabs": {
-    "messageformat": "Show Tabs",
+    "messageformat": "Erakutsi jakinarazpenak",
     "description": "Show in the left pane when the nav tabs are hidden, shows the nav tabs"
   },
   "icu:NavTabsToggle__hideTabs": {
-    "messageformat": "Hide Tabs",
+    "messageformat": "Ezkutatu jakinarazpenak",
     "description": "Show in the nav tabs when the nav tabs are visible, hides the nav tabs"
   },
   "icu:NavTabs__ItemIconLabel--HasError": {
-    "messageformat": "An error occurred",
+    "messageformat": "Akats bat gertatu da",
     "description": "Nav Tabs > Tab has error > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--UnreadCount": {
-    "messageformat": "{count,number} unread",
+    "messageformat": "{count,number} irakurri gabe",
     "description": "Nav Tabs > Unread badge > Accessibility Text"
   },
   "icu:NavTabs__ItemIconLabel--MarkedUnread": {
-    "messageformat": "Marked unread",
+    "messageformat": "Irakurri gabeko gisa markatu da",
     "description": "Nav Tabs > Unread badge > when conversation is marked unread > Accessibility Text"
   },
+  "icu:NavTabs__ItemLabel--Chats": {
+    "messageformat": "Txatak",
+    "description": "Nav Tabs > Chats Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Calls": {
+    "messageformat": "Deiak",
+    "description": "Nav Tabs > Calls Button > Label & Accessibility Text"
+  },
+  "icu:NavTabs__ItemLabel--Stories": {
+    "messageformat": "Istorioak",
+    "description": "Nav Tabs > Stories Button > Label & Accessibility Text"
+  },
   "icu:NavTabs__ItemLabel--Settings": {
-    "messageformat": "Settings",
+    "messageformat": "Ezarpenak",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Update": {
-    "messageformat": "Update Signal",
+    "messageformat": "Eguneratu Signal",
     "description": "Nav Tabs > Settings Button > Label & Accessibility Text"
   },
   "icu:NavTabs__ItemLabel--Profile": {
-    "messageformat": "Profile",
+    "messageformat": "Profila",
     "description": "Nav Tabs > Profile Button > Accessibility Text"
   },
   "icu:NavSidebar__BackButtonLabel": {
-    "messageformat": "Back",
+    "messageformat": "Atzera",
     "description": "Shown in the sidebar header when on a nested panel within the current sidebar, takes the user back to the previous step or default sidebar state"
   },
   "icu:archiveHelperText": {
@@ -428,7 +473,7 @@
     "description": "Header shown on the first screen in the data import process"
   },
   "icu:loadDataDescription": {
-    "messageformat": "Esportatzeko prozesua osatu da eta zure kontaktuak eta mezuak zure konputagailuan duzu zain. Hautu zure Cradle  datuak dituen karpeta.",
+    "messageformat": "Esportatzeko prozesua osatu da eta zure kontaktuak eta mezuak zure konputagailuan duzu zain. Hautu zure Signal  datuak dituen karpeta.",
     "description": "Introduction to the process of importing messages and contacts from disk"
   },
   "icu:importChooserTitle": {
@@ -444,7 +489,7 @@
     "description": "Header of screen shown as data is import"
   },
   "icu:importErrorFirst": {
-    "messageformat": "Egiazta ezazu data duen karpeta zuzena hatutatu duzula. Bere izena 'Cradle Export' hitzez hasi beharko litzateke. Honez gain, zure datuen kopia berri bat gorde dezakezu Chrome Aplikaziotik.",
+    "messageformat": "Egiazta ezazu data duen karpeta zuzena hatutatu duzula. Bere izena 'Signal Export' hitzez hasi beharko litzateke. Honez gain, zure datuen kopia berri bat gorde dezakezu Chrome Aplikaziotik.",
     "description": "Message shown if the import went wrong; first paragraph"
   },
   "icu:importErrorSecond": {
@@ -460,7 +505,7 @@
     "description": "Header shown on the screen at the end of a successful import process"
   },
   "icu:importCompleteStartButton": {
-    "messageformat": "Hasi Cradle Desktop erabiltzen",
+    "messageformat": "Hasi Signal Desktop erabiltzen",
     "description": "Button shown at end of successful import process, nothing left but a restart"
   },
   "icu:importCompleteLinkButton": {
@@ -544,11 +589,11 @@
     "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list."
   },
   "icu:changedRightAfterVerify": {
-    "messageformat": "Egiaztazen saiatzen ari zaren segurtasun zenbakia aldatu da. Mesedez, egiaztatu {name1} erabiltzailearekin duzun segurtasun zenbaki berria. Gogoratu, agian norbait zure komunikazioa atzematen saiatzen ari da edo, besterik gabe, {name2} erabiltzaileak Signal/Cradle berrinstalatu du.",
+    "messageformat": "Egiaztazen saiatzen ari zaren segurtasun zenbakia aldatu da. Mesedez, egiaztatu {name1} erabiltzailearekin duzun segurtasun zenbaki berria. Gogoratu, agian norbait zure komunikazioa atzematen saiatzen ari da edo, besterik gabe, {name2} erabiltzaileak Signal berrinstalatu du.",
     "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change"
   },
   "icu:safetyNumberChangeDialog__message": {
-    "messageformat": "Baliteke pertsona hauek Signal/Cradle berriro instalatu edo gailuak aldatu izatea. Sakatu hartzaile bat haren segurtasun-zenbaki berria berresteko. Hau hautazkoa da.",
+    "messageformat": "Baliteke pertsona hauek Signal berriro instalatu edo gailuak aldatu izatea. Sakatu hartzaile bat haren segurtasun-zenbaki berria berresteko. Hau hautazkoa da.",
     "description": "Shown on confirmation dialog when user attempts to send a message"
   },
   "icu:safetyNumberChangeDialog__pending-messages": {
@@ -560,7 +605,7 @@
     "description": "Shown to enter 'review' mode if more than five contacts have changed safety numbers"
   },
   "icu:safetyNumberChangeDialog__many-contacts": {
-    "messageformat": "{count, plural, one {Signal/Cradle berriro instalatu edo gailuak aldatu dituen {count,number} konexio duzu. Aukeran, haien segurtasun-zenbakiak berrikusi ditzakezu bidali aurretik.} other {Signal/Cradle berriro instalatu edo gailuak aldatu dituen {count,number} konexio dituzu. Aukeran, haien segurtasun-zenbakiak berrikusi ditzakezu bidali aurretik.}}",
+    "messageformat": "{count, plural, one {Signal berriro instalatu edo gailuak aldatu dituen {count,number} konexio duzu. Aukeran, haien segurtasun-zenbakiak berrikusi ditzakezu bidali aurretik.} other {Signal berriro instalatu edo gailuak aldatu dituen {count,number} konexio dituzu. Aukeran, haien segurtasun-zenbakiak berrikusi ditzakezu bidali aurretik.}}",
     "description": "Shown during an attempted send when more than five contacts have changed their safety numbers"
   },
   "icu:safetyNumberChangeDialog__post-review": {
@@ -592,7 +637,7 @@
     "description": "Label for button that opens context menu for story"
   },
   "icu:identityKeyErrorOnSend": {
-    "messageformat": "{name1}  erabiltzailearekin duzun segurtasun zenbakia aldatu da. Agian norbait zure komunikazioa atzematen saiatzen ari da edo, besterik gabe, {name2} erabiltzaileak Signal/Cradle berrinstalatu du. Beharbada azpian dagoen segurtasun zenbaki berria egiaztatu nahiko duzu.",
+    "messageformat": "{name1}  erabiltzailearekin duzun segurtasun zenbakia aldatu da. Agian norbait zure komunikazioa atzematen saiatzen ari da edo, besterik gabe, {name2} erabiltzaileak Signal berrinstalatu du. Beharbada azpian dagoen segurtasun zenbaki berria egiaztatu nahiko duzu.",
     "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change"
   },
   "icu:sendAnyway": {
@@ -611,6 +656,10 @@
     "messageformat": "Deitu edonola ere",
     "description": "Used on a warning dialog to make it clear that it might be risky to call the conversation."
   },
+  "icu:joinAnyway": {
+    "messageformat": "Sartu hala ere",
+    "description": "Used on a warning dialog to make it clear that it might be risky to join the call."
+  },
   "icu:continueCall": {
     "messageformat": "Deia jarraitu",
     "description": "Used on a warning dialog to make it clear that it might be risky to continue the group call."
@@ -628,7 +677,7 @@
     "description": "Description of what will happen with your debug log"
   },
   "icu:debugLogError": {
-    "messageformat": "Arazoren bat izan da kargatzean! Bidali mezu elektroniko bat support@cradle.org helbidera eta erantsi erregistroa testu-fitxategi gisa.",
+    "messageformat": "Arazoren bat izan da kargatzean! Bidali mezu elektroniko bat support@signal.org helbidera eta erantsi erregistroa testu-fitxategi gisa.",
     "description": "Error message a recommendations if debug log upload fails"
   },
   "icu:debugLogSuccess": {
@@ -672,23 +721,23 @@
   },
   "icu:SafetyNumberViewer__migration__text": {
     "messageformat": "Segurtasun-zenbakiak eguneratzen.",
-    "description": "An explanatory note in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) An explanatory note in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__migration__learn_more": {
     "messageformat": "Gehiago jakin",
-    "description": "A link text in SafetyNumberViewer describing the safety number migration process."
+    "description": "(Deleted 11/01/2023) A link text in SafetyNumberViewer describing the safety number migration process."
   },
   "icu:SafetyNumberViewer__card__prev": {
     "messageformat": "Aurreko segurtasun-zenbakia",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__card__next": {
     "messageformat": "Hurrengo segurtasun-zenbakia",
-    "description": "An ARIA label for safety number navigation button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number navigation button."
   },
   "icu:SafetyNumberViewer__carousel__dot": {
     "messageformat": "Segurtasun-zenbakiaren bertsioa, {index,number}/{total,number}",
-    "description": "An ARIA label for safety number carousel button."
+    "description": "(Deleted 11/01/2023) An ARIA label for safety number carousel button."
   },
   "icu:SafetyNumberViewer__markAsVerified": {
     "messageformat": "Markatu egiaztatutako gisa",
@@ -698,33 +747,41 @@
     "messageformat": "Garbitu egiaztapena",
     "description": "Safety number viewer, verification toggle button, when verified, clears verification state"
   },
+  "icu:SafetyNumberViewer__hint": {
+    "messageformat": "{name} erabiltzailearekin muturretik muturrerako enkriptatzea egiaztatzeko, alderatu goiko zenbakiak haren gailukoekin. Halaber, zure kodea eskanea dezake bere gailuarekin.",
+    "description": "Safety number viewer, text of the hint"
+  },
+  "icu:SafetyNumberViewer__learn_more": {
+    "messageformat": "Informazio gehiago",
+    "description": "Text of 'Learn more' button of SafetyNumberViewerModal modal"
+  },
   "icu:SafetyNumberViewer__hint--migration": {
     "messageformat": "{name} erabiltzailrarekin muturretik muturrerako enkriptatzea egiaztatzeko, lotu goiko kolore-txartela bere gailuarekin eta alderatu zenbakiak. Bat ez badatoz, saiatu beste segurtasun-zenbaki parearekin. Bikote bakarrak bat egin behar du.",
-    "description": "Safety number viewer, text of the hint during migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint during migration period"
   },
   "icu:SafetyNumberViewer__hint--normal": {
     "messageformat": "{name} erabiltzailearekin muturretik muturrerako enkriptatzea egiaztatzeko, alderatu goiko zenbakiak haren gailukoekin. Halaber, zure kodea eskanea dezake bere gailuarekin.",
-    "description": "Safety number viewer, text of the hint after migration period"
+    "description": "(Deleted 11/01/2023). Safety number viewer, text of the hint after migration period"
   },
   "icu:SafetyNumberOnboarding__title": {
     "messageformat": "Segurtasun-zenbakien aldaketak",
-    "description": "Title of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Title of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p1": {
     "messageformat": "Segurtasun-zenbakiak trantsizio-aldi batean eguneratzen ari dira Signal-en datozen pribatutasun-eginbideak gaitzeko.",
-    "description": "Paragraph 1 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 1 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__p2": {
     "messageformat": "Segurtasun-zenbakiak egiaztatzeko, lotu kolore-txartela zure kontaktuaren gailuarekin. Bat ez badatoz, saiatu beste segurtasun-zenbaki parearekin. Bikote bakarrak bat egin behar du.",
-    "description": "Paragraph 2 of Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Paragraph 2 of Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__help": {
     "messageformat": "Laguntza behar duzu?",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberOnboarding__close": {
     "messageformat": "Ulertu dut",
-    "description": "Text of a secondary button in Safety number onboarding modal"
+    "description": "(Deleted 11/01/2023) Text of a secondary button in Safety number onboarding modal"
   },
   "icu:SafetyNumberNotReady__body": {
     "messageformat": "Segurtasun-zenbaki bat sortuko da pertsona honekin mezuak trukatu ondoren.",
@@ -750,7 +807,7 @@
     "description": "Header for a key change dialog"
   },
   "icu:identityChanged": {
-    "messageformat": "Kontaktu honekiko duzun segurtasun zenbakia aldatu da. gian norbait zure komunikazioa atzematen saiatzen ari da edo, besterik gabe, erabiltzaileak Signal/Cradle berrinstalatu du. Beharbada azpian dagoen segurtasun zenbaki berria egiaztatu nahiko duzu."
+    "messageformat": "Kontaktu honekiko duzun segurtasun zenbakia aldatu da. gian norbait zure komunikazioa atzematen saiatzen ari da edo, besterik gabe, erabiltzaileak Signal berrinstalatu du. Beharbada azpian dagoen segurtasun zenbaki berria egiaztatu nahiko duzu."
   },
   "icu:incomingError": {
     "messageformat": "Errorea sarrerako mezua kudeatzean"
@@ -813,15 +870,15 @@
   },
   "icu:loadingPreview": {
     "messageformat": "Aurrebista kargatzen…",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedPreviewThumbnail": {
     "messageformat": "Zirriborro estekaren aurrebista {domain} domeinurako",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:previewThumbnail": {
     "messageformat": "Estekaren miniatura aurrebista {domain} domeinurako",
-    "description": "Shown while Cradle Desktop is fetching metadata for a url in composition area"
+    "description": "Shown while Signal Desktop is fetching metadata for a url in composition area"
   },
   "icu:stagedImageAttachment": {
     "messageformat": "Zirriborroaren irudi eranskina: {path}",
@@ -916,18 +973,18 @@
   },
   "icu:joinTheBeta": {
     "messageformat": "Beta bertsioa erabili",
-    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Cradle Desktop"
+    "description": "Item under the Help menu, takes you to an article describing how to install the beta release of Signal Desktop"
   },
   "icu:signalDesktopPreferences": {
-    "messageformat": "Cradle Desktop Hobespenak",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "messageformat": "Signal Desktop Hobespenak",
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:signalDesktopStickerCreator": {
     "messageformat": "Eranskailuen paketeak sortzeko tresna",
-    "description": "Title of the window that pops up with Cradle Desktop preferences in it"
+    "description": "Title of the window that pops up with Signal Desktop preferences in it"
   },
   "icu:aboutSignalDesktop": {
-    "messageformat": "Cradle Desktop-i buruz",
+    "messageformat": "Signal Desktop-i buruz",
     "description": "Item under the Help menu, which opens a small about window"
   },
   "icu:screenShareWindow": {
@@ -951,7 +1008,7 @@
     "description": "Command in the tray icon menu, to quit the application"
   },
   "icu:signalDesktop": {
-    "messageformat": "Cradle Desktop",
+    "messageformat": "Signal Desktop",
     "description": "Tooltip for the tray icon"
   },
   "icu:search": {
@@ -1003,7 +1060,7 @@
     "description": "Shown when search could be a valid phone number, with one sub-item that will kick off the search"
   },
   "icu:welcomeToSignal": {
-    "messageformat": "Ongi etorri Cradle-era"
+    "messageformat": "Ongi etorri Signal-era"
   },
   "icu:whatsNew": {
     "messageformat": "Ikusi eguneratze honen {whatsNew}",
@@ -1134,15 +1191,15 @@
     "description": "Shown in iOS theme when you or someone quotes to a message which is not from you"
   },
   "icu:audioPermissionNeeded": {
-    "messageformat": "Audio-mezuak bidaltzeko, eman mikrofonoa atzitzeko baimena Cradle Desktop-i.",
+    "messageformat": "Audio-mezuak bidaltzeko, eman mikrofonoa atzitzeko baimena Signal Desktop-i.",
     "description": "Shown if the user attempts to send an audio message without audio permissions turned on"
   },
   "icu:audioCallingPermissionNeeded": {
-    "messageformat": "Deitzeko, Cradle Desktop-i zure mikrofonoa erabiltzeko baimena eman behar diozu.",
+    "messageformat": "Deitzeko, Signal Desktop-i zure mikrofonoa erabiltzeko baimena eman behar diozu.",
     "description": "Shown if the user attempts access the microphone for calling without audio permissions turned on"
   },
   "icu:videoCallingPermissionNeeded": {
-    "messageformat": "Bideodeietarako, baimena eman behar diozu Cradle-Desktop-i zure kamera erabiltzeko.",
+    "messageformat": "Bideodeietarako, baimena eman behar diozu Signal-Desktop-i zure kamera erabiltzeko.",
     "description": "Shown if the user attempts access the camera for video calling without video permissions turned on"
   },
   "icu:allowAccess": {
@@ -1182,15 +1239,15 @@
     "description": "Shown in a button when a conversation is unmuted and can be muted"
   },
   "icu:cannotUpdateDetail": {
-    "messageformat": "Ezin izan da eguneratu Cradle. {retry} edo bisitatu {url} eskuz instalatzeko. Ondoren, {support} arazo honi buruz.",
+    "messageformat": "Ezin izan da eguneratu Signal. {retry} edo bisitatu {url} eskuz instalatzeko. Ondoren, {support} arazo honi buruz.",
     "description": "Shown if a general error happened while trying to install update package"
   },
   "icu:cannotUpdateRequireManualDetail": {
-    "messageformat": "Ezin izan da eguneratu Cradle. Bisitatu {url} eskuz instalatzeko. Ondoren, {support} arazo honi buruz.",
+    "messageformat": "Ezin izan da eguneratu Signal. Bisitatu {url} eskuz instalatzeko. Ondoren, {support} arazo honi buruz.",
     "description": "Shown if a general error happened while trying to install update package and manual update is required"
   },
   "icu:readOnlyVolume": {
-    "messageformat": "Cradle Desktop ziur aski macOS koarentena batean dago eta ezingo da automatikoki eguneratu. Mesedez, Finder erabiliz saia zaitez mugitzen {app} aplikazioa {folder} karpetara.",
+    "messageformat": "Signal Desktop ziur aski macOS koarentena batean dago eta ezingo da automatikoki eguneratu. Mesedez, Finder erabiliz saia zaitez mugitzen {app} aplikazioa {folder} karpetara.",
     "description": "Shown on MacOS if running on a read-only volume and we cannot update"
   },
   "icu:ok": {
@@ -1246,7 +1303,7 @@
     "description": "Text shown in the confirmation dialog for deleting a message locally"
   },
   "icu:deleteForEveryoneWarning": {
-    "messageformat": "Mezu hau txatean dauden guztientzat ezabatuko da Signal/Cradle-en azken bertsio batean badaude. Mezu bat ezabatu duzula ikusi ahal izango dute.",
+    "messageformat": "Mezu hau txatean dauden guztientzat ezabatuko da Signal-en azken bertsio batean badaude. Mezu bat ezabatu duzula ikusi ahal izango dute.",
     "description": "Text shown in the confirmation dialog for deleting a message for everyone"
   },
   "icu:from": {
@@ -1365,17 +1422,17 @@
     "messageformat": "Info",
     "description": "Shown on the drop-down menu for an individual message, takes you to message detail screen"
   },
-  "icu:deleteMessages": {
-    "messageformat": "Ezabatu",
-    "description": "Menu item for deleting messages, title case."
+  "icu:deleteMessagesInConversation": {
+    "messageformat": "Ezabatu mezuak",
+    "description": "Menu item for deleting all messages in a conversation from your device"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__title": {
-    "messageformat": "Txata ezabatu nahi duzu?",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Title"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__title": {
+    "messageformat": "Mezuak ezabatu nahi dituzu?",
+    "description": "Title for confirmation modal to delete all messages in a conversation"
   },
-  "icu:ConversationHeader__DeleteMessagesConfirmation__description": {
-    "messageformat": "Txat hau gailu honetatik ezabatuko da.",
-    "description": "Conversation Header > Delete Action > Delete Messages Confirmation Modal > Description"
+  "icu:ConversationHeader__DeleteMessagesInConversationConfirmation__description": {
+    "messageformat": "Txat honetako mezuak gailu honetatik ezabatuko dira. Mezuak ezabatuta ere, txat hau bilatu ahalko duzu.",
+    "description": "Description for confirmation modal to delete all messages in a conversation"
   },
   "icu:ConversationHeader__ContextMenu__LeaveGroupAction__title": {
     "messageformat": "Irten taldetik",
@@ -1410,7 +1467,7 @@
     "description": "Shown in timeline when session is automatically reset, to provide access to a popup info dialog"
   },
   "icu:ChatRefresh--summary": {
-    "messageformat": "Cradle-ek muturretik muturrerako enkriptatzea erabiltzen du, eta baliteke noizbehinka txat-saioa eguneratu behar izatea. Horrek ez du eraginik txataren segurtasunean, baina agian kontaktu horren mezuren bat galdu duzu, eta berriz bidaltzeko eskatu diezaiokezu.",
+    "messageformat": "Signal-ek muturretik muturrerako enkriptatzea erabiltzen du, eta baliteke noizbehinka txat-saioa eguneratu behar izatea. Horrek ez du eraginik txataren segurtasunean, baina agian kontaktu horren mezuren bat galdu duzu, eta berriz bidaltzeko eskatu diezaiokezu.",
     "description": "Shown on explainer dialog available from chat session refreshed timeline events"
   },
   "icu:ChatRefresh--contactSupport": {
@@ -1469,6 +1526,14 @@
     "messageformat": "Bi txatetako mezuen historiak hemen bateratu dira.",
     "description": "Contents of a dialog shown after clicking 'learn more' button on a conversation merge event."
   },
+  "icu:PhoneNumberDiscovery--notification--withSharedGroup": {
+    "messageformat": "{phoneNumber} {conversationTitle} erabiltzailearena da. Biak zarete {sharedGroup} taldeko kideak.",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with."
+  },
+  "icu:PhoneNumberDiscovery--notification--noSharedGroup": {
+    "messageformat": "{phoneNumber} {conversationTitle} erabiltzailearena da",
+    "description": "Shown when we've discovered a phone number for a contact you've been communicating with, but you have no shared groups."
+  },
   "icu:quoteThumbnailAlt": {
     "messageformat": "Aipatutako mezuaren miniatura edo irudia",
     "description": "Used in alt tag of thumbnail images inside of an embedded message quote"
@@ -1502,20 +1567,20 @@
     "description": "Used in the media gallery documents tab to visually represent a file"
   },
   "icu:installWelcome": {
-    "messageformat": "Ongi etorri Cradle Desktop-era",
+    "messageformat": "Ongi etorri Signal Desktop-era",
     "description": "Welcome title on the install page"
   },
   "icu:installTagline": {
-    "messageformat": "Pribatutasuna posible da. Cradle-ek erraz egiten du.",
+    "messageformat": "Pribatutasuna posible da. Signal-ek erraz egiten du.",
     "description": "Tagline displayed under 'installWelcome' string on the install page"
   },
   "icu:linkedDevices": {
     "messageformat": "Lotutako Gailuak",
-    "description": "Used in the guidance to help people find the 'link new device' area of their Cradle mobile app"
+    "description": "Used in the guidance to help people find the 'link new device' area of their Signal mobile app"
   },
   "icu:linkNewDevice": {
     "messageformat": "Gailu berria lotu",
-    "description": "The menu option shown in Cradle iOS to add a new linked device"
+    "description": "The menu option shown in Signal iOS to add a new linked device"
   },
   "icu:Install__learn-more": {
     "messageformat": "Gehiago jakin",
@@ -1589,7 +1654,7 @@
     "messageformat": "Zoritxarrez, gailu gehiegi dauzkazu lotuta, saia zaitez batzuk ezabatzen"
   },
   "icu:installTooOld": {
-    "messageformat": "Eguneratu Cradle gailu honetan zure telefonoa lotzeko"
+    "messageformat": "Eguneratu Signal gailu honetan zure telefonoa lotzeko"
   },
   "icu:installErrorHeader": {
     "messageformat": "Zerbait oker joan da"
@@ -1616,10 +1681,6 @@
     "messageformat": "Deitu berriro",
     "description": "Button to call someone again"
   },
-  "icu:calling__start": {
-    "messageformat": "Hasi Deia",
-    "description": "Button label in the call lobby for starting a call"
-  },
   "icu:calling__join": {
     "messageformat": "Deian Sartu",
     "description": "Button label in the call lobby for joining a call"
@@ -1632,13 +1693,25 @@
     "messageformat": "Deiaren tamaina dela eta, mikrofonoa desaktibatuta dago",
     "description": "Shown in a call lobby toast if there are a lot of people already on the call"
   },
+  "icu:calling__toasts--aria-label": {
+    "messageformat": "Dei-jakinarazpenak",
+    "description": "Aria label for region of toasts shown during a call (for, e.g. reconnecting, person joined, audio device changed notifications)"
+  },
   "icu:calling__call-is-full": {
     "messageformat": "Deia beteta dago",
     "description": "Text in the call lobby when you can't join because the call is full"
   },
-  "icu:calling__button--video__label": {
-    "messageformat": "Kamera",
-    "description": "Label under the video button"
+  "icu:CallingLobbyJoinButton--join": {
+    "messageformat": "Sartu",
+    "description": "Button label in the call lobby for joining a call"
+  },
+  "icu:CallingLobbyJoinButton--start": {
+    "messageformat": "Hasi",
+    "description": "Button label in the call lobby for starting a call"
+  },
+  "icu:CallingLobbyJoinButton--call-full": {
+    "messageformat": "Deia beteta dago",
+    "description": "Button in the call lobby when you can't join because the call is full"
   },
   "icu:calling__button--video-disabled": {
     "messageformat": "Kamara desaktibatuta",
@@ -1652,10 +1725,6 @@
     "messageformat": "Piztu kamera",
     "description": "Button tooltip label for turning on the camera"
   },
-  "icu:calling__button--audio__label": {
-    "messageformat": "Desaktibatu jakinarazpenak",
-    "description": "Label under the audio button"
-  },
   "icu:calling__button--audio-disabled": {
     "messageformat": "Mikrofonoa desaktibatuta",
     "description": "Button tooltip label when the microphone is disabled"
@@ -1667,10 +1736,6 @@
   "icu:calling__button--audio-on": {
     "messageformat": "Aktibatu mikronofoa",
     "description": "Button tooltip label for turning on the microphone"
-  },
-  "icu:calling__button--presenting__label": {
-    "messageformat": "Partekatu",
-    "description": "Label under the share screen button"
   },
   "icu:calling__button--presenting-disabled": {
     "messageformat": "Aurkezteko aukera desgaituta dago",
@@ -1684,10 +1749,6 @@
     "messageformat": "Utzi aurkezteari",
     "description": "Button tooltip label for stopping screen sharing"
   },
-  "icu:calling__button--ring__label": {
-    "messageformat": "Deitu",
-    "description": "Label under the ring button"
-  },
   "icu:calling__button--ring__disabled-because-group-is-too-large": {
     "messageformat": "Taldea handiegia da parte-hartzaileei deitzeko.",
     "description": "Button tooltip label when you can't ring because the group is too large"
@@ -1699,6 +1760,26 @@
   "icu:calling__button--ring__on": {
     "messageformat": "Gaitu deitzeko aukera",
     "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton__ring-off": {
+    "messageformat": "Desaktibatu dei-tonua",
+    "description": "Button tooltip label for turning ringing off"
+  },
+  "icu:CallingButton--ring-on": {
+    "messageformat": "Aktibatu dei-tonua",
+    "description": "Button tooltip label for turning ringing on"
+  },
+  "icu:CallingButton--more-options": {
+    "messageformat": "Aukera gehiago",
+    "description": "Tooltip label for button in the calling screen that opens a menu with other call actions such as React or Raise Hand."
+  },
+  "icu:CallingRaisedHandsList__Title": {
+    "messageformat": "{count, plural, one {Jasotako eskuak · {count,number} pertsona} other {Jasotako eskuak · {count,number} pertsona}}",
+    "description": "Shown in the call raised hands list to describe how many people have active raised hands"
+  },
+  "icu:CallingReactions--me": {
+    "messageformat": "Zu",
+    "description": "Label next to in-call reactions to indicate that the current user sent that reaction."
   },
   "icu:calling__your-video-is-off": {
     "messageformat": "Zure kamera itzalita dago",
@@ -1725,23 +1806,23 @@
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--many-people-in-call": {
-    "messageformat": "{first}, {second} eta beste {others} dei honetan daude",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others are in this call",
     "description": "Shown in the calling lobby to describe who is in the call"
   },
   "icu:calling__pre-call-info--will-ring-1": {
-    "messageformat": "Cradle-ek {person}(r)i deituko dio",
+    "messageformat": "Signal-ek {person}(r)i deituko dio",
     "description": "Shown in the calling lobby to describe who will be rung"
   },
   "icu:calling__pre-call-info--will-ring-2": {
-    "messageformat": "Cradle-ek {first} eta {second}(r)i deituko die",
+    "messageformat": "Signal-ek {first} eta {second}(r)i deituko die",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-3": {
-    "messageformat": "Cradle-ek {first}, {second} eta {third}(r)i deituko die",
+    "messageformat": "Signal-ek {first}, {second} eta {third}(r)i deituko die",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-ring-many": {
-    "messageformat": "Cradle-ek {first}, {second} eta beste {others}(r)i deituko die",
+    "messageformat": "Signal will ring {first}, {second}, and {others, plural, other {#}} others",
     "description": "Shown in the calling lobby to describe who will be rang"
   },
   "icu:calling__pre-call-info--will-notify-1": {
@@ -1757,7 +1838,7 @@
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__pre-call-info--will-notify-many": {
-    "messageformat": "{first}, {second} eta beste {others}(e)k jakinarazpen bat jasoko dute",
+    "messageformat": "{first}, {second}, and {others, plural, other {#}} others will be notified",
     "description": "Shown in the calling lobby to describe who will be notified"
   },
   "icu:calling__in-this-call--zero": {
@@ -1797,7 +1878,7 @@
     "description": "Body text for the share screen notification"
   },
   "icu:calling__presenting--info": {
-    "messageformat": "Cradle {window} partekatzen ari da.",
+    "messageformat": "Signal {window} partekatzen ari da.",
     "description": "Text that appears in the screen sharing controller to inform person that they are presenting"
   },
   "icu:calling__presenting--stop": {
@@ -1821,7 +1902,7 @@
     "description": "Shown as the title for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--macos-permission-description": {
-    "messageformat": "Ordenagailuaren pantaila grabatzeko aukera erabiltzeko baimena behar du Cradle-ek.",
+    "messageformat": "Ordenagailuaren pantaila grabatzeko aukera erabiltzeko baimena behar du Signal-ek.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step1": {
@@ -1833,7 +1914,7 @@
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-instruction-step3": {
-    "messageformat": "Eskuinean, markatu Cradle-en ondoko laukia. Zerrendan Cradle ikusten ez baduzu, egin klik + botoian hura gehitzeko.",
+    "messageformat": "Eskuinean, markatu Signal-en ondoko laukia. Zerrendan Signal ikusten ez baduzu, egin klik + botoian hura gehitzeko.",
     "description": "Shown as the description for the modal that requests screen recording permissions"
   },
   "icu:calling__presenting--permission-open": {
@@ -1877,12 +1958,12 @@
     "description": "Description of the text-formatting popover menu setting"
   },
   "icu:spellCheckWillBeEnabled": {
-    "messageformat": "Ortografia egiaztatuko da Cradle irekitzen den hurrengo aldian.",
-    "description": "Shown when the user enables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "Ortografia egiaztatuko da Signal irekitzen den hurrengo aldian.",
+    "description": "Shown when the user enables spellcheck to indicate that they must restart Signal."
   },
   "icu:spellCheckWillBeDisabled": {
-    "messageformat": "Ortografia egiaztatzea desaktibatuko da Cradle irekitzen den hurrengo aldian.",
-    "description": "Shown when the user disables spellcheck to indicate that they must restart Cradle."
+    "messageformat": "Ortografia egiaztatzea desaktibatuko da Signal irekitzen den hurrengo aldian.",
+    "description": "Shown when the user disables spellcheck to indicate that they must restart Signal."
   },
   "icu:SystemTraySetting__minimize-to-system-tray": {
     "messageformat": "Minimizatu sistemaren erretilura",
@@ -1897,15 +1978,15 @@
     "description": "Description for the automatic launch setting"
   },
   "icu:clearDataHeader": {
-    "messageformat": "Garbitu aplikazio-datuak",
+    "messageformat": "Delete application data",
     "description": "Header in the settings dialog for the section dealing with data deletion"
   },
   "icu:clearDataExplanation": {
-    "messageformat": "Honek aplikazioan dauden datu guztiak ezabatuko ditu, mezu guztiak eta kontuarekin batera gordetako informazioa kenduz.",
+    "messageformat": "This will delete all data in the application, removing all messages and saved account information.",
     "description": "Text describing what the clear data button will do."
   },
   "icu:clearDataButton": {
-    "messageformat": "Garbitu datuak",
+    "messageformat": "Delete data",
     "description": "Button in the settings dialog starting process to delete all data"
   },
   "icu:deleteAllDataHeader": {
@@ -1913,7 +1994,7 @@
     "description": "Header of the full-screen delete data confirmation screen"
   },
   "icu:deleteAllDataBody": {
-    "messageformat": "Aplikazio honek gordeta daukan kontu-informazioa ezabatzear zaude, kontaktuak eta mezuak barne. Geroago mugikorrarekin lot dezakezu berriro, baina horrek ez ditu leheneratuko ezabatutako mezuak.",
+    "messageformat": "Delete all data and messages from this version of Signal Desktop? You can always relink this desktop, but your messages will not restore. Your Signal account and data on your phone or other linked devices will not be deleted.",
     "description": "Text describing what exactly will happen if the user clicks the button to delete all data"
   },
   "icu:deleteAllDataButton": {
@@ -1925,8 +2006,8 @@
     "description": "Message shown to user when app is disconnected and data deleted"
   },
   "icu:deleteOldIndexedDBData": {
-    "messageformat": "Ordenagailurako Cradle-en aurreko instalazio baten datu zaharkituak dauzkazu. Aurrera jarraituz gero, ezabatu egingo dira, eta zerotik hasi beharko duzu.",
-    "description": "Shown if user last ran Cradle Desktop before October 2018"
+    "messageformat": "Ordenagailurako Signal-en aurreko instalazio baten datu zaharkituak dauzkazu. Aurrera jarraituz gero, ezabatu egingo dira, eta zerotik hasi beharko duzu.",
+    "description": "Shown if user last ran Signal Desktop before October 2018"
   },
   "icu:deleteOldData": {
     "messageformat": "Ezabatu datu zaharrak",
@@ -2007,11 +2088,11 @@
     "description": "Text that links to a support article on verifying safety numbers"
   },
   "icu:expiredWarning": {
-    "messageformat": "Cradle Desktop bertsio hau iraungi da. Mesedez, mezuak bidaltzen jarraitzeko, eguneratu azken bertsiora.",
+    "messageformat": "Signal Desktop bertsio hau iraungi da. Mesedez, mezuak bidaltzen jarraitzeko, eguneratu azken bertsiora.",
     "description": "Warning notification that this version of the app has expired"
   },
   "icu:upgrade": {
-    "messageformat": "Egin klik cradle.org/download helbidera joateko",
+    "messageformat": "Egin klik signal.org/download helbidera joateko",
     "description": "Label text for button to upgrade the app to the latest version"
   },
   "icu:mediaMessage": {
@@ -2179,7 +2260,7 @@
     "description": "In conversation details, label for button to view safety number, opens safety number modal"
   },
   "icu:ConversationDetails__HeaderButton--Message": {
-    "messageformat": "Message",
+    "messageformat": "Mezua",
     "description": "In conversation details, label for button to switch to the conversation view in order to draft a message in that converation"
   },
   "icu:SafetyNumberNotification__viewSafetyNumber": {
@@ -2264,22 +2345,22 @@
   },
   "icu:Toast--failed-to-fetch-username": {
     "messageformat": "Ezin izan da eskuratu erabiltzaile-izena. Egiaztatu konektatuta zaudela eta saiatu berriro.",
-    "description": "Shown if request to Cradle servers to find username fails"
+    "description": "Shown if request to Signal servers to find username fails"
   },
   "icu:Toast--failed-to-fetch-phone-number": {
     "messageformat": "Ezin izan da eskuratu telefono-zenbakia. Egiaztatu konektatuta zaudela eta saiatu berriro.",
-    "description": "Shown if request to Cradle servers to find phone number fails"
+    "description": "Shown if request to Signal servers to find phone number fails"
   },
-  "icu:ToastManager__CannotEditMessage": {
-    "messageformat": "Mezu hau bidali eta 3 orduko epean soilik aplika daitezke aldaketak.",
+  "icu:ToastManager__CannotEditMessage_24": {
+    "messageformat": "Mezu hau bidali eta 24 orduko epean soilik aplika daitezke aldaketak.",
     "description": "Error message when you try to send an edit after message becomes too old"
   },
   "icu:startConversation--username-not-found": {
-    "messageformat": "Ez da aurkitu erabiltzailea. {atUsername} ez da Signal/Cradle-eko erabiltzailea; ziurtatu erabiltzaile-izen osoa idatzi duzula.",
+    "messageformat": "Ez da aurkitu erabiltzailea. {atUsername} ez da Signal-eko erabiltzailea; ziurtatu erabiltzaile-izen osoa idatzi duzula.",
     "description": "Shown in dialog if username is not found. Note that 'username' will be the output of at-username"
   },
   "icu:startConversation--phone-number-not-found": {
-    "messageformat": "Ez da aurkitu erabiltzailea. \"{phoneNumber}\" ez da Signal/Cradle-eko erabiltzailea.",
+    "messageformat": "Ez da aurkitu erabiltzailea. \"{phoneNumber}\" ez da Signal-eko erabiltzailea.",
     "description": "Shown in dialog if phone number is not found."
   },
   "icu:startConversation--phone-number-not-valid": {
@@ -2307,7 +2388,7 @@
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-group-size__body": {
-    "messageformat": "Cradle-eko taldeek gehienez {max,number} kide izan ditzakete.",
+    "messageformat": "Signal-eko taldeek gehienez {max,number} kide izan ditzakete.",
     "description": "Shown in the alert when you add the maximum number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__title": {
@@ -2315,7 +2396,7 @@
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:chooseGroupMembers__maximum-recommended-group-size__body": {
-    "messageformat": "Cradle-eko taldeak hobeto dabiltza {max,number} kiderekin edo gutxiagorekin. Kide gehiago gehituz gero, denbora gehiago beharko da mezuak bidali eta jasotzeko.",
+    "messageformat": "Signal-eko taldeak hobeto dabiltza {max,number} kiderekin edo gutxiagorekin. Kide gehiago gehituz gero, denbora gehiago beharko da mezuak bidali eta jasotzeko.",
     "description": "Shown in the alert when you add the maximum recommended number of group members"
   },
   "icu:setGroupMetadata__title": {
@@ -2367,7 +2448,7 @@
     "description": "When a person inputs a number that is invalid"
   },
   "icu:unlinkedWarning": {
-    "messageformat": "Mezuak bidaltzen jarraitzeko, egin klik ordenagailurako Cradle gailu mugikorrarekin berriro lotzeko."
+    "messageformat": "Mezuak bidaltzen jarraitzeko, egin klik ordenagailurako Signal gailu mugikorrarekin berriro lotzeko."
   },
   "icu:unlinked": {
     "messageformat": "Lotu gabe"
@@ -2385,17 +2466,17 @@
     "messageformat": "jarri harremanetan laguntza-zerbitzuarekin"
   },
   "icu:autoUpdateNewVersionMessage": {
-    "messageformat": "Egin klik Cradle berrabiarazteko"
+    "messageformat": "Egin klik Signal berrabiarazteko"
   },
   "icu:downloadNewVersionMessage": {
     "messageformat": "Egin klik eguneratzea deskargatzeko"
   },
   "icu:downloadFullNewVersionMessage": {
-    "messageformat": "Ezin izan da eguneratu Cradle. Egin klik berriro saiatzeko.",
+    "messageformat": "Ezin izan da eguneratu Signal. Egin klik berriro saiatzeko.",
     "description": "Shown in update dialog when partial update fails and we have to ask user to download full update"
   },
   "icu:autoUpdateRestartButtonLabel": {
-    "messageformat": "Berrabiarazi Cradle"
+    "messageformat": "Berrabiarazi Signal"
   },
   "icu:autoUpdateLaterButtonLabel": {
     "messageformat": "Geroago"
@@ -2514,6 +2595,14 @@
   "icu:message--deletedForEveryone": {
     "messageformat": "Mezu hau ezabatu egin da.",
     "description": "Shown in a message's bubble when the message has been deleted for everyone."
+  },
+  "icu:message--attachmentTooBig--one": {
+    "messageformat": "Eranskina handiegia da eta ezin da bistaratu.",
+    "description": "Shown in a message bubble if no attachments are left on message when too-large attachments are dropped"
+  },
+  "icu:message--attachmentTooBig--multiple": {
+    "messageformat": "Eranskin batzuk handiegiak dira eta ezin dira bistaratu.",
+    "description": "Shown in a message bubble if any attachments are left on message when too-large attachments are dropped"
   },
   "icu:donation--missing": {
     "messageformat": "Ezin dira eskuratu dohaintzaren xehetasunak",
@@ -2653,15 +2742,15 @@
   },
   "icu:stickers--StickerManager--Introduction--Image": {
     "messageformat": "Eranskailuak aurkezten: Bandit Katua",
-    "description": "Alt text on a tooltip image when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Alt text on a tooltip image when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Title": {
     "messageformat": "Eranskailuak Aurkezten",
-    "description": "Shown as the title on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the title on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerManager--Introduction--Body": {
     "messageformat": "Zergatik erabili hitzak eranskailuak erabili ditzakezuenan?",
-    "description": "Shown as the body on a tooltip when the user upgrades to a version of Cradle supporting stickers."
+    "description": "Shown as the body on a tooltip when the user upgrades to a version of Signal supporting stickers."
   },
   "icu:stickers--StickerPicker--Open": {
     "messageformat": "Ireki eranskailuak aukeratzeko tresna",
@@ -2804,20 +2893,20 @@
     "description": "When a message is too long this is the affordance to expand the message"
   },
   "icu:Message--unsupported-message": {
-    "messageformat": "{contact}erabiltzaileak prozesatu edo erakusti ezin daitekeen mezu bat bidali dizu; arrazoia zera da:  mezuak Signal/Cradle-en ezagarri berria erabiltzen du."
+    "messageformat": "{contact}erabiltzaileak prozesatu edo erakusti ezin daitekeen mezu bat bidali dizu; arrazoia zera da:  mezuak Signal-en ezagarri berria erabiltzen du."
   },
   "icu:Message--unsupported-message-ask-to-resend": {
-    "messageformat": "Kontuan hartuta orain Cradle-en bertsio eguneratua erabiltzen ari zarela, {contact} erabiltzaileari eska diezaiokezu bere mezua berriro bidaltzeko."
+    "messageformat": "Kontuan hartuta orain Signal-en bertsio eguneratua erabiltzen ari zarela, {contact} erabiltzaileari eska diezaiokezu bere mezua berriro bidaltzeko."
   },
   "icu:Message--from-me-unsupported-message": {
-    "messageformat": "Zure gailuetako batek prozesa edo ikusi ezin daitekeen mezu bat bidali du; honen arrazioa zera da: mezuak Signal/Cradle-en ezaugarri berri bat erablitzen du."
+    "messageformat": "Zure gailuetako batek prozesa edo ikusi ezin daitekeen mezu bat bidali du; honen arrazioa zera da: mezuak Signal-en ezaugarri berri bat erablitzen du."
   },
   "icu:Message--from-me-unsupported-message-ask-to-resend": {
-    "messageformat": "Orain Cradle-en bertsio eguneratua erabiltzen duzunez, hemendik aurrera horrelako mezuak sinkronizatuko dira."
+    "messageformat": "Orain Signal-en bertsio eguneratua erabiltzen duzunez, hemendik aurrera horrelako mezuak sinkronizatuko dira."
   },
   "icu:Message--update-signal": {
-    "messageformat": "Eguneratu Cradle",
-    "description": "Text for a button which will take user to Cradle download page"
+    "messageformat": "Eguneratu Signal",
+    "description": "Text for a button which will take user to Signal download page"
   },
   "icu:Message--tap-to-view-expired": {
     "messageformat": "Ikusita",
@@ -3156,11 +3245,19 @@
     "description": "A toast that shows up when user marks a conversation as unread"
   },
   "icu:SendEdit--dialog--title": {
-    "messageformat": "Cradle-en beta-bertsiorako soilik",
-    "description": "Title of the modal shown before sending your first edit message"
+    "messageformat": "Signal-en beta-bertsiorako soilik",
+    "description": "(deleted 8/30) Title of the modal shown before sending your first edit message"
   },
   "icu:SendEdit--dialog--body": {
-    "messageformat": "Cradle-en beta-bertsioaren erabiltzaileek bakarrik edita ditzakete mezuak. Mezu bat editatzen baduzu, Cradle-en beta-bertsio berriena darabilten pertsonek soilik ikusi ahalko dute.",
+    "messageformat": "Signal-en beta-bertsioaren erabiltzaileek bakarrik edita ditzakete mezuak. Mezu bat editatzen baduzu, Signal-en beta-bertsio berriena darabilten pertsonek soilik ikusi ahalko dute.",
+    "description": "(deleted 8/30) Body text of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--title2": {
+    "messageformat": "Editatu mezua",
+    "description": "Title of the modal shown before sending your first edit message"
+  },
+  "icu:SendEdit--dialog--body2": {
+    "messageformat": "Mezu bat editatzen baduzu, Signal-en azken bertsioak darabiltzaten pertsonek soilik izango dute ikusgai. Mezu bat editatu duzula ikusi ahal izango dute.",
     "description": "Body text of the modal shown before sending your first edit message"
   },
   "icu:SendFormatting--dialog--title": {
@@ -3168,20 +3265,20 @@
     "description": "Title of the modal shown before sending your first formatting message"
   },
   "icu:SendFormatting--dialog--body": {
-    "messageformat": "Baliteke pertsona batzuek darabilten Cradle-en bertsioak ez onartzea testu fomartuduna. Ezingo dituzte ikusi mezuan egin dituzun formatu-aldaketak.",
+    "messageformat": "Baliteke pertsona batzuek darabilten Signal-en bertsioak ez onartzea testu fomartuduna. Ezingo dituzte ikusi mezuan egin dituzun formatu-aldaketak.",
     "description": "Body text of the modal shown before sending your first formatting message"
   },
   "icu:AuthArtCreator--dialog--message": {
-    "messageformat": "Cradle-en eranskailu-paketeen sortzailea ireki nahi duzu?",
-    "description": "A body of the dialog that is presented when user tries to open Cradle Sticker Pack Creator from a link"
+    "messageformat": "Signal-en eranskailu-paketeen sortzailea ireki nahi duzu?",
+    "description": "A body of the dialog that is presented when user tries to open Signal Sticker Pack Creator from a link"
   },
   "icu:AuthArtCreator--dialog--confirm": {
     "messageformat": "Onartu",
-    "description": "A buttle title for confirming Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for confirming Signal Sticker Pack Creator dialog"
   },
   "icu:AuthArtCreator--dialog--dismiss": {
     "messageformat": "Baztertu",
-    "description": "A buttle title for dismissing Cradle Sticker Pack Creator dialog"
+    "description": "A buttle title for dismissing Signal Sticker Pack Creator dialog"
   },
   "icu:ArtCreator--Authentication--error": {
     "messageformat": "Eranskailu-paketeen sortzailea erabili ahal izateko, konfiguratu Signal telefonoan eta ordenagailuan",
@@ -3332,7 +3429,7 @@
     "description": "Shown in the conversation hero to indicate this user is a member of four mutual groups"
   },
   "icu:member-of-more-than-3-groups--multiple-more": {
-    "messageformat": "{group1}, {group2}, {group3} eta beste {remainingCount,number} taldetako kidea",
+    "messageformat": "Member of {group1}, {group2}, {group3} and {remainingCount, plural, other {#}} more",
     "description": "Shown in the conversation hero to indicate this user is a member of 5+ mutual groups."
   },
   "icu:ConversationHero--membership-added": {
@@ -3400,12 +3497,12 @@
     "description": "Shown in conversation history when your video call is missed or declined"
   },
   "icu:minimizeToTrayNotification--title": {
-    "messageformat": "Cradle abian da oraindik",
-    "description": "Shown in a notification title when Cradle is minimized to tray"
+    "messageformat": "Signal abian da oraindik",
+    "description": "Shown in a notification title when Signal is minimized to tray"
   },
   "icu:minimizeToTrayNotification--body": {
-    "messageformat": "Cradle-ek abian jarraituko du jakinarazpen-eremuan. Hori aldatzeko, joan ezarpenetara.",
-    "description": "Shown in a notification body when Cradle is minimized to tray"
+    "messageformat": "Signal-ek abian jarraituko du jakinarazpen-eremuan. Hori aldatzeko, joan ezarpenetara.",
+    "description": "Shown in a notification body when Signal is minimized to tray"
   },
   "icu:incomingAudioCall": {
     "messageformat": "Sarrerako ahots-deia…",
@@ -3416,11 +3513,11 @@
     "description": "Shown in both the incoming call bar and notification for an incoming video call"
   },
   "icu:outgoingAudioCall": {
-    "messageformat": "Outgoing voice call",
+    "messageformat": "Irteerako ahots-deia",
     "description": "Shown in the timeline for an outgoing voice call"
   },
   "icu:outgoingVideoCall": {
-    "messageformat": "Outgoing video call",
+    "messageformat": "Irteerako bideodeia",
     "description": "Shown in the timeline for an outgoing video call"
   },
   "icu:incomingGroupCall__ringing-you": {
@@ -3467,9 +3564,69 @@
     "messageformat": "Berriro konektatzen…",
     "description": "Shown in the call screen when the call is reconnecting due to network issues"
   },
-  "icu:callDuration": {
-    "messageformat": "Cradle {duration}",
-    "description": "Shown in the call screen to indicate how long the call has been connected"
+  "icu:CallControls__InfoDisplay--participants": {
+    "messageformat": "{count, plural, one {Pertsona {count,number}} other {{count,number} pertsona}}",
+    "description": "Shown in the call screen and lobby for group calls to specify the number of members in the call or in the group. Count is at always at least 1."
+  },
+  "icu:CallControls__InfoDisplay--audio-call": {
+    "messageformat": "Audio-deia",
+    "description": "Shown in the call lobby for a direct 1:1 call when the caller's video is disabled, to specify that an audio call will be placed when clicking the Start button."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-1-1": {
+    "messageformat": "Amaitu",
+    "description": "Title for the hangup button for a direct 1:1 call with only 2 participants."
+  },
+  "icu:CallControls__JoinLeaveButton--hangup-group": {
+    "messageformat": "Irten",
+    "description": "Title for the hangup button for a group call."
+  },
+  "icu:CallControls__MutedToast--muted": {
+    "messageformat": "Mikrofonoa desaktibatuta",
+    "description": "Shown in a call when the user mutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__MutedToast--unmuted": {
+    "messageformat": "Mikrofonoa aktibatuta",
+    "description": "Shown in a call when the user is muted and then unmutes their audio input using the Mute toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-on": {
+    "messageformat": "Dei-tonua aktibatuta",
+    "description": "Shown in a group call lobby when call ringing is disabled, then the user enables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RingingToast--ringing-off": {
+    "messageformat": "Dei-tonua desaktibatuta",
+    "description": "Shown in a group call lobby when call ringing is enabled, then the user disables ringing using the Ringing toggle button."
+  },
+  "icu:CallControls__RaiseHandsToast--you": {
+    "messageformat": "Eskua jaso duzu.",
+    "description": "Shown in a call when the user raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--one": {
+    "messageformat": "{name} erabiltzaileak eskua jaso du.",
+    "description": "Shown in a call when someone else raises their hand."
+  },
+  "icu:CallControls__RaiseHandsToast--two": {
+    "messageformat": "{name} eta {otherName} erabiltzaileek eskua jaso dute.",
+    "description": "Shown in a call when 2 persons raise their hands."
+  },
+  "icu:CallControls__RaiseHandsToast--more": {
+    "messageformat": "{name}, {otherName}, and {overflowCount, plural, other {#}} more raised a hand.",
+    "description": "Shown in a call when 3 or more persons raise their hands."
+  },
+  "icu:CallControls__RaiseHands--open-queue": {
+    "messageformat": "Ireki ilara",
+    "description": "Link in call raised hands list and in toast shown when someone else raises their hand. Link opens the list of all raised hands."
+  },
+  "icu:CallControls__RaiseHands--lower": {
+    "messageformat": "Jaitsi",
+    "description": "Link in call raised hands list and in toast shown when user raises their hand. Link allows user to lower their hand."
+  },
+  "icu:CallControls__MenuItemRaiseHand": {
+    "messageformat": "Jaso eskua",
+    "description": "Menu item to raise your hand during a call."
+  },
+  "icu:CallControls__MenuItemRaiseHand--lower": {
+    "messageformat": "Jaitsi eskua",
+    "description": "Menu item to lower your previously raised hand during a call."
   },
   "icu:callingDeviceSelection__settings": {
     "messageformat": "Ezarpenak",
@@ -3511,13 +3668,25 @@
     "messageformat": "Deia pantaila osoan jarri",
     "description": "Title for picture-in-picture toggle"
   },
-  "icu:calling__switch-view--to-grid": {
-    "messageformat": "Aldatu saretutako bistara",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__change-view": {
+    "messageformat": "Aldatu ikuspegia",
+    "description": "Tooltip for changing the in-call layout of remote participants in a group call"
   },
-  "icu:calling__switch-view--to-speaker": {
-    "messageformat": "Aldatu hizlariaren bistara",
-    "description": "Title for grid/speaker view toggle when on a call"
+  "icu:calling__view_mode--paginated": {
+    "messageformat": "Sareta ikuspegia",
+    "description": "Label for option to view participants in a group call in a paginated grid view"
+  },
+  "icu:calling__view_mode--overflow": {
+    "messageformat": "Alboko barrako ikuspegia",
+    "description": "Label for option to view participants in a group call where videos that don't fit onto the page are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--speaker": {
+    "messageformat": "Hizlariaren ikuspegia",
+    "description": "Label for option to view participants where only the current speaker's video is fully visible and all others are put into a scrollable overflow sidebar"
+  },
+  "icu:calling__view_mode--updated": {
+    "messageformat": "Eguneratu da ikuspegia",
+    "description": "Toast shown whenver the calling view mode is changed (e.g. paginated view -> speaker view)"
   },
   "icu:calling__hangup": {
     "messageformat": "Deia utzi",
@@ -3619,6 +3788,14 @@
     "messageformat": "Ados",
     "description": "Button to dismiss popup dialog when user-initiated task has gone wrong"
   },
+  "icu:MessageMaxEditsModal__Title": {
+    "messageformat": "Ezin da editatu mezua",
+    "description": "Title in popup dialog when attempting to edit a message too many times."
+  },
+  "icu:MessageMaxEditsModal__Description": {
+    "messageformat": "Only {max, plural, other {#}} edits can be applied to this message.",
+    "description": "Description text in popup dialog when attempting to edit a message too many times."
+  },
   "icu:unknown-sgnl-link": {
     "messageformat": "Barkatu, sgnl:// esteka hori ez da zuzena!",
     "description": "Shown if you click on a sgnl:// link not currently supported by Desktop"
@@ -3656,7 +3833,7 @@
     "description": "This group link is no longer valid."
   },
   "icu:GroupV2--join--unknown-link-version": {
-    "messageformat": "Esteka hau ezin da Cradle Desktopen bertsio honekin ireki.",
+    "messageformat": "Esteka hau ezin da Signal Desktopen bertsio honekin ireki.",
     "description": "Shown if you click a group link and we can't get information about it"
   },
   "icu:GroupV2--join--link-revoked--title": {
@@ -4040,7 +4217,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--other": {
-    "messageformat": "{memberName} erabiltzaileak {count,number} pertsona taldera gonbidatu ditu.",
+    "messageformat": "{memberName} invited {count, plural, other {#}} people to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--you": {
@@ -4048,7 +4225,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-add--many--unknown": {
-    "messageformat": "{count,number} pertsona taldera gonbidatuak izan dira.",
+    "messageformat": "{count, plural, other {#}} people were invited to the group.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--decline--other": {
@@ -4124,7 +4301,7 @@
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--other": {
-    "messageformat": "{adminName} erabiltzaileak {memberName} erabiltzaileak gonbidatutako {count,number} pertsonaren gonbidapenak ezeztatu egin ditu.",
+    "messageformat": "{adminName} revoked invitations to the group for {count, plural, other {#}} people invited by {memberName}.",
     "description": "Shown in timeline or conversation preview when v2 group changes"
   },
   "icu:GroupV2--pending-remove--revoke-invite-from--many--you": {
@@ -4364,7 +4541,7 @@
     "description": "Shown in timeline when a group is upgraded and one person was removed entirely during the upgrade"
   },
   "icu:GroupV1--Migration--removed--many": {
-    "messageformat": "{count,number} kide taldetik kendu dira.",
+    "messageformat": "{count, plural, other {#}} members were removed from the group.",
     "description": "Shown in timeline when a group is upgraded and some people were removed entirely during the upgrade"
   },
   "icu:close": {
@@ -4412,11 +4589,11 @@
     "description": "Aria label for file attachment button in composition area"
   },
   "icu:CompositionArea--sms-only__title": {
-    "messageformat": "Pertsona honek ez du Signal/Cradle erabiltzen",
+    "messageformat": "Pertsona honek ez du Signal erabiltzen",
     "description": "Title for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__body": {
-    "messageformat": "Signal/Cradle-en ordenagailurako bertsioak ez du onartzen Signal/Cradle-eko kontaktuak ez direnei mezuak bidaltzea. Eskatu pertsona honi Signal/Cradle instalatzeko, mezularitza-esperientzia seguruagoa izan dezazuen.",
+    "messageformat": "Signal-en ordenagailurako bertsioak ez du onartzen Signal-eko kontaktuak ez direnei mezuak bidaltzea. Eskatu pertsona honi Signal instalatzeko, mezularitza-esperientzia seguruagoa izan dezazuen.",
     "description": "Body for the composition area for the SMS-only contact"
   },
   "icu:CompositionArea--sms-only__spinner-label": {
@@ -4752,7 +4929,7 @@
     "description": "conversation > in select mode > composition area actions > exit select mode > accessibility label"
   },
   "icu:SelectModeActions--selectedMessages": {
-    "messageformat": "{count,number} hautatuta",
+    "messageformat": "{count, plural, other {#}} selected",
     "description": "conversation > in select mode > composition area actions > count of selected messsages"
   },
   "icu:SelectModeActions--deleteSelectedMessages": {
@@ -4957,10 +5134,10 @@
   },
   "icu:MessageRequestWarning__dialog__learn-even-more": {
     "messageformat": "Mezu eskaeren inguruan",
-    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Cradle's support site"
+    "description": "Shown in the message request warning dialog. Clicking this button will open a page on Signal's support site"
   },
   "icu:ContactSpoofing__same-name--link": {
-    "messageformat": "Berrikusi eskaerak kontu handiz. Cradle-ek izen bereko beste kontaktu bat aurkitu du. <reviewRequestLink>Berrikusi eskaera</reviewRequestLink>",
+    "messageformat": "Berrikusi eskaerak kontu handiz. Signal-ek izen bereko beste kontaktu bat aurkitu du. <reviewRequestLink>Berrikusi eskaera</reviewRequestLink>",
     "description": "Shown in the timeline warning when you have a message request from someone with the same name as someone else"
   },
   "icu:ContactSpoofing__same-name-in-group--link": {
@@ -5024,7 +5201,7 @@
     "description": "Header in the captcha dialog"
   },
   "icu:CaptchaDialog__first-paragraph": {
-    "messageformat": "Cradle-en spam-a ekiditeko, mesedez egiaztapena bete.",
+    "messageformat": "Signal-en spam-a ekiditeko, mesedez egiaztapena bete.",
     "description": "First paragraph in the captcha dialog"
   },
   "icu:CaptchaDialog__second-paragraph": {
@@ -5295,9 +5472,29 @@
     "messageformat": "Erabiltzaile-izena",
     "description": "Default text for username field"
   },
+  "icu:ProfileEditor--username--corrupted--body": {
+    "messageformat": "Arazoren bat izan da erabiltzaile-izenarekin, eta jada ez dago kontuari esleitua.",
+    "description": "Text of confirmation modal when the username gets corrupted"
+  },
+  "icu:ProfileEditor--username--corrupted--delete-button": {
+    "messageformat": "Ezabatu erabiltzaile-izena",
+    "description": "Button text for deletion of the username in case of corruption"
+  },
+  "icu:ProfileEditor--username--corrupted--create-button": {
+    "messageformat": "Sortu erabiltzaile-izena",
+    "description": "Button text for creation of a new username in case of corruption"
+  },
   "icu:ProfileEditor__username-link": {
     "messageformat": "QR kodea edo esteka",
     "description": "Label of a profile editor row that navigates to username link and qr code modal"
+  },
+  "icu:ProfileEditor__username__error-icon": {
+    "messageformat": "Erabiltzaile-izena berrezarri egin behar da",
+    "description": "Accessibility title of an icon in profile editor"
+  },
+  "icu:ProfileEditor__username-link__error-icon": {
+    "messageformat": "Erabiltzaile-izenaren esteka berrezarri egin behar da",
+    "description": "Accessibility title of an icon in profile editor"
   },
   "icu:ProfileEditor__username-link__tooltip__title": {
     "messageformat": "Partekatu zure erabiltzaile-izena",
@@ -5552,7 +5749,7 @@
     "description": "Title of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__row--body": {
-    "messageformat": "Aukeratu nork ikus dezakeen zure telefono-zenbakia eta nor jar daitekeen zurekin harremanetan Cradle-en.",
+    "messageformat": "Aukeratu nork ikus dezakeen zure telefono-zenbakia eta nor jar daitekeen zurekin harremanetan Signal-en.",
     "description": "Body of Phone Number row in Privacy section of Preferences window"
   },
   "icu:Preferences__pnp__sharing--title": {
@@ -5560,11 +5757,11 @@
     "description": "Title for the phone number sharing setting row"
   },
   "icu:Preferences__pnp__sharing--description--everyone": {
-    "messageformat": "Mezuak bidaltzen dizkiezun pertsonek eta taldeek ikusgai izango dute zure telefono-zenbakia. Telefonoko kontaktuetan zure zenbakia duten pertsonek Cradle-en ere ikusiko dute.",
+    "messageformat": "Mezuak bidaltzen dizkiezun pertsonek eta taldeek ikusgai izango dute zure telefono-zenbakia. Telefonoko kontaktuetan zure zenbakia duten pertsonek Signal-en ere ikusiko dute.",
     "description": "Description for the phone number sharing setting row when the value is Everyone"
   },
   "icu:Preferences__pnp__sharing--description--nobody": {
-    "messageformat": "Ez du inork ikusiko zure telefono zenbakia Signal/Cradle-en.",
+    "messageformat": "Ez du inork ikusiko zure telefono zenbakia Signal-en.",
     "description": "Description for the phone number sharing setting row when the value is Nobody"
   },
   "icu:Preferences__pnp--page-title": {
@@ -5584,11 +5781,11 @@
     "description": "Title for the phone number discoverability setting row"
   },
   "icu:Preferences__pnp__discoverability--description--everyone": {
-    "messageformat": "Zure telefono-zenbakia kontaktuetan duen edonork kontaktu gisa ikusiko zaitu Signal/Cradle-en. Beste batzuek txat edo talde berri bat hasten dutenean, zure telefono-zenbakiaren bidez jarri ahalko dira zurekin harremanetan.",
+    "messageformat": "Zure telefono-zenbakia kontaktuetan duen edonork kontaktu gisa ikusiko zaitu Signal-en. Beste batzuek txat edo talde berri bat hasten dutenean, zure telefono-zenbakiaren bidez jarri ahalko dira zurekin harremanetan.",
     "description": "Description for the phone number discoverability setting row wth the value is everyone"
   },
   "icu:Preferences__pnp__discoverability--description--nobody": {
-    "messageformat": "Signal/Cradle-eko inor ezingo da zurekin harremanetan jarri zure telefono-zenbakia erabilita.",
+    "messageformat": "Signal-eko inor ezingo da zurekin harremanetan jarri zure telefono-zenbakia erabilita.",
     "description": "Description for the phone number discoverability setting row wth the value is nobody"
   },
   "icu:Preferences__pnp__discoverability__everyone": {
@@ -5651,6 +5848,42 @@
     "messageformat": "Aurrerantzean ezingo dituzu partekatu edo ikusi istorioak. Duela gutxi partekatu dituzun istorio-eguneratzeak ere ezabatuko dira.",
     "description": "Confirmation modal body for disabling stories"
   },
+  "icu:Preferences__Language__Label": {
+    "messageformat": "Hizkuntza",
+    "description": "Language setting label"
+  },
+  "icu:Preferences__Language__ModalTitle": {
+    "messageformat": "Hizkuntza",
+    "description": "Language setting modal title"
+  },
+  "icu:Preferences__Language__SystemLanguage": {
+    "messageformat": "Sistemaren hizkuntza",
+    "description": "Option for system language"
+  },
+  "icu:Preferences__Language__SearchLanguages": {
+    "messageformat": "Bilatu hizkuntza",
+    "description": "Placholder for language preference search box"
+  },
+  "icu:Preferences__Language__NoResults": {
+    "messageformat": "Ez dago honen emaitzarik: \"{searchTerm}\"",
+    "description": "When no results are found for language preference search"
+  },
+  "icu:Preferences__LanguageModal__Set": {
+    "messageformat": "Ezarri",
+    "description": "Button to set language preference"
+  },
+  "icu:Preferences__LanguageModal__Restart__Title": {
+    "messageformat": "Aplikatzeko, berrabiarazi Signal",
+    "description": "Title for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Description": {
+    "messageformat": "Hizkuntza aldatzeko, aplikazioa berrabiarazi behar da.",
+    "description": "Description for restart Signal modal to apply language changes"
+  },
+  "icu:Preferences__LanguageModal__Restart__Button": {
+    "messageformat": "Berrabiarazi",
+    "description": "Button to restart Signal to apply language changes"
+  },
   "icu:DialogUpdate--version-available": {
     "messageformat": "Eguneratu {version}eskuragarri dagoen bertsiora",
     "description": "Tooltip for new update available"
@@ -5668,7 +5901,7 @@
     "description": "The title of update dialog on install screen when user OS is unsupported"
   },
   "icu:InstallScreenUpdateDialog--auto-update__body": {
-    "messageformat": "Cradle erabiltzen jarraitzeko, azken bertsiora eguneratu behar duzu.",
+    "messageformat": "Signal erabiltzen jarraitzeko, azken bertsiora eguneratu behar duzu.",
     "description": "The body of update dialog on install screen when auto update is downloaded and available."
   },
   "icu:InstallScreenUpdateDialog--manual-update__action": {
@@ -5676,15 +5909,15 @@
     "description": "The text of a confirmation button in update dialog on install screen when manual update is ready to be downloaded."
   },
   "icu:InstallScreenUpdateDialog--downloaded__body": {
-    "messageformat": "Berrabiarazi Cradle eguneratzea instalatzeko.",
+    "messageformat": "Berrabiarazi Signal eguneratzea instalatzeko.",
     "description": "The body of the update dialog on install screen when manual update was downloaded."
   },
   "icu:InstallScreenUpdateDialog--cannot-update__body": {
-    "messageformat": "Ezin izan da eguneratu Cradle Desktop, baina bertsio berri bat dago eskuragarri. Joan {downloadUrl} atalera eta instalatu bertsio berria eskuz. Ondoren, jarri harremanetan laguntza-zerbitzuarekin edo jakinarazi arazo honi buruzko akats bat.",
+    "messageformat": "Ezin izan da eguneratu Signal Desktop, baina bertsio berri bat dago eskuragarri. Joan {downloadUrl} atalera eta instalatu bertsio berria eskuz. Ondoren, jarri harremanetan laguntza-zerbitzuarekin edo jakinarazi arazo honi buruzko akats bat.",
     "description": "The body of the update dialog on install screen when update cannot be installed."
   },
   "icu:NSIS__retry-dialog--first-line": {
-    "messageformat": "Ezin da Cradle itxi",
+    "messageformat": "Ezin da Signal itxi",
     "description": "First line of the dialog displayed when Windows installer can't close application automatically and needs user intervention to complete the installation."
   },
   "icu:NSIS__retry-dialog--second-line": {
@@ -5704,15 +5937,15 @@
     "description": "Displayed when Windows installer cannot uninstall the old application"
   },
   "icu:NSIS__semver-downgrade": {
-    "messageformat": "Cradle-en bertsio berriago bat instalatuta dago jada. Ziur aurrera egin nahi duzula?",
-    "description": "A text of the dialog displayed when user tries to overwrite Cradle installation with an older version."
+    "messageformat": "Signal-en bertsio berriago bat instalatuta dago jada. Ziur aurrera egin nahi duzula?",
+    "description": "A text of the dialog displayed when user tries to overwrite Signal installation with an older version."
   },
   "icu:CrashReportDialog__title": {
     "messageformat": "Aplikazioak huts egin du",
     "description": "A title of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__body": {
-    "messageformat": "Cradle istripu baten ondoren berrabiarazi da. Matxura-txosten bat bidal dezakezu Cradle-i arazoa ikertzen laguntzeko.",
+    "messageformat": "Signal istripu baten ondoren berrabiarazi da. Matxura-txosten bat bidal dezakezu Signal-i arazoa ikertzen laguntzeko.",
     "description": "The body of the dialog displayed when starting an application after a recent crash"
   },
   "icu:CrashReportDialog__submit": {
@@ -5734,6 +5967,10 @@
   "icu:CustomizingPreferredReactions__had-save-error": {
     "messageformat": "Errore bat gertatu da ezarpenak gordetzean. Saiatu berriro mesedez.",
     "description": "Shown if there is an error when saving your preferred reaction settings. Should be very rare to see this message."
+  },
+  "icu:MediaEditor__input-placeholder": {
+    "messageformat": "Mezua",
+    "description": "Placeholder for the input in the media editor"
   },
   "icu:MediaEditor__clock-more-styles": {
     "messageformat": "Estilo gehiago",
@@ -5908,8 +6145,8 @@
     "description": "Payment event notification check device label"
   },
   "icu:SignalConnectionsModal__title": {
-    "messageformat": "Cradle-eko konexioak",
-    "description": "The phrase/term: 'Cradle Connections'"
+    "messageformat": "Signal-eko konexioak",
+    "description": "The phrase/term: 'Signal Connections'"
   },
   "icu:SignalConnectionsModal__header": {
     "messageformat": "{connections} fidagarritzat jotzen dituzun pertsonak dira, arrazoi hauengatik:",
@@ -6088,7 +6325,7 @@
     "description": "Modal title when hiding people from my stories"
   },
   "icu:StoriesSettings__mine__all--label": {
-    "messageformat": "Cradle-eko konexio guztiak",
+    "messageformat": "Signal-eko konexio guztiak",
     "description": "Input label to describe all signal connections"
   },
   "icu:StoriesSettings__mine__all--description": {
@@ -6100,7 +6337,7 @@
     "description": "Input label to create a block list"
   },
   "icu:StoriesSettings__mine__exclude--description": {
-    "messageformat": "{num,number} pertsona kanpoan utzi dira",
+    "messageformat": "{num, plural, other {#}} people excluded",
     "description": "Description of how many people are excluded in a list"
   },
   "icu:StoriesSettings__mine__only--label": {
@@ -6208,7 +6445,7 @@
     "description": "Modal title for setting privacy for My Story"
   },
   "icu:SendStoryModal__privacy-disclaimer--link": {
-    "messageformat": "Aukeratu zein Cradle konexiok ikus dezaketen zure istorioa. Hori beti alda dezakezu pribatutasun-ezarpenetan. <learnMoreLink>Gehiago ikasi.</learnMoreLink>",
+    "messageformat": "Aukeratu zein Signal konexiok ikus dezaketen zure istorioa. Hori beti alda dezakezu pribatutasun-ezarpenetan. <learnMoreLink>Gehiago ikasi.</learnMoreLink>",
     "description": "Disclaimer on how changes to story settings work"
   },
   "icu:SendStoryModal__delete-story": {
@@ -6224,11 +6461,11 @@
     "description": "Alert body for groups that non-admins cannot send stories to"
   },
   "icu:SendStoryModal__my-stories-description-all": {
-    "messageformat": "{viewersCount, plural, one {All Cradle Connections · 1 Viewer} other {All Cradle Connections · {viewersCount,number} Viewers}}",
+    "messageformat": "{viewersCount, plural, one {All Signal Connections · 1 Viewer} other {All Signal Connections · {viewersCount,number} Viewers}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when not exluding anyone"
   },
   "icu:SendStoryModal__my-stories-description-excluding": {
-    "messageformat": "{excludedCount, plural, one {All Cradle Connections · 1 Excluded} other {All Cradle Connections · {excludedCount,number} Excluded}}",
+    "messageformat": "{excludedCount, plural, one {All Signal Connections · 1 Excluded} other {All Signal Connections · {excludedCount,number} Excluded}}",
     "description": "Shown as a subtitle under My Stories option in the send-story-to dialog when excluding some"
   },
   "icu:SendStoryModal__private-story-description": {
@@ -6572,7 +6809,7 @@
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__done": {
-    "messageformat": "Done",
+    "messageformat": "Eginda",
     "description": "Text of button at the bottom of the username link modal"
   },
   "icu:UsernameLinkModalBody__color__radio": {
@@ -6583,8 +6820,16 @@
     "messageformat": "QR kodea berrezarriz gero, oraingo QR kodeak eta estekak funtzionatzeari utziko diote.",
     "description": "Text of confirmation modal when resetting the username link"
   },
+  "icu:UsernameLinkModalBody__resetting-link": {
+    "messageformat": "Esteka berrezartzen…",
+    "description": "Text shown when resetting the username link"
+  },
+  "icu:UsernameLinkModalBody__error__text": {
+    "messageformat": "QR kodea eta esteka ez daude konfiguratuta. Egiaztatu sarera konektatuta zaudela eta saiatu berriro.",
+    "description": "Text of the confirmation dialog shown on username link error"
+  },
   "icu:UsernameOnboardingModalBody__title": {
-    "messageformat": "Konfiguratu Cradle-eko erabiltzaile-izena",
+    "messageformat": "Konfiguratu Signal-eko erabiltzaile-izena",
     "description": "Title of username onboarding modal"
   },
   "icu:UsernameOnboardingModalBody__row__number": {
@@ -6608,15 +6853,15 @@
     "description": "Text of the primary button on username onboarding modal"
   },
   "icu:UnsupportedOSWarningDialog__body": {
-    "messageformat": "Ordenagailurako Cradle aplikazioak laster ez du onartuko ordenagailuaren bertsioa ({OS}). Cradle erabiltzen jarraitzeko, eguneratu ordenagailuaren sistema eragilea {expirationDate} aurretik. <learnMoreLink>Informazio gehiago</learnMoreLink>",
+    "messageformat": "Ordenagailurako Signal aplikazioak laster ez du onartuko ordenagailuaren bertsioa ({OS}). Signal erabiltzen jarraitzeko, eguneratu ordenagailuaren sistema eragilea {expirationDate} aurretik. <learnMoreLink>Informazio gehiago</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorDialog__body": {
-    "messageformat": "Ordenagailuko Cradle aplikazioak jada ez du funtzionatzen ordenagailu honetan. Ordenagailuko Cradle aplikazioa berriro erabiltzeko, eguneratu ordenagailuaren bertsioa ({OS}). <learnMoreLink>Informazio gehiago</learnMoreLink>",
+    "messageformat": "Ordenagailuko Signal aplikazioak jada ez du funtzionatzen ordenagailu honetan. Ordenagailuko Signal aplikazioa berriro erabiltzeko, eguneratu ordenagailuaren bertsioa ({OS}). <learnMoreLink>Informazio gehiago</learnMoreLink>",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:UnsupportedOSErrorToast": {
-    "messageformat": "Ordenagailuko Cradle aplikazioak jada ez du funtzionatzen ordenagailu honetan. Ordenagailuko Cradle aplikazioa berriro erabiltzeko, eguneratu ordenagailuaren bertsioa ({OS}).",
+    "messageformat": "Ordenagailuko Signal aplikazioak jada ez du funtzionatzen ordenagailu honetan. Ordenagailuko Signal aplikazioa berriro erabiltzeko, eguneratu ordenagailuaren bertsioa ({OS}).",
     "description": "Body of a dialog displayed on unsupported operating systems"
   },
   "icu:MessageMetadata__edited": {
@@ -6636,119 +6881,123 @@
     "description": "Button text for the confirmation dialog shown to user when attempting to resend message edit"
   },
   "icu:StoriesTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Ekintza gehiago",
     "description": "Stories Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__HeaderTitle--CallsList": {
-    "messageformat": "Calls",
+    "messageformat": "Deiak",
     "description": "Calls Tab > Header > Title > On Calls List screen"
   },
   "icu:CallsTab__HeaderTitle--NewCall": {
-    "messageformat": "New Call",
+    "messageformat": "Dei berria",
     "description": "Calls Tab > Header > Title > On New Call screen"
   },
   "icu:CallsTab__NewCallActionLabel": {
-    "messageformat": "New Call",
+    "messageformat": "Dei berria",
     "description": "Calls Tab > New Call Action Button > Accessibility Label"
   },
   "icu:CallsTab__MoreActionsLabel": {
-    "messageformat": "More actions",
+    "messageformat": "Ekintza gehiago",
     "description": "Calls Tab > More Actions Button (opens context menu) > Accessibility Label"
   },
   "icu:CallsTab__ClearCallHistoryLabel": {
-    "messageformat": "Clear call history",
+    "messageformat": "Garbitu deien historia",
     "description": "Calls Tab > More Actions Context Menu > Clear Call History Button Label"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Title": {
-    "messageformat": "Clear call history?",
+    "messageformat": "Deien historia garbitu nahi duzu?",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Title"
   },
   "icu:CallsTab__ConfirmClearCallHistory__Body": {
-    "messageformat": "This will permanently delete all call history",
+    "messageformat": "Behin betiko ezabatuko da deien historia osoa",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Body Text"
   },
   "icu:CallsTab__ConfirmClearCallHistory__ConfirmButton": {
-    "messageformat": "Clear",
+    "messageformat": "Garbitu",
     "description": "Calls Tab > Confirm Clear Call History Dialog > Confirm Button"
   },
   "icu:CallsTab__ToastCallHistoryCleared": {
-    "messageformat": "Call history cleared",
+    "messageformat": "Deien historia garbitu da",
     "description": "Calls Tab > Clear Call History > Toast"
   },
   "icu:CallsTab__EmptyStateText": {
-    "messageformat": "Click to view or start a call",
+    "messageformat": "Egin klik dei bat ikusteko edo hasteko",
     "description": "Calls Tab > When no call is selected > Empty state > Call to action text"
   },
   "icu:CallsList__SearchInputPlaceholder": {
-    "messageformat": "Search",
+    "messageformat": "Bilatu",
     "description": "Calls Tab > Calls List > Search Input > Placeholder"
   },
   "icu:CallsList__ToggleFilterByMissedLabel": {
-    "messageformat": "Filter by missed",
+    "messageformat": "Iragazi dei galduen arabera",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility label"
   },
   "icu:CallsList__ToggleFilterByMissed__RoleDescription": {
-    "messageformat": "Toggle",
+    "messageformat": "Kommutatu",
     "description": "Calls Tab > Calls List > Toggle search filter by missed > Accessibility role description ('A toggle button')"
   },
   "icu:CallsList__EmptyState--noQuery": {
-    "messageformat": "No recent calls. Get started by calling a friend.",
+    "messageformat": "Ez dago azken deirik. Hasi lagun bati deitzen.",
     "description": "Calls Tab > Calls List > When no results found > With no search query"
   },
   "icu:CallsList__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "Ez dago honen emaitzarik: \"{query}\"",
     "description": "Calls Tab > Calls List > When no results found > With a search query"
   },
   "icu:CallsList__ItemCallInfo--Incoming": {
-    "messageformat": "Incoming",
+    "messageformat": "Sarrerako",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was incoming"
   },
   "icu:CallsList__ItemCallInfo--Outgoing": {
-    "messageformat": "Outgoing",
+    "messageformat": "Irteerakoak",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was accepted and was outgoing"
   },
   "icu:CallsList__ItemCallInfo--Missed": {
-    "messageformat": "Missed",
+    "messageformat": "Galduak",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When call was missed"
   },
   "icu:CallsList__ItemCallInfo--GroupCall": {
-    "messageformat": "Group call",
+    "messageformat": "Talde-deia",
     "description": "Calls Tab > Calls List > Call Item > Call Status > When group call is in its default state"
   },
   "icu:CallsNewCall__EmptyState--noQuery": {
-    "messageformat": "No recent conversations.",
+    "messageformat": "Ez dago duela gutxiko elkarrizketarik.",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With no search query"
   },
   "icu:CallsNewCall__EmptyState--hasQuery": {
-    "messageformat": "No results for “{query}”",
+    "messageformat": "Ez dago honen emaitzarik: \"{query}\"",
     "description": "Calls Tab > New Call > Conversations List > When no results found > With a search query"
   },
   "icu:CallHistory__Description--Default": {
-    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Outgoing voice call} other {Incoming voice call}}} Video {{direction, select, Outgoing {Outgoing video call} other {Incoming video call}}} Group {{direction, select, Outgoing {Outgoing group call} other {Incoming group call}}} other {{direction, select, Outgoing {Outgoing  call} other {Incoming  call}}}}",
+    "messageformat": "{type, select, Audio {{direction, select, Outgoing {Irteerako ahots-deia} other {Sarrerako ahots-deia}}} Video {{direction, select, Outgoing {Irteerako bideodeia} other {Sarrerako bideodeia}}} Group {{direction, select, Outgoing {Irteerako talde-deia} other {Sarrerako talde-deia}}} other {{direction, select, Outgoing {Irteerako deia} other {Sarrerako dei}}}}",
     "description": "Call History > Short description of call > When call was not missed or declined (generally accepted)"
   },
   "icu:CallHistory__Description--Missed": {
-    "messageformat": "{type, select, Audio {Missed voice call} Video {Missed video call} Group {Missed group call} other {Missed  call}}",
+    "messageformat": "{type, select, Audio {Ahots-dei galdua} Video {Bideodei galdua} Group {Talde-deia galdua} other {Erantzun gabeko deia}}",
     "description": "Call History > Short description of call > When incoming call was missed"
   },
   "icu:CallHistory__Description--Unanswered": {
-    "messageformat": "{type, select, Audio {Unanswered voice call} Video {Unanswered video call} Group {Unanswered group call} other {Unanswered  call}}",
+    "messageformat": "{type, select, Audio {Erantzun gabeko ahots-deia} Video {Erantzun gabeo bideodeia} Group {Erantzun gabeko taldeko deia} other {Erantzun gabeko deia}}",
     "description": "Call History > Short description of call > When outgoing call was unanswered"
   },
   "icu:CallHistory__Description--Declined": {
-    "messageformat": "{type, select, Audio {Declined voice call} Video {Declined video call} Group {Declined group call} other {Declined  call}}",
+    "messageformat": "{type, select, Audio {Ahots-deia baztertu da} Video {Bideodeia baztertu da} Group {Talde-deia baztertu da} other {Deia baztertu da}}",
     "description": "Call History > Short description of call > When call was declined"
+  },
+  "icu:TypingBubble__avatar--overflow-count": {
+    "messageformat": "{count, plural, one {Beste {count,number} idazten ari da.} other {Beste {count,number} idazten ari dira.}}",
+    "description": "Group chat multiple person typing indicator when space isn't available to show every avatar, this is the count of avatars hidden."
   },
   "icu:WhatsNew__modal-title": {
     "messageformat": "Zer berri",
     "description": "Title for the whats new modal"
   },
   "icu:WhatsNew__bugfixes": {
-    "messageformat": "Bertsio honek hainbat doikuntza txiki eta akats konpontzen ditu Cradle-ek ondo funtzionatzen jarraitzeko.",
+    "messageformat": "Bertsio honek hainbat doikuntza txiki eta akats konpontzen ditu Signal-ek ondo funtzionatzen jarraitzeko.",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--1": {
-    "messageformat": "Ukitu txiki gehigarriak, errore-konponketak eta errendimendu-hobekuntzak. Mila esker Cradle erabiltzeagatik!",
+    "messageformat": "Ukitu txiki gehigarriak, errore-konponketak eta errendimendu-hobekuntzak. Mila esker Signal erabiltzeagatik!",
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--2": {
@@ -6768,16 +7017,25 @@
     "description": "Release notes for releases that only include bug fixes"
   },
   "icu:WhatsNew__bugfixes--6": {
-    "messageformat": "Doikuntza txikiak, akats-konponketak eta errendimendu-hobekuntzak. Eskerrik asko Cradle erabiltzeagatik!",
+    "messageformat": "Doikuntza txikiak, akats-konponketak eta errendimendu-hobekuntzak. Eskerrik asko Signal erabiltzeagatik!",
     "description": "Release notes for releases that only include bug fixes"
   },
-  "icu:WhatsNew__v6.29--0": {
-    "messageformat": "Txataren kolorea pertsonalizatzeko pantaila behar bezala bistaratzen da hizkuntza ezberdinetan eta hautatutako tokietan."
+  "icu:WhatsNew__v6.42--0": {
+    "messageformat": "Bideoetako erantzunak aipaturiko argazkietako erantzunak balira bezala bistaratzen zituen akats bat konpondu dugu, nahiz eta bideoak argazki-sekuentzia bat besterik ez diren."
   },
-  "icu:WhatsNew__v6.29--1": {
-    "messageformat": "Windows-en jakinarazpenen laguntza hobetu dugu. Ez baduzu sakatzen jakinarazpen bat lehen aldiz iristen denean, galdutako azken jakinarazpena Windows Jakinarazpen Zentroan agertuko da. Jakinarazpen horretan klik eginez gero, zuzenean txat horretara joango da. Eskerrak eman nahi dizkiogu Julien Richard bere iritziagatik."
+  "icu:WhatsNew__v6.42--1": {
+    "messageformat": "Eskerrik asko, {linkToGithub1} eta {linkToGithub2}, bertsio honetan emandako laguntzarengatik."
   },
-  "icu:WhatsNew__v6.30--0": {
-    "messageformat": "Keep tabs on your calls with the new calls tab. Start a new call or return a call that you missed without having to find the corresponding chat. Now you can say hello with your voice without also saying goodbye to the unread marker for messages in that thread."
+  "icu:WhatsNew__v6.43--0": {
+    "messageformat": "Turn a missed call into something that won't be missed. Now you can right-click on any call event and delete it from a chat."
+  },
+  "icu:WhatsNew__v6.43--1": {
+    "messageformat": "The default font for Persian has been updated to Vazirmatn to improve readability when that language is selected (Signal Settings > Appearance > Language). Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--2": {
+    "messageformat": "The playback speed indicators in voice messages have a slightly new look. X marks the spot. Thanks, {linkToGithub1}!"
+  },
+  "icu:WhatsNew__v6.43--3": {
+    "messageformat": "We would also like to thank {linkToGithub1}, {linkToGithub2}, and {linkToGithub3} for their contributions to this release."
   }
 }

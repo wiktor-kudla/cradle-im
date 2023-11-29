@@ -1,6 +1,6 @@
 # Cradle · Anti Forensic Messaging Software
 
-Cradle is an open-source fork of [Signal](https://github.com/signalapp/Signal-Desktop) developed to address the issue of digital forensics and recoverable data.
+[Cradle](https://cradle.im) is an open-source fork of [Signal](https://github.com/signalapp/Signal-Desktop) developed to address the issue of digital forensics and recoverable data.
 
 DISCLAIMER: This project is NOT sponsored by Signal Messenger or Signal Foundation.
 

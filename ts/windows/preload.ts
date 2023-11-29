@@ -31,10 +31,8 @@ installSetting('typingIndicatorSetting', {
 });
 
 installCallback('deleteAllMyStories');
-installCallback('isFormattingFlagEnabled');
 installCallback('isPhoneNumberSharingEnabled');
 installCallback('isPrimary');
-installCallback('shouldShowStoriesSettings');
 installCallback('syncRequest');
 
 installSetting('alwaysRelayCalls');
@@ -50,6 +48,7 @@ installSetting('hasStoriesDisabled');
 installSetting('hideMenuBar');
 installSetting('incomingCallNotification');
 installSetting('lastSyncTime');
+installSetting('localeOverride');
 installSetting('notificationDrawAttention');
 installSetting('notificationSetting');
 installSetting('spellCheck');
