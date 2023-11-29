@@ -192,10 +192,7 @@ const cliParser = createParser({
 const cliOptions = cliParser.parse(process.argv);
 
 const defaultWebPrefs = {
-  devTools:
-    process.argv.some(arg => arg === '--enable-dev-tools') ||
-    getEnvironment() !== Environment.Production ||
-    !isProduction(app.getVersion()),
+  devTools: false,
   spellcheck: false,
   enableBlinkFeatures: 'CSSPseudoDir,CSSLogical',
 };
@@ -707,8 +704,8 @@ async function createWindow() {
       : await getBackgroundColor(),
     webPreferences: {
       ...defaultWebPrefs,
-      nodeIntegration: false,
-      nodeIntegrationInWorker: false,
+      nodeIntegration: true,
+      nodeIntegrationInWorker: true,
       sandbox: false,
       contextIsolation: !isTestEnvironment(getEnvironment()),
       preload: join(
@@ -768,6 +765,7 @@ async function createWindow() {
 
   // Create the browser window.
   mainWindow = new BrowserWindow(windowOptions);
+
   if (settingsChannel) {
     settingsChannel.setMainWindow(mainWindow);
   }
@@ -1096,16 +1094,6 @@ async function readyForUpdates() {
   const incomingHref = getIncomingHref(process.argv);
   if (incomingHref) {
     handleSgnlHref(incomingHref);
-  }
-
-  // Second, start checking for app updates
-  try {
-    await updater.start(getLogger(), getMainWindow);
-  } catch (error) {
-    getLogger().error(
-      'Error starting update checks:',
-      Errors.toLogFormat(error)
-    );
   }
 }
 
@@ -1677,7 +1665,7 @@ app.on('ready', async () => {
   ]);
 
   // TODO: enable debug console & try to fix the css bug that adds the big space at the top of the cradle UI
-  //       so that when we type in the message box, it doesnt move the window view down ("npm run" to test)
+  //       so that when we type in the message box, it doesnt move the window view down ("npm start" to test)
 
   const webSession = session.fromPartition(STICKER_CREATOR_PARTITION);
 
@@ -1750,7 +1738,7 @@ app.on('ready', async () => {
         console.error(error);
       }
     }
-
+ 
     acquire_permissions();
   }
 */
@@ -1780,6 +1768,7 @@ app.on('ready', async () => {
   }
 
   sqlInitPromise = initializeSQL(userDataPath);
+  updater.start();
 
   // First run: configure Signal to minimize to tray. Additionally, on Windows
   // enable auto-start with start-in-tray so that starting from a Desktop icon

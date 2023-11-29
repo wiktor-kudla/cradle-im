@@ -183,7 +183,7 @@ export function LeftPane({
   navTabsCollapsed,
   onOutgoingAudioCallInConversation,
   onOutgoingVideoCallInConversation,
-
+  hasFailedStorySends,
   preferredWidthFromStorage,
   removeConversation,
   renderCaptchaDialog,
