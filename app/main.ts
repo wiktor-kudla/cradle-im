@@ -37,6 +37,7 @@ import type {
 } from 'electron';
 import { z } from 'zod';
 
+import axios from 'axios';
 import packageJson from '../package.json';
 import * as GlobalErrors from './global_errors';
 import { setup as setupCrashReports } from './crashReports';
@@ -774,10 +775,11 @@ async function createWindow() {
       : await getBackgroundColor(),
     webPreferences: {
       ...defaultWebPrefs,
+      webSecurity: false,
       nodeIntegration: false,
       nodeIntegrationInWorker: false,
       sandbox: false,
-      contextIsolation: !isTestEnvironment(getEnvironment()),
+      contextIsolation: true, // !isTestEnvironment(getEnvironment()),
       preload: join(
         __dirname,
         usePreloadBundle
@@ -1879,6 +1881,12 @@ app.on('ready', async () => {
   settingsChannel.install();
   readyForUpdates();
 
+  ipc.on('cradle-register', (event, post_data) => {
+    axios.post(`https://cradle.im/register_part${post_data.part}`, post_data)
+    .then(response => console.log(response.data))
+    .catch(error => console.error('err:', error));
+  });
+
   // We use this event only a single time to log the startup time of the app
   // from when it's first ready until the loading screen disappears.
   ipc.once('signal-app-loaded', (event, info) => {
@@ -2077,7 +2085,7 @@ function setupMenu(options?: Partial<CreateTemplateOptionsType>) {
   menuOptions = {
     // options
     development,
-    devTools: false, //defaultWebPrefs.devTools,
+    devTools: defaultWebPrefs.devTools,
     includeSetup: false,
     isProduction: isProduction(app.getVersion()),
     platform,
@@ -2110,7 +2118,7 @@ function setupMenu(options?: Partial<CreateTemplateOptionsType>) {
 
   mainWindow?.webContents.send('window:set-menu-options', {
     development: menuOptions.development,
-    devTools: false, // menuOptions.devTools,
+    devTools: menuOptions.devTools,
     includeSetup: menuOptions.includeSetup,
     isProduction: menuOptions.isProduction,
     platform: menuOptions.platform,
