@@ -464,6 +464,7 @@
       "bundles/**",
       "background.html",
       "about.html",
+      "html/will_quit_screen.html",
       "screenShare.html",
       "settings.html",
       "permissions_popup.html",

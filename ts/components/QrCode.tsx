@@ -4,15 +4,15 @@
 import type { ReactElement } from 'react';
 import React, { useMemo, useRef } from 'react';
 import qrcode from 'qrcode-generator';
-import { getEnvironment, Environment } from '../environment';
 
+const electron = require('electron')
 const AUTODETECT_TYPE_NUMBER = 0;
 const ERROR_CORRECTION_LEVEL = 'L';
 
 export type PropsType = Readonly<{
   alt: string;
   className?: string;
-  data: string | Uint8Array;
+  data: string;
 }>;
 
 export function QrCode(props: PropsType): ReactElement {
@@ -29,19 +29,21 @@ export function QrCode(props: PropsType): ReactElement {
     return `data:image/svg+xml;utf8,${svgData}`;
   }, [data]);
 
+  // Add a development-only feature to copy a QR code to the clipboard by double-clicking.
+  // This can be used to quickly inspect the code, or to link this Desktop with an iOS
+  // simulator primary, which has a debug-only option to paste the linking URL instead of
+  // scanning it. (By the time you read this comment Android may have a similar feature.)
   const onMouseDown = () => {
-	  void navigator.clipboard.writeText(data);
+	  electron.clipboard.writeText(data);
     const el = elRef.current;
     if (!el) return;
     el.style.filter = 'brightness(50%)';
-    window.setTimeout(() => {
-      el.style.filter = '';
-    }, 150);
+    window.setTimeout(() => el.style.filter = '', 150);
   };
 
   return (
     <img
-      alt={alt}
+      alt={data}
       className={className}
       onMouseDown={onMouseDown}
       ref={elRef}

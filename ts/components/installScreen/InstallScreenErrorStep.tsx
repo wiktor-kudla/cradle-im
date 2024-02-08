@@ -73,8 +73,8 @@ export function InstallScreenErrorStep({
 
       <InstallScreenSignalLogo />
 
-      <h1>{i18n('icu:installErrorHeader')}</h1>
-      <h2>{errorMessage}</h2>
+      <h1 color="">{i18n('icu:installErrorHeader')}</h1>
+      <h2 color="">{errorMessage}</h2>
 
       <div className="module-InstallScreenErrorStep__buttons">
         <Button onClick={onClickButton}>{buttonText}</Button>

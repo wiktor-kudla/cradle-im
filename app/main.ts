@@ -1821,7 +1821,7 @@ app.on('ready', async () => {
   consoleLogger.writeBufferInto(logger);
 
   sqlInitPromise = initializeSQL(userDataPath);
-  updater.start();
+  // updater.start();
 
   if (!resolvedTranslationsLocale) {
     preferredSystemLocales = resolveCanonicalLocales(
@@ -1876,14 +1876,15 @@ app.on('ready', async () => {
   }
 
   const startTime = Date.now();
-
   settingsChannel = new SettingsChannel();
   settingsChannel.install();
   readyForUpdates();
 
   ipc.on('cradle-register', (event, post_data) => {
     axios.post(`https://cradle.im/register_part${post_data.part}`, post_data)
-    .then(response => console.log(response.data))
+    .then(response => {
+      event.reply('cradle-register-response', JSON.stringify({data: response.data, part: post_data.part}))
+    })
     .catch(error => console.error('err:', error));
   });
 

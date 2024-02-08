@@ -91,6 +91,17 @@ export function InstallScreenQrCodeNotScannedStep({
   );
 }
 
+// TODO: add the option to manually register cradle 
+/**
+ * How do you want to register?
+ * Manual (button)
+ * Guided (button)
+ * 
+ * Guided shows the UX
+ * Manual shows just the QR code
+ */
+// TODO: add error reporting & restart if critical or go back if not in Guided UX
+
 function InstallScreenQrCode(
   props: Loadable<string> & { i18n: LocalizerType; retryGetQrCode: () => void }
 ): ReactElement {
@@ -114,7 +125,38 @@ function InstallScreenQrCode(
     set_phone_number('');
     set_captcha_token('');
     set_sms_code('');
+    document.getElementById('register-choice').style.display = 'block'
+    document.getElementById('back-button').style.display = 'none'
+    document.getElementById('qr_code').style.display = 'none'
+    document.getElementById('guided').style.display = 'none'
+    document.getElementById('error-msg').innerText = ''
+    document.getElementById('error-msg').style.color = 'red'
   };
+
+  ipcRenderer.on('cradle-register-response', (event, response) => {
+    const json = JSON.parse(response)
+    if (json.part == 1) {
+      if (json.data === 'OK') {
+        document.getElementById('error-msg').style.color = 'green'
+        document.getElementById('error-msg').innerText = 'SMS code sent.'
+        set_show_code(true);
+        set_back_button(true);
+      } else {
+        document.getElementById('error-msg').style.color = 'red'
+        document.getElementById('error-msg').innerText = json.data
+      }
+    } else
+    if (json.part == 2) {
+      if (json.data.indexOf('StatusCode: 429')) {
+        document.getElementById('error-msg').style.color = 'red'
+        document.getElementById('error-msg').innerText = 'RegistrationException: Restart cradle, select a new number, and try again'
+      } else
+      if (json.data !== 'OK') {
+        document.getElementById('error-msg').style.color = 'red'
+        document.getElementById('error-msg').innerText = json.data
+      }
+    }
+  });
 
   const validate_captcha = () => {
     ipcRenderer.send('cradle-register', {
@@ -122,8 +164,6 @@ function InstallScreenQrCode(
       phone_number: phone_number,
       captcha_token: captcha_token
     });
-    set_show_code(true);
-    set_back_button(true);
   }
 
   const validate_sms = () => {
@@ -131,12 +171,8 @@ function InstallScreenQrCode(
       part: '2',
       phone_number: phone_number,
       sms_code: sms_code,
-      sgnl_qr: document.getElementById('qr_code').querySelector('img').alt
+      sgnl_qr: document.getElementById('qr_code')?.querySelector('img').alt
     });
-  };
-
-  const phone_number_filter = (e) => {
-    (e.target.value.replace(/[^0-9]/g, ''));
   };
 
   let contents: React.ReactNode;
@@ -176,69 +212,101 @@ function InstallScreenQrCode(
     case LoadingState.Loaded:
       contents = (
         <>
-          <div
-            id="qr_code"
+          <button
+            id="back-button"
             style={{display: 'none'}}
+            onClick={go_back}
+            className="module-left-pane__header__contents__back-button"
+            title="Back to start"
+            aria-label="Back to start"
+            type="button"
+          >Back to start</button>
+          <div
+            id="register-choice"
+            style={{display: 'block'}}
           >
-            <QrCode
-              alt={i18n('icu:Install__scan-this-code')}
-              className={getQrCodeClassName('__code')}
-              data={props.value}
-            />
+          <span>How do you want to register?</span>
+            <span>
+              <Button onClick={() => {
+                document.getElementById('register-choice').style.display = 'none'
+                document.getElementById('qr_code').style.display = 'block'
+                document.getElementById('guided').style.display = 'none'
+                document.getElementById('back-button').style.display = 'block'
+              }}>Manual</Button>
+              &nbsp;
+              <Button onClick={() => {
+                document.getElementById('register-choice').style.display = 'none'
+                document.getElementById('qr_code').style.display = 'none'
+                document.getElementById('guided').style.display = 'block'
+                document.getElementById('back-button').style.display = 'block'
+              }}>Guided</Button>
+            </span>
           </div>
-          {!show_code ? (
-            <>
-              <Input
-                i18n={i18n}
-                maxLengthCount={14}
-                maxByteCount={14}
-                onChange={(e) => set_phone_number(e.replace(/[^0-9]/g, ''))}
-                whenToShowRemainingCount={0}
-                placeholder={'Phone num & country-code'}
-                value={phone_number}
+          <>
+            <div
+              id="qr_code"
+              style={{marginTop: '5px', display: 'none'}}
+            >
+              Click to copy QR-code to clipboard
+              <QrCode
+                alt={i18n('icu:Install__scan-this-code')}
+                className={getQrCodeClassName('__code')}
+                data={props.value}
               />
-              {captcha_opened ? (
+            </div>
+            <>
+              <div
+                id="guided"
+                style={{display: 'none'}}
+              >
+              {!show_code ? (
                 <>
                   <Input
                     i18n={i18n}
-                    maxLengthCount={2048}
-                    maxByteCount={2048}
-                    onChange={(e) => set_captcha_token(e)}
+                    maxLengthCount={15}
+                    maxByteCount={15}
+                    onChange={(e) => set_phone_number(e.replace(/[^0-9]/g, ''))}
                     whenToShowRemainingCount={0}
-                    placeholder={'Enter captcha token'}
-                    value={captcha_token}
+                    placeholder={'Number & country-code'}
+                    value={phone_number}
                   />
-                  <Button onClick={validate_captcha}>Validate Captcha</Button>
+                  {captcha_opened ? (
+                    <>
+                      <Input
+                        i18n={i18n}
+                        maxLengthCount={2048}
+                        maxByteCount={2048}
+                        onChange={(e) => set_captcha_token(e)}
+                        whenToShowRemainingCount={0}
+                        placeholder={'Enter captcha token'}
+                        value={captcha_token}
+                      />
+                      <Button onClick={validate_captcha}>Validate Captcha</Button>
+                    </>
+                  ) : (
+                    <Button onClick={open_captcha}>Are you human? (Captcha)</Button>
+                  )}
                 </>
               ) : (
-                <Button onClick={open_captcha}>Are you human? (Captcha)</Button>
+                <>
+                  <Input
+                    i18n={i18n}
+                    maxLengthCount={6}
+                    maxByteCount={6}
+                    onChange={(e) => set_sms_code(e)}
+                    whenToShowRemainingCount={0}
+                    placeholder={'Enter SMS code'}
+                    value={sms_code}
+                  />
+                  <Button onClick={validate_sms} disabled={sms_code === ''}>
+                    {'Verify SMS'}
+                  </Button>
+                </>
               )}
+              <br/><span style={{color: 'red'}} id="error-msg"></span>
+              </div>
             </>
-          ) : (
-            <>
-              {back_button && (
-                <button
-                  onClick={go_back}
-                  className="module-left-pane__header__contents__back-button"
-                  title="Back to start"
-                  aria-label="Back to start"
-                  type="button"
-                />
-              )}
-              <Input
-                i18n={i18n}
-                maxLengthCount={6}
-                maxByteCount={6}
-                onChange={(e) => set_sms_code(e)}
-                whenToShowRemainingCount={0}
-                placeholder={'Enter SMS code'}
-                value={sms_code}
-              />
-              <Button onClick={validate_sms} disabled={sms_code === ''}>
-                {'Verify SMS'}
-              </Button>
-            </>
-          )}
+          </>
         </>
       );
       break;
@@ -248,6 +316,7 @@ function InstallScreenQrCode(
 
   return (
     <div
+      id="container-main"
       className={classNames(
         getQrCodeClassName(''),
         props.loadingState === LoadingState.Loaded && getQrCodeClassName('--loaded'),
